@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PolyEdge 95 v2 — Paper Trading Terminal</title>
+<style>
+  :root{
+    --desk:#008080; --face:#c0c0c0; --hl:#ffffff; --sh:#808080; --dk:#000000;
+    --title:#000080; --title2:#1084d0; --crt:#00ff66; --crtdim:#00802f;
+    --arb:#00ffff; --rel:#ffff00; --ls:#ff00ff; --cv:#00ff66;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--desk);margin:0;padding:14px;
+       font-family:Tahoma,"MS Sans Serif",Geneva,sans-serif;font-size:12px;color:#000}
+  .win{background:var(--face);border:2px solid;
+       border-color:var(--hl) var(--dk) var(--dk) var(--hl);
+       box-shadow:1px 1px 0 var(--dk);margin:0 auto 14px;max-width:980px}
+  .tbar{background:linear-gradient(90deg,var(--title),var(--title2));color:#fff;
+        font-weight:bold;padding:3px 6px;display:flex;justify-content:space-between;align-items:center}
+  .tbar .btns span{display:inline-block;width:16px;height:14px;background:var(--face);
+        border:1px solid;border-color:var(--hl) var(--dk) var(--dk) var(--hl);
+        margin-left:2px;text-align:center;line-height:12px;color:#000;font-size:10px}
+  .body{padding:10px}
+  .inset{background:#fff;border:2px solid;border-color:var(--sh) var(--hl) var(--hl) var(--sh);padding:6px}
+  .crt{background:#000;border:2px solid;border-color:var(--sh) var(--hl) var(--hl) var(--sh);display:block;width:100%}
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+  .stat{border:2px solid;border-color:var(--sh) var(--hl) var(--hl) var(--sh);
+        background:#fff;padding:6px;text-align:center}
+  .stat .v{font-size:18px;font-weight:bold;font-family:"Courier New",monospace}
+  .green{color:#008000}.red{color:#c00000}
+  table{border-collapse:collapse;width:100%;background:#fff;font-size:11px}
+  th{background:var(--face);border:1px solid var(--sh);padding:3px 5px;text-align:left;
+     position:sticky;top:0}
+  td{border:1px solid #d0d0d0;padding:3px 5px}
+  tr:nth-child(even) td{background:#f2f2f2}
+  .scroll{max-height:260px;overflow:auto;border:2px solid;
+          border-color:var(--sh) var(--hl) var(--hl) var(--sh)}
+  .tag{display:inline-block;padding:0 4px;border:1px solid #000;font-size:10px;font-weight:bold}
+  .tag.ARB{background:var(--arb)}.tag.REL{background:var(--rel)}
+  .tag.LONGSHOT{background:var(--ls);color:#fff}.tag.CONVERGE{background:var(--cv)}
+  .legend span{margin-right:14px;white-space:nowrap}
+  .sbar{display:flex;gap:4px;border-top:2px solid var(--hl);padding:3px 6px;font-size:11px}
+  .sbar div{border:1px solid;border-color:var(--sh) var(--hl) var(--hl) var(--sh);padding:1px 8px;flex:1}
+  .tip{position:fixed;display:none;background:#ffffe1;border:1px solid #000;
+       padding:4px 6px;font-size:11px;max-width:320px;pointer-events:none;z-index:9}
+  h3{margin:4px 0 8px;font-size:12px}
+  @media(max-width:700px){body{padding:6px}.statgrid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="tip" id="tip"></div>
+
+<div class="win">
+  <div class="tbar"><span>■ PolyEdge 95 v2 — Paper Trading Terminal</span>
+    <span class="btns"><span>_</span><span>□</span><span>X</span></span></div>
+  <div class="body">
+    <div class="statgrid" id="stats"></div>
+  </div>
+  <div class="sbar"><div id="sb-mode">MODE: PAPER</div><div id="sb-updated"></div><div id="sb-count"></div></div>
+</div>
+
+<div class="win">
+  <div class="tbar"><span>▦ System Monitor — Equity &amp; Realized P/L</span>
+    <span class="btns"><span>_</span><span>□</span><span>X</span></span></div>
+  <div class="body">
+    <canvas id="equity" class="crt" height="240"></canvas>
+    <div class="legend" style="margin-top:6px">
+      <span style="color:#006400">■ equity (cash + open marked value)</span>
+      <span style="color:#808000">■ realized P/L (closed trades only)</span>
+    </div>
+  </div>
+</div>
+
+<div class="win">
+  <div class="tbar"><span>◆ Trade Map — every fill, mapped by time and P/L</span>
+    <span class="btns"><span>_</span><span>□</span><span>X</span></span></div>
+  <div class="body">
+    <canvas id="map" class="crt" height="260"></canvas>
+    <div class="legend" style="margin-top:6px">
+      <span><span class="tag ARB">ARB</span> Dutch-book lock</span>
+      <span><span class="tag REL">REL</span> correlated lock</span>
+      <span><span class="tag LONGSHOT">LS</span> longshot fade</span>
+      <span><span class="tag CONVERGE">CV</span> convergence</span>
+      <span>□ open &nbsp; ○ close (green ring = profit, red = loss)</span>
+    </div>
+  </div>
+</div>
+
+<div class="win">
+  <div class="tbar"><span>▤ Open Positions</span><span class="btns"><span>_</span><span>□</span><span>X</span></span></div>
+  <div class="body"><div class="scroll"><table id="open"></table></div></div>
+</div>
+
+<div class="win">
+  <div class="tbar"><span>▥ Trade Log (settled)</span><span class="btns"><span>_</span><span>□</span><span>X</span></span></div>
+  <div class="body"><div class="scroll"><table id="closed"></table></div></div>
+</div>
+
+<div class="win">
+  <div class="tbar"><span>☰ Latest Scan — candidate opportunities</span><span class="btns"><span>_</span><span>□</span><span>X</span></span></div>
+  <div class="body"><div class="scroll"><table id="opps"></table></div></div>
+</div>
+
+<script>
+const STATE = {"cash": 947.627, "starting_bankroll": 1000.0, "positions": [{"key": "LS-21.3", "strategy": "LONGSHOT", "title": "Fade: Both keepers score", "opened": 1783270671.1323903, "cost": 21.12, "edge": 0.010417, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.960", "legs": [{"token_id": "l21.3", "market_id": "lm21.3", "label": "NO", "side": "NO", "entry_price": 0.96, "shares": 22}]}, {"key": "LS-27.0", "strategy": "LONGSHOT", "title": "Fade: Extra time in both semis", "opened": 1783763151.1323903, "cost": 22.728, "edge": 0.024287, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.947", "legs": [{"token_id": "l27.0", "market_id": "lm27.0", "label": "NO", "side": "NO", "entry_price": 0.947, "shares": 24}]}], "closed": [{"key": "ARB-YES-lock: World Cu-0.2", "strategy": "ARB", "title": "YES-lock: World Cup R16 \u2014 Match winner set", "opened": 1781447631.1323903, "cost": 46.56, "edge": 0.032, "guaranteed": true, "guaranteed_payout_sets": 1.0, "est_p_win": null, "resolve_by": "", "note": "asks sum 0.968", "legs": [{"token_id": "a0.2", "market_id": "ma0.2", "label": "YES leg A", "side": "YES", "entry_price": 0.48, "shares": 48}, {"token_id": "b0.2", "market_id": "mb0.2", "label": "YES leg B", "side": "YES", "entry_price": 0.49, "shares": 48}], "closed_ts": 1781620431.1323903, "payout": 48.0, "pl": 1.44}, {"key": "CV-1.1", "strategy": "CONVERGE", "title": "Converge: Fed holds rates in July", "opened": 1781525391.1323903, "cost": 38.48, "edge": 0.039501, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.962, "resolve_by": "", "note": "YES ask 0.962", "legs": [{"token_id": "c1.1", "market_id": "cm1.1", "label": "YES", "side": "YES", "entry_price": 0.962, "shares": 40}], "closed_ts": 1781784591.1323903, "payout": 40.0, "pl": 1.52}, {"key": "REL-4.6", "strategy": "REL", "title": "IMPLIES lock: wins group / qualifies", "opened": 1781827791.1323903, "cost": 43.785, "edge": 0.027, "guaranteed": true, "guaranteed_payout_sets": 1.0, "est_p_win": null, "resolve_by": "", "note": "legs sum 0.973", "legs": [{"token_id": "ra4.6", "market_id": "rma4.6", "label": "YES B", "side": "YES", "entry_price": 0.486, "shares": 45}, {"token_id": "rb4.6", "market_id": "rmb4.6", "label": "NO A", "side": "NO", "entry_price": 0.487, "shares": 45}], "closed_ts": 1782173391.1323903, "payout": 45.0, "pl": 1.215}, {"key": "LS-3.0", "strategy": "LONGSHOT", "title": "Fade: Manager sacked before quarter-final", "opened": 1781689551.1323903, "cost": 23.8, "edge": 0.018908, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.952", "legs": [{"token_id": "l3.0", "market_id": "lm3.0", "label": "NO", "side": "NO", "entry_price": 0.952, "shares": 25}], "closed_ts": 1782207951.1323903, "payout": 25.0, "pl": 1.2}, {"key": "CV-6.2", "strategy": "CONVERGE", "title": "Converge: Album releases before Aug 1", "opened": 1781966031.1323903, "cost": 40.11, "edge": 0.04712, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.955, "resolve_by": "", "note": "YES ask 0.955", "legs": [{"token_id": "c6.2", "market_id": "cm6.2", "label": "YES", "side": "YES", "entry_price": 0.955, "shares": 42}], "closed_ts": 1782311631.1323903, "payout": 42.0, "pl": 1.89}, {"key": "LS-2.3", "strategy": "LONGSHOT", "title": "Fade: Wildcard team reaches semi-final", "opened": 1781629071.1323903, "cost": 28.74, "edge": 0.012526, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.958", "legs": [{"token_id": "l2.3", "market_id": "lm2.3", "label": "NO", "side": "NO", "entry_price": 0.958, "shares": 30}], "closed_ts": 1782406671.1323903, "payout": 30.0, "pl": 1.26}, {"key": "LS-7.8", "strategy": "LONGSHOT", "title": "Fade: 0-0 draw in final", "opened": 1782104271.1323903, "cost": 26.572, "edge": 0.022129, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.949", "legs": [{"token_id": "l7.8", "market_id": "lm7.8", "label": "NO", "side": "NO", "entry_price": 0.949, "shares": 28}], "closed_ts": 1782536271.1323903, "payout": 28.0, "pl": 1.428}, {"key": "ARB-NO-lock: Golden Bo-9.5", "strategy": "ARB", "title": "NO-lock: Golden Boot top scorer set", "opened": 1782251151.1323903, "cost": 28.2, "edge": 0.06, "guaranteed": true, "guaranteed_payout_sets": 1.0, "est_p_win": null, "resolve_by": "", "note": "asks sum 0.940", "legs": [{"token_id": "a9.5", "market_id": "ma9.5", "label": "YES leg A", "side": "YES", "entry_price": 0.4, "shares": 30}, {"token_id": "b9.5", "market_id": "mb9.5", "label": "YES leg B", "side": "YES", "entry_price": 0.54, "shares": 30}], "closed_ts": 1782683151.1323903, "payout": 30.0, "pl": 1.8}, {"key": "CV-13.2", "strategy": "CONVERGE", "title": "Converge: Bill passes committee", "opened": 1782570831.1323903, "cost": 43.56, "edge": 0.033058, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.968, "resolve_by": "", "note": "YES ask 0.968", "legs": [{"token_id": "c13.2", "market_id": "cm13.2", "label": "YES", "side": "YES", "entry_price": 0.968, "shares": 45}], "closed_ts": 1783002831.1323903, "payout": 45.0, "pl": 1.44}, {"key": "LS-11.0", "strategy": "LONGSHOT", "title": "Fade: Hat-trick in semi-final", "opened": 1782380751.1323903, "cost": 28.53, "edge": 0.019979, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.951", "legs": [{"token_id": "l11.0", "market_id": "lm11.0", "label": "NO", "side": "NO", "entry_price": 0.951, "shares": 30}], "closed_ts": 1783071951.1323903, "payout": 0.0, "pl": -28.53}, {"key": "LS-15.4", "strategy": "LONGSHOT", "title": "Fade: Red card in first half", "opened": 1782760911.1323903, "cost": 24.804, "edge": 0.016771, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.97, "resolve_by": "", "note": "NO ask 0.954", "legs": [{"token_id": "l15.4", "market_id": "lm15.4", "label": "NO", "side": "NO", "entry_price": 0.954, "shares": 26}], "closed_ts": 1783365711.1323903, "payout": 26.0, "pl": 1.196}, {"key": "CV-19.0", "strategy": "CONVERGE", "title": "Converge: Rocket launch by window close", "opened": 1783071951.1323903, "cost": 42.152, "edge": 0.043841, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.958, "resolve_by": "", "note": "YES ask 0.958", "legs": [{"token_id": "c19.0", "market_id": "cm19.0", "label": "YES", "side": "YES", "entry_price": 0.958, "shares": 44}], "closed_ts": 1783417551.1323903, "payout": 44.0, "pl": 1.848}, {"key": "REL-17.1", "strategy": "REL", "title": "EXCLUSIVE lock: two rival winners", "opened": 1782907791.1323903, "cost": 39.04, "edge": 0.024, "guaranteed": true, "guaranteed_payout_sets": 1.0, "est_p_win": null, "resolve_by": "", "note": "legs sum 0.976", "legs": [{"token_id": "ra17.1", "market_id": "rma17.1", "label": "YES B", "side": "YES", "entry_price": 0.488, "shares": 40}, {"token_id": "rb17.1", "market_id": "rmb17.1", "label": "NO A", "side": "NO", "entry_price": 0.488, "shares": 40}], "closed_ts": 1783426191.1323903, "payout": 40.0, "pl": 0.96}, {"key": "ARB-YES-lock: Best You-23.7", "strategy": "ARB", "title": "YES-lock: Best Young Player set", "opened": 1783478031.1323903, "cost": 44.62, "edge": 0.028, "guaranteed": true, "guaranteed_payout_sets": 1.0, "est_p_win": null, "resolve_by": "", "note": "asks sum 0.972", "legs": [{"token_id": "a23.7", "market_id": "ma23.7", "label": "YES leg A", "side": "YES", "entry_price": 0.55, "shares": 46}, {"token_id": "b23.7", "market_id": "mb23.7", "label": "YES leg B", "side": "YES", "entry_price": 0.42, "shares": 46}], "closed_ts": 1783737231.1323903, "payout": 46.0, "pl": 1.38}, {"key": "CV-25.2", "strategy": "CONVERGE", "title": "Converge: Court ruling published", "opened": 1783607631.1323903, "cost": 40.572, "edge": 0.035197, "guaranteed": false, "guaranteed_payout_sets": null, "est_p_win": 0.966, "resolve_by": "", "note": "YES ask 0.966", "legs": [{"token_id": "c25.2", "market_id": "cm25.2", "label": "YES", "side": "YES", "entry_price": 0.966, "shares": 42}], "closed_ts": 1783866831.1323903, "payout": 42.0, "pl": 1.428}], "history": [{"ts": 1781430351.1323903, "cash": 416.627, "open_value": 590.2451, "equity": 1006.8721, "realized_total": 0, "open_positions": 17}, {"ts": 1781473551.1323903, "cash": 416.627, "open_value": 593.3382, "equity": 1009.9652, "realized_total": 0, "open_positions": 17}, {"ts": 1781516751.1323903, "cash": 416.627, "open_value": 592.373, "equity": 1009.0, "realized_total": 0, "open_positions": 17}, {"ts": 1781559951.1323903, "cash": 416.627, "open_value": 593.6185, "equity": 1010.2455, "realized_total": 0, "open_positions": 17}, {"ts": 1781603151.1323903, "cash": 416.627, "open_value": 591.4359, "equity": 1008.0629, "realized_total": 0, "open_positions": 17}, {"ts": 1781646351.1323903, "cash": 464.627, "open_value": 543.0878, "equity": 1007.7148, "realized_total": 1.44, "open_positions": 16}, {"ts": 1781689551.1323903, "cash": 464.627, "open_value": 542.6321, "equity": 1007.2591, "realized_total": 1.44, "open_positions": 16}, {"ts": 1781732751.1323903, "cash": 464.627, "open_value": 545.3854, "equity": 1010.0124, "realized_total": 1.44, "open_positions": 16}, {"ts": 1781775951.1323903, "cash": 464.627, "open_value": 543.5937, "equity": 1008.2207, "realized_total": 1.44, "open_positions": 16}, {"ts": 1781819151.1323903, "cash": 504.627, "open_value": 505.2915, "equity": 1009.9185, "realized_total": 2.96, "open_positions": 15}, {"ts": 1781862351.1323903, "cash": 504.627, "open_value": 505.5593, "equity": 1010.1863, "realized_total": 2.96, "open_positions": 15}, {"ts": 1781905551.1323903, "cash": 504.627, "open_value": 506.8407, "equity": 1011.4677, "realized_total": 2.96, "open_positions": 15}, {"ts": 1781948751.1323903, "cash": 504.627, "open_value": 505.9937, "equity": 1010.6207, "realized_total": 2.96, "open_positions": 15}, {"ts": 1781991951.1323903, "cash": 504.627, "open_value": 504.4922, "equity": 1009.1192, "realized_total": 2.96, "open_positions": 15}, {"ts": 1782035151.1323903, "cash": 504.627, "open_value": 504.2385, "equity": 1008.8655, "realized_total": 2.96, "open_positions": 15}, {"ts": 1782078351.1323903, "cash": 504.627, "open_value": 504.1684, "equity": 1008.7954, "realized_total": 2.96, "open_positions": 15}, {"ts": 1782121551.1323903, "cash": 504.627, "open_value": 506.7463, "equity": 1011.3733, "realized_total": 2.96, "open_positions": 15}, {"ts": 1782164751.1323903, "cash": 504.627, "open_value": 505.126, "equity": 1009.753, "realized_total": 2.96, "open_positions": 15}, {"ts": 1782207951.1323903, "cash": 574.627, "open_value": 437.5747, "equity": 1012.2017, "realized_total": 5.375, "open_positions": 13}, {"ts": 1782251151.1323903, "cash": 574.627, "open_value": 436.2129, "equity": 1010.8399, "realized_total": 5.375, "open_positions": 13}, {"ts": 1782294351.1323903, "cash": 574.627, "open_value": 436.8041, "equity": 1011.4311, "realized_total": 5.375, "open_positions": 13}, {"ts": 1782337551.1323903, "cash": 616.627, "open_value": 395.3055, "equity": 1011.9325, "realized_total": 7.265, "open_positions": 12}, {"ts": 1782380751.1323903, "cash": 616.627, "open_value": 396.0889, "equity": 1012.7159, "realized_total": 7.265, "open_positions": 12}, {"ts": 1782423951.1323903, "cash": 646.627, "open_value": 368.0984, "equity": 1014.7254, "realized_total": 8.525, "open_positions": 11}, {"ts": 1782467151.1323903, "cash": 646.627, "open_value": 367.2184, "equity": 1013.8454, "realized_total": 8.525, "open_positions": 11}, {"ts": 1782510351.1323903, "cash": 646.627, "open_value": 366.8614, "equity": 1013.4884, "realized_total": 8.525, "open_positions": 11}, {"ts": 1782553551.1323903, "cash": 674.627, "open_value": 339.5345, "equity": 1014.1615, "realized_total": 9.953, "open_positions": 10}, {"ts": 1782596751.1323903, "cash": 674.627, "open_value": 339.8924, "equity": 1014.5194, "realized_total": 9.953, "open_positions": 10}, {"ts": 1782639951.1323903, "cash": 674.627, "open_value": 341.3509, "equity": 1015.9779, "realized_total": 9.953, "open_positions": 10}, {"ts": 1782683151.1323903, "cash": 704.627, "open_value": 309.6147, "equity": 1014.2417, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782726351.1323903, "cash": 704.627, "open_value": 309.4202, "equity": 1014.0472, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782769551.1323903, "cash": 704.627, "open_value": 309.9916, "equity": 1014.6186, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782812751.1323903, "cash": 704.627, "open_value": 312.2336, "equity": 1016.8606, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782855951.1323903, "cash": 704.627, "open_value": 309.7605, "equity": 1014.3875, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782899151.1323903, "cash": 704.627, "open_value": 311.0152, "equity": 1015.6422, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782942351.1323903, "cash": 704.627, "open_value": 309.9822, "equity": 1014.6092, "realized_total": 11.753, "open_positions": 9}, {"ts": 1782985551.1323903, "cash": 704.627, "open_value": 311.0378, "equity": 1015.6648, "realized_total": 11.753, "open_positions": 9}, {"ts": 1783028751.1323903, "cash": 749.627, "open_value": 266.4732, "equity": 1016.1002, "realized_total": 13.193, "open_positions": 8}, {"ts": 1783071951.1323903, "cash": 749.627, "open_value": 237.0307, "equity": 986.6577, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783115151.1323903, "cash": 749.627, "open_value": 238.9025, "equity": 988.5295, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783158351.1323903, "cash": 749.627, "open_value": 238.5259, "equity": 988.1529, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783201551.1323903, "cash": 749.627, "open_value": 239.1324, "equity": 988.7594, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783244751.1323903, "cash": 749.627, "open_value": 239.021, "equity": 988.648, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783287951.1323903, "cash": 749.627, "open_value": 237.9684, "equity": 987.5954, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783331151.1323903, "cash": 749.627, "open_value": 239.0498, "equity": 988.6768, "realized_total": -15.337, "open_positions": 7}, {"ts": 1783374351.1323903, "cash": 775.627, "open_value": 213.3916, "equity": 989.0186, "realized_total": -14.141, "open_positions": 6}, {"ts": 1783417551.1323903, "cash": 819.627, "open_value": 171.675, "equity": 991.302, "realized_total": -12.293, "open_positions": 5}, {"ts": 1783460751.1323903, "cash": 859.627, "open_value": 130.6236, "equity": 990.2506, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783503951.1323903, "cash": 859.627, "open_value": 130.3848, "equity": 990.0118, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783547151.1323903, "cash": 859.627, "open_value": 131.3652, "equity": 990.9922, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783590351.1323903, "cash": 859.627, "open_value": 130.4019, "equity": 990.0289, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783633551.1323903, "cash": 859.627, "open_value": 130.4165, "equity": 990.0435, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783676751.1323903, "cash": 859.627, "open_value": 131.1811, "equity": 990.8081, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783719951.1323903, "cash": 859.627, "open_value": 131.3255, "equity": 990.9525, "realized_total": -11.333, "open_positions": 4}, {"ts": 1783763151.1323903, "cash": 905.627, "open_value": 83.922, "equity": 989.549, "realized_total": -9.953, "open_positions": 3}, {"ts": 1783806351.1323903, "cash": 905.627, "open_value": 85.2888, "equity": 990.9158, "realized_total": -9.953, "open_positions": 3}, {"ts": 1783849551.1323903, "cash": 905.627, "open_value": 84.5293, "equity": 990.1563, "realized_total": -9.953, "open_positions": 3}, {"ts": 1783892751.1323903, "cash": 947.627, "open_value": 43.5442, "equity": 991.1712, "realized_total": -8.525, "open_positions": 2}, {"ts": 1783935951.1323903, "cash": 947.627, "open_value": 44.0176, "equity": 991.6446, "realized_total": -8.525, "open_positions": 2}, {"ts": 1783979151.1323903, "cash": 947.627, "open_value": 43.9726, "equity": 991.5996, "realized_total": -8.525, "open_positions": 2}, {"ts": 1784022351.1323903, "cash": 947.627, "open_value": 44.4275, "equity": 992.0545, "realized_total": -8.525, "open_positions": 2}], "trades": [{"ts": 1781447631.1323903, "type": "OPEN", "key": "ARB-YES-lock: World Cu-0.2", "strategy": "ARB", "title": "YES-lock: World Cup R16 \u2014 Match winner set", "amount": 46.56, "pl": null}, {"ts": 1781525391.1323903, "type": "OPEN", "key": "CV-1.1", "strategy": "CONVERGE", "title": "Converge: Fed holds rates in July", "amount": 38.48, "pl": null}, {"ts": 1781629071.1323903, "type": "OPEN", "key": "LS-2.3", "strategy": "LONGSHOT", "title": "Fade: Wildcard team reaches semi-final", "amount": 28.74, "pl": null}, {"ts": 1781689551.1323903, "type": "OPEN", "key": "LS-3.0", "strategy": "LONGSHOT", "title": "Fade: Manager sacked before quarter-final", "amount": 23.8, "pl": null}, {"ts": 1781827791.1323903, "type": "OPEN", "key": "REL-4.6", "strategy": "REL", "title": "IMPLIES lock: wins group / qualifies", "amount": 43.78, "pl": null}, {"ts": 1781966031.1323903, "type": "OPEN", "key": "CV-6.2", "strategy": "CONVERGE", "title": "Converge: Album releases before Aug 1", "amount": 40.11, "pl": null}, {"ts": 1782104271.1323903, "type": "OPEN", "key": "LS-7.8", "strategy": "LONGSHOT", "title": "Fade: 0-0 draw in final", "amount": 26.57, "pl": null}, {"ts": 1782251151.1323903, "type": "OPEN", "key": "ARB-NO-lock: Golden Bo-9.5", "strategy": "ARB", "title": "NO-lock: Golden Boot top scorer set", "amount": 28.2, "pl": null}, {"ts": 1782380751.1323903, "type": "OPEN", "key": "LS-11.0", "strategy": "LONGSHOT", "title": "Fade: Hat-trick in semi-final", "amount": 28.53, "pl": null}, {"ts": 1782570831.1323903, "type": "OPEN", "key": "CV-13.2", "strategy": "CONVERGE", "title": "Converge: Bill passes committee", "amount": 43.56, "pl": null}, {"ts": 1782760911.1323903, "type": "OPEN", "key": "LS-15.4", "strategy": "LONGSHOT", "title": "Fade: Red card in first half", "amount": 24.8, "pl": null}, {"ts": 1782907791.1323903, "type": "OPEN", "key": "REL-17.1", "strategy": "REL", "title": "EXCLUSIVE lock: two rival winners", "amount": 39.04, "pl": null}, {"ts": 1783071951.1323903, "type": "OPEN", "key": "CV-19.0", "strategy": "CONVERGE", "title": "Converge: Rocket launch by window close", "amount": 42.15, "pl": null}, {"ts": 1783270671.1323903, "type": "OPEN", "key": "LS-21.3", "strategy": "LONGSHOT", "title": "Fade: Both keepers score", "amount": 21.12, "pl": null}, {"ts": 1783478031.1323903, "type": "OPEN", "key": "ARB-YES-lock: Best You-23.7", "strategy": "ARB", "title": "YES-lock: Best Young Player set", "amount": 44.62, "pl": null}, {"ts": 1783607631.1323903, "type": "OPEN", "key": "CV-25.2", "strategy": "CONVERGE", "title": "Converge: Court ruling published", "amount": 40.57, "pl": null}, {"ts": 1783763151.1323903, "type": "OPEN", "key": "LS-27.0", "strategy": "LONGSHOT", "title": "Fade: Extra time in both semis", "amount": 22.73, "pl": null}, {"ts": 1781620431.1323903, "type": "CLOSE", "key": "ARB-YES-lock: World Cu-0.2", "strategy": "ARB", "title": "YES-lock: World Cup R16 \u2014 Match winner set", "amount": 48.0, "pl": 1.44}, {"ts": 1781784591.1323903, "type": "CLOSE", "key": "CV-1.1", "strategy": "CONVERGE", "title": "Converge: Fed holds rates in July", "amount": 40.0, "pl": 1.52}, {"ts": 1782173391.1323903, "type": "CLOSE", "key": "REL-4.6", "strategy": "REL", "title": "IMPLIES lock: wins group / qualifies", "amount": 45.0, "pl": 1.22}, {"ts": 1782207951.1323903, "type": "CLOSE", "key": "LS-3.0", "strategy": "LONGSHOT", "title": "Fade: Manager sacked before quarter-final", "amount": 25.0, "pl": 1.2}, {"ts": 1782311631.1323903, "type": "CLOSE", "key": "CV-6.2", "strategy": "CONVERGE", "title": "Converge: Album releases before Aug 1", "amount": 42.0, "pl": 1.89}, {"ts": 1782406671.1323903, "type": "CLOSE", "key": "LS-2.3", "strategy": "LONGSHOT", "title": "Fade: Wildcard team reaches semi-final", "amount": 30.0, "pl": 1.26}, {"ts": 1782536271.1323903, "type": "CLOSE", "key": "LS-7.8", "strategy": "LONGSHOT", "title": "Fade: 0-0 draw in final", "amount": 28.0, "pl": 1.43}, {"ts": 1782683151.1323903, "type": "CLOSE", "key": "ARB-NO-lock: Golden Bo-9.5", "strategy": "ARB", "title": "NO-lock: Golden Boot top scorer set", "amount": 30.0, "pl": 1.8}, {"ts": 1783002831.1323903, "type": "CLOSE", "key": "CV-13.2", "strategy": "CONVERGE", "title": "Converge: Bill passes committee", "amount": 45.0, "pl": 1.44}, {"ts": 1783071951.1323903, "type": "CLOSE", "key": "LS-11.0", "strategy": "LONGSHOT", "title": "Fade: Hat-trick in semi-final", "amount": 0.0, "pl": -28.53}, {"ts": 1783365711.1323903, "type": "CLOSE", "key": "LS-15.4", "strategy": "LONGSHOT", "title": "Fade: Red card in first half", "amount": 26.0, "pl": 1.2}, {"ts": 1783417551.1323903, "type": "CLOSE", "key": "CV-19.0", "strategy": "CONVERGE", "title": "Converge: Rocket launch by window close", "amount": 44.0, "pl": 1.85}, {"ts": 1783426191.1323903, "type": "CLOSE", "key": "REL-17.1", "strategy": "REL", "title": "EXCLUSIVE lock: two rival winners", "amount": 40.0, "pl": 0.96}, {"ts": 1783737231.1323903, "type": "CLOSE", "key": "ARB-YES-lock: Best You-23.7", "strategy": "ARB", "title": "YES-lock: Best Young Player set", "amount": 46.0, "pl": 1.38}, {"ts": 1783866831.1323903, "type": "CLOSE", "key": "CV-25.2", "strategy": "CONVERGE", "title": "Converge: Court ruling published", "amount": 42.0, "pl": 1.43}]};
+const OPPS  = [{"strategy": "ARB", "title": "YES-lock: QF winner set (demo)", "edge": 0.021, "guaranteed": true, "note": "4 outcomes, YES asks sum 0.9790, 210 sets executable"}, {"strategy": "LONGSHOT", "title": "Fade: keeper scores in QF (demo)", "edge": 0.017, "guaranteed": false, "note": "YES at 0.030, assumed true 0.018, NO ask 0.955"}, {"strategy": "CONVERGE", "title": "Converge: treaty signed by Friday (demo)", "edge": 0.031, "guaranteed": false, "note": "YES ask 0.970, 3.5d to resolution, 322% annualized if YES"}];
+const COLORS = {ARB:"#00ffff", REL:"#ffff00", LONGSHOT:"#ff00ff", CONVERGE:"#00ff66"};
+const money = v => (v<0?"-$":"$") + Math.abs(v).toFixed(2);
+const dt = ts => new Date(ts*1000).toISOString().slice(0,16).replace("T"," ");
+
+/* ---------- stats ---------- */
+(function(){
+  const h = STATE.history, last = h.length? h[h.length-1] : {equity:STATE.cash,cash:STATE.cash};
+  const closed = STATE.closed||[];
+  const realized = closed.reduce((a,c)=>a+c.pl,0);
+  const wins = closed.filter(c=>c.pl>0).length;
+  const start = STATE.starting_bankroll||1;
+  const ret = (last.equity/start-1)*100;
+  const cells = [
+    ["EQUITY", money(last.equity), ret>=0?"green":"red"],
+    ["RETURN", (ret>=0?"+":"")+ret.toFixed(2)+"%", ret>=0?"green":"red"],
+    ["CASH", money(last.cash), ""],
+    ["REALIZED P/L", money(realized), realized>=0?"green":"red"],
+    ["OPEN POS", (STATE.positions||[]).length, ""],
+    ["SETTLED", closed.length + (closed.length? " ("+(100*wins/closed.length).toFixed(0)+"% won)" : ""), ""],
+  ];
+  document.getElementById("stats").innerHTML = cells.map(c=>
+    `<div class="stat"><div>${c[0]}</div><div class="v ${c[2]}">${c[1]}</div></div>`).join("");
+  document.getElementById("sb-updated").textContent =
+    "LAST SCAN: " + (h.length? dt(h[h.length-1].ts) : "never") + " UTC";
+  document.getElementById("sb-count").textContent =
+    "HISTORY: " + h.length + " scans";
+})();
+
+/* ---------- canvas helpers ---------- */
+function fitCanvas(c){
+  const w = c.parentElement.clientWidth - 4;
+  c.width = w; // logical px; crisp retro look is fine
+  return {W:w, H:c.height};
+}
+function crtGrid(g,W,H){
+  g.fillStyle="#000"; g.fillRect(0,0,W,H);
+  g.strokeStyle="#003318"; g.lineWidth=1;
+  for(let x=0;x<W;x+=Math.max(30,W/20)){g.beginPath();g.moveTo(x,0);g.lineTo(x,H);g.stroke();}
+  for(let y=0;y<H;y+=30){g.beginPath();g.moveTo(0,y);g.lineTo(W,y);g.stroke();}
+}
+
+/* ---------- equity chart ---------- */
+(function(){
+  const c=document.getElementById("equity"), g=c.getContext("2d");
+  const {W,H}=fitCanvas(c); crtGrid(g,W,H);
+  const h=STATE.history;
+  if(h.length<2){g.fillStyle="#00ff66";g.font="12px monospace";
+    g.fillText("Not enough history yet — run more scans.",10,20);return;}
+  const P={l:56,r:12,t:12,b:24};
+  const t0=h[0].ts, t1=h[h.length-1].ts||t0+1;
+  const eq=h.map(p=>p.equity), rl=h.map(p=>p.realized_total);
+  const base = STATE.starting_bankroll;
+  let lo=Math.min(...eq,...rl.map(v=>v+base)), hi=Math.max(...eq,...rl.map(v=>v+base));
+  const pad=(hi-lo)*0.1||1; lo-=pad; hi+=pad;
+  const X=ts=>P.l+(W-P.l-P.r)*(ts-t0)/Math.max(1,(t1-t0));
+  const Y=v=>H-P.b-(H-P.t-P.b)*(v-lo)/(hi-lo);
+  // axis labels
+  g.fillStyle="#00b34d"; g.font="10px monospace";
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;
+    g.fillText("$"+v.toFixed(0), 4, Y(v)+3);}
+  g.fillText(dt(t0), P.l, H-8); 
+  const endLbl=dt(t1); g.fillText(endLbl, W-P.r-endLbl.length*6, H-8);
+  // baseline (starting bankroll)
+  g.strokeStyle="#006633"; g.setLineDash([4,3]);
+  g.beginPath(); g.moveTo(P.l,Y(base)); g.lineTo(W-P.r,Y(base)); g.stroke();
+  g.setLineDash([]);
+  // realized P/L (offset to bankroll baseline so lines share a scale)
+  g.strokeStyle="#b3b300"; g.lineWidth=1.5; g.beginPath();
+  h.forEach((p,i)=>{const x=X(p.ts),y=Y(base+p.realized_total); i?g.lineTo(x,y):g.moveTo(x,y);});
+  g.stroke();
+  // equity line with CRT glow
+  g.strokeStyle="#00ff66"; g.lineWidth=2; g.shadowColor="#00ff66"; g.shadowBlur=6;
+  g.beginPath();
+  h.forEach((p,i)=>{const x=X(p.ts),y=Y(p.equity); i?g.lineTo(x,y):g.moveTo(x,y);});
+  g.stroke(); g.shadowBlur=0;
+})();
+
+/* ---------- trade map ---------- */
+(function(){
+  const c=document.getElementById("map"), g=c.getContext("2d");
+  const {W,H}=fitCanvas(c); crtGrid(g,W,H);
+  const T=(STATE.trades||[]).slice().sort((a,b)=>a.ts-b.ts);
+  if(!T.length){g.fillStyle="#00ff66";g.font="12px monospace";
+    g.fillText("No trades yet.",10,20);return;}
+  const P={l:56,r:12,t:14,b:24};
+  const t0=T[0].ts, t1=T[T.length-1].ts||t0+1;
+  const pls=T.map(t=>t.pl==null?0:t.pl);
+  let lo=Math.min(0,...pls), hi=Math.max(0,...pls);
+  const pad=(hi-lo)*0.15||1; lo-=pad; hi+=pad;
+  const X=ts=>P.l+(W-P.l-P.r)*(ts-t0)/Math.max(1,(t1-t0));
+  const Y=v=>H-P.b-(H-P.t-P.b)*(v-lo)/(hi-lo);
+  g.fillStyle="#00b34d"; g.font="10px monospace";
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;
+    g.fillText((v<0?"-$":"$")+Math.abs(v).toFixed(0),4,Y(v)+3);}
+  g.strokeStyle="#006633";g.setLineDash([4,3]);
+  g.beginPath();g.moveTo(P.l,Y(0));g.lineTo(W-P.r,Y(0));g.stroke();g.setLineDash([]);
+  g.fillText(dt(t0),P.l,H-8);
+  const eLbl=dt(t1); g.fillText(eLbl,W-P.r-eLbl.length*6,H-8);
+  const pts=[];
+  T.forEach(t=>{
+    const x=X(t.ts);
+    const col=COLORS[t.strategy]||"#fff";
+    const r=Math.max(3,Math.min(9,Math.sqrt(t.amount||1)));
+    if(t.type==="OPEN"){
+      const y=Y(0)-0; // opens sit on the zero line: no P/L yet
+      g.fillStyle=col; g.fillRect(x-r/1.4,y-r/1.4,r*1.4,r*1.4);
+      pts.push({x,y,r:r+2,t});
+    }else{
+      const y=Y(t.pl||0);
+      g.fillStyle=col; g.beginPath(); g.arc(x,y,r,0,7); g.fill();
+      g.strokeStyle=(t.pl>=0)?"#00ff66":"#ff3333"; g.lineWidth=2;
+      g.beginPath(); g.arc(x,y,r+2,0,7); g.stroke();
+      pts.push({x,y,r:r+3,t});
+    }
+  });
+  const tip=document.getElementById("tip");
+  c.onmousemove=e=>{
+    const b=c.getBoundingClientRect();
+    const mx=(e.clientX-b.left)*(c.width/b.width), my=(e.clientY-b.top)*(c.height/b.height);
+    const hit=pts.slice().reverse().find(p=>Math.hypot(p.x-mx,p.y-my)<=p.r+3);
+    if(hit){tip.style.display="block";
+      tip.style.left=(e.clientX+12)+"px"; tip.style.top=(e.clientY+12)+"px";
+      const t=hit.t;
+      tip.innerHTML=`<b>${t.type}</b> <span class="tag ${t.strategy}">${t.strategy}</span><br>`+
+        `${t.title}<br>${dt(t.ts)} UTC · ${t.type==="OPEN"?"cost":"payout"} ${money(t.amount)}`+
+        (t.pl==null?"":`<br><b>P/L ${money(t.pl)}</b>`);
+    } else tip.style.display="none";
+  };
+  c.onmouseleave=()=>tip.style.display="none";
+})();
+
+/* ---------- tables ---------- */
+function fill(id, head, rows){
+  document.getElementById(id).innerHTML =
+    "<tr>"+head.map(h=>`<th>${h}</th>`).join("")+"</tr>"+
+    (rows.length? rows.join("") : `<tr><td colspan="${head.length}">— none —</td></tr>`);
+}
+fill("open", ["Strategy","Position","Opened","Cost","Edge","Resolves by"],
+  (STATE.positions||[]).map(p=>`<tr>
+    <td><span class="tag ${p.strategy}">${p.strategy}</span></td>
+    <td>${p.title}<br><small>${p.note||""}</small></td>
+    <td>${dt(p.opened)}</td><td>${money(p.cost)}</td>
+    <td>${(p.edge*100).toFixed(1)}%${p.guaranteed?" 🔒":""}</td>
+    <td>${(p.resolve_by||"").slice(0,10)}</td></tr>`));
+fill("closed", ["Strategy","Position","Closed","Cost","Payout","P/L"],
+  (STATE.closed||[]).slice().reverse().map(p=>`<tr>
+    <td><span class="tag ${p.strategy}">${p.strategy}</span></td>
+    <td>${p.title}</td><td>${dt(p.closed_ts)}</td>
+    <td>${money(p.cost)}</td><td>${money(p.payout)}</td>
+    <td class="${p.pl>=0?'green':'red'}"><b>${money(p.pl)}</b></td></tr>`));
+fill("opps", ["Strategy","Opportunity","Edge","Type","Note"],
+  (OPPS||[]).map(o=>`<tr>
+    <td><span class="tag ${o.strategy}">${o.strategy}</span></td>
+    <td>${o.title}</td><td>${(o.edge*100).toFixed(2)}%</td>
+    <td>${o.guaranteed?"LOCK 🔒":"probabilistic"}</td>
+    <td><small>${o.note||""}</small></td></tr>`));
+</script>
+</body>
+</html>
