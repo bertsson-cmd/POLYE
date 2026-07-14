@@ -65,16 +65,22 @@ Markets that are effectively decided often trade at 94–98c days before formal 
 
 Applied in strict order, every scan:
 
-1. **Guaranteed locks are funded first** — free money before speculative money.
+1. **Guaranteed locks are funded first** — free money before speculative money. Among speculative candidates, **sooner-resolving markets are funded first** (near-term capital cycling — a 3¢ edge resolving Friday beats a 3.5¢ edge resolving in two weeks, because the capital comes back and goes again).
 2. **Probabilistic trades get fractional Kelly.** Kelly formula `f* = (p·b − q)/b`, then multiplied by `KELLY_FRACTION` (default 0.25 = quarter-Kelly). Full Kelly is only optimal when your probability estimate is *exactly right*; quarter-Kelly costs little growth and survives being wrong.
 3. **Caps**, all enforced simultaneously:
    - max 5% of bankroll per position
-   - per-strategy ceilings: ARB 30%, CONVERGE 25%, REL 20%, LONGSHOT 15%
+   - per-strategy ceilings: CONVERGE 35%, ARB 30%, REL 20%, LONGSHOT 5%
    - max 60% of bankroll deployed in total
    - never exceed available cash
-   - max 10 open longshot fades
+   - max 3 open longshot fades
    - trades under $5 dropped (dust)
 4. **Dedup** — one open position per opportunity key; a re-detected arb isn't bought twice.
+
+### Take-profit (early exit)
+
+CONVERGE positions don't have to wait for formal resolution. Each scan, the bot fetches the **live bid** for every open CONVERGE position and sells once **40% of the remaining upside** has been captured — e.g. entered at 96¢ (4¢ of upside to $1), it sells as soon as the bid reaches ~97.6¢. The freed cash immediately becomes available for the next opportunity, so capital cycles through many small wins instead of sitting in nearly-done markets for the last cent.
+
+Design guarantees: exits price against the actual bid (what a real sale would fetch), never the indicative mark; ARB/REL locks are **never** unwound early (selling one leg breaks the guarantee); missing books leave positions untouched. Tunable via `TAKE_PROFIT_UPSIDE_CAPTURE` — raise it toward 1.0 to hold longer for more per trade, lower it for even faster cycling. Add `"LONGSHOT"` to `TAKE_PROFIT_STRATEGIES` to give fades the same early exit.
 
 ---
 
@@ -167,8 +173,11 @@ Everything tunable is in `polyedge/config.py`, commented inline. The ones you'll
 | `STARTING_BANKROLL` | 1000 | paper bankroll (USD) |
 | `KELLY_FRACTION` | 0.25 | fraction of full Kelly |
 | `MAX_POSITION_PCT` | 0.05 | per-position cap |
+| `TAKE_PROFIT_UPSIDE_CAPTURE` | 0.40 | sell CONVERGE once this share of remaining upside is captured |
 | `LS_BIAS_HAIRCUT` | 0.60 | assumed true P(yes) as share of price |
 | `LS_MAX_YES_PRICE` | 0.05 | fade only YES ≤ 5c |
+| `LS_MAX_DAYS` | 21 | fade only markets resolving within 3 weeks |
+| `LS_MAX_OPEN` | 3 | max concurrent longshot fades |
 | `CV_MIN_ANNUAL_YIELD` | 0.25 | convergence APY floor |
 | `ARB_MIN_EDGE` | 0.01 | ignore locks thinner than 1c/set |
 
