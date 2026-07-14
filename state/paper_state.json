@@ -1,5 +1,5 @@
 {
- "cash": 538.672133,
+ "cash": 498.265283,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -1196,6 +1196,132 @@
      "shares": 6.019351
     }
    ]
+  },
+  {
+   "key": "ARB-YES-697083",
+   "strategy": "ARB",
+   "title": "YES-lock: Highest temperature in San Francisco on July 14?",
+   "opened": 1784026165.2045832,
+   "cost": 15.4061,
+   "edge": 0.019,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 1.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-14T12:00:00Z",
+   "note": "11 outcomes, YES asks sum 0.9810, 50 sets executable at best ask",
+   "legs": [
+    {
+     "token_id": "74797273333935247417329019615800325027953913551147371595702403412438601771753",
+     "market_id": "2901266",
+     "label": "YES Will the highest temperature in San Francisco be 71\u00b0F or below on July 14?",
+     "side": "YES",
+     "entry_price": 0.019,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "60322020008877461041025041743335608074683420992821561531372521676378428808297",
+     "market_id": "2901267",
+     "label": "YES Will the highest temperature in San Francisco be between 72-73\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.06,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "49925410151360773705866656598047462257827476161325381892066693501651781273369",
+     "market_id": "2901268",
+     "label": "YES Will the highest temperature in San Francisco be between 74-75\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.17,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "18081802422729852046275371673460686390008689513484955751685714813975447019088",
+     "market_id": "2901269",
+     "label": "YES Will the highest temperature in San Francisco be between 76-77\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.28,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "3135846022734895427009545360493058588127396098547301864074040997200755163607",
+     "market_id": "2901270",
+     "label": "YES Will the highest temperature in San Francisco be between 78-79\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.24,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "1945643667677058923555790051583144503110364595488630504322463404445374348035",
+     "market_id": "2901271",
+     "label": "YES Will the highest temperature in San Francisco be between 80-81\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.187,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "55524772006065411278476589779072473954780472685066171099855237842808355953930",
+     "market_id": "2901272",
+     "label": "YES Will the highest temperature in San Francisco be between 82-83\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.02,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "89986051291190336215639749520149477459821957070655545706380528210011961288963",
+     "market_id": "2901273",
+     "label": "YES Will the highest temperature in San Francisco be between 84-85\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.002,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "5473926358261694565400692703109763966350926360386474002667685103385676529157",
+     "market_id": "2901274",
+     "label": "YES Will the highest temperature in San Francisco be between 86-87\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "111390046067760719438781194620383050973447425998351232730856234330243966222707",
+     "market_id": "2901275",
+     "label": "YES Will the highest temperature in San Francisco be between 88-89\u00b0F on July 14?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 15.704485
+    },
+    {
+     "token_id": "68448513031701193931216080736035776119513785777716950962085625156539851853274",
+     "market_id": "2901276",
+     "label": "YES Will the highest temperature in San Francisco be 90\u00b0F or higher on July 14?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 15.704485
+    }
+   ]
+  },
+  {
+   "key": "CV-2773791",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will SD Raiders FC win on 2026-07-14?",
+   "opened": 1784026165.2046068,
+   "cost": 25.00075,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.955,
+   "resolve_by": "2026-07-14T09:30:00Z",
+   "note": "YES ask 0.950, 0.0d to resolution, 96053% annualized if YES",
+   "legs": [
+    {
+     "token_id": "38842360723217323085785226635933861980803734092667004838630810065408496265643",
+     "market_id": "2773791",
+     "label": "YES Will SD Raiders FC win on 2026-07-14?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 26.316579
+    }
+   ]
   }
  ],
  "closed": [
@@ -2134,6 +2260,14 @@
    "equity": 1000.0298,
    "realized_total": -8.525,
    "open_positions": 13
+  },
+  {
+   "ts": 1784026165.2054284,
+   "cash": 498.2653,
+   "open_value": 502.1944,
+   "equity": 1000.4597,
+   "realized_total": -8.525,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -2522,6 +2656,24 @@
    "strategy": "LONGSHOT",
    "title": "Fade: Exact Score: France 0 - 2 Spain?",
    "amount": 5.75,
+   "pl": null
+  },
+  {
+   "ts": 1784026165.2045832,
+   "type": "OPEN",
+   "key": "ARB-YES-697083",
+   "strategy": "ARB",
+   "title": "YES-lock: Highest temperature in San Francisco on July 14?",
+   "amount": 15.41,
+   "pl": null
+  },
+  {
+   "ts": 1784026165.2046068,
+   "type": "OPEN",
+   "key": "CV-2773791",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will SD Raiders FC win on 2026-07-14?",
+   "amount": 25.0,
    "pl": null
   }
  ]
