@@ -252,6 +252,36 @@ class PaperEngine:
                     closed.append(c)
         return closed
 
+    # ------------------------------------------------------------ manual cancellation
+    def void_position(self, key: str, ts: Optional[float] = None,
+                      reason: str = "voided_manual") -> Optional[dict]:
+        """Cancel an open position and refund its exact cost basis.
+
+        Unlike resolve() or close_early(), this invents no P/L — it simply
+        returns the capital that was paid in, as if the trade never
+        happened. Intended for administrative cleanup (e.g. voiding
+        far-dated locks that predate a new horizon cap), not for strategy
+        logic. pl is always 0 by construction.
+        """
+        ts = ts or _now()
+        for i, pos in enumerate(self.state["positions"]):
+            if pos["key"] != key:
+                continue
+            payout = pos["cost"]           # exact refund, no gain or loss
+            self.state["cash"] = round(self.state["cash"] + payout, 6)
+            closed = dict(pos)
+            closed.update({"closed_ts": ts, "payout": round(payout, 6),
+                           "pl": 0.0, "close_reason": reason})
+            self.state["closed"].append(closed)
+            self.state["trades"].append({
+                "ts": ts, "type": "VOID", "key": pos["key"], "strategy": pos["strategy"],
+                "title": pos["title"], "amount": round(payout, 2), "pl": 0.0,
+                "reason": reason,
+            })
+            del self.state["positions"][i]
+            return closed
+        return None
+
     # ------------------------------------------------------------ stats
     def stats(self) -> dict:
         closed = self.state["closed"]
