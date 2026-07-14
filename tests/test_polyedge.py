@@ -120,6 +120,17 @@ class TestArbitrage:
         ms, books = self._mk_event([0.5], [0.5])
         assert arbitrage.scan(ms, books) == []
 
+    def test_far_dated_lock_skipped_by_horizon_cap(self):
+        # a clear 5c YES-lock, but resolving ~5 months out -> must be skipped
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9])
+        for m in ms:
+            m.end_date = "2026-12-31T00:00:00Z"
+        assert arbitrage.scan(ms, books) == []
+        # same lock inside the horizon -> detected
+        for m in ms:
+            m.end_date = "2026-08-01T00:00:00Z"
+        assert [o for o in arbitrage.scan(ms, books) if "YES" in o.key]
+
 
 # ------------------------------------------------------------------ REL
 class TestCorrelated:
@@ -168,6 +179,19 @@ class TestCorrelated:
         a = market("A", 0.35)
         rels = [{"type": "IMPLIES", "a_market_id": "A", "b_market_id": "GONE"}]
         assert correlated.scan([a], {}, rels) == []
+
+    def test_far_dated_leg_skipped_by_horizon_cap(self):
+        # profitable IMPLIES lock, but leg B resolves ~5 months out ->
+        # capital tied until the LAST leg resolves, so the pair is skipped
+        a = market("A", 0.35)
+        b = market("B", 0.55, end="2026-12-31T00:00:00Z")
+        books = {b.yes_token: book(b.yes_token, 0.55),
+                 a.no_token: book(a.no_token, 0.40)}
+        rels = [{"type": "IMPLIES", "a_market_id": "A", "b_market_id": "B"}]
+        assert correlated.scan([a, b], books, rels) == []
+        # same lock with both legs near-dated -> detected
+        b.end_date = "2026-08-01T00:00:00Z"
+        assert len(correlated.scan([a, b], books, rels)) == 1
 
 
 # ------------------------------------------------------------------ LONGSHOT
