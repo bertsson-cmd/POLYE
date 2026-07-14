@@ -29,41 +29,81 @@ log = logging.getLogger("polyedge")
 
 
 def _interesting_tokens(markets: List[Market], relations: List[dict]) -> Dict[str, str]:
-    """token_id -> why we need its book. Priority order: ARB, REL (guaranteed
-    strategies) before LONGSHOT/CONVERGE (speculative), since if we have to
-    truncate to MAX_BOOKS_PER_SCAN, the guaranteed-lock candidates matter most.
+    """token_id -> why we need its book, within MAX_BOOKS_PER_SCAN.
+
+    Budget allocation (in order):
+      1. CONVERGE candidates get a RESERVED share (CV_BOOK_RESERVE_PCT) —
+         this is the primary many-small-wins strategy and must never be
+         starved of books by large ARB events. Soonest-resolving first.
+      2. REL tokens (user-declared relations are few and precious).
+      3. ARB tokens, grouped by WHOLE events (a partial event is useless —
+         the arb scan needs every leg's book), soonest-resolving events
+         first, skipping events beyond ARB_MAX_DAYS entirely.
+      4. LONGSHOT candidates fill whatever budget is left, soonest first.
     """
-    priority: Dict[str, str] = {}   # ARB + REL
-    speculative: Dict[str, str] = {}  # LONGSHOT + CONVERGE
+    from .models import days_to_resolution
+    budget = config.MAX_BOOKS_PER_SCAN
+    need: Dict[str, str] = {}
+
+    # --- 1) CONVERGE: reserved share, soonest-resolving first
+    cv = [(days_to_resolution(m.end_date), m.yes_token) for m in markets
+          if config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE
+          and m.liquidity >= config.CV_MIN_LIQUIDITY
+          and days_to_resolution(m.end_date) <= config.CV_MAX_DAYS]
+    cv.sort()
+    cv_quota = max(1, int(budget * config.CV_BOOK_RESERVE_PCT)) if cv else 0
+    for _, tok in cv[:cv_quota]:
+        need.setdefault(tok, "converge")
+
+    # --- 2) REL: always include declared relation markets (both sides)
     rel_ids = {str(r.get("a_market_id")) for r in relations} | \
               {str(r.get("b_market_id")) for r in relations}
     for m in markets:
-        if m.neg_risk:
-            priority[m.yes_token] = "arb"
-            priority[m.no_token] = "arb"
         if m.market_id in rel_ids:
-            priority[m.yes_token] = "rel"
-            priority[m.no_token] = "rel"
-        if config.LS_MIN_YES_PRICE <= m.yes_price <= config.LS_MAX_YES_PRICE:
-            speculative.setdefault(m.no_token, "longshot")
-        if config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE:
-            speculative.setdefault(m.yes_token, "converge")
+            need.setdefault(m.yes_token, "rel")
+            need.setdefault(m.no_token, "rel")
 
-    need = dict(priority)
-    remaining = max(0, config.MAX_BOOKS_PER_SCAN - len(need))
-    if remaining > 0:
-        for tid, why in speculative.items():
-            if tid in need:
-                continue
-            need[tid] = why
-            remaining -= 1
-            if remaining <= 0:
-                break
-    dropped = len(priority) + len(speculative) - len(need)
-    if dropped > 0:
-        log.info("token universe capped: keeping %d/%d books this scan "
-                 "(MAX_BOOKS_PER_SCAN=%d); raise it in config.py if you want more coverage",
-                 len(need), len(priority) + len(speculative), config.MAX_BOOKS_PER_SCAN)
+    # --- 3) ARB: whole events only, within horizon, soonest first
+    groups: Dict[str, List[Market]] = {}
+    for m in markets:
+        if m.neg_risk and m.event_id:
+            groups.setdefault(m.event_id, []).append(m)
+    ev_sorted = sorted(
+        (g for g in groups.values()
+         if len(g) >= 2
+         and days_to_resolution(g[0].end_date) <= config.ARB_MAX_DAYS),
+        key=lambda g: days_to_resolution(g[0].end_date))
+    for g in ev_sorted:
+        tokens = []
+        for m in g:
+            for tok in (m.yes_token, m.no_token):
+                if tok not in need:
+                    tokens.append(tok)
+        if len(need) + len(tokens) > budget:
+            continue          # this event doesn't fit whole; try smaller ones
+        for tok in tokens:
+            need[tok] = "arb"
+
+    # --- 4) LONGSHOT: fill the remainder, soonest first
+    ls = [(days_to_resolution(m.end_date), m.no_token, m.event_id) for m in markets
+          if config.LS_MIN_YES_PRICE <= m.yes_price <= config.LS_MAX_YES_PRICE
+          and m.liquidity >= config.LS_MIN_LIQUIDITY
+          and days_to_resolution(m.end_date) <= config.LS_MAX_DAYS]
+    ls.sort()
+    seen_events = set()
+    for _, tok, ev_id in ls:
+        if len(need) >= budget:
+            break
+        if ev_id in seen_events:      # one fade per event anyway
+            continue
+        if tok not in need:
+            need[tok] = "longshot"
+            seen_events.add(ev_id)
+
+    counts = {}
+    for why in need.values():
+        counts[why] = counts.get(why, 0) + 1
+    log.info("book budget: %d/%d used — %s", len(need), budget, counts)
     return need
 
 

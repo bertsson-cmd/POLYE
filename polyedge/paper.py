@@ -284,7 +284,11 @@ class PaperEngine:
 
     # ------------------------------------------------------------ stats
     def stats(self) -> dict:
-        closed = self.state["closed"]
+        all_closed = self.state["closed"]
+        voided = [c for c in all_closed
+                  if str(c.get("close_reason", "")).startswith("voided")]
+        closed = [c for c in all_closed
+                  if not str(c.get("close_reason", "")).startswith("voided")]
         wins = [c for c in closed if c["pl"] > 0]
         realized = sum(c["pl"] for c in closed)
         hist = self.state["history"]
@@ -311,6 +315,7 @@ class PaperEngine:
             "realized_pl": round(realized, 2),
             "open_positions": len(self.state["positions"]),
             "closed_trades": len(closed),
+            "voided_trades": len(voided),
             "win_rate_pct": round(100 * len(wins) / len(closed), 1) if closed else None,
             "max_drawdown_pct": round(max_dd * 100, 2),
             "per_strategy": per_strategy,

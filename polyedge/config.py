@@ -29,6 +29,7 @@ HTTP_RETRIES = 3
 MAX_EVENTS_PER_SCAN = _i("POLYEDGE_MAX_EVENTS", 300)
 BOOK_FETCH_WORKERS = _i("POLYEDGE_BOOK_WORKERS", 20)      # concurrent CLOB requests
 MAX_BOOKS_PER_SCAN = _i("POLYEDGE_MAX_BOOKS", 400)        # hard cap so a scan can't run forever
+CV_BOOK_RESERVE_PCT = _f("POLYEDGE_CV_BOOK_RESERVE", 0.40)  # share of book budget reserved for CONVERGE candidates
 
 # ---------------------------------------------------------------- risk
 MAX_POSITION_PCT = _f("POLYEDGE_MAX_POS_PCT", 0.05)       # max 5% of bankroll per position

@@ -128,7 +128,10 @@ const dt = ts => new Date(ts*1000).toISOString().slice(0,16).replace("T"," ");
 /* ---------- stats ---------- */
 (function(){
   const h = STATE.history, last = h.length? h[h.length-1] : {equity:STATE.cash,cash:STATE.cash};
-  const closed = STATE.closed||[];
+  const allClosed = STATE.closed||[];
+  const isVoid = c => (c.close_reason||"").startsWith("voided");
+  const closed = allClosed.filter(c=>!isVoid(c));
+  const nVoided = allClosed.length - closed.length;
   const realized = closed.reduce((a,c)=>a+c.pl,0);
   const wins = closed.filter(c=>c.pl>0).length;
   const start = STATE.starting_bankroll||1;
@@ -139,7 +142,8 @@ const dt = ts => new Date(ts*1000).toISOString().slice(0,16).replace("T"," ");
     ["CASH", money(last.cash), ""],
     ["REALIZED P/L", money(realized), realized>=0?"green":"red"],
     ["OPEN POS", (STATE.positions||[]).length, ""],
-    ["SETTLED", closed.length + (closed.length? " ("+(100*wins/closed.length).toFixed(0)+"% won)" : ""), ""],
+    ["SETTLED", closed.length + (closed.length? " ("+(100*wins/closed.length).toFixed(0)+"% won)" : "")
+      + (nVoided? `<br><small>${nVoided} voided</small>` : ""), ""],
   ];
   document.getElementById("stats").innerHTML = cells.map(c=>
     `<div class="stat"><div>${c[0]}</div><div class="v ${c[2]}">${c[1]}</div></div>`).join("");
@@ -231,7 +235,7 @@ function crtGrid(g,W,H){
     }else{
       const y=Y(t.pl||0);
       g.fillStyle=col; g.beginPath(); g.arc(x,y,r,0,7); g.fill();
-      g.strokeStyle=(t.pl>=0)?"#00ff66":"#ff3333"; g.lineWidth=2;
+      g.strokeStyle=(t.type==="VOID")?"#aaaaaa":((t.pl>=0)?"#00ff66":"#ff3333"); g.lineWidth=2;
       g.beginPath(); g.arc(x,y,r+2,0,7); g.stroke();
       pts.push({x,y,r:r+3,t});
     }
@@ -295,7 +299,7 @@ fill("open", ["Strategy","Position","Opened","Entry \u2192 Current","Cost","Unre
 fill("closed", ["Strategy","Position","Closed","Cost","Payout","P/L"],
   (STATE.closed||[]).slice().reverse().map(p=>`<tr>
     <td><span class="tag ${p.strategy}">${p.strategy}</span></td>
-    <td>${p.title}${p.close_reason==="take_profit"?" <small>[early exit ✂]</small>":""}</td>
+    <td>${p.title}${p.close_reason==="take_profit"?" <small>[early exit ✂]</small>":""}${(p.close_reason||"").startsWith("voided")?" <small>[voided — cost refunded]</small>":""}</td>
     <td>${dt(p.closed_ts)}</td>
     <td>${money(p.cost)}</td><td>${money(p.payout)}</td>
     <td class="${p.pl>=0?'green':'red'}"><b>${money(p.pl)}</b></td></tr>`));
