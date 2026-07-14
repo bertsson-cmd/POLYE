@@ -45,9 +45,11 @@ MIN_TICKET = _f("POLYEDGE_MIN_TICKET", 5.0)                # skip trades smaller
 # ---------------------------------------------------------------- strategy: ARB (Dutch book)
 ARB_MIN_EDGE = _f("POLYEDGE_ARB_MIN_EDGE", 0.01)     # require >= 1 cent per $1 payout set
 ARB_MIN_DEPTH_USD = _f("POLYEDGE_ARB_MIN_DEPTH", 25.0)  # ignore books thinner than this
+ARB_MAX_DAYS = _i("POLYEDGE_ARB_MAX_DAYS", 60)       # skip locks resolving further out than this
 
 # ---------------------------------------------------------------- strategy: REL (correlated markets)
 REL_MIN_EDGE = _f("POLYEDGE_REL_MIN_EDGE", 0.015)
+REL_MAX_DAYS = _i("POLYEDGE_REL_MAX_DAYS", 60)       # skip locks resolving further out than this
 RELATIONS_FILE = os.environ.get("POLYEDGE_RELATIONS", "relations.json")
 
 # ---------------------------------------------------------------- strategy: LONGSHOT (favorite-longshot bias)
