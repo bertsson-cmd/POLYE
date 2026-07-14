@@ -110,14 +110,25 @@ class PaperEngine:
         Guaranteed sets are floored at their locked payout value: the lock
         is worth its guaranteed payout at resolution regardless of interim
         quote noise (number of sets = min shares across legs).
+
+        As a side effect, annotates pos in place with per-leg current
+        prices and unrealized P/L so the dashboard can show live position
+        performance (entry vs current) without recomputing anything.
         """
         value = 0.0
+        current_prices = {}
         for leg in pos["legs"]:
             px = prices.get(leg["token_id"], leg["entry_price"])
+            current_prices[leg["token_id"]] = round(px, 6)
             value += leg["shares"] * px
         if pos.get("guaranteed") and pos.get("guaranteed_payout_sets"):
             sets = min(l["shares"] for l in pos["legs"])
             value = max(value, sets * pos["guaranteed_payout_sets"])
+        pos["current_prices"] = current_prices
+        pos["current_value"] = round(value, 6)
+        pos["unrealized_pl"] = round(value - pos["cost"], 6)
+        pos["unrealized_pl_pct"] = (
+            round((value - pos["cost"]) / pos["cost"] * 100, 3) if pos["cost"] > 0 else 0.0)
         return value
 
     def mark_to_market(self, prices: Dict[str, float], ts: Optional[float] = None) -> dict:

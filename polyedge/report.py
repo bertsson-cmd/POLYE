@@ -252,18 +252,45 @@ function crtGrid(g,W,H){
   c.onmouseleave=()=>tip.style.display="none";
 })();
 
+/* ---------- open-position helpers ---------- */
+function priceMove(p){
+  if(!p.legs || !p.legs.length) return "—";
+  if(p.legs.length===1){
+    const entry=p.legs[0].entry_price;
+    const cp=p.current_prices||{};
+    const cur = (cp[p.legs[0].token_id]!=null) ? cp[p.legs[0].token_id] : entry;
+    const arrow = cur>entry?"▲":(cur<entry?"▼":"→");
+    return (entry*100).toFixed(1)+"¢ "+arrow+" "+(cur*100).toFixed(1)+"¢";
+  }
+  // multi-leg lock: show combined entry cost per set vs the locked payout
+  const sets = p.legs[0].shares || 1;
+  const costPerSet = p.cost / sets;
+  const payout = p.guaranteed_payout_sets || 1;
+  return costPerSet.toFixed(3)+" \u2192 locked @ "+payout.toFixed(2);
+}
+function plCell(p){
+  if(p.unrealized_pl==null) return "<small>pending mark</small>";
+  const pct = p.unrealized_pl_pct!=null
+    ? ` (${p.unrealized_pl_pct>=0?"+":""}${p.unrealized_pl_pct.toFixed(1)}%)` : "";
+  const cls = p.unrealized_pl>=0?"green":"red";
+  const tag = p.guaranteed ? " <small>[locked]</small>" : "";
+  return `<span class="${cls}"><b>${money(p.unrealized_pl)}</b>${pct}</span>${tag}`;
+}
+
 /* ---------- tables ---------- */
 function fill(id, head, rows){
   document.getElementById(id).innerHTML =
     "<tr>"+head.map(h=>`<th>${h}</th>`).join("")+"</tr>"+
     (rows.length? rows.join("") : `<tr><td colspan="${head.length}">— none —</td></tr>`);
 }
-fill("open", ["Strategy","Position","Opened","Cost","Edge","Resolves by"],
+fill("open", ["Strategy","Position","Opened","Entry \u2192 Current","Cost","Unrealized P/L","Resolves by"],
   (STATE.positions||[]).map(p=>`<tr>
     <td><span class="tag ${p.strategy}">${p.strategy}</span></td>
     <td>${p.title}<br><small>${p.note||""}</small></td>
-    <td>${dt(p.opened)}</td><td>${money(p.cost)}</td>
-    <td>${(p.edge*100).toFixed(1)}%${p.guaranteed?" 🔒":""}</td>
+    <td>${dt(p.opened)}</td>
+    <td>${priceMove(p)}${p.guaranteed?" \ud83d\udd12":""}</td>
+    <td>${money(p.cost)}</td>
+    <td>${plCell(p)}</td>
     <td>${(p.resolve_by||"").slice(0,10)}</td></tr>`));
 fill("closed", ["Strategy","Position","Closed","Cost","Payout","P/L"],
   (STATE.closed||[]).slice().reverse().map(p=>`<tr>
