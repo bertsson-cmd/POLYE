@@ -197,6 +197,13 @@ class TestLongshot:
         books = {m.no_token: book(m.no_token, 0.96) for m in (m1, m2)}
         assert len(longshot.scan([m1, m2], books)) == 1
 
+    def test_sorted_soonest_resolving_first(self):
+        soon = market("LS", 0.04, event="E1", end="2026-07-16T00:00:00Z")
+        late = market("LL", 0.03, event="E2", end="2026-07-30T00:00:00Z")  # better edge, later
+        books = {m.no_token: book(m.no_token, 0.955) for m in (soon, late)}
+        out = longshot.scan([late, soon], books)
+        assert [o.key for o in out] == ["LS-LS", "LS-LL"]
+
     def test_negative_ev_skipped(self):
         # NO ask so high there's no edge even with haircut
         m = market("L1", 0.05)
@@ -226,6 +233,14 @@ class TestConvergence:
             assert convergence.scan([m], books) == []
         finally:
             config.CV_MIN_ANNUAL_YIELD = old
+
+    def test_sorted_by_annualized_yield_soonest_wins(self):
+        # same price/edge, different horizons -> sooner one must rank first
+        soon = market("CS", 0.96, end="2026-07-16T00:00:00Z", liq=99999)   # ~2d
+        late = market("CL", 0.96, end="2026-07-27T00:00:00Z", liq=99999)   # ~13d
+        books = {m.yes_token: book(m.yes_token, 0.96) for m in (soon, late)}
+        out = convergence.scan([late, soon], books)
+        assert [o.key for o in out] == ["CV-CS", "CV-CL"]
 
 
 # ------------------------------------------------------------------ risk
@@ -291,6 +306,37 @@ class TestRisk:
         # legs scaled equally -> still a complete set
         assert sized[0].legs[0].shares == pytest.approx(sized[0].legs[1].shares)
 
+    def test_near_term_resolution_funded_first(self):
+        """With cash for only one trade, the sooner-resolving opportunity wins
+        even when the later one has a (slightly) better edge."""
+        def cv(key, resolve_by, edge):
+            return Opportunity(strategy="CONVERGE", key=key, title=key,
+                               edge=edge, guaranteed=False, est_p_win=0.99,
+                               resolve_by=resolve_by,
+                               legs=[Leg(f"t-{key}", f"m-{key}", "YES q", "YES",
+                                         0.96, 0.0)])
+        soon = cv("CV-SOON", "2026-07-16T00:00:00Z", edge=0.030)   # 2 days out
+        late = cv("CV-LATE", "2026-07-27T00:00:00Z", edge=0.035)   # 13 days out, better edge
+        # cash allows ~1 ticket: bankroll small so Kelly budget ≈ cap ≈ cash
+        sized = size_opportunities([late, soon], bankroll=200, cash=10,
+                                   strategy_exposure={}, total_exposure=0)
+        assert [o.key for o in sized] == ["CV-SOON"]
+
+    def test_guaranteed_still_beats_near_term_speculative(self):
+        legs = [Leg("a", "ma", "YES a", "YES", 0.45, 100),
+                Leg("b", "mb", "YES b", "YES", 0.50, 100)]
+        lock = Opportunity(strategy="ARB", key="ARB-L", title="lock",
+                           edge=0.05, guaranteed=True, legs=legs,
+                           guaranteed_payout=1.0,
+                           resolve_by="2026-12-31T00:00:00Z")   # far away
+        spec = Opportunity(strategy="CONVERGE", key="CV-S", title="soon",
+                           edge=0.04, guaranteed=False, est_p_win=0.96,
+                           resolve_by="2026-07-15T00:00:00Z",   # tomorrow
+                           legs=[Leg("c", "mc", "YES q", "YES", 0.96, 0.0)])
+        sized = size_opportunities([spec, lock], bankroll=200, cash=10,
+                                   strategy_exposure={}, total_exposure=0)
+        assert sized and sized[0].key == "ARB-L"   # lock funded first regardless
+
 
 # ------------------------------------------------------------------ paper engine
 class TestPaperEngine:
@@ -353,6 +399,28 @@ class TestPaperEngine:
         assert len(e2.state["positions"]) == 1
         assert e2.state["history"] == e.state["history"]
 
+    def test_mark_to_market_annotates_positions(self, tmp_path):
+        e = self._engine(tmp_path)
+        opp = Opportunity(strategy="CONVERGE", key="CV-M", title="converge",
+                          edge=0.04, guaranteed=False, est_p_win=0.96,
+                          legs=[Leg("cv1", "m1", "YES q", "YES", 0.96, 50.0)])
+        e.open_position(opp)                              # cost 48
+        e.mark_to_market({"cv1": 0.985})
+        pos = e.state["positions"][0]
+        assert pos["current_prices"]["cv1"] == pytest.approx(0.985)
+        assert pos["current_value"] == pytest.approx(50 * 0.985)
+        assert pos["unrealized_pl"] == pytest.approx(50 * (0.985 - 0.96))
+        assert pos["unrealized_pl_pct"] == pytest.approx(
+            (50 * (0.985 - 0.96)) / 48 * 100, abs=0.01)
+
+    def test_guaranteed_position_unrealized_pl_floored_at_lock(self, tmp_path):
+        e = self._engine(tmp_path)
+        e.open_position(self._arb_opp(sets=100))          # cost 95, lock pays 100
+        e.mark_to_market({"a": 0.10, "b": 0.10})           # quotes collapse — irrelevant to the lock
+        pos = e.state["positions"][0]
+        assert pos["current_value"] == pytest.approx(100.0)
+        assert pos["unrealized_pl"] == pytest.approx(5.0)  # the locked edge, unaffected by noise
+
     def test_losing_longshot_accounting(self, tmp_path):
         e = self._engine(tmp_path)
         start = e.cash
@@ -384,7 +452,7 @@ class TestTakeProfit:
         e = self._engine(tmp_path)
         start = e.cash
         e.open_position(self._cv_opp())               # entry 0.96, cost 48
-        # upside = 0.04; 65% capture needs bid >= 0.96 + 0.026 = 0.986
+        # upside = 0.04; 40% capture needs bid >= 0.96 + 0.016 = 0.976
         books = {"cv-tok": book("cv-tok", 0.995, bid=0.99)}
         closed = e.scan_take_profits(books)
         assert len(closed) == 1
@@ -398,8 +466,8 @@ class TestTakeProfit:
     def test_no_exit_below_threshold(self, tmp_path):
         e = self._engine(tmp_path)
         e.open_position(self._cv_opp())               # entry 0.96
-        # bid 0.975 -> captured (0.015/0.04) = 37.5% < 65%
-        books = {"cv-tok": book("cv-tok", 0.995, bid=0.975)}
+        # bid 0.97 -> captured (0.01/0.04) = 25% < 40% threshold
+        books = {"cv-tok": book("cv-tok", 0.995, bid=0.97)}
         assert e.scan_take_profits(books) == []
         assert len(e.state["positions"]) == 1
 
