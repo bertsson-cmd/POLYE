@@ -180,6 +180,7 @@ Everything tunable is in `polyedge/config.py`, commented inline. The ones you'll
 | `LS_MAX_OPEN` | 3 | max concurrent longshot fades |
 | `CV_MIN_ANNUAL_YIELD` | 0.25 | convergence APY floor |
 | `ARB_MIN_EDGE` | 0.01 | ignore locks thinner than 1c/set |
+| `ARB_MAX_DAYS` / `REL_MAX_DAYS` | 60 | skip locks resolving further out — no early exit exists for locks, so far-dated ones park capital |
 
 Run the tests any time you change logic (Actions can do it too, or locally `pip install pytest && pytest tests/ -v`). The suite verifies the arbitrage payoffs across every possible outcome, the Kelly math against known values, every risk cap, and the accounting invariant *equity = cash + marked open value* through open→mark→settle cycles, including a losing longshot.
 
