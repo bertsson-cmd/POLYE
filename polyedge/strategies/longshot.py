@@ -20,21 +20,10 @@ true probability and the edge:
                             lose a per share with prob true_p
   EV per $1 cost = [(1-true_p) * 1 - a] / a
 """
-from datetime import datetime, timezone
 from typing import Dict, List
 
 from .. import config
-from ..models import Leg, Market, Opportunity, OrderBook
-
-
-def _days_to_end(end_date: str) -> float:
-    if not end_date:
-        return 1e9
-    try:
-        dt = datetime.fromisoformat(end_date.replace("Z", "+00:00"))
-        return max(0.0, (dt - datetime.now(timezone.utc)).total_seconds() / 86400)
-    except ValueError:
-        return 1e9
+from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
@@ -46,7 +35,7 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             continue
         if m.liquidity < config.LS_MIN_LIQUIDITY:
             continue
-        if _days_to_end(m.end_date) > config.LS_MAX_DAYS:
+        if days_to_resolution(m.end_date) > config.LS_MAX_DAYS:
             continue
         # one fade per event — fading 5 outcomes of the same event is one bet
         if m.event_id in seen_events:
@@ -76,6 +65,6 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             resolve_by=m.end_date,
             note=f"YES at {q:.3f}, assumed true {true_p_yes:.3f}, NO ask {a:.3f}",
         ))
-    # best edges first
-    out.sort(key=lambda o: -o.edge)
+    # soonest-resolving first (near-term capital cycling), edge as tiebreak
+    out.sort(key=lambda o: (days_to_resolution(o.resolve_by), -o.edge))
     return out

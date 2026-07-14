@@ -11,21 +11,10 @@ The risk is precisely the "actually not decided" surprise, so:
   * an annualized-yield floor so capital isn't parked for pennies,
   * treated as probabilistic (est_p_win = market price), never guaranteed.
 """
-from datetime import datetime, timezone
 from typing import Dict, List
 
 from .. import config
-from ..models import Leg, Market, Opportunity, OrderBook
-
-
-def _days_to_end(end_date: str) -> float:
-    if not end_date:
-        return 1e9
-    try:
-        dt = datetime.fromisoformat(end_date.replace("Z", "+00:00"))
-        return max(0.02, (dt - datetime.now(timezone.utc)).total_seconds() / 86400)
-    except ValueError:
-        return 1e9
+from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
@@ -35,7 +24,7 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             continue
         if m.liquidity < config.CV_MIN_LIQUIDITY:
             continue
-        days = _days_to_end(m.end_date)
+        days = max(0.02, days_to_resolution(m.end_date))
         if days > config.CV_MAX_DAYS:
             continue
 
@@ -62,5 +51,7 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             note=f"YES ask {a:.3f}, {days:.1f}d to resolution, "
                  f"{annual*100:.0f}% annualized if YES",
         ))
-    out.sort(key=lambda o: -o.edge)
+    # sort by annualized yield: same edge resolving sooner ranks higher,
+    # which is exactly the near-term, fast-cycling preference
+    out.sort(key=lambda o: -(o.edge * 365.0 / max(0.02, days_to_resolution(o.resolve_by))))
     return out
