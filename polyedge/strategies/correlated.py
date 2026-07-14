@@ -32,7 +32,7 @@ import os
 from typing import Dict, List
 
 from .. import config
-from ..models import Leg, Market, Opportunity, OrderBook
+from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 log = logging.getLogger("polyedge.rel")
 
@@ -75,6 +75,12 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook],
         a = by_id.get(str(rel["a_market_id"]))
         b = by_id.get(str(rel["b_market_id"]))
         if not a or not b:
+            continue
+
+        # horizon cap: capital is tied up until the LAST leg resolves,
+        # so the later of the two end dates is what matters
+        if max(days_to_resolution(a.end_date),
+               days_to_resolution(b.end_date)) > config.REL_MAX_DAYS:
             continue
 
         if rel["type"] == "IMPLIES":

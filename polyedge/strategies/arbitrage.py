@@ -20,7 +20,7 @@ the thinnest leg so the reported edge is actually executable, not headline.
 from typing import Dict, List, Optional
 
 from .. import config
-from ..models import Leg, Market, Opportunity, OrderBook
+from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 
 def _set_size_limit(books: List[OrderBook]) -> float:
@@ -44,6 +44,12 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
     out: List[Opportunity] = []
     ev = markets[0]
     n = len(markets)
+
+    # horizon cap: a lock ties up capital until resolution with no early
+    # exit, so far-dated locks are skipped entirely — capital velocity
+    # beats a guaranteed edge that pays out in a year
+    if days_to_resolution(ev.end_date) > config.ARB_MAX_DAYS:
+        return []
 
     # ---------------- YES-side lock ----------------
     yes_books = [books.get(m.yes_token) for m in markets]
