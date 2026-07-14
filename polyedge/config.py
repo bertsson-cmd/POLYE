@@ -36,8 +36,8 @@ MAX_TOTAL_EXPOSURE_PCT = _f("POLYEDGE_MAX_EXPO_PCT", 0.60) # max 60% of bankroll
 MAX_STRATEGY_EXPOSURE_PCT = {                              # per-strategy caps
     "ARB": 0.30,
     "REL": 0.20,
-    "LONGSHOT": 0.15,
-    "CONVERGE": 0.25,
+    "LONGSHOT": 0.05,     # reduced from 0.15 — fewer, smaller longshot fades
+    "CONVERGE": 0.35,     # raised from 0.25 — this is now the "many small wins" workhorse
 }
 KELLY_FRACTION = _f("POLYEDGE_KELLY_FRACTION", 0.25)       # quarter-Kelly (conservative)
 MIN_TICKET = _f("POLYEDGE_MIN_TICKET", 5.0)                # skip trades smaller than $5
@@ -56,7 +56,7 @@ LS_MIN_YES_PRICE = _f("POLYEDGE_LS_MIN_YES", 0.01)   # below 1c the fee/tail mat
 LS_BIAS_HAIRCUT = _f("POLYEDGE_LS_HAIRCUT", 0.60)    # assume true P(yes) = 60% of market price
 LS_MAX_DAYS = _i("POLYEDGE_LS_MAX_DAYS", 45)         # only near-dated markets
 LS_MIN_LIQUIDITY = _f("POLYEDGE_LS_MIN_LIQ", 1000.0) # market liquidity floor (USD)
-LS_MAX_OPEN = _i("POLYEDGE_LS_MAX_OPEN", 10)         # diversification: max concurrent longshot fades
+LS_MAX_OPEN = _i("POLYEDGE_LS_MAX_OPEN", 3)          # reduced from 10 — fewer tail-risk bets
 
 # ---------------------------------------------------------------- strategy: CONVERGE (near-resolution yield)
 CV_MIN_YES_PRICE = _f("POLYEDGE_CV_MIN_YES", 0.94)
@@ -64,3 +64,12 @@ CV_MAX_YES_PRICE = _f("POLYEDGE_CV_MAX_YES", 0.985)
 CV_MAX_DAYS = _i("POLYEDGE_CV_MAX_DAYS", 14)         # resolution must be near
 CV_MIN_ANNUAL_YIELD = _f("POLYEDGE_CV_MIN_APY", 0.25)  # 25%+ annualized or skip
 CV_MIN_LIQUIDITY = _f("POLYEDGE_CV_MIN_LIQ", 5000.0)
+
+# ---------------------------------------------------------------- take-profit (early exit)
+# Sell a position back into the live bid BEFORE resolution, once enough of
+# its remaining upside (the gap to $1) has been captured. Only applies to
+# single-leg, non-guaranteed strategies — selling one leg of an ARB/REL lock
+# early breaks the guarantee, so those are never touched here.
+TAKE_PROFIT_STRATEGIES = {"CONVERGE"}                      # which strategies allow early exit
+TAKE_PROFIT_UPSIDE_CAPTURE = _f("POLYEDGE_TP_CAPTURE", 0.65)  # sell at 65% of remaining upside captured
+TAKE_PROFIT_MIN_GAIN = _f("POLYEDGE_TP_MIN_GAIN", 0.005)   # ignore moves smaller than 0.5c/share (noise)

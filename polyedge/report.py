@@ -268,7 +268,8 @@ fill("open", ["Strategy","Position","Opened","Cost","Edge","Resolves by"],
 fill("closed", ["Strategy","Position","Closed","Cost","Payout","P/L"],
   (STATE.closed||[]).slice().reverse().map(p=>`<tr>
     <td><span class="tag ${p.strategy}">${p.strategy}</span></td>
-    <td>${p.title}</td><td>${dt(p.closed_ts)}</td>
+    <td>${p.title}${p.close_reason==="take_profit"?" <small>[early exit ✂]</small>":""}</td>
+    <td>${dt(p.closed_ts)}</td>
     <td>${money(p.cost)}</td><td>${money(p.payout)}</td>
     <td class="${p.pl>=0?'green':'red'}"><b>${money(p.pl)}</b></td></tr>`));
 fill("opps", ["Strategy","Opportunity","Edge","Type","Note"],

@@ -167,6 +167,80 @@ class PaperEngine:
         self.state["positions"] = still_open
         return settled
 
+    # ------------------------------------------------------------ take-profit (early exit)
+    def close_early(self, key: str, exit_prices: Dict[str, float],
+                    ts: Optional[float] = None, reason: str = "take_profit") -> Optional[dict]:
+        """Close an open position early by selling into live bid prices.
+
+        Unlike resolve(), this doesn't require the market to have actually
+        resolved — it simulates selling the position back into the order
+        book at prices given in exit_prices (token_id -> price). If any
+        leg's exit price is missing, the position is left untouched rather
+        than guessed at.
+        """
+        ts = ts or _now()
+        for i, pos in enumerate(self.state["positions"]):
+            if pos["key"] != key:
+                continue
+            payout = 0.0
+            for leg in pos["legs"]:
+                px = exit_prices.get(leg["token_id"])
+                if px is None:
+                    return None
+                payout += leg["shares"] * px
+            pl = payout - pos["cost"]
+            self.state["cash"] = round(self.state["cash"] + payout, 6)
+            closed = dict(pos)
+            closed.update({"closed_ts": ts, "payout": round(payout, 6),
+                           "pl": round(pl, 6), "close_reason": reason})
+            self.state["closed"].append(closed)
+            self.state["trades"].append({
+                "ts": ts, "type": "CLOSE", "key": pos["key"], "strategy": pos["strategy"],
+                "title": pos["title"], "amount": round(payout, 2), "pl": round(pl, 2),
+                "reason": reason,
+            })
+            del self.state["positions"][i]
+            return closed
+        return None
+
+    def scan_take_profits(self, books: Dict[str, "OrderBook"],
+                          ts: Optional[float] = None) -> List[dict]:
+        """Close eligible open positions early, per config.TAKE_PROFIT_STRATEGIES.
+
+        Rule: sell once (current_bid - entry_price) / (1 - entry_price) —
+        the fraction of remaining upside to $1 already captured — reaches
+        TAKE_PROFIT_UPSIDE_CAPTURE. Uses the live bid (what you could
+        actually sell into), never the indicative mark. Multi-leg positions
+        are always skipped: unwinding one leg of a lock breaks the guarantee.
+        """
+        ts = ts or _now()
+        closed = []
+        for pos in list(self.state["positions"]):
+            if pos["strategy"] not in config.TAKE_PROFIT_STRATEGIES:
+                continue
+            if len(pos["legs"]) != 1:
+                continue
+            leg = pos["legs"][0]
+            book = books.get(leg["token_id"])
+            if not book:
+                continue
+            bid = book.best_bid()
+            if bid is None:
+                continue
+            entry = leg["entry_price"]
+            gain = bid - entry
+            if gain < config.TAKE_PROFIT_MIN_GAIN:
+                continue
+            upside = 1.0 - entry
+            if upside <= 0:
+                continue
+            captured = gain / upside
+            if captured >= config.TAKE_PROFIT_UPSIDE_CAPTURE:
+                c = self.close_early(pos["key"], {leg["token_id"]: bid}, ts=ts)
+                if c:
+                    closed.append(c)
+        return closed
+
     # ------------------------------------------------------------ stats
     def stats(self) -> dict:
         closed = self.state["closed"]

@@ -8,8 +8,10 @@ Cycle:
   2. fetch order books (CLOB) only for tokens the strategies care about
   3. run all four strategy scans
   4. size candidates through the risk module
-  5. open paper positions, mark to market, settle resolved markets
-  6. write state and regenerate the dashboard
+  5. open paper positions
+  6. check take-profit on eligible open positions (live bids, not indicative marks)
+  7. mark to market, settle resolved markets
+  8. write state and regenerate the dashboard
 """
 import argparse
 import logging
@@ -104,8 +106,22 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
         open_longshots=engine.open_longshot_count(),
     )
 
-    # 5) trade + mark
+    # 5) trade
     opened = [p for p in (engine.open_position(o) for o in sized) if p]
+
+    # 6) take-profit — sell eligible open positions into LIVE bids, before
+    # marking/settling, so the equity curve reflects the actual exit
+    tp_tokens = {leg["token_id"]
+                for pos in engine.state["positions"]
+                if pos["strategy"] in config.TAKE_PROFIT_STRATEGIES
+                for leg in pos["legs"]}
+    tp_books = client.fetch_books(tp_tokens) if tp_tokens else {}
+    tp_closed = engine.scan_take_profits(tp_books)
+    if tp_closed:
+        log.info("take-profit closed %d position(s) early: %s",
+                 len(tp_closed), [c["key"] for c in tp_closed])
+
+    # 7) mark + settle
     marks = {}
     for m in markets:
         marks[m.yes_token] = m.yes_price
@@ -132,12 +148,12 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
                         pass
     settled = engine.resolve(outcomes) if outcomes else []
 
-    # 6) persist + report
+    # 8) persist + report
     engine.save()
     write_dashboard(engine.state, opportunities=[o.to_dict() for o in opps])
     return {"markets": len(markets), "opportunities": len(opps),
-            "opened": len(opened), "settled": len(settled),
-            "stats": engine.stats()}
+            "opened": len(opened), "take_profit_closed": len(tp_closed),
+            "settled": len(settled), "stats": engine.stats()}
 
 
 def selftest() -> int:
