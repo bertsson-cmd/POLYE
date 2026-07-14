@@ -27,21 +27,41 @@ log = logging.getLogger("polyedge")
 
 
 def _interesting_tokens(markets: List[Market], relations: List[dict]) -> Dict[str, str]:
-    """token_id -> why we need its book. Keeps CLOB calls bounded."""
-    need: Dict[str, str] = {}
+    """token_id -> why we need its book. Priority order: ARB, REL (guaranteed
+    strategies) before LONGSHOT/CONVERGE (speculative), since if we have to
+    truncate to MAX_BOOKS_PER_SCAN, the guaranteed-lock candidates matter most.
+    """
+    priority: Dict[str, str] = {}   # ARB + REL
+    speculative: Dict[str, str] = {}  # LONGSHOT + CONVERGE
     rel_ids = {str(r.get("a_market_id")) for r in relations} | \
               {str(r.get("b_market_id")) for r in relations}
     for m in markets:
         if m.neg_risk:
-            need[m.yes_token] = "arb"
-            need[m.no_token] = "arb"
+            priority[m.yes_token] = "arb"
+            priority[m.no_token] = "arb"
         if m.market_id in rel_ids:
-            need[m.yes_token] = "rel"
-            need[m.no_token] = "rel"
+            priority[m.yes_token] = "rel"
+            priority[m.no_token] = "rel"
         if config.LS_MIN_YES_PRICE <= m.yes_price <= config.LS_MAX_YES_PRICE:
-            need[m.no_token] = "longshot"
+            speculative.setdefault(m.no_token, "longshot")
         if config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE:
-            need[m.yes_token] = "converge"
+            speculative.setdefault(m.yes_token, "converge")
+
+    need = dict(priority)
+    remaining = max(0, config.MAX_BOOKS_PER_SCAN - len(need))
+    if remaining > 0:
+        for tid, why in speculative.items():
+            if tid in need:
+                continue
+            need[tid] = why
+            remaining -= 1
+            if remaining <= 0:
+                break
+    dropped = len(priority) + len(speculative) - len(need)
+    if dropped > 0:
+        log.info("token universe capped: keeping %d/%d books this scan "
+                 "(MAX_BOOKS_PER_SCAN=%d); raise it in config.py if you want more coverage",
+                 len(need), len(priority) + len(speculative), config.MAX_BOOKS_PER_SCAN)
     return need
 
 
@@ -60,11 +80,7 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
     # 2) books
     relations = correlated.load_relations()
     tokens = _interesting_tokens(markets, relations)
-    books: Dict[str, OrderBook] = {}
-    for tid in tokens:
-        b = client.fetch_book(tid)
-        if b:
-            books[tid] = b
+    books: Dict[str, OrderBook] = client.fetch_books(tokens.keys())
     log.info("fetched %d/%d order books", len(books), len(tokens))
 
     # 3) strategies

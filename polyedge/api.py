@@ -143,3 +143,33 @@ class PolymarketClient:
             return OrderBook(token_id=token_id, asks=asks, bids=bids)
         except (TypeError, ValueError, KeyError):
             return None
+
+    def fetch_books(self, token_ids) -> dict:
+        """Fetch many order books concurrently. Logs progress; never blocks
+        for more than HTTP_TIMEOUT * HTTP_RETRIES per token because each
+        worker has its own connection.
+        """
+        import concurrent.futures as cf
+
+        token_ids = list(dict.fromkeys(token_ids))  # dedupe, keep order
+        books: dict = {}
+        if not token_ids:
+            return books
+        n = len(token_ids)
+        done = 0
+        log.info("fetching %d order books (up to %d workers)...",
+                 n, config.BOOK_FETCH_WORKERS)
+        with cf.ThreadPoolExecutor(max_workers=config.BOOK_FETCH_WORKERS) as ex:
+            futures = {ex.submit(self.fetch_book, tid): tid for tid in token_ids}
+            for fut in cf.as_completed(futures):
+                tid = futures[fut]
+                try:
+                    b = fut.result()
+                except Exception:  # noqa: BLE001 - a single token must never kill the scan
+                    b = None
+                if b:
+                    books[tid] = b
+                done += 1
+                if done % 100 == 0 or done == n:
+                    log.info("  ...%d/%d books fetched (%d ok)", done, n, len(books))
+        return books
