@@ -543,3 +543,63 @@ class TestTakeProfit:
         assert pt["equity"] == pytest.approx(pt["cash"] + pt["open_value"])
         s = e.stats()
         assert s["closed_trades"] == 1 and s["win_rate_pct"] == 100.0
+
+
+# ------------------------------------------------------------------ void / cancel
+class TestVoidPosition:
+    def _engine(self, tmp_path):
+        return PaperEngine(state_dir=str(tmp_path))
+
+    def test_void_refunds_exact_cost_no_pl(self, tmp_path):
+        e = self._engine(tmp_path)
+        start = e.cash
+        legs = [Leg("a", "ma", "YES a", "YES", 0.30, 100),
+                Leg("b", "mb", "YES b", "YES", 0.65, 100)]
+        opp = Opportunity(strategy="ARB", key="ARB-FAR", title="far lock",
+                          edge=0.05, guaranteed=True, legs=legs,
+                          guaranteed_payout=1.0, resolve_by="2027-12-31T00:00:00Z")
+        e.open_position(opp)                       # cost 95
+        assert e.cash == pytest.approx(start - 95.0)
+        v = e.void_position("ARB-FAR")
+        assert v is not None
+        assert v["pl"] == 0.0
+        assert v["payout"] == pytest.approx(95.0)
+        assert e.cash == pytest.approx(start)       # fully restored
+        assert e.state["positions"] == []
+        assert e.state["closed"][0]["close_reason"] == "voided_manual"
+
+    def test_void_unknown_key_is_safe(self, tmp_path):
+        e = self._engine(tmp_path)
+        assert e.void_position("NOPE") is None
+
+    def test_void_does_not_touch_other_positions(self, tmp_path):
+        e = self._engine(tmp_path)
+        legs1 = [Leg("a", "ma", "YES a", "YES", 0.30, 50),
+                Leg("b", "mb", "YES b", "YES", 0.65, 50)]
+        legs2 = [Leg("c", "mc", "YES c", "YES", 0.30, 50),
+                Leg("d", "md", "YES d", "YES", 0.65, 50)]
+        e.open_position(Opportunity("ARB", "ARB-1", "t1", 0.05, True, legs1,
+                                    guaranteed_payout=1.0))
+        e.open_position(Opportunity("ARB", "ARB-2", "t2", 0.05, True, legs2,
+                                    guaranteed_payout=1.0))
+        e.void_position("ARB-1")
+        assert len(e.state["positions"]) == 1
+        assert e.state["positions"][0]["key"] == "ARB-2"
+
+    def test_cancel_script_finds_only_stale_locks(self, tmp_path, monkeypatch):
+        import cancel_stale_locks as csl
+        e = PaperEngine(state_dir=str(tmp_path))
+        far_legs = [Leg("a", "ma", "YES a", "YES", 0.30, 100),
+                   Leg("b", "mb", "YES b", "YES", 0.65, 100)]
+        near_legs = [Leg("c", "mc", "YES c", "YES", 0.30, 100),
+                    Leg("d", "md", "YES d", "YES", 0.65, 100)]
+        e.open_position(Opportunity("ARB", "ARB-FAR", "far", 0.05, True, far_legs,
+                                    guaranteed_payout=1.0, resolve_by="2027-12-31T00:00:00Z"))
+        e.open_position(Opportunity("ARB", "ARB-NEAR", "near", 0.05, True, near_legs,
+                                    guaranteed_payout=1.0, resolve_by="2026-07-20T00:00:00Z"))
+        cv_opp = Opportunity("CONVERGE", "CV-1", "cv", 0.04, False, est_p_win=0.96,
+                             legs=[Leg("e", "me", "YES e", "YES", 0.96, 10)],
+                             resolve_by="2027-12-31T00:00:00Z")  # far but not a lock strategy
+        e.open_position(cv_opp)
+        stale = csl.find_stale(e)
+        assert [p["key"] for p, _ in stale] == ["ARB-FAR"]   # near lock + far CONVERGE untouched
