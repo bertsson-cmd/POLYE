@@ -1,7 +1,85 @@
 {
- "cash": 650.0,
+ "cash": 900.25,
  "starting_bankroll": 1000.0,
  "positions": [
+  {
+   "key": "ARB-NO-691053",
+   "strategy": "ARB",
+   "title": "NO-lock: France vs. Spain - Second Half Result",
+   "opened": 1784041954.1749117,
+   "cost": 49.75,
+   "edge": 0.005025,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 2.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-14T19:00:00Z",
+   "note": "3 outcomes, NO asks sum 1.9900 vs payout 2, 25 sets executable",
+   "legs": [
+    {
+     "token_id": "36781337604776002800528122965724989293507494506154171092629578984560638897044",
+     "market_id": "2880004",
+     "label": "NO France to win the second half?",
+     "side": "NO",
+     "entry_price": 0.64,
+     "shares": 25.0
+    },
+    {
+     "token_id": "102002577485219520635208718061083699932091385339050184170730194858266060224987",
+     "market_id": "2880007",
+     "label": "NO France vs. Spain: Second half draw?",
+     "side": "NO",
+     "entry_price": 0.63,
+     "shares": 25.0
+    },
+    {
+     "token_id": "107903346258390901254064273036231013671587904169854203098023368899043211259508",
+     "market_id": "2880009",
+     "label": "NO Spain to win the second half?",
+     "side": "NO",
+     "entry_price": 0.72,
+     "shares": 25.0
+    }
+   ],
+   "current_prices": {
+    "36781337604776002800528122965724989293507494506154171092629578984560638897044": 0.625,
+    "102002577485219520635208718061083699932091385339050184170730194858266060224987": 0.625,
+    "107903346258390901254064273036231013671587904169854203098023368899043211259508": 0.72
+   },
+   "current_value": 50.0,
+   "unrealized_pl": 0.25,
+   "unrealized_pl_pct": 0.503
+  },
+  {
+   "key": "LS-2901148",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Toronto be 35\u00b0C on July 14?",
+   "opened": 1784041954.1750138,
+   "cost": 50.0,
+   "edge": 0.020798,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9718,
+   "resolve_by": "2026-07-14T12:00:00Z",
+   "note": "YES at 0.047, assumed true 0.028, NO ask 0.952",
+   "legs": [
+    {
+     "token_id": "6334122571945051413736587293491121358463893634907487519800656825954326302895",
+     "market_id": "2901148",
+     "label": "NO Will the highest temperature in Toronto be 35\u00b0C on July 14?",
+     "side": "NO",
+     "entry_price": 0.952,
+     "shares": 52.521008
+    }
+   ],
+   "current_prices": {
+    "6334122571945051413736587293491121358463893634907487519800656825954326302895": 0.8775
+   },
+   "current_value": 46.087185,
+   "unrealized_pl": -3.912815,
+   "unrealized_pl_pct": -7.826
+  }
+ ],
+ "closed": [
   {
    "key": "ARB-YES-674379",
    "strategy": "ARB",
@@ -101,7 +179,11 @@
    },
    "current_value": 43.56,
    "unrealized_pl": 8.84268,
-   "unrealized_pl_pct": 25.471
+   "unrealized_pl_pct": 25.471,
+   "closed_ts": 1784045994.5556695,
+   "payout": 34.71732,
+   "pl": 0.0,
+   "close_reason": "voided_horizon_cap"
   },
   {
    "key": "ARB-YES-31552",
@@ -454,54 +536,11 @@
    },
    "current_value": 51.229508,
    "unrealized_pl": 1.229508,
-   "unrealized_pl_pct": 2.459
-  },
-  {
-   "key": "ARB-NO-691053",
-   "strategy": "ARB",
-   "title": "NO-lock: France vs. Spain - Second Half Result",
-   "opened": 1784041954.1749117,
-   "cost": 49.75,
-   "edge": 0.005025,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 2.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-14T19:00:00Z",
-   "note": "3 outcomes, NO asks sum 1.9900 vs payout 2, 25 sets executable",
-   "legs": [
-    {
-     "token_id": "36781337604776002800528122965724989293507494506154171092629578984560638897044",
-     "market_id": "2880004",
-     "label": "NO France to win the second half?",
-     "side": "NO",
-     "entry_price": 0.64,
-     "shares": 25.0
-    },
-    {
-     "token_id": "102002577485219520635208718061083699932091385339050184170730194858266060224987",
-     "market_id": "2880007",
-     "label": "NO France vs. Spain: Second half draw?",
-     "side": "NO",
-     "entry_price": 0.63,
-     "shares": 25.0
-    },
-    {
-     "token_id": "107903346258390901254064273036231013671587904169854203098023368899043211259508",
-     "market_id": "2880009",
-     "label": "NO Spain to win the second half?",
-     "side": "NO",
-     "entry_price": 0.72,
-     "shares": 25.0
-    }
-   ],
-   "current_prices": {
-    "36781337604776002800528122965724989293507494506154171092629578984560638897044": 0.625,
-    "102002577485219520635208718061083699932091385339050184170730194858266060224987": 0.625,
-    "107903346258390901254064273036231013671587904169854203098023368899043211259508": 0.72
-   },
-   "current_value": 50.0,
-   "unrealized_pl": 0.25,
-   "unrealized_pl_pct": 0.503
+   "unrealized_pl_pct": 2.459,
+   "closed_ts": 1784045994.5556808,
+   "payout": 50.0,
+   "pl": 0.0,
+   "close_reason": "voided_horizon_cap"
   },
   {
    "key": "ARB-NO-481717",
@@ -566,7 +605,11 @@
    },
    "current_value": 50.175616,
    "unrealized_pl": 0.175616,
-   "unrealized_pl_pct": 0.351
+   "unrealized_pl_pct": 0.351,
+   "closed_ts": 1784045994.5556872,
+   "payout": 50.0,
+   "pl": 0.0,
+   "close_reason": "voided_horizon_cap"
   },
   {
    "key": "ARB-NO-659518",
@@ -766,7 +809,11 @@
    },
    "current_value": 50.068515,
    "unrealized_pl": 0.068515,
-   "unrealized_pl_pct": 0.137
+   "unrealized_pl_pct": 0.137,
+   "closed_ts": 1784045994.5556912,
+   "payout": 50.0,
+   "pl": 0.0,
+   "close_reason": "voided_horizon_cap"
   },
   {
    "key": "ARB-NO-139236",
@@ -984,7 +1031,11 @@
    },
    "current_value": 50.050056,
    "unrealized_pl": 0.050056,
-   "unrealized_pl_pct": 0.1
+   "unrealized_pl_pct": 0.1,
+   "closed_ts": 1784045994.5556948,
+   "payout": 50.0,
+   "pl": 0.0,
+   "close_reason": "voided_horizon_cap"
   },
   {
    "key": "ARB-NO-478277",
@@ -1274,39 +1325,13 @@
    },
    "current_value": 15.54661,
    "unrealized_pl": 0.01393,
-   "unrealized_pl_pct": 0.09
-  },
-  {
-   "key": "LS-2901148",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Toronto be 35\u00b0C on July 14?",
-   "opened": 1784041954.1750138,
-   "cost": 50.0,
-   "edge": 0.020798,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9718,
-   "resolve_by": "2026-07-14T12:00:00Z",
-   "note": "YES at 0.047, assumed true 0.028, NO ask 0.952",
-   "legs": [
-    {
-     "token_id": "6334122571945051413736587293491121358463893634907487519800656825954326302895",
-     "market_id": "2901148",
-     "label": "NO Will the highest temperature in Toronto be 35\u00b0C on July 14?",
-     "side": "NO",
-     "entry_price": 0.952,
-     "shares": 52.521008
-    }
-   ],
-   "current_prices": {
-    "6334122571945051413736587293491121358463893634907487519800656825954326302895": 0.8775
-   },
-   "current_value": 46.087185,
-   "unrealized_pl": -3.912815,
-   "unrealized_pl_pct": -7.826
+   "unrealized_pl_pct": 0.09,
+   "closed_ts": 1784045994.555698,
+   "payout": 15.53268,
+   "pl": 0.0,
+   "close_reason": "voided_horizon_cap"
   }
  ],
- "closed": [],
  "history": [
   {
    "ts": 1784041954.1759014,
@@ -1421,6 +1446,66 @@
    "title": "Fade: Will the highest temperature in Toronto be 35\u00b0C on July 14?",
    "amount": 50.0,
    "pl": null
+  },
+  {
+   "ts": 1784045994.5556695,
+   "type": "VOID",
+   "key": "ARB-YES-674379",
+   "strategy": "ARB",
+   "title": "YES-lock: Next UK Defence Secretary in 2026?",
+   "amount": 34.72,
+   "pl": 0.0,
+   "reason": "voided_horizon_cap"
+  },
+  {
+   "ts": 1784045994.5556808,
+   "type": "VOID",
+   "key": "ARB-YES-31552",
+   "strategy": "ARB",
+   "title": "YES-lock: Presidential Election Winner 2028",
+   "amount": 50.0,
+   "pl": 0.0,
+   "reason": "voided_horizon_cap"
+  },
+  {
+   "ts": 1784045994.5556872,
+   "type": "VOID",
+   "key": "ARB-NO-481717",
+   "strategy": "ARB",
+   "title": "NO-lock: Fed Decision in September?",
+   "amount": 50.0,
+   "pl": 0.0,
+   "reason": "voided_horizon_cap"
+  },
+  {
+   "ts": 1784045994.5556912,
+   "type": "VOID",
+   "key": "ARB-NO-659518",
+   "strategy": "ARB",
+   "title": "NO-lock: EPL: 2027 Champion",
+   "amount": 50.0,
+   "pl": 0.0,
+   "reason": "voided_horizon_cap"
+  },
+  {
+   "ts": 1784045994.5556948,
+   "type": "VOID",
+   "key": "ARB-NO-139236",
+   "strategy": "ARB",
+   "title": "NO-lock: 2026 Men\u2019s US Open Winner (Tennis)",
+   "amount": 50.0,
+   "pl": 0.0,
+   "reason": "voided_horizon_cap"
+  },
+  {
+   "ts": 1784045994.555698,
+   "type": "VOID",
+   "key": "ARB-NO-478277",
+   "strategy": "ARB",
+   "title": "NO-lock: NBA: 2027 Champion",
+   "amount": 15.53,
+   "pl": 0.0,
+   "reason": "voided_horizon_cap"
   }
  ]
 }
