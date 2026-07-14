@@ -45,8 +45,12 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     }
     ls_slots = max(0, config.LS_MAX_OPEN - open_longshots)
 
-    # guaranteed locks first — free money before speculative money
-    for opp in sorted(opps, key=lambda o: (not o.guaranteed, -o.edge)):
+    # funding priority: guaranteed locks first (free money before speculative),
+    # then soonest-resolving (near-term capital cycling), then best edge
+    from .models import days_to_resolution
+    for opp in sorted(opps, key=lambda o: (not o.guaranteed,
+                                           days_to_resolution(o.resolve_by),
+                                           -o.edge)):
         if opp.key in open_keys:
             continue                      # already holding this
         if opp.strategy == "LONGSHOT" and ls_slots <= 0:

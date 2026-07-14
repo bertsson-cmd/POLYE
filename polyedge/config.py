@@ -54,7 +54,7 @@ RELATIONS_FILE = os.environ.get("POLYEDGE_RELATIONS", "relations.json")
 LS_MAX_YES_PRICE = _f("POLYEDGE_LS_MAX_YES", 0.05)   # only fade YES priced <= 5c
 LS_MIN_YES_PRICE = _f("POLYEDGE_LS_MIN_YES", 0.01)   # below 1c the fee/tail math is bad
 LS_BIAS_HAIRCUT = _f("POLYEDGE_LS_HAIRCUT", 0.60)    # assume true P(yes) = 60% of market price
-LS_MAX_DAYS = _i("POLYEDGE_LS_MAX_DAYS", 45)         # only near-dated markets
+LS_MAX_DAYS = _i("POLYEDGE_LS_MAX_DAYS", 21)         # near-dated only (was 45) — capital shouldn't sit for months
 LS_MIN_LIQUIDITY = _f("POLYEDGE_LS_MIN_LIQ", 1000.0) # market liquidity floor (USD)
 LS_MAX_OPEN = _i("POLYEDGE_LS_MAX_OPEN", 3)          # reduced from 10 — fewer tail-risk bets
 
@@ -71,5 +71,5 @@ CV_MIN_LIQUIDITY = _f("POLYEDGE_CV_MIN_LIQ", 5000.0)
 # single-leg, non-guaranteed strategies — selling one leg of an ARB/REL lock
 # early breaks the guarantee, so those are never touched here.
 TAKE_PROFIT_STRATEGIES = {"CONVERGE"}                      # which strategies allow early exit
-TAKE_PROFIT_UPSIDE_CAPTURE = _f("POLYEDGE_TP_CAPTURE", 0.65)  # sell at 65% of remaining upside captured
+TAKE_PROFIT_UPSIDE_CAPTURE = _f("POLYEDGE_TP_CAPTURE", 0.40)  # sell at 40% of remaining upside captured (faster cycling)
 TAKE_PROFIT_MIN_GAIN = _f("POLYEDGE_TP_MIN_GAIN", 0.005)   # ignore moves smaller than 0.5c/share (noise)
