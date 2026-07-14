@@ -1,0 +1,23 @@
+name: Cancel stale locks (manual maintenance)
+on:
+  workflow_dispatch:      # manual "Run workflow" button only — never scheduled
+permissions:
+  contents: write
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Void ARB/REL locks beyond the horizon cap
+        run: python cancel_stale_locks.py
+      - name: Commit state + dashboard
+        run: |
+          git config user.name "polyedge-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state docs
+          git diff --cached --quiet || git commit -m "maintenance: void stale locks $(date -u +%FT%TZ)"
+          git push
