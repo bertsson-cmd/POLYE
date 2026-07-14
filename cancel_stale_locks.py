@@ -64,6 +64,9 @@ def main():
     for pos, _ in stale:
         engine.void_position(pos["key"], reason="voided_horizon_cap")
 
+    # record a fresh equity snapshot so the dashboard header shows the
+    # refunded cash immediately (not the last pre-void mark)
+    engine.mark_to_market({})
     engine.save()
     write_dashboard(engine.state, opportunities=[])
     print(f"\nVoided {len(stale)} position(s). ${total_freed:.2f} freed and "
