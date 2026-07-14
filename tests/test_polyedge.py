@@ -366,3 +366,88 @@ class TestPaperEngine:
         assert e.cash == pytest.approx(start - 19.0)
         s = e.stats()
         assert s["closed_trades"] == 1 and s["win_rate_pct"] == 0.0
+
+
+# ------------------------------------------------------------------ take-profit
+class TestTakeProfit:
+    def _engine(self, tmp_path):
+        return PaperEngine(state_dir=str(tmp_path))
+
+    def _cv_opp(self, key="CV-T", entry=0.96, shares=50.0):
+        return Opportunity(strategy="CONVERGE", key=key, title="converge",
+                           edge=(1 - entry) / entry, guaranteed=False,
+                           est_p_win=entry,
+                           legs=[Leg("cv-tok", "cv-m", "YES q", "YES",
+                                     entry, shares)])
+
+    def test_exit_when_capture_threshold_reached(self, tmp_path):
+        e = self._engine(tmp_path)
+        start = e.cash
+        e.open_position(self._cv_opp())               # entry 0.96, cost 48
+        # upside = 0.04; 65% capture needs bid >= 0.96 + 0.026 = 0.986
+        books = {"cv-tok": book("cv-tok", 0.995, bid=0.99)}
+        closed = e.scan_take_profits(books)
+        assert len(closed) == 1
+        c = closed[0]
+        assert c["close_reason"] == "take_profit"
+        assert c["payout"] == pytest.approx(50 * 0.99)   # sold at BID, not ask/mark
+        assert c["pl"] == pytest.approx(50 * (0.99 - 0.96))
+        assert e.cash == pytest.approx(start - 48.0 + 49.5)
+        assert e.state["positions"] == []
+
+    def test_no_exit_below_threshold(self, tmp_path):
+        e = self._engine(tmp_path)
+        e.open_position(self._cv_opp())               # entry 0.96
+        # bid 0.975 -> captured (0.015/0.04) = 37.5% < 65%
+        books = {"cv-tok": book("cv-tok", 0.995, bid=0.975)}
+        assert e.scan_take_profits(books) == []
+        assert len(e.state["positions"]) == 1
+
+    def test_missing_book_or_bid_is_safe(self, tmp_path):
+        e = self._engine(tmp_path)
+        e.open_position(self._cv_opp())
+        assert e.scan_take_profits({}) == []           # no book at all
+        empty = OrderBook("cv-tok", asks=[BookLevel(0.99, 10)], bids=[])
+        assert e.scan_take_profits({"cv-tok": empty}) == []   # no bid side
+        assert len(e.state["positions"]) == 1
+
+    def test_locks_never_exited_early(self, tmp_path):
+        e = self._engine(tmp_path)
+        legs = [Leg("a", "ma", "YES a", "YES", 0.30, 50),
+                Leg("b", "mb", "YES b", "YES", 0.65, 50)]
+        arb = Opportunity(strategy="ARB", key="ARB-T", title="lock",
+                          edge=0.05, guaranteed=True, legs=legs,
+                          guaranteed_payout=1.0)
+        e.open_position(arb)
+        # even absurdly favorable bids must not trigger an early unwind
+        books = {"a": book("a", 0.999, bid=0.99), "b": book("b", 0.999, bid=0.99)}
+        assert e.scan_take_profits(books) == []
+        assert len(e.state["positions"]) == 1
+
+    def test_strategy_filter_respected(self, tmp_path):
+        e = self._engine(tmp_path)
+        ls = Opportunity(strategy="LONGSHOT", key="LS-T", title="fade",
+                         edge=0.02, guaranteed=False, est_p_win=0.97,
+                         legs=[Leg("ls-tok", "ls-m", "NO q", "NO", 0.95, 20)])
+        e.open_position(ls)
+        # LONGSHOT not in TAKE_PROFIT_STRATEGIES by default -> untouched
+        books = {"ls-tok": book("ls-tok", 0.999, bid=0.995)}
+        assert e.scan_take_profits(books) == []
+        # but if the user opts LONGSHOT in via config, it works
+        old = config.TAKE_PROFIT_STRATEGIES
+        config.TAKE_PROFIT_STRATEGIES = {"CONVERGE", "LONGSHOT"}
+        try:
+            closed = e.scan_take_profits(books)
+            assert len(closed) == 1 and closed[0]["pl"] > 0
+        finally:
+            config.TAKE_PROFIT_STRATEGIES = old
+
+    def test_equity_invariant_through_take_profit(self, tmp_path):
+        e = self._engine(tmp_path)
+        e.open_position(self._cv_opp())
+        books = {"cv-tok": book("cv-tok", 0.995, bid=0.99)}
+        e.scan_take_profits(books)
+        pt = e.mark_to_market({})
+        assert pt["equity"] == pytest.approx(pt["cash"] + pt["open_value"])
+        s = e.stats()
+        assert s["closed_trades"] == 1 and s["win_rate_pct"] == 100.0
