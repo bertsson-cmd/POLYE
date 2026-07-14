@@ -1,0 +1,28 @@
+name: PolyEdge 95 v2 scan
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:          # manual run button
+permissions:
+  contents: write
+concurrency:
+  group: polyedge-scan
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Run scan cycle
+        run: python -m polyedge.main
+      - name: Commit state + dashboard
+        run: |
+          git config user.name "polyedge-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state docs
+          git diff --cached --quiet || git commit -m "scan: $(date -u +%FT%TZ)"
+          git push
