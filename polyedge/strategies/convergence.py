@@ -40,16 +40,23 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         if annual < config.CV_MIN_ANNUAL_YIELD:
             continue
 
+        # the strategy's edge assumption, made explicit for the sizing:
+        # true P(yes) is assumed to sit CV_TRUE_P_UPLIFT of the way from
+        # the market price to 1.0 (near-certain markets are underpriced).
+        # If est_p_win were just the market price, Kelly would see zero
+        # edge and never fund a single convergence trade.
+        p_assumed = m.yes_price + (1.0 - m.yes_price) * config.CV_TRUE_P_UPLIFT
+
         out.append(Opportunity(
             strategy="CONVERGE", key=f"CV-{m.market_id}",
             title=f"Converge: {m.question[:60]}",
             edge=yield_pct, guaranteed=False,
-            est_p_win=m.yes_price,
+            est_p_win=p_assumed,
             legs=[Leg(m.yes_token, m.market_id, f"YES {m.question}", "YES",
                       a, 0.0)],
             resolve_by=m.end_date,
             note=f"YES ask {a:.3f}, {days:.1f}d to resolution, "
-                 f"{annual*100:.0f}% annualized if YES",
+                 f"{annual*100:.0f}% annualized if YES, assumed true P {p_assumed:.3f}",
         ))
     # sort by annualized yield: same edge resolving sooner ranks higher,
     # which is exactly the near-term, fast-cycling preference
