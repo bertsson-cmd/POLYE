@@ -4,7 +4,12 @@ The bias, documented across betting markets for decades: low-probability
 outcomes trade ABOVE their true probability, because buyers of lottery
 tickets outnumber sellers.
 
-Trade: buy NO on markets whose YES trades at 1–5 cents.
+Trade: buy NO on markets whose YES trades at 3–5 cents. The band
+deliberately EXCLUDES the extreme tail (below 3c): recent large-sample
+Polymarket research is contested exactly there — one major study found
+the cheapest tokens actually land more often than priced, the opposite
+of this strategy's assumption. We only fade where the overpricing
+evidence is consistent.
 
 This is NOT arbitrage. Each trade usually wins a little; occasionally a
 longshot lands and the position loses most of its cost. The strategy only
