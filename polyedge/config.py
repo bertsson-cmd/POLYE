@@ -26,13 +26,13 @@ GAMMA_BASE = "https://gamma-api.polymarket.com"
 CLOB_BASE = "https://clob.polymarket.com"
 HTTP_TIMEOUT = 15          # seconds per request
 HTTP_RETRIES = 3
-MAX_EVENTS_PER_SCAN = _i("POLYEDGE_MAX_EVENTS", 300)
+MAX_EVENTS_PER_SCAN = _i("POLYEDGE_MAX_EVENTS", 600)
 BOOK_FETCH_WORKERS = _i("POLYEDGE_BOOK_WORKERS", 20)      # concurrent CLOB requests
-MAX_BOOKS_PER_SCAN = _i("POLYEDGE_MAX_BOOKS", 400)        # hard cap so a scan can't run forever
+MAX_BOOKS_PER_SCAN = _i("POLYEDGE_MAX_BOOKS", 800)        # hard cap so a scan can't run forever
 CV_BOOK_RESERVE_PCT = _f("POLYEDGE_CV_BOOK_RESERVE", 0.40)  # share of book budget reserved for CONVERGE candidates
 
 # ---------------------------------------------------------------- risk
-MAX_POSITION_PCT = _f("POLYEDGE_MAX_POS_PCT", 0.05)       # max 5% of bankroll per position
+MAX_POSITION_PCT = _f("POLYEDGE_MAX_POS_PCT", 0.025)      # max 2.5% of bankroll per position (smaller tickets, more of them)
 MAX_TOTAL_EXPOSURE_PCT = _f("POLYEDGE_MAX_EXPO_PCT", 0.60) # max 60% of bankroll deployed
 MAX_STRATEGY_EXPOSURE_PCT = {                              # per-strategy caps
     "ARB": 0.30,
@@ -74,5 +74,5 @@ CV_MIN_LIQUIDITY = _f("POLYEDGE_CV_MIN_LIQ", 5000.0)
 # single-leg, non-guaranteed strategies — selling one leg of an ARB/REL lock
 # early breaks the guarantee, so those are never touched here.
 TAKE_PROFIT_STRATEGIES = {"CONVERGE"}                      # which strategies allow early exit
-TAKE_PROFIT_UPSIDE_CAPTURE = _f("POLYEDGE_TP_CAPTURE", 0.40)  # sell at 40% of remaining upside captured (faster cycling)
+TAKE_PROFIT_UPSIDE_CAPTURE = _f("POLYEDGE_TP_CAPTURE", 0.25)  # sell at 25% of remaining upside captured (max cycling speed)
 TAKE_PROFIT_MIN_GAIN = _f("POLYEDGE_TP_MIN_GAIN", 0.005)   # ignore moves smaller than 0.5c/share (noise)
