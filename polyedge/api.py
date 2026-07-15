@@ -128,7 +128,59 @@ class PolymarketClient:
                 self.skipped_markets += 1
         return out
 
-    # ------------------------------------------------------------ books
+    # ------------------------------------------------------------ resolution
+    @staticmethod
+    def parse_resolution(raw: dict) -> Optional[str]:
+        """Return the winning side ('YES'/'NO') for a raw Gamma market dict
+        if it has genuinely resolved, else None. Shared by the active-events
+        pass and the direct by-id lookup below, so both agree on what
+        counts as 'resolved'.
+        """
+        if not raw.get("closed"):
+            return None
+        if raw.get("umaResolutionStatus") not in ("resolved", "settled"):
+            return None
+        prices = raw.get("outcomePrices")
+        if isinstance(prices, str):
+            try:
+                prices = json.loads(prices)
+            except ValueError:
+                return None
+        if isinstance(prices, list) and len(prices) == 2:
+            try:
+                return "YES" if float(prices[0]) > 0.5 else "NO"
+            except (TypeError, ValueError):
+                return None
+        return None
+
+    def fetch_market(self, market_id: str) -> Optional[dict]:
+        """Fetch a single market by id directly.
+
+        Unlike fetch_events(), this works even after a market has closed
+        and dropped out of the `active:true,closed:false` feed — which
+        every market eventually does the moment it resolves. This is how
+        we learn a held position actually settled, instead of it sitting
+        'open' forever waiting for a feed that will never show it again.
+        """
+        data = self._get(f"{config.GAMMA_BASE}/markets/{market_id}")
+        if not data:
+            return None
+        if isinstance(data, list):
+            data = data[0] if data else None
+        return data
+
+    def fetch_resolutions(self, market_ids) -> dict:
+        """market_id -> 'YES'/'NO' for every id in market_ids that has
+        actually resolved. Unresolved or unfetchable ids are simply
+        absent from the result (never guessed at)."""
+        out = {}
+        for mid in market_ids:
+            raw = self.fetch_market(mid)
+            if raw:
+                r = self.parse_resolution(raw)
+                if r:
+                    out[str(mid)] = r
+        return out
     def fetch_book(self, token_id: str) -> Optional[OrderBook]:
         data = self._get(f"{config.CLOB_BASE}/book", params={"token_id": token_id})
         if not data:

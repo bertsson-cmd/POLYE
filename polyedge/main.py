@@ -168,24 +168,29 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
         marks[m.no_token] = 1.0 - m.yes_price
     engine.mark_to_market(marks)
 
-    # settle anything Gamma reports as resolved
+    # settle: first take anything visible in this scan's active-events feed
+    # (cheap, no extra requests), THEN directly check any open position's
+    # market that's still unresolved — because Gamma's active/open feed
+    # stops returning a market the moment it closes, so a resolved trade
+    # would otherwise sit "open" forever waiting for a feed that will
+    # never show it again.
     outcomes = {}
     for ev in events:
         for raw in ev.get("markets", []) or []:
-            if raw.get("closed") and raw.get("umaResolutionStatus") in ("resolved", "settled"):
-                prices = raw.get("outcomePrices")
-                if isinstance(prices, str):
-                    import json as _j
-                    try:
-                        prices = _j.loads(prices)
-                    except ValueError:
-                        prices = None
-                if isinstance(prices, list) and len(prices) == 2:
-                    try:
-                        yes_won = float(prices[0]) > 0.5
-                        outcomes[str(raw.get("id"))] = "YES" if yes_won else "NO"
-                    except (TypeError, ValueError):
-                        pass
+            r = client.parse_resolution(raw)
+            if r:
+                outcomes[str(raw.get("id"))] = r
+
+    open_market_ids = {leg["market_id"] for pos in engine.state["positions"]
+                       for leg in pos["legs"]} - set(outcomes)
+    if open_market_ids:
+        straggler_outcomes = client.fetch_resolutions(open_market_ids)
+        if straggler_outcomes:
+            log.info("resolved %d position(s) that had dropped out of the "
+                     "active feed: %s", len(straggler_outcomes),
+                     list(straggler_outcomes.keys()))
+        outcomes.update(straggler_outcomes)
+
     settled = engine.resolve(outcomes) if outcomes else []
 
     # 8) persist + report
