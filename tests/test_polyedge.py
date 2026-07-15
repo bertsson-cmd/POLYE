@@ -342,8 +342,8 @@ class TestRisk:
                                          0.96, 0.0)])
         soon = cv("CV-SOON", "2026-07-16T00:00:00Z", edge=0.030)   # 2 days out
         late = cv("CV-LATE", "2026-07-27T00:00:00Z", edge=0.035)   # 13 days out, better edge
-        # cash allows ~1 ticket: bankroll small so Kelly budget ≈ cap ≈ cash
-        sized = size_opportunities([late, soon], bankroll=200, cash=10,
+        # cash allows exactly ONE ticket (= MIN_TICKET), so priority decides
+        sized = size_opportunities([late, soon], bankroll=200, cash=5,
                                    strategy_exposure={}, total_exposure=0)
         assert [o.key for o in sized] == ["CV-SOON"]
 
@@ -560,7 +560,7 @@ class TestTakeProfit:
         e = self._engine(tmp_path)
         start = e.cash
         e.open_position(self._cv_opp())               # entry 0.96, cost 48
-        # upside = 0.04; 40% capture needs bid >= 0.96 + 0.016 = 0.976
+        # upside = 0.04; 25% capture needs bid >= 0.96 + 0.010 = 0.970
         books = {"cv-tok": book("cv-tok", 0.995, bid=0.99)}
         closed = e.scan_take_profits(books)
         assert len(closed) == 1
@@ -574,8 +574,8 @@ class TestTakeProfit:
     def test_no_exit_below_threshold(self, tmp_path):
         e = self._engine(tmp_path)
         e.open_position(self._cv_opp())               # entry 0.96
-        # bid 0.97 -> captured (0.01/0.04) = 25% < 40% threshold
-        books = {"cv-tok": book("cv-tok", 0.995, bid=0.97)}
+        # bid 0.966 -> captured (0.006/0.04) = 15% < 25% threshold
+        books = {"cv-tok": book("cv-tok", 0.995, bid=0.966)}
         assert e.scan_take_profits(books) == []
         assert len(e.state["positions"]) == 1
 
