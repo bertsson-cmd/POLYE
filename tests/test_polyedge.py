@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pytest
 
 from polyedge import config
+from polyedge.api import PolymarketClient
 from polyedge.models import BookLevel, Leg, Market, Opportunity, OrderBook
 from polyedge.paper import PaperEngine
 from polyedge.risk import kelly_fraction, size_opportunities
@@ -362,7 +363,90 @@ class TestRisk:
         assert sized and sized[0].key == "ARB-L"   # lock funded first regardless
 
 
-# ------------------------------------------------------------------ paper engine
+# ------------------------------------------------------------------ resolution / straggler recovery
+class TestResolutionDetection:
+    def test_parse_resolution_yes(self):
+        raw = {"closed": True, "umaResolutionStatus": "resolved",
+              "outcomePrices": ["1", "0"]}
+        assert PolymarketClient.parse_resolution(raw) == "YES"
+
+    def test_parse_resolution_no(self):
+        raw = {"closed": True, "umaResolutionStatus": "resolved",
+              "outcomePrices": ["0", "1"]}
+        assert PolymarketClient.parse_resolution(raw) == "NO"
+
+    def test_parse_resolution_string_encoded_prices(self):
+        raw = {"closed": True, "umaResolutionStatus": "settled",
+              "outcomePrices": '["1", "0"]'}
+        assert PolymarketClient.parse_resolution(raw) == "YES"
+
+    def test_parse_resolution_not_closed_is_none(self):
+        raw = {"closed": False, "umaResolutionStatus": "resolved",
+              "outcomePrices": ["1", "0"]}
+        assert PolymarketClient.parse_resolution(raw) is None
+
+    def test_parse_resolution_pending_status_is_none(self):
+        # closed but still in the UMA dispute window — not settled yet
+        raw = {"closed": True, "umaResolutionStatus": "proposed",
+              "outcomePrices": ["1", "0"]}
+        assert PolymarketClient.parse_resolution(raw) is None
+
+    def test_parse_resolution_malformed_is_safe(self):
+        assert PolymarketClient.parse_resolution({}) is None
+        assert PolymarketClient.parse_resolution(
+            {"closed": True, "umaResolutionStatus": "resolved",
+             "outcomePrices": "not json"}) is None
+
+    def test_fetch_resolutions_only_includes_actually_resolved(self, monkeypatch):
+        client = PolymarketClient()
+        fake_markets = {
+            "M1": {"closed": True, "umaResolutionStatus": "resolved", "outcomePrices": ["1", "0"]},
+            "M2": {"closed": False},                      # still open
+            "M3": None,                                    # fetch failed
+        }
+        client.fetch_market = lambda mid: fake_markets.get(mid)
+        out = client.fetch_resolutions(["M1", "M2", "M3"])
+        assert out == {"M1": "YES"}
+
+    def test_straggler_recovery_end_to_end(self, tmp_path):
+        """The core bug: a market that closed drops out of the active-events
+        feed entirely, so the settlement loop that only scans `events`
+        would NEVER see it. Direct by-id lookup for open positions must
+        catch it regardless.
+        """
+        from polyedge.paper import PaperEngine
+
+        engine = PaperEngine(state_dir=str(tmp_path))
+        opp = Opportunity(strategy="LONGSHOT", key="LS-STRAY", title="fade",
+                          edge=0.02, guaranteed=False, est_p_win=0.97,
+                          legs=[Leg("tok", "M-CLOSED", "NO q", "NO", 0.95, 20.0)])
+        engine.open_position(opp)
+
+        # simulate: this scan's active-events feed is EMPTY for M-CLOSED
+        # (exactly what happens once Polymarket marks it closed)
+        events = []
+        outcomes = {}
+        for ev in events:
+            for raw in ev.get("markets", []) or []:
+                r = PolymarketClient.parse_resolution(raw)
+                if r:
+                    outcomes[str(raw.get("id"))] = r
+        assert outcomes == {}          # confirms the feed alone misses it
+
+        # the straggler check must still find it via direct lookup
+        client = PolymarketClient()
+        client.fetch_market = lambda mid: (
+            {"closed": True, "umaResolutionStatus": "resolved",
+             "outcomePrices": ["0", "1"]} if mid == "M-CLOSED" else None)
+        open_market_ids = {leg["market_id"] for pos in engine.state["positions"]
+                           for leg in pos["legs"]} - set(outcomes)
+        assert open_market_ids == {"M-CLOSED"}
+        outcomes.update(client.fetch_resolutions(open_market_ids))
+        assert outcomes == {"M-CLOSED": "NO"}
+
+        settled = engine.resolve(outcomes)
+        assert len(settled) == 1 and settled[0]["payout"] == pytest.approx(20.0)
+        assert engine.state["positions"] == []
 class TestPaperEngine:
     def _engine(self, tmp_path):
         return PaperEngine(state_dir=str(tmp_path))
