@@ -55,7 +55,13 @@ RELATIONS_FILE = os.environ.get("POLYEDGE_RELATIONS", "relations.json")
 
 # ---------------------------------------------------------------- strategy: LONGSHOT (favorite-longshot bias)
 LS_MAX_YES_PRICE = _f("POLYEDGE_LS_MAX_YES", 0.05)   # only fade YES priced <= 5c
-LS_MIN_YES_PRICE = _f("POLYEDGE_LS_MIN_YES", 0.01)   # below 1c the fee/tail math is bad
+# Floor raised from 1c to 3c: recent large-sample Polymarket research is
+# CONTESTED specifically at the extreme tail — one 124M-trade study found
+# extreme longshots (cheapest tokens) actually perform WELL, i.e. the
+# opposite of the bias this strategy fades. The 3-5c band is where the
+# classic overpricing evidence is more consistent. Do not lower this
+# without evidence from your own settled-trade record.
+LS_MIN_YES_PRICE = _f("POLYEDGE_LS_MIN_YES", 0.03)
 LS_BIAS_HAIRCUT = _f("POLYEDGE_LS_HAIRCUT", 0.60)    # assume true P(yes) = 60% of market price
 LS_MAX_DAYS = _i("POLYEDGE_LS_MAX_DAYS", 21)         # near-dated only (was 45) — capital shouldn't sit for months
 LS_MIN_LIQUIDITY = _f("POLYEDGE_LS_MIN_LIQ", 1000.0) # market liquidity floor (USD)
@@ -69,12 +75,14 @@ CV_MIN_ANNUAL_YIELD = _f("POLYEDGE_CV_MIN_APY", 0.25)  # 25%+ annualized or skip
 CV_MIN_LIQUIDITY = _f("POLYEDGE_CV_MIN_LIQ", 5000.0)
 # The strategy's core assumption, made explicit: a heavily-favored market
 # near resolution is UNDERpriced — the true P(yes) sits between the market
-# price and 1.0. CV_TRUE_P_UPLIFT is how far toward 1.0 we assume it sits
-# (0.5 = halfway: market at 0.96 -> assumed true 0.98). Without this the
-# Kelly sizing sees zero edge (p_win == price paid) and allocates nothing.
-# Like the longshot haircut, it's an assumption to CALIBRATE against your
-# own settled-trade record, not a measured fact.
-CV_TRUE_P_UPLIFT = _f("POLYEDGE_CV_UPLIFT", 0.50)
+# price and 1.0. CV_TRUE_P_UPLIFT is how far toward 1.0 we assume it sits.
+# Lowered from 0.50 to 0.20: measured realized returns on high-probability
+# Polymarket tokens in large-sample research are small (fractions of a
+# percent to ~1%), not the multi-percent edge a 0.5 uplift implies. A
+# market at 0.96 is now assumed true 0.968, not 0.98 — Kelly sizes
+# accordingly smaller. Raise only if your own settled CONVERGE record
+# shows wins landing more often than the assumption predicts.
+CV_TRUE_P_UPLIFT = _f("POLYEDGE_CV_UPLIFT", 0.20)
 
 # ---------------------------------------------------------------- take-profit (early exit)
 # Sell a position back into the live bid BEFORE resolution, once enough of
