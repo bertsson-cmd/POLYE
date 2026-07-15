@@ -1,7 +1,7 @@
 name: PolyEdge 95 v2 scan
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 minutes
+    - cron: "*/15 * * * *"   # every 15 minutes (GitHub best-effort)
   workflow_dispatch:          # manual run button
 permissions:
   contents: write
