@@ -1,5 +1,5 @@
 {
- "cash": 827.045064,
+ "cash": 474.779041,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -137,7 +137,7 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.3155,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.3145,
     "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.69,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 32.02566,
-   "unrealized_pl": 0.69828,
-   "unrealized_pl_pct": 2.229
+   "current_value": 31.99392,
+   "unrealized_pl": 0.66654,
+   "unrealized_pl_pct": 2.128
   },
   {
    "key": "ARB-YES-694621",
@@ -225,6 +225,441 @@
    "current_value": 50.418281,
    "unrealized_pl": -0.026219,
    "unrealized_pl_pct": -0.052
+  },
+  {
+   "key": "CV-2682695",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will CopperTech Metals not IPO before September 2026?",
+   "opened": 1784108961.7585337,
+   "cost": 25.285,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.97775,
+   "resolve_by": "2026-07-01T21:00:00Z",
+   "note": "YES ask 0.960, 0.0d to resolution, 76042% annualized if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "78056906519382645951160045104801160026090224859172922611572819506600560932137",
+     "market_id": "2682695",
+     "label": "YES Will CopperTech Metals not IPO before September 2026?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 26.338542
+    }
+   ],
+   "current_prices": {
+    "78056906519382645951160045104801160026090224859172922611572819506600560932137": 0.9555
+   },
+   "current_value": 25.166477,
+   "unrealized_pl": -0.118523,
+   "unrealized_pl_pct": -0.469
+  },
+  {
+   "key": "CV-2063128",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Abiy Ahmed be the next Prime Minister of Ethiopia?",
+   "opened": 1784108961.7585485,
+   "cost": 25.285,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.981,
+   "resolve_by": "2026-06-01T00:00:00Z",
+   "note": "YES ask 0.970, 0.0d to resolution, 56443% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "94134253597648057047877517813082069606962886792971715730299111686696678669356",
+     "market_id": "2063128",
+     "label": "YES Will Abiy Ahmed be the next Prime Minister of Ethiopia?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 26.06701
+    }
+   ],
+   "current_prices": {
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.962
+   },
+   "current_value": 25.076464,
+   "unrealized_pl": -0.208536,
+   "unrealized_pl_pct": -0.825
+  },
+  {
+   "key": "CV-2835637",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping on July 14?",
+   "opened": 1784108961.758567,
+   "cost": 17.239773,
+   "edge": 0.011122,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.98975,
+   "resolve_by": "2026-07-14T23:59:00Z",
+   "note": "YES ask 0.989, 0.0d to resolution, 20298% annualized if YES, assumed true P 0.990",
+   "legs": [
+    {
+     "token_id": "26482058328624988816605832538007434626528350956525596891811645387679454421465",
+     "market_id": "2835637",
+     "label": "YES Iran successfully targets shipping on July 14?",
+     "side": "YES",
+     "entry_price": 0.989,
+     "shares": 17.431519
+    }
+   ],
+   "current_prices": {
+    "26482058328624988816605832538007434626528350956525596891811645387679454421465": 0.9795
+   },
+   "current_value": 17.074173,
+   "unrealized_pl": -0.1656,
+   "unrealized_pl_pct": -0.961
+  },
+  {
+   "key": "CV-2765261",
+   "strategy": "CONVERGE",
+   "title": "Converge: FC Malisheva vs. KF Vllaznia Shkod\u00ebr: O/U 0.5",
+   "opened": 1784108961.7585795,
+   "cost": 25.285,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9724999999999999,
+   "resolve_by": "2026-07-15T14:30:00Z",
+   "note": "YES ask 0.950, 0.2d to resolution, 9857% annualized if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "28238798438501824812401862462456229391290071526323285660661329766142103766505",
+     "market_id": "2765261",
+     "label": "YES FC Malisheva vs. KF Vllaznia Shkod\u00ebr: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 26.615789
+    }
+   ],
+   "current_prices": {
+    "28238798438501824812401862462456229391290071526323285660661329766142103766505": 0.945
+   },
+   "current_value": 25.151921,
+   "unrealized_pl": -0.133079,
+   "unrealized_pl_pct": -0.526
+  },
+  {
+   "key": "CV-2846398",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Solana be between $70 and $80 on July 15?",
+   "opened": 1784108961.7585967,
+   "cost": 25.285,
+   "edge": 0.027749,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.982,
+   "resolve_by": "2026-07-15T16:00:00Z",
+   "note": "YES ask 0.973, 0.3d to resolution, 3935% annualized if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "57075906341704468178334218693125857366790066128051461629817005429892021641391",
+     "market_id": "2846398",
+     "label": "YES Will the price of Solana be between $70 and $80 on July 15?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 25.986639
+    }
+   ],
+   "current_prices": {
+    "57075906341704468178334218693125857366790066128051461629817005429892021641391": 0.964
+   },
+   "current_value": 25.05112,
+   "unrealized_pl": -0.23388,
+   "unrealized_pl_pct": -0.925
+  },
+  {
+   "key": "CV-2759895",
+   "strategy": "CONVERGE",
+   "title": "Converge: Universitatea Craiova CS vs. FK ML Viciebsk: O/U 0.5",
+   "opened": 1784108961.7586064,
+   "cost": 25.285,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9824999999999999,
+   "resolve_by": "2026-07-15T17:30:00Z",
+   "note": "YES ask 0.970, 0.3d to resolution, 3529% annualized if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "23707397328633920686324832796850608773038219182510185370985037170105997562568",
+     "market_id": "2759895",
+     "label": "YES Universitatea Craiova CS vs. FK ML Viciebsk: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 26.06701
+    }
+   ],
+   "current_prices": {
+    "23707397328633920686324832796850608773038219182510185370985037170105997562568": 0.965
+   },
+   "current_value": 25.154665,
+   "unrealized_pl": -0.130335,
+   "unrealized_pl_pct": -0.515
+  },
+  {
+   "key": "CV-1972630",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the Bank of Korea increase the base rate after the July",
+   "opened": 1784108961.7586153,
+   "cost": 25.285,
+   "edge": 0.038422,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9802500000000001,
+   "resolve_by": "2026-07-16T00:00:00Z",
+   "note": "YES ask 0.963, 0.6d to resolution, 2374% annualized if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "25452206339039869023169047643661777868538885627866936808157168621878349312822",
+     "market_id": "1972630",
+     "label": "YES Will the Bank of Korea increase the base rate after the July Meeting?",
+     "side": "YES",
+     "entry_price": 0.963,
+     "shares": 26.25649
+    }
+   ],
+   "current_prices": {
+    "25452206339039869023169047643661777868538885627866936808157168621878349312822": 0.9605
+   },
+   "current_value": 25.219359,
+   "unrealized_pl": -0.065641,
+   "unrealized_pl_pct": -0.26
+  },
+  {
+   "key": "CV-2860514",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 16?",
+   "opened": 1784108961.7586243,
+   "cost": 25.285,
+   "edge": 0.029866,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9835,
+   "resolve_by": "2026-07-16T16:00:00Z",
+   "note": "YES ask 0.971, 1.3d to resolution, 867% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "53982468433358530947818613301375247001469755470705225172123648019408026435046",
+     "market_id": "2860514",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 16?",
+     "side": "YES",
+     "entry_price": 0.971,
+     "shares": 26.040165
+    }
+   ],
+   "current_prices": {
+    "53982468433358530947818613301375247001469755470705225172123648019408026435046": 0.967
+   },
+   "current_value": 25.18084,
+   "unrealized_pl": -0.10416,
+   "unrealized_pl_pct": -0.412
+  },
+  {
+   "key": "CV-2860439",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 16?",
+   "opened": 1784108961.758633,
+   "cost": 25.285,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9775,
+   "resolve_by": "2026-07-16T16:00:00Z",
+   "note": "YES ask 0.960, 1.3d to resolution, 1210% annualized if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "67677112530208218814055232519597224461606814226002890925634956912530942495495",
+     "market_id": "2860439",
+     "label": "YES Will the price of Ethereum be above $1,800 on July 16?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 26.338542
+    }
+   ],
+   "current_prices": {
+    "67677112530208218814055232519597224461606814226002890925634956912530942495495": 0.955
+   },
+   "current_value": 25.153308,
+   "unrealized_pl": -0.131692,
+   "unrealized_pl_pct": -0.521
+  },
+  {
+   "key": "CV-2906873",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israeli parliament dissolved by July 17?",
+   "opened": 1784108961.7586422,
+   "cost": 25.285,
+   "edge": 0.031992,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.97725,
+   "resolve_by": "2026-07-17T00:00:00Z",
+   "note": "YES ask 0.969, 1.6d to resolution, 734% annualized if YES, assumed true P 0.977",
+   "legs": [
+    {
+     "token_id": "68497554544553281514680408600031498730076363486882796507897923826254974955108",
+     "market_id": "2906873",
+     "label": "YES Israeli parliament dissolved by July 17?",
+     "side": "YES",
+     "entry_price": 0.969,
+     "shares": 26.093911
+    }
+   ],
+   "current_prices": {
+    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.9545
+   },
+   "current_value": 24.906638,
+   "unrealized_pl": -0.378362,
+   "unrealized_pl_pct": -1.496
+  },
+  {
+   "key": "CV-2871314",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 17?",
+   "opened": 1784108961.758651,
+   "cost": 25.285,
+   "edge": 0.014199,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9924999999999999,
+   "resolve_by": "2026-07-17T16:00:00Z",
+   "note": "YES ask 0.986, 2.3d to resolution, 230% annualized if YES, assumed true P 0.992",
+   "legs": [
+    {
+     "token_id": "88792925544230469296921742698280696553562699996053357755770797197709496871422",
+     "market_id": "2871314",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 17?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 25.644016
+    }
+   ],
+   "current_prices": {
+    "88792925544230469296921742698280696553562699996053357755770797197709496871422": 0.985
+   },
+   "current_value": 25.259356,
+   "unrealized_pl": -0.025644,
+   "unrealized_pl_pct": -0.101
+  },
+  {
+   "key": "CV-2000247",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Coldplay perform at the 2026 FIFA World Cup Final halft",
+   "opened": 1784108961.75866,
+   "cost": 25.285,
+   "edge": 0.027749,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.979,
+   "resolve_by": "2026-07-19T00:00:00Z",
+   "note": "YES ask 0.973, 3.6d to resolution, 282% annualized if YES, assumed true P 0.979",
+   "legs": [
+    {
+     "token_id": "88967909667090379020314383307815183430271390905114573686838398881873325413438",
+     "market_id": "2000247",
+     "label": "YES Will Coldplay perform at the 2026 FIFA World Cup Final halftime show?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 25.986639
+    }
+   ],
+   "current_prices": {
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.958
+   },
+   "current_value": 24.8952,
+   "unrealized_pl": -0.3898,
+   "unrealized_pl_pct": -1.542
+  },
+  {
+   "key": "CV-2470849",
+   "strategy": "CONVERGE",
+   "title": "Converge: President Trump to Attend World Cup Final?",
+   "opened": 1784108961.7586699,
+   "cost": 25.285,
+   "edge": 0.053741,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9735,
+   "resolve_by": "2026-07-20T03:59:00Z",
+   "note": "YES ask 0.949, 4.8d to resolution, 412% annualized if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "86680247297404227698835375487849042651771548951718649081182622616196290047519",
+     "market_id": "2470849",
+     "label": "YES President Trump to Attend World Cup Final?",
+     "side": "YES",
+     "entry_price": 0.949,
+     "shares": 26.643836
+    }
+   ],
+   "current_prices": {
+    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.947
+   },
+   "current_value": 25.231713,
+   "unrealized_pl": -0.053287,
+   "unrealized_pl_pct": -0.211
+  },
+  {
+   "key": "CV-2906900",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,500 on July 20?",
+   "opened": 1784108961.75868,
+   "cost": 25.285,
+   "edge": 0.010101,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.99175,
+   "resolve_by": "2026-07-20T16:00:00Z",
+   "note": "YES ask 0.990, 5.3d to resolution, 70% annualized if YES, assumed true P 0.992",
+   "legs": [
+    {
+     "token_id": "111978535704830551165679669976673002553088017202806667756618402505630710146359",
+     "market_id": "2906900",
+     "label": "YES Will the price of Ethereum be above $1,500 on July 20?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 25.540404
+    }
+   ],
+   "current_prices": {
+    "111978535704830551165679669976673002553088017202806667756618402505630710146359": 0.9835
+   },
+   "current_value": 25.118987,
+   "unrealized_pl": -0.166013,
+   "unrealized_pl_pct": -0.657
+  },
+  {
+   "key": "CV-2906903",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,600 on July 20?",
+   "opened": 1784108961.7586944,
+   "cost": 6.32125,
+   "edge": 0.010101,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9902500000000001,
+   "resolve_by": "2026-07-20T16:00:00Z",
+   "note": "YES ask 0.990, 5.3d to resolution, 70% annualized if YES, assumed true P 0.990",
+   "legs": [
+    {
+     "token_id": "97229519691870246510640612600972874709894121349597661490361051865134089632004",
+     "market_id": "2906903",
+     "label": "YES Will the price of Ethereum be above $1,600 on July 20?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 6.385101
+    }
+   ],
+   "current_prices": {
+    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.9805
+   },
+   "current_value": 6.260592,
+   "unrealized_pl": -0.060658,
+   "unrealized_pl_pct": -0.96
   }
  ],
  "closed": [
@@ -1789,6 +2224,14 @@
    "equity": 1011.4015,
    "realized_total": 9.6594,
    "open_positions": 4
+  },
+  {
+   "ts": 1784108961.9497492,
+   "cash": 474.779,
+   "open_value": 534.2255,
+   "equity": 1009.0046,
+   "realized_total": 9.6594,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -2013,6 +2456,141 @@
    "strategy": "LONGSHOT",
    "title": "Fade: Fed rate cut by September 2026 meeting?",
    "amount": 50.44,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7585337,
+   "type": "OPEN",
+   "key": "CV-2682695",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will CopperTech Metals not IPO before September 2026?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7585485,
+   "type": "OPEN",
+   "key": "CV-2063128",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Abiy Ahmed be the next Prime Minister of Ethiopia?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.758567,
+   "type": "OPEN",
+   "key": "CV-2835637",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping on July 14?",
+   "amount": 17.24,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7585795,
+   "type": "OPEN",
+   "key": "CV-2765261",
+   "strategy": "CONVERGE",
+   "title": "Converge: FC Malisheva vs. KF Vllaznia Shkod\u00ebr: O/U 0.5",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7585967,
+   "type": "OPEN",
+   "key": "CV-2846398",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Solana be between $70 and $80 on July 15?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7586064,
+   "type": "OPEN",
+   "key": "CV-2759895",
+   "strategy": "CONVERGE",
+   "title": "Converge: Universitatea Craiova CS vs. FK ML Viciebsk: O/U 0.5",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7586153,
+   "type": "OPEN",
+   "key": "CV-1972630",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the Bank of Korea increase the base rate after the July",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7586243,
+   "type": "OPEN",
+   "key": "CV-2860514",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 16?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.758633,
+   "type": "OPEN",
+   "key": "CV-2860439",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 16?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7586422,
+   "type": "OPEN",
+   "key": "CV-2906873",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israeli parliament dissolved by July 17?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.758651,
+   "type": "OPEN",
+   "key": "CV-2871314",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 17?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.75866,
+   "type": "OPEN",
+   "key": "CV-2000247",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Coldplay perform at the 2026 FIFA World Cup Final halft",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7586699,
+   "type": "OPEN",
+   "key": "CV-2470849",
+   "strategy": "CONVERGE",
+   "title": "Converge: President Trump to Attend World Cup Final?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.75868,
+   "type": "OPEN",
+   "key": "CV-2906900",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,500 on July 20?",
+   "amount": 25.29,
+   "pl": null
+  },
+  {
+   "ts": 1784108961.7586944,
+   "type": "OPEN",
+   "key": "CV-2906903",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,600 on July 20?",
+   "amount": 6.32,
    "pl": null
   }
  ]
