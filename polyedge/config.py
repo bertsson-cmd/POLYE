@@ -67,6 +67,14 @@ CV_MAX_YES_PRICE = _f("POLYEDGE_CV_MAX_YES", 0.985)
 CV_MAX_DAYS = _i("POLYEDGE_CV_MAX_DAYS", 14)         # resolution must be near
 CV_MIN_ANNUAL_YIELD = _f("POLYEDGE_CV_MIN_APY", 0.25)  # 25%+ annualized or skip
 CV_MIN_LIQUIDITY = _f("POLYEDGE_CV_MIN_LIQ", 5000.0)
+# The strategy's core assumption, made explicit: a heavily-favored market
+# near resolution is UNDERpriced — the true P(yes) sits between the market
+# price and 1.0. CV_TRUE_P_UPLIFT is how far toward 1.0 we assume it sits
+# (0.5 = halfway: market at 0.96 -> assumed true 0.98). Without this the
+# Kelly sizing sees zero edge (p_win == price paid) and allocates nothing.
+# Like the longshot haircut, it's an assumption to CALIBRATE against your
+# own settled-trade record, not a measured fact.
+CV_TRUE_P_UPLIFT = _f("POLYEDGE_CV_UPLIFT", 0.50)
 
 # ---------------------------------------------------------------- take-profit (early exit)
 # Sell a position back into the live bid BEFORE resolution, once enough of

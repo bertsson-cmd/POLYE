@@ -23,6 +23,13 @@ log = logging.getLogger("polyedge.api")
 class PolymarketClient:
     def __init__(self, session: Optional[requests.Session] = None):
         self.http = session or requests.Session()
+        # pool sized to the concurrent worker count, otherwise urllib3
+        # discards and reopens connections constantly under load
+        adapter = requests.adapters.HTTPAdapter(
+            pool_connections=config.BOOK_FETCH_WORKERS,
+            pool_maxsize=config.BOOK_FETCH_WORKERS)
+        self.http.mount("https://", adapter)
+        self.http.mount("http://", adapter)
         self.http.headers.update({"User-Agent": "PolyEdge95/2.0 (paper-trading scanner)"})
         self.skipped_markets = 0
 

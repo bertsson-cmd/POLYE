@@ -131,7 +131,10 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
     opps += correlated.scan(markets, books, relations)
     opps += longshot.scan(markets, books)
     opps += convergence.scan(markets, books)
-    log.info("found %d candidate opportunities", len(opps))
+    comp: Dict[str, int] = {}
+    for o in opps:
+        comp[o.strategy] = comp.get(o.strategy, 0) + 1
+    log.info("found %d candidate opportunities %s", len(opps), comp)
 
     # 4) sizing
     from .risk import size_opportunities

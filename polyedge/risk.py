@@ -11,10 +11,13 @@ Kelly for a binary bet paying b-to-1 net odds with win prob p:
 We use KELLY_FRACTION * f*  (default quarter-Kelly) because the win
 probability is itself an estimate — full Kelly on a wrong p is ruin.
 """
+import logging
 from typing import Dict, List, Optional
 
 from . import config
 from .models import Opportunity
+
+log = logging.getLogger("polyedge.risk")
 
 
 def kelly_fraction(p_win: float, net_odds: float) -> float:
@@ -37,6 +40,8 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     """
     open_keys = open_keys or set()
     sized: List[Opportunity] = []
+    reasons = {"sized": 0, "already_held": 0, "ls_slots_full": 0,
+               "caps_exhausted": 0, "kelly_zero": 0, "below_min_ticket": 0}
     cash_left = cash
     expo_left = max(0.0, bankroll * config.MAX_TOTAL_EXPOSURE_PCT - total_exposure)
     strat_left = {
@@ -52,8 +57,10 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
                                            days_to_resolution(o.resolve_by),
                                            -o.edge)):
         if opp.key in open_keys:
+            reasons["already_held"] += 1
             continue                      # already holding this
         if opp.strategy == "LONGSHOT" and ls_slots <= 0:
+            reasons["ls_slots_full"] += 1
             continue
 
         cap = min(
@@ -63,12 +70,14 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
             cash_left,
         )
         if cap < config.MIN_TICKET:
+            reasons["caps_exhausted"] += 1
             continue
 
         if opp.guaranteed:
             # legs already sized to executable depth; scale down to cap
             cost_full = opp.total_cost()
             if cost_full <= 0:
+                reasons["below_min_ticket"] += 1
                 continue
             scale = min(1.0, cap / cost_full)
             for leg in opp.legs:
@@ -79,12 +88,17 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
             a = leg.entry_price
             net_odds = (1.0 - a) / a          # win (1-a) risking a, per share
             f = kelly_fraction(opp.est_p_win or 0.0, net_odds)
+            if f <= 0:
+                reasons["kelly_zero"] += 1
+                continue
             budget = min(cap, bankroll * f * config.KELLY_FRACTION)
             if budget < config.MIN_TICKET:
+                reasons["below_min_ticket"] += 1
                 continue
             leg.shares = budget / a
 
         if budget < config.MIN_TICKET:
+            reasons["below_min_ticket"] += 1
             continue
 
         cash_left -= budget
@@ -92,5 +106,8 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
         strat_left[opp.strategy] = strat_left.get(opp.strategy, 0.0) - budget
         if opp.strategy == "LONGSHOT":
             ls_slots -= 1
+        reasons["sized"] += 1
         sized.append(opp)
+    if opps:
+        log.info("sizing: %s", {k: v for k, v in reasons.items() if v})
     return sized
