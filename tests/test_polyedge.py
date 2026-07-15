@@ -245,6 +245,35 @@ class TestConvergence:
         o = convergence.scan([m], books)[0]
         assert o.edge == pytest.approx((1 - 0.96) / 0.96)
         assert not o.guaranteed
+        # the uplift assumption must be applied: true P assumed halfway
+        # between market price and 1.0 (0.96 -> 0.98 at default 0.5)
+        assert o.est_p_win == pytest.approx(
+            0.96 + (1 - 0.96) * config.CV_TRUE_P_UPLIFT)
+        assert o.est_p_win > 0.96          # strictly above the price paid
+
+    def test_converge_opportunity_actually_gets_funded(self):
+        """Regression for the 'opened: 0' bug — a CONVERGE candidate whose
+        assumed win probability equals its entry price has zero Kelly edge
+        and silently never funds. With the uplift, it must fund."""
+        m = market("C1", 0.96, end="2026-07-18T00:00:00Z", liq=99999)
+        books = {m.yes_token: book(m.yes_token, 0.96)}
+        o = convergence.scan([m], books)[0]
+        sized = size_opportunities([o], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0)
+        assert len(sized) == 1
+        assert sized[0].total_cost() >= config.MIN_TICKET
+
+    def test_no_uplift_means_no_funding_old_bug(self):
+        """Documents the failure mode the uplift exists to fix: with
+        est_p_win == entry price, Kelly is 0 and nothing funds."""
+        from polyedge.models import Leg, Opportunity
+        o = Opportunity("CONVERGE", "CV-FLAT", "flat", 0.04, False,
+                        est_p_win=0.96,       # equal to entry -> zero edge
+                        resolve_by="2026-07-18T00:00:00Z",
+                        legs=[Leg("t", "m", "YES q", "YES", 0.96, 0.0)])
+        sized = size_opportunities([o], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0)
+        assert sized == []
 
     def test_low_annualized_yield_rejected(self):
         # 0.984 with ~2 weeks left under a high APY floor? craft a clear reject:
