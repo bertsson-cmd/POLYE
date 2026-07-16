@@ -1,5 +1,5 @@
 {
- "cash": 589.554889,
+ "cash": 586.366699,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -41,7 +41,7 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9555,
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.956,
     "93320657450177854098059849588100288636908681690362123373676280636770405062010": 0.0025,
     "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.0375
    },
@@ -137,8 +137,8 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.3205,
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.675,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.324,
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.685,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
     "44162996630579613944619329601086604585114580039271806622718850166081603488312": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 31.74,
-   "unrealized_pl": 0.41262,
-   "unrealized_pl_pct": 1.317
+   "current_value": 32.13675,
+   "unrealized_pl": 0.80937,
+   "unrealized_pl_pct": 2.584
   },
   {
    "key": "LS-1439549",
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9575
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9585
    },
-   "current_value": 24.959162,
-   "unrealized_pl": -0.325838,
-   "unrealized_pl_pct": -1.289
+   "current_value": 24.985229,
+   "unrealized_pl": -0.299771,
+   "unrealized_pl_pct": -1.186
   },
   {
    "key": "CV-2835637",
@@ -231,11 +231,11 @@
     }
    ],
    "current_prices": {
-    "26482058328624988816605832538007434626528350956525596891811645387679454421465": 0.973
+    "26482058328624988816605832538007434626528350956525596891811645387679454421465": 0.9745
    },
-   "current_value": 16.960868,
-   "unrealized_pl": -0.278905,
-   "unrealized_pl_pct": -1.618
+   "current_value": 16.987015,
+   "unrealized_pl": -0.252758,
+   "unrealized_pl_pct": -1.466
   },
   {
    "key": "CV-2906873",
@@ -260,11 +260,11 @@
     }
    ],
    "current_prices": {
-    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.9005
+    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.853
    },
-   "current_value": 23.497567,
-   "unrealized_pl": -1.787433,
-   "unrealized_pl_pct": -7.069
+   "current_value": 22.258106,
+   "unrealized_pl": -3.026894,
+   "unrealized_pl_pct": -11.971
   },
   {
    "key": "CV-2000247",
@@ -289,40 +289,11 @@
     }
    ],
    "current_prices": {
-    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.957
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.9565
    },
-   "current_value": 24.869214,
-   "unrealized_pl": -0.415786,
-   "unrealized_pl_pct": -1.644
-  },
-  {
-   "key": "CV-2470849",
-   "strategy": "CONVERGE",
-   "title": "Converge: President Trump to Attend World Cup Final?",
-   "opened": 1784108961.7586699,
-   "cost": 25.285,
-   "edge": 0.053741,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9735,
-   "resolve_by": "2026-07-20T03:59:00Z",
-   "note": "YES ask 0.949, 4.8d to resolution, 412% annualized if YES, assumed true P 0.974",
-   "legs": [
-    {
-     "token_id": "86680247297404227698835375487849042651771548951718649081182622616196290047519",
-     "market_id": "2470849",
-     "label": "YES President Trump to Attend World Cup Final?",
-     "side": "YES",
-     "entry_price": 0.949,
-     "shares": 26.643836
-    }
-   ],
-   "current_prices": {
-    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.94
-   },
-   "current_value": 25.045206,
-   "unrealized_pl": -0.239794,
-   "unrealized_pl_pct": -0.948
+   "current_value": 24.85622,
+   "unrealized_pl": -0.42878,
+   "unrealized_pl_pct": -1.696
   },
   {
    "key": "CV-2906900",
@@ -347,11 +318,11 @@
     }
    ],
    "current_prices": {
-    "111978535704830551165679669976673002553088017202806667756618402505630710146359": 0.9895
+    "111978535704830551165679669976673002553088017202806667756618402505630710146359": 0.9905
    },
-   "current_value": 25.27223,
-   "unrealized_pl": -0.01277,
-   "unrealized_pl_pct": -0.051
+   "current_value": 25.29777,
+   "unrealized_pl": 0.01277,
+   "unrealized_pl_pct": 0.051
   },
   {
    "key": "CV-2906903",
@@ -376,11 +347,11 @@
     }
    ],
    "current_prices": {
-    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.9875
+    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.989
    },
-   "current_value": 6.305287,
-   "unrealized_pl": -0.015963,
-   "unrealized_pl_pct": -0.253
+   "current_value": 6.314865,
+   "unrealized_pl": -0.006385,
+   "unrealized_pl_pct": -0.101
   },
   {
    "key": "CV-2786593",
@@ -405,40 +376,11 @@
     }
    ],
    "current_prices": {
-    "59202893550729321491020141547934194122058474494714207256399265998983395271570": 0.9695
+    "59202893550729321491020141547934194122058474494714207256399265998983395271570": 0.9705
    },
-   "current_value": 21.643617,
-   "unrealized_pl": -0.055812,
-   "unrealized_pl_pct": -0.257
-  },
-  {
-   "key": "CV-2498645",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Trump attend 1 World Cup match?",
-   "opened": 1784147720.8365443,
-   "cost": 25.38425,
-   "edge": 0.054852,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-07-20T03:59:00Z",
-   "note": "YES ask 0.948, 4.3d to resolution, 465% annualized if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "107797890676886032816342284285394269556712283992466036828116141778014218975708",
-     "market_id": "2498645",
-     "label": "YES Will Trump attend 1 World Cup match?",
-     "side": "YES",
-     "entry_price": 0.948,
-     "shares": 26.776635
-    }
-   ],
-   "current_prices": {
-    "107797890676886032816342284285394269556712283992466036828116141778014218975708": 0.9485
-   },
-   "current_value": 25.397638,
-   "unrealized_pl": 0.013388,
-   "unrealized_pl_pct": 0.053
+   "current_value": 21.665942,
+   "unrealized_pl": -0.033487,
+   "unrealized_pl_pct": -0.154
   },
   {
    "key": "CV-2822509",
@@ -492,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.9615
+    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.946
    },
-   "current_value": 17.864859,
-   "unrealized_pl": -0.083612,
-   "unrealized_pl_pct": -0.466
+   "current_value": 17.576866,
+   "unrealized_pl": -0.371605,
+   "unrealized_pl_pct": -2.07
   },
   {
    "key": "CV-1697034",
@@ -521,40 +463,11 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9555
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.956
    },
-   "current_value": 16.246628,
-   "unrealized_pl": -0.042508,
-   "unrealized_pl_pct": -0.261
-  },
-  {
-   "key": "CV-2780274",
-   "strategy": "CONVERGE",
-   "title": "Converge: Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
-   "opened": 1784185449.7830136,
-   "cost": 25.3605,
-   "edge": 0.037344,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9676,
-   "resolve_by": "2026-07-16T16:00:00Z",
-   "note": "YES ask 0.964, 0.4d to resolution, 3663% annualized if YES, assumed true P 0.968",
-   "legs": [
-    {
-     "token_id": "65910950834118295089252422668054387439322584047286204403571787244471393188135",
-     "market_id": "2780274",
-     "label": "YES Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
-     "side": "YES",
-     "entry_price": 0.964,
-     "shares": 26.307573
-    }
-   ],
-   "current_prices": {
-    "65910950834118295089252422668054387439322584047286204403571787244471393188135": 0.892
-   },
-   "current_value": 23.466355,
-   "unrealized_pl": -1.894145,
-   "unrealized_pl_pct": -7.469
+   "current_value": 16.25513,
+   "unrealized_pl": -0.034006,
+   "unrealized_pl_pct": -0.209
   },
   {
    "key": "ARB-NO-659688",
@@ -595,13 +508,129 @@
     }
    ],
    "current_prices": {
-    "8615848068783757930683080743101446415181258725845176779257751120955677429666": 0.74,
-    "67608398185297673555544340334505995383400009204737190992186684066575737668146": 0.33,
-    "7024685150541004241556711764394103465250911605050671715342966413697844244608": 0.915
+    "8615848068783757930683080743101446415181258725845176779257751120955677429666": 0.0005,
+    "67608398185297673555544340334505995383400009204737190992186684066575737668146": 0.9995,
+    "7024685150541004241556711764394103465250911605050671715342966413697844244608": 0.9995
    },
    "current_value": 25.566834,
    "unrealized_pl": 0.127834,
    "unrealized_pl_pct": 0.503
+  },
+  {
+   "key": "CV-2771994",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ferencv\u00e1rosi TC vs. FK Vojvodina Novi Sad: O/U 0.5",
+   "opened": 1784225376.6027532,
+   "cost": 13.200056,
+   "edge": 0.027749,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9743999999999999,
+   "resolve_by": "2026-07-16T18:15:00Z",
+   "note": "YES ask 0.973, 0.0d to resolution, 50642% annualized if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "76773722870694563352418407319188845893606619115186702630902980083198187188714",
+     "market_id": "2771994",
+     "label": "YES Ferencv\u00e1rosi TC vs. FK Vojvodina Novi Sad: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 13.566347
+    }
+   ],
+   "current_prices": {
+    "76773722870694563352418407319188845893606619115186702630902980083198187188714": 0.968
+   },
+   "current_value": 13.132224,
+   "unrealized_pl": -0.067832,
+   "unrealized_pl_pct": -0.514
+  },
+  {
+   "key": "CV-2785443",
+   "strategy": "CONVERGE",
+   "title": "Converge: Chicago Fire FC vs. Vancouver Whitecaps FC: O/U 0.5",
+   "opened": 1784225376.6027758,
+   "cost": 25.45725,
+   "edge": 0.031992,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9728,
+   "resolve_by": "2026-07-17T00:30:00Z",
+   "note": "YES ask 0.969, 0.3d to resolution, 4420% annualized if YES, assumed true P 0.973",
+   "legs": [
+    {
+     "token_id": "61469328058167748976138360141512231938177043527149462080393875561089126241526",
+     "market_id": "2785443",
+     "label": "YES Chicago Fire FC vs. Vancouver Whitecaps FC: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.969,
+     "shares": 26.271672
+    }
+   ],
+   "current_prices": {
+    "61469328058167748976138360141512231938177043527149462080393875561089126241526": 0.966
+   },
+   "current_value": 25.378435,
+   "unrealized_pl": -0.078815,
+   "unrealized_pl_pct": -0.31
+  },
+  {
+   "key": "CV-2785300",
+   "strategy": "CONVERGE",
+   "title": "Converge: Seattle Sounders FC vs. Portland Timbers: O/U 0.5",
+   "opened": 1784225376.6028183,
+   "cost": 25.45725,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9776,
+   "resolve_by": "2026-07-17T02:30:00Z",
+   "note": "YES ask 0.974, 0.3d to resolution, 2804% annualized if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "38114325371752196362518465403031878951399020956033505923102001665729293335226",
+     "market_id": "2785300",
+     "label": "YES Seattle Sounders FC vs. Portland Timbers: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 26.136807
+    }
+   ],
+   "current_prices": {
+    "38114325371752196362518465403031878951399020956033505923102001665729293335226": 0.972
+   },
+   "current_value": 25.404976,
+   "unrealized_pl": -0.052274,
+   "unrealized_pl_pct": -0.205
+  },
+  {
+   "key": "CV-2871319",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
+   "opened": 1784225376.6028285,
+   "cost": 16.958941,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9676,
+   "resolve_by": "2026-07-17T16:00:00Z",
+   "note": "YES ask 0.960, 0.9d to resolution, 1671% annualized if YES, assumed true P 0.968",
+   "legs": [
+    {
+     "token_id": "25951067433211544241573753683668807088034318670308149690698848599516479101391",
+     "market_id": "2871319",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 17?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 17.665564
+    }
+   ],
+   "current_prices": {
+    "25951067433211544241573753683668807088034318670308149690698848599516479101391": 0.9595
+   },
+   "current_value": 16.950109,
+   "unrealized_pl": -0.008832,
+   "unrealized_pl_pct": -0.052
   }
  ],
  "closed": [
@@ -3000,6 +3029,105 @@
    "payout": 7.651911,
    "pl": 0.451914,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2470849",
+   "strategy": "CONVERGE",
+   "title": "Converge: President Trump to Attend World Cup Final?",
+   "opened": 1784108961.7586699,
+   "cost": 25.285,
+   "edge": 0.053741,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9735,
+   "resolve_by": "2026-07-20T03:59:00Z",
+   "note": "YES ask 0.949, 4.8d to resolution, 412% annualized if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "86680247297404227698835375487849042651771548951718649081182622616196290047519",
+     "market_id": "2470849",
+     "label": "YES President Trump to Attend World Cup Final?",
+     "side": "YES",
+     "entry_price": 0.949,
+     "shares": 26.643836
+    }
+   ],
+   "current_prices": {
+    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.94
+   },
+   "current_value": 25.045206,
+   "unrealized_pl": -0.239794,
+   "unrealized_pl_pct": -0.948,
+   "closed_ts": 1784225376.732068,
+   "payout": 25.764589,
+   "pl": 0.479589,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2498645",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Trump attend 1 World Cup match?",
+   "opened": 1784147720.8365443,
+   "cost": 25.38425,
+   "edge": 0.054852,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-20T03:59:00Z",
+   "note": "YES ask 0.948, 4.3d to resolution, 465% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "107797890676886032816342284285394269556712283992466036828116141778014218975708",
+     "market_id": "2498645",
+     "label": "YES Will Trump attend 1 World Cup match?",
+     "side": "YES",
+     "entry_price": 0.948,
+     "shares": 26.776635
+    }
+   ],
+   "current_prices": {
+    "107797890676886032816342284285394269556712283992466036828116141778014218975708": 0.9485
+   },
+   "current_value": 25.397638,
+   "unrealized_pl": 0.013388,
+   "unrealized_pl_pct": 0.053,
+   "closed_ts": 1784225376.732068,
+   "payout": 25.839453,
+   "pl": 0.455203,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2780274",
+   "strategy": "CONVERGE",
+   "title": "Converge: Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+   "opened": 1784185449.7830136,
+   "cost": 25.3605,
+   "edge": 0.037344,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9676,
+   "resolve_by": "2026-07-16T16:00:00Z",
+   "note": "YES ask 0.964, 0.4d to resolution, 3663% annualized if YES, assumed true P 0.968",
+   "legs": [
+    {
+     "token_id": "65910950834118295089252422668054387439322584047286204403571787244471393188135",
+     "market_id": "2780274",
+     "label": "YES Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.964,
+     "shares": 26.307573
+    }
+   ],
+   "current_prices": {
+    "65910950834118295089252422668054387439322584047286204403571787244471393188135": 0.892
+   },
+   "current_value": 23.466355,
+   "unrealized_pl": -1.894145,
+   "unrealized_pl_pct": -7.469,
+   "closed_ts": 1784225376.732068,
+   "payout": 26.281265,
+   "pl": 0.920765,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -3322,6 +3450,14 @@
    "equity": 1018.2927,
    "realized_total": 22.4298,
    "open_positions": 17
+  },
+  {
+   "ts": 1784225376.733918,
+   "cash": 586.3667,
+   "open_value": 434.6688,
+   "equity": 1021.0355,
+   "realized_total": 24.2853,
+   "open_positions": 18
   }
  ],
  "trades": [
@@ -4153,6 +4289,72 @@
    "title": "Converge: FC Inter Turku vs. FK Sarajevo: O/U 0.5",
    "amount": 7.65,
    "pl": 0.45,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784225376.6027532,
+   "type": "OPEN",
+   "key": "CV-2771994",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ferencv\u00e1rosi TC vs. FK Vojvodina Novi Sad: O/U 0.5",
+   "amount": 13.2,
+   "pl": null
+  },
+  {
+   "ts": 1784225376.6027758,
+   "type": "OPEN",
+   "key": "CV-2785443",
+   "strategy": "CONVERGE",
+   "title": "Converge: Chicago Fire FC vs. Vancouver Whitecaps FC: O/U 0.5",
+   "amount": 25.46,
+   "pl": null
+  },
+  {
+   "ts": 1784225376.6028183,
+   "type": "OPEN",
+   "key": "CV-2785300",
+   "strategy": "CONVERGE",
+   "title": "Converge: Seattle Sounders FC vs. Portland Timbers: O/U 0.5",
+   "amount": 25.46,
+   "pl": null
+  },
+  {
+   "ts": 1784225376.6028285,
+   "type": "OPEN",
+   "key": "CV-2871319",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
+   "amount": 16.96,
+   "pl": null
+  },
+  {
+   "ts": 1784225376.732068,
+   "type": "CLOSE",
+   "key": "CV-2470849",
+   "strategy": "CONVERGE",
+   "title": "Converge: President Trump to Attend World Cup Final?",
+   "amount": 25.76,
+   "pl": 0.48,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784225376.732068,
+   "type": "CLOSE",
+   "key": "CV-2498645",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Trump attend 1 World Cup match?",
+   "amount": 25.84,
+   "pl": 0.46,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784225376.732068,
+   "type": "CLOSE",
+   "key": "CV-2780274",
+   "strategy": "CONVERGE",
+   "title": "Converge: Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+   "amount": 26.28,
+   "pl": 0.92,
    "reason": "take_profit"
   }
  ]
