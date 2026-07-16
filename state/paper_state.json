@@ -1,5 +1,5 @@
 {
- "cash": 566.079242,
+ "cash": 589.420397,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.961
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9615
    },
-   "current_value": 25.050397,
-   "unrealized_pl": -0.234603,
-   "unrealized_pl_pct": -0.928
+   "current_value": 25.06343,
+   "unrealized_pl": -0.22157,
+   "unrealized_pl_pct": -0.876
   },
   {
    "key": "CV-2835637",
@@ -260,11 +260,11 @@
     }
    ],
    "current_prices": {
-    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.797
+    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.7345
    },
-   "current_value": 20.796847,
-   "unrealized_pl": -4.488153,
-   "unrealized_pl_pct": -17.75
+   "current_value": 19.165978,
+   "unrealized_pl": -6.119022,
+   "unrealized_pl_pct": -24.2
   },
   {
    "key": "CV-2000247",
@@ -289,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.965
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.9645
    },
-   "current_value": 25.077107,
-   "unrealized_pl": -0.207893,
-   "unrealized_pl_pct": -0.822
+   "current_value": 25.064113,
+   "unrealized_pl": -0.220887,
+   "unrealized_pl_pct": -0.874
   },
   {
    "key": "CV-2906900",
@@ -347,40 +347,11 @@
     }
    ],
    "current_prices": {
-    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.985
+    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.9875
    },
-   "current_value": 6.289324,
-   "unrealized_pl": -0.031926,
-   "unrealized_pl_pct": -0.505
-  },
-  {
-   "key": "CV-2786593",
-   "strategy": "CONVERGE",
-   "title": "Converge: \u00cdF Vestri vs. Qaraba\u011f A\u011fdam FK: O/U 0.5",
-   "opened": 1784138165.5344765,
-   "cost": 21.699429,
-   "edge": 0.028807,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9743999999999999,
-   "resolve_by": "2026-07-16T20:00:00Z",
-   "note": "YES ask 0.972, 1.1d to resolution, 968% annualized if YES, assumed true P 0.974",
-   "legs": [
-    {
-     "token_id": "59202893550729321491020141547934194122058474494714207256399265998983395271570",
-     "market_id": "2786593",
-     "label": "YES \u00cdF Vestri vs. Qaraba\u011f A\u011fdam FK: O/U 0.5",
-     "side": "YES",
-     "entry_price": 0.972,
-     "shares": 22.324515
-    }
-   ],
-   "current_prices": {
-    "59202893550729321491020141547934194122058474494714207256399265998983395271570": 0.974
-   },
-   "current_value": 21.744078,
-   "unrealized_pl": 0.044649,
-   "unrealized_pl_pct": 0.206
+   "current_value": 6.305287,
+   "unrealized_pl": -0.015963,
+   "unrealized_pl_pct": -0.253
   },
   {
    "key": "CV-2822509",
@@ -434,11 +405,11 @@
     }
    ],
    "current_prices": {
-    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.954
+    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.9545
    },
-   "current_value": 17.725508,
-   "unrealized_pl": -0.222963,
-   "unrealized_pl_pct": -1.242
+   "current_value": 17.734798,
+   "unrealized_pl": -0.213673,
+   "unrealized_pl_pct": -1.19
   },
   {
    "key": "CV-1697034",
@@ -492,11 +463,11 @@
     }
    ],
    "current_prices": {
-    "61469328058167748976138360141512231938177043527149462080393875561089126241526": 0.966
+    "61469328058167748976138360141512231938177043527149462080393875561089126241526": 0.965
    },
-   "current_value": 25.378435,
-   "unrealized_pl": -0.078815,
-   "unrealized_pl_pct": -0.31
+   "current_value": 25.352163,
+   "unrealized_pl": -0.105087,
+   "unrealized_pl_pct": -0.413
   },
   {
    "key": "CV-2785300",
@@ -526,35 +497,6 @@
    "current_value": 25.404976,
    "unrealized_pl": -0.052274,
    "unrealized_pl_pct": -0.205
-  },
-  {
-   "key": "CV-2771990",
-   "strategy": "CONVERGE",
-   "title": "Converge: Spread: Ferencv\u00e1rosi TC (-1.5)",
-   "opened": 1784230509.7349303,
-   "cost": 25.526,
-   "edge": 0.044932,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9656,
-   "resolve_by": "2026-07-16T18:15:00Z",
-   "note": "YES ask 0.957, 0.0d to resolution, 82001% annualized if YES, assumed true P 0.966",
-   "legs": [
-    {
-     "token_id": "38677426484756318229165474130745615462774696066218756792306271568537072768095",
-     "market_id": "2771990",
-     "label": "YES Spread: Ferencv\u00e1rosi TC (-1.5)",
-     "side": "YES",
-     "entry_price": 0.957,
-     "shares": 26.672936
-    }
-   ],
-   "current_prices": {
-    "38677426484756318229165474130745615462774696066218756792306271568537072768095": 0.957
-   },
-   "current_value": 25.526,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
   },
   {
    "key": "CV-2785702",
@@ -608,10 +550,39 @@
     }
    ],
    "current_prices": {
-    "102363185784825034051971354415371422356656277418657942868732594787058077942376": 0.9695
+    "102363185784825034051971354415371422356656277418657942868732594787058077942376": 0.97
    },
-   "current_value": 25.512842,
-   "unrealized_pl": -0.013158,
+   "current_value": 25.526,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0
+  },
+  {
+   "key": "CV-2871319",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
+   "opened": 1784234150.6641393,
+   "cost": 25.518,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9756,
+   "resolve_by": "2026-07-17T16:00:00Z",
+   "note": "YES ask 0.970, 0.8d to resolution, 1396% annualized if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "25951067433211544241573753683668807088034318670308149690698848599516479101391",
+     "market_id": "2871319",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 17?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 26.307216
+    }
+   ],
+   "current_prices": {
+    "25951067433211544241573753683668807088034318670308149690698848599516479101391": 0.9695
+   },
+   "current_value": 25.504846,
+   "unrealized_pl": -0.013154,
    "unrealized_pl_pct": -0.052
   }
  ],
@@ -3226,6 +3197,72 @@
    "closed_ts": 1784230511.6661885,
    "payout": 25.566834,
    "pl": 0.127834
+  },
+  {
+   "key": "CV-2786593",
+   "strategy": "CONVERGE",
+   "title": "Converge: \u00cdF Vestri vs. Qaraba\u011f A\u011fdam FK: O/U 0.5",
+   "opened": 1784138165.5344765,
+   "cost": 21.699429,
+   "edge": 0.028807,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9743999999999999,
+   "resolve_by": "2026-07-16T20:00:00Z",
+   "note": "YES ask 0.972, 1.1d to resolution, 968% annualized if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "59202893550729321491020141547934194122058474494714207256399265998983395271570",
+     "market_id": "2786593",
+     "label": "YES \u00cdF Vestri vs. Qaraba\u011f A\u011fdam FK: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.972,
+     "shares": 22.324515
+    }
+   ],
+   "current_prices": {
+    "59202893550729321491020141547934194122058474494714207256399265998983395271570": 0.974
+   },
+   "current_value": 21.744078,
+   "unrealized_pl": 0.044649,
+   "unrealized_pl_pct": 0.206,
+   "closed_ts": 1784234150.7972085,
+   "payout": 22.212892,
+   "pl": 0.513463,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2771990",
+   "strategy": "CONVERGE",
+   "title": "Converge: Spread: Ferencv\u00e1rosi TC (-1.5)",
+   "opened": 1784230509.7349303,
+   "cost": 25.526,
+   "edge": 0.044932,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9656,
+   "resolve_by": "2026-07-16T18:15:00Z",
+   "note": "YES ask 0.957, 0.0d to resolution, 82001% annualized if YES, assumed true P 0.966",
+   "legs": [
+    {
+     "token_id": "38677426484756318229165474130745615462774696066218756792306271568537072768095",
+     "market_id": "2771990",
+     "label": "YES Spread: Ferencv\u00e1rosi TC (-1.5)",
+     "side": "YES",
+     "entry_price": 0.957,
+     "shares": 26.672936
+    }
+   ],
+   "current_prices": {
+    "38677426484756318229165474130745615462774696066218756792306271568537072768095": 0.957
+   },
+   "current_value": 25.526,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1784234150.7972085,
+   "payout": 26.646263,
+   "pl": 1.120263,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -3564,6 +3601,14 @@
    "equity": 1020.7233,
    "realized_total": 24.85,
    "open_positions": 19
+  },
+  {
+   "ts": 1784234150.7991512,
+   "cash": 589.4204,
+   "open_value": 431.2601,
+   "equity": 1020.6805,
+   "realized_total": 26.6116,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -4518,6 +4563,35 @@
    "title": "NO-lock: FC Inter Turku vs. FK Sarajevo",
    "amount": 25.57,
    "pl": 0.13
+  },
+  {
+   "ts": 1784234150.6641393,
+   "type": "OPEN",
+   "key": "CV-2871319",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
+   "amount": 25.52,
+   "pl": null
+  },
+  {
+   "ts": 1784234150.7972085,
+   "type": "CLOSE",
+   "key": "CV-2786593",
+   "strategy": "CONVERGE",
+   "title": "Converge: \u00cdF Vestri vs. Qaraba\u011f A\u011fdam FK: O/U 0.5",
+   "amount": 22.21,
+   "pl": 0.51,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784234150.7972085,
+   "type": "CLOSE",
+   "key": "CV-2771990",
+   "strategy": "CONVERGE",
+   "title": "Converge: Spread: Ferencv\u00e1rosi TC (-1.5)",
+   "amount": 26.65,
+   "pl": 1.12,
+   "reason": "take_profit"
   }
  ]
 }
