@@ -1,5 +1,5 @@
 {
- "cash": 530.686343,
+ "cash": 563.542545,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -41,9 +41,9 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9675,
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9655,
     "93320657450177854098059849588100288636908681690362123373676280636770405062010": 0.0025,
-    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.0295
+    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.029
    },
    "current_value": 50.895854,
    "unrealized_pl": 0.559854,
@@ -137,7 +137,7 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.3265,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.333,
     "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.665,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 31.74,
-   "unrealized_pl": 0.41262,
-   "unrealized_pl_pct": 1.317
+   "current_value": 31.78761,
+   "unrealized_pl": 0.46023,
+   "unrealized_pl_pct": 1.469
   },
   {
    "key": "LS-1439549",
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.959
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.962
    },
-   "current_value": 24.998263,
-   "unrealized_pl": -0.286737,
-   "unrealized_pl_pct": -1.134
+   "current_value": 25.076464,
+   "unrealized_pl": -0.208536,
+   "unrealized_pl_pct": -0.825
   },
   {
    "key": "CV-2835637",
@@ -231,11 +231,11 @@
     }
    ],
    "current_prices": {
-    "26482058328624988816605832538007434626528350956525596891811645387679454421465": 0.9785
+    "26482058328624988816605832538007434626528350956525596891811645387679454421465": 0.9735
    },
-   "current_value": 17.056741,
-   "unrealized_pl": -0.183032,
-   "unrealized_pl_pct": -1.062
+   "current_value": 16.969584,
+   "unrealized_pl": -0.270189,
+   "unrealized_pl_pct": -1.567
   },
   {
    "key": "CV-2906873",
@@ -260,11 +260,11 @@
     }
    ],
    "current_prices": {
-    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.926
+    "68497554544553281514680408600031498730076363486882796507897923826254974955108": 0.9275
    },
-   "current_value": 24.162962,
-   "unrealized_pl": -1.122038,
-   "unrealized_pl_pct": -4.438
+   "current_value": 24.202102,
+   "unrealized_pl": -1.082898,
+   "unrealized_pl_pct": -4.283
   },
   {
    "key": "CV-2000247",
@@ -289,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.9655
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.965
    },
-   "current_value": 25.0901,
-   "unrealized_pl": -0.1949,
-   "unrealized_pl_pct": -0.771
+   "current_value": 25.077107,
+   "unrealized_pl": -0.207893,
+   "unrealized_pl_pct": -0.822
   },
   {
    "key": "CV-2470849",
@@ -318,11 +318,11 @@
     }
    ],
    "current_prices": {
-    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.9245
+    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.929
    },
-   "current_value": 24.632226,
-   "unrealized_pl": -0.652774,
-   "unrealized_pl_pct": -2.582
+   "current_value": 24.752124,
+   "unrealized_pl": -0.532876,
+   "unrealized_pl_pct": -2.107
   },
   {
    "key": "CV-2906900",
@@ -376,130 +376,11 @@
     }
    ],
    "current_prices": {
-    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.9825
+    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.984
    },
-   "current_value": 6.273362,
-   "unrealized_pl": -0.047888,
-   "unrealized_pl_pct": -0.758
-  },
-  {
-   "key": "ARB-NO-701161",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in Toronto on July 15?",
-   "opened": 1784112364.189046,
-   "cost": 25.225,
-   "edge": 0.001502,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 10.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-15T12:00:00Z",
-   "note": "11 outcomes, NO asks sum 9.9850 vs payout 10, 16 sets executable",
-   "legs": [
-    {
-     "token_id": "59510686021964575002483448078126463532470530547860643340428810740394781957943",
-     "market_id": "2915947",
-     "label": "NO Will the highest temperature in Toronto be 28\u00b0C or below on July 15?",
-     "side": "NO",
-     "entry_price": 0.987,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "84067246422799074089333210168272575406822146264909764105845976888506451656935",
-     "market_id": "2915948",
-     "label": "NO Will the highest temperature in Toronto be 29\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.971,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "50665327657249011467353633400599586324147677825477970404379398480163489899185",
-     "market_id": "2915949",
-     "label": "NO Will the highest temperature in Toronto be 30\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.936,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "22650048721634015153779903215486058708385560887827840326858245328968629048783",
-     "market_id": "2915950",
-     "label": "NO Will the highest temperature in Toronto be 31\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.69,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "41700056307311675360499830157212380027834989100225252290513211000125846019173",
-     "market_id": "2915951",
-     "label": "NO Will the highest temperature in Toronto be 32\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.63,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "84460802108401522822583573368507227244131060819941368916904746796438079647033",
-     "market_id": "2915952",
-     "label": "NO Will the highest temperature in Toronto be 33\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.8,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "33961246371813071981968369131983001742520532852953794875444953569803245835857",
-     "market_id": "2915953",
-     "label": "NO Will the highest temperature in Toronto be 34\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.98,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "29804030469619995542359119211676164245852759959263501956295866526639929228604",
-     "market_id": "2915954",
-     "label": "NO Will the highest temperature in Toronto be 35\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.994,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "48297161852072822816474071425152022681265861367548302082349593882769077681266",
-     "market_id": "2915955",
-     "label": "NO Will the highest temperature in Toronto be 36\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "12953993662263840226397190402305177870582405713116567060159299511860051583138",
-     "market_id": "2915956",
-     "label": "NO Will the highest temperature in Toronto be 37\u00b0C on July 15?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.526289
-    },
-    {
-     "token_id": "80027173275880009531265716472519785925365147319872457336945894857221339975191",
-     "market_id": "2915957",
-     "label": "NO Will the highest temperature in Toronto be 38\u00b0C or higher on July 15?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.526289
-    }
-   ],
-   "current_prices": {
-    "59510686021964575002483448078126463532470530547860643340428810740394781957943": 0.0005,
-    "84067246422799074089333210168272575406822146264909764105845976888506451656935": 0.9995,
-    "50665327657249011467353633400599586324147677825477970404379398480163489899185": 0.9995,
-    "22650048721634015153779903215486058708385560887827840326858245328968629048783": 0.9995,
-    "41700056307311675360499830157212380027834989100225252290513211000125846019173": 0.9995,
-    "84460802108401522822583573368507227244131060819941368916904746796438079647033": 0.9995,
-    "33961246371813071981968369131983001742520532852953794875444953569803245835857": 0.9995,
-    "29804030469619995542359119211676164245852759959263501956295866526639929228604": 0.9995,
-    "48297161852072822816474071425152022681265861367548302082349593882769077681266": 0.9995,
-    "12953993662263840226397190402305177870582405713116567060159299511860051583138": 0.9995,
-    "80027173275880009531265716472519785925365147319872457336945894857221339975191": 0.9995
-   },
-   "current_value": 25.26289,
-   "unrealized_pl": 0.03789,
-   "unrealized_pl_pct": 0.15
+   "current_value": 6.282939,
+   "unrealized_pl": -0.038311,
+   "unrealized_pl_pct": -0.606
   },
   {
    "key": "CV-2786593",
@@ -531,64 +412,6 @@
    "unrealized_pl_pct": -0.463
   },
   {
-   "key": "CV-2871252",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on July 17?",
-   "opened": 1784143391.8515403,
-   "cost": 25.3205,
-   "edge": 0.033058,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9728,
-   "resolve_by": "2026-07-17T16:00:00Z",
-   "note": "YES ask 0.968, 1.9d to resolution, 649% annualized if YES, assumed true P 0.973",
-   "legs": [
-    {
-     "token_id": "34709914720303117306077185091132559301679648552023171264286886108770759026602",
-     "market_id": "2871252",
-     "label": "YES Will the price of Ethereum be above $1,800 on July 17?",
-     "side": "YES",
-     "entry_price": 0.968,
-     "shares": 26.157541
-    }
-   ],
-   "current_prices": {
-    "34709914720303117306077185091132559301679648552023171264286886108770759026602": 0.9765
-   },
-   "current_value": 25.542839,
-   "unrealized_pl": 0.222339,
-   "unrealized_pl_pct": 0.878
-  },
-  {
-   "key": "CV-2871319",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
-   "opened": 1784143391.8515625,
-   "cost": 7.298747,
-   "edge": 0.044932,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9632,
-   "resolve_by": "2026-07-17T16:00:00Z",
-   "note": "YES ask 0.957, 1.9d to resolution, 882% annualized if YES, assumed true P 0.963",
-   "legs": [
-    {
-     "token_id": "25951067433211544241573753683668807088034318670308149690698848599516479101391",
-     "market_id": "2871319",
-     "label": "YES Will the price of Bitcoin be above $62,000 on July 17?",
-     "side": "YES",
-     "entry_price": 0.957,
-     "shares": 7.626695
-    }
-   ],
-   "current_prices": {
-    "25951067433211544241573753683668807088034318670308149690698848599516479101391": 0.958
-   },
-   "current_value": 7.306374,
-   "unrealized_pl": 0.007627,
-   "unrealized_pl_pct": 0.104
-  },
-  {
    "key": "CV-2498645",
    "strategy": "CONVERGE",
    "title": "Converge: Will Trump attend 1 World Cup match?",
@@ -611,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "107797890676886032816342284285394269556712283992466036828116141778014218975708": 0.9505
+    "107797890676886032816342284285394269556712283992466036828116141778014218975708": 0.95
    },
-   "current_value": 25.451192,
-   "unrealized_pl": 0.066942,
-   "unrealized_pl_pct": 0.264
+   "current_value": 25.437803,
+   "unrealized_pl": 0.053553,
+   "unrealized_pl_pct": 0.211
   },
   {
    "key": "CV-2822509",
@@ -698,11 +521,11 @@
     }
    ],
    "current_prices": {
-    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.9575
+    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.9595
    },
-   "current_value": 17.790539,
-   "unrealized_pl": -0.157932,
-   "unrealized_pl_pct": -0.88
+   "current_value": 17.827699,
+   "unrealized_pl": -0.120772,
+   "unrealized_pl_pct": -0.673
   },
   {
    "key": "CV-1697034",
@@ -727,11 +550,11 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9675
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9655
    },
-   "current_value": 16.450668,
-   "unrealized_pl": 0.161532,
-   "unrealized_pl_pct": 0.992
+   "current_value": 16.416661,
+   "unrealized_pl": 0.127525,
+   "unrealized_pl_pct": 0.783
   },
   {
    "key": "CV-2780208",
@@ -761,6 +584,35 @@
    "current_value": 25.302277,
    "unrealized_pl": -0.132473,
    "unrealized_pl_pct": -0.521
+  },
+  {
+   "key": "CV-2780274",
+   "strategy": "CONVERGE",
+   "title": "Converge: Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+   "opened": 1784185449.7830136,
+   "cost": 25.3605,
+   "edge": 0.037344,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9676,
+   "resolve_by": "2026-07-16T16:00:00Z",
+   "note": "YES ask 0.964, 0.4d to resolution, 3663% annualized if YES, assumed true P 0.968",
+   "legs": [
+    {
+     "token_id": "65910950834118295089252422668054387439322584047286204403571787244471393188135",
+     "market_id": "2780274",
+     "label": "YES Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.964,
+     "shares": 26.307573
+    }
+   ],
+   "current_prices": {
+    "65910950834118295089252422668054387439322584047286204403571787244471393188135": 0.9595
+   },
+   "current_value": 25.242116,
+   "unrealized_pl": -0.118384,
+   "unrealized_pl_pct": -0.467
   }
  ],
  "closed": [
@@ -2806,6 +2658,194 @@
    "payout": 25.601063,
    "pl": 0.316063,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2871252",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 17?",
+   "opened": 1784143391.8515403,
+   "cost": 25.3205,
+   "edge": 0.033058,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9728,
+   "resolve_by": "2026-07-17T16:00:00Z",
+   "note": "YES ask 0.968, 1.9d to resolution, 649% annualized if YES, assumed true P 0.973",
+   "legs": [
+    {
+     "token_id": "34709914720303117306077185091132559301679648552023171264286886108770759026602",
+     "market_id": "2871252",
+     "label": "YES Will the price of Ethereum be above $1,800 on July 17?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 26.157541
+    }
+   ],
+   "current_prices": {
+    "34709914720303117306077185091132559301679648552023171264286886108770759026602": 0.9765
+   },
+   "current_value": 25.542839,
+   "unrealized_pl": 0.222339,
+   "unrealized_pl_pct": 0.878,
+   "closed_ts": 1784185449.9652607,
+   "payout": 25.555918,
+   "pl": 0.235418,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2871319",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
+   "opened": 1784143391.8515625,
+   "cost": 7.298747,
+   "edge": 0.044932,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9632,
+   "resolve_by": "2026-07-17T16:00:00Z",
+   "note": "YES ask 0.957, 1.9d to resolution, 882% annualized if YES, assumed true P 0.963",
+   "legs": [
+    {
+     "token_id": "25951067433211544241573753683668807088034318670308149690698848599516479101391",
+     "market_id": "2871319",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 17?",
+     "side": "YES",
+     "entry_price": 0.957,
+     "shares": 7.626695
+    }
+   ],
+   "current_prices": {
+    "25951067433211544241573753683668807088034318670308149690698848599516479101391": 0.958
+   },
+   "current_value": 7.306374,
+   "unrealized_pl": 0.007627,
+   "unrealized_pl_pct": 0.104,
+   "closed_ts": 1784185449.9652607,
+   "payout": 7.397894,
+   "pl": 0.099147,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "ARB-NO-701161",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Toronto on July 15?",
+   "opened": 1784112364.189046,
+   "cost": 25.225,
+   "edge": 0.001502,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-15T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9850 vs payout 10, 16 sets executable",
+   "legs": [
+    {
+     "token_id": "59510686021964575002483448078126463532470530547860643340428810740394781957943",
+     "market_id": "2915947",
+     "label": "NO Will the highest temperature in Toronto be 28\u00b0C or below on July 15?",
+     "side": "NO",
+     "entry_price": 0.987,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "84067246422799074089333210168272575406822146264909764105845976888506451656935",
+     "market_id": "2915948",
+     "label": "NO Will the highest temperature in Toronto be 29\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.971,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "50665327657249011467353633400599586324147677825477970404379398480163489899185",
+     "market_id": "2915949",
+     "label": "NO Will the highest temperature in Toronto be 30\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.936,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "22650048721634015153779903215486058708385560887827840326858245328968629048783",
+     "market_id": "2915950",
+     "label": "NO Will the highest temperature in Toronto be 31\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.69,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "41700056307311675360499830157212380027834989100225252290513211000125846019173",
+     "market_id": "2915951",
+     "label": "NO Will the highest temperature in Toronto be 32\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.63,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "84460802108401522822583573368507227244131060819941368916904746796438079647033",
+     "market_id": "2915952",
+     "label": "NO Will the highest temperature in Toronto be 33\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.8,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "33961246371813071981968369131983001742520532852953794875444953569803245835857",
+     "market_id": "2915953",
+     "label": "NO Will the highest temperature in Toronto be 34\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.98,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "29804030469619995542359119211676164245852759959263501956295866526639929228604",
+     "market_id": "2915954",
+     "label": "NO Will the highest temperature in Toronto be 35\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.994,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "48297161852072822816474071425152022681265861367548302082349593882769077681266",
+     "market_id": "2915955",
+     "label": "NO Will the highest temperature in Toronto be 36\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "12953993662263840226397190402305177870582405713116567060159299511860051583138",
+     "market_id": "2915956",
+     "label": "NO Will the highest temperature in Toronto be 37\u00b0C on July 15?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.526289
+    },
+    {
+     "token_id": "80027173275880009531265716472519785925365147319872457336945894857221339975191",
+     "market_id": "2915957",
+     "label": "NO Will the highest temperature in Toronto be 38\u00b0C or higher on July 15?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.526289
+    }
+   ],
+   "current_prices": {
+    "59510686021964575002483448078126463532470530547860643340428810740394781957943": 0.987,
+    "84067246422799074089333210168272575406822146264909764105845976888506451656935": 0.971,
+    "50665327657249011467353633400599586324147677825477970404379398480163489899185": 0.936,
+    "22650048721634015153779903215486058708385560887827840326858245328968629048783": 0.69,
+    "41700056307311675360499830157212380027834989100225252290513211000125846019173": 0.63,
+    "84460802108401522822583573368507227244131060819941368916904746796438079647033": 0.8,
+    "33961246371813071981968369131983001742520532852953794875444953569803245835857": 0.98,
+    "29804030469619995542359119211676164245852759959263501956295866526639929228604": 0.994,
+    "48297161852072822816474071425152022681265861367548302082349593882769077681266": 0.999,
+    "12953993662263840226397190402305177870582405713116567060159299511860051583138": 0.999,
+    "80027173275880009531265716472519785925365147319872457336945894857221339975191": 0.999
+   },
+   "current_value": 25.26289,
+   "unrealized_pl": 0.03789,
+   "unrealized_pl_pct": 0.15,
+   "closed_ts": 1784185454.4724157,
+   "payout": 25.26289,
+   "pl": 0.03789
   }
  ],
  "history": [
@@ -3080,6 +3120,14 @@
    "equity": 1017.4403,
    "realized_total": 18.7627,
    "open_positions": 20
+  },
+  {
+   "ts": 1784185449.9669726,
+   "cash": 538.2797,
+   "open_value": 479.3309,
+   "equity": 1017.6105,
+   "realized_total": 19.0973,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -3788,6 +3836,44 @@
    "amount": 25.6,
    "pl": 0.32,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1784185449.7830136,
+   "type": "OPEN",
+   "key": "CV-2780274",
+   "strategy": "CONVERGE",
+   "title": "Converge: Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+   "amount": 25.36,
+   "pl": null
+  },
+  {
+   "ts": 1784185449.9652607,
+   "type": "CLOSE",
+   "key": "CV-2871252",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 17?",
+   "amount": 25.56,
+   "pl": 0.24,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784185449.9652607,
+   "type": "CLOSE",
+   "key": "CV-2871319",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 17?",
+   "amount": 7.4,
+   "pl": 0.1,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784185454.4724157,
+   "type": "CLOSE",
+   "key": "ARB-NO-701161",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Toronto on July 15?",
+   "amount": 25.26,
+   "pl": 0.04
   }
  ]
 }
