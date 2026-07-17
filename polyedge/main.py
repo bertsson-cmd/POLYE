@@ -46,10 +46,12 @@ def _interesting_tokens(markets: List[Market], relations: List[dict]) -> Dict[st
     need: Dict[str, str] = {}
 
     # --- 1) CONVERGE: reserved share, soonest-resolving first
+    from .strategies.convergence import is_sports_match
     cv = [(days_to_resolution(m.end_date), m.yes_token) for m in markets
           if config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE
           and m.liquidity >= config.CV_MIN_LIQUIDITY
-          and days_to_resolution(m.end_date) <= config.CV_MAX_DAYS]
+          and days_to_resolution(m.end_date) <= config.CV_MAX_DAYS
+          and not (config.CV_EXCLUDE_SPORTS and is_sports_match(m))]
     cv.sort()
     cv_quota = max(1, int(budget * config.CV_BOOK_RESERVE_PCT)) if cv else 0
     for _, tok in cv[:cv_quota]:

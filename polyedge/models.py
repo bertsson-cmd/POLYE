@@ -85,6 +85,7 @@ class Market:
     event_id: str = ""
     event_title: str = ""
     neg_risk: bool = False    # True if part of a mutually-exclusive outcome set
+    category: str = ""        # lowercase event tags/category from Gamma, if present
 
 
 @dataclass

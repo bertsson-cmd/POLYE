@@ -83,6 +83,14 @@ CV_MIN_LIQUIDITY = _f("POLYEDGE_CV_MIN_LIQ", 5000.0)
 # accordingly smaller. Raise only if your own settled CONVERGE record
 # shows wins landing more often than the assumption predicts.
 CV_TRUE_P_UPLIFT = _f("POLYEDGE_CV_UPLIFT", 0.20)
+# Exclude live sports MATCH markets (O/U, spreads, "X vs. Y" outcomes) from
+# CONVERGE. The strategy's thesis is "effectively decided, awaiting formal
+# resolution" — a match at 94-98c is NOT decided, it's genuinely live event
+# risk priced against sharp bookmaker lines (a 0-0 grinding out is how a
+# single loss erases ~30 small wins). Detection is heuristic (event tags +
+# title patterns) and won't catch 100%. ARB on sports events is deliberately
+# unaffected: locks don't care who wins.
+CV_EXCLUDE_SPORTS = os.environ.get("POLYEDGE_CV_EXCLUDE_SPORTS", "1") not in ("0", "false", "no")
 
 # ---------------------------------------------------------------- take-profit (early exit)
 # Sell a position back into the live bid BEFORE resolution, once enough of

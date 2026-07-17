@@ -113,6 +113,16 @@ class PolymarketClient:
         ev_id = str(ev.get("id", ""))
         ev_title = ev.get("title", "") or ev.get("slug", "")
         neg_risk = bool(ev.get("negRisk") or ev.get("neg_risk"))
+        # collect event tags/category into one lowercase string, defensively
+        tag_bits = []
+        for t in ev.get("tags", []) or []:
+            if isinstance(t, dict):
+                tag_bits.append(str(t.get("label", "") or t.get("slug", "")))
+            elif isinstance(t, str):
+                tag_bits.append(t)
+        if ev.get("category"):
+            tag_bits.append(str(ev["category"]))
+        category = " ".join(tag_bits).lower()
         for m in ev.get("markets", []) or []:
             try:
                 if m.get("closed") or not m.get("active", True):
@@ -130,6 +140,7 @@ class PolymarketClient:
                     liquidity=float(m.get("liquidityNum", m.get("liquidity", 0)) or 0),
                     end_date=m.get("endDate", "") or m.get("end_date_iso", "") or "",
                     event_id=ev_id, event_title=ev_title, neg_risk=neg_risk,
+                    category=category,
                 ))
             except (TypeError, ValueError, KeyError):
                 self.skipped_markets += 1
