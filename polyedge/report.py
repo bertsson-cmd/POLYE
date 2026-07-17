@@ -152,7 +152,7 @@ _TEMPLATE = r"""<!DOCTYPE html>
   <div class="scroll"><table id="opps"></table></div>
 </div>
 
-<footer>POLYBERT · PAPER MONEY ONLY · UPDATES EVERY 15 MIN VIA GITHUB ACTIONS</footer>
+<footer>POLYBERT · PAPER MONEY ONLY · UPDATES EVERY 5 MIN VIA GITHUB ACTIONS</footer>
 </div>
 
 <script>
