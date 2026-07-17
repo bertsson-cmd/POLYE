@@ -296,6 +296,63 @@ class TestConvergence:
         out = convergence.scan([late, soon], books)
         assert [o.key for o in out] == ["CV-CS", "CV-CL"]
 
+    # ---- sports match exclusion ----
+    def test_sports_titles_detected(self):
+        """Real titles from the live trade log (incl. the -$25.53 loss)."""
+        sports_titles = [
+            "CF Montréal vs. Toronto FC: O/U 0.5",
+            "St. Louis City SC vs. Sporting Kansas City: O/U 0.5",
+            "Seattle Sounders FC vs. Portland Timbers: O/U 0.5",
+            "Spread: Ferencvárosi TC (-1.5)",
+            "ÍF Vestri vs. Qarabağ Ağdam FK: O/U 0.5",
+            "Pyunik FA vs. Marsaxlokk FC: O/U 0.5",
+            "Lakers moneyline",
+            "First half result: draw",
+            "Both teams to score",
+        ]
+        for t in sports_titles:
+            m = market("S1", 0.96, question=t)
+            assert convergence.is_sports_match(m), f"should detect: {t}"
+
+    def test_non_sports_titles_not_detected(self):
+        """Legitimate CONVERGE material must NOT be excluded — including
+        sports-ADJACENT event markets that aren't match outcomes."""
+        ok_titles = [
+            "Israeli parliament dissolved by July 17?",
+            "Will the price of Bitcoin be above $62,000 on July 17?",
+            "Will Trump attend 1 World Cup match?",
+            "Fed decision in September?",
+            "Will the bill pass committee this week?",
+        ]
+        for t in ok_titles:
+            m = market("N1", 0.96, question=t)
+            assert not convergence.is_sports_match(m), f"false positive: {t}"
+
+    def test_category_tag_detection(self):
+        m = market("S2", 0.96, question="Team A to win the title?")
+        m.category = "sports epl"
+        assert convergence.is_sports_match(m)
+
+    def test_scan_excludes_sports_but_keeps_others(self):
+        sport = market("SP", 0.96, end="2026-07-16T00:00:00Z", liq=99999,
+                       question="CF Montréal vs. Toronto FC: O/U 0.5")
+        news = market("NW", 0.96, end="2026-07-16T00:00:00Z", liq=99999,
+                      question="Israeli parliament dissolved by July 17?")
+        books = {m.yes_token: book(m.yes_token, 0.96) for m in (sport, news)}
+        out = convergence.scan([sport, news], books)
+        assert [o.key for o in out] == ["CV-NW"]
+
+    def test_exclusion_can_be_disabled(self):
+        sport = market("SP", 0.96, end="2026-07-16T00:00:00Z", liq=99999,
+                       question="CF Montréal vs. Toronto FC: O/U 0.5")
+        books = {sport.yes_token: book(sport.yes_token, 0.96)}
+        old = config.CV_EXCLUDE_SPORTS
+        config.CV_EXCLUDE_SPORTS = False
+        try:
+            assert len(convergence.scan([sport], books)) == 1
+        finally:
+            config.CV_EXCLUDE_SPORTS = old
+
 
 # ------------------------------------------------------------------ risk
 class TestRisk:
