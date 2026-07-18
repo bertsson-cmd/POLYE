@@ -1,5 +1,5 @@
 {
- "cash": 510.995365,
+ "cash": 499.699181,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -137,7 +137,7 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.338,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.3385,
     "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.655,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.97
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9705
    },
-   "current_value": 25.285,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
+   "current_value": 25.298033,
+   "unrealized_pl": 0.013033,
+   "unrealized_pl_pct": 0.052
   },
   {
    "key": "CV-2000247",
@@ -231,11 +231,11 @@
     }
    ],
    "current_prices": {
-    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.977
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.9775
    },
-   "current_value": 25.388946,
-   "unrealized_pl": 0.103946,
-   "unrealized_pl_pct": 0.411
+   "current_value": 25.40194,
+   "unrealized_pl": 0.11694,
+   "unrealized_pl_pct": 0.462
   },
   {
    "key": "CV-2906900",
@@ -376,11 +376,11 @@
     }
    ],
    "current_prices": {
-    "63394989871563411327592225760911317119016898782082385835069625555113561021962": 0.962
+    "63394989871563411327592225760911317119016898782082385835069625555113561021962": 0.9615
    },
-   "current_value": 25.490503,
-   "unrealized_pl": -0.026497,
-   "unrealized_pl_pct": -0.104
+   "current_value": 25.477254,
+   "unrealized_pl": -0.039746,
+   "unrealized_pl_pct": -0.156
   },
   {
    "key": "CV-2470849",
@@ -405,11 +405,11 @@
     }
    ],
    "current_prices": {
-    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.9755
+    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.9765
    },
-   "current_value": 6.739035,
-   "unrealized_pl": -0.024179,
-   "unrealized_pl_pct": -0.358
+   "current_value": 6.745943,
+   "unrealized_pl": -0.017271,
+   "unrealized_pl_pct": -0.255
   },
   {
    "key": "CV-2952457",
@@ -434,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "114937803941081877560961025721440367956127017940684514090246121694104479600905": 0.9595
+    "114937803941081877560961025721440367956127017940684514090246121694104479600905": 0.9435
    },
-   "current_value": 24.758652,
-   "unrealized_pl": 0.012902,
-   "unrealized_pl_pct": 0.052
+   "current_value": 24.345793,
+   "unrealized_pl": -0.399957,
+   "unrealized_pl_pct": -1.616
   },
   {
    "key": "CV-2906905",
@@ -463,11 +463,11 @@
     }
    ],
    "current_prices": {
-    "48700469283317111136380901731338826579759771779020176545948529236348619471406": 0.9765
+    "48700469283317111136380901731338826579759771779020176545948529236348619471406": 0.9785
    },
-   "current_value": 9.973253,
-   "unrealized_pl": -0.035747,
-   "unrealized_pl_pct": -0.357
+   "current_value": 9.99368,
+   "unrealized_pl": -0.01532,
+   "unrealized_pl_pct": -0.153
   },
   {
    "key": "CV-2935305",
@@ -492,11 +492,11 @@
     }
    ],
    "current_prices": {
-    "80121534570006451074812165563847678522886689339406047748723198214927415363074": 0.9815
+    "80121534570006451074812165563847678522886689339406047748723198214927415363074": 0.984
    },
-   "current_value": 5.575937,
-   "unrealized_pl": -0.002841,
-   "unrealized_pl_pct": -0.051
+   "current_value": 5.590139,
+   "unrealized_pl": 0.011361,
+   "unrealized_pl_pct": 0.204
   },
   {
    "key": "CV-1654958",
@@ -588,40 +588,11 @@
     }
    ],
    "current_prices": {
-    "13127195651321406181065261056148741917367268901499521498921762140732149686777": 0.9535
+    "13127195651321406181065261056148741917367268901499521498921762140732149686777": 0.96
    },
-   "current_value": 24.965808,
-   "unrealized_pl": -0.170192,
-   "unrealized_pl_pct": -0.677
-  },
-  {
-   "key": "CV-2657585",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"The Odyssey\" Opening Weekend Box Office be greater tha",
-   "opened": 1784355657.7184396,
-   "cost": 25.253,
-   "edge": 0.038422,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9684,
-   "resolve_by": "2026-07-19T23:59:00Z",
-   "note": "YES ask 0.963, 1.7d to resolution, 808% annualized if YES, assumed true P 0.968",
-   "legs": [
-    {
-     "token_id": "35358889366059131445607416132477521541386270328042995107702816540034073998102",
-     "market_id": "2657585",
-     "label": "YES Will \"The Odyssey\" Opening Weekend Box Office be greater than 115m?",
-     "side": "YES",
-     "entry_price": 0.963,
-     "shares": 26.223261
-    }
-   ],
-   "current_prices": {
-    "35358889366059131445607416132477521541386270328042995107702816540034073998102": 0.9775
-   },
-   "current_value": 25.633238,
-   "unrealized_pl": 0.380238,
-   "unrealized_pl_pct": 1.506
+   "current_value": 25.136,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
   },
   {
    "key": "CV-2935308",
@@ -646,11 +617,11 @@
     }
    ],
    "current_prices": {
-    "53940577996893803221457909067921749225886592836692636095339332278369234760242": 0.9575
+    "53940577996893803221457909067921749225886592836692636095339332278369234760242": 0.953
    },
-   "current_value": 11.147878,
-   "unrealized_pl": -0.075678,
-   "unrealized_pl_pct": -0.674
+   "current_value": 11.095485,
+   "unrealized_pl": -0.128071,
+   "unrealized_pl_pct": -1.141
   },
   {
    "key": "CV-2107954",
@@ -675,11 +646,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9835
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9845
    },
-   "current_value": 12.558431,
-   "unrealized_pl": -0.006385,
-   "unrealized_pl_pct": -0.051
+   "current_value": 12.571201,
+   "unrealized_pl": 0.006385,
+   "unrealized_pl_pct": 0.051
   },
   {
    "key": "CV-2922812",
@@ -733,11 +704,87 @@
     }
    ],
    "current_prices": {
-    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.9785
+    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.979
    },
-   "current_value": 13.439868,
-   "unrealized_pl": -0.020603,
-   "unrealized_pl_pct": -0.153
+   "current_value": 13.446735,
+   "unrealized_pl": -0.013736,
+   "unrealized_pl_pct": -0.102
+  },
+  {
+   "key": "ARB-NO-693811",
+   "strategy": "ARB",
+   "title": "NO-lock: AIK vs. GAIS",
+   "opened": 1784368160.8671699,
+   "cost": 25.3195,
+   "edge": 0.005025,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 2.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-18T13:00:00Z",
+   "note": "3 outcomes, NO asks sum 1.9900 vs payout 2, 131 sets executable",
+   "legs": [
+    {
+     "token_id": "1005531688934932325151659157311035443792851692885509531820569847280065662581",
+     "market_id": "2888700",
+     "label": "NO Will AIK win on 2026-07-18?",
+     "side": "NO",
+     "entry_price": 0.63,
+     "shares": 12.723367
+    },
+    {
+     "token_id": "101339966470240615426621389568558380489878748645510192655945390875778732929136",
+     "market_id": "2888701",
+     "label": "NO Will AIK vs. GAIS end in a draw?",
+     "side": "NO",
+     "entry_price": 0.73,
+     "shares": 12.723367
+    },
+    {
+     "token_id": "114097115550730787487181640817779359282003506392299105861931163989249649209739",
+     "market_id": "2888702",
+     "label": "NO Will GAIS win on 2026-07-18?",
+     "side": "NO",
+     "entry_price": 0.63,
+     "shares": 12.723367
+    }
+   ],
+   "current_prices": {
+    "1005531688934932325151659157311035443792851692885509531820569847280065662581": 0.625,
+    "101339966470240615426621389568558380489878748645510192655945390875778732929136": 0.725,
+    "114097115550730787487181640817779359282003506392299105861931163989249649209739": 0.625
+   },
+   "current_value": 25.446734,
+   "unrealized_pl": 0.127234,
+   "unrealized_pl_pct": 0.503
+  },
+  {
+   "key": "CV-2947335",
+   "strategy": "CONVERGE",
+   "title": "Converge: Bitcoin Up or Down on July 18?",
+   "opened": 1784368160.867195,
+   "cost": 11.544363,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-18T16:00:00Z",
+   "note": "YES ask 0.950, 0.3d to resolution, 7463% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "73102059789029102015712364534096305835632753015622840344379490552816224642461",
+     "market_id": "2947335",
+     "label": "YES Bitcoin Up or Down on July 18?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 12.151961
+    }
+   ],
+   "current_prices": {
+    "73102059789029102015712364534096305835632753015622840344379490552816224642461": 0.945
+   },
+   "current_value": 11.483603,
+   "unrealized_pl": -0.06076,
+   "unrealized_pl_pct": -0.526
   }
  ],
  "closed": [
@@ -4211,6 +4258,39 @@
    "closed_ts": 1784362501.1859722,
    "payout": 24.73966,
    "pl": 0.03216
+  },
+  {
+   "key": "CV-2657585",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"The Odyssey\" Opening Weekend Box Office be greater tha",
+   "opened": 1784355657.7184396,
+   "cost": 25.253,
+   "edge": 0.038422,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9684,
+   "resolve_by": "2026-07-19T23:59:00Z",
+   "note": "YES ask 0.963, 1.7d to resolution, 808% annualized if YES, assumed true P 0.968",
+   "legs": [
+    {
+     "token_id": "35358889366059131445607416132477521541386270328042995107702816540034073998102",
+     "market_id": "2657585",
+     "label": "YES Will \"The Odyssey\" Opening Weekend Box Office be greater than 115m?",
+     "side": "YES",
+     "entry_price": 0.963,
+     "shares": 26.223261
+    }
+   ],
+   "current_prices": {
+    "35358889366059131445607416132477521541386270328042995107702816540034073998102": 0.9775
+   },
+   "current_value": 25.633238,
+   "unrealized_pl": 0.380238,
+   "unrealized_pl_pct": 1.506,
+   "closed_ts": 1784368161.0543165,
+   "payout": 25.567679,
+   "pl": 0.314679,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -4740,6 +4820,14 @@
    "open_value": 526.5274,
    "equity": 1012.7831,
    "realized_total": 11.1357,
+   "open_positions": 23
+  },
+  {
+   "ts": 1784368161.0560353,
+   "cash": 499.6992,
+   "open_value": 512.8638,
+   "equity": 1012.5629,
+   "realized_total": 11.4826,
    "open_positions": 23
   }
  ],
@@ -6161,6 +6249,34 @@
    "title": "NO-lock: Highest temperature in Mexico City on July 17?",
    "amount": 24.74,
    "pl": 0.03
+  },
+  {
+   "ts": 1784368160.8671699,
+   "type": "OPEN",
+   "key": "ARB-NO-693811",
+   "strategy": "ARB",
+   "title": "NO-lock: AIK vs. GAIS",
+   "amount": 25.32,
+   "pl": null
+  },
+  {
+   "ts": 1784368160.867195,
+   "type": "OPEN",
+   "key": "CV-2947335",
+   "strategy": "CONVERGE",
+   "title": "Converge: Bitcoin Up or Down on July 18?",
+   "amount": 11.54,
+   "pl": null
+  },
+  {
+   "ts": 1784368161.0543165,
+   "type": "CLOSE",
+   "key": "CV-2657585",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"The Odyssey\" Opening Weekend Box Office be greater tha",
+   "amount": 25.57,
+   "pl": 0.31,
+   "reason": "take_profit"
   }
  ]
 }
