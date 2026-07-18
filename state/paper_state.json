@@ -1,5 +1,5 @@
 {
- "cash": 449.690898,
+ "cash": 524.28215,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -43,11 +43,11 @@
    "current_prices": {
     "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.954,
     "93320657450177854098059849588100288636908681690362123373676280636770405062010": 0.0035,
-    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.0455
+    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.044
    },
-   "current_value": 51.048542,
-   "unrealized_pl": 0.712542,
-   "unrealized_pl_pct": 1.416
+   "current_value": 50.972198,
+   "unrealized_pl": 0.636198,
+   "unrealized_pl_pct": 1.264
   },
   {
    "key": "ARB-YES-45017",
@@ -137,7 +137,7 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.331,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.3315,
     "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.655,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.962
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9645
    },
-   "current_value": 25.076464,
-   "unrealized_pl": -0.208536,
-   "unrealized_pl_pct": -0.825
+   "current_value": 25.141631,
+   "unrealized_pl": -0.143369,
+   "unrealized_pl_pct": -0.567
   },
   {
    "key": "CV-2000247",
@@ -231,11 +231,11 @@
     }
    ],
    "current_prices": {
-    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.976
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.9765
    },
-   "current_value": 25.36296,
-   "unrealized_pl": 0.07796,
-   "unrealized_pl_pct": 0.308
+   "current_value": 25.375953,
+   "unrealized_pl": 0.090953,
+   "unrealized_pl_pct": 0.36
   },
   {
    "key": "CV-2906900",
@@ -263,35 +263,6 @@
     "111978535704830551165679669976673002553088017202806667756618402505630710146359": 0.99
    },
    "current_value": 25.285,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
-  },
-  {
-   "key": "CV-2906903",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,600 on July 20?",
-   "opened": 1784108961.7586944,
-   "cost": 6.32125,
-   "edge": 0.010101,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9902500000000001,
-   "resolve_by": "2026-07-20T16:00:00Z",
-   "note": "YES ask 0.990, 5.3d to resolution, 70% annualized if YES, assumed true P 0.990",
-   "legs": [
-    {
-     "token_id": "97229519691870246510640612600972874709894121349597661490361051865134089632004",
-     "market_id": "2906903",
-     "label": "YES Will the price of Ethereum be above $1,600 on July 20?",
-     "side": "YES",
-     "entry_price": 0.99,
-     "shares": 6.385101
-    }
-   ],
-   "current_prices": {
-    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.99
-   },
-   "current_value": 6.32125,
    "unrealized_pl": -0.0,
    "unrealized_pl_pct": -0.0
   },
@@ -410,35 +381,6 @@
    "current_value": 25.490503,
    "unrealized_pl": -0.026497,
    "unrealized_pl_pct": -0.104
-  },
-  {
-   "key": "CV-2796793",
-   "strategy": "CONVERGE",
-   "title": "Converge: Nashville SC vs. Atlanta United FC: O/U 0.5",
-   "opened": 1784268355.952221,
-   "cost": 23.530849,
-   "edge": 0.053741,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9588,
-   "resolve_by": "2026-07-18T00:00:00Z",
-   "note": "YES ask 0.949, 0.7d to resolution, 2630% annualized if YES, assumed true P 0.959",
-   "legs": [
-    {
-     "token_id": "54183279021132560748899430810016970745734687222318291985165789486332178155204",
-     "market_id": "2796793",
-     "label": "YES Nashville SC vs. Atlanta United FC: O/U 0.5",
-     "side": "YES",
-     "entry_price": 0.949,
-     "shares": 24.795415
-    }
-   ],
-   "current_prices": {
-    "54183279021132560748899430810016970745734687222318291985165789486332178155204": 0.8755
-   },
-   "current_value": 21.708386,
-   "unrealized_pl": -1.822463,
-   "unrealized_pl_pct": -7.745
   },
   {
    "key": "ARB-NO-708380",
@@ -582,11 +524,11 @@
     }
    ],
    "current_prices": {
-    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.971
+    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.973
    },
-   "current_value": 6.707948,
-   "unrealized_pl": -0.055266,
-   "unrealized_pl_pct": -0.817
+   "current_value": 6.721764,
+   "unrealized_pl": -0.04145,
+   "unrealized_pl_pct": -0.613
   },
   {
    "key": "CV-2952457",
@@ -611,11 +553,11 @@
     }
    ],
    "current_prices": {
-    "114937803941081877560961025721440367956127017940684514090246121694104479600905": 0.9345
+    "114937803941081877560961025721440367956127017940684514090246121694104479600905": 0.9395
    },
-   "current_value": 24.11356,
-   "unrealized_pl": -0.63219,
-   "unrealized_pl_pct": -2.555
+   "current_value": 24.242578,
+   "unrealized_pl": -0.503172,
+   "unrealized_pl_pct": -2.033
   },
   {
    "key": "CV-2875045",
@@ -640,11 +582,11 @@
     }
    ],
    "current_prices": {
-    "110068731514205432257978521692895704349216419735911775572955626297955892469666": 0.9725
+    "110068731514205432257978521692895704349216419735911775572955626297955892469666": 0.973
    },
-   "current_value": 11.701772,
-   "unrealized_pl": 0.150409,
-   "unrealized_pl_pct": 1.302
+   "current_value": 11.707788,
+   "unrealized_pl": 0.156425,
+   "unrealized_pl_pct": 1.354
   },
   {
    "key": "CV-2906993",
@@ -669,11 +611,11 @@
     }
    ],
    "current_prices": {
-    "60960540798995561712502666419335280139129985287405916727780664946680129547350": 0.9835
+    "60960540798995561712502666419335280139129985287405916727780664946680129547350": 0.9845
    },
-   "current_value": 25.058698,
-   "unrealized_pl": 0.063698,
-   "unrealized_pl_pct": 0.255
+   "current_value": 25.084177,
+   "unrealized_pl": 0.089177,
+   "unrealized_pl_pct": 0.357
   },
   {
    "key": "CV-2906905",
@@ -698,11 +640,11 @@
     }
    ],
    "current_prices": {
-    "48700469283317111136380901731338826579759771779020176545948529236348619471406": 0.976
+    "48700469283317111136380901731338826579759771779020176545948529236348619471406": 0.9795
    },
-   "current_value": 9.968147,
-   "unrealized_pl": -0.040853,
-   "unrealized_pl_pct": -0.408
+   "current_value": 10.003893,
+   "unrealized_pl": -0.005107,
+   "unrealized_pl_pct": -0.051
   },
   {
    "key": "CV-2922812",
@@ -727,11 +669,11 @@
     }
    ],
    "current_prices": {
-    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.9815
+    "86923716003196344332820431372509735835080591290172637773294841387219174551933": 0.982
    },
-   "current_value": 12.893448,
-   "unrealized_pl": 0.045977,
-   "unrealized_pl_pct": 0.358
+   "current_value": 12.900016,
+   "unrealized_pl": 0.052545,
+   "unrealized_pl_pct": 0.409
   },
   {
    "key": "CV-2935305",
@@ -756,11 +698,11 @@
     }
    ],
    "current_prices": {
-    "80121534570006451074812165563847678522886689339406047748723198214927415363074": 0.9755
+    "80121534570006451074812165563847678522886689339406047748723198214927415363074": 0.9765
    },
-   "current_value": 5.541851,
-   "unrealized_pl": -0.036927,
-   "unrealized_pl_pct": -0.662
+   "current_value": 5.547532,
+   "unrealized_pl": -0.031246,
+   "unrealized_pl_pct": -0.56
   },
   {
    "key": "CV-1654958",
@@ -785,11 +727,11 @@
     }
    ],
    "current_prices": {
-    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9435
+    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9445
    },
-   "current_value": 21.084299,
-   "unrealized_pl": -0.011173,
-   "unrealized_pl_pct": -0.053
+   "current_value": 21.106646,
+   "unrealized_pl": 0.011174,
+   "unrealized_pl_pct": 0.053
   },
   {
    "key": "ARB-YES-57111",
@@ -823,7 +765,7 @@
    ],
    "current_prices": {
     "21099887182068653164347641846316470453763034851874063977340528628016776716246": 0.625,
-    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.368
+    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.3675
    },
    "current_value": 25.518782,
    "unrealized_pl": 0.382782,
@@ -852,87 +794,11 @@
     }
    ],
    "current_prices": {
-    "13127195651321406181065261056148741917367268901499521498921762140732149686777": 0.945
+    "13127195651321406181065261056148741917367268901499521498921762140732149686777": 0.95
    },
-   "current_value": 24.74325,
-   "unrealized_pl": -0.39275,
-   "unrealized_pl_pct": -1.563
-  },
-  {
-   "key": "ARB-NO-666996",
-   "strategy": "ARB",
-   "title": "NO-lock: Mirassol FC vs. Gr\u00eamio FBPA",
-   "opened": 1784331486.5411737,
-   "cost": 25.14525,
-   "edge": 0.005025,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 2.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-17T23:00:00Z",
-   "note": "3 outcomes, NO asks sum 1.9900 vs payout 2, 36 sets executable",
-   "legs": [
-    {
-     "token_id": "56203536198546796457419575879081631748089952996149159791107042290827848727164",
-     "market_id": "2798192",
-     "label": "NO Will Mirassol FC win on 2026-07-17?",
-     "side": "NO",
-     "entry_price": 0.43,
-     "shares": 12.635804
-    },
-    {
-     "token_id": "15952603507397062680824591146675488557108455101285819843053942511115023103236",
-     "market_id": "2798196",
-     "label": "NO Will Mirassol FC vs. Gr\u00eamio FBPA end in a draw?",
-     "side": "NO",
-     "entry_price": 0.77,
-     "shares": 12.635804
-    },
-    {
-     "token_id": "23412725689145922212295106024635218878326618538267174146235758381348844576666",
-     "market_id": "2798199",
-     "label": "NO Will Gr\u00eamio FBPA win on 2026-07-17?",
-     "side": "NO",
-     "entry_price": 0.79,
-     "shares": 12.635804
-    }
-   ],
-   "current_prices": {
-    "56203536198546796457419575879081631748089952996149159791107042290827848727164": 0.0055,
-    "15952603507397062680824591146675488557108455101285819843053942511115023103236": 0.9935,
-    "23412725689145922212295106024635218878326618538267174146235758381348844576666": 0.9995
-   },
-   "current_value": 25.271608,
-   "unrealized_pl": 0.126358,
-   "unrealized_pl_pct": 0.503
-  },
-  {
-   "key": "CV-2935043",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"The Odyssey\" Opening Day Box Office be at least 48m?",
-   "opened": 1784331486.541191,
-   "cost": 17.680773,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-07-17T23:59:00Z",
-   "note": "YES ask 0.950, 0.0d to resolution, 96053% annualized if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "36185831458182524969703755838798386877186745415388793647815037831462163069558",
-     "market_id": "2935043",
-     "label": "YES Will \"The Odyssey\" Opening Day Box Office be at least 48m?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 18.61134
-    }
-   ],
-   "current_prices": {
-    "36185831458182524969703755838798386877186745415388793647815037831462163069558": 0.95
-   },
-   "current_value": 17.680773,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 24.874166,
+   "unrealized_pl": -0.261834,
+   "unrealized_pl_pct": -1.042
   }
  ],
  "closed": [
@@ -4037,6 +3903,154 @@
    "payout": 17.414087,
    "pl": 0.174314,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2906903",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,600 on July 20?",
+   "opened": 1784108961.7586944,
+   "cost": 6.32125,
+   "edge": 0.010101,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9902500000000001,
+   "resolve_by": "2026-07-20T16:00:00Z",
+   "note": "YES ask 0.990, 5.3d to resolution, 70% annualized if YES, assumed true P 0.990",
+   "legs": [
+    {
+     "token_id": "97229519691870246510640612600972874709894121349597661490361051865134089632004",
+     "market_id": "2906903",
+     "label": "YES Will the price of Ethereum be above $1,600 on July 20?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 6.385101
+    }
+   ],
+   "current_prices": {
+    "97229519691870246510640612600972874709894121349597661490361051865134089632004": 0.99
+   },
+   "current_value": 6.32125,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1784347944.8960898,
+   "payout": 6.359561,
+   "pl": 0.038311,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2935043",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"The Odyssey\" Opening Day Box Office be at least 48m?",
+   "opened": 1784331486.541191,
+   "cost": 17.680773,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-17T23:59:00Z",
+   "note": "YES ask 0.950, 0.0d to resolution, 96053% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "36185831458182524969703755838798386877186745415388793647815037831462163069558",
+     "market_id": "2935043",
+     "label": "YES Will \"The Odyssey\" Opening Day Box Office be at least 48m?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 18.61134
+    }
+   ],
+   "current_prices": {
+    "36185831458182524969703755838798386877186745415388793647815037831462163069558": 0.95
+   },
+   "current_value": 17.680773,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1784347944.8960898,
+   "payout": 18.164668,
+   "pl": 0.483895,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2796793",
+   "strategy": "CONVERGE",
+   "title": "Converge: Nashville SC vs. Atlanta United FC: O/U 0.5",
+   "opened": 1784268355.952221,
+   "cost": 23.530849,
+   "edge": 0.053741,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9588,
+   "resolve_by": "2026-07-18T00:00:00Z",
+   "note": "YES ask 0.949, 0.7d to resolution, 2630% annualized if YES, assumed true P 0.959",
+   "legs": [
+    {
+     "token_id": "54183279021132560748899430810016970745734687222318291985165789486332178155204",
+     "market_id": "2796793",
+     "label": "YES Nashville SC vs. Atlanta United FC: O/U 0.5",
+     "side": "YES",
+     "entry_price": 0.949,
+     "shares": 24.795415
+    }
+   ],
+   "current_prices": {
+    "54183279021132560748899430810016970745734687222318291985165789486332178155204": 0.949
+   },
+   "current_value": 23.530849,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1784347948.2462032,
+   "payout": 24.795415,
+   "pl": 1.264566
+  },
+  {
+   "key": "ARB-NO-666996",
+   "strategy": "ARB",
+   "title": "NO-lock: Mirassol FC vs. Gr\u00eamio FBPA",
+   "opened": 1784331486.5411737,
+   "cost": 25.14525,
+   "edge": 0.005025,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 2.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-17T23:00:00Z",
+   "note": "3 outcomes, NO asks sum 1.9900 vs payout 2, 36 sets executable",
+   "legs": [
+    {
+     "token_id": "56203536198546796457419575879081631748089952996149159791107042290827848727164",
+     "market_id": "2798192",
+     "label": "NO Will Mirassol FC win on 2026-07-17?",
+     "side": "NO",
+     "entry_price": 0.43,
+     "shares": 12.635804
+    },
+    {
+     "token_id": "15952603507397062680824591146675488557108455101285819843053942511115023103236",
+     "market_id": "2798196",
+     "label": "NO Will Mirassol FC vs. Gr\u00eamio FBPA end in a draw?",
+     "side": "NO",
+     "entry_price": 0.77,
+     "shares": 12.635804
+    },
+    {
+     "token_id": "23412725689145922212295106024635218878326618538267174146235758381348844576666",
+     "market_id": "2798199",
+     "label": "NO Will Gr\u00eamio FBPA win on 2026-07-17?",
+     "side": "NO",
+     "entry_price": 0.79,
+     "shares": 12.635804
+    }
+   ],
+   "current_prices": {
+    "56203536198546796457419575879081631748089952996149159791107042290827848727164": 0.43,
+    "15952603507397062680824591146675488557108455101285819843053942511115023103236": 0.77,
+    "23412725689145922212295106024635218878326618538267174146235758381348844576666": 0.79
+   },
+   "current_value": 25.271608,
+   "unrealized_pl": 0.126358,
+   "unrealized_pl_pct": 0.503,
+   "closed_ts": 1784347948.2462032,
+   "payout": 25.271608,
+   "pl": 0.126358
   }
  ],
  "history": [
@@ -4543,6 +4557,14 @@
    "equity": 1007.3998,
    "realized_total": 8.821,
    "open_positions": 25
+  },
+  {
+   "ts": 1784347944.8975413,
+   "cash": 474.2151,
+   "open_value": 535.9067,
+   "equity": 1010.1218,
+   "realized_total": 9.3432,
+   "open_positions": 23
   }
  ],
  "trades": [
@@ -5841,6 +5863,44 @@
    "title": "Converge: Will \"The Odyssey\" Opening Day Box Office be at least 48m?",
    "amount": 17.68,
    "pl": null
+  },
+  {
+   "ts": 1784347944.8960898,
+   "type": "CLOSE",
+   "key": "CV-2906903",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,600 on July 20?",
+   "amount": 6.36,
+   "pl": 0.04,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784347944.8960898,
+   "type": "CLOSE",
+   "key": "CV-2935043",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"The Odyssey\" Opening Day Box Office be at least 48m?",
+   "amount": 18.16,
+   "pl": 0.48,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784347948.2462032,
+   "type": "CLOSE",
+   "key": "CV-2796793",
+   "strategy": "CONVERGE",
+   "title": "Converge: Nashville SC vs. Atlanta United FC: O/U 0.5",
+   "amount": 24.8,
+   "pl": 1.26
+  },
+  {
+   "ts": 1784347948.2462032,
+   "type": "CLOSE",
+   "key": "ARB-NO-666996",
+   "strategy": "ARB",
+   "title": "NO-lock: Mirassol FC vs. Gr\u00eamio FBPA",
+   "amount": 25.27,
+   "pl": 0.13
   }
  ]
 }
