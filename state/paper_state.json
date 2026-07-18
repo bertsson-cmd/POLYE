@@ -1,5 +1,5 @@
 {
- "cash": 533.307088,
+ "cash": 501.545566,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -137,7 +137,7 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.352,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.353,
     "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.655,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 32.07327,
-   "unrealized_pl": 0.74589,
-   "unrealized_pl_pct": 2.381
+   "current_value": 32.10501,
+   "unrealized_pl": 0.77763,
+   "unrealized_pl_pct": 2.482
   },
   {
    "key": "LS-1439549",
@@ -207,35 +207,6 @@
    "current_value": 25.376234,
    "unrealized_pl": 0.091234,
    "unrealized_pl_pct": 0.361
-  },
-  {
-   "key": "CV-2000247",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Coldplay perform at the 2026 FIFA World Cup Final halft",
-   "opened": 1784108961.75866,
-   "cost": 25.285,
-   "edge": 0.027749,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.979,
-   "resolve_by": "2026-07-19T00:00:00Z",
-   "note": "YES ask 0.973, 3.6d to resolution, 282% annualized if YES, assumed true P 0.979",
-   "legs": [
-    {
-     "token_id": "88967909667090379020314383307815183430271390905114573686838398881873325413438",
-     "market_id": "2000247",
-     "label": "YES Will Coldplay perform at the 2026 FIFA World Cup Final halftime show?",
-     "side": "YES",
-     "entry_price": 0.973,
-     "shares": 25.986639
-    }
-   ],
-   "current_prices": {
-    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.98
-   },
-   "current_value": 25.466906,
-   "unrealized_pl": 0.181906,
-   "unrealized_pl_pct": 0.719
   },
   {
    "key": "CV-2822509",
@@ -347,11 +318,11 @@
     }
    ],
    "current_prices": {
-    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.954
+    "86680247297404227698835375487849042651771548951718649081182622616196290047519": 0.969
    },
-   "current_value": 6.590507,
-   "unrealized_pl": -0.172707,
-   "unrealized_pl_pct": -2.554
+   "current_value": 6.694131,
+   "unrealized_pl": -0.069083,
+   "unrealized_pl_pct": -1.021
   },
   {
    "key": "CV-2906905",
@@ -376,11 +347,11 @@
     }
    ],
    "current_prices": {
-    "48700469283317111136380901731338826579759771779020176545948529236348619471406": 0.983
+    "48700469283317111136380901731338826579759771779020176545948529236348619471406": 0.9835
    },
-   "current_value": 10.039639,
-   "unrealized_pl": 0.030639,
-   "unrealized_pl_pct": 0.306
+   "current_value": 10.044746,
+   "unrealized_pl": 0.035746,
+   "unrealized_pl_pct": 0.357
   },
   {
    "key": "CV-2935305",
@@ -434,11 +405,11 @@
     }
    ],
    "current_prices": {
-    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.945
+    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9435
    },
-   "current_value": 21.11782,
-   "unrealized_pl": 0.022348,
-   "unrealized_pl_pct": 0.106
+   "current_value": 21.084299,
+   "unrealized_pl": -0.011173,
+   "unrealized_pl_pct": -0.053
   },
   {
    "key": "ARB-YES-57111",
@@ -471,12 +442,12 @@
     }
    ],
    "current_prices": {
-    "21099887182068653164347641846316470453763034851874063977340528628016776716246": 0.635,
-    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.3685
+    "21099887182068653164347641846316470453763034851874063977340528628016776716246": 0.61,
+    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.375
    },
-   "current_value": 25.608098,
-   "unrealized_pl": 0.472098,
-   "unrealized_pl_pct": 1.878
+   "current_value": 25.518782,
+   "unrealized_pl": 0.382782,
+   "unrealized_pl_pct": 1.523
   },
   {
    "key": "CV-2935345",
@@ -501,11 +472,11 @@
     }
    ],
    "current_prices": {
-    "13127195651321406181065261056148741917367268901499521498921762140732149686777": 0.9715
+    "13127195651321406181065261056148741917367268901499521498921762140732149686777": 0.97
    },
-   "current_value": 25.437108,
-   "unrealized_pl": 0.301108,
-   "unrealized_pl_pct": 1.198
+   "current_value": 25.397833,
+   "unrealized_pl": 0.261833,
+   "unrealized_pl_pct": 1.042
   },
   {
    "key": "CV-2935308",
@@ -617,11 +588,11 @@
     }
    ],
    "current_prices": {
-    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.9745
+    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.9685
    },
-   "current_value": 13.384927,
-   "unrealized_pl": -0.075544,
-   "unrealized_pl_pct": -0.561
+   "current_value": 13.302516,
+   "unrealized_pl": -0.157955,
+   "unrealized_pl_pct": -1.173
   },
   {
    "key": "CV-1122565",
@@ -646,11 +617,11 @@
     }
    ],
    "current_prices": {
-    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.973
+    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.9735
    },
-   "current_value": 5.631526,
-   "unrealized_pl": 0.005788,
-   "unrealized_pl_pct": 0.103
+   "current_value": 5.634419,
+   "unrealized_pl": 0.008681,
+   "unrealized_pl_pct": 0.154
   },
   {
    "key": "CV-2960108",
@@ -749,13 +720,13 @@
     }
    ],
    "current_prices": {
-    "19496067462963110205036243822692095717194745632900824355345130843698426625482": 0.46,
-    "11243147421976689538894395841825473502307034835783870709980059448823287860895": 0.735,
-    "3632568448728797759836781450537073325968641255413176100873102585419543925335": 0.79
+    "19496067462963110205036243822692095717194745632900824355345130843698426625482": 0.055,
+    "11243147421976689538894395841825473502307034835783870709980059448823287860895": 0.966,
+    "3632568448728797759836781450537073325968641255413176100873102585419543925335": 0.982
    },
-   "current_value": 25.507036,
-   "unrealized_pl": 0.127536,
-   "unrealized_pl_pct": 0.503
+   "current_value": 25.545297,
+   "unrealized_pl": 0.165797,
+   "unrealized_pl_pct": 0.653
   },
   {
    "key": "CV-2922815",
@@ -784,6 +755,122 @@
    },
    "current_value": 25.245924,
    "unrealized_pl": -0.133576,
+   "unrealized_pl_pct": -0.526
+  },
+  {
+   "key": "CV-2907001",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 20?",
+   "opened": 1784413657.5326846,
+   "cost": 15.24675,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-07-20T16:00:00Z",
+   "note": "YES ask 0.980, 1.7d to resolution, 430% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "83365750894356506589098992210320440187766786626745198620141393740916642725488",
+     "market_id": "2907001",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 20?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 15.557908
+    }
+   ],
+   "current_prices": {
+    "83365750894356506589098992210320440187766786626745198620141393740916642725488": 0.9765
+   },
+   "current_value": 15.192297,
+   "unrealized_pl": -0.054453,
+   "unrealized_pl_pct": -0.357
+  },
+  {
+   "key": "CV-1122569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Yu Deng win the 2026 Fields Medal?",
+   "opened": 1784413657.5327067,
+   "cost": 25.41125,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9656,
+   "resolve_by": "2026-07-30T00:00:00Z",
+   "note": "YES ask 0.960, 11.1d to resolution, 137% annualized if YES, assumed true P 0.966",
+   "legs": [
+    {
+     "token_id": "23119677842919557473618751826817403683743402701277223294183020674564478808086",
+     "market_id": "1122569",
+     "label": "YES Will Yu Deng win the 2026 Fields Medal?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 26.470052
+    }
+   ],
+   "current_prices": {
+    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.957
+   },
+   "current_value": 25.33184,
+   "unrealized_pl": -0.07941,
+   "unrealized_pl_pct": -0.313
+  },
+  {
+   "key": "CV-2674108",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
+   "opened": 1784413657.5327234,
+   "cost": 10.1645,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.950, 13.1d to resolution, 147% annualized if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "103818288966521645160585233658582119264581111644689435387842700071754028133781",
+     "market_id": "2674108",
+     "label": "YES Will Alphabet be the third-largest company in the world by market cap on July 31?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.699474
+    }
+   ],
+   "current_prices": {
+    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.94
+   },
+   "current_value": 10.057506,
+   "unrealized_pl": -0.106994,
+   "unrealized_pl_pct": -1.053
+  },
+  {
+   "key": "CV-2947456",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bitcoin reach $65,000 in July?",
+   "opened": 1784413657.5327365,
+   "cost": 6.509875,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-01T04:00:00Z",
+   "note": "YES ask 0.950, 13.2d to resolution, 145% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "8272717985278068614134851471397366454827701067021134302571082221934476848259",
+     "market_id": "2947456",
+     "label": "YES Will Bitcoin reach $65,000 in July?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 6.8525
+    }
+   ],
+   "current_prices": {
+    "8272717985278068614134851471397366454827701067021134302571082221934476848259": 0.945
+   },
+   "current_value": 6.475612,
+   "unrealized_pl": -0.034263,
    "unrealized_pl_pct": -0.526
   }
  ],
@@ -4638,6 +4725,39 @@
    "payout": 5.901055,
    "pl": 0.05343,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2000247",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Coldplay perform at the 2026 FIFA World Cup Final halft",
+   "opened": 1784108961.75866,
+   "cost": 25.285,
+   "edge": 0.027749,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.979,
+   "resolve_by": "2026-07-19T00:00:00Z",
+   "note": "YES ask 0.973, 3.6d to resolution, 282% annualized if YES, assumed true P 0.979",
+   "legs": [
+    {
+     "token_id": "88967909667090379020314383307815183430271390905114573686838398881873325413438",
+     "market_id": "2000247",
+     "label": "YES Will Coldplay perform at the 2026 FIFA World Cup Final halftime show?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 25.986639
+    }
+   ],
+   "current_prices": {
+    "88967909667090379020314383307815183430271390905114573686838398881873325413438": 0.98
+   },
+   "current_value": 25.466906,
+   "unrealized_pl": 0.181906,
+   "unrealized_pl_pct": 0.719,
+   "closed_ts": 1784413657.8553927,
+   "payout": 25.570853,
+   "pl": 0.285853,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -5264,6 +5384,14 @@
    "equity": 1016.4463,
    "realized_total": 14.3556,
    "open_positions": 23
+  },
+  {
+   "ts": 1784413657.8570626,
+   "cash": 501.5456,
+   "open_value": 514.6667,
+   "equity": 1016.2122,
+   "realized_total": 14.6414,
+   "open_positions": 26
   }
  ],
  "trades": [
@@ -6900,6 +7028,52 @@
    "title": "Converge: Israel x Iran ceasefire continues through July 18?",
    "amount": 5.9,
    "pl": 0.05,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784413657.5326846,
+   "type": "OPEN",
+   "key": "CV-2907001",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 20?",
+   "amount": 15.25,
+   "pl": null
+  },
+  {
+   "ts": 1784413657.5327067,
+   "type": "OPEN",
+   "key": "CV-1122569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Yu Deng win the 2026 Fields Medal?",
+   "amount": 25.41,
+   "pl": null
+  },
+  {
+   "ts": 1784413657.5327234,
+   "type": "OPEN",
+   "key": "CV-2674108",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
+   "amount": 10.16,
+   "pl": null
+  },
+  {
+   "ts": 1784413657.5327365,
+   "type": "OPEN",
+   "key": "CV-2947456",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bitcoin reach $65,000 in July?",
+   "amount": 6.51,
+   "pl": null
+  },
+  {
+   "ts": 1784413657.8553927,
+   "type": "CLOSE",
+   "key": "CV-2000247",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Coldplay perform at the 2026 FIFA World Cup Final halft",
+   "amount": 25.57,
+   "pl": 0.29,
    "reason": "take_profit"
   }
  ]
