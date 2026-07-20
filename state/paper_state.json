@@ -1,5 +1,5 @@
 {
- "cash": 581.909253,
+ "cash": 582.894794,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -137,8 +137,8 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2305,
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.775,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2425,
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.77,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
     "44162996630579613944619329601086604585114580039271806622718850166081603488312": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 32.02566,
-   "unrealized_pl": 0.69828,
-   "unrealized_pl_pct": 2.229
+   "current_value": 32.24784,
+   "unrealized_pl": 0.92046,
+   "unrealized_pl_pct": 2.938
   },
   {
    "key": "LS-1439549",
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9685
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.968
    },
-   "current_value": 25.245899,
-   "unrealized_pl": -0.039101,
-   "unrealized_pl_pct": -0.155
+   "current_value": 25.232866,
+   "unrealized_pl": -0.052134,
+   "unrealized_pl_pct": -0.206
   },
   {
    "key": "CV-1697034",
@@ -289,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9255
+    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9245
    },
-   "current_value": 20.682055,
-   "unrealized_pl": -0.413417,
-   "unrealized_pl_pct": -1.96
+   "current_value": 20.659708,
+   "unrealized_pl": -0.435764,
+   "unrealized_pl_pct": -2.066
   },
   {
    "key": "ARB-YES-57111",
@@ -450,35 +450,6 @@
    "unrealized_pl_pct": -2.119
   },
   {
-   "key": "CV-2972725",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 25?",
-   "opened": 1784560757.2486,
-   "cost": 11.083146,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.962,
-   "resolve_by": "2026-07-25T16:00:00Z",
-   "note": "YES ask 0.960, 5.0d to resolution, 302% annualized if YES, assumed true P 0.962",
-   "legs": [
-    {
-     "token_id": "71007539240438926136479249091731287053054173971693284648278649533795775651103",
-     "market_id": "2972725",
-     "label": "YES Will the price of Bitcoin be above $60,000 on July 25?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 11.544944
-    }
-   ],
-   "current_prices": {
-    "71007539240438926136479249091731287053054173971693284648278649533795775651103": 0.97
-   },
-   "current_value": 11.198596,
-   "unrealized_pl": 0.11545,
-   "unrealized_pl_pct": 1.042
-  },
-  {
    "key": "CV-2947127",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on July 23?",
@@ -501,11 +472,11 @@
     }
    ],
    "current_prices": {
-    "100437351227687728701149011840333982005892515051071358540964438215687067442828": 0.955
+    "100437351227687728701149011840333982005892515051071358540964438215687067442828": 0.9475
    },
-   "current_value": 11.265035,
-   "unrealized_pl": 0.058979,
-   "unrealized_pl_pct": 0.526
+   "current_value": 11.176566,
+   "unrealized_pl": -0.02949,
+   "unrealized_pl_pct": -0.263
   },
   {
    "key": "CV-2941200",
@@ -530,11 +501,11 @@
     }
    ],
    "current_prices": {
-    "101831868326159067849064278473887514248597718525489703509084099580788944801747": 0.947
+    "101831868326159067849064278473887514248597718525489703509084099580788944801747": 0.944
    },
-   "current_value": 8.211303,
-   "unrealized_pl": -0.086709,
-   "unrealized_pl_pct": -1.045
+   "current_value": 8.185291,
+   "unrealized_pl": -0.112721,
+   "unrealized_pl_pct": -1.358
   },
   {
    "key": "CV-2935349",
@@ -559,11 +530,11 @@
     }
    ],
    "current_prices": {
-    "100770844920950784937475051665612648257109648970492346699985024071829641517654": 0.984
+    "100770844920950784937475051665612648257109648970492346699985024071829641517654": 0.9815
    },
-   "current_value": 25.643111,
-   "unrealized_pl": 0.156361,
-   "unrealized_pl_pct": 0.613
+   "current_value": 25.577961,
+   "unrealized_pl": 0.091211,
+   "unrealized_pl_pct": 0.358
   },
   {
    "key": "CV-2922778",
@@ -588,11 +559,11 @@
     }
    ],
    "current_prices": {
-    "55486266869018499236726156533271100748658448729923912295184765092633291408925": 0.9845
+    "55486266869018499236726156533271100748658448729923912295184765092633291408925": 0.9825
    },
-   "current_value": 25.540915,
-   "unrealized_pl": 0.038915,
-   "unrealized_pl_pct": 0.153
+   "current_value": 25.489029,
+   "unrealized_pl": -0.012971,
+   "unrealized_pl_pct": -0.051
   },
   {
    "key": "CV-2935309",
@@ -617,11 +588,11 @@
     }
    ],
    "current_prices": {
-    "30605964720888302776699204949074464013760661924343264374527405707799316311759": 0.96
+    "30605964720888302776699204949074464013760661924343264374527405707799316311759": 0.953
    },
-   "current_value": 25.770443,
-   "unrealized_pl": 0.268443,
-   "unrealized_pl_pct": 1.053
+   "current_value": 25.582533,
+   "unrealized_pl": 0.080533,
+   "unrealized_pl_pct": 0.316
   },
   {
    "key": "CV-2960072",
@@ -646,11 +617,40 @@
     }
    ],
    "current_prices": {
-    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.9625
+    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.962
    },
-   "current_value": 25.215871,
-   "unrealized_pl": -0.039298,
-   "unrealized_pl_pct": -0.156
+   "current_value": 25.202772,
+   "unrealized_pl": -0.052397,
+   "unrealized_pl_pct": -0.207
+  },
+  {
+   "key": "CV-2952471",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 22?",
+   "opened": 1784586957.5746493,
+   "cost": 10.2246,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-07-22T23:59:00Z",
+   "note": "YES ask 0.950, 2.1d to resolution, 934% annualized if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "58261307118108936367430768346218679796444242208550226624418473434210861808681",
+     "market_id": "2952471",
+     "label": "YES Israel x Iran ceasefire continues through July 22?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.762737
+    }
+   ],
+   "current_prices": {
+    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.94
+   },
+   "current_value": 10.116973,
+   "unrealized_pl": -0.107627,
+   "unrealized_pl_pct": -1.053
   }
  ],
  "closed": [
@@ -5636,6 +5636,39 @@
    "payout": 26.08736,
    "pl": 0.60061,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2972725",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 25?",
+   "opened": 1784560757.2486,
+   "cost": 11.083146,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.962,
+   "resolve_by": "2026-07-25T16:00:00Z",
+   "note": "YES ask 0.960, 5.0d to resolution, 302% annualized if YES, assumed true P 0.962",
+   "legs": [
+    {
+     "token_id": "71007539240438926136479249091731287053054173971693284648278649533795775651103",
+     "market_id": "2972725",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 25?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 11.544944
+    }
+   ],
+   "current_prices": {
+    "71007539240438926136479249091731287053054173971693284648278649533795775651103": 0.97
+   },
+   "current_value": 11.198596,
+   "unrealized_pl": 0.11545,
+   "unrealized_pl_pct": 1.042,
+   "closed_ts": 1784586957.692113,
+   "payout": 11.210141,
+   "pl": 0.126995,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -6493,6 +6526,14 @@
    "open_value": 440.552,
    "equity": 1022.4612,
    "realized_total": 21.0039,
+   "open_positions": 19
+  },
+  {
+   "ts": 1784586957.693607,
+   "cash": 582.8948,
+   "open_value": 439.2246,
+   "equity": 1022.1194,
+   "realized_total": 21.1309,
    "open_positions": 19
   }
  ],
@@ -8640,6 +8681,25 @@
    "title": "Converge: Silver (XAGUSD) Up or Down on July 20?",
    "amount": 26.09,
    "pl": 0.6,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784586957.5746493,
+   "type": "OPEN",
+   "key": "CV-2952471",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 22?",
+   "amount": 10.22,
+   "pl": null
+  },
+  {
+   "ts": 1784586957.692113,
+   "type": "CLOSE",
+   "key": "CV-2972725",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 25?",
+   "amount": 11.21,
+   "pl": 0.13,
    "reason": "take_profit"
   }
  ]
