@@ -1,5 +1,5 @@
 {
- "cash": 505.468681,
+ "cash": 581.909253,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -41,13 +41,13 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9305,
-    "93320657450177854098059849588100288636908681690362123373676280636770405062010": 0.0045,
-    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.0685
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.91,
+    "93320657450177854098059849588100288636908681690362123373676280636770405062010": 0.007,
+    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.072
    },
-   "current_value": 51.073989,
-   "unrealized_pl": 0.737989,
-   "unrealized_pl_pct": 1.466
+   "current_value": 50.895854,
+   "unrealized_pl": 0.559854,
+   "unrealized_pl_pct": 1.112
   },
   {
    "key": "ARB-YES-45017",
@@ -137,8 +137,8 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.232,
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.76,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2305,
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.775,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
     "44162996630579613944619329601086604585114580039271806622718850166081603488312": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 31.74,
-   "unrealized_pl": 0.41262,
-   "unrealized_pl_pct": 1.317
+   "current_value": 32.02566,
+   "unrealized_pl": 0.69828,
+   "unrealized_pl_pct": 2.229
   },
   {
    "key": "LS-1439549",
@@ -202,40 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9675
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9685
    },
-   "current_value": 25.219832,
-   "unrealized_pl": -0.065168,
-   "unrealized_pl_pct": -0.258
-  },
-  {
-   "key": "CV-2822509",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Teresa Ruiz be the Arizona Superintendent of Public Ins",
-   "opened": 1784147720.836565,
-   "cost": 18.660194,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-07-21T00:00:00Z",
-   "note": "YES ask 0.950, 5.1d to resolution, 374% annualized if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "10364305093325099807812858057020099228390141559467098473774701746415567212593",
-     "market_id": "2822509",
-     "label": "YES Will Teresa Ruiz be the Arizona Superintendent of Public Instruction Democratic nominee?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 19.642309
-    }
-   ],
-   "current_prices": {
-    "10364305093325099807812858057020099228390141559467098473774701746415567212593": 0.95
-   },
-   "current_value": 18.660194,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
+   "current_value": 25.245899,
+   "unrealized_pl": -0.039101,
+   "unrealized_pl_pct": -0.155
   },
   {
    "key": "CV-1697034",
@@ -260,11 +231,11 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.9305
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.958
    },
-   "current_value": 15.821546,
-   "unrealized_pl": -0.46759,
-   "unrealized_pl_pct": -2.871
+   "current_value": 16.289136,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0
   },
   {
    "key": "CV-2785443",
@@ -296,35 +267,6 @@
    "unrealized_pl_pct": 0.0
   },
   {
-   "key": "CV-2935305",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,600 on July 22?",
-   "opened": 1784320099.567091,
-   "cost": 5.578778,
-   "edge": 0.01833,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9823999999999999,
-   "resolve_by": "2026-07-22T16:00:00Z",
-   "note": "YES ask 0.982, 4.8d to resolution, 139% annualized if YES, assumed true P 0.982",
-   "legs": [
-    {
-     "token_id": "80121534570006451074812165563847678522886689339406047748723198214927415363074",
-     "market_id": "2935305",
-     "label": "YES Will the price of Ethereum be above $1,600 on July 22?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 5.681036
-    }
-   ],
-   "current_prices": {
-    "80121534570006451074812165563847678522886689339406047748723198214927415363074": 0.9925
-   },
-   "current_value": 5.638428,
-   "unrealized_pl": 0.05965,
-   "unrealized_pl_pct": 1.069
-  },
-  {
    "key": "CV-1654958",
    "strategy": "CONVERGE",
    "title": "Converge: Will there be no change in Fed interest rates after the July",
@@ -347,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9245
+    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9255
    },
-   "current_value": 20.659708,
-   "unrealized_pl": -0.435764,
-   "unrealized_pl_pct": -2.066
+   "current_value": 20.682055,
+   "unrealized_pl": -0.413417,
+   "unrealized_pl_pct": -1.96
   },
   {
    "key": "ARB-YES-57111",
@@ -508,35 +450,6 @@
    "unrealized_pl_pct": -2.119
   },
   {
-   "key": "CV-2952467",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through July 20?",
-   "opened": 1784552532.8037946,
-   "cost": 25.4515,
-   "edge": 0.026694,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9788,
-   "resolve_by": "2026-07-20T23:59:00Z",
-   "note": "YES ask 0.974, 0.5d to resolution, 2136% annualized if YES, assumed true P 0.979",
-   "legs": [
-    {
-     "token_id": "62074667087255747412382561081475311823484268378809285620641251664614873335395",
-     "market_id": "2952467",
-     "label": "YES Israel x Iran ceasefire continues through July 20?",
-     "side": "YES",
-     "entry_price": 0.974,
-     "shares": 26.130903
-    }
-   ],
-   "current_prices": {
-    "62074667087255747412382561081475311823484268378809285620641251664614873335395": 0.9795
-   },
-   "current_value": 25.595219,
-   "unrealized_pl": 0.143719,
-   "unrealized_pl_pct": 0.565
-  },
-  {
    "key": "CV-2972725",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on July 25?",
@@ -559,11 +472,11 @@
     }
    ],
    "current_prices": {
-    "71007539240438926136479249091731287053054173971693284648278649533795775651103": 0.9655
+    "71007539240438926136479249091731287053054173971693284648278649533795775651103": 0.97
    },
-   "current_value": 11.146643,
-   "unrealized_pl": 0.063497,
-   "unrealized_pl_pct": 0.573
+   "current_value": 11.198596,
+   "unrealized_pl": 0.11545,
+   "unrealized_pl_pct": 1.042
   },
   {
    "key": "CV-2947127",
@@ -588,40 +501,11 @@
     }
    ],
    "current_prices": {
-    "100437351227687728701149011840333982005892515051071358540964438215687067442828": 0.9395
+    "100437351227687728701149011840333982005892515051071358540964438215687067442828": 0.955
    },
-   "current_value": 11.082199,
-   "unrealized_pl": -0.123857,
-   "unrealized_pl_pct": -1.105
-  },
-  {
-   "key": "CV-2958863",
-   "strategy": "CONVERGE",
-   "title": "Converge: Silver (XAGUSD) Up or Down on July 20?",
-   "opened": 1784573177.9572115,
-   "cost": 25.48675,
-   "edge": 0.02459,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9804,
-   "resolve_by": "2026-07-20T21:00:00Z",
-   "note": "YES ask 0.976, 0.1d to resolution, 9667% annualized if YES, assumed true P 0.980",
-   "legs": [
-    {
-     "token_id": "84258547361016193653620946876567603215155330414645923567686337112078432848525",
-     "market_id": "2958863",
-     "label": "YES Silver (XAGUSD) Up or Down on July 20?",
-     "side": "YES",
-     "entry_price": 0.976,
-     "shares": 26.113473
-    }
-   ],
-   "current_prices": {
-    "84258547361016193653620946876567603215155330414645923567686337112078432848525": 0.962
-   },
-   "current_value": 25.121161,
-   "unrealized_pl": -0.365589,
-   "unrealized_pl_pct": -1.434
+   "current_value": 11.265035,
+   "unrealized_pl": 0.058979,
+   "unrealized_pl_pct": 0.526
   },
   {
    "key": "CV-2941200",
@@ -646,11 +530,11 @@
     }
    ],
    "current_prices": {
-    "101831868326159067849064278473887514248597718525489703509084099580788944801747": 0.9385
+    "101831868326159067849064278473887514248597718525489703509084099580788944801747": 0.947
    },
-   "current_value": 8.137601,
-   "unrealized_pl": -0.160411,
-   "unrealized_pl_pct": -1.933
+   "current_value": 8.211303,
+   "unrealized_pl": -0.086709,
+   "unrealized_pl_pct": -1.045
   },
   {
    "key": "CV-2935349",
@@ -675,11 +559,11 @@
     }
    ],
    "current_prices": {
-    "100770844920950784937475051665612648257109648970492346699985024071829641517654": 0.9725
+    "100770844920950784937475051665612648257109648970492346699985024071829641517654": 0.984
    },
-   "current_value": 25.34342,
-   "unrealized_pl": -0.14333,
-   "unrealized_pl_pct": -0.562
+   "current_value": 25.643111,
+   "unrealized_pl": 0.156361,
+   "unrealized_pl_pct": 0.613
   },
   {
    "key": "CV-2922778",
@@ -704,11 +588,11 @@
     }
    ],
    "current_prices": {
-    "55486266869018499236726156533271100748658448729923912295184765092633291408925": 0.981
+    "55486266869018499236726156533271100748658448729923912295184765092633291408925": 0.9845
    },
-   "current_value": 25.450114,
-   "unrealized_pl": -0.051886,
-   "unrealized_pl_pct": -0.203
+   "current_value": 25.540915,
+   "unrealized_pl": 0.038915,
+   "unrealized_pl_pct": 0.153
   },
   {
    "key": "CV-2935309",
@@ -733,11 +617,11 @@
     }
    ],
    "current_prices": {
-    "30605964720888302776699204949074464013760661924343264374527405707799316311759": 0.945
+    "30605964720888302776699204949074464013760661924343264374527405707799316311759": 0.96
    },
-   "current_value": 25.367779,
-   "unrealized_pl": -0.134221,
-   "unrealized_pl_pct": -0.526
+   "current_value": 25.770443,
+   "unrealized_pl": 0.268443,
+   "unrealized_pl_pct": 1.053
   },
   {
    "key": "CV-2960072",
@@ -762,11 +646,11 @@
     }
    ],
    "current_prices": {
-    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.962
+    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.9625
    },
-   "current_value": 25.202772,
-   "unrealized_pl": -0.052397,
-   "unrealized_pl_pct": -0.207
+   "current_value": 25.215871,
+   "unrealized_pl": -0.039298,
+   "unrealized_pl_pct": -0.156
   }
  ],
  "closed": [
@@ -5620,6 +5504,138 @@
    "payout": 20.391898,
    "pl": 0.331913,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2822509",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Teresa Ruiz be the Arizona Superintendent of Public Ins",
+   "opened": 1784147720.836565,
+   "cost": 18.660194,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-21T00:00:00Z",
+   "note": "YES ask 0.950, 5.1d to resolution, 374% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "10364305093325099807812858057020099228390141559467098473774701746415567212593",
+     "market_id": "2822509",
+     "label": "YES Will Teresa Ruiz be the Arizona Superintendent of Public Instruction Democratic nominee?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 19.642309
+    }
+   ],
+   "current_prices": {
+    "10364305093325099807812858057020099228390141559467098473774701746415567212593": 0.95
+   },
+   "current_value": 18.660194,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1784583357.928976,
+   "payout": 18.954828,
+   "pl": 0.294634,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2935305",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,600 on July 22?",
+   "opened": 1784320099.567091,
+   "cost": 5.578778,
+   "edge": 0.01833,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9823999999999999,
+   "resolve_by": "2026-07-22T16:00:00Z",
+   "note": "YES ask 0.982, 4.8d to resolution, 139% annualized if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "80121534570006451074812165563847678522886689339406047748723198214927415363074",
+     "market_id": "2935305",
+     "label": "YES Will the price of Ethereum be above $1,600 on July 22?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 5.681036
+    }
+   ],
+   "current_prices": {
+    "80121534570006451074812165563847678522886689339406047748723198214927415363074": 0.9925
+   },
+   "current_value": 5.638428,
+   "unrealized_pl": 0.05965,
+   "unrealized_pl_pct": 1.069,
+   "closed_ts": 1784583357.928976,
+   "payout": 5.607183,
+   "pl": 0.028405,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2952467",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 20?",
+   "opened": 1784552532.8037946,
+   "cost": 25.4515,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9788,
+   "resolve_by": "2026-07-20T23:59:00Z",
+   "note": "YES ask 0.974, 0.5d to resolution, 2136% annualized if YES, assumed true P 0.979",
+   "legs": [
+    {
+     "token_id": "62074667087255747412382561081475311823484268378809285620641251664614873335395",
+     "market_id": "2952467",
+     "label": "YES Israel x Iran ceasefire continues through July 20?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 26.130903
+    }
+   ],
+   "current_prices": {
+    "62074667087255747412382561081475311823484268378809285620641251664614873335395": 0.9795
+   },
+   "current_value": 25.595219,
+   "unrealized_pl": 0.143719,
+   "unrealized_pl_pct": 0.565,
+   "closed_ts": 1784583357.928976,
+   "payout": 25.791201,
+   "pl": 0.339701,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2958863",
+   "strategy": "CONVERGE",
+   "title": "Converge: Silver (XAGUSD) Up or Down on July 20?",
+   "opened": 1784573177.9572115,
+   "cost": 25.48675,
+   "edge": 0.02459,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9804,
+   "resolve_by": "2026-07-20T21:00:00Z",
+   "note": "YES ask 0.976, 0.1d to resolution, 9667% annualized if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "84258547361016193653620946876567603215155330414645923567686337112078432848525",
+     "market_id": "2958863",
+     "label": "YES Silver (XAGUSD) Up or Down on July 20?",
+     "side": "YES",
+     "entry_price": 0.976,
+     "shares": 26.113473
+    }
+   ],
+   "current_prices": {
+    "84258547361016193653620946876567603215155330414645923567686337112078432848525": 0.962
+   },
+   "current_value": 25.121161,
+   "unrealized_pl": -0.365589,
+   "unrealized_pl_pct": -1.434,
+   "closed_ts": 1784583357.928976,
+   "payout": 26.08736,
+   "pl": 0.60061,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -6470,6 +6486,14 @@
    "equity": 1019.2974,
    "realized_total": 19.7406,
    "open_positions": 23
+  },
+  {
+   "ts": 1784583357.93035,
+   "cash": 581.9093,
+   "open_value": 440.552,
+   "equity": 1022.4612,
+   "realized_total": 21.0039,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -8577,6 +8601,46 @@
    "title": "Converge: Will the price of Ethereum be above $1,700 on July 24?",
    "amount": 25.26,
    "pl": null
+  },
+  {
+   "ts": 1784583357.928976,
+   "type": "CLOSE",
+   "key": "CV-2822509",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Teresa Ruiz be the Arizona Superintendent of Public Ins",
+   "amount": 18.95,
+   "pl": 0.29,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784583357.928976,
+   "type": "CLOSE",
+   "key": "CV-2935305",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,600 on July 22?",
+   "amount": 5.61,
+   "pl": 0.03,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784583357.928976,
+   "type": "CLOSE",
+   "key": "CV-2952467",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 20?",
+   "amount": 25.79,
+   "pl": 0.34,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784583357.928976,
+   "type": "CLOSE",
+   "key": "CV-2958863",
+   "strategy": "CONVERGE",
+   "title": "Converge: Silver (XAGUSD) Up or Down on July 20?",
+   "amount": 26.09,
+   "pl": 0.6,
+   "reason": "take_profit"
   }
  ]
 }
