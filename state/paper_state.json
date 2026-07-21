@@ -1,5 +1,5 @@
 {
- "cash": 563.190152,
+ "cash": 539.326726,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -137,8 +137,8 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2445,
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.765,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2045,
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.805,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
     "44162996630579613944619329601086604585114580039271806622718850166081603488312": 0.0005,
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.969
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9685
    },
-   "current_value": 25.258933,
-   "unrealized_pl": -0.026067,
-   "unrealized_pl_pct": -0.103
+   "current_value": 25.245899,
+   "unrealized_pl": -0.039101,
+   "unrealized_pl_pct": -0.155
   },
   {
    "key": "CV-1697034",
@@ -289,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9265
+    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9275
    },
-   "current_value": 20.704402,
-   "unrealized_pl": -0.39107,
-   "unrealized_pl_pct": -1.854
+   "current_value": 20.726749,
+   "unrealized_pl": -0.368723,
+   "unrealized_pl_pct": -1.748
   },
   {
    "key": "ARB-YES-57111",
@@ -327,11 +327,11 @@
    ],
    "current_prices": {
     "21099887182068653164347641846316470453763034851874063977340528628016776716246": 0.635,
-    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.375
+    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.372
    },
-   "current_value": 25.77397,
-   "unrealized_pl": 0.63797,
-   "unrealized_pl_pct": 2.538
+   "current_value": 25.697413,
+   "unrealized_pl": 0.561413,
+   "unrealized_pl_pct": 2.234
   },
   {
    "key": "CV-2107954",
@@ -363,35 +363,6 @@
    "unrealized_pl_pct": 0.0
   },
   {
-   "key": "CV-2430327",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Anthropic have the best AI model at the end of July 202",
-   "opened": 1784362496.7121468,
-   "cost": 13.460471,
-   "edge": 0.020408,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9828,
-   "resolve_by": "2026-07-31T00:00:00Z",
-   "note": "YES ask 0.980, 12.7d to resolution, 59% annualized if YES, assumed true P 0.983",
-   "legs": [
-    {
-     "token_id": "6567244660746898210158255639902281602329344920209013325941853079874959136606",
-     "market_id": "2430327",
-     "label": "YES Will Anthropic have the best AI model at the end of July 2026?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 13.735174
-    }
-   ],
-   "current_prices": {
-    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.985
-   },
-   "current_value": 13.529146,
-   "unrealized_pl": 0.068675,
-   "unrealized_pl_pct": 0.51
-  },
-  {
    "key": "CV-2674108",
    "strategy": "CONVERGE",
    "title": "Converge: Will Alphabet be the third-largest company in the world by m",
@@ -414,11 +385,11 @@
     }
    ],
    "current_prices": {
-    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.95
+    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.96
    },
-   "current_value": 10.1645,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 10.271495,
+   "unrealized_pl": 0.106995,
+   "unrealized_pl_pct": 1.053
   },
   {
    "key": "CV-2760920",
@@ -443,11 +414,11 @@
     }
    ],
    "current_prices": {
-    "27964565483595716448313168433459698962134951099931697256166961282107475779696": 0.927
+    "27964565483595716448313168433459698962134951099931697256166961282107475779696": 0.929
    },
-   "current_value": 24.747169,
-   "unrealized_pl": -0.453831,
-   "unrealized_pl_pct": -1.801
+   "current_value": 24.800561,
+   "unrealized_pl": -0.400439,
+   "unrealized_pl_pct": -1.589
   },
   {
    "key": "CV-2947127",
@@ -479,64 +450,6 @@
    "unrealized_pl_pct": 1.526
   },
   {
-   "key": "CV-2941200",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"Shipwrecked: Nightmare at Sea\" be the top US Netflix m",
-   "opened": 1784573177.957238,
-   "cost": 8.298012,
-   "edge": 0.044932,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9583999999999999,
-   "resolve_by": "2026-07-21T23:59:00Z",
-   "note": "YES ask 0.957, 1.2d to resolution, 1347% annualized if YES, assumed true P 0.958",
-   "legs": [
-    {
-     "token_id": "101831868326159067849064278473887514248597718525489703509084099580788944801747",
-     "market_id": "2941200",
-     "label": "YES Will \"Shipwrecked: Nightmare at Sea\" be the top US Netflix movie this week?",
-     "side": "YES",
-     "entry_price": 0.957,
-     "shares": 8.670859
-    }
-   ],
-   "current_prices": {
-    "101831868326159067849064278473887514248597718525489703509084099580788944801747": 0.9355
-   },
-   "current_value": 8.111589,
-   "unrealized_pl": -0.186423,
-   "unrealized_pl_pct": -2.247
-  },
-  {
-   "key": "CV-2935349",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 22?",
-   "opened": 1784573177.9572537,
-   "cost": 25.48675,
-   "edge": 0.022495,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9828,
-   "resolve_by": "2026-07-22T16:00:00Z",
-   "note": "YES ask 0.978, 1.9d to resolution, 436% annualized if YES, assumed true P 0.983",
-   "legs": [
-    {
-     "token_id": "100770844920950784937475051665612648257109648970492346699985024071829641517654",
-     "market_id": "2935349",
-     "label": "YES Will the price of Bitcoin be above $62,000 on July 22?",
-     "side": "YES",
-     "entry_price": 0.978,
-     "shares": 26.060072
-    }
-   ],
-   "current_prices": {
-    "100770844920950784937475051665612648257109648970492346699985024071829641517654": 0.9815
-   },
-   "current_value": 25.577961,
-   "unrealized_pl": 0.091211,
-   "unrealized_pl_pct": 0.358
-  },
-  {
    "key": "CV-2960072",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Ethereum be above $1,700 on July 24?",
@@ -559,11 +472,11 @@
     }
    ],
    "current_prices": {
-    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.9735
+    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.98
    },
-   "current_value": 25.504053,
-   "unrealized_pl": 0.248884,
-   "unrealized_pl_pct": 0.985
+   "current_value": 25.674342,
+   "unrealized_pl": 0.419173,
+   "unrealized_pl_pct": 1.66
   },
   {
    "key": "CV-2952471",
@@ -588,11 +501,11 @@
     }
    ],
    "current_prices": {
-    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.945
+    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.93
    },
-   "current_value": 10.170786,
-   "unrealized_pl": -0.053814,
-   "unrealized_pl_pct": -0.526
+   "current_value": 10.009345,
+   "unrealized_pl": -0.215255,
+   "unrealized_pl_pct": -2.105
   },
   {
    "key": "CV-2977455",
@@ -617,40 +530,11 @@
     }
    ],
    "current_prices": {
-    "28878079933781348797247016925358646192381560805176353032222991291143310081203": 0.905
+    "28878079933781348797247016925358646192381560805176353032222991291143310081203": 0.95
    },
-   "current_value": 24.601559,
-   "unrealized_pl": -0.951441,
-   "unrealized_pl_pct": -3.723
-  },
-  {
-   "key": "CV-2977571",
-   "strategy": "CONVERGE",
-   "title": "Converge: Iran successfully targets shipping by July 31?",
-   "opened": 1784590648.2371697,
-   "cost": 10.2212,
-   "edge": 0.020408,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9808,
-   "resolve_by": "2026-07-31T23:59:00Z",
-   "note": "YES ask 0.980, 11.0d to resolution, 68% annualized if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "80568398380615613281811262196000400273657215935776416622694841219164637714912",
-     "market_id": "2977571",
-     "label": "YES Iran successfully targets shipping by July 31?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 10.429796
-    }
-   ],
-   "current_prices": {
-    "80568398380615613281811262196000400273657215935776416622694841219164637714912": 0.9845
-   },
-   "current_value": 10.268134,
-   "unrealized_pl": 0.046934,
-   "unrealized_pl_pct": 0.459
+   "current_value": 25.824841,
+   "unrealized_pl": 0.271841,
+   "unrealized_pl_pct": 1.064
   },
   {
    "key": "CV-2760928",
@@ -675,11 +559,11 @@
     }
    ],
    "current_prices": {
-    "86727363123344990092981661381006926869822063449950765315156229111320999781620": 0.94
+    "86727363123344990092981661381006926869822063449950765315156229111320999781620": 0.925
    },
-   "current_value": 10.11727,
-   "unrealized_pl": -0.10763,
-   "unrealized_pl_pct": -1.053
+   "current_value": 9.955824,
+   "unrealized_pl": -0.269076,
+   "unrealized_pl_pct": -2.632
   },
   {
    "key": "CV-2125725",
@@ -704,11 +588,190 @@
     }
    ],
    "current_prices": {
-    "21506859447771938336306318830863642311379933924645571330096901457803446205627": 0.977
+    "21506859447771938336306318830863642311379933924645571330096901457803446205627": 0.979
    },
-   "current_value": 25.510029,
-   "unrealized_pl": -0.052221,
-   "unrealized_pl_pct": -0.204
+   "current_value": 25.56225,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
+  },
+  {
+   "key": "ARB-YES-97497",
+   "strategy": "ARB",
+   "title": "YES-lock: Oklahoma Governor Republican Primary Winner",
+   "opened": 1784608220.4704666,
+   "cost": 25.561,
+   "edge": 0.036,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 1.0,
+   "est_p_win": null,
+   "resolve_by": "2026-06-16T00:00:00Z",
+   "note": "8 outcomes, YES asks sum 0.9640, 50 sets executable at best ask",
+   "legs": [
+    {
+     "token_id": "108221353665776302691541399453340438336138832853541446487118763510283932343990",
+     "market_id": "825091",
+     "label": "YES Will Genter Drummond win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.16,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "55661304932040211646014126364798474785520576799367909311415118300725060674521",
+     "market_id": "825092",
+     "label": "YES Will Chip Keating win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "56175095515193606339445677161973575547064149769460484202169684526209325302306",
+     "market_id": "825093",
+     "label": "YES Will Leisa Mitchell Haynes win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "66804130909073794337305278718026706209026342365037495606020945089962385513722",
+     "market_id": "825094",
+     "label": "YES Will Mike Mazzei win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.798,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "17133114959071164585982360670728512628275965411704047662089578393895378732287",
+     "market_id": "825095",
+     "label": "YES Will Charles McCall win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "64586952883978299782077509352685592877730415967658257654581181923277614165114",
+     "market_id": "825096",
+     "label": "YES Will Jake Merrick win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "96318339509977257549373045427322635379543241124516524038474498780656739069827",
+     "market_id": "825097",
+     "label": "YES Will Ryan Walters win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 26.51556
+    },
+    {
+     "token_id": "24132533621208759371205381659346750607057616954945361315570099975147758404567",
+     "market_id": "825098",
+     "label": "YES Will Matt Pinnell win the 2026 Oklahoma Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.001,
+     "shares": 26.51556
+    }
+   ],
+   "current_prices": {
+    "108221353665776302691541399453340438336138832853541446487118763510283932343990": 0.15,
+    "55661304932040211646014126364798474785520576799367909311415118300725060674521": 0.0005,
+    "56175095515193606339445677161973575547064149769460484202169684526209325302306": 0.0005,
+    "66804130909073794337305278718026706209026342365037495606020945089962385513722": 0.794,
+    "17133114959071164585982360670728512628275965411704047662089578393895378732287": 0.0005,
+    "64586952883978299782077509352685592877730415967658257654581181923277614165114": 0.0005,
+    "96318339509977257549373045427322635379543241124516524038474498780656739069827": 0.0005,
+    "24132533621208759371205381659346750607057616954945361315570099975147758404567": 0.0005
+   },
+   "current_value": 26.51556,
+   "unrealized_pl": 0.95456,
+   "unrealized_pl_pct": 3.734
+  },
+  {
+   "key": "CV-2922818",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 21?",
+   "opened": 1784608220.4705021,
+   "cost": 25.561,
+   "edge": 0.033058,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-07-21T16:00:00Z",
+   "note": "YES ask 0.968, 0.5d to resolution, 2519% annualized if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "78061150422093577649110238975056256606321931326870330913989313463158076170690",
+     "market_id": "2922818",
+     "label": "YES Will the price of Bitcoin be above $64,000 on July 21?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 26.405992
+    }
+   ],
+   "current_prices": {
+    "78061150422093577649110238975056256606321931326870330913989313463158076170690": 0.965
+   },
+   "current_value": 25.481782,
+   "unrealized_pl": -0.079218,
+   "unrealized_pl_pct": -0.31
+  },
+  {
+   "key": "CV-2977569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping by July 22?",
+   "opened": 1784608220.4705193,
+   "cost": 25.561,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9644,
+   "resolve_by": "2026-07-22T23:59:00Z",
+   "note": "YES ask 0.960, 1.8d to resolution, 840% annualized if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "46697624419143070322160614303807721711430074595729448772813658638032015580204",
+     "market_id": "2977569",
+     "label": "YES Iran successfully targets shipping by July 22?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 26.626042
+    }
+   ],
+   "current_prices": {
+    "46697624419143070322160614303807721711430074595729448772813658638032015580204": 0.9555
+   },
+   "current_value": 25.441183,
+   "unrealized_pl": -0.119817,
+   "unrealized_pl_pct": -0.469
+  },
+  {
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "opened": 1784608220.4705307,
+   "cost": 5.182418,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.950, 3.5d to resolution, 552% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "50307365397671027427178755479015178553981844020385582316939629685193228055681",
+     "market_id": "2960114",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 24?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 5.455177
+    }
+   ],
+   "current_prices": {
+    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.945
+   },
+   "current_value": 5.155142,
+   "unrealized_pl": -0.027276,
+   "unrealized_pl_pct": -0.526
   }
  ],
  "closed": [
@@ -5793,6 +5856,138 @@
    "payout": 26.173106,
    "pl": 0.671106,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2430327",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Anthropic have the best AI model at the end of July 202",
+   "opened": 1784362496.7121468,
+   "cost": 13.460471,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-07-31T00:00:00Z",
+   "note": "YES ask 0.980, 12.7d to resolution, 59% annualized if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "6567244660746898210158255639902281602329344920209013325941853079874959136606",
+     "market_id": "2430327",
+     "label": "YES Will Anthropic have the best AI model at the end of July 2026?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 13.735174
+    }
+   ],
+   "current_prices": {
+    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.985
+   },
+   "current_value": 13.529146,
+   "unrealized_pl": 0.068675,
+   "unrealized_pl_pct": 0.51,
+   "closed_ts": 1784608220.6566267,
+   "payout": 13.542882,
+   "pl": 0.082411,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2941200",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Shipwrecked: Nightmare at Sea\" be the top US Netflix m",
+   "opened": 1784573177.957238,
+   "cost": 8.298012,
+   "edge": 0.044932,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9583999999999999,
+   "resolve_by": "2026-07-21T23:59:00Z",
+   "note": "YES ask 0.957, 1.2d to resolution, 1347% annualized if YES, assumed true P 0.958",
+   "legs": [
+    {
+     "token_id": "101831868326159067849064278473887514248597718525489703509084099580788944801747",
+     "market_id": "2941200",
+     "label": "YES Will \"Shipwrecked: Nightmare at Sea\" be the top US Netflix movie this week?",
+     "side": "YES",
+     "entry_price": 0.957,
+     "shares": 8.670859
+    }
+   ],
+   "current_prices": {
+    "101831868326159067849064278473887514248597718525489703509084099580788944801747": 0.9355
+   },
+   "current_value": 8.111589,
+   "unrealized_pl": -0.186423,
+   "unrealized_pl_pct": -2.247,
+   "closed_ts": 1784608220.6566267,
+   "payout": 8.4801,
+   "pl": 0.182088,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2935349",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 22?",
+   "opened": 1784573177.9572537,
+   "cost": 25.48675,
+   "edge": 0.022495,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-07-22T16:00:00Z",
+   "note": "YES ask 0.978, 1.9d to resolution, 436% annualized if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "100770844920950784937475051665612648257109648970492346699985024071829641517654",
+     "market_id": "2935349",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 22?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 26.060072
+    }
+   ],
+   "current_prices": {
+    "100770844920950784937475051665612648257109648970492346699985024071829641517654": 0.9815
+   },
+   "current_value": 25.577961,
+   "unrealized_pl": 0.091211,
+   "unrealized_pl_pct": 0.358,
+   "closed_ts": 1784608220.6566267,
+   "payout": 25.695231,
+   "pl": 0.208481,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2977571",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping by July 31?",
+   "opened": 1784590648.2371697,
+   "cost": 10.2212,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9808,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.980, 11.0d to resolution, 68% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "80568398380615613281811262196000400273657215935776416622694841219164637714912",
+     "market_id": "2977571",
+     "label": "YES Iran successfully targets shipping by July 31?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 10.429796
+    }
+   ],
+   "current_prices": {
+    "80568398380615613281811262196000400273657215935776416622694841219164637714912": 0.9845
+   },
+   "current_value": 10.268134,
+   "unrealized_pl": 0.046934,
+   "unrealized_pl_pct": 0.459,
+   "closed_ts": 1784608220.6566267,
+   "payout": 10.283779,
+   "pl": 0.062579,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -6674,6 +6869,14 @@
    "open_value": 459.247,
    "equity": 1022.4371,
    "realized_total": 21.9836,
+   "open_positions": 21
+  },
+  {
+   "ts": 1784608220.6580026,
+   "cash": 539.3267,
+   "open_value": 485.5699,
+   "equity": 1024.8966,
+   "realized_total": 22.5192,
    "open_positions": 21
   }
  ],
@@ -8896,6 +9099,82 @@
    "title": "Converge: Will the price of Ethereum be above $1,800 on July 22?",
    "amount": 26.17,
    "pl": 0.67,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784608220.4704666,
+   "type": "OPEN",
+   "key": "ARB-YES-97497",
+   "strategy": "ARB",
+   "title": "YES-lock: Oklahoma Governor Republican Primary Winner",
+   "amount": 25.56,
+   "pl": null
+  },
+  {
+   "ts": 1784608220.4705021,
+   "type": "OPEN",
+   "key": "CV-2922818",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 21?",
+   "amount": 25.56,
+   "pl": null
+  },
+  {
+   "ts": 1784608220.4705193,
+   "type": "OPEN",
+   "key": "CV-2977569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping by July 22?",
+   "amount": 25.56,
+   "pl": null
+  },
+  {
+   "ts": 1784608220.4705307,
+   "type": "OPEN",
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "amount": 5.18,
+   "pl": null
+  },
+  {
+   "ts": 1784608220.6566267,
+   "type": "CLOSE",
+   "key": "CV-2430327",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Anthropic have the best AI model at the end of July 202",
+   "amount": 13.54,
+   "pl": 0.08,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784608220.6566267,
+   "type": "CLOSE",
+   "key": "CV-2941200",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Shipwrecked: Nightmare at Sea\" be the top US Netflix m",
+   "amount": 8.48,
+   "pl": 0.18,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784608220.6566267,
+   "type": "CLOSE",
+   "key": "CV-2935349",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 22?",
+   "amount": 25.7,
+   "pl": 0.21,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784608220.6566267,
+   "type": "CLOSE",
+   "key": "CV-2977571",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping by July 31?",
+   "amount": 10.28,
+   "pl": 0.06,
    "reason": "take_profit"
   }
  ]
