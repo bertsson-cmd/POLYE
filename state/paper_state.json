@@ -1,5 +1,5 @@
 {
- "cash": 539.326726,
+ "cash": 545.806018,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -137,8 +137,8 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2045,
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.805,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.1975,
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.81,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
     "44162996630579613944619329601086604585114580039271806622718850166081603488312": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 32.15262,
-   "unrealized_pl": 0.82524,
-   "unrealized_pl_pct": 2.634
+   "current_value": 32.08914,
+   "unrealized_pl": 0.76176,
+   "unrealized_pl_pct": 2.432
   },
   {
    "key": "LS-1439549",
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9685
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.968
    },
-   "current_value": 25.245899,
-   "unrealized_pl": -0.039101,
-   "unrealized_pl_pct": -0.155
+   "current_value": 25.232866,
+   "unrealized_pl": -0.052134,
+   "unrealized_pl_pct": -0.206
   },
   {
    "key": "CV-1697034",
@@ -289,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9275
+    "111604417349377875799825956621596386269673370070912696668140891647145772186047": 0.9315
    },
-   "current_value": 20.726749,
-   "unrealized_pl": -0.368723,
-   "unrealized_pl_pct": -1.748
+   "current_value": 20.816136,
+   "unrealized_pl": -0.279336,
+   "unrealized_pl_pct": -1.324
   },
   {
    "key": "ARB-YES-57111",
@@ -326,12 +326,12 @@
     }
    ],
    "current_prices": {
-    "21099887182068653164347641846316470453763034851874063977340528628016776716246": 0.635,
-    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.372
+    "21099887182068653164347641846316470453763034851874063977340528628016776716246": 0.625,
+    "50292933818751585369672690878774599873941191925538325333138798248932182222864": 0.3755
    },
-   "current_value": 25.697413,
-   "unrealized_pl": 0.561413,
-   "unrealized_pl_pct": 2.234
+   "current_value": 25.531541,
+   "unrealized_pl": 0.395541,
+   "unrealized_pl_pct": 1.574
   },
   {
    "key": "CV-2107954",
@@ -385,11 +385,11 @@
     }
    ],
    "current_prices": {
-    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.96
+    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.957
    },
-   "current_value": 10.271495,
-   "unrealized_pl": 0.106995,
-   "unrealized_pl_pct": 1.053
+   "current_value": 10.239397,
+   "unrealized_pl": 0.074897,
+   "unrealized_pl_pct": 0.737
   },
   {
    "key": "CV-2760920",
@@ -414,69 +414,11 @@
     }
    ],
    "current_prices": {
-    "27964565483595716448313168433459698962134951099931697256166961282107475779696": 0.929
+    "27964565483595716448313168433459698962134951099931697256166961282107475779696": 0.93
    },
-   "current_value": 24.800561,
-   "unrealized_pl": -0.400439,
-   "unrealized_pl_pct": -1.589
-  },
-  {
-   "key": "CV-2947127",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 23?",
-   "opened": 1784566173.4298694,
-   "cost": 11.206056,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-07-23T16:00:00Z",
-   "note": "YES ask 0.950, 3.0d to resolution, 648% annualized if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "100437351227687728701149011840333982005892515051071358540964438215687067442828",
-     "market_id": "2947127",
-     "label": "YES Will the price of Bitcoin be above $62,000 on July 23?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 11.795848
-    }
-   ],
-   "current_prices": {
-    "100437351227687728701149011840333982005892515051071358540964438215687067442828": 0.9645
-   },
-   "current_value": 11.377095,
-   "unrealized_pl": 0.171039,
-   "unrealized_pl_pct": 1.526
-  },
-  {
-   "key": "CV-2960072",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,700 on July 24?",
-   "opened": 1784578472.58543,
-   "cost": 25.255169,
-   "edge": 0.037344,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9696,
-   "resolve_by": "2026-07-24T16:00:00Z",
-   "note": "YES ask 0.964, 3.8d to resolution, 357% annualized if YES, assumed true P 0.970",
-   "legs": [
-    {
-     "token_id": "40067733612276896016674302100352070679202529003603222561051331705472473885896",
-     "market_id": "2960072",
-     "label": "YES Will the price of Ethereum be above $1,700 on July 24?",
-     "side": "YES",
-     "entry_price": 0.964,
-     "shares": 26.198308
-    }
-   ],
-   "current_prices": {
-    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.98
-   },
-   "current_value": 25.674342,
-   "unrealized_pl": 0.419173,
-   "unrealized_pl_pct": 1.66
+   "current_value": 24.827257,
+   "unrealized_pl": -0.373743,
+   "unrealized_pl_pct": -1.483
   },
   {
    "key": "CV-2952471",
@@ -501,11 +443,11 @@
     }
    ],
    "current_prices": {
-    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.93
+    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.945
    },
-   "current_value": 10.009345,
-   "unrealized_pl": -0.215255,
-   "unrealized_pl_pct": -2.105
+   "current_value": 10.170786,
+   "unrealized_pl": -0.053814,
+   "unrealized_pl_pct": -0.526
   },
   {
    "key": "CV-2977455",
@@ -559,11 +501,11 @@
     }
    ],
    "current_prices": {
-    "86727363123344990092981661381006926869822063449950765315156229111320999781620": 0.925
+    "86727363123344990092981661381006926869822063449950765315156229111320999781620": 0.92
    },
-   "current_value": 9.955824,
-   "unrealized_pl": -0.269076,
-   "unrealized_pl_pct": -2.632
+   "current_value": 9.902009,
+   "unrealized_pl": -0.322891,
+   "unrealized_pl_pct": -3.158
   },
   {
    "key": "CV-2125725",
@@ -676,7 +618,7 @@
     "108221353665776302691541399453340438336138832853541446487118763510283932343990": 0.15,
     "55661304932040211646014126364798474785520576799367909311415118300725060674521": 0.0005,
     "56175095515193606339445677161973575547064149769460484202169684526209325302306": 0.0005,
-    "66804130909073794337305278718026706209026342365037495606020945089962385513722": 0.794,
+    "66804130909073794337305278718026706209026342365037495606020945089962385513722": 0.813,
     "17133114959071164585982360670728512628275965411704047662089578393895378732287": 0.0005,
     "64586952883978299782077509352685592877730415967658257654581181923277614165114": 0.0005,
     "96318339509977257549373045427322635379543241124516524038474498780656739069827": 0.0005,
@@ -685,35 +627,6 @@
    "current_value": 26.51556,
    "unrealized_pl": 0.95456,
    "unrealized_pl_pct": 3.734
-  },
-  {
-   "key": "CV-2922818",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 21?",
-   "opened": 1784608220.4705021,
-   "cost": 25.561,
-   "edge": 0.033058,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.972,
-   "resolve_by": "2026-07-21T16:00:00Z",
-   "note": "YES ask 0.968, 0.5d to resolution, 2519% annualized if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "78061150422093577649110238975056256606321931326870330913989313463158076170690",
-     "market_id": "2922818",
-     "label": "YES Will the price of Bitcoin be above $64,000 on July 21?",
-     "side": "YES",
-     "entry_price": 0.968,
-     "shares": 26.405992
-    }
-   ],
-   "current_prices": {
-    "78061150422093577649110238975056256606321931326870330913989313463158076170690": 0.965
-   },
-   "current_value": 25.481782,
-   "unrealized_pl": -0.079218,
-   "unrealized_pl_pct": -0.31
   },
   {
    "key": "CV-2977569",
@@ -738,11 +651,11 @@
     }
    ],
    "current_prices": {
-    "46697624419143070322160614303807721711430074595729448772813658638032015580204": 0.9555
+    "46697624419143070322160614303807721711430074595729448772813658638032015580204": 0.9635
    },
-   "current_value": 25.441183,
-   "unrealized_pl": -0.119817,
-   "unrealized_pl_pct": -0.469
+   "current_value": 25.654191,
+   "unrealized_pl": 0.093191,
+   "unrealized_pl_pct": 0.365
   },
   {
    "key": "CV-2960114",
@@ -767,11 +680,98 @@
     }
    ],
    "current_prices": {
-    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.945
+    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.955
    },
-   "current_value": 5.155142,
-   "unrealized_pl": -0.027276,
-   "unrealized_pl_pct": -0.526
+   "current_value": 5.209694,
+   "unrealized_pl": 0.027276,
+   "unrealized_pl_pct": 0.526
+  },
+  {
+   "key": "CV-2960074",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 24?",
+   "opened": 1784618095.1438954,
+   "cost": 10.249,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.950, 3.4d to resolution, 571% annualized if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "33270932059421939410144714528282401485508325136028407824316509947242790672004",
+     "market_id": "2960074",
+     "label": "YES Will the price of Ethereum be above $1,800 on July 24?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.788421
+    }
+   ],
+   "current_prices": {
+    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.94
+   },
+   "current_value": 10.141116,
+   "unrealized_pl": -0.107884,
+   "unrealized_pl_pct": -1.053
+  },
+  {
+   "key": "CV-2966689",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Choosin' Texas - Ella Langley\" be the #1 US song this ",
+   "opened": 1784618095.1439147,
+   "cost": 25.6225,
+   "edge": 0.033058,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-07-24T23:59:00Z",
+   "note": "YES ask 0.968, 3.7d to resolution, 326% annualized if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "80428541341892703902649819589436338783181667695548941954999815314796240086774",
+     "market_id": "2966689",
+     "label": "YES Will \"Choosin' Texas - Ella Langley\" be the #1 US song this week?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 26.469525
+    }
+   ],
+   "current_prices": {
+    "80428541341892703902649819589436338783181667695548941954999815314796240086774": 0.965
+   },
+   "current_value": 25.543092,
+   "unrealized_pl": -0.079408,
+   "unrealized_pl_pct": -0.31
+  },
+  {
+   "key": "CV-2972725",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 25?",
+   "opened": 1784618095.1439319,
+   "cost": 20.498,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9816,
+   "resolve_by": "2026-07-25T16:00:00Z",
+   "note": "YES ask 0.980, 4.4d to resolution, 171% annualized if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "71007539240438926136479249091731287053054173971693284648278649533795775651103",
+     "market_id": "2972725",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 25?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 20.916327
+    }
+   ],
+   "current_prices": {
+    "71007539240438926136479249091731287053054173971693284648278649533795775651103": 0.977
+   },
+   "current_value": 20.435251,
+   "unrealized_pl": -0.062749,
+   "unrealized_pl_pct": -0.306
   }
  ],
  "closed": [
@@ -5988,6 +5988,105 @@
    "payout": 10.283779,
    "pl": 0.062579,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2947127",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 23?",
+   "opened": 1784566173.4298694,
+   "cost": 11.206056,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-23T16:00:00Z",
+   "note": "YES ask 0.950, 3.0d to resolution, 648% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "100437351227687728701149011840333982005892515051071358540964438215687067442828",
+     "market_id": "2947127",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 23?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 11.795848
+    }
+   ],
+   "current_prices": {
+    "100437351227687728701149011840333982005892515051071358540964438215687067442828": 0.9645
+   },
+   "current_value": 11.377095,
+   "unrealized_pl": 0.171039,
+   "unrealized_pl_pct": 1.526,
+   "closed_ts": 1784618095.2616694,
+   "payout": 11.453768,
+   "pl": 0.247712,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2960072",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on July 24?",
+   "opened": 1784578472.58543,
+   "cost": 25.255169,
+   "edge": 0.037344,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9696,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.964, 3.8d to resolution, 357% annualized if YES, assumed true P 0.970",
+   "legs": [
+    {
+     "token_id": "40067733612276896016674302100352070679202529003603222561051331705472473885896",
+     "market_id": "2960072",
+     "label": "YES Will the price of Ethereum be above $1,700 on July 24?",
+     "side": "YES",
+     "entry_price": 0.964,
+     "shares": 26.198308
+    }
+   ],
+   "current_prices": {
+    "40067733612276896016674302100352070679202529003603222561051331705472473885896": 0.98
+   },
+   "current_value": 25.674342,
+   "unrealized_pl": 0.419173,
+   "unrealized_pl_pct": 1.66,
+   "closed_ts": 1784618095.2616694,
+   "payout": 25.517152,
+   "pl": 0.261983,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2922818",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 21?",
+   "opened": 1784608220.4705021,
+   "cost": 25.561,
+   "edge": 0.033058,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-07-21T16:00:00Z",
+   "note": "YES ask 0.968, 0.5d to resolution, 2519% annualized if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "78061150422093577649110238975056256606321931326870330913989313463158076170690",
+     "market_id": "2922818",
+     "label": "YES Will the price of Bitcoin be above $64,000 on July 21?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 26.405992
+    }
+   ],
+   "current_prices": {
+    "78061150422093577649110238975056256606321931326870330913989313463158076170690": 0.965
+   },
+   "current_value": 25.481782,
+   "unrealized_pl": -0.079218,
+   "unrealized_pl_pct": -0.31,
+   "closed_ts": 1784618095.2616694,
+   "payout": 25.877872,
+   "pl": 0.316872,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -6877,6 +6976,14 @@
    "open_value": 485.5699,
    "equity": 1024.8966,
    "realized_total": 22.5192,
+   "open_positions": 21
+  },
+  {
+   "ts": 1784618095.2632165,
+   "cash": 545.806,
+   "open_value": 479.3729,
+   "equity": 1025.1789,
+   "realized_total": 23.3457,
    "open_positions": 21
   }
  ],
@@ -9175,6 +9282,63 @@
    "title": "Converge: Iran successfully targets shipping by July 31?",
    "amount": 10.28,
    "pl": 0.06,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784618095.1438954,
+   "type": "OPEN",
+   "key": "CV-2960074",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 24?",
+   "amount": 10.25,
+   "pl": null
+  },
+  {
+   "ts": 1784618095.1439147,
+   "type": "OPEN",
+   "key": "CV-2966689",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Choosin' Texas - Ella Langley\" be the #1 US song this ",
+   "amount": 25.62,
+   "pl": null
+  },
+  {
+   "ts": 1784618095.1439319,
+   "type": "OPEN",
+   "key": "CV-2972725",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 25?",
+   "amount": 20.5,
+   "pl": null
+  },
+  {
+   "ts": 1784618095.2616694,
+   "type": "CLOSE",
+   "key": "CV-2947127",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 23?",
+   "amount": 11.45,
+   "pl": 0.25,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784618095.2616694,
+   "type": "CLOSE",
+   "key": "CV-2960072",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on July 24?",
+   "amount": 25.52,
+   "pl": 0.26,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784618095.2616694,
+   "type": "CLOSE",
+   "key": "CV-2922818",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 21?",
+   "amount": 25.88,
+   "pl": 0.32,
    "reason": "take_profit"
   }
  ]
