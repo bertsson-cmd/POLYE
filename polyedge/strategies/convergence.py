@@ -67,8 +67,8 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             continue
         if m.liquidity < config.CV_MIN_LIQUIDITY:
             continue
-        days = max(0.02, days_to_resolution(m.end_date))
-        if days > config.CV_MAX_DAYS:
+        days = days_to_resolution(m.end_date)
+        if days < config.MIN_DAYS_TO_RESOLUTION or days > config.CV_MAX_DAYS:
             continue
         if config.CV_EXCLUDE_SPORTS and is_sports_match(m):
             sports_skipped += 1

@@ -66,8 +66,10 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
     ev = markets[0]
     n = len(markets)
 
-    # horizon cap: locks have no early exit, don't tie capital up for months
-    if days_to_resolution(ev.end_date) > config.ARB_MAX_DAYS:
+    # horizon cap: locks have no early exit, don't tie capital up for months;
+    # also reject past-dated / expired events (negative days)
+    dtr = days_to_resolution(ev.end_date)
+    if dtr < config.MIN_DAYS_TO_RESOLUTION or dtr > config.ARB_MAX_DAYS:
         return []
 
     # sports match exclusion: exact-score / O-U sets are the phantom-arb

@@ -40,7 +40,8 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             continue
         if m.liquidity < config.LS_MIN_LIQUIDITY:
             continue
-        if days_to_resolution(m.end_date) > config.LS_MAX_DAYS:
+        d = days_to_resolution(m.end_date)
+        if d < config.MIN_DAYS_TO_RESOLUTION or d > config.LS_MAX_DAYS:
             continue
         # one fade per event — fading 5 outcomes of the same event is one bet
         if m.event_id in seen_events:
