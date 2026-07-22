@@ -25,6 +25,11 @@ DOCS_DIR = os.environ.get("POLYEDGE_DOCS_DIR", "docs")
 GAMMA_BASE = "https://gamma-api.polymarket.com"
 CLOB_BASE = "https://clob.polymarket.com"
 HTTP_TIMEOUT = 15          # seconds per request
+# Reject markets resolving sooner than this many days from now. Guards
+# against past-dated / stale markets (negative days) and markets so close
+# to resolution they're effectively already decided-and-frozen. A small
+# positive floor also protects the CONVERGE annualized-yield division.
+MIN_DAYS_TO_RESOLUTION = _f("POLYEDGE_MIN_DAYS", 0.05)  # ~1.2 hours
 HTTP_RETRIES = 3
 MAX_EVENTS_PER_SCAN = _i("POLYEDGE_MAX_EVENTS", 600)
 BOOK_FETCH_WORKERS = _i("POLYEDGE_BOOK_WORKERS", 20)      # concurrent CLOB requests

@@ -50,7 +50,7 @@ def _interesting_tokens(markets: List[Market], relations: List[dict]) -> Dict[st
     cv = [(days_to_resolution(m.end_date), m.yes_token) for m in markets
           if config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE
           and m.liquidity >= config.CV_MIN_LIQUIDITY
-          and days_to_resolution(m.end_date) <= config.CV_MAX_DAYS
+          and config.MIN_DAYS_TO_RESOLUTION <= days_to_resolution(m.end_date) <= config.CV_MAX_DAYS
           and not (config.CV_EXCLUDE_SPORTS and is_sports_match(m))]
     cv.sort()
     cv_quota = max(1, int(budget * config.CV_BOOK_RESERVE_PCT)) if cv else 0
@@ -73,7 +73,7 @@ def _interesting_tokens(markets: List[Market], relations: List[dict]) -> Dict[st
     ev_sorted = sorted(
         (g for g in groups.values()
          if len(g) >= 2
-         and days_to_resolution(g[0].end_date) <= config.ARB_MAX_DAYS),
+         and config.MIN_DAYS_TO_RESOLUTION <= days_to_resolution(g[0].end_date) <= config.ARB_MAX_DAYS),
         key=lambda g: days_to_resolution(g[0].end_date))
     for g in ev_sorted:
         tokens = []
@@ -90,7 +90,7 @@ def _interesting_tokens(markets: List[Market], relations: List[dict]) -> Dict[st
     ls = [(days_to_resolution(m.end_date), m.no_token, m.event_id) for m in markets
           if config.LS_MIN_YES_PRICE <= m.yes_price <= config.LS_MAX_YES_PRICE
           and m.liquidity >= config.LS_MIN_LIQUIDITY
-          and days_to_resolution(m.end_date) <= config.LS_MAX_DAYS]
+          and config.MIN_DAYS_TO_RESOLUTION <= days_to_resolution(m.end_date) <= config.LS_MAX_DAYS]
     ls.sort()
     seen_events = set()
     for _, tok, ev_id in ls:

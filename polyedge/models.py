@@ -5,13 +5,15 @@ from typing import Optional
 
 
 def days_to_resolution(end_date: str, default: float = 1e9) -> float:
-    """Days from now until an ISO end date. `default` for missing/bad dates
-    (a large number, so unknown dates sort as 'far away', never 'soon')."""
+    """Days from now until an ISO end date. Negative if the date is in the
+    PAST (do not clamp — callers must be able to detect stale/expired
+    markets). `default` (a large number) for missing/bad dates, so unknown
+    dates sort as 'far away', never 'soon'."""
     if not end_date:
         return default
     try:
         dt = datetime.fromisoformat(end_date.replace("Z", "+00:00"))
-        return max(0.0, (dt - datetime.now(timezone.utc)).total_seconds() / 86400)
+        return (dt - datetime.now(timezone.utc)).total_seconds() / 86400
     except ValueError:
         return default
 
