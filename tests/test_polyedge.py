@@ -35,11 +35,18 @@ def book(token, ask, size=1000.0, bid=None):
                      bids=[BookLevel(bid if bid is not None else max(0.01, ask - 0.02), size)])
 
 
+def _future(days=5):
+    import datetime as _d
+    return (_d.datetime.now(_d.timezone.utc) + _d.timedelta(days=days)
+            ).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def market(mid, yes_price, *, neg_risk=False, event="EV1", liq=50000.0,
-           end="2026-07-20T00:00:00Z", question=None):
+           end=None, question=None):
     return Market(market_id=mid, question=question or f"Q{mid}",
                   yes_token=f"{mid}-Y", no_token=f"{mid}-N",
-                  yes_price=yes_price, liquidity=liq, end_date=end,
+                  yes_price=yes_price, liquidity=liq,
+                  end_date=end if end is not None else _future(5),
                   event_id=event, event_title=f"Event {event}", neg_risk=neg_risk)
 
 
@@ -256,7 +263,7 @@ class TestCorrelated:
 # ------------------------------------------------------------------ LONGSHOT
 class TestLongshot:
     def test_fade_detected_with_correct_ev(self):
-        m = market("L1", 0.04, end="2026-07-20T00:00:00Z")
+        m = market("L1", 0.04, end=_future(5))
         books = {m.no_token: book(m.no_token, 0.965)}
         o = longshot.scan([m], books)[0]
         true_p_yes = 0.04 * config.LS_BIAS_HAIRCUT
@@ -281,8 +288,8 @@ class TestLongshot:
         assert len(longshot.scan([m1, m2], books)) == 1
 
     def test_sorted_soonest_resolving_first(self):
-        soon = market("LS", 0.04, event="E1", end="2026-07-16T00:00:00Z")
-        late = market("LL", 0.03, event="E2", end="2026-07-30T00:00:00Z")  # better edge, later
+        soon = market("LS", 0.04, event="E1", end=_future(2))
+        late = market("LL", 0.03, event="E2", end=_future(14))  # better edge, later
         books = {m.no_token: book(m.no_token, 0.955) for m in (soon, late)}
         out = longshot.scan([late, soon], books)
         assert [o.key for o in out] == ["LS-LS", "LS-LL"]
@@ -298,7 +305,7 @@ class TestLongshot:
 # ------------------------------------------------------------------ CONVERGE
 class TestConvergence:
     def test_pick_and_yield(self):
-        m = market("C1", 0.96, end="2026-07-18T00:00:00Z", liq=99999)
+        m = market("C1", 0.96, end=_future(4), liq=99999)
         books = {m.yes_token: book(m.yes_token, 0.96)}
         o = convergence.scan([m], books)[0]
         assert o.edge == pytest.approx((1 - 0.96) / 0.96)
@@ -313,7 +320,7 @@ class TestConvergence:
         """Regression for the 'opened: 0' bug — a CONVERGE candidate whose
         assumed win probability equals its entry price has zero Kelly edge
         and silently never funds. With the uplift, it must fund."""
-        m = market("C1", 0.96, end="2026-07-18T00:00:00Z", liq=99999)
+        m = market("C1", 0.96, end=_future(4), liq=99999)
         books = {m.yes_token: book(m.yes_token, 0.96)}
         o = convergence.scan([m], books)[0]
         sized = size_opportunities([o], bankroll=1000, cash=1000,
@@ -351,8 +358,8 @@ class TestConvergence:
 
     def test_sorted_by_annualized_yield_soonest_wins(self):
         # same price/edge, different horizons -> sooner one must rank first
-        soon = market("CS", 0.96, end="2026-07-16T00:00:00Z", liq=99999)   # ~2d
-        late = market("CL", 0.96, end="2026-07-27T00:00:00Z", liq=99999)   # ~13d
+        soon = market("CS", 0.96, end=_future(2), liq=99999)   # ~2d
+        late = market("CL", 0.96, end=_future(13), liq=99999)   # ~13d
         books = {m.yes_token: book(m.yes_token, 0.96) for m in (soon, late)}
         out = convergence.scan([late, soon], books)
         assert [o.key for o in out] == ["CV-CS", "CV-CL"]
@@ -395,16 +402,16 @@ class TestConvergence:
         assert convergence.is_sports_match(m)
 
     def test_scan_excludes_sports_but_keeps_others(self):
-        sport = market("SP", 0.96, end="2026-07-16T00:00:00Z", liq=99999,
+        sport = market("SP", 0.96, end=_future(3), liq=99999,
                        question="CF Montréal vs. Toronto FC: O/U 0.5")
-        news = market("NW", 0.96, end="2026-07-16T00:00:00Z", liq=99999,
+        news = market("NW", 0.96, end=_future(3), liq=99999,
                       question="Israeli parliament dissolved by July 17?")
         books = {m.yes_token: book(m.yes_token, 0.96) for m in (sport, news)}
         out = convergence.scan([sport, news], books)
         assert [o.key for o in out] == ["CV-NW"]
 
     def test_exclusion_can_be_disabled(self):
-        sport = market("SP", 0.96, end="2026-07-16T00:00:00Z", liq=99999,
+        sport = market("SP", 0.96, end=_future(3), liq=99999,
                        question="CF Montréal vs. Toronto FC: O/U 0.5")
         books = {sport.yes_token: book(sport.yes_token, 0.96)}
         old = config.CV_EXCLUDE_SPORTS
@@ -413,6 +420,45 @@ class TestConvergence:
             assert len(convergence.scan([sport], books)) == 1
         finally:
             config.CV_EXCLUDE_SPORTS = old
+
+
+# ------------------------------------------------------------------ past-date rejection
+class TestPastDateRejection:
+    """Regression for the screenshot bug: markets resolving in the PAST
+    (June 2026, before 'now') were clamped to days=0 and treated as the
+    MOST near-term opportunities, so they got funded first."""
+
+    def test_days_to_resolution_negative_for_past(self):
+        from polyedge.models import days_to_resolution
+        assert days_to_resolution("2020-01-01T00:00:00Z") < 0
+        assert days_to_resolution("2099-01-01T00:00:00Z") > 0
+
+    def test_convergence_rejects_past_market(self):
+        past = market("P1", 0.965, end="2020-06-01T00:00:00Z", liq=99999)
+        books = {past.yes_token: book(past.yes_token, 0.965)}
+        assert convergence.scan([past], books) == []
+
+    def test_longshot_rejects_past_market(self):
+        past = market("P2", 0.04, end="2020-06-17T00:00:00Z")
+        books = {past.no_token: book(past.no_token, 0.955)}
+        assert longshot.scan([past], books) == []
+
+    def test_arb_rejects_past_event(self):
+        ms = [market(f"P{i}", 0.30, neg_risk=True, event="PASTEV",
+                     end="2020-06-01T00:00:00Z") for i in range(3)]
+        books = {}
+        for m in ms:
+            books[m.yes_token] = book(m.yes_token, 0.30, 5000)
+            books[m.no_token] = book(m.no_token, 0.72, 5000)
+        assert arbitrage.scan(ms, books) == []
+
+    def test_future_markets_still_work(self):
+        import datetime as _d
+        soon = (_d.datetime.now(_d.timezone.utc) + _d.timedelta(days=3)
+                ).strftime("%Y-%m-%dT%H:%M:%SZ")
+        fut = market("F2", 0.965, end=soon, liq=99999)
+        books = {fut.yes_token: book(fut.yes_token, 0.965)}
+        assert len(convergence.scan([fut], books)) == 1
 
 
 # ------------------------------------------------------------------ risk
