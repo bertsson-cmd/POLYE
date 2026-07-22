@@ -14,27 +14,48 @@ Two locks exist:
       (every outcome except the winner resolves NO).
       Edge  = (N-1) - cost      (if cost < N-1)
 
-Both are risk-free IF all legs fill. Fill sizing is limited to the depth of
-the thinnest leg so the reported edge is actually executable, not headline.
+Both are risk-free IF all legs fill AND the outcome set is genuinely
+complete and mutually exclusive.
+
+SAFETY GUARDS (added after a paper-mode blowup): illiquid multi-outcome
+markets like "exact score" produce PHANTOM arbs — YES asks summing to
+0.006 imply a 166x edge and let the sizer "buy" 50,000+ sets that don't
+really exist, then mark them at locked $1 each for fantasy equity. Guards:
+  * every leg's ask must be >= ARB_MIN_LEG_PRICE (no near-zero legs)
+  * YES-lock cost per set must be >= ARB_MIN_COST (a real lock is ~0.9x,
+    not 0.006x — a tiny sum means missing/unlisted outcomes, i.e. the
+    "exactly one resolves YES" assumption is violated)
+  * each market needs ARB_MIN_LIQUIDITY (thin books aren't executable)
+  * sports MATCH markets excluded (exact-score / O-U outcome sets are
+    the main phantom source and often aren't a complete listed set)
+  * any single lock is hard-capped at ARB_MAX_POSITION_USD regardless of
+    nominal "depth", so a mispriced book can't create a giant order
 """
+import logging
 from typing import Dict, List, Optional
 
 from .. import config
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
+log = logging.getLogger("polyedge.arb")
+
 
 def _set_size_limit(books: List[OrderBook]) -> float:
-    """Max number of complete payout sets executable at best-ask levels.
-
-    Conservative: uses only the BEST ask level of each leg, so the fill
-    price never exceeds the price used in the edge calculation.
-    """
+    """Max complete payout sets executable at best-ask levels (thinnest leg)."""
     sets = float("inf")
     for b in books:
         if not b.asks:
             return 0.0
         sets = min(sets, b.asks[0].size)
     return 0.0 if sets == float("inf") else sets
+
+
+def _is_sports_match(ev_title: str, question: str, category: str) -> bool:
+    """Reuse the CONVERGE sports detector for consistency."""
+    from .convergence import is_sports_match
+    from ..models import Market as _M
+    probe = _M("_", question, "_", "_", 0.5, 0.0, "", "", ev_title, False, category)
+    return is_sports_match(probe)
 
 
 def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
@@ -45,19 +66,39 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
     ev = markets[0]
     n = len(markets)
 
-    # horizon cap: a lock ties up capital until resolution with no early
-    # exit, so far-dated locks are skipped entirely — capital velocity
-    # beats a guaranteed edge that pays out in a year
+    # horizon cap: locks have no early exit, don't tie capital up for months
     if days_to_resolution(ev.end_date) > config.ARB_MAX_DAYS:
         return []
+
+    # sports match exclusion: exact-score / O-U sets are the phantom-arb
+    # source and frequently aren't a complete listed outcome set
+    if config.ARB_EXCLUDE_SPORTS and _is_sports_match(
+            ev.event_title, ev.question, ev.category):
+        return []
+
+    # liquidity floor: every market in the group must clear it
+    if any(m.liquidity < config.ARB_MIN_LIQUIDITY for m in markets):
+        return []
+
+    def _cap_sets(sets: float, cost_per_set: float) -> float:
+        """Clamp sets so the position never exceeds the hard USD cap."""
+        if cost_per_set <= 0:
+            return 0.0
+        return min(sets, config.ARB_MAX_POSITION_USD / cost_per_set)
 
     # ---------------- YES-side lock ----------------
     yes_books = [books.get(m.yes_token) for m in markets]
     if all(b and b.best_ask() is not None for b in yes_books):
-        cost = sum(b.best_ask() for b in yes_books)
+        asks = [b.best_ask() for b in yes_books]
+        cost = sum(asks)
         edge = (1.0 - cost) - config.FEE_RATE * cost
-        if edge >= config.ARB_MIN_EDGE:
+        # GUARD 1: no near-zero legs. GUARD 2: cost per set must be realistic
+        # (a genuine complete YES-lock sits just under 1.0, not near 0 — a
+        # tiny sum means the outcome set is incomplete / not exhaustive).
+        legs_ok = all(a >= config.ARB_MIN_LEG_PRICE for a in asks)
+        if edge >= config.ARB_MIN_EDGE and legs_ok and cost >= config.ARB_MIN_COST:
             sets = _set_size_limit(yes_books)
+            sets = _cap_sets(sets, cost)
             if sets > 0 and sets * cost >= config.ARB_MIN_DEPTH_USD:
                 legs = [Leg(token_id=m.yes_token, market_id=m.market_id,
                             label=f"YES {m.question}", side="YES",
@@ -69,19 +110,24 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
                     edge=edge, guaranteed=True, legs=legs,
                     guaranteed_payout=1.0, resolve_by=ev.end_date,
                     note=f"{n} outcomes, YES asks sum {cost:.4f}, "
-                         f"{sets:.0f} sets executable at best ask",
+                         f"{sets:.0f} sets (capped ${config.ARB_MAX_POSITION_USD:.0f})",
                 ))
 
     # ---------------- NO-side lock ----------------
     no_books = [books.get(m.no_token) for m in markets]
     if all(b and b.best_ask() is not None for b in no_books):
-        cost = sum(b.best_ask() for b in no_books)
+        asks = [b.best_ask() for b in no_books]
+        cost = sum(asks)
         payout = float(n - 1)
         edge_total = (payout - cost) - config.FEE_RATE * cost
-        # normalise edge per $1 of cost so strategies are comparable
         edge = edge_total / cost if cost > 0 else 0.0
-        if edge_total >= config.ARB_MIN_EDGE:
+        # GUARD: no near-zero legs (a 0.001 NO ask is a phantom too). The
+        # NO-lock cost naturally sums near N-1, so no separate cost floor,
+        # but each leg must be a real price and the whole thing is $-capped.
+        legs_ok = all(a >= config.ARB_MIN_LEG_PRICE for a in asks)
+        if edge_total >= config.ARB_MIN_EDGE and legs_ok:
             sets = _set_size_limit(no_books)
+            sets = _cap_sets(sets, cost)
             if sets > 0 and sets * cost >= config.ARB_MIN_DEPTH_USD:
                 legs = [Leg(token_id=m.no_token, market_id=m.market_id,
                             label=f"NO {m.question}", side="NO",
@@ -93,7 +139,7 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
                     edge=edge, guaranteed=True, legs=legs,
                     guaranteed_payout=payout, resolve_by=ev.end_date,
                     note=f"{n} outcomes, NO asks sum {cost:.4f} vs payout {payout:.0f}, "
-                         f"{sets:.0f} sets executable",
+                         f"{sets:.0f} sets (capped ${config.ARB_MAX_POSITION_USD:.0f})",
                 ))
     return out
 
