@@ -1,5 +1,5 @@
 {
- "cash": 497.963935,
+ "cash": 466.396443,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -41,13 +41,13 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.86,
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.866,
     "93320657450177854098059849588100288636908681690362123373676280636770405062010": 0.004,
-    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.1375
+    "102451827870754857819917363477059455981807381920683022472701345996332142120457": 0.135
    },
-   "current_value": 50.972198,
-   "unrealized_pl": 0.636198,
-   "unrealized_pl_pct": 1.264
+   "current_value": 51.150333,
+   "unrealized_pl": 0.814333,
+   "unrealized_pl_pct": 1.618
   },
   {
    "key": "ARB-YES-45017",
@@ -137,7 +137,7 @@
    ],
    "current_prices": {
     "28227838360096074788232992585368970461718254845788738931649369286727917170476": 0.0005,
-    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.1995,
+    "4041912122563547970024635557261696068618666839090786586996637505354743961673": 0.2045,
     "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.795,
     "69074333464069151404242315526218405459784935747253869832659873168984248759799": 0.0005,
     "45761844533847615095657975499649554423516098382359546239787965241599216489110": 0.0005,
@@ -146,9 +146,9 @@
     "19835581196144925594226241068229934006876264875869838825630024545913250806260": 0.0005,
     "43986832901480115975770598885448914644973339441868156495326187103850202425816": 0.0005
    },
-   "current_value": 31.74,
-   "unrealized_pl": 0.41262,
-   "unrealized_pl_pct": 1.317
+   "current_value": 31.83522,
+   "unrealized_pl": 0.50784,
+   "unrealized_pl_pct": 1.621
   },
   {
    "key": "LS-1439549",
@@ -202,11 +202,11 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.961
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9615
    },
-   "current_value": 25.050397,
-   "unrealized_pl": -0.234603,
-   "unrealized_pl_pct": -0.928
+   "current_value": 25.06343,
+   "unrealized_pl": -0.22157,
+   "unrealized_pl_pct": -0.876
   },
   {
    "key": "CV-1697034",
@@ -231,11 +231,11 @@
     }
    ],
    "current_prices": {
-    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.86
+    "56334109072101012568565557413515181781775629851986900885124750322943234065776": 0.866
    },
-   "current_value": 14.622816,
-   "unrealized_pl": -1.66632,
-   "unrealized_pl_pct": -10.23
+   "current_value": 14.724835,
+   "unrealized_pl": -1.564301,
+   "unrealized_pl_pct": -9.603
   },
   {
    "key": "CV-2785443",
@@ -385,11 +385,11 @@
     }
    ],
    "current_prices": {
-    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.935
+    "58261307118108936367430768346218679796444242208550226624418473434210861808681": 0.945
    },
-   "current_value": 10.063159,
-   "unrealized_pl": -0.161441,
-   "unrealized_pl_pct": -1.579
+   "current_value": 10.170786,
+   "unrealized_pl": -0.053814,
+   "unrealized_pl_pct": -0.526
   },
   {
    "key": "CV-2125725",
@@ -513,35 +513,6 @@
    "unrealized_pl_pct": 3.734
   },
   {
-   "key": "CV-2977569",
-   "strategy": "CONVERGE",
-   "title": "Converge: Iran successfully targets shipping by July 22?",
-   "opened": 1784608220.4705193,
-   "cost": 25.561,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9644,
-   "resolve_by": "2026-07-22T23:59:00Z",
-   "note": "YES ask 0.960, 1.8d to resolution, 840% annualized if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "46697624419143070322160614303807721711430074595729448772813658638032015580204",
-     "market_id": "2977569",
-     "label": "YES Iran successfully targets shipping by July 22?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 26.626042
-    }
-   ],
-   "current_prices": {
-    "46697624419143070322160614303807721711430074595729448772813658638032015580204": 0.96
-   },
-   "current_value": 25.561,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
-  },
-  {
    "key": "CV-2960074",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Ethereum be above $1,800 on July 24?",
@@ -564,11 +535,11 @@
     }
    ],
    "current_prices": {
-    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.96
+    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.955
    },
-   "current_value": 10.356884,
-   "unrealized_pl": 0.107884,
-   "unrealized_pl_pct": 1.053
+   "current_value": 10.302942,
+   "unrealized_pl": 0.053942,
+   "unrealized_pl_pct": 0.526
   },
   {
    "key": "CV-2972725",
@@ -630,12 +601,12 @@
     }
    ],
    "current_prices": {
-    "49310233434831220217744768550407024303828814348067862211008504752654525138871": 0.0365,
-    "64066265833817841010502311464406912238501245208935854111913053574422929030677": 0.9685
+    "49310233434831220217744768550407024303828814348067862211008504752654525138871": 0.005,
+    "64066265833817841010502311464406912238501245208935854111913053574422929030677": 0.9945
    },
-   "current_value": 26.044133,
-   "unrealized_pl": 0.414633,
-   "unrealized_pl_pct": 1.618
+   "current_value": 25.91456,
+   "unrealized_pl": 0.28506,
+   "unrealized_pl_pct": 1.112
   },
   {
    "key": "CV-1122565",
@@ -660,11 +631,11 @@
     }
    ],
    "current_prices": {
-    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.968
+    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.962
    },
-   "current_value": 25.576656,
-   "unrealized_pl": -0.052844,
-   "unrealized_pl_pct": -0.206
+   "current_value": 25.418123,
+   "unrealized_pl": -0.211377,
+   "unrealized_pl_pct": -0.825
   },
   {
    "key": "CV-1122569",
@@ -689,11 +660,11 @@
     }
    ],
    "current_prices": {
-    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.966
+    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.9645
    },
-   "current_value": 12.77947,
-   "unrealized_pl": -0.039688,
-   "unrealized_pl_pct": -0.31
+   "current_value": 12.759626,
+   "unrealized_pl": -0.059532,
+   "unrealized_pl_pct": -0.464
   },
   {
    "key": "CV-2935353",
@@ -718,11 +689,11 @@
     }
    ],
    "current_prices": {
-    "65866060106611732456502009824424481640127558842982021807973127904009372774040": 0.98
+    "65866060106611732456502009824424481640127558842982021807973127904009372774040": 0.9745
    },
-   "current_value": 25.429705,
-   "unrealized_pl": -0.103795,
-   "unrealized_pl_pct": -0.407
+   "current_value": 25.286988,
+   "unrealized_pl": -0.246512,
+   "unrealized_pl_pct": -0.965
   },
   {
    "key": "ARB-YES-411239",
@@ -803,7 +774,7 @@
     }
    ],
    "current_prices": {
-    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.961,
+    "94134253597648057047877517813082069606962886792971715730299111686696678669356": 0.9615,
     "85367286745806857961178482075931972831841231758328346969840810630055458089640": 0.0025,
     "9700525976462326306802795530553376348116310383328382626789994562350229436531": 0.0025,
     "80737749707623321656569294238127946200924575060067022053313951954399729244690": 0.0025,
@@ -839,11 +810,11 @@
     }
    ],
    "current_prices": {
-    "7954378089117213092126961308979885135070516367504907624561463489957563088414": 0.982
+    "7954378089117213092126961308979885135070516367504907624561463489957563088414": 0.9795
    },
-   "current_value": 13.815972,
-   "unrealized_pl": 0.112554,
-   "unrealized_pl_pct": 0.821
+   "current_value": 13.780799,
+   "unrealized_pl": 0.077381,
+   "unrealized_pl_pct": 0.565
   },
   {
    "key": "CV-2972728",
@@ -873,6 +844,93 @@
    "current_value": 25.455757,
    "unrealized_pl": -0.091993,
    "unrealized_pl_pct": -0.36
+  },
+  {
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "opened": 1784700900.9836416,
+   "cost": 25.80575,
+   "edge": 0.027749,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.973, 2.4d to resolution, 421% annualized if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "50307365397671027427178755479015178553981844020385582316939629685193228055681",
+     "market_id": "2960114",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 24?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 26.52184
+    }
+   ],
+   "current_prices": {
+    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.97
+   },
+   "current_value": 25.726185,
+   "unrealized_pl": -0.079565,
+   "unrealized_pl_pct": -0.308
+  },
+  {
+   "key": "CV-2607853",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bev Craig win the 2026 Greater Manchester Mayoral Elect",
+   "opened": 1784700900.983662,
+   "cost": 24.447553,
+   "edge": 0.019368,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-07-30T23:59:00Z",
+   "note": "YES ask 0.981, 8.7d to resolution, 81% annualized if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "35318756760858330552552156606707494623890453398944924723394293200168281188333",
+     "market_id": "2607853",
+     "label": "YES Will Bev Craig win the 2026 Greater Manchester Mayoral Election?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 24.921053
+    }
+   ],
+   "current_prices": {
+    "35318756760858330552552156606707494623890453398944924723394293200168281188333": 0.9785
+   },
+   "current_value": 24.38525,
+   "unrealized_pl": -0.062303,
+   "unrealized_pl_pct": -0.255
+  },
+  {
+   "key": "CV-2674108",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
+   "opened": 1784700900.9836912,
+   "cost": 7.940231,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9748,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.974, 9.7d to resolution, 100% annualized if YES, assumed true P 0.975",
+   "legs": [
+    {
+     "token_id": "103818288966521645160585233658582119264581111644689435387842700071754028133781",
+     "market_id": "2674108",
+     "label": "YES Will Alphabet be the third-largest company in the world by market cap on July 31?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 8.152188
+    }
+   ],
+   "current_prices": {
+    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.9685
+   },
+   "current_value": 7.895394,
+   "unrealized_pl": -0.044837,
+   "unrealized_pl_pct": -0.565
   }
  ],
  "closed": [
@@ -6576,6 +6634,38 @@
    "closed_ts": 1784691582.695074,
    "payout": 21.622396,
    "pl": -0.216224
+  },
+  {
+   "key": "CV-2977569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping by July 22?",
+   "opened": 1784608220.4705193,
+   "cost": 25.561,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9644,
+   "resolve_by": "2026-07-22T23:59:00Z",
+   "note": "YES ask 0.960, 1.8d to resolution, 840% annualized if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "46697624419143070322160614303807721711430074595729448772813658638032015580204",
+     "market_id": "2977569",
+     "label": "YES Iran successfully targets shipping by July 22?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 26.626042
+    }
+   ],
+   "current_prices": {
+    "46697624419143070322160614303807721711430074595729448772813658638032015580204": 0.96
+   },
+   "current_value": 25.561,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1784700913.789495,
+   "payout": 26.626042,
+   "pl": 1.065042
   }
  ],
  "history": [
@@ -7570,6 +7660,14 @@
    "equity": 1032.2349,
    "realized_total": 28.1546,
    "open_positions": 23
+  },
+  {
+   "ts": 1784700907.5317774,
+   "cash": 439.7704,
+   "open_value": 586.8284,
+   "equity": 1026.5988,
+   "realized_total": 27.9384,
+   "open_positions": 25
   }
  ],
  "trades": [
@@ -10122,6 +10220,42 @@
    "title": "NO-lock: CA Mineiro vs. EC Bahia - Halftime Result",
    "amount": 21.62,
    "pl": -0.22
+  },
+  {
+   "ts": 1784700900.9836416,
+   "type": "OPEN",
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "amount": 25.81,
+   "pl": null
+  },
+  {
+   "ts": 1784700900.983662,
+   "type": "OPEN",
+   "key": "CV-2607853",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bev Craig win the 2026 Greater Manchester Mayoral Elect",
+   "amount": 24.45,
+   "pl": null
+  },
+  {
+   "ts": 1784700900.9836912,
+   "type": "OPEN",
+   "key": "CV-2674108",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
+   "amount": 7.94,
+   "pl": null
+  },
+  {
+   "ts": 1784700913.789495,
+   "type": "CLOSE",
+   "key": "CV-2977569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Iran successfully targets shipping by July 22?",
+   "amount": 26.63,
+   "pl": 1.07
   }
  ]
 }
