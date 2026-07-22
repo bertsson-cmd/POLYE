@@ -121,6 +121,64 @@ class TestArbitrage:
         ms, books = self._mk_event([0.5], [0.5])
         assert arbitrage.scan(ms, books) == []
 
+    def test_phantom_arb_from_near_zero_legs_rejected(self):
+        """The real blowup: 6 exact-score outcomes, YES asks ~0.001 each
+        (sum 0.006). Old code saw a 166x edge and bought 50k+ sets marked
+        at $1. Guards must reject it outright."""
+        ms, books = self._mk_event(
+            [0.001, 0.001, 0.001, 0.001, 0.001, 0.001],
+            [0.99]*6, sizes=[60000]*6)
+        for m in ms:
+            m.question = f"Exact score {m.market_id}"
+            m.event_title = "Neftçi PFK vs. FK Dynama-Minsk - Exact Score"
+        assert arbitrage.scan(ms, books) == []
+
+    def test_low_cost_yes_lock_rejected(self):
+        # YES sum 0.30 (well under ARB_MIN_COST 0.50): implies missing
+        # outcomes, not a real exhaustive set -> reject
+        ms, books = self._mk_event([0.10, 0.10, 0.10], [0.9, 0.9, 0.9],
+                                   sizes=[5000]*3)
+        assert [o for o in arbitrage.scan(ms, books) if "YES" in o.key] == []
+
+    def test_near_zero_leg_rejected_even_if_others_normal(self):
+        # one 0.005 leg drags the sum down and is a phantom leg
+        ms, books = self._mk_event([0.005, 0.48, 0.48], [0.9, 0.9, 0.9],
+                                   sizes=[5000]*3)
+        assert [o for o in arbitrage.scan(ms, books) if "YES" in o.key] == []
+
+    def test_position_hard_capped_in_dollars(self):
+        # legitimate lock but with huge fake depth: sizing must cap the
+        # position at ARB_MAX_POSITION_USD, not buy the whole book
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9],
+                                   sizes=[500000]*3)
+        opps = [o for o in arbitrage.scan(ms, books) if "YES" in o.key]
+        assert opps
+        cost = opps[0].total_cost()
+        assert cost <= config.ARB_MAX_POSITION_USD + 1e-6
+
+    def test_sports_exact_score_excluded(self):
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9],
+                                   sizes=[5000]*3)
+        for m in ms:
+            m.event_title = "Arsenal vs. Chelsea - Exact Score"
+        assert arbitrage.scan(ms, books) == []
+
+    def test_illiquid_event_excluded(self):
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9],
+                                   sizes=[5000]*3)
+        for m in ms:
+            m.liquidity = 10.0     # below ARB_MIN_LIQUIDITY
+        assert arbitrage.scan(ms, books) == []
+
+    def test_legit_arb_still_works(self):
+        # a real, liquid, non-sports 3-outcome YES-lock summing 0.95 must
+        # still be found (regression guard: fixes didn't kill the strategy)
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.72, 0.67, 0.72],
+                                   sizes=[5000]*3)
+        opps = [o for o in arbitrage.scan(ms, books) if "YES" in o.key]
+        assert len(opps) == 1
+        assert opps[0].edge == pytest.approx(0.05)
+
     def test_far_dated_lock_skipped_by_horizon_cap(self):
         # a clear 5c YES-lock, but resolving ~5 months out -> must be skipped
         ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9])
@@ -276,17 +334,20 @@ class TestConvergence:
         assert sized == []
 
     def test_low_annualized_yield_rejected(self):
-        # 0.984 with ~2 weeks left under a high APY floor? craft a clear reject:
-        # price 0.984, 14 days -> apy = (0.016/0.984)*365/14 = 42% -> passes 25%
-        # so use far date within window? use max days with tiny yield via config override
-        m = market("C1", 0.984, end="2026-07-27T23:00:00Z", liq=99999)
+        # far-dated but still inside CV_MAX_DAYS window won't work as time
+        # passes, so force the reject via a very high APY floor instead —
+        # date-robust regardless of when the suite runs
+        m = market("C1", 0.984, end="2026-08-01T00:00:00Z", liq=99999)
         books = {m.yes_token: book(m.yes_token, 0.984)}
-        old = config.CV_MIN_ANNUAL_YIELD
-        config.CV_MIN_ANNUAL_YIELD = 1.0     # demand 100% APY
+        old_apy = config.CV_MIN_ANNUAL_YIELD
+        old_days = config.CV_MAX_DAYS
+        config.CV_MIN_ANNUAL_YIELD = 100.0    # demand an absurd APY
+        config.CV_MAX_DAYS = 3650             # keep it inside the horizon
         try:
             assert convergence.scan([m], books) == []
         finally:
-            config.CV_MIN_ANNUAL_YIELD = old
+            config.CV_MIN_ANNUAL_YIELD = old_apy
+            config.CV_MAX_DAYS = old_days
 
     def test_sorted_by_annualized_yield_soonest_wins(self):
         # same price/edge, different horizons -> sooner one must rank first
@@ -773,3 +834,82 @@ class TestVoidPosition:
         e.open_position(cv_opp)
         stale = csl.find_stale(e)
         assert [p["key"] for p, _ in stale] == ["ARB-FAR"]   # near lock + far CONVERGE untouched
+
+
+# ------------------------------------------------------------------ live engine
+class TestLiveEngine:
+    def _opp(self, key="CV-L", strategy="CONVERGE", legs=None):
+        legs = legs or [Leg("tok", "m1", "YES q", "YES", 0.96, 10.0)]
+        return Opportunity(strategy, key, key, 0.04, strategy == "ARB",
+                           est_p_win=0.98, legs=legs,
+                           guaranteed_payout=1.0 if strategy == "ARB" else None,
+                           resolve_by="2026-07-21T00:00:00Z")
+
+    def _engine(self, tmp_path, monkeypatch, armed=True, live=True, dry=False,
+                fill=True):
+        from polyedge import live as lv
+        monkeypatch.setenv("POLYEDGE_LIVE", "1" if live else "0")
+        monkeypatch.setenv("POLYEDGE_DRY_RUN", "1" if dry else "0")
+        monkeypatch.chdir(tmp_path)          # ARMED/HALTED files live in cwd
+        if armed:
+            open(lv.ARMED_FILE, "w").write("armed")
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        e._orders = []
+        def fake_place(token_id, price, shares, side):
+            e._orders.append((side, token_id, round(shares, 2), round(price, 3)))
+            return fill and not lv.dry_run()
+        e._place_order = fake_place
+        return e
+
+    def test_all_gates_required(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch, armed=False)
+        assert e.open_position(self._opp()) is None and e._orders == []
+        e2 = self._engine(tmp_path, monkeypatch, live=False)
+        assert e2.open_position(self._opp()) is None and e2._orders == []
+
+    def test_dry_run_records_nothing(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch, dry=True)
+        assert e.open_position(self._opp()) is None
+        assert e.state["positions"] == []
+
+    def test_filled_order_recorded_with_paper_accounting(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch)
+        start = e.cash
+        pos = e.open_position(self._opp())
+        assert pos is not None
+        assert e._orders == [("BUY", "tok", 10.0, 0.96)]
+        assert e.cash == pytest.approx(start - 9.6)
+
+    def test_unfilled_order_records_nothing(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+        start = e.cash
+        assert e.open_position(self._opp()) is None
+        assert e.state["positions"] == [] and e.cash == pytest.approx(start)
+
+    def test_multileg_locks_refused_by_default(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch)
+        legs = [Leg("a", "ma", "YES a", "YES", 0.30, 10),
+                Leg("b", "mb", "YES b", "YES", 0.65, 10)]
+        assert e.open_position(self._opp("ARB-L", "ARB", legs)) is None
+        assert e._orders == []
+
+    def test_daily_loss_halt(self, tmp_path, monkeypatch):
+        from polyedge import live as lv
+        import time as _t
+        e = self._engine(tmp_path, monkeypatch)
+        e.state["closed"].append({"pl": -20.0, "closed_ts": _t.time(),
+                                  "strategy": "CONVERGE", "close_reason": ""})
+        assert e.open_position(self._opp()) is None
+        assert os.path.exists(lv.HALTED_FILE)
+        assert not lv.live_gates_open()      # halt closes the gates entirely
+
+    def test_take_profit_sell_only_on_fill(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._opp())
+        e._orders.clear()
+        closed = e.close_early("CV-L", {"tok": 0.985})
+        assert closed is not None and closed["pl"] == pytest.approx(0.25)
+        assert e._orders == [("SELL", "tok", 10.0, 0.985)]
+        e2 = self._engine(tmp_path, monkeypatch, fill=False)
+        e2.open_position(self._opp("CV-L2"))
+        assert e2.close_early("CV-L2", {"tok": 0.985}) is None
