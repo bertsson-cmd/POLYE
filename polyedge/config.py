@@ -42,11 +42,21 @@ MAX_STRATEGY_EXPOSURE_PCT = {                              # per-strategy caps
 }
 KELLY_FRACTION = _f("POLYEDGE_KELLY_FRACTION", 0.25)       # quarter-Kelly (conservative)
 MIN_TICKET = _f("POLYEDGE_MIN_TICKET", 5.0)                # skip trades smaller than $5
+MAX_POSITION_ABS_USD = _f("POLYEDGE_MAX_POS_ABS", 100.0)   # absolute $ ceiling on ANY single position (final backstop)
 
 # ---------------------------------------------------------------- strategy: ARB (Dutch book)
 ARB_MIN_EDGE = _f("POLYEDGE_ARB_MIN_EDGE", 0.01)     # require >= 1 cent per $1 payout set
 ARB_MIN_DEPTH_USD = _f("POLYEDGE_ARB_MIN_DEPTH", 25.0)  # ignore books thinner than this
 ARB_MAX_DAYS = _i("POLYEDGE_ARB_MAX_DAYS", 60)       # skip locks resolving further out than this
+# --- guards against phantom arbs on illiquid multi-outcome markets ---
+# A near-zero YES-sum (e.g. 0.006 across 6 exact-score outcomes) implies a
+# ludicrous edge and lets the sizer buy tens of thousands of "sets" that
+# don't really exist. These bound the damage:
+ARB_MIN_LEG_PRICE = _f("POLYEDGE_ARB_MIN_LEG_PRICE", 0.02)  # every leg's ask must be >= this
+ARB_MIN_COST = _f("POLYEDGE_ARB_MIN_COST", 0.50)     # total lock cost per set must be >= this (YES side)
+ARB_MAX_POSITION_USD = _f("POLYEDGE_ARB_MAX_POS_USD", 100.0)  # hard $ cap on any single lock, regardless of "depth"
+ARB_MIN_LIQUIDITY = _f("POLYEDGE_ARB_MIN_LIQ", 2000.0)  # each market's Gamma liquidity floor
+ARB_EXCLUDE_SPORTS = os.environ.get("POLYEDGE_ARB_EXCLUDE_SPORTS", "1") not in ("0", "false", "no")
 
 # ---------------------------------------------------------------- strategy: REL (correlated markets)
 REL_MIN_EDGE = _f("POLYEDGE_REL_MIN_EDGE", 0.015)
@@ -100,3 +110,18 @@ CV_EXCLUDE_SPORTS = os.environ.get("POLYEDGE_CV_EXCLUDE_SPORTS", "1") not in ("0
 TAKE_PROFIT_STRATEGIES = {"CONVERGE"}                      # which strategies allow early exit
 TAKE_PROFIT_UPSIDE_CAPTURE = _f("POLYEDGE_TP_CAPTURE", 0.25)  # sell at 25% of remaining upside captured (max cycling speed)
 TAKE_PROFIT_MIN_GAIN = _f("POLYEDGE_TP_MIN_GAIN", 0.005)   # ignore moves smaller than 0.5c/share (noise)
+
+# ---------------------------------------------------------------- LIVE MODE (real money)
+# All gates documented in polyedge/live.py and LIVE.md. Nothing here makes
+# the bot trade real money by itself: POLYEDGE_LIVE=1 + ARMED file +
+# POLYEDGE_DRY_RUN=0 are all required.
+LIVE_ALLOW_MULTILEG = os.environ.get("POLYEDGE_LIVE_MULTILEG", "0") == "1"  # ARB/REL locks live: OFF by default
+LIVE_MAX_DAILY_LOSS = _f("POLYEDGE_LIVE_MAX_DAILY_LOSS", 15.0)  # USD realized loss/day before auto-halt
+
+# Suggested $100-bankroll live profile (set these as env vars on the VPS —
+# they override the paper defaults above without editing this file):
+#   POLYEDGE_BANKROLL=100  POLYEDGE_MAX_POS_PCT=0.10  POLYEDGE_MIN_TICKET=5
+#   POLYEDGE_MAX_EXPO_PCT=0.50  POLYEDGE_LS_MAX_OPEN=1
+# Rationale: 10% positions = $10 tickets (above the $5 minimum, so trades
+# actually fire), 50% max deployed keeps half the bankroll as buffer, and
+# one longshot slot keeps tail risk to a single fade at a time.

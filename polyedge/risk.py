@@ -79,7 +79,11 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
             if cost_full <= 0:
                 reasons["below_min_ticket"] += 1
                 continue
-            scale = min(1.0, cap / cost_full)
+            # hard backstop: never let a single guaranteed position exceed
+            # the position cap OR a sane absolute ceiling, regardless of what
+            # depth the strategy claimed (defends against phantom-arb sizing)
+            ceiling = min(cap, config.MAX_POSITION_ABS_USD)
+            scale = min(1.0, ceiling / cost_full)
             for leg in opp.legs:
                 leg.shares *= scale
             budget = opp.total_cost()
