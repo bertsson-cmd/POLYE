@@ -1,5 +1,5 @@
 {
- "cash": 685.372886,
+ "cash": 662.449858,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.9705
+    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.97
    },
-   "current_value": 24.96142,
-   "unrealized_pl": -0.03858,
-   "unrealized_pl_pct": -0.154
+   "current_value": 24.94856,
+   "unrealized_pl": -0.05144,
+   "unrealized_pl_pct": -0.206
   },
   {
    "key": "CV-3001571",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.984
+    "6567244660746898210158255639902281602329344920209013325941853079874959136606": 0.9845
    },
-   "current_value": 24.94929,
-   "unrealized_pl": -0.05071,
-   "unrealized_pl_pct": -0.203
+   "current_value": 24.961968,
+   "unrealized_pl": -0.038032,
+   "unrealized_pl_pct": -0.152
   },
   {
    "key": "CV-2431051",
@@ -148,35 +148,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "CV-2960074",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on July 24?",
-   "opened": 1784763214.5946867,
-   "cost": 9.9916,
-   "edge": 0.020408,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9808,
-   "resolve_by": "2026-07-24T16:00:00Z",
-   "note": "YES ask 0.980, 1.7d to resolution, 442% annualized if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "33270932059421939410144714528282401485508325136028407824316509947242790672004",
-     "market_id": "2960074",
-     "label": "YES Will the price of Ethereum be above $1,800 on July 24?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 10.19551
-    }
-   ],
-   "current_prices": {
-    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.9845
-   },
-   "current_value": 10.03748,
-   "unrealized_pl": 0.04588,
-   "unrealized_pl_pct": 0.459
-  },
-  {
    "key": "CV-1122567",
    "strategy": "CONVERGE",
    "title": "Converge: Will John Pardon win the 2026 Fields Medal?",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "79648164060446411758035344283813348296029360351806094056660504264664781230862": 0.981
+    "79648164060446411758035344283813348296029360351806094056660504264664781230862": 0.9805
    },
-   "current_value": 19.628818,
-   "unrealized_pl": 0.080035,
-   "unrealized_pl_pct": 0.409
+   "current_value": 19.618814,
+   "unrealized_pl": 0.070031,
+   "unrealized_pl_pct": 0.358
   },
   {
    "key": "CV-1122565",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.961
+    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.9605
    },
-   "current_value": 24.798367,
-   "unrealized_pl": -0.180633,
-   "unrealized_pl_pct": -0.723
+   "current_value": 24.785464,
+   "unrealized_pl": -0.193536,
+   "unrealized_pl_pct": -0.775
   },
   {
    "key": "CV-2947241",
@@ -257,40 +228,11 @@
     }
    ],
    "current_prices": {
-    "8221237468550375808633898131216832921465152618748900226443988412295478132185": 0.967
+    "8221237468550375808633898131216832921465152618748900226443988412295478132185": 0.968
    },
-   "current_value": 20.234291,
-   "unrealized_pl": -0.334797,
-   "unrealized_pl_pct": -1.628
-  },
-  {
-   "key": "CV-2960114",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
-   "opened": 1784768879.292015,
-   "cost": 24.97675,
-   "edge": 0.017294,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9852000000000001,
-   "resolve_by": "2026-07-24T16:00:00Z",
-   "note": "YES ask 0.983, 1.6d to resolution, 390% annualized if YES, assumed true P 0.985",
-   "legs": [
-    {
-     "token_id": "50307365397671027427178755479015178553981844020385582316939629685193228055681",
-     "market_id": "2960114",
-     "label": "YES Will the price of Bitcoin be above $62,000 on July 24?",
-     "side": "YES",
-     "entry_price": 0.983,
-     "shares": 25.408698
-    }
-   ],
-   "current_prices": {
-    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.9885
-   },
-   "current_value": 25.116498,
-   "unrealized_pl": 0.139748,
-   "unrealized_pl_pct": 0.56
+   "current_value": 20.255216,
+   "unrealized_pl": -0.313872,
+   "unrealized_pl_pct": -1.526
   },
   {
    "key": "CV-2972728",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "75029600465344904509080489313608973285497076299809651382082172986766337616532": 0.985
+    "75029600465344904509080489313608973285497076299809651382082172986766337616532": 0.983
    },
-   "current_value": 14.257954,
-   "unrealized_pl": -0.014475,
-   "unrealized_pl_pct": -0.101
+   "current_value": 14.229004,
+   "unrealized_pl": -0.043425,
+   "unrealized_pl_pct": -0.304
   },
   {
    "key": "CV-2107954",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.986
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.978
    },
-   "current_value": 25.090643,
-   "unrealized_pl": 0.050893,
-   "unrealized_pl_pct": 0.203
+   "current_value": 24.887068,
+   "unrealized_pl": -0.152682,
+   "unrealized_pl_pct": -0.61
   },
   {
    "key": "CV-2863245",
@@ -373,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "24842837270178563045080596501119383388959231063439941109817831657351105273923": 0.879
+    "24842837270178563045080596501119383388959231063439941109817831657351105273923": 0.931
    },
-   "current_value": 8.983649,
-   "unrealized_pl": -1.032251,
-   "unrealized_pl_pct": -10.306
+   "current_value": 9.515105,
+   "unrealized_pl": -0.500795,
+   "unrealized_pl_pct": -5.0
   },
   {
    "key": "LS-3010449",
@@ -402,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "44731648147345055398728285066772106679499227837708625849863505489445984974265": 0.985
+    "44731648147345055398728285066772106679499227837708625849863505489445984974265": 0.969
    },
-   "current_value": 25.664893,
-   "unrealized_pl": 0.651393,
-   "unrealized_pl_pct": 2.604
+   "current_value": 25.248001,
+   "unrealized_pl": 0.234501,
+   "unrealized_pl_pct": 0.937
   },
   {
    "key": "LS-3010561",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "110869172182416156109069056747340649193930078496999599866265287465436425297469": 0.97
+    "110869172182416156109069056747340649193930078496999599866265287465436425297469": 0.9975
    },
-   "current_value": 25.0258,
-   "unrealized_pl": 0.0258,
-   "unrealized_pl_pct": 0.103
+   "current_value": 25.735295,
+   "unrealized_pl": 0.735295,
+   "unrealized_pl_pct": 2.941
   },
   {
    "key": "CV-2378831",
@@ -460,11 +402,98 @@
     }
    ],
    "current_prices": {
-    "32957588433969980228005796419881319464777978088089453710524441503688483373739": 0.955
+    "32957588433969980228005796419881319464777978088089453710524441503688483373739": 0.938
    },
-   "current_value": 13.065678,
-   "unrealized_pl": -0.095769,
-   "unrealized_pl_pct": -0.728
+   "current_value": 12.833095,
+   "unrealized_pl": -0.328352,
+   "unrealized_pl_pct": -2.495
+  },
+  {
+   "key": "CV-2947129",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 23?",
+   "opened": 1784806373.530513,
+   "cost": 14.314714,
+   "edge": 0.014199,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-07-23T16:00:00Z",
+   "note": "YES ask 0.986, 0.2d to resolution, 2794% annualized if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "23372379081048578830750782125014638045361602243154971595367388768500284127365",
+     "market_id": "2947129",
+     "label": "YES Will the price of Bitcoin be above $64,000 on July 23?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 14.517966
+    }
+   ],
+   "current_prices": {
+    "23372379081048578830750782125014638045361602243154971595367388768500284127365": 0.9835
+   },
+   "current_value": 14.27842,
+   "unrealized_pl": -0.036294,
+   "unrealized_pl_pct": -0.254
+  },
+  {
+   "key": "CV-3017896",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 28?",
+   "opened": 1784806373.530536,
+   "cost": 25.05075,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9836,
+   "resolve_by": "2026-07-28T16:00:00Z",
+   "note": "YES ask 0.980, 5.2d to resolution, 144% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "51296952204121900343331042815815410443671868061720069818053470781462781945417",
+     "market_id": "3017896",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 28?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 25.56199
+    }
+   ],
+   "current_prices": {
+    "51296952204121900343331042815815410443671868061720069818053470781462781945417": 0.9795
+   },
+   "current_value": 25.037969,
+   "unrealized_pl": -0.012781,
+   "unrealized_pl_pct": -0.051
+  },
+  {
+   "key": "CV-1122569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Yu Deng win the 2026 Fields Medal?",
+   "opened": 1784806373.5305524,
+   "cost": 18.739539,
+   "edge": 0.034126,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9732000000000001,
+   "resolve_by": "2026-07-30T00:00:00Z",
+   "note": "YES ask 0.967, 6.5d to resolution, 191% annualized if YES, assumed true P 0.973",
+   "legs": [
+    {
+     "token_id": "23119677842919557473618751826817403683743402701277223294183020674564478808086",
+     "market_id": "1122569",
+     "label": "YES Will Yu Deng win the 2026 Fields Medal?",
+     "side": "YES",
+     "entry_price": 0.967,
+     "shares": 19.379047
+    }
+   ],
+   "current_prices": {
+    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.9665
+   },
+   "current_value": 18.729849,
+   "unrealized_pl": -0.00969,
+   "unrealized_pl_pct": -0.052
   }
  ],
  "closed": [
@@ -696,6 +725,72 @@
    "payout": 25.246476,
    "pl": 0.206726,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2960074",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 24?",
+   "opened": 1784763214.5946867,
+   "cost": 9.9916,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9808,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.980, 1.7d to resolution, 442% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "33270932059421939410144714528282401485508325136028407824316509947242790672004",
+     "market_id": "2960074",
+     "label": "YES Will the price of Ethereum be above $1,800 on July 24?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 10.19551
+    }
+   ],
+   "current_prices": {
+    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.9845
+   },
+   "current_value": 10.03748,
+   "unrealized_pl": 0.04588,
+   "unrealized_pl_pct": 0.459,
+   "closed_ts": 1784806373.6856837,
+   "payout": 10.052773,
+   "pl": 0.061173,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "opened": 1784768879.292015,
+   "cost": 24.97675,
+   "edge": 0.017294,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.983, 1.6d to resolution, 390% annualized if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "50307365397671027427178755479015178553981844020385582316939629685193228055681",
+     "market_id": "2960114",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 24?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 25.408698
+    }
+   ],
+   "current_prices": {
+    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.9885
+   },
+   "current_value": 25.116498,
+   "unrealized_pl": 0.139748,
+   "unrealized_pl_pct": 0.56,
+   "closed_ts": 1784806373.6856837,
+   "payout": 25.129202,
+   "pl": 0.152452,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -746,6 +841,14 @@
    "equity": 1002.0298,
    "realized_total": 2.9411,
    "open_positions": 16
+  },
+  {
+   "ts": 1784806373.6872427,
+   "cash": 662.4499,
+   "open_value": 339.9059,
+   "equity": 1002.3558,
+   "realized_total": 3.1548,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -1022,6 +1125,53 @@
    "title": "Converge: Will the price of Bitcoin be above $64,000 on July 23?",
    "amount": 25.25,
    "pl": 0.21,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784806373.530513,
+   "type": "OPEN",
+   "key": "CV-2947129",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 23?",
+   "amount": 14.31,
+   "pl": null
+  },
+  {
+   "ts": 1784806373.530536,
+   "type": "OPEN",
+   "key": "CV-3017896",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 28?",
+   "amount": 25.05,
+   "pl": null
+  },
+  {
+   "ts": 1784806373.5305524,
+   "type": "OPEN",
+   "key": "CV-1122569",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Yu Deng win the 2026 Fields Medal?",
+   "amount": 18.74,
+   "pl": null
+  },
+  {
+   "ts": 1784806373.6856837,
+   "type": "CLOSE",
+   "key": "CV-2960074",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 24?",
+   "amount": 10.05,
+   "pl": 0.06,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784806373.6856837,
+   "type": "CLOSE",
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "amount": 25.13,
+   "pl": 0.15,
    "reason": "take_profit"
   }
  ]
