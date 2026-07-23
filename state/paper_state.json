@@ -1,5 +1,5 @@
 {
- "cash": 717.880765,
+ "cash": 683.424442,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "49070367331151305836798245360623976328913593793324901707148165568423990473573": 0.957
+    "49070367331151305836798245360623976328913593793324901707148165568423990473573": 0.9995
    },
-   "current_value": 24.767081,
-   "unrealized_pl": -0.232919,
-   "unrealized_pl_pct": -0.932
+   "current_value": 25.866977,
+   "unrealized_pl": 0.866977,
+   "unrealized_pl_pct": 3.468
   },
   {
    "key": "LS-2863359",
@@ -54,40 +54,11 @@
     }
    ],
    "current_prices": {
-    "33054718103569122293758491780347730457662997564235623049242527294195955413326": 0.963
+    "33054718103569122293758491780347730457662997564235623049242527294195955413326": 0.9945
    },
-   "current_value": 24.92236,
-   "unrealized_pl": -0.07764,
-   "unrealized_pl_pct": -0.311
-  },
-  {
-   "key": "CV-2947129",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 23?",
-   "opened": 1784760196.442456,
-   "cost": 25.0,
-   "edge": 0.034126,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9728,
-   "resolve_by": "2026-07-23T16:00:00Z",
-   "note": "YES ask 0.967, 0.7d to resolution, 1730% annualized if YES, assumed true P 0.973",
-   "legs": [
-    {
-     "token_id": "23372379081048578830750782125014638045361602243154971595367388768500284127365",
-     "market_id": "2947129",
-     "label": "YES Will the price of Bitcoin be above $64,000 on July 23?",
-     "side": "YES",
-     "entry_price": 0.967,
-     "shares": 25.853154
-    }
-   ],
-   "current_prices": {
-    "23372379081048578830750782125014638045361602243154971595367388768500284127365": 0.966
-   },
-   "current_value": 24.974147,
-   "unrealized_pl": -0.025853,
-   "unrealized_pl_pct": -0.103
+   "current_value": 25.737577,
+   "unrealized_pl": 0.737577,
+   "unrealized_pl_pct": 2.95
   },
   {
    "key": "CV-2989105",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.9695
+    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.976
    },
-   "current_value": 24.9357,
-   "unrealized_pl": -0.0643,
-   "unrealized_pl_pct": -0.257
+   "current_value": 25.102881,
+   "unrealized_pl": 0.102881,
+   "unrealized_pl_pct": 0.412
   },
   {
    "key": "CV-3001571",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "43355822136291487719694013368454734366096921574841246416064526698529721759100": 0.945
+    "43355822136291487719694013368454734366096921574841246416064526698529721759100": 0.935
    },
-   "current_value": 9.947369,
-   "unrealized_pl": -0.052631,
-   "unrealized_pl_pct": -0.526
+   "current_value": 9.842105,
+   "unrealized_pl": -0.157895,
+   "unrealized_pl_pct": -1.579
   },
   {
    "key": "CV-1122569",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.966
+    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.967
    },
-   "current_value": 22.70377,
-   "unrealized_pl": -0.023503,
-   "unrealized_pl_pct": -0.103
+   "current_value": 22.727272,
+   "unrealized_pl": -1e-06,
+   "unrealized_pl_pct": -0.0
   },
   {
    "key": "CV-2430327",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "44448995976134218749353294958980205715807909062254981377118994335229021686419": 0.965
+    "44448995976134218749353294958980205715807909062254981377118994335229021686419": 0.9655
    },
-   "current_value": 19.896908,
-   "unrealized_pl": -0.103092,
-   "unrealized_pl_pct": -0.515
+   "current_value": 19.907217,
+   "unrealized_pl": -0.092783,
+   "unrealized_pl_pct": -0.464
   },
   {
    "key": "CV-2674108",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.9725
+    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.9815
    },
-   "current_value": 24.961499,
-   "unrealized_pl": -0.038501,
-   "unrealized_pl_pct": -0.154
+   "current_value": 25.192505,
+   "unrealized_pl": 0.192505,
+   "unrealized_pl_pct": 0.77
   },
   {
    "key": "CV-2698776",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.976
+    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.983
    },
-   "current_value": 9.950818,
-   "unrealized_pl": -0.040782,
-   "unrealized_pl_pct": -0.408
+   "current_value": 10.022186,
+   "unrealized_pl": 0.030586,
+   "unrealized_pl_pct": 0.306
   },
   {
    "key": "CV-1122567",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "79648164060446411758035344283813348296029360351806094056660504264664781230862": 0.9735
+    "79648164060446411758035344283813348296029360351806094056660504264664781230862": 0.972
    },
-   "current_value": 19.478751,
-   "unrealized_pl": -0.070032,
-   "unrealized_pl_pct": -0.358
+   "current_value": 19.448737,
+   "unrealized_pl": -0.100046,
+   "unrealized_pl_pct": -0.512
   },
   {
    "key": "CV-1122565",
@@ -373,11 +344,98 @@
     }
    ],
    "current_prices": {
-    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.9645
+    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.9635
    },
-   "current_value": 24.888683,
-   "unrealized_pl": -0.090317,
-   "unrealized_pl_pct": -0.362
+   "current_value": 24.862879,
+   "unrealized_pl": -0.116121,
+   "unrealized_pl_pct": -0.465
+  },
+  {
+   "key": "CV-2947241",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.10 on July 23?",
+   "opened": 1784768879.2920003,
+   "cost": 20.569088,
+   "edge": 0.017294,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-07-23T16:00:00Z",
+   "note": "YES ask 0.983, 0.6d to resolution, 1019% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "8221237468550375808633898131216832921465152618748900226443988412295478132185",
+     "market_id": "2947241",
+     "label": "YES Will the price of XRP be above $1.10 on July 23?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 20.92481
+    }
+   ],
+   "current_prices": {
+    "8221237468550375808633898131216832921465152618748900226443988412295478132185": 0.9805
+   },
+   "current_value": 20.516776,
+   "unrealized_pl": -0.052312,
+   "unrealized_pl_pct": -0.254
+  },
+  {
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "opened": 1784768879.292015,
+   "cost": 24.97675,
+   "edge": 0.017294,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-07-24T16:00:00Z",
+   "note": "YES ask 0.983, 1.6d to resolution, 390% annualized if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "50307365397671027427178755479015178553981844020385582316939629685193228055681",
+     "market_id": "2960114",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 24?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 25.408698
+    }
+   ],
+   "current_prices": {
+    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.9815
+   },
+   "current_value": 24.938637,
+   "unrealized_pl": -0.038113,
+   "unrealized_pl_pct": -0.153
+  },
+  {
+   "key": "CV-2972728",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 25?",
+   "opened": 1784768879.2920363,
+   "cost": 14.272429,
+   "edge": 0.014199,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-07-25T16:00:00Z",
+   "note": "YES ask 0.986, 2.6d to resolution, 198% annualized if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "75029600465344904509080489313608973285497076299809651382082172986766337616532",
+     "market_id": "2972728",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 25?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 14.47508
+    }
+   ],
+   "current_prices": {
+    "75029600465344904509080489313608973285497076299809651382082172986766337616532": 0.9835
+   },
+   "current_value": 14.236241,
+   "unrealized_pl": -0.036188,
+   "unrealized_pl_pct": -0.254
   }
  ],
  "closed": [
@@ -413,6 +471,39 @@
    "payout": 25.127421,
    "pl": 0.127421,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2947129",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 23?",
+   "opened": 1784760196.442456,
+   "cost": 25.0,
+   "edge": 0.034126,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9728,
+   "resolve_by": "2026-07-23T16:00:00Z",
+   "note": "YES ask 0.967, 0.7d to resolution, 1730% annualized if YES, assumed true P 0.973",
+   "legs": [
+    {
+     "token_id": "23372379081048578830750782125014638045361602243154971595367388768500284127365",
+     "market_id": "2947129",
+     "label": "YES Will the price of Bitcoin be above $64,000 on July 23?",
+     "side": "YES",
+     "entry_price": 0.967,
+     "shares": 25.853154
+    }
+   ],
+   "current_prices": {
+    "23372379081048578830750782125014638045361602243154971595367388768500284127365": 0.966
+   },
+   "current_value": 24.974147,
+   "unrealized_pl": -0.025853,
+   "unrealized_pl_pct": -0.103,
+   "closed_ts": 1784768879.4969337,
+   "payout": 25.361944,
+   "pl": 0.361944,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -431,6 +522,14 @@
    "equity": 999.0717,
    "realized_total": 0.1274,
    "open_positions": 13
+  },
+  {
+   "ts": 1784768879.4985788,
+   "cash": 683.4244,
+   "open_value": 318.1659,
+   "equity": 1001.5903,
+   "realized_total": 0.4894,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -568,6 +667,43 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
    "amount": 25.13,
    "pl": 0.13,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784768879.2920003,
+   "type": "OPEN",
+   "key": "CV-2947241",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.10 on July 23?",
+   "amount": 20.57,
+   "pl": null
+  },
+  {
+   "ts": 1784768879.292015,
+   "type": "OPEN",
+   "key": "CV-2960114",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 24?",
+   "amount": 24.98,
+   "pl": null
+  },
+  {
+   "ts": 1784768879.2920363,
+   "type": "OPEN",
+   "key": "CV-2972728",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 25?",
+   "amount": 14.27,
+   "pl": null
+  },
+  {
+   "ts": 1784768879.4969337,
+   "type": "CLOSE",
+   "key": "CV-2947129",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 23?",
+   "amount": 25.36,
+   "pl": 0.36,
    "reason": "take_profit"
   }
  ]
