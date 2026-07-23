@@ -1,36 +1,7 @@
 {
- "cash": 649.208959,
+ "cash": 675.255047,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "LS-2863359",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Associa\u00e7\u00e3o Chapecoense de Futebol 1 - 0 CR Flam",
-   "opened": 1784760196.4424381,
-   "cost": 25.0,
-   "edge": 0.012215,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9778,
-   "resolve_by": "2026-07-23T00:30:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966",
-   "legs": [
-    {
-     "token_id": "33054718103569122293758491780347730457662997564235623049242527294195955413326",
-     "market_id": "2863359",
-     "label": "NO Exact Score: Associa\u00e7\u00e3o Chapecoense de Futebol 1 - 0 CR Flamengo?",
-     "side": "NO",
-     "entry_price": 0.966,
-     "shares": 25.879917
-    }
-   ],
-   "current_prices": {
-    "33054718103569122293758491780347730457662997564235623049242527294195955413326": 0.9995
-   },
-   "current_value": 25.866977,
-   "unrealized_pl": 0.866977,
-   "unrealized_pl_pct": 3.468
-  },
   {
    "key": "CV-2989105",
    "strategy": "CONVERGE",
@@ -54,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.967
+    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.976
    },
-   "current_value": 24.8714,
-   "unrealized_pl": -0.1286,
-   "unrealized_pl_pct": -0.514
+   "current_value": 25.102881,
+   "unrealized_pl": 0.102881,
+   "unrealized_pl_pct": 0.412
   },
   {
    "key": "CV-3001571",
@@ -83,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "43355822136291487719694013368454734366096921574841246416064526698529721759100": 0.935
+    "43355822136291487719694013368454734366096921574841246416064526698529721759100": 0.94
    },
-   "current_value": 9.842105,
-   "unrealized_pl": -0.157895,
-   "unrealized_pl_pct": -1.579
+   "current_value": 9.894737,
+   "unrealized_pl": -0.105263,
+   "unrealized_pl_pct": -1.053
   },
   {
    "key": "CV-1122569",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.9685
+    "23119677842919557473618751826817403683743402701277223294183020674564478808086": 0.964
    },
-   "current_value": 22.762527,
-   "unrealized_pl": 0.035254,
-   "unrealized_pl_pct": 0.155
+   "current_value": 22.656764,
+   "unrealized_pl": -0.070509,
+   "unrealized_pl_pct": -0.31
   },
   {
    "key": "CV-2430327",
@@ -170,40 +141,11 @@
     }
    ],
    "current_prices": {
-    "44448995976134218749353294958980205715807909062254981377118994335229021686419": 0.9675
+    "44448995976134218749353294958980205715807909062254981377118994335229021686419": 0.964
    },
-   "current_value": 19.948454,
-   "unrealized_pl": -0.051546,
-   "unrealized_pl_pct": -0.258
-  },
-  {
-   "key": "CV-2674108",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
-   "opened": 1784760196.4425142,
-   "cost": 25.0,
-   "edge": 0.026694,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.978,
-   "resolve_by": "2026-07-31T23:59:00Z",
-   "note": "YES ask 0.974, 9.1d to resolution, 108% annualized if YES, assumed true P 0.978",
-   "legs": [
-    {
-     "token_id": "103818288966521645160585233658582119264581111644689435387842700071754028133781",
-     "market_id": "2674108",
-     "label": "YES Will Alphabet be the third-largest company in the world by market cap on July 31?",
-     "side": "YES",
-     "entry_price": 0.974,
-     "shares": 25.667351
-    }
-   ],
-   "current_prices": {
-    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.9805
-   },
-   "current_value": 25.166838,
-   "unrealized_pl": 0.166838,
-   "unrealized_pl_pct": 0.667
+   "current_value": 19.876289,
+   "unrealized_pl": -0.123711,
+   "unrealized_pl_pct": -0.619
   },
   {
    "key": "CV-2698776",
@@ -228,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "39345054235958789034160246589224646804344434517432840561828991379745093618558": 0.9395
+    "39345054235958789034160246589224646804344434517432840561828991379745093618558": 0.942
    },
-   "current_value": 24.749736,
-   "unrealized_pl": -0.250264,
-   "unrealized_pl_pct": -1.001
+   "current_value": 24.815595,
+   "unrealized_pl": -0.184405,
+   "unrealized_pl_pct": -0.738
   },
   {
    "key": "CV-2960074",
@@ -257,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.9805
+    "33270932059421939410144714528282401485508325136028407824316509947242790672004": 0.983
    },
-   "current_value": 9.996698,
-   "unrealized_pl": 0.005098,
-   "unrealized_pl_pct": 0.051
+   "current_value": 10.022186,
+   "unrealized_pl": 0.030586,
+   "unrealized_pl_pct": 0.306
   },
   {
    "key": "CV-1122567",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "79648164060446411758035344283813348296029360351806094056660504264664781230862": 0.964
+    "79648164060446411758035344283813348296029360351806094056660504264664781230862": 0.9625
    },
-   "current_value": 19.288665,
-   "unrealized_pl": -0.260118,
-   "unrealized_pl_pct": -1.331
+   "current_value": 19.258652,
+   "unrealized_pl": -0.290131,
+   "unrealized_pl_pct": -1.484
   },
   {
    "key": "CV-1122565",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.9735
+    "73174459655993070858167232757766788646597787486051172126485987941831835383320": 0.956
    },
-   "current_value": 25.120926,
-   "unrealized_pl": 0.141926,
-   "unrealized_pl_pct": 0.568
+   "current_value": 24.669343,
+   "unrealized_pl": -0.309657,
+   "unrealized_pl_pct": -1.24
   },
   {
    "key": "CV-2947241",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "8221237468550375808633898131216832921465152618748900226443988412295478132185": 0.978
+    "8221237468550375808633898131216832921465152618748900226443988412295478132185": 0.98
    },
-   "current_value": 20.464464,
-   "unrealized_pl": -0.104624,
-   "unrealized_pl_pct": -0.509
+   "current_value": 20.506314,
+   "unrealized_pl": -0.062774,
+   "unrealized_pl_pct": -0.305
   },
   {
    "key": "CV-2960114",
@@ -373,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.981
+    "50307365397671027427178755479015178553981844020385582316939629685193228055681": 0.986
    },
-   "current_value": 24.925933,
-   "unrealized_pl": -0.050817,
-   "unrealized_pl_pct": -0.203
+   "current_value": 25.052976,
+   "unrealized_pl": 0.076226,
+   "unrealized_pl_pct": 0.305
   },
   {
    "key": "CV-2972728",
@@ -402,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "75029600465344904509080489313608973285497076299809651382082172986766337616532": 0.9815
+    "75029600465344904509080489313608973285497076299809651382082172986766337616532": 0.977
    },
-   "current_value": 14.207291,
-   "unrealized_pl": -0.065138,
-   "unrealized_pl_pct": -0.456
+   "current_value": 14.142153,
+   "unrealized_pl": -0.130276,
+   "unrealized_pl_pct": -0.913
   },
   {
    "key": "CV-2947129",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "23372379081048578830750782125014638045361602243154971595367388768500284127365": 0.9695
+    "23372379081048578830750782125014638045361602243154971595367388768500284127365": 0.974
    },
-   "current_value": 25.05267,
-   "unrealized_pl": 0.01292,
-   "unrealized_pl_pct": 0.052
+   "current_value": 25.168954,
+   "unrealized_pl": 0.129204,
+   "unrealized_pl_pct": 0.516
   },
   {
    "key": "CV-2107954",
@@ -460,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.982
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.986
    },
-   "current_value": 24.988856,
-   "unrealized_pl": -0.050894,
-   "unrealized_pl_pct": -0.203
+   "current_value": 25.090643,
+   "unrealized_pl": 0.050893,
+   "unrealized_pl_pct": 0.203
   },
   {
    "key": "CV-2863245",
@@ -489,11 +431,40 @@
     }
    ],
    "current_prices": {
-    "24842837270178563045080596501119383388959231063439941109817831657351105273923": 0.976
+    "24842837270178563045080596501119383388959231063439941109817831657351105273923": 0.9555
    },
-   "current_value": 9.975019,
-   "unrealized_pl": -0.040881,
-   "unrealized_pl_pct": -0.408
+   "current_value": 9.765502,
+   "unrealized_pl": -0.250398,
+   "unrealized_pl_pct": -2.5
+  },
+  {
+   "key": "LS-3010449",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Ankara be 31\u00b0C on July 23?",
+   "opened": 1784790796.0681434,
+   "cost": 25.0135,
+   "edge": 0.013542,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-07-23T12:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960",
+   "legs": [
+    {
+     "token_id": "44731648147345055398728285066772106679499227837708625849863505489445984974265",
+     "market_id": "3010449",
+     "label": "NO Will the highest temperature in Ankara be 31\u00b0C on July 23?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 26.055729
+    }
+   ],
+   "current_prices": {
+    "44731648147345055398728285066772106679499227837708625849863505489445984974265": 0.955
+   },
+   "current_value": 24.883221,
+   "unrealized_pl": -0.130279,
+   "unrealized_pl_pct": -0.521
   }
  ],
  "closed": [
@@ -594,6 +565,71 @@
    "closed_ts": 1784781148.1811252,
    "payout": 25.879917,
    "pl": 0.879917
+  },
+  {
+   "key": "CV-2674108",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
+   "opened": 1784760196.4425142,
+   "cost": 25.0,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.978,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.974, 9.1d to resolution, 108% annualized if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "103818288966521645160585233658582119264581111644689435387842700071754028133781",
+     "market_id": "2674108",
+     "label": "YES Will Alphabet be the third-largest company in the world by market cap on July 31?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 25.667351
+    }
+   ],
+   "current_prices": {
+    "103818288966521645160585233658582119264581111644689435387842700071754028133781": 0.9805
+   },
+   "current_value": 25.166838,
+   "unrealized_pl": 0.166838,
+   "unrealized_pl_pct": 0.667,
+   "closed_ts": 1784790796.2453563,
+   "payout": 25.179671,
+   "pl": 0.179671,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-2863359",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Associa\u00e7\u00e3o Chapecoense de Futebol 1 - 0 CR Flam",
+   "opened": 1784760196.4424381,
+   "cost": 25.0,
+   "edge": 0.012215,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-07-23T00:30:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966",
+   "legs": [
+    {
+     "token_id": "33054718103569122293758491780347730457662997564235623049242527294195955413326",
+     "market_id": "2863359",
+     "label": "NO Exact Score: Associa\u00e7\u00e3o Chapecoense de Futebol 1 - 0 CR Flamengo?",
+     "side": "NO",
+     "entry_price": 0.966,
+     "shares": 25.879917
+    }
+   ],
+   "current_prices": {
+    "33054718103569122293758491780347730457662997564235623049242527294195955413326": 0.966
+   },
+   "current_value": 25.0,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1784790797.7777994,
+   "payout": 25.879917,
+   "pl": 0.879917
   }
  ],
  "history": [
@@ -628,6 +664,14 @@
    "equity": 1000.5449,
    "realized_total": 0.4894,
    "open_positions": 18
+  },
+  {
+   "ts": 1784790796.2469385,
+   "cash": 649.3751,
+   "open_value": 350.8935,
+   "equity": 1000.2687,
+   "realized_total": 1.549,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -837,6 +881,34 @@
    "key": "LS-2860927",
    "strategy": "LONGSHOT",
    "title": "Fade: Exact Score: Charlotte FC 0 - 2 Atlanta United FC?",
+   "amount": 25.88,
+   "pl": 0.88
+  },
+  {
+   "ts": 1784790796.0681434,
+   "type": "OPEN",
+   "key": "LS-3010449",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Ankara be 31\u00b0C on July 23?",
+   "amount": 25.01,
+   "pl": null
+  },
+  {
+   "ts": 1784790796.2453563,
+   "type": "CLOSE",
+   "key": "CV-2674108",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alphabet be the third-largest company in the world by m",
+   "amount": 25.18,
+   "pl": 0.18,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784790797.7777994,
+   "type": "CLOSE",
+   "key": "LS-2863359",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Associa\u00e7\u00e3o Chapecoense de Futebol 1 - 0 CR Flam",
    "amount": 25.88,
    "pl": 0.88
   }
