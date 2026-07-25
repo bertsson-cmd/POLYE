@@ -1,5 +1,5 @@
 {
- "cash": 561.926743,
+ "cash": 629.808281,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "43355822136291487719694013368454734366096921574841246416064526698529721759100": 0.9295
+    "43355822136291487719694013368454734366096921574841246416064526698529721759100": 0.9245
    },
-   "current_value": 9.784211,
-   "unrealized_pl": -0.215789,
-   "unrealized_pl_pct": -2.158
+   "current_value": 9.731579,
+   "unrealized_pl": -0.268421,
+   "unrealized_pl_pct": -2.684
   },
   {
    "key": "CV-2431051",
@@ -54,40 +54,11 @@
     }
    ],
    "current_prices": {
-    "44448995976134218749353294958980205715807909062254981377118994335229021686419": 0.946
+    "44448995976134218749353294958980205715807909062254981377118994335229021686419": 0.9465
    },
-   "current_value": 19.505155,
-   "unrealized_pl": -0.494845,
-   "unrealized_pl_pct": -2.474
-  },
-  {
-   "key": "CV-2698776",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will there be no next Google Gemini Pro model release by Jul",
-   "opened": 1784760196.4425216,
-   "cost": 25.0,
-   "edge": 0.053741,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9543999999999999,
-   "resolve_by": "2026-07-31T23:59:00Z",
-   "note": "YES ask 0.949, 9.1d to resolution, 217% annualized if YES, assumed true P 0.954",
-   "legs": [
-    {
-     "token_id": "39345054235958789034160246589224646804344434517432840561828991379745093618558",
-     "market_id": "2698776",
-     "label": "YES Will there be no next Google Gemini Pro model release by July 31, 2026?",
-     "side": "YES",
-     "entry_price": 0.949,
-     "shares": 26.343519
-    }
-   ],
-   "current_prices": {
-    "39345054235958789034160246589224646804344434517432840561828991379745093618558": 0.969
-   },
-   "current_value": 25.52687,
-   "unrealized_pl": 0.52687,
-   "unrealized_pl_pct": 2.107
+   "current_value": 19.515464,
+   "unrealized_pl": -0.484536,
+   "unrealized_pl_pct": -2.423
   },
   {
    "key": "CV-2107954",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.976
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.978
    },
-   "current_value": 24.836174,
-   "unrealized_pl": -0.203576,
-   "unrealized_pl_pct": -0.813
+   "current_value": 24.887068,
+   "unrealized_pl": -0.152682,
+   "unrealized_pl_pct": -0.61
   },
   {
    "key": "CV-3017896",
@@ -141,130 +112,11 @@
     }
    ],
    "current_prices": {
-    "51296952204121900343331042815815410443671868061720069818053470781462781945417": 0.976
+    "51296952204121900343331042815815410443671868061720069818053470781462781945417": 0.974
    },
-   "current_value": 24.948502,
-   "unrealized_pl": -0.102248,
-   "unrealized_pl_pct": -0.408
-  },
-  {
-   "key": "ARB-NO-735889",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in Mexico City on July 24?",
-   "opened": 1784812202.2486308,
-   "cost": 25.059,
-   "edge": 0.002004,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 10.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-24T12:00:00Z",
-   "note": "11 outcomes, NO asks sum 9.9800 vs payout 10, 10 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "39292820280236218151340948879995225059066610447013028341923587142705083777058",
-     "market_id": "3048642",
-     "label": "NO Will the highest temperature in Mexico City be 24\u00b0C or below on July 24?",
-     "side": "NO",
-     "entry_price": 0.992,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "59208265354242110156303984837903085390506710706062779593297206152749364750312",
-     "market_id": "3048643",
-     "label": "NO Will the highest temperature in Mexico City be 25\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.98,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "106759542325847323318131107094248854986757815828033305130115911484223231064260",
-     "market_id": "3048644",
-     "label": "NO Will the highest temperature in Mexico City be 26\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.89,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "60757185461237449349789730689675021002452291828956680422370577928388429904416",
-     "market_id": "3048645",
-     "label": "NO Will the highest temperature in Mexico City be 27\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.69,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "47911143924865027759072892751621776457078906191346203623167851105962095348776",
-     "market_id": "3048646",
-     "label": "NO Will the highest temperature in Mexico City be 28\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.63,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "95694079742138371802347610749567475581408885674760999193880329717670369315557",
-     "market_id": "3048647",
-     "label": "NO Will the highest temperature in Mexico City be 29\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.87,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "86637633889951667557571921604327584825242371139541777002710571632974894738758",
-     "market_id": "3048648",
-     "label": "NO Will the highest temperature in Mexico City be 30\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.94,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "17304229986381106661307714475126967345624942838503531827811647444134589265439",
-     "market_id": "3048649",
-     "label": "NO Will the highest temperature in Mexico City be 31\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.995,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "50985477685921101325341761291133817469211945674562912880756897414198338934496",
-     "market_id": "3048650",
-     "label": "NO Will the highest temperature in Mexico City be 32\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.995,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "40884940487898579116834518837350230323795243256538741957155478111229846418343",
-     "market_id": "3048651",
-     "label": "NO Will the highest temperature in Mexico City be 33\u00b0C on July 24?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.510922
-    },
-    {
-     "token_id": "32302458193008627635271678295720606384384567343966234934867866386706706112036",
-     "market_id": "3048652",
-     "label": "NO Will the highest temperature in Mexico City be 34\u00b0C or higher on July 24?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.510922
-    }
-   ],
-   "current_prices": {
-    "39292820280236218151340948879995225059066610447013028341923587142705083777058": 0.9995,
-    "59208265354242110156303984837903085390506710706062779593297206152749364750312": 0.9995,
-    "106759542325847323318131107094248854986757815828033305130115911484223231064260": 0.9995,
-    "60757185461237449349789730689675021002452291828956680422370577928388429904416": 0.0005,
-    "47911143924865027759072892751621776457078906191346203623167851105962095348776": 0.9995,
-    "95694079742138371802347610749567475581408885674760999193880329717670369315557": 0.9995,
-    "86637633889951667557571921604327584825242371139541777002710571632974894738758": 0.9995,
-    "17304229986381106661307714475126967345624942838503531827811647444134589265439": 0.9995,
-    "50985477685921101325341761291133817469211945674562912880756897414198338934496": 0.9995,
-    "40884940487898579116834518837350230323795243256538741957155478111229846418343": 0.9995,
-    "32302458193008627635271678295720606384384567343966234934867866386706706112036": 0.9995
-   },
-   "current_value": 25.10922,
-   "unrealized_pl": 0.05022,
-   "unrealized_pl_pct": 0.2
+   "current_value": 24.897378,
+   "unrealized_pl": -0.153372,
+   "unrealized_pl_pct": -0.612
   },
   {
    "key": "CV-2607853",
@@ -289,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "35318756760858330552552156606707494623890453398944924723394293200168281188333": 0.9815
+    "35318756760858330552552156606707494623890453398944924723394293200168281188333": 0.977
    },
-   "current_value": 25.191749,
-   "unrealized_pl": 0.115499,
-   "unrealized_pl_pct": 0.461
+   "current_value": 25.07625,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
   },
   {
    "key": "CV-2698835",
@@ -347,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "99736475314551092162370727454041284759623925849862820110441160270939665964056": 0.9515
+    "99736475314551092162370727454041284759623925849862820110441160270939665964056": 0.9435
    },
-   "current_value": 24.585958,
-   "unrealized_pl": -0.555542,
-   "unrealized_pl_pct": -2.21
+   "current_value": 24.379245,
+   "unrealized_pl": -0.762255,
+   "unrealized_pl_pct": -3.032
   },
   {
    "key": "CV-3055668",
@@ -376,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9425
+    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9295
    },
-   "current_value": 24.77555,
-   "unrealized_pl": -0.40745,
-   "unrealized_pl_pct": -1.618
+   "current_value": 24.433819,
+   "unrealized_pl": -0.749181,
+   "unrealized_pl_pct": -2.975
   },
   {
    "key": "CV-3055658",
@@ -405,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "53062979166670903162989650515928829423245420060620084360454365187748180112489": 0.985
+    "53062979166670903162989650515928829423245420060620084360454365187748180112489": 0.9805
    },
-   "current_value": 14.949908,
-   "unrealized_pl": 0.091065,
-   "unrealized_pl_pct": 0.613
+   "current_value": 14.881609,
+   "unrealized_pl": 0.022766,
+   "unrealized_pl_pct": 0.153
   },
   {
    "key": "CV-2940998",
@@ -544,78 +396,20 @@
    ],
    "current_prices": {
     "100839311725060944526646432467441352282043671258410237980728599013332205961474": 0.9995,
-    "37263080067678104943818476683584155746808321760597135231357015615495908606134": 0.98,
-    "60394096687689252933985257549729876055720453898133612172066035716979713987590": 0.9,
-    "28271412567178587484246570272393382881336473446900817874504671015966022928451": 0.72,
-    "102263848102192396220834469689692229774150513370163695036005312162841165699757": 0.665,
-    "51392967122580951813959610430674563157217719182917618996455191811743771039222": 0.815,
-    "100390440005164394642480928299023895179480108394519082272793165593734964944300": 0.895,
+    "37263080067678104943818476683584155746808321760597135231357015615495908606134": 0.985,
+    "60394096687689252933985257549729876055720453898133612172066035716979713987590": 0.93,
+    "28271412567178587484246570272393382881336473446900817874504671015966022928451": 0.81,
+    "102263848102192396220834469689692229774150513370163695036005312162841165699757": 0.605,
+    "51392967122580951813959610430674563157217719182917618996455191811743771039222": 0.76,
+    "100390440005164394642480928299023895179480108394519082272793165593734964944300": 0.885,
     "48407264378710193537900445435881833894264079888826524590824679582057516812158": 0.985,
-    "6928768979917332744833717491454055546325794615094781811525521471917392418214": 0.9895,
-    "59476926791216100950879158979920550511484707008400821053292664556448486564718": 0.999,
+    "6928768979917332744833717491454055546325794615094781811525521471917392418214": 0.997,
+    "59476926791216100950879158979920550511484707008400821053292664556448486564718": 0.9995,
     "83790993348644475029664454592382098578088891858199028235162746661961711500816": 0.998
    },
    "current_value": 25.31902,
    "unrealized_pl": 0.08102,
    "unrealized_pl_pct": 0.321
-  },
-  {
-   "key": "LS-2896689",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Club Tijuana 0 - 2 Club Le\u00f3n FC?",
-   "opened": 1784919053.8261776,
-   "cost": 25.238,
-   "edge": 0.010939,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9796,
-   "resolve_by": "2026-07-25T03:00:00Z",
-   "note": "YES at 0.034, assumed true 0.020, NO ask 0.969",
-   "legs": [
-    {
-     "token_id": "108488873196703591417551199569264479896886018992123171553398841327779677836684",
-     "market_id": "2896689",
-     "label": "NO Exact Score: Club Tijuana 0 - 2 Club Le\u00f3n FC?",
-     "side": "NO",
-     "entry_price": 0.969,
-     "shares": 26.045408
-    }
-   ],
-   "current_prices": {
-    "108488873196703591417551199569264479896886018992123171553398841327779677836684": 0.9995
-   },
-   "current_value": 26.032385,
-   "unrealized_pl": 0.794385,
-   "unrealized_pl_pct": 3.148
-  },
-  {
-   "key": "CV-2821984",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Troy Jackson be the Maine Senate Democratic nominee on ",
-   "opened": 1784919053.8261847,
-   "cost": 10.0952,
-   "edge": 0.020408,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9808,
-   "resolve_by": "2026-07-27T23:59:00Z",
-   "note": "YES ask 0.980, 3.2d to resolution, 232% annualized if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "92257949995604386168666591829297332940242696592210490879190573221921075299609",
-     "market_id": "2821984",
-     "label": "YES Will Troy Jackson be the Maine Senate Democratic nominee on July 27?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 10.301224
-    }
-   ],
-   "current_prices": {
-    "92257949995604386168666591829297332940242696592210490879190573221921075299609": 0.986
-   },
-   "current_value": 10.157007,
-   "unrealized_pl": 0.061807,
-   "unrealized_pl_pct": 0.612
   },
   {
    "key": "CV-3047468",
@@ -640,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "39821322097948133765919991866700910715191624633244266739047033063796736061823": 0.9685
+    "39821322097948133765919991866700910715191624633244266739047033063796736061823": 0.968
    },
-   "current_value": 25.251036,
-   "unrealized_pl": 0.013036,
-   "unrealized_pl_pct": 0.052
+   "current_value": 25.238,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
   },
   {
    "key": "ARB-NO-741277",
@@ -749,14 +543,14 @@
     }
    ],
    "current_prices": {
-    "100127230926893733342290308660635590319607946619132532156478480586223233405213": 0.9985,
-    "29412512949852899789904879452907109147852783772150037364340965201893060148634": 0.9945,
+    "100127230926893733342290308660635590319607946619132532156478480586223233405213": 0.9995,
+    "29412512949852899789904879452907109147852783772150037364340965201893060148634": 0.9995,
     "31310482433163007540620090979248506777403880228470476825886994285766988730000": 0.992,
     "4272314447683924293793872943572013212806460602366365101817813071509024866840": 0.985,
-    "45096928532186803940342574231193076559417572436088306426195020616369551867647": 0.835,
-    "29243793333733595798353153383628469561746230203379868220219929460304013686987": 0.57,
-    "43854352306093628216587163731645629874965940486806537151271064084625097305771": 0.66,
-    "98968565318966175506659760916501864005180698990150643971840569058944044821792": 0.935,
+    "45096928532186803940342574231193076559417572436088306426195020616369551867647": 0.815,
+    "29243793333733595798353153383628469561746230203379868220219929460304013686987": 0.545,
+    "43854352306093628216587163731645629874965940486806537151271064084625097305771": 0.735,
+    "98968565318966175506659760916501864005180698990150643971840569058944044821792": 0.915,
     "1003072186778856775571878243440638354153709238931224558729049952846599548454": 0.9985,
     "81791034633164275113625300500116536977047420111545517501069602985685075971376": 0.9995,
     "29402798987213764077222225620667257477747609733265074048861158304829959387596": 0.9995
@@ -788,40 +582,11 @@
     }
    ],
    "current_prices": {
-    "62445948811335688399532237842903359755437017203710581973491484311660701440791": 0.963
+    "62445948811335688399532237842903359755437017203710581973491484311660701440791": 0.9605
    },
-   "current_value": 25.369,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
-  },
-  {
-   "key": "CV-3021691",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Haley Stevens win Oakland County in the Michigan Senate",
-   "opened": 1784932364.056496,
-   "cost": 7.383993,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-04T00:00:00Z",
-   "note": "YES ask 0.960, 10.1d to resolution, 151% annualized if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "47315497363599235457196009759762173826578668590034460631472664883857992410088",
-     "market_id": "3021691",
-     "label": "YES Will Haley Stevens win Oakland County in the Michigan Senate Democratic primary?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 7.691659
-    }
-   ],
-   "current_prices": {
-    "47315497363599235457196009759762173826578668590034460631472664883857992410088": 0.955
-   },
-   "current_value": 7.345534,
-   "unrealized_pl": -0.038459,
-   "unrealized_pl_pct": -0.521
+   "current_value": 25.303141,
+   "unrealized_pl": -0.065859,
+   "unrealized_pl_pct": -0.26
   },
   {
    "key": "LS-3051155",
@@ -846,11 +611,11 @@
     }
    ],
    "current_prices": {
-    "81947689100391162608756925460197350308208959639461305564646516518291681968971": 0.9
+    "81947689100391162608756925460197350308208959639461305564646516518291681968971": 0.99
    },
-   "current_value": 23.756719,
-   "unrealized_pl": -1.583781,
-   "unrealized_pl_pct": -6.25
+   "current_value": 26.13239,
+   "unrealized_pl": 0.79189,
+   "unrealized_pl_pct": 3.125
   },
   {
    "key": "CV-2952472",
@@ -875,11 +640,69 @@
     }
    ],
    "current_prices": {
-    "68080778697884921540335032370654180051222428162809511382222697646266365598353": 0.959
+    "68080778697884921540335032370654180051222428162809511382222697646266365598353": 0.9675
    },
-   "current_value": 25.287145,
-   "unrealized_pl": -0.079105,
-   "unrealized_pl_pct": -0.312
+   "current_value": 25.511275,
+   "unrealized_pl": 0.145025,
+   "unrealized_pl_pct": 0.572
+  },
+  {
+   "key": "CV-2989105",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 26?",
+   "opened": 1784969541.553466,
+   "cost": 19.518462,
+   "edge": 0.013171,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-07-26T16:00:00Z",
+   "note": "YES ask 0.987, 1.3d to resolution, 371% annualized if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "99484595144839121796266385744831826666674732387677499296002685128173676713510",
+     "market_id": "2989105",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 26?",
+     "side": "YES",
+     "entry_price": 0.987,
+     "shares": 19.775544
+    }
+   ],
+   "current_prices": {
+    "99484595144839121796266385744831826666674732387677499296002685128173676713510": 0.985
+   },
+   "current_value": 19.478911,
+   "unrealized_pl": -0.039551,
+   "unrealized_pl_pct": -0.203
+  },
+  {
+   "key": "CV-3082103",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on July 31?",
+   "opened": 1784969541.5534863,
+   "cost": 6.940619,
+   "edge": 0.028807,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9728,
+   "resolve_by": "2026-07-31T16:00:00Z",
+   "note": "YES ask 0.972, 6.3d to resolution, 167% annualized if YES, assumed true P 0.973",
+   "legs": [
+    {
+     "token_id": "35657136851647322948900738958631875221415710348663449531235845814322513591237",
+     "market_id": "3082103",
+     "label": "YES Will the price of Bitcoin be above $58,000 on July 31?",
+     "side": "YES",
+     "entry_price": 0.972,
+     "shares": 7.140555
+    }
+   ],
+   "current_prices": {
+    "35657136851647322948900738958631875221415710348663449531235845814322513591237": 0.966
+   },
+   "current_value": 6.897776,
+   "unrealized_pl": -0.042843,
+   "unrealized_pl_pct": -0.617
   }
  ],
  "closed": [
@@ -2436,6 +2259,259 @@
    "payout": 7.217806,
    "pl": 0.058092,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2698776",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will there be no next Google Gemini Pro model release by Jul",
+   "opened": 1784760196.4425216,
+   "cost": 25.0,
+   "edge": 0.053741,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9543999999999999,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.949, 9.1d to resolution, 217% annualized if YES, assumed true P 0.954",
+   "legs": [
+    {
+     "token_id": "39345054235958789034160246589224646804344434517432840561828991379745093618558",
+     "market_id": "2698776",
+     "label": "YES Will there be no next Google Gemini Pro model release by July 31, 2026?",
+     "side": "YES",
+     "entry_price": 0.949,
+     "shares": 26.343519
+    }
+   ],
+   "current_prices": {
+    "39345054235958789034160246589224646804344434517432840561828991379745093618558": 0.969
+   },
+   "current_value": 25.52687,
+   "unrealized_pl": 0.52687,
+   "unrealized_pl_pct": 2.107,
+   "closed_ts": 1784969541.7042875,
+   "payout": 25.52687,
+   "pl": 0.52687,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2821984",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Troy Jackson be the Maine Senate Democratic nominee on ",
+   "opened": 1784919053.8261847,
+   "cost": 10.0952,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9808,
+   "resolve_by": "2026-07-27T23:59:00Z",
+   "note": "YES ask 0.980, 3.2d to resolution, 232% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "92257949995604386168666591829297332940242696592210490879190573221921075299609",
+     "market_id": "2821984",
+     "label": "YES Will Troy Jackson be the Maine Senate Democratic nominee on July 27?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 10.301224
+    }
+   ],
+   "current_prices": {
+    "92257949995604386168666591829297332940242696592210490879190573221921075299609": 0.986
+   },
+   "current_value": 10.157007,
+   "unrealized_pl": 0.061807,
+   "unrealized_pl_pct": 0.612,
+   "closed_ts": 1784969541.7042875,
+   "payout": 10.198212,
+   "pl": 0.103012,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3021691",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Haley Stevens win Oakland County in the Michigan Senate",
+   "opened": 1784932364.056496,
+   "cost": 7.383993,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-04T00:00:00Z",
+   "note": "YES ask 0.960, 10.1d to resolution, 151% annualized if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "47315497363599235457196009759762173826578668590034460631472664883857992410088",
+     "market_id": "3021691",
+     "label": "YES Will Haley Stevens win Oakland County in the Michigan Senate Democratic primary?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 7.691659
+    }
+   ],
+   "current_prices": {
+    "47315497363599235457196009759762173826578668590034460631472664883857992410088": 0.955
+   },
+   "current_value": 7.345534,
+   "unrealized_pl": -0.038459,
+   "unrealized_pl_pct": -0.521,
+   "closed_ts": 1784969541.7042875,
+   "payout": 7.460909,
+   "pl": 0.076916,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "ARB-NO-735889",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Mexico City on July 24?",
+   "opened": 1784812202.2486308,
+   "cost": 25.059,
+   "edge": 0.002004,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-24T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9800 vs payout 10, 10 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "39292820280236218151340948879995225059066610447013028341923587142705083777058",
+     "market_id": "3048642",
+     "label": "NO Will the highest temperature in Mexico City be 24\u00b0C or below on July 24?",
+     "side": "NO",
+     "entry_price": 0.992,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "59208265354242110156303984837903085390506710706062779593297206152749364750312",
+     "market_id": "3048643",
+     "label": "NO Will the highest temperature in Mexico City be 25\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.98,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "106759542325847323318131107094248854986757815828033305130115911484223231064260",
+     "market_id": "3048644",
+     "label": "NO Will the highest temperature in Mexico City be 26\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.89,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "60757185461237449349789730689675021002452291828956680422370577928388429904416",
+     "market_id": "3048645",
+     "label": "NO Will the highest temperature in Mexico City be 27\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.69,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "47911143924865027759072892751621776457078906191346203623167851105962095348776",
+     "market_id": "3048646",
+     "label": "NO Will the highest temperature in Mexico City be 28\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.63,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "95694079742138371802347610749567475581408885674760999193880329717670369315557",
+     "market_id": "3048647",
+     "label": "NO Will the highest temperature in Mexico City be 29\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.87,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "86637633889951667557571921604327584825242371139541777002710571632974894738758",
+     "market_id": "3048648",
+     "label": "NO Will the highest temperature in Mexico City be 30\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.94,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "17304229986381106661307714475126967345624942838503531827811647444134589265439",
+     "market_id": "3048649",
+     "label": "NO Will the highest temperature in Mexico City be 31\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "50985477685921101325341761291133817469211945674562912880756897414198338934496",
+     "market_id": "3048650",
+     "label": "NO Will the highest temperature in Mexico City be 32\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "40884940487898579116834518837350230323795243256538741957155478111229846418343",
+     "market_id": "3048651",
+     "label": "NO Will the highest temperature in Mexico City be 33\u00b0C on July 24?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.510922
+    },
+    {
+     "token_id": "32302458193008627635271678295720606384384567343966234934867866386706706112036",
+     "market_id": "3048652",
+     "label": "NO Will the highest temperature in Mexico City be 34\u00b0C or higher on July 24?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.510922
+    }
+   ],
+   "current_prices": {
+    "39292820280236218151340948879995225059066610447013028341923587142705083777058": 0.992,
+    "59208265354242110156303984837903085390506710706062779593297206152749364750312": 0.98,
+    "106759542325847323318131107094248854986757815828033305130115911484223231064260": 0.89,
+    "60757185461237449349789730689675021002452291828956680422370577928388429904416": 0.69,
+    "47911143924865027759072892751621776457078906191346203623167851105962095348776": 0.63,
+    "95694079742138371802347610749567475581408885674760999193880329717670369315557": 0.87,
+    "86637633889951667557571921604327584825242371139541777002710571632974894738758": 0.94,
+    "17304229986381106661307714475126967345624942838503531827811647444134589265439": 0.995,
+    "50985477685921101325341761291133817469211945674562912880756897414198338934496": 0.995,
+    "40884940487898579116834518837350230323795243256538741957155478111229846418343": 0.999,
+    "32302458193008627635271678295720606384384567343966234934867866386706706112036": 0.999
+   },
+   "current_value": 25.10922,
+   "unrealized_pl": 0.05022,
+   "unrealized_pl_pct": 0.2,
+   "closed_ts": 1784969545.5224607,
+   "payout": 25.10922,
+   "pl": 0.05022
+  },
+  {
+   "key": "LS-2896689",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Club Tijuana 0 - 2 Club Le\u00f3n FC?",
+   "opened": 1784919053.8261776,
+   "cost": 25.238,
+   "edge": 0.010939,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9796,
+   "resolve_by": "2026-07-25T03:00:00Z",
+   "note": "YES at 0.034, assumed true 0.020, NO ask 0.969",
+   "legs": [
+    {
+     "token_id": "108488873196703591417551199569264479896886018992123171553398841327779677836684",
+     "market_id": "2896689",
+     "label": "NO Exact Score: Club Tijuana 0 - 2 Club Le\u00f3n FC?",
+     "side": "NO",
+     "entry_price": 0.969,
+     "shares": 26.045408
+    }
+   ],
+   "current_prices": {
+    "108488873196703591417551199569264479896886018992123171553398841327779677836684": 0.969
+   },
+   "current_value": 25.238,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1784969545.5224607,
+   "payout": 26.045408,
+   "pl": 0.807408
   }
  ],
  "history": [
@@ -2702,6 +2778,14 @@
    "equity": 1014.9595,
    "realized_total": 16.9482,
    "open_positions": 21
+  },
+  {
+   "ts": 1784969541.7057261,
+   "cash": 578.6537,
+   "open_value": 437.3317,
+   "equity": 1015.9854,
+   "realized_total": 17.655,
+   "open_positions": 20
   }
  ],
  "trades": [
@@ -3679,6 +3763,72 @@
    "amount": 7.22,
    "pl": 0.06,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1784969541.553466,
+   "type": "OPEN",
+   "key": "CV-2989105",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 26?",
+   "amount": 19.52,
+   "pl": null
+  },
+  {
+   "ts": 1784969541.5534863,
+   "type": "OPEN",
+   "key": "CV-3082103",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on July 31?",
+   "amount": 6.94,
+   "pl": null
+  },
+  {
+   "ts": 1784969541.7042875,
+   "type": "CLOSE",
+   "key": "CV-2698776",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will there be no next Google Gemini Pro model release by Jul",
+   "amount": 25.53,
+   "pl": 0.53,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784969541.7042875,
+   "type": "CLOSE",
+   "key": "CV-2821984",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Troy Jackson be the Maine Senate Democratic nominee on ",
+   "amount": 10.2,
+   "pl": 0.1,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784969541.7042875,
+   "type": "CLOSE",
+   "key": "CV-3021691",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Haley Stevens win Oakland County in the Michigan Senate",
+   "amount": 7.46,
+   "pl": 0.08,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1784969545.5224607,
+   "type": "CLOSE",
+   "key": "ARB-NO-735889",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Mexico City on July 24?",
+   "amount": 25.11,
+   "pl": 0.05
+  },
+  {
+   "ts": 1784969545.5224607,
+   "type": "CLOSE",
+   "key": "LS-2896689",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Club Tijuana 0 - 2 Club Le\u00f3n FC?",
+   "amount": 26.05,
+   "pl": 0.81
   }
  ]
 }
