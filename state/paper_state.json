@@ -1,5 +1,5 @@
 {
- "cash": 620.624245,
+ "cash": 551.491888,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9865
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.987
    },
-   "current_value": 25.103367,
-   "unrealized_pl": 0.063617,
-   "unrealized_pl_pct": 0.254
+   "current_value": 25.11609,
+   "unrealized_pl": 0.07634,
+   "unrealized_pl_pct": 0.305
   },
   {
    "key": "CV-2698835",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "39821322097948133765919991866700910715191624633244266739047033063796736061823": 0.9655
+    "39821322097948133765919991866700910715191624633244266739047033063796736061823": 0.967
    },
-   "current_value": 25.172819,
-   "unrealized_pl": -0.065181,
-   "unrealized_pl_pct": -0.258
+   "current_value": 25.211928,
+   "unrealized_pl": -0.026072,
+   "unrealized_pl_pct": -0.103
   },
   {
    "key": "CV-2698776",
@@ -282,18 +282,18 @@
     "54034240259109294409935816821618996133009502970756531756159004703044745311143": 0.9995,
     "8084667483351879432977840546658520787530906288205110384191984411304454651762": 0.9995,
     "114808409925684262754804079554379384626144457674803032964395633930371470933551": 0.9995,
-    "26309800867232236636591470402146569115372081830429003677874448649385830954178": 0.825,
-    "73506326939892094780969003855728625488137310361887868575214206202413053191620": 0.44,
-    "4999475927157657632699038833514745984838465158917058306373760767633174314565": 0.75,
-    "731263471680774838684471370678051999166318691157904923860954336410709356797": 0.983,
-    "68923692042368707516339425526887133293806689168927885659724941557775491529867": 0.9975,
-    "41650808945037241796646687611481128153136685385048628889152309017217625976542": 0.9985,
+    "26309800867232236636591470402146569115372081830429003677874448649385830954178": 0.665,
+    "73506326939892094780969003855728625488137310361887868575214206202413053191620": 0.53,
+    "4999475927157657632699038833514745984838465158917058306373760767633174314565": 0.85,
+    "731263471680774838684471370678051999166318691157904923860954336410709356797": 0.9885,
+    "68923692042368707516339425526887133293806689168927885659724941557775491529867": 0.9965,
+    "41650808945037241796646687611481128153136685385048628889152309017217625976542": 0.9995,
     "59476131689308118139510345947570442759590384111517419387090203765265148113589": 0.9995,
     "94119560013606237983403042967255017967908659628906714844638515450243978131899": 0.9995
    },
-   "current_value": 25.68562,
-   "unrealized_pl": 0.05137,
-   "unrealized_pl_pct": 0.2
+   "current_value": 25.754971,
+   "unrealized_pl": 0.120721,
+   "unrealized_pl_pct": 0.471
   },
   {
    "key": "CV-2940995",
@@ -325,64 +325,6 @@
    "unrealized_pl_pct": 0.0
   },
   {
-   "key": "CV-3083664",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through July 27?",
-   "opened": 1785082637.083925,
-   "cost": 25.6705,
-   "edge": 0.020408,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9828,
-   "resolve_by": "2026-07-27T23:59:00Z",
-   "note": "YES ask 0.980, 1.3d to resolution, 564% annualized if YES, assumed true P 0.983",
-   "legs": [
-    {
-     "token_id": "90664643079633325229069388592013287463357580070351448429341061965362517324082",
-     "market_id": "3083664",
-     "label": "YES Israel x Iran ceasefire continues through July 27?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 26.194388
-    }
-   ],
-   "current_prices": {
-    "90664643079633325229069388592013287463357580070351448429341061965362517324082": 0.985
-   },
-   "current_value": 25.801472,
-   "unrealized_pl": 0.130972,
-   "unrealized_pl_pct": 0.51
-  },
-  {
-   "key": "CV-2948596",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Trump meet with Netanyahu by July 31, 2026?",
-   "opened": 1785082637.0839446,
-   "cost": 7.898615,
-   "edge": 0.026694,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9748,
-   "resolve_by": "2026-07-31T23:59:00Z",
-   "note": "YES ask 0.974, 5.3d to resolution, 183% annualized if YES, assumed true P 0.975",
-   "legs": [
-    {
-     "token_id": "87461865681689699081648262736937951256169066109275377425968376597869321557502",
-     "market_id": "2948596",
-     "label": "YES Will Trump meet with Netanyahu by July 31, 2026?",
-     "side": "YES",
-     "entry_price": 0.974,
-     "shares": 8.109461
-    }
-   ],
-   "current_prices": {
-    "87461865681689699081648262736937951256169066109275377425968376597869321557502": 0.969
-   },
-   "current_value": 7.858068,
-   "unrealized_pl": -0.040547,
-   "unrealized_pl_pct": -0.513
-  },
-  {
    "key": "CV-3101530",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $58,000 on August 1?",
@@ -405,11 +347,11 @@
     }
    ],
    "current_prices": {
-    "24830944500018836266000616361473526128046523034422936253112501619955922038585": 0.98
+    "24830944500018836266000616361473526128046523034422936253112501619955922038585": 0.981
    },
-   "current_value": 25.775707,
-   "unrealized_pl": 0.105207,
-   "unrealized_pl_pct": 0.41
+   "current_value": 25.802009,
+   "unrealized_pl": 0.131509,
+   "unrealized_pl_pct": 0.512
   },
   {
    "key": "ARB-NO-750590",
@@ -516,19 +458,19 @@
    "current_prices": {
     "47231381872965449589928591235313206584889076029135520476644364642474911267404": 0.9975,
     "92833500629234318156098865810432025541266235862540738758607252658312086221021": 0.9975,
-    "70051514045482689548001275383399338152961598416816469102476512140974117933350": 0.988,
+    "70051514045482689548001275383399338152961598416816469102476512140974117933350": 0.9885,
     "31282255076629265621720679966389759264437985177527309185517102889902317140462": 0.855,
-    "37888501481589590551025655970760216239696065324295142361724391979161479096222": 0.64,
-    "1347643414531871286746835479169910545571105482513824537633867961013744394384": 0.615,
-    "62957063338874807338482312656904825201223017398184498881692777067732045497657": 0.905,
+    "37888501481589590551025655970760216239696065324295142361724391979161479096222": 0.545,
+    "1347643414531871286746835479169910545571105482513824537633867961013744394384": 0.72,
+    "62957063338874807338482312656904825201223017398184498881692777067732045497657": 0.96,
     "11450370950989664526086208495816922131407131100913550354353231340837011659761": 0.9975,
-    "82581610672235463595924259951419469970215570205220438852430441174738024611289": 0.9935,
-    "92086648177520995746485998722942702878409853675934462991675687890893763743309": 0.998,
-    "27401790025843532078008113038955467226158500765017096094681349750228460367336": 0.997
+    "82581610672235463595924259951419469970215570205220438852430441174738024611289": 0.9955,
+    "92086648177520995746485998722942702878409853675934462991675687890893763743309": 0.9985,
+    "27401790025843532078008113038955467226158500765017096094681349750228460367336": 0.9985
    },
-   "current_value": 25.79888,
-   "unrealized_pl": 0.02838,
-   "unrealized_pl_pct": 0.11
+   "current_value": 25.936904,
+   "unrealized_pl": 0.166404,
+   "unrealized_pl_pct": 0.646
   },
   {
    "key": "ARB-NO-750588",
@@ -634,14 +576,14 @@
    ],
    "current_prices": {
     "45546204922478928589902774184623203102864525525820047036522740169479927415612": 0.9995,
-    "64985123853830717738852377662365773676388009553788098491633480817671914704651": 0.9995,
-    "82977152772967373009287562159216882125629026814125636393650590699249974930097": 0.9985,
-    "31190392896250440540622525873181087081903124038527603833173451224470546505582": 0.945,
-    "89380963851316575486556774678312340054568987227583497654388652522848755646761": 0.47,
-    "41943765038205377454590960027600695965022574803934073349261224140587929095104": 0.65,
-    "95794027515270126431404303126031180065021924802215160099410849852176972335652": 0.95,
+    "64985123853830717738852377662365773676388009553788098491633480817671914704651": 0.9985,
+    "82977152772967373009287562159216882125629026814125636393650590699249974930097": 0.9935,
+    "31190392896250440540622525873181087081903124038527603833173451224470546505582": 0.96,
+    "89380963851316575486556774678312340054568987227583497654388652522848755646761": 0.48,
+    "41943765038205377454590960027600695965022574803934073349261224140587929095104": 0.605,
+    "95794027515270126431404303126031180065021924802215160099410849852176972335652": 0.945,
     "25687736095770100023404936886106992363383744763847162719701527876984984943183": 0.992,
-    "53832885217858453949593192367168152181238146633467478163905120208389359402879": 0.9945,
+    "53832885217858453949593192367168152181238146633467478163905120208389359402879": 0.995,
     "36283486667604422870901562880338741185907229587000237045060538688602473660110": 0.9995,
     "105838570491851985896629037699819051909747718277072365757190714438440544520407": 0.9995
    },
@@ -672,11 +614,11 @@
     }
    ],
    "current_prices": {
-    "56021360787205062639528719969809977636943461006212770449582567806390153964366": 0.9775
+    "56021360787205062639528719969809977636943461006212770449582567806390153964366": 0.9845
    },
-   "current_value": 25.73876,
-   "unrealized_pl": -0.11849,
-   "unrealized_pl_pct": -0.458
+   "current_value": 25.923078,
+   "unrealized_pl": 0.065828,
+   "unrealized_pl_pct": 0.255
   },
   {
    "key": "CV-3083667",
@@ -701,11 +643,11 @@
     }
    ],
    "current_prices": {
-    "38886322264669784027672286592774757444905080686185967143832131463205582863002": 0.975
+    "38886322264669784027672286592774757444905080686185967143832131463205582863002": 0.9685
    },
-   "current_value": 25.990535,
-   "unrealized_pl": 0.133285,
-   "unrealized_pl_pct": 0.515
+   "current_value": 25.817265,
+   "unrealized_pl": -0.039985,
+   "unrealized_pl_pct": -0.155
   },
   {
    "key": "CV-3030339",
@@ -730,11 +672,11 @@
     }
    ],
    "current_prices": {
-    "76059396827326859432864822362505568225100328173658895178198582904997928691302": 0.961
+    "76059396827326859432864822362505568225100328173658895178198582904997928691302": 0.959
    },
-   "current_value": 10.46266,
-   "unrealized_pl": 0.11976,
-   "unrealized_pl_pct": 1.158
+   "current_value": 10.440885,
+   "unrealized_pl": 0.097985,
+   "unrealized_pl_pct": 0.947
   },
   {
    "key": "CV-3083701",
@@ -759,11 +701,11 @@
     }
    ],
    "current_prices": {
-    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.956
+    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.9605
    },
-   "current_value": 14.798268,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 14.867925,
+   "unrealized_pl": 0.069657,
+   "unrealized_pl_pct": 0.471
   },
   {
    "key": "CV-2966930",
@@ -788,11 +730,11 @@
     }
    ],
    "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9685
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.958
    },
-   "current_value": 10.101555,
-   "unrealized_pl": -0.015645,
-   "unrealized_pl_pct": -0.155
+   "current_value": 9.992039,
+   "unrealized_pl": -0.125161,
+   "unrealized_pl_pct": -1.237
   },
   {
    "key": "LS-3096529",
@@ -817,11 +759,11 @@
     }
    ],
    "current_prices": {
-    "78944550857055117129983850415843656682597679819656088247463564002808339984672": 0.993
+    "78944550857055117129983850415843656682597679819656088247463564002808339984672": 0.9995
    },
-   "current_value": 26.419174,
-   "unrealized_pl": 0.611924,
-   "unrealized_pl_pct": 2.371
+   "current_value": 26.592109,
+   "unrealized_pl": 0.784859,
+   "unrealized_pl_pct": 3.041
   },
   {
    "key": "LS-3108608",
@@ -846,11 +788,363 @@
     }
    ],
    "current_prices": {
-    "2124980390013540846574470597835543463352466483769547106601728320108274181862": 0.955
+    "2124980390013540846574470597835543463352466483769547106601728320108274181862": 0.985
    },
-   "current_value": 25.420476,
-   "unrealized_pl": -0.399274,
-   "unrealized_pl_pct": -1.546
+   "current_value": 26.219025,
+   "unrealized_pl": 0.399275,
+   "unrealized_pl_pct": 1.546
+  },
+  {
+   "key": "ARB-NO-753888",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in NYC on July 28?",
+   "opened": 1785153627.7597215,
+   "cost": 25.8825,
+   "edge": 0.04436,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 21.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-28T12:00:00Z",
+   "note": "22 outcomes, NO asks sum 20.1080 vs payout 21, 5 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "97582005678213861640224297707601866753748159256684239290510267975741707293784",
+     "market_id": "3122482",
+     "label": "NO Will the highest temperature in New York City be 69\u00b0F or below on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "71751535221654462923381935915718906857316142280964790698962368361034901377913",
+     "market_id": "3122483",
+     "label": "NO Will the highest temperature in New York City be between 70-71\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "48955097192278932158766192425592956447154235816507982114051959091768980396137",
+     "market_id": "3122484",
+     "label": "NO Will the highest temperature in New York City be between 72-73\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "31991285293002222402326700052999283677109454666728698184735961559914849936215",
+     "market_id": "3122485",
+     "label": "NO Will the highest temperature in New York City be between 74-75\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.88,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "93848667450411385480518488131533620844459874516746033128798123041687869341666",
+     "market_id": "3122486",
+     "label": "NO Will the highest temperature in New York City be between 76-77\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "35793667811473892935914853843845851624717682788581077032888452827305796512029",
+     "market_id": "3122487",
+     "label": "NO Will the highest temperature in New York City be between 78-79\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60933188847120971500380084493600274614553352139534380009677408968732096840035",
+     "market_id": "3122488",
+     "label": "NO Will the highest temperature in New York City be between 80-81\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.79,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60606610390813001625177070735042948205738639524881217364727181050742807458687",
+     "market_id": "3122489",
+     "label": "NO Will the highest temperature in New York City be between 82-83\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.93,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "49945889107913197501699825459730081705822744971921543708683411678839686348886",
+     "market_id": "3122490",
+     "label": "NO Will the highest temperature in New York City be between 84-85\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.992,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "91638067636287613283731796028704201910191148217737699752913780719434023949043",
+     "market_id": "3122491",
+     "label": "NO Will the highest temperature in New York City be between 86-87\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "32770356155956680514048720175698463243011001164263277778917126979041226109022",
+     "market_id": "3122492",
+     "label": "NO Will the highest temperature in New York City be 88\u00b0F or higher on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "97582005678213861640224297707601866753748159256684239290510267975741707293784",
+     "market_id": "3122482",
+     "label": "NO Will the highest temperature in New York City be 69\u00b0F or below on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "71751535221654462923381935915718906857316142280964790698962368361034901377913",
+     "market_id": "3122483",
+     "label": "NO Will the highest temperature in New York City be between 70-71\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "48955097192278932158766192425592956447154235816507982114051959091768980396137",
+     "market_id": "3122484",
+     "label": "NO Will the highest temperature in New York City be between 72-73\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "31991285293002222402326700052999283677109454666728698184735961559914849936215",
+     "market_id": "3122485",
+     "label": "NO Will the highest temperature in New York City be between 74-75\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.88,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "93848667450411385480518488131533620844459874516746033128798123041687869341666",
+     "market_id": "3122486",
+     "label": "NO Will the highest temperature in New York City be between 76-77\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "35793667811473892935914853843845851624717682788581077032888452827305796512029",
+     "market_id": "3122487",
+     "label": "NO Will the highest temperature in New York City be between 78-79\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60933188847120971500380084493600274614553352139534380009677408968732096840035",
+     "market_id": "3122488",
+     "label": "NO Will the highest temperature in New York City be between 80-81\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.79,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60606610390813001625177070735042948205738639524881217364727181050742807458687",
+     "market_id": "3122489",
+     "label": "NO Will the highest temperature in New York City be between 82-83\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.93,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "49945889107913197501699825459730081705822744971921543708683411678839686348886",
+     "market_id": "3122490",
+     "label": "NO Will the highest temperature in New York City be between 84-85\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.992,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "91638067636287613283731796028704201910191148217737699752913780719434023949043",
+     "market_id": "3122491",
+     "label": "NO Will the highest temperature in New York City be between 86-87\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "32770356155956680514048720175698463243011001164263277778917126979041226109022",
+     "market_id": "3122492",
+     "label": "NO Will the highest temperature in New York City be 88\u00b0F or higher on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    }
+   ],
+   "current_prices": {
+    "97582005678213861640224297707601866753748159256684239290510267975741707293784": 0.998,
+    "71751535221654462923381935915718906857316142280964790698962368361034901377913": 0.994,
+    "48955097192278932158766192425592956447154235816507982114051959091768980396137": 0.985,
+    "31991285293002222402326700052999283677109454666728698184735961559914849936215": 0.875,
+    "93848667450411385480518488131533620844459874516746033128798123041687869341666": 0.74,
+    "35793667811473892935914853843845851624717682788581077032888452827305796512029": 0.735,
+    "60933188847120971500380084493600274614553352139534380009677408968732096840035": 0.78,
+    "60606610390813001625177070735042948205738639524881217364727181050742807458687": 0.925,
+    "49945889107913197501699825459730081705822744971921543708683411678839686348886": 0.9885,
+    "91638067636287613283731796028704201910191148217737699752913780719434023949043": 0.994,
+    "32770356155956680514048720175698463243011001164263277778917126979041226109022": 0.998
+   },
+   "current_value": 27.030654,
+   "unrealized_pl": 1.148154,
+   "unrealized_pl_pct": 4.436
+  },
+  {
+   "key": "CV-3001527",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,900 on July 27?",
+   "opened": 1785153627.7597623,
+   "cost": 15.5295,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-07-27T16:00:00Z",
+   "note": "YES ask 0.980, 0.2d to resolution, 4478% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "62520723554349227602098551105971921190054154371333181400452717488658951914658",
+     "market_id": "3001527",
+     "label": "YES Will the price of Ethereum be above $1,900 on July 27?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 15.846429
+    }
+   ],
+   "current_prices": {
+    "62520723554349227602098551105971921190054154371333181400452717488658951914658": 0.9765
+   },
+   "current_value": 15.474038,
+   "unrealized_pl": -0.055462,
+   "unrealized_pl_pct": -0.357
+  },
+  {
+   "key": "CV-3001580",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be between $1,900 and $2,000 on J",
+   "opened": 1785153627.759773,
+   "cost": 25.8825,
+   "edge": 0.06383,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-27T16:00:00Z",
+   "note": "YES ask 0.940, 0.2d to resolution, 14006% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "11698725010418979567597189304798783586395074121022491708152521812339345997591",
+     "market_id": "3001580",
+     "label": "YES Will the price of Ethereum be between $1,900 and $2,000 on July 27?",
+     "side": "YES",
+     "entry_price": 0.94,
+     "shares": 27.534574
+    }
+   ],
+   "current_prices": {
+    "11698725010418979567597189304798783586395074121022491708152521812339345997591": 0.945
+   },
+   "current_value": 26.020172,
+   "unrealized_pl": 0.137672,
+   "unrealized_pl_pct": 0.532
+  },
+  {
+   "key": "CV-3001576",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 27?",
+   "opened": 1785153627.759782,
+   "cost": 18.4875,
+   "edge": 0.028807,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.974,
+   "resolve_by": "2026-07-27T16:00:00Z",
+   "note": "YES ask 0.972, 0.2d to resolution, 6321% annualized if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "41600737609869870675247259104289752471755863878461058896599080778621220515479",
+     "market_id": "3001576",
+     "label": "YES Will the price of Bitcoin be above $64,000 on July 27?",
+     "side": "YES",
+     "entry_price": 0.972,
+     "shares": 19.020062
+    }
+   ],
+   "current_prices": {
+    "41600737609869870675247259104289752471755863878461058896599080778621220515479": 0.9675
+   },
+   "current_value": 18.40191,
+   "unrealized_pl": -0.08559,
+   "unrealized_pl_pct": -0.463
+  },
+  {
+   "key": "CV-3047489",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Ransom Canyon: Season 2\" be the #2 US Netflix show thi",
+   "opened": 1785153627.7597902,
+   "cost": 7.395,
+   "edge": 0.036269,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.966,
+   "resolve_by": "2026-07-28T23:59:00Z",
+   "note": "YES ask 0.965, 1.5d to resolution, 883% annualized if YES, assumed true P 0.966",
+   "legs": [
+    {
+     "token_id": "31730954472775134057677230056115192503055110761476516689363801267460958084537",
+     "market_id": "3047489",
+     "label": "YES Will \"Ransom Canyon: Season 2\" be the #2 US Netflix show this week?",
+     "side": "YES",
+     "entry_price": 0.965,
+     "shares": 7.663212
+    }
+   ],
+   "current_prices": {
+    "31730954472775134057677230056115192503055110761476516689363801267460958084537": 0.9575
+   },
+   "current_value": 7.337525,
+   "unrealized_pl": -0.057475,
+   "unrealized_pl_pct": -0.777
+  },
+  {
+   "key": "CV-3091706",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will S&P 500 (SPY) hit (HIGH) $745 Week of July 27 2026?",
+   "opened": 1785153627.759799,
+   "cost": 9.8195,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-07-31T20:00:00Z",
+   "note": "YES ask 0.960, 4.3d to resolution, 351% annualized if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "15620976501112080909827429705869837945635386394749558108117191335008780326543",
+     "market_id": "3091706",
+     "label": "YES Will S&P 500 (SPY) hit (HIGH) $745 Week of July 27 2026?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 10.228646
+    }
+   ],
+   "current_prices": {
+    "15620976501112080909827429705869837945635386394749558108117191335008780326543": 0.955
+   },
+   "current_value": 9.768357,
+   "unrealized_pl": -0.051143,
+   "unrealized_pl_pct": -0.521
   }
  ],
  "closed": [
@@ -4737,6 +5031,72 @@
    "closed_ts": 1785141894.5611115,
    "payout": 25.54685,
    "pl": 0.0281
+  },
+  {
+   "key": "CV-3083664",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 27?",
+   "opened": 1785082637.083925,
+   "cost": 25.6705,
+   "edge": 0.020408,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-07-27T23:59:00Z",
+   "note": "YES ask 0.980, 1.3d to resolution, 564% annualized if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "90664643079633325229069388592013287463357580070351448429341061965362517324082",
+     "market_id": "3083664",
+     "label": "YES Israel x Iran ceasefire continues through July 27?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 26.194388
+    }
+   ],
+   "current_prices": {
+    "90664643079633325229069388592013287463357580070351448429341061965362517324082": 0.985
+   },
+   "current_value": 25.801472,
+   "unrealized_pl": 0.130972,
+   "unrealized_pl_pct": 0.51,
+   "closed_ts": 1785153627.9458754,
+   "payout": 25.827667,
+   "pl": 0.157167,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2948596",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Trump meet with Netanyahu by July 31, 2026?",
+   "opened": 1785082637.0839446,
+   "cost": 7.898615,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9748,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.974, 5.3d to resolution, 183% annualized if YES, assumed true P 0.975",
+   "legs": [
+    {
+     "token_id": "87461865681689699081648262736937951256169066109275377425968376597869321557502",
+     "market_id": "2948596",
+     "label": "YES Will Trump meet with Netanyahu by July 31, 2026?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 8.109461
+    }
+   ],
+   "current_prices": {
+    "87461865681689699081648262736937951256169066109275377425968376597869321557502": 0.969
+   },
+   "current_value": 7.858068,
+   "unrealized_pl": -0.040547,
+   "unrealized_pl_pct": -0.513,
+   "closed_ts": 1785153627.9458754,
+   "payout": 8.036476,
+   "pl": 0.137861,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -5267,6 +5627,14 @@
    "equity": 1035.3013,
    "realized_total": 34.5654,
    "open_positions": 23
+  },
+  {
+   "ts": 1785153627.947262,
+   "cash": 551.4919,
+   "open_value": 486.2565,
+   "equity": 1037.7484,
+   "realized_total": 34.9625,
+   "open_positions": 24
   }
  ],
  "trades": [
@@ -7207,6 +7575,80 @@
    "title": "NO-lock: Highest temperature in Los Angeles on July 26?",
    "amount": 25.55,
    "pl": 0.03
+  },
+  {
+   "ts": 1785153627.7597215,
+   "type": "OPEN",
+   "key": "ARB-NO-753888",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in NYC on July 28?",
+   "amount": 25.88,
+   "pl": null
+  },
+  {
+   "ts": 1785153627.7597623,
+   "type": "OPEN",
+   "key": "CV-3001527",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,900 on July 27?",
+   "amount": 15.53,
+   "pl": null
+  },
+  {
+   "ts": 1785153627.759773,
+   "type": "OPEN",
+   "key": "CV-3001580",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be between $1,900 and $2,000 on J",
+   "amount": 25.88,
+   "pl": null
+  },
+  {
+   "ts": 1785153627.759782,
+   "type": "OPEN",
+   "key": "CV-3001576",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 27?",
+   "amount": 18.49,
+   "pl": null
+  },
+  {
+   "ts": 1785153627.7597902,
+   "type": "OPEN",
+   "key": "CV-3047489",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Ransom Canyon: Season 2\" be the #2 US Netflix show thi",
+   "amount": 7.39,
+   "pl": null
+  },
+  {
+   "ts": 1785153627.759799,
+   "type": "OPEN",
+   "key": "CV-3091706",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will S&P 500 (SPY) hit (HIGH) $745 Week of July 27 2026?",
+   "amount": 9.82,
+   "pl": null
+  },
+  {
+   "ts": 1785153627.9458754,
+   "type": "CLOSE",
+   "key": "CV-3083664",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 27?",
+   "amount": 25.83,
+   "pl": 0.16,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785153627.9458754,
+   "type": "CLOSE",
+   "key": "CV-2948596",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Trump meet with Netanyahu by July 31, 2026?",
+   "amount": 8.04,
+   "pl": 0.14,
+   "reason": "take_profit"
   }
  ]
 }
