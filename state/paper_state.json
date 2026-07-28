@@ -1,5 +1,5 @@
 {
- "cash": 575.887131,
+ "cash": 651.685879,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.95
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9505
    },
-   "current_value": 25.250146,
-   "unrealized_pl": 0.132896,
-   "unrealized_pl_pct": 0.529
+   "current_value": 25.263436,
+   "unrealized_pl": 0.146186,
+   "unrealized_pl_pct": 0.582
   },
   {
    "key": "CV-2940998",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "42947838276126727290208332629655596452086291165113456841995322364626664540967": 0.96
+    "42947838276126727290208332629655596452086291165113456841995322364626664540967": 0.918
    },
-   "current_value": 14.857134,
-   "unrealized_pl": 1e-06,
-   "unrealized_pl_pct": 0.0
+   "current_value": 14.207134,
+   "unrealized_pl": -0.649999,
+   "unrealized_pl_pct": -4.375
   },
   {
    "key": "CV-2698776",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "24830944500018836266000616361473526128046523034422936253112501619955922038585": 0.964
+    "24830944500018836266000616361473526128046523034422936253112501619955922038585": 0.9725
    },
-   "current_value": 25.354879,
-   "unrealized_pl": -0.315621,
-   "unrealized_pl_pct": -1.23
+   "current_value": 25.578444,
+   "unrealized_pl": -0.092056,
+   "unrealized_pl_pct": -0.359
   },
   {
    "key": "ARB-NO-750590",
@@ -444,35 +444,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "LS-3108608",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Atlanta be between 96-97\u00b0F o",
-   "opened": 1785141839.6989353,
-   "cost": 25.81975,
-   "edge": 0.003093,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-07-27T12:00:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.970",
-   "legs": [
-    {
-     "token_id": "2124980390013540846574470597835543463352466483769547106601728320108274181862",
-     "market_id": "3108608",
-     "label": "NO Will the highest temperature in Atlanta be between 96-97\u00b0F on July 27?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 26.618299
-    }
-   ],
-   "current_prices": {
-    "2124980390013540846574470597835543463352466483769547106601728320108274181862": 0.9995
-   },
-   "current_value": 26.60499,
-   "unrealized_pl": 0.78524,
-   "unrealized_pl_pct": 3.041
-  },
-  {
    "key": "ARB-NO-753888",
    "strategy": "ARB",
    "title": "NO-lock: Highest temperature in NYC on July 28?",
@@ -664,15 +635,15 @@
    ],
    "current_prices": {
     "97582005678213861640224297707601866753748159256684239290510267975741707293784": 0.9995,
-    "71751535221654462923381935915718906857316142280964790698962368361034901377913": 0.9965,
-    "48955097192278932158766192425592956447154235816507982114051959091768980396137": 0.994,
-    "31991285293002222402326700052999283677109454666728698184735961559914849936215": 0.955,
-    "93848667450411385480518488131533620844459874516746033128798123041687869341666": 0.795,
-    "35793667811473892935914853843845851624717682788581077032888452827305796512029": 0.665,
-    "60933188847120971500380084493600274614553352139534380009677408968732096840035": 0.715,
-    "60606610390813001625177070735042948205738639524881217364727181050742807458687": 0.855,
-    "49945889107913197501699825459730081705822744971921543708683411678839686348886": 0.983,
-    "91638067636287613283731796028704201910191148217737699752913780719434023949043": 0.9975,
+    "71751535221654462923381935915718906857316142280964790698962368361034901377913": 0.9995,
+    "48955097192278932158766192425592956447154235816507982114051959091768980396137": 0.9995,
+    "31991285293002222402326700052999283677109454666728698184735961559914849936215": 0.98,
+    "93848667450411385480518488131533620844459874516746033128798123041687869341666": 0.885,
+    "35793667811473892935914853843845851624717682788581077032888452827305796512029": 0.745,
+    "60933188847120971500380084493600274614553352139534380009677408968732096840035": 0.655,
+    "60606610390813001625177070735042948205738639524881217364727181050742807458687": 0.81,
+    "49945889107913197501699825459730081705822744971921543708683411678839686348886": 0.9355,
+    "91638067636287613283731796028704201910191148217737699752913780719434023949043": 0.9895,
     "32770356155956680514048720175698463243011001164263277778917126979041226109022": 0.9995
    },
    "current_value": 27.030654,
@@ -702,11 +673,11 @@
     }
    ],
    "current_prices": {
-    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.896
+    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9105
    },
-   "current_value": 24.520675,
-   "unrealized_pl": -1.423075,
-   "unrealized_pl_pct": -5.485
+   "current_value": 24.917494,
+   "unrealized_pl": -1.026256,
+   "unrealized_pl_pct": -3.956
   },
   {
    "key": "ARB-NO-753889",
@@ -811,13 +782,13 @@
     }
    ],
    "current_prices": {
-    "77608408227059995093823376487176856715326384432803407041798244834089422556900": 0.995,
+    "77608408227059995093823376487176856715326384432803407041798244834089422556900": 0.9955,
     "63429607378631545028088342279598359121768366381669567465341965101735032238506": 0.9985,
-    "18188073124718103505905634923370038991234683062464927439939874195571739930819": 0.83,
-    "63982233028280357936895727207570563838991496432535309326088208071104167476075": 0.57,
-    "103552780378749219982527150890045314785925588770628372414426584699715977351478": 0.625,
-    "51884169192960072771987833132099744030100812383009867421527924881902770814574": 0.945,
-    "38621973223886495867451885236052582782420715127737042616000961250191177611050": 0.995,
+    "18188073124718103505905634923370038991234683062464927439939874195571739930819": 0.87,
+    "63982233028280357936895727207570563838991496432535309326088208071104167476075": 0.565,
+    "103552780378749219982527150890045314785925588770628372414426584699715977351478": 0.59,
+    "51884169192960072771987833132099744030100812383009867421527924881902770814574": 0.955,
+    "38621973223886495867451885236052582782420715127737042616000961250191177611050": 0.9955,
     "29289540912058185578312873335449672863256234362569146944010271494822470991414": 0.9975,
     "72230926338698319066192591912010130108156596650631213843484295337993297780397": 0.9995,
     "44917329448933265595770602700197799056734255433983274481842964533945727374060": 0.9995,
@@ -826,35 +797,6 @@
    "current_value": 26.0007,
    "unrealized_pl": 0.0702,
    "unrealized_pl_pct": 0.271
-  },
-  {
-   "key": "CV-3045963",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"A Toxic Love Story\" be the top US Netflix movie this w",
-   "opened": 1785171990.1192925,
-   "cost": 25.9305,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-07-28T23:59:00Z",
-   "note": "YES ask 0.960, 1.3d to resolution, 1182% annualized if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "72565180609141198874795808969338304838919190239816651499797655340926205035160",
-     "market_id": "3045963",
-     "label": "YES Will \"A Toxic Love Story\" be the top US Netflix movie this week?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 27.010938
-    }
-   ],
-   "current_prices": {
-    "72565180609141198874795808969338304838919190239816651499797655340926205035160": 0.979
-   },
-   "current_value": 26.443708,
-   "unrealized_pl": 0.513208,
-   "unrealized_pl_pct": 1.979
   },
   {
    "key": "CV-3030292",
@@ -879,11 +821,11 @@
     }
    ],
    "current_prices": {
-    "82646185787328268354136915001681531524515722887818372585487224300800906850884": 0.8955
+    "82646185787328268354136915001681531524515722887818372585487224300800906850884": 0.933
    },
-   "current_value": 7.057115,
-   "unrealized_pl": -0.61075,
-   "unrealized_pl_pct": -7.965
+   "current_value": 7.352639,
+   "unrealized_pl": -0.315226,
+   "unrealized_pl_pct": -4.111
   },
   {
    "key": "CV-3083724",
@@ -937,40 +879,11 @@
     }
    ],
    "current_prices": {
-    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.8915
+    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.903
    },
-   "current_value": 17.761423,
-   "unrealized_pl": -1.663577,
-   "unrealized_pl_pct": -8.564
-  },
-  {
-   "key": "CV-3083667",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through July 28?",
-   "opened": 1785187824.1381052,
-   "cost": 26.02325,
-   "edge": 0.015228,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-07-28T23:59:00Z",
-   "note": "YES ask 0.985, 1.1d to resolution, 504% annualized if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "38886322264669784027672286592774757444905080686185967143832131463205582863002",
-     "market_id": "3083667",
-     "label": "YES Israel x Iran ceasefire continues through July 28?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 26.419543
-    }
-   ],
-   "current_prices": {
-    "38886322264669784027672286592774757444905080686185967143832131463205582863002": 0.987
-   },
-   "current_value": 26.076089,
-   "unrealized_pl": 0.052839,
-   "unrealized_pl_pct": 0.203
+   "current_value": 17.990539,
+   "unrealized_pl": -1.434461,
+   "unrealized_pl_pct": -7.385
   },
   {
    "key": "CV-3030339",
@@ -995,69 +908,98 @@
     }
    ],
    "current_prices": {
-    "76059396827326859432864822362505568225100328173658895178198582904997928691302": 0.7955
+    "76059396827326859432864822362505568225100328173658895178198582904997928691302": 0.835
    },
-   "current_value": 20.536027,
-   "unrealized_pl": -4.556391,
-   "unrealized_pl_pct": -18.158
+   "current_value": 21.55573,
+   "unrealized_pl": -3.536688,
+   "unrealized_pl_pct": -14.095
   },
   {
-   "key": "CV-3083701",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
-   "opened": 1785191822.7189937,
-   "cost": 25.476,
-   "edge": 0.034126,
+   "key": "LS-3136075",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Chelsea FC 1 - 1 Western Sydney Wanderers?",
+   "opened": 1785223019.5508842,
+   "cost": 25.8315,
+   "edge": 0.010417,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9716,
-   "resolve_by": "2026-07-29T23:59:00Z",
-   "note": "YES ask 0.967, 2.1d to resolution, 606% annualized if YES, assumed true P 0.972",
+   "est_p_win": 0.97,
+   "resolve_by": "2026-07-28T09:45:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.960",
    "legs": [
     {
-     "token_id": "43783728297751003049731197784493047712213881171251242252606704800494333274628",
-     "market_id": "3083701",
-     "label": "YES Israel x Iran ceasefire continues through July 29?",
-     "side": "YES",
-     "entry_price": 0.967,
-     "shares": 26.345398
+     "token_id": "90186358458703603257031895415825139476245107379616657921946904821036709459721",
+     "market_id": "3136075",
+     "label": "NO Exact Score: Chelsea FC 1 - 1 Western Sydney Wanderers?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 26.907813
     }
    ],
    "current_prices": {
-    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.975
+    "90186358458703603257031895415825139476245107379616657921946904821036709459721": 0.95
    },
-   "current_value": 25.686763,
-   "unrealized_pl": 0.210763,
-   "unrealized_pl_pct": 0.827
+   "current_value": 25.562422,
+   "unrealized_pl": -0.269078,
+   "unrealized_pl_pct": -1.042
   },
   {
-   "key": "CV-3030333",
+   "key": "CV-3017899",
    "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 29?",
-   "opened": 1785212790.860986,
-   "cost": 23.55925,
-   "edge": 0.031992,
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 28?",
+   "opened": 1785223019.5509014,
+   "cost": 16.144687,
+   "edge": 0.033058,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9748,
-   "resolve_by": "2026-07-29T16:00:00Z",
-   "note": "YES ask 0.969, 1.5d to resolution, 788% annualized if YES, assumed true P 0.975",
+   "est_p_win": 0.97,
+   "resolve_by": "2026-07-28T16:00:00Z",
+   "note": "YES ask 0.968, 0.4d to resolution, 3322% annualized if YES, assumed true P 0.970",
    "legs": [
     {
-     "token_id": "99736475314551092162370727454041284759623925849862820110441160270939665964056",
-     "market_id": "3030333",
-     "label": "YES Will the price of Bitcoin be above $60,000 on July 29?",
+     "token_id": "56021360787205062639528719969809977636943461006212770449582567806390153964366",
+     "market_id": "3017899",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 28?",
      "side": "YES",
-     "entry_price": 0.969,
-     "shares": 24.312951
+     "entry_price": 0.968,
+     "shares": 16.678396
     }
    ],
    "current_prices": {
-    "99736475314551092162370727454041284759623925849862820110441160270939665964056": 0.9685
+    "56021360787205062639528719969809977636943461006212770449582567806390153964366": 0.9625
    },
-   "current_value": 23.547093,
-   "unrealized_pl": -0.012157,
-   "unrealized_pl_pct": -0.052
+   "current_value": 16.052956,
+   "unrealized_pl": -0.091731,
+   "unrealized_pl_pct": -0.568
+  },
+  {
+   "key": "CV-3055668",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
+   "opened": 1785223019.5509257,
+   "cost": 10.791812,
+   "edge": 0.061571,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9528,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.942, 2.4d to resolution, 951% annualized if YES, assumed true P 0.953",
+   "legs": [
+    {
+     "token_id": "56565267039710558382646963079425993576818627374000416980063520633898406552568",
+     "market_id": "3055668",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 30?",
+     "side": "YES",
+     "entry_price": 0.942,
+     "shares": 11.456277
+    }
+   ],
+   "current_prices": {
+    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.941
+   },
+   "current_value": 10.780357,
+   "unrealized_pl": -0.011455,
+   "unrealized_pl_pct": -0.106
   }
  ],
  "closed": [
@@ -5591,6 +5533,170 @@
    "closed_ts": 1785212794.3878827,
    "payout": 26.605412,
    "pl": 0.798162
+  },
+  {
+   "key": "CV-3045963",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"A Toxic Love Story\" be the top US Netflix movie this w",
+   "opened": 1785171990.1192925,
+   "cost": 25.9305,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-07-28T23:59:00Z",
+   "note": "YES ask 0.960, 1.3d to resolution, 1182% annualized if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "72565180609141198874795808969338304838919190239816651499797655340926205035160",
+     "market_id": "3045963",
+     "label": "YES Will \"A Toxic Love Story\" be the top US Netflix movie this week?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 27.010938
+    }
+   ],
+   "current_prices": {
+    "72565180609141198874795808969338304838919190239816651499797655340926205035160": 0.979
+   },
+   "current_value": 26.443708,
+   "unrealized_pl": 0.513208,
+   "unrealized_pl_pct": 1.979,
+   "closed_ts": 1785223019.7325113,
+   "payout": 26.20061,
+   "pl": 0.27011,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3083667",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 28?",
+   "opened": 1785187824.1381052,
+   "cost": 26.02325,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-07-28T23:59:00Z",
+   "note": "YES ask 0.985, 1.1d to resolution, 504% annualized if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "38886322264669784027672286592774757444905080686185967143832131463205582863002",
+     "market_id": "3083667",
+     "label": "YES Israel x Iran ceasefire continues through July 28?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 26.419543
+    }
+   ],
+   "current_prices": {
+    "38886322264669784027672286592774757444905080686185967143832131463205582863002": 0.987
+   },
+   "current_value": 26.076089,
+   "unrealized_pl": 0.052839,
+   "unrealized_pl_pct": 0.203,
+   "closed_ts": 1785223019.7325113,
+   "payout": 26.155348,
+   "pl": 0.132098,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3083701",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
+   "opened": 1785191822.7189937,
+   "cost": 25.476,
+   "edge": 0.034126,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9716,
+   "resolve_by": "2026-07-29T23:59:00Z",
+   "note": "YES ask 0.967, 2.1d to resolution, 606% annualized if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "43783728297751003049731197784493047712213881171251242252606704800494333274628",
+     "market_id": "3083701",
+     "label": "YES Israel x Iran ceasefire continues through July 29?",
+     "side": "YES",
+     "entry_price": 0.967,
+     "shares": 26.345398
+    }
+   ],
+   "current_prices": {
+    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.975
+   },
+   "current_value": 25.686763,
+   "unrealized_pl": 0.210763,
+   "unrealized_pl_pct": 0.827,
+   "closed_ts": 1785223019.7325113,
+   "payout": 25.765799,
+   "pl": 0.289799,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3030333",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 29?",
+   "opened": 1785212790.860986,
+   "cost": 23.55925,
+   "edge": 0.031992,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9748,
+   "resolve_by": "2026-07-29T16:00:00Z",
+   "note": "YES ask 0.969, 1.5d to resolution, 788% annualized if YES, assumed true P 0.975",
+   "legs": [
+    {
+     "token_id": "99736475314551092162370727454041284759623925849862820110441160270939665964056",
+     "market_id": "3030333",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 29?",
+     "side": "YES",
+     "entry_price": 0.969,
+     "shares": 24.312951
+    }
+   ],
+   "current_prices": {
+    "99736475314551092162370727454041284759623925849862820110441160270939665964056": 0.9685
+   },
+   "current_value": 23.547093,
+   "unrealized_pl": -0.012157,
+   "unrealized_pl_pct": -0.052,
+   "closed_ts": 1785223019.7325113,
+   "payout": 23.826692,
+   "pl": 0.267442,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3108608",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Atlanta be between 96-97\u00b0F o",
+   "opened": 1785141839.6989353,
+   "cost": 25.81975,
+   "edge": 0.003093,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-07-27T12:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.970",
+   "legs": [
+    {
+     "token_id": "2124980390013540846574470597835543463352466483769547106601728320108274181862",
+     "market_id": "3108608",
+     "label": "NO Will the highest temperature in Atlanta be between 96-97\u00b0F on July 27?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 26.618299
+    }
+   ],
+   "current_prices": {
+    "2124980390013540846574470597835543463352466483769547106601728320108274181862": 0.97
+   },
+   "current_value": 25.81975,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1785223025.8888707,
+   "payout": 26.618299,
+   "pl": 0.798549
   }
  ],
  "history": [
@@ -6201,6 +6307,14 @@
    "equity": 1033.2584,
    "realized_total": 38.9672,
    "open_positions": 22
+  },
+  {
+   "ts": 1785223019.7341568,
+   "cash": 625.0676,
+   "open_value": 409.5543,
+   "equity": 1034.6219,
+   "realized_total": 40.7248,
+   "open_positions": 20
   }
  ],
  "trades": [
@@ -8468,6 +8582,82 @@
    "strategy": "LONGSHOT",
    "title": "Fade: Will the highest temperature in Hong Kong be 31\u00b0C on July 27",
    "amount": 26.61,
+   "pl": 0.8
+  },
+  {
+   "ts": 1785223019.5508842,
+   "type": "OPEN",
+   "key": "LS-3136075",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Chelsea FC 1 - 1 Western Sydney Wanderers?",
+   "amount": 25.83,
+   "pl": null
+  },
+  {
+   "ts": 1785223019.5509014,
+   "type": "OPEN",
+   "key": "CV-3017899",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 28?",
+   "amount": 16.14,
+   "pl": null
+  },
+  {
+   "ts": 1785223019.5509257,
+   "type": "OPEN",
+   "key": "CV-3055668",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
+   "amount": 10.79,
+   "pl": null
+  },
+  {
+   "ts": 1785223019.7325113,
+   "type": "CLOSE",
+   "key": "CV-3045963",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"A Toxic Love Story\" be the top US Netflix movie this w",
+   "amount": 26.2,
+   "pl": 0.27,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785223019.7325113,
+   "type": "CLOSE",
+   "key": "CV-3083667",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 28?",
+   "amount": 26.16,
+   "pl": 0.13,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785223019.7325113,
+   "type": "CLOSE",
+   "key": "CV-3083701",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
+   "amount": 25.77,
+   "pl": 0.29,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785223019.7325113,
+   "type": "CLOSE",
+   "key": "CV-3030333",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 29?",
+   "amount": 23.83,
+   "pl": 0.27,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785223025.8888707,
+   "type": "CLOSE",
+   "key": "LS-3108608",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Atlanta be between 96-97\u00b0F o",
+   "amount": 26.62,
    "pl": 0.8
   }
  ]
