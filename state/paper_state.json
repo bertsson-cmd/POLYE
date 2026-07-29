@@ -1,5 +1,5 @@
 {
- "cash": 711.002092,
+ "cash": 603.593115,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.987
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.988
    },
-   "current_value": 25.11609,
-   "unrealized_pl": 0.07634,
-   "unrealized_pl_pct": 0.305
+   "current_value": 25.141537,
+   "unrealized_pl": 0.101787,
+   "unrealized_pl_pct": 0.407
   },
   {
    "key": "CV-2940998",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.905
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.895
    },
-   "current_value": 24.383622,
-   "unrealized_pl": -1.481878,
-   "unrealized_pl_pct": -5.729
+   "current_value": 24.11419,
+   "unrealized_pl": -1.75131,
+   "unrealized_pl_pct": -6.771
   },
   {
    "key": "CV-3055668",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.9565
+    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.95
    },
-   "current_value": 15.125531,
-   "unrealized_pl": 0.02372,
-   "unrealized_pl_pct": 0.157
+   "current_value": 15.022744,
+   "unrealized_pl": -0.079067,
+   "unrealized_pl_pct": -0.524
   },
   {
    "key": "ARB-NO-287395",
@@ -349,8 +349,8 @@
    "current_prices": {
     "81718924566344342339932153243056822500865643754622838691875214933560980686588": 0.9995,
     "90713175285238837229141362456380660699457701142142655731293716395090014512187": 0.9985,
-    "36015050921127306245266044699797268780268172446856063291868548314968920497494": 0.2175,
-    "102979714187432523726496609637889951679226430871494531752837414533106422105296": 0.7855,
+    "36015050921127306245266044699797268780268172446856063291868548314968920497494": 0.2325,
+    "102979714187432523726496609637889951679226430871494531752837414533106422105296": 0.7635,
     "82752177927542167404038816431416174971863195141383694610771473564093425601859": 0.9975
    },
    "current_value": 26.18852,
@@ -438,11 +438,11 @@
     }
    ],
    "current_prices": {
-    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.969
+    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.964
    },
-   "current_value": 16.126457,
-   "unrealized_pl": 0.083212,
-   "unrealized_pl_pct": 0.519
+   "current_value": 16.043245,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
   },
   {
    "key": "LS-3124746",
@@ -467,11 +467,11 @@
     }
    ],
    "current_prices": {
-    "5873882951452249869387946080234981846056919154290383246989798023288416094882": 0.98
+    "5873882951452249869387946080234981846056919154290383246989798023288416094882": 0.99
    },
-   "current_value": 26.611338,
-   "unrealized_pl": 0.543088,
-   "unrealized_pl_pct": 2.083
+   "current_value": 26.882883,
+   "unrealized_pl": 0.814633,
+   "unrealized_pl_pct": 3.125
   },
   {
    "key": "CV-2698835",
@@ -496,11 +496,156 @@
     }
    ],
    "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9775
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9755
    },
-   "current_value": 25.948792,
-   "unrealized_pl": -0.119458,
-   "unrealized_pl_pct": -0.458
+   "current_value": 25.8957,
+   "unrealized_pl": -0.17255,
+   "unrealized_pl_pct": -0.662
+  },
+  {
+   "key": "CV-3104027",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Elon Musk post 40-64 tweets from July 27 to July 29, 20",
+   "opened": 1785327562.2452645,
+   "cost": 26.20575,
+   "edge": 0.01833,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-07-29T16:00:00Z",
+   "note": "YES ask 0.982, 0.2d to resolution, 4367% annualized if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "93248266673673344552771074662554550503281683432164403880195426862671022024373",
+     "market_id": "3104027",
+     "label": "YES Will Elon Musk post 40-64 tweets from July 27 to July 29, 2026?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 26.6861
+    }
+   ],
+   "current_prices": {
+    "93248266673673344552771074662554550503281683432164403880195426862671022024373": 0.9815
+   },
+   "current_value": 26.192407,
+   "unrealized_pl": -0.013343,
+   "unrealized_pl_pct": -0.051
+  },
+  {
+   "key": "CV-3083701",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
+   "opened": 1785327562.245282,
+   "cost": 7.487357,
+   "edge": 0.014199,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-07-29T23:59:00Z",
+   "note": "YES ask 0.986, 0.5d to resolution, 1067% annualized if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "43783728297751003049731197784493047712213881171251242252606704800494333274628",
+     "market_id": "3083701",
+     "label": "YES Israel x Iran ceasefire continues through July 29?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 7.593669
+    }
+   ],
+   "current_prices": {
+    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.983
+   },
+   "current_value": 7.464577,
+   "unrealized_pl": -0.02278,
+   "unrealized_pl_pct": -0.304
+  },
+  {
+   "key": "CV-3101537",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 1?",
+   "opened": 1785327562.2453039,
+   "cost": 26.20575,
+   "edge": 0.040583,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9703999999999999,
+   "resolve_by": "2026-08-01T16:00:00Z",
+   "note": "YES ask 0.961, 3.2d to resolution, 470% annualized if YES, assumed true P 0.970",
+   "legs": [
+    {
+     "token_id": "44626791420916829875372063483909604539471820857189021503336190708470553238519",
+     "market_id": "3101537",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 1?",
+     "side": "YES",
+     "entry_price": 0.961,
+     "shares": 27.269251
+    }
+   ],
+   "current_prices": {
+    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.963
+   },
+   "current_value": 26.260289,
+   "unrealized_pl": 0.054539,
+   "unrealized_pl_pct": 0.208
+  },
+  {
+   "key": "CV-907785",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will John James win the 2026 Michigan Governor Republican pr",
+   "opened": 1785327562.2453182,
+   "cost": 26.20575,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-04T00:00:00Z",
+   "note": "YES ask 0.950, 5.5d to resolution, 350% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "7542437468156958963085282310210526488532310459870037284043838227272438514792",
+     "market_id": "907785",
+     "label": "YES Will John James win the 2026 Michigan Governor Republican primary election?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 27.585
+    }
+   ],
+   "current_prices": {
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.945
+   },
+   "current_value": 26.067825,
+   "unrealized_pl": -0.137925,
+   "unrealized_pl_pct": -0.526
+  },
+  {
+   "key": "CV-3158228",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 4?",
+   "opened": 1785327562.2453313,
+   "cost": 21.30437,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9776,
+   "resolve_by": "2026-08-04T16:00:00Z",
+   "note": "YES ask 0.970, 6.2d to resolution, 183% annualized if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "74567935957923649791918494985250426808663069897506967238681438641391037965298",
+     "market_id": "3158228",
+     "label": "YES Will the price of Bitcoin be above $58,000 on August 4?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 21.963268
+    }
+   ],
+   "current_prices": {
+    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.972
+   },
+   "current_value": 21.348296,
+   "unrealized_pl": 0.043926,
+   "unrealized_pl_pct": 0.206
   }
  ],
  "closed": [
@@ -7062,6 +7207,14 @@
    "equity": 1048.2272,
    "realized_total": 48.6444,
    "open_positions": 16
+  },
+  {
+   "ts": 1785327562.3734975,
+   "cash": 603.5931,
+   "open_value": 444.347,
+   "equity": 1047.9401,
+   "realized_total": 48.6444,
+   "open_positions": 21
   }
  ],
  "trades": [
@@ -9771,6 +9924,51 @@
    "amount": 26.3,
    "pl": 0.29,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1785327562.2452645,
+   "type": "OPEN",
+   "key": "CV-3104027",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Elon Musk post 40-64 tweets from July 27 to July 29, 20",
+   "amount": 26.21,
+   "pl": null
+  },
+  {
+   "ts": 1785327562.245282,
+   "type": "OPEN",
+   "key": "CV-3083701",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
+   "amount": 7.49,
+   "pl": null
+  },
+  {
+   "ts": 1785327562.2453039,
+   "type": "OPEN",
+   "key": "CV-3101537",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 1?",
+   "amount": 26.21,
+   "pl": null
+  },
+  {
+   "ts": 1785327562.2453182,
+   "type": "OPEN",
+   "key": "CV-907785",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will John James win the 2026 Michigan Governor Republican pr",
+   "amount": 26.21,
+   "pl": null
+  },
+  {
+   "ts": 1785327562.2453313,
+   "type": "OPEN",
+   "key": "CV-3158228",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 4?",
+   "amount": 21.3,
+   "pl": null
   }
  ]
 }
