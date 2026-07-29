@@ -959,3 +959,328 @@ class TestLiveEngine:
         e2 = self._engine(tmp_path, monkeypatch, fill=False)
         e2.open_position(self._opp("CV-L2"))
         assert e2.close_early("CV-L2", {"tok": 0.985}) is None
+
+    def test_paused_blocks_open(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        controls.set_paused(True, str(tmp_path))
+        assert e.open_position(self._opp()) is None
+        assert e._orders == []
+
+    def test_kill_switch_blocks_open(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        controls.set_kill_switch(True, str(tmp_path))
+        assert e.open_position(self._opp()) is None
+        assert e._orders == []
+
+    def test_liquidate_position_refuses_multileg(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch)
+        legs = [Leg("a", "ma", "YES a", "YES", 0.30, 10),
+               Leg("b", "mb", "YES b", "YES", 0.65, 10)]
+        # multi-leg opens are refused live anyway, so seed the position
+        # directly into state to test liquidate_position's own guard
+        e.state["positions"].append({
+            "key": "ARB-SEED", "strategy": "ARB", "title": "seeded lock",
+            "cost": 9.5, "legs": [
+                {"token_id": "a", "market_id": "ma", "label": "YES a", "side": "YES",
+                 "entry_price": 0.30, "shares": 10},
+                {"token_id": "b", "market_id": "mb", "label": "YES b", "side": "YES",
+                 "entry_price": 0.65, "shares": 10},
+            ],
+        })
+        assert e.liquidate_position("ARB-SEED", {"a": 0.30, "b": 0.65}) is None
+        assert e._orders == []
+        assert len(e.state["positions"]) == 1
+
+    def test_liquidate_position_single_leg_success(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._opp())
+        e._orders.clear()
+        closed = e.liquidate_position("CV-L", {"tok": 0.90})
+        assert closed is not None
+        assert e._orders == [("SELL", "tok", 10.0, 0.90)]
+        assert e.state["positions"] == []
+
+    def test_liquidate_all_mixed(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._opp("CV-A"))
+        # seed a multi-leg lock directly -- open_position() itself already
+        # refuses these live, so this exercises liquidate_all's OWN guard
+        e.state["positions"].append({
+            "key": "ARB-L", "strategy": "ARB", "title": "lock", "cost": 9.5,
+            "legs": [
+                {"token_id": "a", "market_id": "ma", "label": "YES a", "side": "YES",
+                 "entry_price": 0.30, "shares": 10},
+                {"token_id": "b", "market_id": "mb", "label": "YES b", "side": "YES",
+                 "entry_price": 0.65, "shares": 10},
+            ],
+        })
+        closed, skipped = e.liquidate_all({"tok": 0.97, "a": 0.30, "b": 0.65})
+        assert [c["key"] for c in closed] == ["CV-A"]
+        assert skipped == [("ARB-L", "multi-leg lock -- cannot be forced without stranding a leg")]
+        assert [p["key"] for p in e.state["positions"]] == ["ARB-L"]
+
+
+# ------------------------------------------------------------------ controls (control panel)
+class TestControls:
+    def test_load_defaults_when_missing(self, tmp_path):
+        from polyedge import controls
+        st = controls.load(str(tmp_path))
+        assert st == {"paused": False, "kill_switch": False,
+                      "max_allocation_usd": None, "liquidate_queue": [],
+                      "stop_loss_pct": {}}
+
+    def test_corrupt_file_returns_defaults(self, tmp_path):
+        from polyedge import controls
+        (tmp_path / "controls.json").write_text("{not json")
+        st = controls.load(str(tmp_path))
+        assert st["paused"] is False and st["kill_switch"] is False
+
+    def test_save_load_roundtrip(self, tmp_path):
+        from polyedge import controls
+        controls.set_paused(True, str(tmp_path))
+        controls.set_max_allocation(250.0, str(tmp_path))
+        st = controls.load(str(tmp_path))
+        assert st["paused"] is True
+        assert st["max_allocation_usd"] == pytest.approx(250.0)
+
+    def test_kill_switch_toggle(self, tmp_path):
+        from polyedge import controls
+        controls.set_kill_switch(True, str(tmp_path))
+        assert controls.load(str(tmp_path))["kill_switch"] is True
+        controls.set_kill_switch(False, str(tmp_path))
+        assert controls.load(str(tmp_path))["kill_switch"] is False
+
+    def test_liquidate_queue_dedupes_and_clears(self, tmp_path):
+        from polyedge import controls
+        controls.queue_liquidate("A", str(tmp_path))
+        controls.queue_liquidate("A", str(tmp_path))
+        controls.queue_liquidate("B", str(tmp_path))
+        assert controls.load(str(tmp_path))["liquidate_queue"] == ["A", "B"]
+        controls.clear_liquidate_queue(str(tmp_path))
+        assert controls.load(str(tmp_path))["liquidate_queue"] == []
+
+    def test_set_stop_loss_and_clear(self, tmp_path):
+        from polyedge import controls
+        controls.set_stop_loss("CV-X", 20, str(tmp_path))
+        assert controls.load(str(tmp_path))["stop_loss_pct"] == {"CV-X": 20.0}
+        controls.set_stop_loss("CV-X", None, str(tmp_path))
+        assert controls.load(str(tmp_path))["stop_loss_pct"] == {}
+
+    def test_set_stop_loss_clamped_to_100(self, tmp_path):
+        from polyedge import controls
+        controls.set_stop_loss("CV-X", 500, str(tmp_path))
+        assert controls.load(str(tmp_path))["stop_loss_pct"]["CV-X"] == 100.0
+
+
+# ------------------------------------------------------------------ apply_controls orchestration
+class _FakeClient:
+    """Stub for PolymarketClient.fetch_books, keyed by token_id -> bid price."""
+    def __init__(self, bids):
+        self.bids = bids
+
+    def fetch_books(self, token_ids):
+        out = {}
+        for tid in token_ids:
+            if tid in self.bids:
+                out[tid] = book(tid, self.bids[tid] + 0.01, bid=self.bids[tid])
+        return out
+
+
+class TestApplyControls:
+    def _engine(self, tmp_path, monkeypatch, fill=True):
+        from polyedge import live as lv
+        monkeypatch.setenv("POLYEDGE_LIVE", "1")
+        monkeypatch.setenv("POLYEDGE_DRY_RUN", "0")
+        monkeypatch.chdir(tmp_path)
+        open(lv.ARMED_FILE, "w").write("armed")
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        e._orders = []
+
+        def fake_place(token_id, price, shares, side):
+            e._orders.append((side, token_id, round(shares, 2), round(price, 3)))
+            return fill and not lv.dry_run()
+        e._place_order = fake_place
+        return e
+
+    def _cv_opp(self, key, entry=0.96, shares=10.0, token=None):
+        token = token or f"tok-{key}"
+        return Opportunity("CONVERGE", key, key, 0.04, False, est_p_win=0.98,
+                           legs=[Leg(token, f"m-{key}", "YES q", "YES", entry, shares)],
+                           resolve_by="2026-07-21T00:00:00Z")
+
+    def test_noop_when_no_controls_set(self, tmp_path, monkeypatch):
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._cv_opp("CV-A"))
+        summary = apply_controls(e, _FakeClient({}))
+        assert summary == {"killed": [], "liquidated": [], "stop_loss": [], "skipped": []}
+        assert len(e.state["positions"]) == 1
+
+    def test_kill_switch_liquidates_single_leg_skips_multileg(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._cv_opp("CV-A", token="tok-a"))
+        e.state["positions"].append({
+            "key": "ARB-L", "strategy": "ARB", "title": "lock", "cost": 9.5,
+            "legs": [
+                {"token_id": "x", "market_id": "mx", "label": "YES x", "side": "YES",
+                 "entry_price": 0.30, "shares": 10},
+                {"token_id": "y", "market_id": "my", "label": "YES y", "side": "YES",
+                 "entry_price": 0.65, "shares": 10},
+            ],
+        })
+        controls.set_kill_switch(True, str(tmp_path))
+        summary = apply_controls(e, _FakeClient({"tok-a": 0.97}))
+        assert summary["killed"] == ["CV-A"]
+        assert any(k == "ARB-L" for k, _ in summary["skipped"])
+        keys = {p["key"] for p in e.state["positions"]}
+        assert keys == {"ARB-L"}
+
+    def test_liquidate_queue_drains(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._cv_opp("CV-A", token="tok-a"))
+        controls.queue_liquidate("CV-A", str(tmp_path))
+        summary = apply_controls(e, _FakeClient({"tok-a": 0.97}))
+        assert summary["liquidated"] == ["CV-A"]
+        assert e.state["positions"] == []
+        assert controls.load(str(tmp_path))["liquidate_queue"] == []
+
+    def test_allocation_cap_liquidates_largest_first(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._cv_opp("CV-BIG", shares=50.0, token="tok-big"))   # cost 48
+        e.open_position(self._cv_opp("CV-SMALL", shares=10.0, token="tok-small"))  # cost 9.6
+        controls.set_max_allocation(20.0, str(tmp_path))
+        summary = apply_controls(e, _FakeClient({"tok-big": 0.95, "tok-small": 0.95}))
+        assert "CV-BIG" in summary["liquidated"]
+        keys = {p["key"] for p in e.state["positions"]}
+        assert "CV-BIG" not in keys
+        assert "CV-SMALL" in keys
+
+    def test_allocation_cap_cannot_force_multileg(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.state["positions"].append({
+            "key": "ARB-L", "strategy": "ARB", "title": "lock", "cost": 100.0,
+            "legs": [
+                {"token_id": "x", "market_id": "mx", "label": "YES x", "side": "YES",
+                 "entry_price": 0.30, "shares": 10},
+                {"token_id": "y", "market_id": "my", "label": "YES y", "side": "YES",
+                 "entry_price": 0.65, "shares": 10},
+            ],
+        })
+        controls.set_max_allocation(1.0, str(tmp_path))
+        apply_controls(e, _FakeClient({}))
+        assert len(e.state["positions"]) == 1     # never force-liquidated
+
+    def test_stop_loss_triggers(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._cv_opp("CV-A", entry=0.96, token="tok-a"))
+        controls.set_stop_loss("CV-A", 5, str(tmp_path))   # 5% loss threshold
+        # bid 0.90 vs entry 0.96 -> down ~6.25%, over the 5% threshold
+        summary = apply_controls(e, _FakeClient({"tok-a": 0.90}))
+        assert summary["stop_loss"] == ["CV-A"]
+        assert e.state["positions"] == []
+
+    def test_stop_loss_not_triggered_below_threshold(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        from polyedge.controls import apply_controls
+        e = self._engine(tmp_path, monkeypatch)
+        e.open_position(self._cv_opp("CV-A", entry=0.96, token="tok-a"))
+        controls.set_stop_loss("CV-A", 5, str(tmp_path))
+        # bid 0.955 vs entry 0.96 -> down ~0.5%, under the 5% threshold
+        summary = apply_controls(e, _FakeClient({"tok-a": 0.955}))
+        assert summary["stop_loss"] == []
+        assert len(e.state["positions"]) == 1
+
+
+# ------------------------------------------------------------------ control_server (Flask)
+class TestControlServer:
+    def _make_client(self, tmp_path, monkeypatch, token="secret-token"):
+        monkeypatch.chdir(tmp_path)
+        monkeypatch.setenv("POLYBERT_CONTROL_TOKEN", token)
+        import control_server
+        control_server.app.testing = True
+        return control_server.app.test_client()
+
+    def _seed_position(self, tmp_path):
+        e = PaperEngine(state_dir=str(tmp_path / "state"))
+        opp = Opportunity("CONVERGE", "CV-A", "converge", 0.04, False, est_p_win=0.98,
+                          legs=[Leg("tok-a", "m1", "YES q", "YES", 0.96, 10.0)])
+        e.open_position(opp)
+        e.mark_to_market({"tok-a": 0.97})
+        e.save()
+
+    def test_state_requires_auth(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        assert c.get("/api/state").status_code == 401
+        assert c.get("/api/state", headers={"X-Control-Token": "wrong"}).status_code == 401
+        r = c.get("/api/state", headers={"X-Control-Token": "secret-token"})
+        assert r.status_code == 200
+
+    def test_refuses_when_no_token_configured(self, tmp_path, monkeypatch):
+        monkeypatch.chdir(tmp_path)
+        monkeypatch.delenv("POLYBERT_CONTROL_TOKEN", raising=False)
+        import control_server
+        control_server.app.testing = True
+        c = control_server.app.test_client()
+        r = c.get("/api/state", headers={"X-Control-Token": ""})
+        assert r.status_code == 401
+
+    def test_state_reports_seeded_position(self, tmp_path, monkeypatch):
+        self._seed_position(tmp_path)
+        c = self._make_client(tmp_path, monkeypatch)
+        r = c.get("/api/state", headers={"X-Control-Token": "secret-token"})
+        data = r.get_json()
+        assert [p["key"] for p in data["positions"]] == ["CV-A"]
+        assert data["positions"][0]["multi_leg"] is False
+
+    def test_pause_route(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        assert c.post("/api/pause", json={}, headers={"X-Control-Token": "wrong"}).status_code == 401
+        r = c.post("/api/pause", json={"paused": True}, headers=h)
+        assert r.status_code == 200 and r.get_json()["paused"] is True
+        r2 = c.get("/api/state", headers=h)
+        assert r2.get_json()["controls"]["paused"] is True
+
+    def test_killswitch_route(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        r = c.post("/api/killswitch", json={"on": True}, headers=h)
+        assert r.status_code == 200 and r.get_json()["kill_switch"] is True
+
+    def test_liquidate_route_queues_key(self, tmp_path, monkeypatch):
+        self._seed_position(tmp_path)
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        assert c.post("/api/liquidate", json={}, headers=h).status_code == 400
+        r = c.post("/api/liquidate", json={"key": "CV-A"}, headers=h)
+        assert r.status_code == 200 and r.get_json()["liquidate_queue"] == ["CV-A"]
+
+    def test_allocation_route(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        r = c.post("/api/allocation", json={"max_allocation_usd": 75}, headers=h)
+        assert r.status_code == 200 and r.get_json()["max_allocation_usd"] == pytest.approx(75.0)
+        r2 = c.post("/api/allocation", json={"max_allocation_usd": None}, headers=h)
+        assert r2.get_json()["max_allocation_usd"] is None
+
+    def test_stop_loss_route(self, tmp_path, monkeypatch):
+        self._seed_position(tmp_path)
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        assert c.post("/api/stop_loss", json={"pct": 20}, headers=h).status_code == 400
+        r = c.post("/api/stop_loss", json={"key": "CV-A", "pct": 20}, headers=h)
+        assert r.status_code == 200 and r.get_json()["stop_loss_pct"] == {"CV-A": 20.0}
+        r2 = c.post("/api/stop_loss", json={"key": "CV-A", "pct": 0}, headers=h)
+        assert r2.get_json()["stop_loss_pct"] == {}

@@ -94,6 +94,8 @@ polyedge95/
 │   ├── models.py            OrderBook / Market / Opportunity / Leg
 │   ├── risk.py              Kelly + caps
 │   ├── paper.py             paper engine: fills, marking, settlement, stats
+│   ├── live.py              LiveEngine: real-order execution, gated (see LIVE.md)
+│   ├── controls.py          control-panel state (state/controls.json) + apply_controls()
 │   ├── report.py            dashboard generator (docs/index.html)
 │   ├── main.py              one scan cycle end-to-end
 │   └── strategies/
@@ -101,12 +103,18 @@ polyedge95/
 │       ├── correlated.py    REL
 │       ├── longshot.py      LONGSHOT
 │       └── convergence.py   CONVERGE
-├── tests/test_polyedge.py   32 tests
+├── tests/test_polyedge.py   111 tests
 ├── relations.json           your declared market relations (REL)
 ├── demo.py                  seeds 30 days of fake data for the dashboard
+├── run_forever.py           continuous polling loop for a live VPS deployment
+├── control_server.py        manual control panel (Flask) -- pause/kill-switch/liquidate/stop-loss
+├── control_panel.html       the control panel's frontend
+├── polybert.service         systemd unit for run_forever.py
+├── polybert.env.example     env template for a live deployment
+├── LIVE.md                  full live-deployment guide -- read before wiring a real wallet
 ├── state/paper_state.json   the bot's memory (auto-created)
 ├── docs/index.html          the dashboard (auto-generated)
-└── .github/workflows/polyedge.yml   runs every 30 min
+└── .github/workflows/polyedge.yml   runs every 5 min
 ```
 
 ---
@@ -193,14 +201,37 @@ Run the tests any time you change logic (Actions can do it too, or locally `pip 
 The engine is built so the paper record answers the question "is there an edge?" honestly. If, after **at least 2–3 months and 100+ settled trades**, the dashboard shows positive realized P/L *concentrated in strategies whose logic you understand*, the sane path is:
 
 1. **Manual execution first.** The dashboard's opportunity table tells you exactly what to buy and at what price; place a few trades by hand on Polymarket and compare your real fills with the paper assumptions. Paper trading has zero slippage and always gets the best ask — reality will be worse, and you want to measure *how much* worse.
-2. Automated live execution would use Polymarket's `py-clob-client` with a wallet private key. That is deliberately **not** included: untested live-money code is how bankrolls die, keys in GitHub repos get drained, and it shouldn't be bolted on until the paper evidence justifies it.
+2. Automated live execution (`polyedge/live.py`, using Polymarket's `py-clob-client` with a wallet private key) does now exist in this repo, but it is off by default behind three independent gates and has never been run against the real Polymarket API — see `LIVE.md` for the full deployment guide, the safety model, and the mandatory dry-run stage before it can place a single real order. It was not "bolted on early" — it was built once the paper evidence and the control-panel tooling (section 10 below) were both in place.
 3. Practical notes for you specifically: Polymarket operates on Polygon with USDC — factor in on-ramp costs and ISK/USD exposure; check the current legal/tax treatment of prediction-market trading for Icelandic residents before funding anything; and never deploy money you can't afford to lose entirely. This is not financial advice — it's a measurement instrument.
 
 ---
 
-## 10. Honest limitations
+## 10. The manual control panel
 
-- **The live APIs were not called during development** (built in a sandboxed environment). All logic is tested against realistic fixtures, and the API layer parses defensively — any market it can't parse is skipped and counted, never fatal. If Polymarket has changed a field shape, the first real Actions run will show it in the logs; expect possibly one small fix on day one.
+`control_server.py` is a small Flask app (plus `control_panel.html`, a dark-themed page reusing this dashboard's look) for controlling a **live** deployment from a browser while `polybert.service` runs on a VPS. It never talks to the exchange itself — it only reads/writes `state/controls.json` (`polyedge/controls.py`); `run_forever.py` reads that file and acts on it (via `apply_controls()`) at the start of every scan cycle.
+
+What it can do:
+- **Pause new trades** — stops new positions from opening; existing ones are left alone.
+- **Kill switch** — liquidates every eligible open position at the next cycle.
+- **Liquidate one position** — queues a single position for liquidation.
+- **Max allocation cap** — if total open cost exceeds it, the largest-cost eligible positions are liquidated first until back under the cap (or none remain).
+- **Per-position stop-loss** — a slider (0-90%) per open position; once its unrealized loss reaches that percentage of cost basis, it's liquidated automatically on the next cycle.
+
+One rule applies to **all** of the above: multi-leg ARB/REL locks are never force-liquidated, no exceptions. Selling one leg of a guaranteed lock strands the other leg with no guarantee left — the panel marks these positions "multi-leg" and disables their liquidate/stop-loss controls, and the allocation cap and kill switch both log plainly when a multi-leg lock is the reason they couldn't get all the way to target.
+
+Run it (see `LIVE.md` for the systemd unit):
+
+```bash
+POLYBERT_CONTROL_TOKEN=$(openssl rand -hex 32) python control_server.py
+```
+
+Every state-changing route requires that token in an `X-Control-Token` header. **Security note:** bind the server to `127.0.0.1` (the default) and reach it over an SSH tunnel or Tailscale — never expose it on the open internet. A shared token alone is not enough protection for something that can liquidate real money.
+
+---
+
+## 11. Honest limitations
+
+- **The live-trading and control-panel code paths have never been run against the real Polymarket API or a funded wallet** (built in a sandboxed environment with no network access). All logic is unit-tested against realistic fixtures/mocks, and the API layer parses defensively — any market it can't parse is skipped and counted, never fatal. `LIVE.md`'s dry-run stage exists specifically to surface whatever the first real contact reveals; expect possibly one small fix on day one.
 - **Paper fills are optimistic**: best ask, no slippage, no partial-fill risk, no gas. Treat paper P/L as an upper bound.
 - **30-minute cadence misses most true arbs.** The ARB scan is best understood as measuring how often free money appears, not capturing all of it.
 - **LONGSHOT's edge rests on the 0.60 haircut assumption** until your own settled-trade data calibrates it. It can be negative-EV if the assumption is wrong.

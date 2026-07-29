@@ -1,0 +1,28 @@
+[Unit]
+Description=PolyBert live trading loop
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=polybert
+Group=polybert
+WorkingDirectory=/home/polybert/polye
+EnvironmentFile=/home/polybert/polye/polybert.env
+ExecStart=/home/polybert/polye/.venv/bin/python /home/polybert/polye/run_forever.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=polybert
+
+# hardening -- polybert only ever needs to read/write its own checkout.
+# (ProtectHome is deliberately left off: WorkingDirectory lives under
+# /home/polybert, and ProtectHome=true would hide that from the service.)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/home/polybert/polye
+
+[Install]
+WantedBy=multi-user.target

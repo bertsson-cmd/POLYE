@@ -1,0 +1,6 @@
+# Extra dependencies needed only for live deployment (run_forever.py /
+# live.py / control_server.py) -- NOT needed for the paper-trading GitHub
+# Actions workflow, which only ever installs requirements.txt.
+-r requirements.txt
+py-clob-client
+flask
