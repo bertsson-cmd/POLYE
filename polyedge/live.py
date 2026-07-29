@@ -38,7 +38,7 @@ import logging
 import os
 from typing import Dict, Optional
 
-from . import config
+from . import config, controls
 from .models import Opportunity
 from .paper import PaperEngine
 
@@ -141,6 +141,13 @@ class LiveEngine(PaperEngine):
 
     # ------------------------------------------------------------ trading
     def open_position(self, opp: Opportunity, ts: Optional[float] = None) -> Optional[dict]:
+        ctrl = controls.load(self.state_dir)
+        if ctrl["paused"]:
+            log.info("trading paused via control panel -- refusing to open %s", opp.key)
+            return None
+        if ctrl["kill_switch"]:
+            log.info("kill switch active via control panel -- refusing to open %s", opp.key)
+            return None
         if not live_gates_open():
             log.info("live gates closed -- refusing to open %s", opp.key)
             return None
@@ -183,3 +190,45 @@ class LiveEngine(PaperEngine):
                            leg["token_id"], key)
                 return None
         return super().close_early(key, exit_prices, ts=ts, reason=reason)
+
+    # ------------------------------------------------------------ manual/control-panel liquidation
+    def liquidate_position(self, key: str, exit_prices: Dict[str, float],
+                           reason: str = "manual_liquidate") -> Optional[dict]:
+        """Force-close a single open position. Refuses multi-leg locks
+        outright -- unwinding one leg of an ARB/REL guarantee strands the
+        other -- logging a clear warning instead of pretending to unwind
+        them safely. Subject to the same gates as close_early (which this
+        delegates to): live_gates_open() and not dry_run()."""
+        pos = next((p for p in self.state["positions"] if p["key"] == key), None)
+        if pos is None:
+            return None
+        if len(pos["legs"]) > 1:
+            log.warning("liquidate_position: refusing to force-unwind multi-leg "
+                       "lock %s (would strand the other leg(s))", key)
+            return None
+        return self.close_early(key, exit_prices, reason=reason)
+
+    def liquidate_all(self, exit_prices: Dict[str, float],
+                      reason: str = "kill_switch"):
+        """Liquidate every eligible (single-leg) open position.
+
+        Returns (closed, skipped) -- `skipped` is a list of (key, reason)
+        pairs for anything left open, most importantly multi-leg locks,
+        which this NEVER force-unwinds.
+        """
+        closed, skipped = [], []
+        for pos in list(self.state["positions"]):
+            key = pos["key"]
+            if len(pos["legs"]) > 1:
+                skipped.append((key, "multi-leg lock -- cannot be forced without stranding a leg"))
+                continue
+            token_id = pos["legs"][0]["token_id"]
+            if token_id not in exit_prices:
+                skipped.append((key, "no current price available"))
+                continue
+            c = self.liquidate_position(key, exit_prices, reason=reason)
+            if c:
+                closed.append(c)
+            else:
+                skipped.append((key, "order not filled or gates closed"))
+        return closed, skipped

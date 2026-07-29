@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PolyBert — Control Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070b16; --panel:#0d1424; --panel2:#101a30; --line:#1c2a47;
+    --text:#e8eeff; --muted:#7d8db0;
+    --cyan:#38e1ff; --blue:#4f7cff; --green:#2ee6a8; --red:#ff5c7a;
+    --amber:#ffc857; --pink:#ff6bd6;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);margin:0;padding:24px;
+       font-family:Inter,system-ui,sans-serif;font-size:13px;
+       background-image:radial-gradient(1200px 500px at 70% -10%,rgba(79,124,255,.10),transparent),
+                        radial-gradient(900px 400px at 10% 0%,rgba(56,225,255,.06),transparent)}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;
+         flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:34px;height:34px;border-radius:9px;
+        background:linear-gradient(135deg,var(--cyan),var(--blue));
+        display:flex;align-items:center;justify-content:center;
+        font-family:"Space Grotesk";font-weight:700;color:#04121e;font-size:15px;
+        box-shadow:0 0 18px rgba(56,225,255,.35)}
+  h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:21px;
+     margin:0;letter-spacing:.2px}
+  h1 small{color:var(--muted);font-family:Inter;font-weight:500;font-size:12px;
+           margin-left:10px;letter-spacing:.4px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap}
+  .badge{border:1px solid var(--line);border-radius:999px;padding:5px 12px;
+         color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .badge b{font-weight:600}
+  .badge.ok b{color:var(--green)}
+  .badge.warn{border-color:var(--amber)}
+  .badge.warn b{color:var(--amber)}
+  .badge.danger{border-color:var(--red)}
+  .badge.danger b{color:var(--red)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+        padding:18px 18px 16px;margin-bottom:18px}
+  .card h2{font-family:"Space Grotesk";font-size:14px;font-weight:500;margin:0 0 4px;
+           letter-spacing:.2px}
+  .card .sub{color:var(--muted);font-size:11.5px;margin-bottom:14px}
+  .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .row + .row{margin-top:14px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{color:var(--muted);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+  input[type=text],input[type=password],input[type=number]{
+    background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    color:var(--text);padding:8px 10px;font-size:13px;font-family:inherit;width:180px}
+  input[type=number]{width:110px}
+  button{font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:.02em;
+         border-radius:9px;padding:9px 16px;border:1px solid var(--line);
+         background:var(--panel2);color:var(--text);cursor:pointer;transition:.15s}
+  button:hover{border-color:var(--cyan)}
+  button:disabled{opacity:.4;cursor:not-allowed}
+  button.primary{background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;color:#04121e}
+  button.danger{background:rgba(255,92,122,.14);border-color:var(--red);color:var(--red)}
+  button.danger:hover{background:rgba(255,92,122,.25)}
+  button.small{padding:6px 11px;font-size:11.5px}
+  .toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
+  .switch{width:38px;height:22px;border-radius:999px;background:var(--panel2);
+          border:1px solid var(--line);position:relative;transition:.15s;flex:none}
+  .switch i{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+            background:var(--muted);transition:.15s}
+  .switch.on{background:rgba(46,230,168,.18);border-color:var(--green)}
+  .switch.on i{left:18px;background:var(--green)}
+  .switch.danger-on{background:rgba(255,92,122,.18);border-color:var(--red)}
+  .switch.danger-on i{left:18px;background:var(--red)}
+  .scroll{max-height:520px;overflow:auto;border-radius:10px;border:1px solid var(--line)}
+  table{border-collapse:collapse;width:100%;font-size:12px}
+  th{position:sticky;top:0;background:var(--panel2);color:var(--muted);
+     font-weight:500;text-align:left;padding:9px 12px;font-size:10.5px;
+     letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+  td{padding:10px 12px;border-bottom:1px solid rgba(28,42,71,.5);
+     font-variant-numeric:tabular-nums;vertical-align:middle}
+  tr:hover td{background:rgba(79,124,255,.05)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:10.5px;
+        font-weight:600;letter-spacing:.04em}
+  .pill.ARB{background:rgba(56,225,255,.12);color:var(--cyan)}
+  .pill.REL{background:rgba(255,200,87,.12);color:var(--amber)}
+  .pill.LONGSHOT{background:rgba(255,107,214,.12);color:var(--pink)}
+  .pill.CONVERGE{background:rgba(46,230,168,.12);color:var(--green)}
+  .pill.multi{background:rgba(125,141,176,.16);color:var(--muted)}
+  .up{color:var(--green)} .dn{color:var(--red)} .muted{color:var(--muted)}
+  .sl-row{display:flex;align-items:center;gap:8px;min-width:170px}
+  input[type=range]{width:100px;accent-color:var(--amber)}
+  .sl-val{font-variant-numeric:tabular-nums;min-width:34px;color:var(--amber)}
+  .empty{color:var(--muted);padding:22px;text-align:center}
+  footer{color:var(--muted);font-size:11px;text-align:center;margin:26px 0 6px;letter-spacing:.06em}
+  @media(max-width:700px){body{padding:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <div class="logo">PB</div>
+    <h1>PolyBert<small>Manual control panel</small></h1>
+  </div>
+  <div class="badges" id="badges"></div>
+</header>
+
+<div class="card">
+  <h2>Access token</h2>
+  <div class="sub">Sent as X-Control-Token on every request. Stored only in this browser's local storage.</div>
+  <div class="row">
+    <div class="field">
+      <label>Token</label>
+      <input type="password" id="token" placeholder="paste POLYBERT_CONTROL_TOKEN">
+    </div>
+    <button class="primary" id="save-token" style="align-self:flex-end">Save &amp; connect</button>
+    <span class="muted" id="conn-status"></span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Trading controls</h2>
+  <div class="sub">Kill switch and liquidate actions place real orders on a live deployment — confirm before you click.</div>
+  <div class="row">
+    <div class="toggle" id="pause-toggle">
+      <div class="switch" id="pause-switch"><i></i></div>
+      <span>Pause new trades</span>
+    </div>
+    <div class="toggle" id="kill-toggle">
+      <div class="switch" id="kill-switch"><i></i></div>
+      <span>Kill switch (liquidate everything eligible)</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label>Max allocation (USD)</label>
+      <input type="number" id="alloc-input" placeholder="no cap">
+    </div>
+    <button class="small" id="alloc-set" style="align-self:flex-end">Set cap</button>
+    <button class="small" id="alloc-clear" style="align-self:flex-end">Clear cap</button>
+    <span class="muted" id="alloc-status"></span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Open positions</h2>
+  <div class="sub">Per-position stop-loss: liquidates the position once it's down this % from its entry cost. Multi-leg locks (ARB/REL) can never be force-liquidated — unwinding one leg strands the other.</div>
+  <div class="scroll"><table id="positions"></table></div>
+</div>
+
+<footer>POLYBERT CONTROL PANEL · BIND TO 127.0.0.1 AND TUNNEL — NEVER EXPOSE ON THE OPEN INTERNET</footer>
+</div>
+
+<script>
+const TOKEN_KEY = "polybert_control_token";
+let STATE = null;
+let pollTimer = null;
+
+function token() { return localStorage.getItem(TOKEN_KEY) || ""; }
+
+async function api(path, opts) {
+  opts = opts || {};
+  opts.headers = Object.assign({"Content-Type": "application/json",
+                                "X-Control-Token": token()}, opts.headers || {});
+  const r = await fetch(path, opts);
+  if (r.status === 401) throw new Error("unauthorized — check your token");
+  if (!r.ok) throw new Error("request failed: " + r.status);
+  return r.json();
+}
+
+function fmtUsd(n) {
+  if (n === null || n === undefined) return "—";
+  return (n < 0 ? "-$" : "$") + Math.abs(n).toFixed(2);
+}
+function fmtPct(n) {
+  if (n === null || n === undefined) return "—";
+  return (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
+}
+
+function renderBadges(s) {
+  const b = [];
+  b.push(`<span class="badge ${s.armed ? "warn" : ""}">Armed <b>${s.armed ? "YES" : "no"}</b></span>`);
+  b.push(`<span class="badge ${s.halted ? "danger" : "ok"}">Halted <b>${s.halted ? "YES" : "no"}</b></span>`);
+  b.push(`<span class="badge ${s.controls.paused ? "warn" : "ok"}">Paused <b>${s.controls.paused ? "YES" : "no"}</b></span>`);
+  b.push(`<span class="badge ${s.controls.kill_switch ? "danger" : "ok"}">Kill switch <b>${s.controls.kill_switch ? "ON" : "off"}</b></span>`);
+  document.getElementById("badges").innerHTML = b.join("");
+}
+
+function renderPositions(s) {
+  const tbl = document.getElementById("positions");
+  if (!s.positions.length) {
+    tbl.innerHTML = '<tr><td class="empty">No open positions.</td></tr>';
+    return;
+  }
+  let html = `<tr><th>Position</th><th>Cost</th><th>Unrealized P/L</th>
+             <th>Stop-loss</th><th></th></tr>`;
+  for (const p of s.positions) {
+    const plClass = (p.unrealized_pl || 0) >= 0 ? "up" : "dn";
+    const sl = p.stop_loss_pct || 0;
+    const disabled = p.multi_leg ? "disabled title=\"multi-leg lock — cannot be force-liquidated\"" : "";
+    html += `<tr>
+      <td><span class="pill ${p.strategy}">${p.strategy}</span> ${p.title}
+          ${p.multi_leg ? '<span class="pill multi">multi-leg</span>' : ""}
+          ${p.queued_for_liquidation ? '<span class="pill multi">queued</span>' : ""}</td>
+      <td>${fmtUsd(p.cost)}</td>
+      <td class="${plClass}">${fmtUsd(p.unrealized_pl)} <span class="muted">(${fmtPct(p.unrealized_pl_pct)})</span></td>
+      <td>
+        <div class="sl-row">
+          <input type="range" min="0" max="90" step="1" value="${sl}"
+                 data-key="${p.key}" class="sl-slider" ${disabled}>
+          <span class="sl-val" data-key="${p.key}">${sl ? sl + "%" : "off"}</span>
+        </div>
+      </td>
+      <td><button class="danger small liquidate-btn" data-key="${p.key}" ${disabled}>Liquidate</button></td>
+    </tr>`;
+  }
+  tbl.innerHTML = html;
+
+  tbl.querySelectorAll(".sl-slider").forEach(el => {
+    el.addEventListener("input", () => {
+      tbl.querySelector(`.sl-val[data-key="${el.dataset.key}"]`).textContent =
+        el.value == "0" ? "off" : el.value + "%";
+    });
+    el.addEventListener("change", async () => {
+      try {
+        await api("/api/stop_loss", {method: "POST",
+          body: JSON.stringify({key: el.dataset.key, pct: Number(el.value)})});
+      } catch (e) { alert(e.message); }
+      refresh();
+    });
+  });
+  tbl.querySelectorAll(".liquidate-btn").forEach(el => {
+    el.addEventListener("click", async () => {
+      if (!confirm("Queue this position for liquidation? This places a real "
+                  + "sell order on a live deployment.")) return;
+      try {
+        await api("/api/liquidate", {method: "POST", body: JSON.stringify({key: el.dataset.key})});
+      } catch (e) { alert(e.message); }
+      refresh();
+    });
+  });
+}
+
+function renderControls(s) {
+  document.getElementById("pause-switch").classList.toggle("on", s.controls.paused);
+  document.getElementById("kill-switch").classList.toggle("danger-on", s.controls.kill_switch);
+  document.getElementById("alloc-input").value = s.controls.max_allocation_usd ?? "";
+}
+
+async function refresh() {
+  try {
+    STATE = await api("/api/state");
+    document.getElementById("conn-status").textContent = "connected";
+    renderBadges(STATE);
+    renderControls(STATE);
+    renderPositions(STATE);
+  } catch (e) {
+    document.getElementById("conn-status").textContent = e.message;
+  }
+}
+
+document.getElementById("save-token").addEventListener("click", () => {
+  localStorage.setItem(TOKEN_KEY, document.getElementById("token").value.trim());
+  refresh();
+});
+document.getElementById("token").value = token();
+
+document.getElementById("pause-toggle").addEventListener("click", async () => {
+  const next = !STATE.controls.paused;
+  try { await api("/api/pause", {method: "POST", body: JSON.stringify({paused: next})}); }
+  catch (e) { alert(e.message); }
+  refresh();
+});
+document.getElementById("kill-toggle").addEventListener("click", async () => {
+  const next = !STATE.controls.kill_switch;
+  if (next && !confirm("Activate the KILL SWITCH? This liquidates every eligible "
+                       + "open position at the next cycle. Multi-leg locks cannot "
+                       + "be forced and will stay open.")) return;
+  try { await api("/api/killswitch", {method: "POST", body: JSON.stringify({on: next})}); }
+  catch (e) { alert(e.message); }
+  refresh();
+});
+document.getElementById("alloc-set").addEventListener("click", async () => {
+  const v = document.getElementById("alloc-input").value;
+  try {
+    await api("/api/allocation", {method: "POST",
+      body: JSON.stringify({max_allocation_usd: v === "" ? null : Number(v)})});
+  } catch (e) { alert(e.message); }
+  refresh();
+});
+document.getElementById("alloc-clear").addEventListener("click", async () => {
+  document.getElementById("alloc-input").value = "";
+  try { await api("/api/allocation", {method: "POST", body: JSON.stringify({max_allocation_usd: null})}); }
+  catch (e) { alert(e.message); }
+  refresh();
+});
+
+refresh();
+pollTimer = setInterval(refresh, 5000);
+</script>
+</body>
+</html>
