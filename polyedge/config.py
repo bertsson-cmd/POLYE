@@ -123,6 +123,12 @@ TAKE_PROFIT_MIN_GAIN = _f("POLYEDGE_TP_MIN_GAIN", 0.005)   # ignore moves smalle
 LIVE_ALLOW_MULTILEG = os.environ.get("POLYEDGE_LIVE_MULTILEG", "0") == "1"  # ARB/REL locks live: OFF by default
 LIVE_MAX_DAILY_LOSS = _f("POLYEDGE_LIVE_MAX_DAILY_LOSS", 15.0)  # USD realized loss/day before auto-halt
 
+# URL for the "Control Panel" button on the generated dashboard. Defaults
+# to localhost -- the control panel is meant to be reached through an SSH
+# tunnel or Tailscale (see LIVE.md), never a public URL. If you tunnel a
+# different local port, override with POLYEDGE_CONTROL_PANEL_URL.
+CONTROL_PANEL_URL = os.environ.get("POLYEDGE_CONTROL_PANEL_URL", "http://localhost:8787/")
+
 # Suggested $100-bankroll live profile (set these as env vars on the VPS —
 # they override the paper defaults above without editing this file):
 #   POLYEDGE_BANKROLL=100  POLYEDGE_MAX_POS_PCT=0.10  POLYEDGE_MIN_TICKET=5

@@ -133,7 +133,7 @@ polyedge95/
 
 ## 6. Reading the dashboard
 
-**Header window** — equity (cash + open positions marked to market), total return vs the $1,000 starting bankroll, cash, realized P/L (settled trades only), open/settled counts with win rate.
+**Header window** — equity (cash + open positions marked to market), total return vs the $1,000 starting bankroll, cash, realized P/L (settled trades only), open/settled counts with win rate. The **Control Panel** button next to it links to `http://localhost:8787/` by default (override with `POLYEDGE_CONTROL_PANEL_URL` in `config.py` if you tunnel a different port) — it only resolves while you have an SSH tunnel or Tailscale connection open to the VPS running `control_server.py` (section 10); on its own, clicking it from a browser with no tunnel just fails to load, which is expected.
 
 **System Monitor** (green CRT) — the equity curve. The dashed line is your starting bankroll; green above it is profit. The dark-yellow line is *realized* P/L re-based to the bankroll line, so the vertical gap between the two lines is the unrealized value sitting in open positions.
 
