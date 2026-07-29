@@ -1,36 +1,7 @@
 {
- "cash": 587.198925,
+ "cash": 646.178877,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-2107954",
-   "strategy": "CONVERGE",
-   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
-   "opened": 1784781146.2649689,
-   "cost": 25.03975,
-   "edge": 0.01626,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9856,
-   "resolve_by": "2026-07-31T00:00:00Z",
-   "note": "YES ask 0.984, 7.8d to resolution, 76% annualized if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "45333464249231278833889264835467032836298968894575589803293628653956412762455",
-     "market_id": "2107954",
-     "label": "YES No change in Bank of Japan\u2019s interest rates after the July 2026 meeting?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 25.4469
-    }
-   ],
-   "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.989
-   },
-   "current_value": 25.166984,
-   "unrealized_pl": 0.127234,
-   "unrealized_pl_pct": 0.508
-  },
   {
    "key": "CV-2940998",
    "strategy": "CONVERGE",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9485
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.943
    },
-   "current_value": 9.892953,
-   "unrealized_pl": -0.224247,
-   "unrealized_pl_pct": -2.216
+   "current_value": 9.835587,
+   "unrealized_pl": -0.281613,
+   "unrealized_pl_pct": -2.784
   },
   {
    "key": "CV-3082115",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.9605
+    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.958
    },
-   "current_value": 19.136115,
-   "unrealized_pl": -0.288885,
-   "unrealized_pl_pct": -1.487
+   "current_value": 19.086308,
+   "unrealized_pl": -0.338692,
+   "unrealized_pl_pct": -1.744
   },
   {
    "key": "CV-2952486",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.895
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.88
    },
-   "current_value": 24.11419,
-   "unrealized_pl": -1.75131,
-   "unrealized_pl_pct": -6.771
+   "current_value": 23.710042,
+   "unrealized_pl": -2.155458,
+   "unrealized_pl_pct": -8.333
   },
   {
    "key": "CV-3083724",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.9515
+    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.9575
    },
-   "current_value": 25.207248,
-   "unrealized_pl": -0.834502,
-   "unrealized_pl_pct": -3.204
+   "current_value": 25.366201,
+   "unrealized_pl": -0.675549,
+   "unrealized_pl_pct": -2.594
   },
   {
    "key": "CV-3055422",
@@ -257,76 +228,11 @@
     }
    ],
    "current_prices": {
-    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.953
+    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.9365
    },
-   "current_value": 15.070184,
-   "unrealized_pl": -0.031627,
-   "unrealized_pl_pct": -0.209
-  },
-  {
-   "key": "ARB-NO-287395",
-   "strategy": "ARB",
-   "title": "NO-lock: Fed Decision in July?",
-   "opened": 1785278456.5717826,
-   "cost": 26.1165,
-   "edge": 0.002758,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 4.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-29T00:00:00Z",
-   "note": "5 outcomes, NO asks sum 3.9890 vs payout 4, 25 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "81718924566344342339932153243056822500865643754622838691875214933560980686588",
-     "market_id": "1654956",
-     "label": "NO Will the Fed decrease interest rates by 50+ bps after the July 2026 meeting?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 6.54713
-    },
-    {
-     "token_id": "90713175285238837229141362456380660699457701142142655731293716395090014512187",
-     "market_id": "1654957",
-     "label": "NO Will the Fed decrease interest rates by 25 bps after the July 2026 meeting?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 6.54713
-    },
-    {
-     "token_id": "36015050921127306245266044699797268780268172446856063291868548314968920497494",
-     "market_id": "1654958",
-     "label": "NO Will there be no change in Fed interest rates after the July 2026 meeting?",
-     "side": "NO",
-     "entry_price": 0.248,
-     "shares": 6.54713
-    },
-    {
-     "token_id": "102979714187432523726496609637889951679226430871494531752837414533106422105296",
-     "market_id": "1654959",
-     "label": "NO Will the Fed increase interest rates by 25 bps after the July 2026 meeting?",
-     "side": "NO",
-     "entry_price": 0.745,
-     "shares": 6.54713
-    },
-    {
-     "token_id": "82752177927542167404038816431416174971863195141383694610771473564093425601859",
-     "market_id": "1654960",
-     "label": "NO Will the Fed increase interest rates by 50+ bps after the July 2026 meeting?",
-     "side": "NO",
-     "entry_price": 0.998,
-     "shares": 6.54713
-    }
-   ],
-   "current_prices": {
-    "81718924566344342339932153243056822500865643754622838691875214933560980686588": 0.9995,
-    "90713175285238837229141362456380660699457701142142655731293716395090014512187": 0.9995,
-    "36015050921127306245266044699797268780268172446856063291868548314968920497494": 0.0005,
-    "102979714187432523726496609637889951679226430871494531752837414533106422105296": 0.9995,
-    "82752177927542167404038816431416174971863195141383694610771473564093425601859": 0.9995
-   },
-   "current_value": 26.18852,
-   "unrealized_pl": 0.07202,
-   "unrealized_pl_pct": 0.276
+   "current_value": 14.809263,
+   "unrealized_pl": -0.292548,
+   "unrealized_pl_pct": -1.937
   },
   {
    "key": "CV-2683666",
@@ -467,40 +373,11 @@
     }
    ],
    "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9765
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9715
    },
-   "current_value": 25.922246,
-   "unrealized_pl": -0.146004,
-   "unrealized_pl_pct": -0.56
-  },
-  {
-   "key": "CV-3083701",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
-   "opened": 1785327562.245282,
-   "cost": 7.487357,
-   "edge": 0.014199,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9863999999999999,
-   "resolve_by": "2026-07-29T23:59:00Z",
-   "note": "YES ask 0.986, 0.5d to resolution, 1067% annualized if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "43783728297751003049731197784493047712213881171251242252606704800494333274628",
-     "market_id": "3083701",
-     "label": "YES Israel x Iran ceasefire continues through July 29?",
-     "side": "YES",
-     "entry_price": 0.986,
-     "shares": 7.593669
-    }
-   ],
-   "current_prices": {
-    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.9945
-   },
-   "current_value": 7.551904,
-   "unrealized_pl": 0.064547,
-   "unrealized_pl_pct": 0.862
+   "current_value": 25.789516,
+   "unrealized_pl": -0.278734,
+   "unrealized_pl_pct": -1.069
   },
   {
    "key": "CV-3101537",
@@ -525,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9505
+    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9535
    },
-   "current_value": 25.919423,
-   "unrealized_pl": -0.286327,
-   "unrealized_pl_pct": -1.093
+   "current_value": 26.001231,
+   "unrealized_pl": -0.204519,
+   "unrealized_pl_pct": -0.78
   },
   {
    "key": "CV-907785",
@@ -554,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.955
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.96
    },
-   "current_value": 26.343675,
-   "unrealized_pl": 0.137925,
-   "unrealized_pl_pct": 0.526
+   "current_value": 26.4816,
+   "unrealized_pl": 0.27585,
+   "unrealized_pl_pct": 1.053
   },
   {
    "key": "CV-3158228",
@@ -583,11 +460,11 @@
     }
    ],
    "current_prices": {
-    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.963
+    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.9625
    },
-   "current_value": 21.150627,
-   "unrealized_pl": -0.153743,
-   "unrealized_pl_pct": -0.722
+   "current_value": 21.139645,
+   "unrealized_pl": -0.164725,
+   "unrealized_pl_pct": -0.773
   },
   {
    "key": "CV-2234098",
@@ -612,11 +489,11 @@
     }
    ],
    "current_prices": {
-    "42646433682040635478226995332628897726192974639059751107216670158587627980176": 0.971
+    "42646433682040635478226995332628897726192974639059751107216670158587627980176": 0.9715
    },
-   "current_value": 25.315179,
-   "unrealized_pl": -0.026071,
-   "unrealized_pl_pct": -0.103
+   "current_value": 25.328215,
+   "unrealized_pl": -0.013035,
+   "unrealized_pl_pct": -0.051
   },
   {
    "key": "CV-3055668",
@@ -641,11 +518,11 @@
     }
    ],
    "current_prices": {
-    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9915
+    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9895
    },
-   "current_value": 17.535011,
-   "unrealized_pl": 0.168011,
-   "unrealized_pl_pct": 0.967
+   "current_value": 17.49964,
+   "unrealized_pl": 0.13264,
+   "unrealized_pl_pct": 0.764
   }
  ],
  "closed": [
@@ -6542,6 +6419,140 @@
    "payout": 26.31406,
    "pl": 0.29506,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2107954",
+   "strategy": "CONVERGE",
+   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
+   "opened": 1784781146.2649689,
+   "cost": 25.03975,
+   "edge": 0.01626,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9856,
+   "resolve_by": "2026-07-31T00:00:00Z",
+   "note": "YES ask 0.984, 7.8d to resolution, 76% annualized if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "45333464249231278833889264835467032836298968894575589803293628653956412762455",
+     "market_id": "2107954",
+     "label": "YES No change in Bank of Japan\u2019s interest rates after the July 2026 meeting?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 25.4469
+    }
+   ],
+   "current_prices": {
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.989
+   },
+   "current_value": 25.166984,
+   "unrealized_pl": 0.127234,
+   "unrealized_pl_pct": 0.508,
+   "closed_ts": 1785359335.6250281,
+   "payout": 25.243325,
+   "pl": 0.203575,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3083701",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
+   "opened": 1785327562.245282,
+   "cost": 7.487357,
+   "edge": 0.014199,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-07-29T23:59:00Z",
+   "note": "YES ask 0.986, 0.5d to resolution, 1067% annualized if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "43783728297751003049731197784493047712213881171251242252606704800494333274628",
+     "market_id": "3083701",
+     "label": "YES Israel x Iran ceasefire continues through July 29?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 7.593669
+    }
+   ],
+   "current_prices": {
+    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.9945
+   },
+   "current_value": 7.551904,
+   "unrealized_pl": 0.064547,
+   "unrealized_pl_pct": 0.862,
+   "closed_ts": 1785359335.6250281,
+   "payout": 7.548107,
+   "pl": 0.06075,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "ARB-NO-287395",
+   "strategy": "ARB",
+   "title": "NO-lock: Fed Decision in July?",
+   "opened": 1785278456.5717826,
+   "cost": 26.1165,
+   "edge": 0.002758,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 4.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-29T00:00:00Z",
+   "note": "5 outcomes, NO asks sum 3.9890 vs payout 4, 25 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "81718924566344342339932153243056822500865643754622838691875214933560980686588",
+     "market_id": "1654956",
+     "label": "NO Will the Fed decrease interest rates by 50+ bps after the July 2026 meeting?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 6.54713
+    },
+    {
+     "token_id": "90713175285238837229141362456380660699457701142142655731293716395090014512187",
+     "market_id": "1654957",
+     "label": "NO Will the Fed decrease interest rates by 25 bps after the July 2026 meeting?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 6.54713
+    },
+    {
+     "token_id": "36015050921127306245266044699797268780268172446856063291868548314968920497494",
+     "market_id": "1654958",
+     "label": "NO Will there be no change in Fed interest rates after the July 2026 meeting?",
+     "side": "NO",
+     "entry_price": 0.248,
+     "shares": 6.54713
+    },
+    {
+     "token_id": "102979714187432523726496609637889951679226430871494531752837414533106422105296",
+     "market_id": "1654959",
+     "label": "NO Will the Fed increase interest rates by 25 bps after the July 2026 meeting?",
+     "side": "NO",
+     "entry_price": 0.745,
+     "shares": 6.54713
+    },
+    {
+     "token_id": "82752177927542167404038816431416174971863195141383694610771473564093425601859",
+     "market_id": "1654960",
+     "label": "NO Will the Fed increase interest rates by 50+ bps after the July 2026 meeting?",
+     "side": "NO",
+     "entry_price": 0.998,
+     "shares": 6.54713
+    }
+   ],
+   "current_prices": {
+    "81718924566344342339932153243056822500865643754622838691875214933560980686588": 0.999,
+    "90713175285238837229141362456380660699457701142142655731293716395090014512187": 0.999,
+    "36015050921127306245266044699797268780268172446856063291868548314968920497494": 0.248,
+    "102979714187432523726496609637889951679226430871494531752837414533106422105296": 0.745,
+    "82752177927542167404038816431416174971863195141383694610771473564093425601859": 0.998
+   },
+   "current_value": 26.18852,
+   "unrealized_pl": 0.07202,
+   "unrealized_pl_pct": 0.276,
+   "closed_ts": 1785359336.8997877,
+   "payout": 26.18852,
+   "pl": 0.07202
   }
  ],
  "history": [
@@ -7328,6 +7339,14 @@
    "equity": 1021.3986,
    "realized_total": 22.7337,
    "open_positions": 21
+  },
+  {
+   "ts": 1785359335.6266747,
+   "cash": 619.9904,
+   "open_value": 400.9212,
+   "equity": 1020.9116,
+   "realized_total": 22.998,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -10119,6 +10138,35 @@
    "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
    "amount": 17.37,
    "pl": null
+  },
+  {
+   "ts": 1785359335.6250281,
+   "type": "CLOSE",
+   "key": "CV-2107954",
+   "strategy": "CONVERGE",
+   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
+   "amount": 25.24,
+   "pl": 0.2,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785359335.6250281,
+   "type": "CLOSE",
+   "key": "CV-3083701",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 29?",
+   "amount": 7.55,
+   "pl": 0.06,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785359336.8997877,
+   "type": "CLOSE",
+   "key": "ARB-NO-287395",
+   "strategy": "ARB",
+   "title": "NO-lock: Fed Decision in July?",
+   "amount": 26.19,
+   "pl": 0.07
   }
  ]
 }
