@@ -1,5 +1,5 @@
 {
- "cash": 646.178877,
+ "cash": 647.967968,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.943
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9045
    },
-   "current_value": 9.835587,
-   "unrealized_pl": -0.281613,
-   "unrealized_pl_pct": -2.784
+   "current_value": 9.434028,
+   "unrealized_pl": -0.683172,
+   "unrealized_pl_pct": -6.753
   },
   {
    "key": "CV-3082115",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.958
+    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.9695
    },
-   "current_value": 19.086308,
-   "unrealized_pl": -0.338692,
-   "unrealized_pl_pct": -1.744
+   "current_value": 19.315423,
+   "unrealized_pl": -0.109577,
+   "unrealized_pl_pct": -0.564
   },
   {
    "key": "CV-2952486",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.88
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.895
    },
-   "current_value": 23.710042,
-   "unrealized_pl": -2.155458,
-   "unrealized_pl_pct": -8.333
+   "current_value": 24.11419,
+   "unrealized_pl": -1.75131,
+   "unrealized_pl_pct": -6.771
   },
   {
    "key": "CV-3083724",
@@ -199,40 +199,11 @@
     }
    ],
    "current_prices": {
-    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.9575
+    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.922
    },
-   "current_value": 25.366201,
-   "unrealized_pl": -0.675549,
-   "unrealized_pl_pct": -2.594
-  },
-  {
-   "key": "CV-3055422",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on July 30?",
-   "opened": 1785274586.6354675,
-   "cost": 15.101811,
-   "edge": 0.04712,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9576,
-   "resolve_by": "2026-07-30T16:00:00Z",
-   "note": "YES ask 0.955, 1.8d to resolution, 974% annualized if YES, assumed true P 0.958",
-   "legs": [
-    {
-     "token_id": "105784708092632808810261397318234519956150655684440928829424050651247232142139",
-     "market_id": "3055422",
-     "label": "YES Will the price of Ethereum be above $1,800 on July 30?",
-     "side": "YES",
-     "entry_price": 0.955,
-     "shares": 15.813415
-    }
-   ],
-   "current_prices": {
-    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.9365
-   },
-   "current_value": 14.809263,
-   "unrealized_pl": -0.292548,
-   "unrealized_pl_pct": -1.937
+   "current_value": 24.425731,
+   "unrealized_pl": -1.616019,
+   "unrealized_pl_pct": -6.205
   },
   {
    "key": "CV-2683666",
@@ -264,35 +235,6 @@
    "unrealized_pl_pct": 0.0
   },
   {
-   "key": "LS-3124985",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Busan be 35\u00b0C on July 29?",
-   "opened": 1785282132.3311222,
-   "cost": 25.986,
-   "edge": 0.006186,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-07-29T12:00:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970",
-   "legs": [
-    {
-     "token_id": "17764661364186601820105764143571557261011263537589495745867203140588528636890",
-     "market_id": "3124985",
-     "label": "NO Will the highest temperature in Busan be 35\u00b0C on July 29?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 26.789691
-    }
-   ],
-   "current_prices": {
-    "17764661364186601820105764143571557261011263537589495745867203140588528636890": 0.9995
-   },
-   "current_value": 26.776296,
-   "unrealized_pl": 0.790296,
-   "unrealized_pl_pct": 3.041
-  },
-  {
    "key": "CV-3101445",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Ethereum be above $1,700 on August 1?",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.9625
+    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.9665
    },
-   "current_value": 16.018281,
-   "unrealized_pl": -0.024964,
-   "unrealized_pl_pct": -0.156
+   "current_value": 16.084851,
+   "unrealized_pl": 0.041606,
+   "unrealized_pl_pct": 0.259
   },
   {
    "key": "LS-3124746",
@@ -373,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9715
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9735
    },
-   "current_value": 25.789516,
-   "unrealized_pl": -0.278734,
-   "unrealized_pl_pct": -1.069
+   "current_value": 25.842608,
+   "unrealized_pl": -0.225642,
+   "unrealized_pl_pct": -0.866
   },
   {
    "key": "CV-3101537",
@@ -402,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9535
+    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9635
    },
-   "current_value": 26.001231,
-   "unrealized_pl": -0.204519,
-   "unrealized_pl_pct": -0.78
+   "current_value": 26.273923,
+   "unrealized_pl": 0.068173,
+   "unrealized_pl_pct": 0.26
   },
   {
    "key": "CV-907785",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.96
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9655
    },
-   "current_value": 26.4816,
-   "unrealized_pl": 0.27585,
-   "unrealized_pl_pct": 1.053
+   "current_value": 26.633318,
+   "unrealized_pl": 0.427568,
+   "unrealized_pl_pct": 1.632
   },
   {
    "key": "CV-3158228",
@@ -460,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.9625
+    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.97
    },
-   "current_value": 21.139645,
-   "unrealized_pl": -0.164725,
-   "unrealized_pl_pct": -0.773
+   "current_value": 21.30437,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
   },
   {
    "key": "CV-2234098",
@@ -489,40 +431,188 @@
     }
    ],
    "current_prices": {
-    "42646433682040635478226995332628897726192974639059751107216670158587627980176": 0.9715
+    "42646433682040635478226995332628897726192974639059751107216670158587627980176": 0.973
    },
-   "current_value": 25.328215,
-   "unrealized_pl": -0.013035,
-   "unrealized_pl_pct": -0.051
+   "current_value": 25.367321,
+   "unrealized_pl": 0.026071,
+   "unrealized_pl_pct": 0.103
   },
   {
-   "key": "CV-3055668",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
-   "opened": 1785350655.3033051,
-   "cost": 17.367,
-   "edge": 0.01833,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9836,
-   "resolve_by": "2026-07-30T16:00:00Z",
-   "note": "YES ask 0.982, 0.9d to resolution, 755% annualized if YES, assumed true P 0.984",
+   "key": "ARB-NO-766064",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Toronto on July 30?",
+   "opened": 1785363139.1848984,
+   "cost": 25.52275,
+   "edge": 0.002305,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-30T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9770 vs payout 10, 4 sets (capped $100)",
    "legs": [
     {
-     "token_id": "56565267039710558382646963079425993576818627374000416980063520633898406552568",
-     "market_id": "3055668",
-     "label": "YES Will the price of Bitcoin be above $60,000 on July 30?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 17.685336
+     "token_id": "1986410449677715820238040768353924440006688182346968243353270046720398379162",
+     "market_id": "3194808",
+     "label": "NO Will the highest temperature in Toronto be 23\u00b0C or below on July 30?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "63255466385793510447692230855028773361438194086292070448824429460353979382798",
+     "market_id": "3194809",
+     "label": "NO Will the highest temperature in Toronto be 24\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "47317223407109670731852319366724264831279692162560155674598523538247814867509",
+     "market_id": "3194810",
+     "label": "NO Will the highest temperature in Toronto be 25\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "84366896593444574909763335536760100054568713551609252053062701250020740037060",
+     "market_id": "3194811",
+     "label": "NO Will the highest temperature in Toronto be 26\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "104624338078951949930068843708425982938897560178936923231140737215999741457545",
+     "market_id": "3194812",
+     "label": "NO Will the highest temperature in Toronto be 27\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.67,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "96893623482951465205061073103615034442606109534386947977180650027984861930679",
+     "market_id": "3194813",
+     "label": "NO Will the highest temperature in Toronto be 28\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.52,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "20962694265284128944024114130846727490898897218150590786853033206780780690258",
+     "market_id": "3194814",
+     "label": "NO Will the highest temperature in Toronto be 29\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.86,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "2534616899830838940506689561930731828440064400793411574745050809809489902581",
+     "market_id": "3194815",
+     "label": "NO Will the highest temperature in Toronto be 30\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "26132799188120444904313346115162850942350246676206920880015347486339378679314",
+     "market_id": "3194816",
+     "label": "NO Will the highest temperature in Toronto be 31\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "41969256704401675812777153040510910408292793242623203975310392024509420067427",
+     "market_id": "3194817",
+     "label": "NO Will the highest temperature in Toronto be 32\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "40646675953117081390687445146785175331886542387234732766964494396841310893376",
+     "market_id": "3194818",
+     "label": "NO Will the highest temperature in Toronto be 33\u00b0C or higher on July 30?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.558159
     }
    ],
    "current_prices": {
-    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9895
+    "1986410449677715820238040768353924440006688182346968243353270046720398379162": 0.9975,
+    "63255466385793510447692230855028773361438194086292070448824429460353979382798": 0.994,
+    "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.985,
+    "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.955,
+    "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.665,
+    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.515,
+    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.855,
+    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.985,
+    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.993,
+    "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.997,
+    "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.998
    },
-   "current_value": 17.49964,
-   "unrealized_pl": 0.13264,
-   "unrealized_pl_pct": 0.764
+   "current_value": 25.58159,
+   "unrealized_pl": 0.05884,
+   "unrealized_pl_pct": 0.231
+  },
+  {
+   "key": "CV-3055683",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 30?",
+   "opened": 1785363139.1849396,
+   "cost": 25.52275,
+   "edge": 0.061571,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9548,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.942, 0.7d to resolution, 3031% annualized if YES, assumed true P 0.955",
+   "legs": [
+    {
+     "token_id": "47627389634973978199009533004697816218506311265386852090253835249472981260557",
+     "market_id": "3055683",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 30?",
+     "side": "YES",
+     "entry_price": 0.942,
+     "shares": 27.094214
+    }
+   ],
+   "current_prices": {
+    "47627389634973978199009533004697816218506311265386852090253835249472981260557": 0.9435
+   },
+   "current_value": 25.563391,
+   "unrealized_pl": 0.040641,
+   "unrealized_pl_pct": 0.159
+  },
+  {
+   "key": "CV-3081976",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on July 31?",
+   "opened": 1785363139.18495,
+   "cost": 6.958857,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-07-31T16:00:00Z",
+   "note": "YES ask 0.985, 1.7d to resolution, 319% annualized if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "13124774435909371824918100176570772979692257855165527838681447684905891372637",
+     "market_id": "3081976",
+     "label": "YES Will the price of Ethereum be above $1,700 on July 31?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 7.064829
+    }
+   ],
+   "current_prices": {
+    "13124774435909371824918100176570772979692257855165527838681447684905891372637": 0.9845
+   },
+   "current_value": 6.955324,
+   "unrealized_pl": -0.003533,
+   "unrealized_pl_pct": -0.051
   }
  ],
  "closed": [
@@ -6553,6 +6643,104 @@
    "closed_ts": 1785359336.8997877,
    "payout": 26.18852,
    "pl": 0.07202
+  },
+  {
+   "key": "CV-3055422",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 30?",
+   "opened": 1785274586.6354675,
+   "cost": 15.101811,
+   "edge": 0.04712,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9576,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.955, 1.8d to resolution, 974% annualized if YES, assumed true P 0.958",
+   "legs": [
+    {
+     "token_id": "105784708092632808810261397318234519956150655684440928829424050651247232142139",
+     "market_id": "3055422",
+     "label": "YES Will the price of Ethereum be above $1,800 on July 30?",
+     "side": "YES",
+     "entry_price": 0.955,
+     "shares": 15.813415
+    }
+   ],
+   "current_prices": {
+    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.9365
+   },
+   "current_value": 14.809263,
+   "unrealized_pl": -0.292548,
+   "unrealized_pl_pct": -1.937,
+   "closed_ts": 1785363139.3150494,
+   "payout": 15.51296,
+   "pl": 0.411149,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3055668",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
+   "opened": 1785350655.3033051,
+   "cost": 17.367,
+   "edge": 0.01833,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9836,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.982, 0.9d to resolution, 755% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "56565267039710558382646963079425993576818627374000416980063520633898406552568",
+     "market_id": "3055668",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 30?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 17.685336
+    }
+   ],
+   "current_prices": {
+    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9895
+   },
+   "current_value": 17.49964,
+   "unrealized_pl": 0.13264,
+   "unrealized_pl_pct": 0.764,
+   "closed_ts": 1785363139.3150494,
+   "payout": 17.490797,
+   "pl": 0.123797,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3124985",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Busan be 35\u00b0C on July 29?",
+   "opened": 1785282132.3311222,
+   "cost": 25.986,
+   "edge": 0.006186,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-07-29T12:00:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970",
+   "legs": [
+    {
+     "token_id": "17764661364186601820105764143571557261011263537589495745867203140588528636890",
+     "market_id": "3124985",
+     "label": "NO Will the highest temperature in Busan be 35\u00b0C on July 29?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 26.789691
+    }
+   ],
+   "current_prices": {
+    "17764661364186601820105764143571557261011263537589495745867203140588528636890": 0.97
+   },
+   "current_value": 25.986,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1785363140.2843537,
+   "payout": 26.789691,
+   "pl": 0.803691
   }
  ],
  "history": [
@@ -7346,6 +7534,14 @@
    "open_value": 400.9212,
    "equity": 1020.9116,
    "realized_total": 22.998,
+   "open_positions": 19
+  },
+  {
+   "ts": 1785363139.3165317,
+   "cash": 621.1783,
+   "open_value": 399.7729,
+   "equity": 1020.9512,
+   "realized_total": 23.605,
    "open_positions": 19
   }
  ],
@@ -10167,6 +10363,62 @@
    "title": "NO-lock: Fed Decision in July?",
    "amount": 26.19,
    "pl": 0.07
+  },
+  {
+   "ts": 1785363139.1848984,
+   "type": "OPEN",
+   "key": "ARB-NO-766064",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Toronto on July 30?",
+   "amount": 25.52,
+   "pl": null
+  },
+  {
+   "ts": 1785363139.1849396,
+   "type": "OPEN",
+   "key": "CV-3055683",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 30?",
+   "amount": 25.52,
+   "pl": null
+  },
+  {
+   "ts": 1785363139.18495,
+   "type": "OPEN",
+   "key": "CV-3081976",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on July 31?",
+   "amount": 6.96,
+   "pl": null
+  },
+  {
+   "ts": 1785363139.3150494,
+   "type": "CLOSE",
+   "key": "CV-3055422",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 30?",
+   "amount": 15.51,
+   "pl": 0.41,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785363139.3150494,
+   "type": "CLOSE",
+   "key": "CV-3055668",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
+   "amount": 17.49,
+   "pl": 0.12,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785363140.2843537,
+   "type": "CLOSE",
+   "key": "LS-3124985",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Busan be 35\u00b0C on July 29?",
+   "amount": 26.79,
+   "pl": 0.8
   }
  ]
 }
