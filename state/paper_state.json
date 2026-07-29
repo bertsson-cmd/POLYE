@@ -1,36 +1,7 @@
 {
- "cash": 647.967968,
+ "cash": 631.63477,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-2940998",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Qualcomm (QCOM) beat quarterly earnings?",
-   "opened": 1784908037.5217533,
-   "cost": 14.857133,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-07-29T21:00:00Z",
-   "note": "YES ask 0.960, 5.2d to resolution, 292% annualized if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "42947838276126727290208332629655596452086291165113456841995322364626664540967",
-     "market_id": "2940998",
-     "label": "YES Will Qualcomm (QCOM) beat quarterly earnings?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 15.476181
-    }
-   ],
-   "current_prices": {
-    "42947838276126727290208332629655596452086291165113456841995322364626664540967": 0.96
-   },
-   "current_value": 14.857134,
-   "unrealized_pl": 1e-06,
-   "unrealized_pl_pct": 0.0
-  },
   {
    "key": "CV-2698776",
    "strategy": "CONVERGE",
@@ -61,35 +32,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "CV-2940995",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Meta (META) beat quarterly earnings?",
-   "opened": 1785064062.6398847,
-   "cost": 18.576984,
-   "edge": 0.054852,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9551999999999999,
-   "resolve_by": "2026-07-29T21:00:00Z",
-   "note": "YES ask 0.948, 3.4d to resolution, 587% annualized if YES, assumed true P 0.955",
-   "legs": [
-    {
-     "token_id": "20507727571841759697572802420896771233893165784950417202024469847919674201398",
-     "market_id": "2940995",
-     "label": "YES Will Meta (META) beat quarterly earnings?",
-     "side": "YES",
-     "entry_price": 0.948,
-     "shares": 19.595975
-    }
-   ],
-   "current_prices": {
-    "20507727571841759697572802420896771233893165784950417202024469847919674201398": 0.948
-   },
-   "current_value": 18.576984,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
-  },
-  {
    "key": "CV-2966930",
    "strategy": "CONVERGE",
    "title": "Converge: Will Amazon.com (AMZN) beat quarterly earnings?",
@@ -112,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9045
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.917
    },
-   "current_value": 9.434028,
-   "unrealized_pl": -0.683172,
-   "unrealized_pl_pct": -6.753
+   "current_value": 9.564404,
+   "unrealized_pl": -0.552796,
+   "unrealized_pl_pct": -5.464
   },
   {
    "key": "CV-3082115",
@@ -141,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.9695
+    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.9765
    },
-   "current_value": 19.315423,
-   "unrealized_pl": -0.109577,
-   "unrealized_pl_pct": -0.564
+   "current_value": 19.454885,
+   "unrealized_pl": 0.029885,
+   "unrealized_pl_pct": 0.154
   },
   {
    "key": "CV-2952486",
@@ -199,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.922
+    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.956
    },
-   "current_value": 24.425731,
-   "unrealized_pl": -1.616019,
-   "unrealized_pl_pct": -6.205
+   "current_value": 25.326463,
+   "unrealized_pl": -0.715287,
+   "unrealized_pl_pct": -2.747
   },
   {
    "key": "CV-2683666",
@@ -257,40 +199,11 @@
     }
    ],
    "current_prices": {
-    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.9665
+    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.967
    },
-   "current_value": 16.084851,
-   "unrealized_pl": 0.041606,
-   "unrealized_pl_pct": 0.259
-  },
-  {
-   "key": "LS-3124746",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Paris be 36\u00b0C on July 29?",
-   "opened": 1785299540.6027272,
-   "cost": 26.06825,
-   "edge": 0.013542,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-07-29T12:00:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960",
-   "legs": [
-    {
-     "token_id": "5873882951452249869387946080234981846056919154290383246989798023288416094882",
-     "market_id": "3124746",
-     "label": "NO Will the highest temperature in Paris be 36\u00b0C on July 29?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 27.154427
-    }
-   ],
-   "current_prices": {
-    "5873882951452249869387946080234981846056919154290383246989798023288416094882": 0.9995
-   },
-   "current_value": 27.14085,
-   "unrealized_pl": 1.0726,
-   "unrealized_pl_pct": 4.115
+   "current_value": 16.093172,
+   "unrealized_pl": 0.049927,
+   "unrealized_pl_pct": 0.311
   },
   {
    "key": "CV-2698835",
@@ -315,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9735
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9745
    },
-   "current_value": 25.842608,
-   "unrealized_pl": -0.225642,
-   "unrealized_pl_pct": -0.866
+   "current_value": 25.869154,
+   "unrealized_pl": -0.199096,
+   "unrealized_pl_pct": -0.764
   },
   {
    "key": "CV-3101537",
@@ -344,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9635
+    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.959
    },
-   "current_value": 26.273923,
-   "unrealized_pl": 0.068173,
-   "unrealized_pl_pct": 0.26
+   "current_value": 26.151212,
+   "unrealized_pl": -0.054538,
+   "unrealized_pl_pct": -0.208
   },
   {
    "key": "CV-907785",
@@ -373,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9655
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.965
    },
-   "current_value": 26.633318,
-   "unrealized_pl": 0.427568,
-   "unrealized_pl_pct": 1.632
+   "current_value": 26.619525,
+   "unrealized_pl": 0.413775,
+   "unrealized_pl_pct": 1.579
   },
   {
    "key": "CV-3158228",
@@ -402,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.97
+    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.965
    },
-   "current_value": 21.30437,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
+   "current_value": 21.194554,
+   "unrealized_pl": -0.109816,
+   "unrealized_pl_pct": -0.515
   },
   {
    "key": "CV-2234098",
@@ -431,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "42646433682040635478226995332628897726192974639059751107216670158587627980176": 0.973
+    "42646433682040635478226995332628897726192974639059751107216670158587627980176": 0.974
    },
-   "current_value": 25.367321,
-   "unrealized_pl": 0.026071,
-   "unrealized_pl_pct": 0.103
+   "current_value": 25.393393,
+   "unrealized_pl": 0.052143,
+   "unrealized_pl_pct": 0.206
   },
   {
    "key": "ARB-NO-766064",
@@ -545,11 +458,11 @@
     "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.985,
     "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.955,
     "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.665,
-    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.515,
+    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.535,
     "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.855,
-    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.985,
-    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.993,
-    "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.997,
+    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.98,
+    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.9925,
+    "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.9965,
     "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.998
    },
    "current_value": 25.58159,
@@ -579,40 +492,69 @@
     }
    ],
    "current_prices": {
-    "47627389634973978199009533004697816218506311265386852090253835249472981260557": 0.9435
+    "47627389634973978199009533004697816218506311265386852090253835249472981260557": 0.9555
    },
-   "current_value": 25.563391,
-   "unrealized_pl": 0.040641,
-   "unrealized_pl_pct": 0.159
+   "current_value": 25.888521,
+   "unrealized_pl": 0.365771,
+   "unrealized_pl_pct": 1.433
   },
   {
-   "key": "CV-3081976",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,700 on July 31?",
-   "opened": 1785363139.18495,
-   "cost": 6.958857,
-   "edge": 0.015228,
+   "key": "LS-2950740",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: EC Vit\u00f3ria 2 - 0 SE Palmeiras?",
+   "opened": 1785366975.2835882,
+   "cost": 24.97925,
+   "edge": 0.01272,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-07-31T16:00:00Z",
-   "note": "YES ask 0.985, 1.7d to resolution, 319% annualized if YES, assumed true P 0.988",
+   "est_p_win": 0.9793,
+   "resolve_by": "2026-07-30T00:30:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.967",
    "legs": [
     {
-     "token_id": "13124774435909371824918100176570772979692257855165527838681447684905891372637",
-     "market_id": "3081976",
-     "label": "YES Will the price of Ethereum be above $1,700 on July 31?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 7.064829
+     "token_id": "69452045493470013918255661603287677935698543219364976621169481231799747756549",
+     "market_id": "2950740",
+     "label": "NO Exact Score: EC Vit\u00f3ria 2 - 0 SE Palmeiras?",
+     "side": "NO",
+     "entry_price": 0.967,
+     "shares": 25.831696
     }
    ],
    "current_prices": {
-    "13124774435909371824918100176570772979692257855165527838681447684905891372637": 0.9845
+    "69452045493470013918255661603287677935698543219364976621169481231799747756549": 0.9655
    },
-   "current_value": 6.955324,
-   "unrealized_pl": -0.003533,
-   "unrealized_pl_pct": -0.051
+   "current_value": 24.940502,
+   "unrealized_pl": -0.038748,
+   "unrealized_pl_pct": -0.155
+  },
+  {
+   "key": "CV-3081981",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 31?",
+   "opened": 1785366975.2836168,
+   "cost": 25.52375,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-31T16:00:00Z",
+   "note": "YES ask 0.950, 1.7d to resolution, 1132% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "40024234880706438882223866522687655425102114843402388725145770934432993890185",
+     "market_id": "3081981",
+     "label": "YES Will the price of Ethereum be above $1,800 on July 31?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 26.867105
+    }
+   ],
+   "current_prices": {
+    "40024234880706438882223866522687655425102114843402388725145770934432993890185": 0.945
+   },
+   "current_value": 25.389414,
+   "unrealized_pl": -0.134336,
+   "unrealized_pl_pct": -0.526
   }
  ],
  "closed": [
@@ -6741,6 +6683,135 @@
    "closed_ts": 1785363140.2843537,
    "payout": 26.789691,
    "pl": 0.803691
+  },
+  {
+   "key": "CV-3081976",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on July 31?",
+   "opened": 1785363139.18495,
+   "cost": 6.958857,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-07-31T16:00:00Z",
+   "note": "YES ask 0.985, 1.7d to resolution, 319% annualized if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "13124774435909371824918100176570772979692257855165527838681447684905891372637",
+     "market_id": "3081976",
+     "label": "YES Will the price of Ethereum be above $1,700 on July 31?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 7.064829
+    }
+   ],
+   "current_prices": {
+    "13124774435909371824918100176570772979692257855165527838681447684905891372637": 0.9845
+   },
+   "current_value": 6.955324,
+   "unrealized_pl": -0.003533,
+   "unrealized_pl_pct": -0.051,
+   "closed_ts": 1785366981.6874344,
+   "payout": 7.015375,
+   "pl": 0.056518,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2940998",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Qualcomm (QCOM) beat quarterly earnings?",
+   "opened": 1784908037.5217533,
+   "cost": 14.857133,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-07-29T21:00:00Z",
+   "note": "YES ask 0.960, 5.2d to resolution, 292% annualized if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "42947838276126727290208332629655596452086291165113456841995322364626664540967",
+     "market_id": "2940998",
+     "label": "YES Will Qualcomm (QCOM) beat quarterly earnings?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 15.476181
+    }
+   ],
+   "current_prices": {
+    "42947838276126727290208332629655596452086291165113456841995322364626664540967": 0.96
+   },
+   "current_value": 14.857134,
+   "unrealized_pl": 1e-06,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1785366983.0900862,
+   "payout": 0.0,
+   "pl": -14.857133
+  },
+  {
+   "key": "CV-2940995",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Meta (META) beat quarterly earnings?",
+   "opened": 1785064062.6398847,
+   "cost": 18.576984,
+   "edge": 0.054852,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9551999999999999,
+   "resolve_by": "2026-07-29T21:00:00Z",
+   "note": "YES ask 0.948, 3.4d to resolution, 587% annualized if YES, assumed true P 0.955",
+   "legs": [
+    {
+     "token_id": "20507727571841759697572802420896771233893165784950417202024469847919674201398",
+     "market_id": "2940995",
+     "label": "YES Will Meta (META) beat quarterly earnings?",
+     "side": "YES",
+     "entry_price": 0.948,
+     "shares": 19.595975
+    }
+   ],
+   "current_prices": {
+    "20507727571841759697572802420896771233893165784950417202024469847919674201398": 0.948
+   },
+   "current_value": 18.576984,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1785366983.0900862,
+   "payout": 0.0,
+   "pl": -18.576984
+  },
+  {
+   "key": "LS-3124746",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Paris be 36\u00b0C on July 29?",
+   "opened": 1785299540.6027272,
+   "cost": 26.06825,
+   "edge": 0.013542,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-07-29T12:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960",
+   "legs": [
+    {
+     "token_id": "5873882951452249869387946080234981846056919154290383246989798023288416094882",
+     "market_id": "3124746",
+     "label": "NO Will the highest temperature in Paris be 36\u00b0C on July 29?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 27.154427
+    }
+   ],
+   "current_prices": {
+    "5873882951452249869387946080234981846056919154290383246989798023288416094882": 0.96
+   },
+   "current_value": 26.06825,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1785366983.0900862,
+   "payout": 27.154427,
+   "pl": 1.086177
   }
  ],
  "history": [
@@ -7542,6 +7613,14 @@
    "open_value": 399.7729,
    "equity": 1020.9512,
    "realized_total": 23.605,
+   "open_positions": 19
+  },
+  {
+   "ts": 1785366981.6898007,
+   "cash": 604.4803,
+   "open_value": 417.3992,
+   "equity": 1021.8796,
+   "realized_total": 24.4652,
    "open_positions": 19
   }
  ],
@@ -10419,6 +10498,61 @@
    "title": "Fade: Will the highest temperature in Busan be 35\u00b0C on July 29?",
    "amount": 26.79,
    "pl": 0.8
+  },
+  {
+   "ts": 1785366975.2835882,
+   "type": "OPEN",
+   "key": "LS-2950740",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: EC Vit\u00f3ria 2 - 0 SE Palmeiras?",
+   "amount": 24.98,
+   "pl": null
+  },
+  {
+   "ts": 1785366975.2836168,
+   "type": "OPEN",
+   "key": "CV-3081981",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on July 31?",
+   "amount": 25.52,
+   "pl": null
+  },
+  {
+   "ts": 1785366981.6874344,
+   "type": "CLOSE",
+   "key": "CV-3081976",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on July 31?",
+   "amount": 7.02,
+   "pl": 0.06,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785366983.0900862,
+   "type": "CLOSE",
+   "key": "CV-2940998",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Qualcomm (QCOM) beat quarterly earnings?",
+   "amount": 0.0,
+   "pl": -14.86
+  },
+  {
+   "ts": 1785366983.0900862,
+   "type": "CLOSE",
+   "key": "CV-2940995",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Meta (META) beat quarterly earnings?",
+   "amount": 0.0,
+   "pl": -18.58
+  },
+  {
+   "ts": 1785366983.0900862,
+   "type": "CLOSE",
+   "key": "LS-3124746",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Paris be 36\u00b0C on July 29?",
+   "amount": 27.15,
+   "pl": 1.09
   }
  ]
 }
