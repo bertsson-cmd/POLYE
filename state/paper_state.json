@@ -1,5 +1,5 @@
 {
- "cash": 555.117319,
+ "cash": 606.861499,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.986
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9885
    },
-   "current_value": 25.090643,
-   "unrealized_pl": 0.050893,
-   "unrealized_pl_pct": 0.203
+   "current_value": 25.154261,
+   "unrealized_pl": 0.114511,
+   "unrealized_pl_pct": 0.457
   },
   {
    "key": "CV-2940998",
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "42947838276126727290208332629655596452086291165113456841995322364626664540967": 0.8845
+    "42947838276126727290208332629655596452086291165113456841995322364626664540967": 0.96
    },
-   "current_value": 13.688682,
-   "unrealized_pl": -1.168451,
-   "unrealized_pl_pct": -7.865
+   "current_value": 14.857134,
+   "unrealized_pl": 1e-06,
+   "unrealized_pl_pct": 0.0
   },
   {
    "key": "CV-2698776",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "24830944500018836266000616361473526128046523034422936253112501619955922038585": 0.9785
+    "24830944500018836266000616361473526128046523034422936253112501619955922038585": 0.984
    },
-   "current_value": 25.736255,
-   "unrealized_pl": 0.065755,
-   "unrealized_pl_pct": 0.256
+   "current_value": 25.880914,
+   "unrealized_pl": 0.210414,
+   "unrealized_pl_pct": 0.82
   },
   {
    "key": "CV-2966930",
@@ -177,213 +177,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "ARB-NO-753888",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in NYC on July 28?",
-   "opened": 1785153627.7597215,
-   "cost": 25.8825,
-   "edge": 0.04436,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 21.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-28T12:00:00Z",
-   "note": "22 outcomes, NO asks sum 20.1080 vs payout 21, 5 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "97582005678213861640224297707601866753748159256684239290510267975741707293784",
-     "market_id": "3122482",
-     "label": "NO Will the highest temperature in New York City be 69\u00b0F or below on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "71751535221654462923381935915718906857316142280964790698962368361034901377913",
-     "market_id": "3122483",
-     "label": "NO Will the highest temperature in New York City be between 70-71\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.997,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "48955097192278932158766192425592956447154235816507982114051959091768980396137",
-     "market_id": "3122484",
-     "label": "NO Will the highest temperature in New York City be between 72-73\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "31991285293002222402326700052999283677109454666728698184735961559914849936215",
-     "market_id": "3122485",
-     "label": "NO Will the highest temperature in New York City be between 74-75\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.88,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "93848667450411385480518488131533620844459874516746033128798123041687869341666",
-     "market_id": "3122486",
-     "label": "NO Will the highest temperature in New York City be between 76-77\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.74,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "35793667811473892935914853843845851624717682788581077032888452827305796512029",
-     "market_id": "3122487",
-     "label": "NO Will the highest temperature in New York City be between 78-79\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.74,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "60933188847120971500380084493600274614553352139534380009677408968732096840035",
-     "market_id": "3122488",
-     "label": "NO Will the highest temperature in New York City be between 80-81\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.79,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "60606610390813001625177070735042948205738639524881217364727181050742807458687",
-     "market_id": "3122489",
-     "label": "NO Will the highest temperature in New York City be between 82-83\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.93,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "49945889107913197501699825459730081705822744971921543708683411678839686348886",
-     "market_id": "3122490",
-     "label": "NO Will the highest temperature in New York City be between 84-85\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.992,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "91638067636287613283731796028704201910191148217737699752913780719434023949043",
-     "market_id": "3122491",
-     "label": "NO Will the highest temperature in New York City be between 86-87\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.997,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "32770356155956680514048720175698463243011001164263277778917126979041226109022",
-     "market_id": "3122492",
-     "label": "NO Will the highest temperature in New York City be 88\u00b0F or higher on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "97582005678213861640224297707601866753748159256684239290510267975741707293784",
-     "market_id": "3122482",
-     "label": "NO Will the highest temperature in New York City be 69\u00b0F or below on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "71751535221654462923381935915718906857316142280964790698962368361034901377913",
-     "market_id": "3122483",
-     "label": "NO Will the highest temperature in New York City be between 70-71\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.997,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "48955097192278932158766192425592956447154235816507982114051959091768980396137",
-     "market_id": "3122484",
-     "label": "NO Will the highest temperature in New York City be between 72-73\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "31991285293002222402326700052999283677109454666728698184735961559914849936215",
-     "market_id": "3122485",
-     "label": "NO Will the highest temperature in New York City be between 74-75\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.88,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "93848667450411385480518488131533620844459874516746033128798123041687869341666",
-     "market_id": "3122486",
-     "label": "NO Will the highest temperature in New York City be between 76-77\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.74,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "35793667811473892935914853843845851624717682788581077032888452827305796512029",
-     "market_id": "3122487",
-     "label": "NO Will the highest temperature in New York City be between 78-79\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.74,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "60933188847120971500380084493600274614553352139534380009677408968732096840035",
-     "market_id": "3122488",
-     "label": "NO Will the highest temperature in New York City be between 80-81\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.79,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "60606610390813001625177070735042948205738639524881217364727181050742807458687",
-     "market_id": "3122489",
-     "label": "NO Will the highest temperature in New York City be between 82-83\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.93,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "49945889107913197501699825459730081705822744971921543708683411678839686348886",
-     "market_id": "3122490",
-     "label": "NO Will the highest temperature in New York City be between 84-85\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.992,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "91638067636287613283731796028704201910191148217737699752913780719434023949043",
-     "market_id": "3122491",
-     "label": "NO Will the highest temperature in New York City be between 86-87\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.997,
-     "shares": 1.287174
-    },
-    {
-     "token_id": "32770356155956680514048720175698463243011001164263277778917126979041226109022",
-     "market_id": "3122492",
-     "label": "NO Will the highest temperature in New York City be 88\u00b0F or higher on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 1.287174
-    }
-   ],
-   "current_prices": {
-    "97582005678213861640224297707601866753748159256684239290510267975741707293784": 0.9995,
-    "71751535221654462923381935915718906857316142280964790698962368361034901377913": 0.9995,
-    "48955097192278932158766192425592956447154235816507982114051959091768980396137": 0.9995,
-    "31991285293002222402326700052999283677109454666728698184735961559914849936215": 0.9995,
-    "93848667450411385480518488131533620844459874516746033128798123041687869341666": 0.9995,
-    "35793667811473892935914853843845851624717682788581077032888452827305796512029": 0.9995,
-    "60933188847120971500380084493600274614553352139534380009677408968732096840035": 0.0005,
-    "60606610390813001625177070735042948205738639524881217364727181050742807458687": 0.9995,
-    "49945889107913197501699825459730081705822744971921543708683411678839686348886": 0.9995,
-    "91638067636287613283731796028704201910191148217737699752913780719434023949043": 0.9995,
-    "32770356155956680514048720175698463243011001164263277778917126979041226109022": 0.9995
-   },
-   "current_value": 27.030654,
-   "unrealized_pl": 1.148154,
-   "unrealized_pl_pct": 4.436
-  },
-  {
    "key": "CV-3101537",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 1?",
@@ -406,130 +199,11 @@
     }
    ],
    "current_prices": {
-    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.9385
+    "44626791420916829875372063483909604539471820857189021503336190708470553238519": 0.953
    },
-   "current_value": 25.683765,
-   "unrealized_pl": -0.259985,
-   "unrealized_pl_pct": -1.002
-  },
-  {
-   "key": "ARB-NO-753889",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in Dallas on July 28?",
-   "opened": 1785171990.1192384,
-   "cost": 25.9305,
-   "edge": 0.002707,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 10.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-28T12:00:00Z",
-   "note": "11 outcomes, NO asks sum 9.9730 vs payout 10, 5 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "77608408227059995093823376487176856715326384432803407041798244834089422556900",
-     "market_id": "3122493",
-     "label": "NO Will the highest temperature in Dallas be 95\u00b0F or below on July 28?",
-     "side": "NO",
-     "entry_price": 0.998,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "63429607378631545028088342279598359121768366381669567465341965101735032238506",
-     "market_id": "3122494",
-     "label": "NO Will the highest temperature in Dallas be between 96-97\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "18188073124718103505905634923370038991234683062464927439939874195571739930819",
-     "market_id": "3122495",
-     "label": "NO Will the highest temperature in Dallas be between 98-99\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.84,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "63982233028280357936895727207570563838991496432535309326088208071104167476075",
-     "market_id": "3122496",
-     "label": "NO Will the highest temperature in Dallas be between 100-101\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.61,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "103552780378749219982527150890045314785925588770628372414426584699715977351478",
-     "market_id": "3122497",
-     "label": "NO Will the highest temperature in Dallas be between 102-103\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.66,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "51884169192960072771987833132099744030100812383009867421527924881902770814574",
-     "market_id": "3122498",
-     "label": "NO Will the highest temperature in Dallas be between 104-105\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.89,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "38621973223886495867451885236052582782420715127737042616000961250191177611050",
-     "market_id": "3122499",
-     "label": "NO Will the highest temperature in Dallas be between 106-107\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "29289540912058185578312873335449672863256234362569146944010271494822470991414",
-     "market_id": "3122500",
-     "label": "NO Will the highest temperature in Dallas be between 108-109\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.998,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "72230926338698319066192591912010130108156596650631213843484295337993297780397",
-     "market_id": "3122501",
-     "label": "NO Will the highest temperature in Dallas be between 110-111\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "44917329448933265595770602700197799056734255433983274481842964533945727374060",
-     "market_id": "3122502",
-     "label": "NO Will the highest temperature in Dallas be between 112-113\u00b0F on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.60007
-    },
-    {
-     "token_id": "84079499094251184231952049093972478528365813462038793622191599394884922326566",
-     "market_id": "3122503",
-     "label": "NO Will the highest temperature in Dallas be 114\u00b0F or higher on July 28?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.60007
-    }
-   ],
-   "current_prices": {
-    "77608408227059995093823376487176856715326384432803407041798244834089422556900": 0.9995,
-    "63429607378631545028088342279598359121768366381669567465341965101735032238506": 0.9995,
-    "18188073124718103505905634923370038991234683062464927439939874195571739930819": 0.0005,
-    "63982233028280357936895727207570563838991496432535309326088208071104167476075": 0.9995,
-    "103552780378749219982527150890045314785925588770628372414426584699715977351478": 0.9995,
-    "51884169192960072771987833132099744030100812383009867421527924881902770814574": 0.9995,
-    "38621973223886495867451885236052582782420715127737042616000961250191177611050": 0.9995,
-    "29289540912058185578312873335449672863256234362569146944010271494822470991414": 0.9995,
-    "72230926338698319066192591912010130108156596650631213843484295337993297780397": 0.9995,
-    "44917329448933265595770602700197799056734255433983274481842964533945727374060": 0.9995,
-    "84079499094251184231952049093972478528365813462038793622191599394884922326566": 0.9995
-   },
-   "current_value": 26.0007,
-   "unrealized_pl": 0.0702,
-   "unrealized_pl_pct": 0.271
+   "current_value": 26.080584,
+   "unrealized_pl": 0.136834,
+   "unrealized_pl_pct": 0.527
   },
   {
    "key": "CV-3082115",
@@ -554,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.956
+    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.963
    },
-   "current_value": 19.046462,
-   "unrealized_pl": -0.378538,
-   "unrealized_pl_pct": -1.949
+   "current_value": 19.185923,
+   "unrealized_pl": -0.239077,
+   "unrealized_pl_pct": -1.231
   },
   {
    "key": "CV-3030339",
@@ -583,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "76059396827326859432864822362505568225100328173658895178198582904997928691302": 0.9495
+    "76059396827326859432864822362505568225100328173658895178198582904997928691302": 0.9825
    },
-   "current_value": 24.511575,
-   "unrealized_pl": -0.580843,
-   "unrealized_pl_pct": -2.315
+   "current_value": 25.363478,
+   "unrealized_pl": 0.27106,
+   "unrealized_pl_pct": 1.08
   },
   {
    "key": "CV-2952486",
@@ -612,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.92
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.905
    },
-   "current_value": 24.787771,
-   "unrealized_pl": -1.077729,
-   "unrealized_pl_pct": -4.167
+   "current_value": 24.383622,
+   "unrealized_pl": -1.481878,
+   "unrealized_pl_pct": -5.729
   },
   {
    "key": "CV-3055668",
@@ -641,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9755
+    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9775
    },
-   "current_value": 26.16653,
-   "unrealized_pl": 0.14753,
-   "unrealized_pl_pct": 0.567
+   "current_value": 26.220178,
+   "unrealized_pl": 0.201178,
+   "unrealized_pl_pct": 0.773
   },
   {
    "key": "CV-3083724",
@@ -670,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.952
+    "85120775770768568171037319691430512769043349724236381575493834592043972740948": 0.9475
    },
-   "current_value": 25.220494,
-   "unrealized_pl": -0.821256,
-   "unrealized_pl_pct": -3.154
+   "current_value": 25.10128,
+   "unrealized_pl": -0.94047,
+   "unrealized_pl_pct": -3.611
   },
   {
    "key": "CV-3055422",
@@ -699,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.9095
+    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.947
    },
-   "current_value": 14.382301,
-   "unrealized_pl": -0.71951,
-   "unrealized_pl_pct": -4.764
+   "current_value": 14.975304,
+   "unrealized_pl": -0.126507,
+   "unrealized_pl_pct": -0.838
   },
   {
    "key": "ARB-NO-287395",
@@ -762,8 +436,8 @@
    "current_prices": {
     "81718924566344342339932153243056822500865643754622838691875214933560980686588": 0.9995,
     "90713175285238837229141362456380660699457701142142655731293716395090014512187": 0.9985,
-    "36015050921127306245266044699797268780268172446856063291868548314968920497494": 0.2335,
-    "102979714187432523726496609637889951679226430871494531752837414533106422105296": 0.762,
+    "36015050921127306245266044699797268780268172446856063291868548314968920497494": 0.2115,
+    "102979714187432523726496609637889951679226430871494531752837414533106422105296": 0.7885,
     "82752177927542167404038816431416174971863195141383694610771473564093425601859": 0.9965
    },
    "current_value": 26.18852,
@@ -793,11 +467,11 @@
     }
    ],
    "current_prices": {
-    "101605271903409034579386009790901548692210657388823527686779652447886552556329": 0.9915
+    "101605271903409034579386009790901548692210657388823527686779652447886552556329": 0.992
    },
-   "current_value": 26.34233,
-   "unrealized_pl": 0.22583,
-   "unrealized_pl_pct": 0.865
+   "current_value": 26.355614,
+   "unrealized_pl": 0.239114,
+   "unrealized_pl_pct": 0.916
   },
   {
    "key": "LS-3124985",
@@ -851,11 +525,11 @@
     }
    ],
    "current_prices": {
-    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.968
+    "43783728297751003049731197784493047712213881171251242252606704800494333274628": 0.9685
    },
-   "current_value": 25.948887,
-   "unrealized_pl": -0.053613,
-   "unrealized_pl_pct": -0.206
+   "current_value": 25.96229,
+   "unrealized_pl": -0.04021,
+   "unrealized_pl_pct": -0.155
   },
   {
    "key": "CV-3101445",
@@ -880,11 +554,11 @@
     }
    ],
    "current_prices": {
-    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.963
+    "84306960292432877355917008111448827882741910864537899125033002519863013338041": 0.967
    },
-   "current_value": 16.026602,
-   "unrealized_pl": -0.016643,
-   "unrealized_pl_pct": -0.104
+   "current_value": 16.093172,
+   "unrealized_pl": 0.049927,
+   "unrealized_pl_pct": 0.311
   },
   {
    "key": "LS-3124746",
@@ -909,11 +583,11 @@
     }
    ],
    "current_prices": {
-    "5873882951452249869387946080234981846056919154290383246989798023288416094882": 0.955
+    "5873882951452249869387946080234981846056919154290383246989798023288416094882": 0.965
    },
-   "current_value": 25.932478,
-   "unrealized_pl": -0.135772,
-   "unrealized_pl_pct": -0.521
+   "current_value": 26.204022,
+   "unrealized_pl": 0.135772,
+   "unrealized_pl_pct": 0.521
   },
   {
    "key": "CV-2698835",
@@ -938,11 +612,11 @@
     }
    ],
    "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.98
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.9795
    },
-   "current_value": 26.015157,
-   "unrealized_pl": -0.053093,
-   "unrealized_pl_pct": -0.204
+   "current_value": 26.001884,
+   "unrealized_pl": -0.066366,
+   "unrealized_pl_pct": -0.255
   }
  ],
  "closed": [
@@ -6310,6 +5984,338 @@
    "closed_ts": 1785287460.6735198,
    "payout": 26.879132,
    "pl": 0.860132
+  },
+  {
+   "key": "ARB-NO-753888",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in NYC on July 28?",
+   "opened": 1785153627.7597215,
+   "cost": 25.8825,
+   "edge": 0.04436,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 21.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-28T12:00:00Z",
+   "note": "22 outcomes, NO asks sum 20.1080 vs payout 21, 5 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "97582005678213861640224297707601866753748159256684239290510267975741707293784",
+     "market_id": "3122482",
+     "label": "NO Will the highest temperature in New York City be 69\u00b0F or below on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "71751535221654462923381935915718906857316142280964790698962368361034901377913",
+     "market_id": "3122483",
+     "label": "NO Will the highest temperature in New York City be between 70-71\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "48955097192278932158766192425592956447154235816507982114051959091768980396137",
+     "market_id": "3122484",
+     "label": "NO Will the highest temperature in New York City be between 72-73\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "31991285293002222402326700052999283677109454666728698184735961559914849936215",
+     "market_id": "3122485",
+     "label": "NO Will the highest temperature in New York City be between 74-75\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.88,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "93848667450411385480518488131533620844459874516746033128798123041687869341666",
+     "market_id": "3122486",
+     "label": "NO Will the highest temperature in New York City be between 76-77\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "35793667811473892935914853843845851624717682788581077032888452827305796512029",
+     "market_id": "3122487",
+     "label": "NO Will the highest temperature in New York City be between 78-79\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60933188847120971500380084493600274614553352139534380009677408968732096840035",
+     "market_id": "3122488",
+     "label": "NO Will the highest temperature in New York City be between 80-81\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.79,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60606610390813001625177070735042948205738639524881217364727181050742807458687",
+     "market_id": "3122489",
+     "label": "NO Will the highest temperature in New York City be between 82-83\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.93,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "49945889107913197501699825459730081705822744971921543708683411678839686348886",
+     "market_id": "3122490",
+     "label": "NO Will the highest temperature in New York City be between 84-85\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.992,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "91638067636287613283731796028704201910191148217737699752913780719434023949043",
+     "market_id": "3122491",
+     "label": "NO Will the highest temperature in New York City be between 86-87\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "32770356155956680514048720175698463243011001164263277778917126979041226109022",
+     "market_id": "3122492",
+     "label": "NO Will the highest temperature in New York City be 88\u00b0F or higher on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "97582005678213861640224297707601866753748159256684239290510267975741707293784",
+     "market_id": "3122482",
+     "label": "NO Will the highest temperature in New York City be 69\u00b0F or below on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "71751535221654462923381935915718906857316142280964790698962368361034901377913",
+     "market_id": "3122483",
+     "label": "NO Will the highest temperature in New York City be between 70-71\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "48955097192278932158766192425592956447154235816507982114051959091768980396137",
+     "market_id": "3122484",
+     "label": "NO Will the highest temperature in New York City be between 72-73\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "31991285293002222402326700052999283677109454666728698184735961559914849936215",
+     "market_id": "3122485",
+     "label": "NO Will the highest temperature in New York City be between 74-75\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.88,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "93848667450411385480518488131533620844459874516746033128798123041687869341666",
+     "market_id": "3122486",
+     "label": "NO Will the highest temperature in New York City be between 76-77\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "35793667811473892935914853843845851624717682788581077032888452827305796512029",
+     "market_id": "3122487",
+     "label": "NO Will the highest temperature in New York City be between 78-79\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.74,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60933188847120971500380084493600274614553352139534380009677408968732096840035",
+     "market_id": "3122488",
+     "label": "NO Will the highest temperature in New York City be between 80-81\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.79,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "60606610390813001625177070735042948205738639524881217364727181050742807458687",
+     "market_id": "3122489",
+     "label": "NO Will the highest temperature in New York City be between 82-83\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.93,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "49945889107913197501699825459730081705822744971921543708683411678839686348886",
+     "market_id": "3122490",
+     "label": "NO Will the highest temperature in New York City be between 84-85\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.992,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "91638067636287613283731796028704201910191148217737699752913780719434023949043",
+     "market_id": "3122491",
+     "label": "NO Will the highest temperature in New York City be between 86-87\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 1.287174
+    },
+    {
+     "token_id": "32770356155956680514048720175698463243011001164263277778917126979041226109022",
+     "market_id": "3122492",
+     "label": "NO Will the highest temperature in New York City be 88\u00b0F or higher on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 1.287174
+    }
+   ],
+   "current_prices": {
+    "97582005678213861640224297707601866753748159256684239290510267975741707293784": 0.999,
+    "71751535221654462923381935915718906857316142280964790698962368361034901377913": 0.997,
+    "48955097192278932158766192425592956447154235816507982114051959091768980396137": 0.99,
+    "31991285293002222402326700052999283677109454666728698184735961559914849936215": 0.88,
+    "93848667450411385480518488131533620844459874516746033128798123041687869341666": 0.74,
+    "35793667811473892935914853843845851624717682788581077032888452827305796512029": 0.74,
+    "60933188847120971500380084493600274614553352139534380009677408968732096840035": 0.79,
+    "60606610390813001625177070735042948205738639524881217364727181050742807458687": 0.93,
+    "49945889107913197501699825459730081705822744971921543708683411678839686348886": 0.992,
+    "91638067636287613283731796028704201910191148217737699752913780719434023949043": 0.997,
+    "32770356155956680514048720175698463243011001164263277778917126979041226109022": 0.999
+   },
+   "current_value": 27.030654,
+   "unrealized_pl": 1.148154,
+   "unrealized_pl_pct": 4.436,
+   "closed_ts": 1785309897.7066286,
+   "payout": 25.74348,
+   "pl": -0.13902
+  },
+  {
+   "key": "ARB-NO-753889",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Dallas on July 28?",
+   "opened": 1785171990.1192384,
+   "cost": 25.9305,
+   "edge": 0.002707,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-28T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9730 vs payout 10, 5 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "77608408227059995093823376487176856715326384432803407041798244834089422556900",
+     "market_id": "3122493",
+     "label": "NO Will the highest temperature in Dallas be 95\u00b0F or below on July 28?",
+     "side": "NO",
+     "entry_price": 0.998,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "63429607378631545028088342279598359121768366381669567465341965101735032238506",
+     "market_id": "3122494",
+     "label": "NO Will the highest temperature in Dallas be between 96-97\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "18188073124718103505905634923370038991234683062464927439939874195571739930819",
+     "market_id": "3122495",
+     "label": "NO Will the highest temperature in Dallas be between 98-99\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.84,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "63982233028280357936895727207570563838991496432535309326088208071104167476075",
+     "market_id": "3122496",
+     "label": "NO Will the highest temperature in Dallas be between 100-101\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.61,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "103552780378749219982527150890045314785925588770628372414426584699715977351478",
+     "market_id": "3122497",
+     "label": "NO Will the highest temperature in Dallas be between 102-103\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.66,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "51884169192960072771987833132099744030100812383009867421527924881902770814574",
+     "market_id": "3122498",
+     "label": "NO Will the highest temperature in Dallas be between 104-105\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.89,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "38621973223886495867451885236052582782420715127737042616000961250191177611050",
+     "market_id": "3122499",
+     "label": "NO Will the highest temperature in Dallas be between 106-107\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "29289540912058185578312873335449672863256234362569146944010271494822470991414",
+     "market_id": "3122500",
+     "label": "NO Will the highest temperature in Dallas be between 108-109\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.998,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "72230926338698319066192591912010130108156596650631213843484295337993297780397",
+     "market_id": "3122501",
+     "label": "NO Will the highest temperature in Dallas be between 110-111\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "44917329448933265595770602700197799056734255433983274481842964533945727374060",
+     "market_id": "3122502",
+     "label": "NO Will the highest temperature in Dallas be between 112-113\u00b0F on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.60007
+    },
+    {
+     "token_id": "84079499094251184231952049093972478528365813462038793622191599394884922326566",
+     "market_id": "3122503",
+     "label": "NO Will the highest temperature in Dallas be 114\u00b0F or higher on July 28?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.60007
+    }
+   ],
+   "current_prices": {
+    "77608408227059995093823376487176856715326384432803407041798244834089422556900": 0.998,
+    "63429607378631545028088342279598359121768366381669567465341965101735032238506": 0.99,
+    "18188073124718103505905634923370038991234683062464927439939874195571739930819": 0.84,
+    "63982233028280357936895727207570563838991496432535309326088208071104167476075": 0.61,
+    "103552780378749219982527150890045314785925588770628372414426584699715977351478": 0.66,
+    "51884169192960072771987833132099744030100812383009867421527924881902770814574": 0.89,
+    "38621973223886495867451885236052582782420715127737042616000961250191177611050": 0.99,
+    "29289540912058185578312873335449672863256234362569146944010271494822470991414": 0.998,
+    "72230926338698319066192591912010130108156596650631213843484295337993297780397": 0.999,
+    "44917329448933265595770602700197799056734255433983274481842964533945727374060": 0.999,
+    "84079499094251184231952049093972478528365813462038793622191599394884922326566": 0.999
+   },
+   "current_value": 26.0007,
+   "unrealized_pl": 0.0702,
+   "unrealized_pl_pct": 0.271,
+   "closed_ts": 1785309897.7066286,
+   "payout": 26.0007,
+   "pl": 0.0702
   }
  ],
  "history": [
@@ -7022,6 +7028,14 @@
    "cash": 555.1173,
    "open_value": 489.4697,
    "equity": 1044.587,
+   "realized_total": 47.2818,
+   "open_positions": 22
+  },
+  {
+   "ts": 1785309891.1794455,
+   "cash": 555.1173,
+   "open_value": 492.7094,
+   "equity": 1047.8267,
    "realized_total": 47.2818,
    "open_positions": 22
   }
@@ -9675,6 +9689,24 @@
    "title": "Converge: Will there be between 0 and 20 average daily transits of the",
    "amount": 26.07,
    "pl": null
+  },
+  {
+   "ts": 1785309897.7066286,
+   "type": "CLOSE",
+   "key": "ARB-NO-753888",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in NYC on July 28?",
+   "amount": 25.74,
+   "pl": -0.14
+  },
+  {
+   "ts": 1785309897.7066286,
+   "type": "CLOSE",
+   "key": "ARB-NO-753889",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Dallas on July 28?",
+   "amount": 26.0,
+   "pl": 0.07
   }
  ]
 }
