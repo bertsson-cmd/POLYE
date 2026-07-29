@@ -50,6 +50,9 @@ _TEMPLATE = r"""<!DOCTYPE html>
   .badge{border:1px solid var(--line);border-radius:999px;padding:5px 12px;
          color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
   .badge b{color:var(--cyan);font-weight:600}
+  a.badge.control{color:var(--cyan);border-color:var(--cyan);text-decoration:none;
+                  display:inline-flex;align-items:center;gap:6px;transition:.15s}
+  a.badge.control:hover{background:rgba(56,225,255,.1)}
   .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
          gap:12px;margin-bottom:18px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;
@@ -106,6 +109,9 @@ _TEMPLATE = r"""<!DOCTYPE html>
   <div style="display:flex;gap:8px;flex-wrap:wrap">
     <span class="badge">Mode <b>Paper</b></span>
     <span class="badge" id="b-updated">—</span>
+    <a class="badge control" href="__CONTROL_PANEL_URL__"
+       title="Only reachable with an SSH tunnel or Tailscale connection to the VPS running control_server.py — see LIVE.md">
+       🎛 Control Panel</a>
   </div>
 </header>
 
@@ -371,7 +377,8 @@ def write_dashboard(state: dict, opportunities=None, docs_dir: str = None) -> st
     os.makedirs(docs_dir, exist_ok=True)
     html = (_TEMPLATE
             .replace("__STATE_JSON__", json.dumps(state))
-            .replace("__OPPS_JSON__", json.dumps(opportunities or [])))
+            .replace("__OPPS_JSON__", json.dumps(opportunities or []))
+            .replace("__CONTROL_PANEL_URL__", config.CONTROL_PANEL_URL))
     path = os.path.join(docs_dir, "index.html")
     with open(path, "w") as f:
         f.write(html)

@@ -40,6 +40,8 @@
   .badge.warn b{color:var(--amber)}
   .badge.danger{border-color:var(--red)}
   .badge.danger b{color:var(--red)}
+  a.badge.link{color:var(--cyan);border-color:var(--cyan);text-decoration:none;transition:.15s}
+  a.badge.link:hover{background:rgba(56,225,255,.1)}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
         padding:18px 18px 16px;margin-bottom:18px}
   .card h2{font-family:"Space Grotesk";font-size:14px;font-weight:500;margin:0 0 4px;
@@ -180,6 +182,7 @@ function fmtPct(n) {
 
 function renderBadges(s) {
   const b = [];
+  b.push('<a class="badge link" href="https://bertsson-cmd.github.io/POLYE/">← Dashboard</a>');
   b.push(`<span class="badge ${s.armed ? "warn" : ""}">Armed <b>${s.armed ? "YES" : "no"}</b></span>`);
   b.push(`<span class="badge ${s.halted ? "danger" : "ok"}">Halted <b>${s.halted ? "YES" : "no"}</b></span>`);
   b.push(`<span class="badge ${s.controls.paused ? "warn" : "ok"}">Paused <b>${s.controls.paused ? "YES" : "no"}</b></span>`);
