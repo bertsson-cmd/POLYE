@@ -1,5 +1,5 @@
 {
- "cash": 604.565925,
+ "cash": 587.198925,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.987
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9875
    },
-   "current_value": 25.11609,
-   "unrealized_pl": 0.07634,
-   "unrealized_pl_pct": 0.305
+   "current_value": 25.128814,
+   "unrealized_pl": 0.089064,
+   "unrealized_pl_pct": 0.356
   },
   {
    "key": "CV-2940998",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.963
+    "73635731262444911445728611303771025220313677409842671192006867486263504466310": 0.974
    },
-   "current_value": 19.185923,
-   "unrealized_pl": -0.239077,
-   "unrealized_pl_pct": -1.231
+   "current_value": 19.405077,
+   "unrealized_pl": -0.019923,
+   "unrealized_pl_pct": -0.103
   },
   {
    "key": "CV-2952486",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.956
+    "105784708092632808810261397318234519956150655684440928829424050651247232142139": 0.968
    },
-   "current_value": 15.117625,
-   "unrealized_pl": 0.015814,
-   "unrealized_pl_pct": 0.105
+   "current_value": 15.307386,
+   "unrealized_pl": 0.205575,
+   "unrealized_pl_pct": 1.361
   },
   {
    "key": "ARB-NO-287395",
@@ -617,6 +617,35 @@
    "current_value": 25.289108,
    "unrealized_pl": -0.052142,
    "unrealized_pl_pct": -0.206
+  },
+  {
+   "key": "CV-3055668",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
+   "opened": 1785350655.3033051,
+   "cost": 17.367,
+   "edge": 0.01833,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9836,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.982, 0.9d to resolution, 755% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "56565267039710558382646963079425993576818627374000416980063520633898406552568",
+     "market_id": "3055668",
+     "label": "YES Will the price of Bitcoin be above $60,000 on July 30?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 17.685336
+    }
+   ],
+   "current_prices": {
+    "56565267039710558382646963079425993576818627374000416980063520633898406552568": 0.9795
+   },
+   "current_value": 17.322787,
+   "unrealized_pl": -0.044213,
+   "unrealized_pl_pct": -0.255
   }
  ],
  "closed": [
@@ -7283,6 +7312,14 @@
    "equity": 1021.0403,
    "realized_total": 22.7337,
    "open_positions": 20
+  },
+  {
+   "ts": 1785350655.4292445,
+   "cash": 587.1989,
+   "open_value": 434.2188,
+   "equity": 1021.4177,
+   "realized_total": 22.7337,
+   "open_positions": 21
   }
  ],
  "trades": [
@@ -10065,6 +10102,15 @@
    "amount": 26.31,
    "pl": 0.3,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1785350655.3033051,
+   "type": "OPEN",
+   "key": "CV-3055668",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on July 30?",
+   "amount": 17.37,
+   "pl": null
   }
  ]
 }
