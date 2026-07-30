@@ -1,5 +1,5 @@
 {
- "cash": 611.920505,
+ "cash": 629.393067,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9615
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.933
    },
-   "current_value": 10.028544,
-   "unrealized_pl": -0.088656,
-   "unrealized_pl_pct": -0.876
+   "current_value": 9.731286,
+   "unrealized_pl": -0.385914,
+   "unrealized_pl_pct": -3.814
   },
   {
    "key": "CV-2952486",
@@ -54,40 +54,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.961
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.949
    },
-   "current_value": 25.892443,
-   "unrealized_pl": 0.026943,
-   "unrealized_pl_pct": 0.104
-  },
-  {
-   "key": "CV-2683666",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Bev Craig win the greatest number of valid first prefer",
-   "opened": 1785278456.5718172,
-   "cost": 26.1165,
-   "edge": 0.017294,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.986,
-   "resolve_by": "2026-07-30T23:59:00Z",
-   "note": "YES ask 0.983, 2.1d to resolution, 307% annualized if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "101605271903409034579386009790901548692210657388823527686779652447886552556329",
-     "market_id": "2683666",
-     "label": "YES Will Bev Craig win the greatest number of valid first preference votes in the 2026 Greater Manchester Mayoral Election?",
-     "side": "YES",
-     "entry_price": 0.983,
-     "shares": 26.568159
-    }
-   ],
-   "current_prices": {
-    "101605271903409034579386009790901548692210657388823527686779652447886552556329": 0.983
-   },
-   "current_value": 26.1165,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 25.569124,
+   "unrealized_pl": -0.296376,
+   "unrealized_pl_pct": -1.146
   },
   {
    "key": "CV-2698835",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.95
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9485
    },
-   "current_value": 26.20575,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 26.164373,
+   "unrealized_pl": -0.041377,
+   "unrealized_pl_pct": -0.158
   },
   {
    "key": "CV-2234098",
@@ -284,16 +255,16 @@
     "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.9995,
     "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.9995,
     "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.9995,
-    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.375,
-    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.66,
-    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.985,
+    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.25,
+    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.815,
+    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.9945,
     "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.9985,
     "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.9995,
     "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.9995
    },
-   "current_value": 25.619962,
-   "unrealized_pl": 0.097212,
-   "unrealized_pl_pct": 0.381
+   "current_value": 25.72101,
+   "unrealized_pl": 0.19826,
+   "unrealized_pl_pct": 0.777
   },
   {
    "key": "LS-3194845",
@@ -347,11 +318,11 @@
     }
    ],
    "current_prices": {
-    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.814
+    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.7775
    },
-   "current_value": 20.770092,
-   "unrealized_pl": -3.852928,
-   "unrealized_pl_pct": -15.648
+   "current_value": 19.838755,
+   "unrealized_pl": -4.784265,
+   "unrealized_pl_pct": -19.43
   },
   {
    "key": "CV-3202407",
@@ -376,11 +347,11 @@
     }
    ],
    "current_prices": {
-    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9745
+    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9845
    },
-   "current_value": 9.958888,
-   "unrealized_pl": 0.045988,
-   "unrealized_pl_pct": 0.464
+   "current_value": 10.061083,
+   "unrealized_pl": 0.148183,
+   "unrealized_pl_pct": 1.495
   },
   {
    "key": "LS-3194919",
@@ -405,11 +376,11 @@
     }
    ],
    "current_prices": {
-    "66528387668025847409154148194011807248869707848182859774853703944438080348168": 0.925
+    "66528387668025847409154148194011807248869707848182859774853703944438080348168": 0.9995
    },
-   "current_value": 22.662982,
-   "unrealized_pl": -0.857518,
-   "unrealized_pl_pct": -3.646
+   "current_value": 24.488271,
+   "unrealized_pl": 0.967771,
+   "unrealized_pl_pct": 4.115
   },
   {
    "key": "CV-3081981",
@@ -434,11 +405,11 @@
     }
    ],
    "current_prices": {
-    "40024234880706438882223866522687655425102114843402388725145770934432993890185": 0.988
+    "40024234880706438882223866522687655425102114843402388725145770934432993890185": 0.9875
    },
-   "current_value": 6.195081,
-   "unrealized_pl": 0.025081,
-   "unrealized_pl_pct": 0.407
+   "current_value": 6.191946,
+   "unrealized_pl": 0.021946,
+   "unrealized_pl_pct": 0.356
   },
   {
    "key": "CV-2674076",
@@ -463,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "84136147843234982343387328371427319914867576606050691793138736029250260155687": 0.8515
+    "84136147843234982343387328371427319914867576606050691793138736029250260155687": 0.9005
    },
-   "current_value": 21.867867,
-   "unrealized_pl": -2.812133,
-   "unrealized_pl_pct": -11.394
+   "current_value": 23.126265,
+   "unrealized_pl": -1.553735,
+   "unrealized_pl_pct": -6.296
   },
   {
    "key": "CV-2673623",
@@ -492,40 +463,11 @@
     }
    ],
    "current_prices": {
-    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.8495
+    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.8795
    },
-   "current_value": 21.953571,
-   "unrealized_pl": -2.726429,
-   "unrealized_pl_pct": -11.047
-  },
-  {
-   "key": "CV-2107954",
-   "strategy": "CONVERGE",
-   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
-   "opened": 1785424642.7375014,
-   "cost": 24.78075,
-   "edge": 0.017294,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9848,
-   "resolve_by": "2026-07-31T00:00:00Z",
-   "note": "YES ask 0.983, 0.4d to resolution, 1739% annualized if YES, assumed true P 0.985",
-   "legs": [
-    {
-     "token_id": "45333464249231278833889264835467032836298968894575589803293628653956412762455",
-     "market_id": "2107954",
-     "label": "YES No change in Bank of Japan\u2019s interest rates after the July 2026 meeting?",
-     "side": "YES",
-     "entry_price": 0.983,
-     "shares": 25.209308
-    }
-   ],
-   "current_prices": {
-    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9865
-   },
-   "current_value": 24.868982,
-   "unrealized_pl": 0.088232,
-   "unrealized_pl_pct": 0.356
+   "current_value": 22.728859,
+   "unrealized_pl": -1.951141,
+   "unrealized_pl_pct": -7.906
   },
   {
    "key": "CV-3201333",
@@ -550,11 +492,11 @@
     }
    ],
    "current_prices": {
-    "6183911403943840602332382766145117975740844464265162120893866769863595137761": 0.9705
+    "6183911403943840602332382766145117975740844464265162120893866769863595137761": 0.99
    },
-   "current_value": 24.464811,
-   "unrealized_pl": -0.264689,
-   "unrealized_pl_pct": -1.07
+   "current_value": 24.956376,
+   "unrealized_pl": 0.226876,
+   "unrealized_pl_pct": 0.917
   },
   {
    "key": "CV-2118271",
@@ -608,11 +550,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9745
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.978
    },
-   "current_value": 15.225966,
-   "unrealized_pl": 0.007812,
-   "unrealized_pl_pct": 0.051
+   "current_value": 15.280651,
+   "unrealized_pl": 0.062497,
+   "unrealized_pl_pct": 0.411
   },
   {
    "key": "CV-3202417",
@@ -637,11 +579,69 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9565
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9605
    },
-   "current_value": 12.206916,
-   "unrealized_pl": -0.044667,
-   "unrealized_pl_pct": -0.365
+   "current_value": 12.257964,
+   "unrealized_pl": 0.006381,
+   "unrealized_pl_pct": 0.052
+  },
+  {
+   "key": "CV-3101448",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 1?",
+   "opened": 1785441338.8223712,
+   "cost": 24.71925,
+   "edge": 0.02145,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-08-01T16:00:00Z",
+   "note": "YES ask 0.979, 1.8d to resolution, 426% annualized if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "97894328132135900906103514094095453782403967011122356516674332039038215207174",
+     "market_id": "3101448",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 1?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 25.249489
+    }
+   ],
+   "current_prices": {
+    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.9785
+   },
+   "current_value": 24.706625,
+   "unrealized_pl": -0.012625,
+   "unrealized_pl_pct": -0.051
+  },
+  {
+   "key": "CV-2596202",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "opened": 1785441338.8223915,
+   "cost": 9.094449,
+   "edge": 0.048218,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9583999999999999,
+   "resolve_by": "2026-08-02T23:59:00Z",
+   "note": "YES ask 0.954, 3.2d to resolution, 555% annualized if YES, assumed true P 0.958",
+   "legs": [
+    {
+     "token_id": "20131175058527417013866449499544981255748316136818349034325627543066249892670",
+     "market_id": "2596202",
+     "label": "YES Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office be greater than 280m?",
+     "side": "YES",
+     "entry_price": 0.954,
+     "shares": 9.532965
+    }
+   ],
+   "current_prices": {
+    "20131175058527417013866449499544981255748316136818349034325627543066249892670": 0.948
+   },
+   "current_value": 9.037251,
+   "unrealized_pl": -0.057198,
+   "unrealized_pl_pct": -0.629
   }
  ],
  "closed": [
@@ -7459,6 +7459,72 @@
    "payout": 16.655771,
    "pl": 0.169438,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2683666",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bev Craig win the greatest number of valid first prefer",
+   "opened": 1785278456.5718172,
+   "cost": 26.1165,
+   "edge": 0.017294,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.986,
+   "resolve_by": "2026-07-30T23:59:00Z",
+   "note": "YES ask 0.983, 2.1d to resolution, 307% annualized if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "101605271903409034579386009790901548692210657388823527686779652447886552556329",
+     "market_id": "2683666",
+     "label": "YES Will Bev Craig win the greatest number of valid first preference votes in the 2026 Greater Manchester Mayoral Election?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 26.568159
+    }
+   ],
+   "current_prices": {
+    "101605271903409034579386009790901548692210657388823527686779652447886552556329": 0.983
+   },
+   "current_value": 26.1165,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1785441339.0180323,
+   "payout": 26.329046,
+   "pl": 0.212546,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2107954",
+   "strategy": "CONVERGE",
+   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
+   "opened": 1785424642.7375014,
+   "cost": 24.78075,
+   "edge": 0.017294,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9848,
+   "resolve_by": "2026-07-31T00:00:00Z",
+   "note": "YES ask 0.983, 0.4d to resolution, 1739% annualized if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "45333464249231278833889264835467032836298968894575589803293628653956412762455",
+     "market_id": "2107954",
+     "label": "YES No change in Bank of Japan\u2019s interest rates after the July 2026 meeting?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 25.209308
+    }
+   ],
+   "current_prices": {
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.9865
+   },
+   "current_value": 24.868982,
+   "unrealized_pl": 0.088232,
+   "unrealized_pl_pct": 0.356,
+   "closed_ts": 1785441339.0180323,
+   "payout": 24.957215,
+   "pl": 0.176465,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -8340,6 +8406,14 @@
    "open_value": 376.8515,
    "equity": 988.772,
    "realized_total": -1.2334,
+   "open_positions": 19
+  },
+  {
+   "ts": 1785441339.0197616,
+   "cash": 629.3931,
+   "open_value": 362.673,
+   "equity": 992.066,
+   "realized_total": -0.8444,
    "open_positions": 19
   }
  ],
@@ -11620,6 +11694,44 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 1?",
    "amount": 16.66,
    "pl": 0.17,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785441338.8223712,
+   "type": "OPEN",
+   "key": "CV-3101448",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 1?",
+   "amount": 24.72,
+   "pl": null
+  },
+  {
+   "ts": 1785441338.8223915,
+   "type": "OPEN",
+   "key": "CV-2596202",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "amount": 9.09,
+   "pl": null
+  },
+  {
+   "ts": 1785441339.0180323,
+   "type": "CLOSE",
+   "key": "CV-2683666",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bev Craig win the greatest number of valid first prefer",
+   "amount": 26.33,
+   "pl": 0.21,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785441339.0180323,
+   "type": "CLOSE",
+   "key": "CV-2107954",
+   "strategy": "CONVERGE",
+   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
+   "amount": 24.96,
+   "pl": 0.18,
    "reason": "take_profit"
   }
  ]
