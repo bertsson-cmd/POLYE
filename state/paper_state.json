@@ -1,36 +1,7 @@
 {
- "cash": 601.659856,
+ "cash": 651.830645,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-2698776",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will there be no next Google Gemini Pro model release by Jul",
-   "opened": 1785023176.6020734,
-   "cost": 10.1994,
-   "edge": 0.025641,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-07-31T23:59:00Z",
-   "note": "YES ask 0.975, 6.0d to resolution, 156% annualized if YES, assumed true P 0.976",
-   "legs": [
-    {
-     "token_id": "39345054235958789034160246589224646804344434517432840561828991379745093618558",
-     "market_id": "2698776",
-     "label": "YES Will there be no next Google Gemini Pro model release by July 31, 2026?",
-     "side": "YES",
-     "entry_price": 0.975,
-     "shares": 10.460923
-    }
-   ],
-   "current_prices": {
-    "39345054235958789034160246589224646804344434517432840561828991379745093618558": 0.975
-   },
-   "current_value": 10.1994,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
-  },
   {
    "key": "CV-2966930",
    "strategy": "CONVERGE",
@@ -54,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9375
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.9445
    },
-   "current_value": 9.778222,
-   "unrealized_pl": -0.338978,
-   "unrealized_pl_pct": -3.351
+   "current_value": 9.851232,
+   "unrealized_pl": -0.265968,
+   "unrealized_pl_pct": -2.629
   },
   {
    "key": "CV-2952486",
@@ -83,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.9615
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.967
    },
-   "current_value": 25.905915,
-   "unrealized_pl": 0.040415,
-   "unrealized_pl_pct": 0.156
+   "current_value": 26.054102,
+   "unrealized_pl": 0.188602,
+   "unrealized_pl_pct": 0.729
   },
   {
    "key": "CV-2683666",
@@ -170,40 +141,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9485
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.951
    },
-   "current_value": 26.164373,
-   "unrealized_pl": -0.041377,
-   "unrealized_pl_pct": -0.158
-  },
-  {
-   "key": "CV-3158228",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 4?",
-   "opened": 1785327562.2453313,
-   "cost": 21.30437,
-   "edge": 0.030928,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9776,
-   "resolve_by": "2026-08-04T16:00:00Z",
-   "note": "YES ask 0.970, 6.2d to resolution, 183% annualized if YES, assumed true P 0.978",
-   "legs": [
-    {
-     "token_id": "74567935957923649791918494985250426808663069897506967238681438641391037965298",
-     "market_id": "3158228",
-     "label": "YES Will the price of Bitcoin be above $58,000 on August 4?",
-     "side": "YES",
-     "entry_price": 0.97,
-     "shares": 21.963268
-    }
-   ],
-   "current_prices": {
-    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.9875
-   },
-   "current_value": 21.688727,
-   "unrealized_pl": 0.384357,
-   "unrealized_pl_pct": 1.804
+   "current_value": 26.233335,
+   "unrealized_pl": 0.027585,
+   "unrealized_pl_pct": 0.105
   },
   {
    "key": "CV-2234098",
@@ -340,18 +282,18 @@
     "1986410449677715820238040768353924440006688182346968243353270046720398379162": 0.9995,
     "63255466385793510447692230855028773361438194086292070448824429460353979382798": 0.9995,
     "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.9995,
-    "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.955,
-    "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.84,
-    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.54,
-    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.68,
-    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.945,
-    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.9955,
+    "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.97,
+    "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.9,
+    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.45,
+    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.745,
+    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.95,
+    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.9965,
     "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.9995,
     "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.9995
    },
-   "current_value": 25.58159,
-   "unrealized_pl": 0.05884,
-   "unrealized_pl_pct": 0.231
+   "current_value": 25.604613,
+   "unrealized_pl": 0.081863,
+   "unrealized_pl_pct": 0.321
   },
   {
    "key": "LS-3194845",
@@ -405,11 +347,11 @@
     }
    ],
    "current_prices": {
-    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.807
+    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.886
    },
-   "current_value": 20.591479,
-   "unrealized_pl": -4.031541,
-   "unrealized_pl_pct": -16.373
+   "current_value": 22.60725,
+   "unrealized_pl": -2.01577,
+   "unrealized_pl_pct": -8.187
   },
   {
    "key": "CV-3202407",
@@ -434,11 +376,11 @@
     }
    ],
    "current_prices": {
-    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.975
+    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9735
    },
-   "current_value": 9.963998,
-   "unrealized_pl": 0.051098,
-   "unrealized_pl_pct": 0.515
+   "current_value": 9.948669,
+   "unrealized_pl": 0.035769,
+   "unrealized_pl_pct": 0.361
   },
   {
    "key": "LS-3194919",
@@ -463,11 +405,11 @@
     }
    ],
    "current_prices": {
-    "66528387668025847409154148194011807248869707848182859774853703944438080348168": 0.95
+    "66528387668025847409154148194011807248869707848182859774853703944438080348168": 0.96
    },
-   "current_value": 23.275495,
-   "unrealized_pl": -0.245005,
-   "unrealized_pl_pct": -1.042
+   "current_value": 23.5205,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0
   },
   {
    "key": "CV-3081981",
@@ -492,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "40024234880706438882223866522687655425102114843402388725145770934432993890185": 0.9895
+    "40024234880706438882223866522687655425102114843402388725145770934432993890185": 0.981
    },
-   "current_value": 6.204487,
-   "unrealized_pl": 0.034487,
-   "unrealized_pl_pct": 0.559
+   "current_value": 6.151189,
+   "unrealized_pl": -0.018811,
+   "unrealized_pl_pct": -0.305
   },
   {
    "key": "CV-2674076",
@@ -521,11 +463,11 @@
     }
    ],
    "current_prices": {
-    "84136147843234982343387328371427319914867576606050691793138736029250260155687": 0.9435
+    "84136147843234982343387328371427319914867576606050691793138736029250260155687": 0.8135
    },
-   "current_value": 24.230573,
-   "unrealized_pl": -0.449427,
-   "unrealized_pl_pct": -1.821
+   "current_value": 20.891967,
+   "unrealized_pl": -3.788033,
+   "unrealized_pl_pct": -15.349
   },
   {
    "key": "CV-2673623",
@@ -550,11 +492,11 @@
     }
    ],
    "current_prices": {
-    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.93
+    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.8155
    },
-   "current_value": 24.033927,
-   "unrealized_pl": -0.646073,
-   "unrealized_pl_pct": -2.618
+   "current_value": 21.074911,
+   "unrealized_pl": -3.605089,
+   "unrealized_pl_pct": -14.607
   },
   {
    "key": "CV-3101448",
@@ -579,69 +521,40 @@
     }
    ],
    "current_prices": {
-    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.969
+    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.9545
    },
-   "current_value": 17.470865,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
+   "current_value": 17.209433,
+   "unrealized_pl": -0.261432,
+   "unrealized_pl_pct": -1.496
   },
   {
-   "key": "CV-3055697",
+   "key": "CV-2107954",
    "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 30?",
-   "opened": 1785416245.2914863,
-   "cost": 24.619,
-   "edge": 0.052632,
+   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
+   "opened": 1785424642.7375014,
+   "cost": 24.78075,
+   "edge": 0.017294,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-07-30T16:00:00Z",
-   "note": "YES ask 0.950, 0.1d to resolution, 15151% annualized if YES, assumed true P 0.956",
+   "est_p_win": 0.9848,
+   "resolve_by": "2026-07-31T00:00:00Z",
+   "note": "YES ask 0.983, 0.4d to resolution, 1739% annualized if YES, assumed true P 0.985",
    "legs": [
     {
-     "token_id": "64356163932483829737764901987029494178045566675666345760426130057873956625810",
-     "market_id": "3055697",
-     "label": "YES Will the price of Bitcoin be above $64,000 on July 30?",
+     "token_id": "45333464249231278833889264835467032836298968894575589803293628653956412762455",
+     "market_id": "2107954",
+     "label": "YES No change in Bank of Japan\u2019s interest rates after the July 2026 meeting?",
      "side": "YES",
-     "entry_price": 0.95,
-     "shares": 25.914737
+     "entry_price": 0.983,
+     "shares": 25.209308
     }
    ],
    "current_prices": {
-    "64356163932483829737764901987029494178045566675666345760426130057873956625810": 0.945
+    "45333464249231278833889264835467032836298968894575589803293628653956412762455": 0.981
    },
-   "current_value": 24.489426,
-   "unrealized_pl": -0.129574,
-   "unrealized_pl_pct": -0.526
-  },
-  {
-   "key": "CV-3161685",
-   "strategy": "CONVERGE",
-   "title": "Converge: Bitcoin Up or Down on July 30?",
-   "opened": 1785416245.2915142,
-   "cost": 16.611995,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-07-30T16:00:00Z",
-   "note": "YES ask 0.950, 0.1d to resolution, 15151% annualized if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "65024137053855672135754289102601167808275997078238687431817057463095951022316",
-     "market_id": "3161685",
-     "label": "YES Bitcoin Up or Down on July 30?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 17.486311
-    }
-   ],
-   "current_prices": {
-    "65024137053855672135754289102601167808275997078238687431817057463095951022316": 0.945
-   },
-   "current_value": 16.524564,
-   "unrealized_pl": -0.087431,
-   "unrealized_pl_pct": -0.526
+   "current_value": 24.730331,
+   "unrealized_pl": -0.050419,
+   "unrealized_pl_pct": -0.203
   }
  ],
  "closed": [
@@ -7261,6 +7174,138 @@
    "payout": 24.9097,
    "pl": 0.2297,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2698776",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will there be no next Google Gemini Pro model release by Jul",
+   "opened": 1785023176.6020734,
+   "cost": 10.1994,
+   "edge": 0.025641,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.975, 6.0d to resolution, 156% annualized if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "39345054235958789034160246589224646804344434517432840561828991379745093618558",
+     "market_id": "2698776",
+     "label": "YES Will there be no next Google Gemini Pro model release by July 31, 2026?",
+     "side": "YES",
+     "entry_price": 0.975,
+     "shares": 10.460923
+    }
+   ],
+   "current_prices": {
+    "39345054235958789034160246589224646804344434517432840561828991379745093618558": 0.975
+   },
+   "current_value": 10.1994,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1785424642.8823218,
+   "payout": 10.356314,
+   "pl": 0.156914,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3158228",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 4?",
+   "opened": 1785327562.2453313,
+   "cost": 21.30437,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9776,
+   "resolve_by": "2026-08-04T16:00:00Z",
+   "note": "YES ask 0.970, 6.2d to resolution, 183% annualized if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "74567935957923649791918494985250426808663069897506967238681438641391037965298",
+     "market_id": "3158228",
+     "label": "YES Will the price of Bitcoin be above $58,000 on August 4?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 21.963268
+    }
+   ],
+   "current_prices": {
+    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.9875
+   },
+   "current_value": 21.688727,
+   "unrealized_pl": 0.384357,
+   "unrealized_pl_pct": 1.804,
+   "closed_ts": 1785424642.8823218,
+   "payout": 21.567929,
+   "pl": 0.263559,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3055697",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 30?",
+   "opened": 1785416245.2914863,
+   "cost": 24.619,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.950, 0.1d to resolution, 15151% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "64356163932483829737764901987029494178045566675666345760426130057873956625810",
+     "market_id": "3055697",
+     "label": "YES Will the price of Bitcoin be above $64,000 on July 30?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 25.914737
+    }
+   ],
+   "current_prices": {
+    "64356163932483829737764901987029494178045566675666345760426130057873956625810": 0.945
+   },
+   "current_value": 24.489426,
+   "unrealized_pl": -0.129574,
+   "unrealized_pl_pct": -0.526,
+   "closed_ts": 1785424642.8823218,
+   "payout": 25.733334,
+   "pl": 1.114334,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3161685",
+   "strategy": "CONVERGE",
+   "title": "Converge: Bitcoin Up or Down on July 30?",
+   "opened": 1785416245.2915142,
+   "cost": 16.611995,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-07-30T16:00:00Z",
+   "note": "YES ask 0.950, 0.1d to resolution, 15151% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "65024137053855672135754289102601167808275997078238687431817057463095951022316",
+     "market_id": "3161685",
+     "label": "YES Bitcoin Up or Down on July 30?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 17.486311
+    }
+   ],
+   "current_prices": {
+    "65024137053855672135754289102601167808275997078238687431817057463095951022316": 0.945
+   },
+   "current_value": 16.524564,
+   "unrealized_pl": -0.087431,
+   "unrealized_pl_pct": -0.526,
+   "closed_ts": 1785424642.8823218,
+   "payout": 17.293962,
+   "pl": 0.681967,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -8119,6 +8164,14 @@
    "equity": 991.231,
    "realized_total": -3.7639,
    "open_positions": 19
+  },
+  {
+   "ts": 1785424642.8839276,
+   "cash": 651.8306,
+   "open_value": 337.3456,
+   "equity": 989.1762,
+   "realized_total": -1.5471,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -11284,6 +11337,55 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on July 31?",
    "amount": 24.91,
    "pl": 0.23,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785424642.7375014,
+   "type": "OPEN",
+   "key": "CV-2107954",
+   "strategy": "CONVERGE",
+   "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
+   "amount": 24.78,
+   "pl": null
+  },
+  {
+   "ts": 1785424642.8823218,
+   "type": "CLOSE",
+   "key": "CV-2698776",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will there be no next Google Gemini Pro model release by Jul",
+   "amount": 10.36,
+   "pl": 0.16,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785424642.8823218,
+   "type": "CLOSE",
+   "key": "CV-3158228",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 4?",
+   "amount": 21.57,
+   "pl": 0.26,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785424642.8823218,
+   "type": "CLOSE",
+   "key": "CV-3055697",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on July 30?",
+   "amount": 25.73,
+   "pl": 1.11,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785424642.8823218,
+   "type": "CLOSE",
+   "key": "CV-3161685",
+   "strategy": "CONVERGE",
+   "title": "Converge: Bitcoin Up or Down on July 30?",
+   "amount": 17.29,
+   "pl": 0.68,
    "reason": "take_profit"
   }
  ]
