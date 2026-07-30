@@ -1,36 +1,7 @@
 {
- "cash": 629.393067,
+ "cash": 588.141993,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-2966930",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Amazon.com (AMZN) beat quarterly earnings?",
-   "opened": 1785115306.647374,
-   "cost": 10.1172,
-   "edge": 0.030928,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9716,
-   "resolve_by": "2026-07-30T21:00:00Z",
-   "note": "YES ask 0.970, 3.8d to resolution, 296% annualized if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "35801141382468693367279621479645137044534168103027028625351862849252319210857",
-     "market_id": "2966930",
-     "label": "YES Will Amazon.com (AMZN) beat quarterly earnings?",
-     "side": "YES",
-     "entry_price": 0.97,
-     "shares": 10.430103
-    }
-   ],
-   "current_prices": {
-    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.933
-   },
-   "current_value": 9.731286,
-   "unrealized_pl": -0.385914,
-   "unrealized_pl_pct": -3.814
-  },
   {
    "key": "CV-2952486",
    "strategy": "CONVERGE",
@@ -54,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.949
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.9445
    },
-   "current_value": 25.569124,
-   "unrealized_pl": -0.296376,
-   "unrealized_pl_pct": -1.146
+   "current_value": 25.44788,
+   "unrealized_pl": -0.41762,
+   "unrealized_pl_pct": -1.615
   },
   {
    "key": "CV-2698835",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9485
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.946
    },
-   "current_value": 26.164373,
-   "unrealized_pl": -0.041377,
-   "unrealized_pl_pct": -0.158
+   "current_value": 26.09541,
+   "unrealized_pl": -0.11034,
+   "unrealized_pl_pct": -0.421
   },
   {
    "key": "CV-2234098",
@@ -255,16 +226,16 @@
     "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.9995,
     "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.9995,
     "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.9995,
-    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.25,
-    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.815,
-    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.9945,
+    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.02,
+    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.98,
+    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.9995,
     "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.9985,
     "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.9995,
     "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.9995
    },
-   "current_value": 25.72101,
-   "unrealized_pl": 0.19826,
-   "unrealized_pl_pct": 0.777
+   "current_value": 25.58159,
+   "unrealized_pl": 0.05884,
+   "unrealized_pl_pct": 0.231
   },
   {
    "key": "LS-3194845",
@@ -289,11 +260,11 @@
     }
    ],
    "current_prices": {
-    "71758555818672228085551838353758496518094203459250032742571129121309381112891": 0.985
+    "71758555818672228085551838353758496518094203459250032742571129121309381112891": 0.995
    },
-   "current_value": 25.942056,
-   "unrealized_pl": 0.395056,
-   "unrealized_pl_pct": 1.546
+   "current_value": 26.205427,
+   "unrealized_pl": 0.658427,
+   "unrealized_pl_pct": 2.577
   },
   {
    "key": "CV-2584969",
@@ -318,11 +289,11 @@
     }
    ],
    "current_prices": {
-    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.7775
+    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.817
    },
-   "current_value": 19.838755,
-   "unrealized_pl": -4.784265,
-   "unrealized_pl_pct": -19.43
+   "current_value": 20.84664,
+   "unrealized_pl": -3.77638,
+   "unrealized_pl_pct": -15.337
   },
   {
    "key": "CV-3202407",
@@ -347,11 +318,11 @@
     }
    ],
    "current_prices": {
-    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9845
+    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9855
    },
-   "current_value": 10.061083,
-   "unrealized_pl": 0.148183,
-   "unrealized_pl_pct": 1.495
+   "current_value": 10.071302,
+   "unrealized_pl": 0.158402,
+   "unrealized_pl_pct": 1.598
   },
   {
    "key": "LS-3194919",
@@ -434,11 +405,11 @@
     }
    ],
    "current_prices": {
-    "84136147843234982343387328371427319914867576606050691793138736029250260155687": 0.9005
+    "84136147843234982343387328371427319914867576606050691793138736029250260155687": 0.325
    },
-   "current_value": 23.126265,
-   "unrealized_pl": -1.553735,
-   "unrealized_pl_pct": -6.296
+   "current_value": 8.346514,
+   "unrealized_pl": -16.333486,
+   "unrealized_pl_pct": -66.181
   },
   {
    "key": "CV-2673623",
@@ -463,40 +434,11 @@
     }
    ],
    "current_prices": {
-    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.8795
+    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.3555
    },
-   "current_value": 22.728859,
-   "unrealized_pl": -1.951141,
-   "unrealized_pl_pct": -7.906
-  },
-  {
-   "key": "CV-3201333",
-   "strategy": "CONVERGE",
-   "title": "Converge: Gold (XAUUSD) Up or Down on July 30?",
-   "opened": 1785430445.1304073,
-   "cost": 24.7295,
-   "edge": 0.019368,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9844,
-   "resolve_by": "2026-07-30T21:00:00Z",
-   "note": "YES ask 0.981, 0.2d to resolution, 4140% annualized if YES, assumed true P 0.984",
-   "legs": [
-    {
-     "token_id": "6183911403943840602332382766145117975740844464265162120893866769863595137761",
-     "market_id": "3201333",
-     "label": "YES Gold (XAUUSD) Up or Down on July 30?",
-     "side": "YES",
-     "entry_price": 0.981,
-     "shares": 25.208461
-    }
-   ],
-   "current_prices": {
-    "6183911403943840602332382766145117975740844464265162120893866769863595137761": 0.99
-   },
-   "current_value": 24.956376,
-   "unrealized_pl": 0.226876,
-   "unrealized_pl_pct": 0.917
+   "current_value": 9.187162,
+   "unrealized_pl": -15.492838,
+   "unrealized_pl_pct": -62.775
   },
   {
    "key": "CV-2118271",
@@ -550,11 +492,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.978
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.982
    },
-   "current_value": 15.280651,
-   "unrealized_pl": 0.062497,
-   "unrealized_pl_pct": 0.411
+   "current_value": 15.343149,
+   "unrealized_pl": 0.124995,
+   "unrealized_pl_pct": 0.821
   },
   {
    "key": "CV-3202417",
@@ -579,11 +521,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9605
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.962
    },
-   "current_value": 12.257964,
-   "unrealized_pl": 0.006381,
-   "unrealized_pl_pct": 0.052
+   "current_value": 12.277107,
+   "unrealized_pl": 0.025524,
+   "unrealized_pl_pct": 0.208
   },
   {
    "key": "CV-3101448",
@@ -637,11 +579,217 @@
     }
    ],
    "current_prices": {
-    "20131175058527417013866449499544981255748316136818349034325627543066249892670": 0.948
+    "20131175058527417013866449499544981255748316136818349034325627543066249892670": 0.958
    },
-   "current_value": 9.037251,
-   "unrealized_pl": -0.057198,
-   "unrealized_pl_pct": -0.629
+   "current_value": 9.13258,
+   "unrealized_pl": 0.038131,
+   "unrealized_pl_pct": 0.419
+  },
+  {
+   "key": "ARB-NO-770652",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Buenos Aires on July 31?",
+   "opened": 1785445959.3602388,
+   "cost": 24.80175,
+   "edge": 0.001402,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-31T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9860 vs payout 10, 10 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "104106808180727648970782591357581629848405536487802249768754015253914937912192",
+     "market_id": "3215468",
+     "label": "NO Will the highest temperature in Buenos Aires be 16\u00b0C or below on July 31?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "14297374655663275018574890717559698277950529518607975956718490863631081825807",
+     "market_id": "3215469",
+     "label": "NO Will the highest temperature in Buenos Aires be 17\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "115766611195471577584516100784299696113215032369511686766155482705553253124278",
+     "market_id": "3215470",
+     "label": "NO Will the highest temperature in Buenos Aires be 18\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "46261670262617868265314197677023132444099356756389332913401078291659369884677",
+     "market_id": "3215471",
+     "label": "NO Will the highest temperature in Buenos Aires be 19\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "44736105756124586898039570249628640556249547371627870579228631875087377141430",
+     "market_id": "3215472",
+     "label": "NO Will the highest temperature in Buenos Aires be 20\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.84,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "92453494587087867458820728912852311985726838454390767229996704543747279395984",
+     "market_id": "3215473",
+     "label": "NO Will the highest temperature in Buenos Aires be 21\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.72,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "57210893112937713455698250097395553729962085853422384598916069510777246642148",
+     "market_id": "3215474",
+     "label": "NO Will the highest temperature in Buenos Aires be 22\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.69,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "48162901426982353265623854663054457439801501204428226038301920305211317582015",
+     "market_id": "3215475",
+     "label": "NO Will the highest temperature in Buenos Aires be 23\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.81,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "19711148415010817538065046562197581657447351966687171301429987378461662815978",
+     "market_id": "3215476",
+     "label": "NO Will the highest temperature in Buenos Aires be 24\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "94056257358303215851598002280568429612325204257794960925525691171904813147460",
+     "market_id": "3215477",
+     "label": "NO Will the highest temperature in Buenos Aires be 25\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.996,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "98736189653017905648714216148148286983502502815109462139933783763140978949318",
+     "market_id": "3215478",
+     "label": "NO Will the highest temperature in Buenos Aires be 26\u00b0C or higher on July 31?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.483652
+    }
+   ],
+   "current_prices": {
+    "104106808180727648970782591357581629848405536487802249768754015253914937912192": 0.9975,
+    "14297374655663275018574890717559698277950529518607975956718490863631081825807": 0.9985,
+    "115766611195471577584516100784299696113215032369511686766155482705553253124278": 0.9935,
+    "46261670262617868265314197677023132444099356756389332913401078291659369884677": 0.96,
+    "44736105756124586898039570249628640556249547371627870579228631875087377141430": 0.835,
+    "92453494587087867458820728912852311985726838454390767229996704543747279395984": 0.71,
+    "57210893112937713455698250097395553729962085853422384598916069510777246642148": 0.68,
+    "48162901426982353265623854663054457439801501204428226038301920305211317582015": 0.8,
+    "19711148415010817538065046562197581657447351966687171301429987378461662815978": 0.965,
+    "94056257358303215851598002280568429612325204257794960925525691171904813147460": 0.9935,
+    "98736189653017905648714216148148286983502502815109462139933783763140978949318": 0.9925
+   },
+   "current_value": 24.83652,
+   "unrealized_pl": 0.03477,
+   "unrealized_pl_pct": 0.14
+  },
+  {
+   "key": "CV-599305",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Abdul El-Sayed win the 2026 Michigan Democratic Primary",
+   "opened": 1785445959.360291,
+   "cost": 9.9207,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-04T00:00:00Z",
+   "note": "YES ask 0.950, 4.1d to resolution, 467% annualized if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "74768395815166461619548348007728690058055087254143355558596876906836785272025",
+     "market_id": "599305",
+     "label": "YES Will Abdul El-Sayed win the 2026 Michigan Democratic Primary?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.442842
+    }
+   ],
+   "current_prices": {
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.94
+   },
+   "current_value": 9.816271,
+   "unrealized_pl": -0.104429,
+   "unrealized_pl_pct": -1.053
+  },
+  {
+   "key": "CV-907513",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Francesca Hong win the 2026 Wisconsin Governor Democrat",
+   "opened": 1785445959.3603067,
+   "cost": 24.80175,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9668,
+   "resolve_by": "2026-08-11T00:00:00Z",
+   "note": "YES ask 0.960, 11.1d to resolution, 137% annualized if YES, assumed true P 0.967",
+   "legs": [
+    {
+     "token_id": "6864792964781918721937334716065868892125249145313476299156115929904357754621",
+     "market_id": "907513",
+     "label": "YES Will Francesca Hong win the 2026 Wisconsin Governor Democratic primary election?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 25.835156
+    }
+   ],
+   "current_prices": {
+    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.9585
+   },
+   "current_value": 24.762997,
+   "unrealized_pl": -0.038753,
+   "unrealized_pl_pct": -0.156
+  },
+  {
+   "key": "CV-2832140",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Nigel Farage win the Clacton by-election?",
+   "opened": 1785445959.3603172,
+   "cost": 17.3298,
+   "edge": 0.023541,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.98,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.977, 13.8d to resolution, 62% annualized if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "96493470136581654430268359631814450290137534659017161119334974730318350734648",
+     "market_id": "2832140",
+     "label": "YES Will Nigel Farage win the Clacton by-election?",
+     "side": "YES",
+     "entry_price": 0.977,
+     "shares": 17.737769
+    }
+   ],
+   "current_prices": {
+    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.975
+   },
+   "current_value": 17.294325,
+   "unrealized_pl": -0.035475,
+   "unrealized_pl_pct": -0.205
   }
  ],
  "closed": [
@@ -7525,6 +7673,72 @@
    "payout": 24.957215,
    "pl": 0.176465,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2966930",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Amazon.com (AMZN) beat quarterly earnings?",
+   "opened": 1785115306.647374,
+   "cost": 10.1172,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9716,
+   "resolve_by": "2026-07-30T21:00:00Z",
+   "note": "YES ask 0.970, 3.8d to resolution, 296% annualized if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "35801141382468693367279621479645137044534168103027028625351862849252319210857",
+     "market_id": "2966930",
+     "label": "YES Will Amazon.com (AMZN) beat quarterly earnings?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 10.430103
+    }
+   ],
+   "current_prices": {
+    "35801141382468693367279621479645137044534168103027028625351862849252319210857": 0.933
+   },
+   "current_value": 9.731286,
+   "unrealized_pl": -0.385914,
+   "unrealized_pl_pct": -3.814,
+   "closed_ts": 1785445959.4773293,
+   "payout": 10.419673,
+   "pl": 0.302473,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3201333",
+   "strategy": "CONVERGE",
+   "title": "Converge: Gold (XAUUSD) Up or Down on July 30?",
+   "opened": 1785430445.1304073,
+   "cost": 24.7295,
+   "edge": 0.019368,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-07-30T21:00:00Z",
+   "note": "YES ask 0.981, 0.2d to resolution, 4140% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "6183911403943840602332382766145117975740844464265162120893866769863595137761",
+     "market_id": "3201333",
+     "label": "YES Gold (XAUUSD) Up or Down on July 30?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 25.208461
+    }
+   ],
+   "current_prices": {
+    "6183911403943840602332382766145117975740844464265162120893866769863595137761": 0.99
+   },
+   "current_value": 24.956376,
+   "unrealized_pl": 0.226876,
+   "unrealized_pl_pct": 0.917,
+   "closed_ts": 1785445959.4773293,
+   "payout": 25.183253,
+   "pl": 0.453753,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -8415,6 +8629,14 @@
    "equity": 992.066,
    "realized_total": -0.8444,
    "open_positions": 19
+  },
+  {
+   "ts": 1785445959.4790263,
+   "cash": 588.142,
+   "open_value": 377.5028,
+   "equity": 965.6448,
+   "realized_total": -0.0882,
+   "open_positions": 21
   }
  ],
  "trades": [
@@ -11732,6 +11954,62 @@
    "title": "Converge: No change in Bank of Japan\u2019s interest rates after the July 2",
    "amount": 24.96,
    "pl": 0.18,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785445959.3602388,
+   "type": "OPEN",
+   "key": "ARB-NO-770652",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Buenos Aires on July 31?",
+   "amount": 24.8,
+   "pl": null
+  },
+  {
+   "ts": 1785445959.360291,
+   "type": "OPEN",
+   "key": "CV-599305",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Abdul El-Sayed win the 2026 Michigan Democratic Primary",
+   "amount": 9.92,
+   "pl": null
+  },
+  {
+   "ts": 1785445959.3603067,
+   "type": "OPEN",
+   "key": "CV-907513",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Francesca Hong win the 2026 Wisconsin Governor Democrat",
+   "amount": 24.8,
+   "pl": null
+  },
+  {
+   "ts": 1785445959.3603172,
+   "type": "OPEN",
+   "key": "CV-2832140",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Nigel Farage win the Clacton by-election?",
+   "amount": 17.33,
+   "pl": null
+  },
+  {
+   "ts": 1785445959.4773293,
+   "type": "CLOSE",
+   "key": "CV-2966930",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Amazon.com (AMZN) beat quarterly earnings?",
+   "amount": 10.42,
+   "pl": 0.3,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785445959.4773293,
+   "type": "CLOSE",
+   "key": "CV-3201333",
+   "strategy": "CONVERGE",
+   "title": "Converge: Gold (XAUUSD) Up or Down on July 30?",
+   "amount": 25.18,
+   "pl": 0.45,
    "reason": "take_profit"
   }
  ]
