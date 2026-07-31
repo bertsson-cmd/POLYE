@@ -10,10 +10,33 @@ The risk is precisely the "actually not decided" surprise, so:
   * only short horizons (CV_MAX_DAYS),
   * an annualized-yield floor so capital isn't parked for pennies,
   * treated as probabilistic, never guaranteed,
-  * live sports MATCH markets excluded (CV_EXCLUDE_SPORTS): a match at
-    96c is not "effectively decided", it's open event risk priced against
-    sharp bookmaker lines — the one category where the certainty-premium
-    thesis simply doesn't apply.
+  * four categories excluded (each independently toggleable) where a
+    price near $1 does NOT mean "effectively decided" -- it means
+    "priced against a discrete, hard-to-predict reveal", which is a
+    different (and historically costly) kind of risk than a market
+    that's simply drifted toward its obvious outcome over time:
+
+    - CV_EXCLUDE_SPORTS: a live sports MATCH at 96c is open event risk
+      priced against sharp bookmaker lines, not a decided event.
+    - CV_EXCLUDE_EARNINGS: "will X beat earnings" resolves on a single
+      discrete report, not a gradual convergence -- confirmed in real
+      trading data as a 0-for-2 category (two losses, no wins) that
+      erased most of CONVERGE's cumulative gains from 110 other wins.
+    - CV_EXCLUDE_BRACKETS: numeric-range markets ("40-64 tweets") ask
+      whether a count lands in a narrow bucket, which is a coin-flip-
+      shaped question dressed up as a "near-certain" price -- also
+      confirmed as a real loss in production data.
+    - CV_EXCLUDE_ELECTIONS: a primary/election candidate polling under
+      1% is usually a safe "won't win" bet, but carries its own tail
+      risk (late dropouts redistributing votes, reporting delays,
+      resolve-to-"Other" edge cases) that the certainty-premium thesis
+      doesn't account for.
+    - CV_EXCLUDE_RANKINGS: "largest company by market cap" / "#1" /
+      "second-biggest" superlatives compare volatile continuous
+      quantities; 96c only means "currently true" and the ranking can
+      flip in one trading day -- confirmed twice in paper data, where
+      two legs of the same market-cap reshuffle went from ~96c to near
+      zero together.
 """
 import logging
 import re
@@ -59,9 +82,111 @@ def is_sports_match(m: Market) -> bool:
     return any(k in cat for k in _SPORTS_CATEGORY_KEYWORDS)
 
 
+# --- earnings/guidance-beat detection ---------------------------------------
+# Deliberately narrow to "beat" framing specifically -- CONVERGE should
+# still be free to trade e.g. "Will X report Q3 results by date Y?" (a
+# genuine calendar/logistics question), just not "will the number beat
+# consensus", which is the actual surprise-shaped question.
+_EARNINGS_TITLE_PATTERNS = re.compile(
+    r"\bbeat\s+(quarterly\s+|q[1-4]\s+)?earnings\b|"
+    r"\bbeat\s+eps\b|\bbeat\s+revenue(\s+estimates?)?\b|"
+    r"\bearnings\s+beat\b|\b(raise|cut|miss)\s+guidance\b",
+    re.IGNORECASE)
+
+
+def is_earnings_market(m: Market) -> bool:
+    """True if this market resolves on a single discrete earnings/guidance
+    reveal rather than something that gradually converges toward certain."""
+    text = f"{m.question} {m.event_title}"
+    return bool(_EARNINGS_TITLE_PATTERNS.search(text))
+
+
+# --- numeric-bracket / range detection --------------------------------------
+# Catches "will X post 40-64 tweets", "between 3 and 5 rate cuts", AND
+# narrow price/value bands like "between $64,000 and $66,000" or
+# "$4.25-4.50%" -- confirmed in production data as the same risk shape:
+# a continuously-moving value clipping just outside a narrow band is a
+# coin-flip-shaped question, whatever the current price implies. An
+# earlier version of this only caught countable-noun ranges (tweets,
+# goals, etc.) and explicitly treated dollar ranges as safe -- live
+# trading surfaced a Bitcoin "$64,000-$66,000" CONVERGE candidate that
+# slipped through, so that assumption was wrong and is corrected here.
+_BRACKET_COUNT_NOUNS = (
+    "tweets?", "posts?", "goals?", "points?", "games?", "wins?", "losses?",
+    "seats?", "votes?", "cuts?", "hikes?", "releases?", "episodes?",
+    "launches?", "games?", "matches?", "appearances?", "times?",
+)
+_BRACKET_TITLE_PATTERNS = re.compile(
+    r"\b\d{1,4}\s*[-–]\s*\d{1,4}\s+(" + "|".join(_BRACKET_COUNT_NOUNS) + r")\b|"
+    r"\bbetween\s+\d+\s+and\s+\d+\s+(\w+\s+)?(" + "|".join(_BRACKET_COUNT_NOUNS) + r")\b|"
+    # narrow value bands: "between $X and $Y", "$X-$Y", "X%-Y%" -- a range
+    # on a continuous, volatile quantity, not a single-sided threshold
+    r"\bbetween\s+\$[\d,]+(\.\d+)?\s+and\s+\$[\d,]+(\.\d+)?\b|"
+    r"\$[\d,]+(\.\d+)?\s*[-–]\s*\$?[\d,]+(\.\d+)?\b|"
+    r"\b\d+(\.\d+)?%\s*[-–]\s*\d+(\.\d+)?%",
+    re.IGNORECASE)
+
+
+def is_bracket_market(m: Market) -> bool:
+    """True if this market asks whether a count falls in a narrow numeric
+    bracket -- a coin-flip-shaped question, whatever the current price."""
+    text = f"{m.question} {m.event_title}"
+    return bool(_BRACKET_TITLE_PATTERNS.search(text))
+
+
+# --- election / primary detection -------------------------------------------
+# Deliberately title-based, not category-based -- "politics" as a Gamma
+# category is far too broad (would exclude legitimate policy/logistics
+# CONVERGE markets too) whereas "X Primary Winner" / "X Election Winner"
+# framing specifically flags a multi-candidate race with real tail risk
+# even when one candidate is priced as an overwhelming favorite.
+_ELECTION_TITLE_PATTERNS = re.compile(
+    r"\bprimary\s+winner\b|\belection\s+winner\b|"
+    r"\b(democratic|republican)\s+primary\b|\bsenate\s+primary\b|"
+    r"\bgubernatorial\s+(election|primary)\b|\bpresidential\s+(election|primary|nominee)\b",
+    re.IGNORECASE)
+
+
+def is_election_market(m: Market) -> bool:
+    """True if this market is a multi-candidate primary/election race --
+    even a heavy favorite carries real tail risk (dropouts, reporting
+    delays, resolve-to-'Other' edge cases) the certainty-premium thesis
+    doesn't cover."""
+    text = f"{m.question} {m.event_title}"
+    return bool(_ELECTION_TITLE_PATTERNS.search(text))
+
+
+# --- ranking / superlative detection ----------------------------------------
+# "Will Apple be the largest company by market cap", "Will NVIDIA be the
+# second-largest ...", "most valuable", "#1 ..." -- a comparison between
+# volatile continuous quantities. The 95-96c price only means "currently
+# true", and the ranking can flip in a single trading day. Confirmed in
+# paper data: two such positions (Apple largest / NVIDIA second-largest,
+# opened in the same second -- two legs of the same underlying reshuffle)
+# both went from ~96c to near zero. Deliberately narrow: requires the
+# superlative framing itself, so ordinary threshold markets ("above
+# $62,000", "close above $540") -- which are the bread and butter of
+# CONVERGE's winning inventory -- are NOT touched.
+_RANKING_TITLE_PATTERNS = re.compile(
+    r"\b(the\s+)?(largest|biggest|most\s+valuable|top|best[- ]selling|"
+    r"highest[- ]grossing|most\s+watched|most\s+streamed)\s+\w+|"
+    r"\b(second|third|fourth|fifth|2nd|3rd|4th|5th)[- ]largest\b|"
+    r"\brank(ed)?\s+#?\d\b|#1\s",
+    re.IGNORECASE)
+
+
+def is_ranking_market(m: Market) -> bool:
+    """True if this market asks whether something holds a RANKING position
+    (largest, #1, second-biggest...) -- a comparison between volatile
+    quantities that can flip in one step, not a decided outcome."""
+    text = f"{m.question} {m.event_title}"
+    return bool(_RANKING_TITLE_PATTERNS.search(text))
+
+
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
     out: List[Opportunity] = []
-    sports_skipped = 0
+    skipped = {"sports": 0, "earnings": 0, "brackets": 0, "elections": 0,
+               "rankings": 0}
     for m in all_markets:
         if not (config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE):
             continue
@@ -71,7 +196,19 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         if days < config.MIN_DAYS_TO_RESOLUTION or days > config.CV_MAX_DAYS:
             continue
         if config.CV_EXCLUDE_SPORTS and is_sports_match(m):
-            sports_skipped += 1
+            skipped["sports"] += 1
+            continue
+        if config.CV_EXCLUDE_EARNINGS and is_earnings_market(m):
+            skipped["earnings"] += 1
+            continue
+        if config.CV_EXCLUDE_BRACKETS and is_bracket_market(m):
+            skipped["brackets"] += 1
+            continue
+        if config.CV_EXCLUDE_ELECTIONS and is_election_market(m):
+            skipped["elections"] += 1
+            continue
+        if config.CV_EXCLUDE_RANKINGS and is_ranking_market(m):
+            skipped["rankings"] += 1
             continue
 
         book = books.get(m.yes_token)
@@ -107,6 +244,9 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
     # sort by annualized yield: same edge resolving sooner ranks higher,
     # which is exactly the near-term, fast-cycling preference
     out.sort(key=lambda o: -(o.edge * 365.0 / max(0.02, days_to_resolution(o.resolve_by))))
-    if sports_skipped:
-        log.info("converge: excluded %d sports match market(s)", sports_skipped)
+    skipped_total = sum(skipped.values())
+    if skipped_total:
+        log.info("converge: excluded %d market(s) -- %s",
+                 skipped_total,
+                 ", ".join(f"{k}={v}" for k, v in skipped.items() if v))
     return out

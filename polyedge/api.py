@@ -123,7 +123,9 @@ class PolymarketClient:
         if ev.get("category"):
             tag_bits.append(str(ev["category"]))
         category = " ".join(tag_bits).lower()
-        for m in ev.get("markets", []) or []:
+        raw_markets = ev.get("markets", []) or []
+        event_total_markets = len(raw_markets)
+        for m in raw_markets:
             try:
                 if m.get("closed") or not m.get("active", True):
                     continue
@@ -140,7 +142,7 @@ class PolymarketClient:
                     liquidity=float(m.get("liquidityNum", m.get("liquidity", 0)) or 0),
                     end_date=m.get("endDate", "") or m.get("end_date_iso", "") or "",
                     event_id=ev_id, event_title=ev_title, neg_risk=neg_risk,
-                    category=category,
+                    category=category, event_total_markets=event_total_markets,
                 ))
             except (TypeError, ValueError, KeyError):
                 self.skipped_markets += 1

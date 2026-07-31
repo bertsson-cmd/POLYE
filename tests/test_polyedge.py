@@ -19,8 +19,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pytest
+import requests
 
-from polyedge import config
+from polyedge import config, reconcile
 from polyedge.api import PolymarketClient
 from polyedge.models import BookLevel, Leg, Market, Opportunity, OrderBook
 from polyedge.paper import PaperEngine
@@ -162,6 +163,61 @@ class TestArbitrage:
         assert opps
         cost = opps[0].total_cost()
         assert cost <= config.ARB_MAX_POSITION_USD + 1e-6
+
+    # ---- event-completeness guard ----
+    def test_dropped_sibling_skips_the_whole_event(self):
+        """The real bug: a still-open negRisk event with one outcome that
+        closed/delisted early. api.py's active-only filter would silently
+        drop it, leaving `markets` undercounting the true partition. If
+        the fetched count doesn't match the event's real total, the whole
+        event must be skipped -- not traded on a partial, unverifiable set."""
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9])
+        for m in ms:
+            m.event_total_markets = 4   # true event has 4 outcomes, only 3 fetched
+        assert arbitrage.scan(ms, books) == []
+
+    def test_complete_matching_count_still_trades(self):
+        """Sanity check for the guard itself: when the fetched count DOES
+        match the event's true total, nothing should be blocked."""
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9])
+        for m in ms:
+            m.event_total_markets = 3   # matches len(ms) exactly
+        opps = arbitrage.scan(ms, books)
+        assert opps      # locks still found -- the guard didn't over-trigger
+
+    def test_unknown_total_does_not_block_existing_behavior(self):
+        """event_total_markets defaults to 0 ('unknown') for hand-built
+        markets that never set it -- the guard must not treat 'unknown'
+        as 'incomplete', or every existing test/fixture would break."""
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9])
+        assert all(m.event_total_markets == 0 for m in ms)
+        opps = arbitrage.scan(ms, books)
+        assert opps
+
+    def test_api_parse_event_populates_true_total_before_filtering(self):
+        """The other half of the fix: parse_event() must record the TRUE
+        total from the raw event (4 markets), not just the count that
+        survives the closed/inactive filter (3) -- otherwise ARB has no
+        way to detect a dropped sibling at all."""
+        client = PolymarketClient()
+        raw_event = {
+            "id": "EV9", "title": "Some negRisk event", "negRisk": True,
+            "markets": [
+                {"id": "M1", "question": "Q1", "clobTokenIds": '["M1-Y","M1-N"]',
+                 "outcomePrices": '["0.3","0.7"]', "active": True, "closed": False},
+                {"id": "M2", "question": "Q2", "clobTokenIds": '["M2-Y","M2-N"]',
+                 "outcomePrices": '["0.3","0.7"]', "active": True, "closed": False},
+                {"id": "M3", "question": "Q3", "clobTokenIds": '["M3-Y","M3-N"]',
+                 "outcomePrices": '["0.3","0.7"]', "active": True, "closed": False},
+                # the 4th outcome closed early -- must still count toward
+                # the true total even though it's filtered out below
+                {"id": "M4", "question": "Q4", "clobTokenIds": '["M4-Y","M4-N"]',
+                 "outcomePrices": '["0.1","0.9"]', "active": False, "closed": True},
+            ],
+        }
+        parsed = client.parse_event(raw_event)
+        assert len(parsed) == 3                       # the closed one is dropped
+        assert all(m.event_total_markets == 4 for m in parsed)  # but true total is 4
 
     def test_sports_exact_score_excluded(self):
         ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9],
@@ -420,6 +476,165 @@ class TestConvergence:
             assert len(convergence.scan([sport], books)) == 1
         finally:
             config.CV_EXCLUDE_SPORTS = old
+
+    # ---- earnings-beat exclusion ----
+    def test_earnings_titles_detected(self):
+        """Real titles from the trade log — both lost (2 for 2)."""
+        earnings_titles = [
+            "Will Qualcomm (QCOM) beat quarterly earnings?",
+            "Will Meta (META) beat quarterly earnings?",
+            "Will Apple beat Q3 earnings?",
+            "Will Amazon beat EPS estimates?",
+            "Will Tesla raise guidance?",
+        ]
+        for t in earnings_titles:
+            m = market("E1", 0.96, question=t)
+            assert convergence.is_earnings_market(m), f"should detect: {t}"
+
+    def test_non_earnings_titles_not_detected(self):
+        ok_titles = [
+            "Will Apple report Q3 results by August 1?",
+            "Will the Fed decision come before September?",
+        ]
+        for t in ok_titles:
+            m = market("E2", 0.96, question=t)
+            assert not convergence.is_earnings_market(m), f"false positive: {t}"
+
+    def test_scan_excludes_earnings(self):
+        earn = market("EA", 0.96, end=_future(3), liq=99999,
+                      question="Will Meta (META) beat quarterly earnings?")
+        news = market("NW2", 0.96, end=_future(3), liq=99999,
+                      question="Israeli parliament dissolved by July 17?")
+        books = {m.yes_token: book(m.yes_token, 0.96) for m in (earn, news)}
+        out = convergence.scan([earn, news], books)
+        assert [o.key for o in out] == ["CV-NW2"]
+
+    # ---- numeric-bracket exclusion ----
+    def test_bracket_titles_detected(self):
+        """Real titles from the trade log and live production data."""
+        bracket_titles = [
+            "Will Elon Musk post 40-64 tweets from July 27 to July 29?",
+            "Will there be between 3 and 5 rate cuts this year?",
+            "Will the team score 2-4 goals this match?",
+            # confirmed slipping through in live dry-run before this fix:
+            "Will the price of Bitcoin be between $64,000 and $66,000 on July 30?",
+            "Will oil trade $40-45 this week?",
+            "Will the Fed set rates at 4.25%-4.50%?",
+        ]
+        for t in bracket_titles:
+            m = market("B1", 0.96, question=t)
+            assert convergence.is_bracket_market(m), f"should detect: {t}"
+
+    def test_non_bracket_titles_not_detected(self):
+        """Single-sided thresholds and plain date ranges must NOT
+        false-positive -- these are genuine CONVERGE material, not a
+        narrow band on a volatile quantity."""
+        ok_titles = [
+            "Will the Fed decision come before 2026-2027?",
+            "Will Bitcoin be above $62,000 on July 17?",
+            "Will the price of ETH stay below $3,000?",
+        ]
+        for t in ok_titles:
+            m = market("B2", 0.96, question=t)
+            assert not convergence.is_bracket_market(m), f"false positive: {t}"
+
+    def test_scan_excludes_brackets(self):
+        bracket = market("BR", 0.96, end=_future(3), liq=99999,
+                         question="Will Elon Musk post 40-64 tweets?")
+        news = market("NW3", 0.96, end=_future(3), liq=99999,
+                      question="Israeli parliament dissolved by July 17?")
+        books = {m.yes_token: book(m.yes_token, 0.96) for m in (bracket, news)}
+        out = convergence.scan([bracket, news], books)
+        assert [o.key for o in out] == ["CV-NW3"]
+
+    # ---- election/primary exclusion ----
+    def test_election_titles_detected(self):
+        election_titles = [
+            "Michigan Democratic Senate Primary Winner",
+            "Will Kristen McDonald Rivet win the Democratic primary?",
+            "California Governor Election Winner",
+            "Presidential Election Winner 2028",
+        ]
+        for t in election_titles:
+            m = market("EL1", 0.96, question=t)
+            assert convergence.is_election_market(m), f"should detect: {t}"
+
+    def test_non_election_titles_not_detected(self):
+        """Legitimate policy/legislative CONVERGE material must NOT be
+        excluded just for being politics-adjacent."""
+        ok_titles = [
+            "Will the bill pass committee this week?",
+            "Israeli parliament dissolved by July 17?",
+            "Will the Fed decision come before September?",
+        ]
+        for t in ok_titles:
+            m = market("EL2", 0.96, question=t)
+            assert not convergence.is_election_market(m), f"false positive: {t}"
+
+    def test_scan_excludes_elections(self):
+        elec = market("EX", 0.999, end=_future(3), liq=99999,
+                      question="Michigan Democratic Senate Primary Winner")
+        news = market("NW4", 0.96, end=_future(3), liq=99999,
+                      question="Israeli parliament dissolved by July 17?")
+        books = {m.yes_token: book(m.yes_token, 0.96 if m.market_id == "NW4"
+                                   else 0.999) for m in (elec, news)}
+        out = convergence.scan([elec, news], books)
+        assert [o.key for o in out] == ["CV-NW4"]
+
+    # ---- ranking/superlative exclusion ----
+    def test_ranking_titles_detected(self):
+        """Real titles from paper data -- both went from ~96c to near zero
+        when a market-cap reshuffle flipped the ranking."""
+        ranking_titles = [
+            "Will Apple be the largest company in the world by market cap",
+            "Will NVIDIA be the second-largest company in the world by ma",
+            "Will X be the most valuable startup by end of year?",
+            "Will 'Dune 3' be the highest-grossing film of 2026?",
+            "Will the song rank #1 on Billboard this week?",
+        ]
+        for t in ranking_titles:
+            m = market("R1", 0.96, question=t)
+            assert convergence.is_ranking_market(m), f"should detect: {t}"
+
+    def test_ranking_does_not_catch_threshold_winners(self):
+        """CRITICAL false-positive guard: these are real WINNING titles
+        from the paper data -- ordinary threshold/deadline markets that
+        are the bread and butter of CONVERGE's profitable inventory. The
+        ranking filter must not touch any of them."""
+        winning_titles = [
+            "Will the price of Bitcoin be above $62,000 on July 31?",
+            "Will Meta (META) close above $540 on July 31?",
+            "SPY (SPY) Up or Down on July 31?",
+            "Israel x Iran ceasefire continues through July 31?",
+            "No change in Reserve Bank of Australia's interest rates",
+            "Will the price of Ethereum be above $1,800 on July 31?",
+        ]
+        for t in winning_titles:
+            m = market("R2", 0.96, question=t)
+            assert not convergence.is_ranking_market(m), f"false positive: {t}"
+
+    def test_scan_excludes_rankings(self):
+        rank = market("RK", 0.96, end=_future(3), liq=99999,
+                      question="Will Apple be the largest company in the "
+                               "world by market cap on July 31?")
+        news = market("NW5", 0.96, end=_future(3), liq=99999,
+                      question="Israeli parliament dissolved by July 17?")
+        books = {m.yes_token: book(m.yes_token, 0.96) for m in (rank, news)}
+        out = convergence.scan([rank, news], books)
+        assert [o.key for o in out] == ["CV-NW5"]
+
+    def test_actual_won_market_not_excluded_by_any_new_filter(self):
+        """Regression guard using a real market from production data that
+        WON (a genuinely legitimate CONVERGE trade) -- none of the three
+        new exclusions should touch it."""
+        m = market("GEM", 0.96, end=_future(3), liq=99999,
+                   question="Will there be no next Gemini Pro model "
+                            "release by July 31?")
+        assert not convergence.is_earnings_market(m)
+        assert not convergence.is_bracket_market(m)
+        assert not convergence.is_election_market(m)
+        books = {m.yes_token: book(m.yes_token, 0.96)}
+        assert len(convergence.scan([m], books)) == 1
 
 
 # ------------------------------------------------------------------ past-date rejection
@@ -1267,6 +1482,36 @@ class TestControlServer:
         r = c.post("/api/liquidate", json={"key": "CV-A"}, headers=h)
         assert r.status_code == 200 and r.get_json()["liquidate_queue"] == ["CV-A"]
 
+    def test_dashboard_requires_auth(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        assert c.get("/dashboard").status_code == 401
+        assert c.get("/dashboard?token=wrong").status_code == 401
+        r = c.get("/dashboard", headers={"X-Control-Token": "secret-token"})
+        assert r.status_code == 200
+
+    def test_dashboard_renders_empty_state(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        r = c.get("/dashboard?token=secret-token")
+        assert r.status_code == 200
+        body = r.get_data(as_text=True)
+        assert "PolyBert" in body
+        assert "__MODE_LABEL__" not in body and "__STATE_JSON__" not in body
+
+    def test_dashboard_renders_with_open_position(self, tmp_path, monkeypatch):
+        self._seed_position(tmp_path)
+        c = self._make_client(tmp_path, monkeypatch)
+        r = c.get("/dashboard?token=secret-token")
+        assert r.status_code == 200
+        assert "CV-A" in r.get_data(as_text=True)
+
+    def test_dashboard_mode_label_reflects_gates(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        r = c.get("/dashboard?token=secret-token")
+        assert "Mode <b>Paper</b>" in r.get_data(as_text=True)
+        monkeypatch.setenv("POLYEDGE_LIVE", "1")
+        r2 = c.get("/dashboard?token=secret-token")
+        assert "Mode <b>Dry-run</b>" in r2.get_data(as_text=True)
+
     def test_allocation_route(self, tmp_path, monkeypatch):
         c = self._make_client(tmp_path, monkeypatch)
         h = {"X-Control-Token": "secret-token"}
@@ -1284,3 +1529,116 @@ class TestControlServer:
         assert r.status_code == 200 and r.get_json()["stop_loss_pct"] == {"CV-A": 20.0}
         r2 = c.post("/api/stop_loss", json={"key": "CV-A", "pct": 0}, headers=h)
         assert r2.get_json()["stop_loss_pct"] == {}
+
+
+# ------------------------------------------------------------------ reconcile
+class _FakeResponse:
+    def __init__(self, json_data, status=200):
+        self._json = json_data
+        self.status_code = status
+
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise requests.HTTPError(f"status {self.status_code}")
+
+    def json(self):
+        return self._json
+
+
+class _FakeSession:
+    """Routes GET/POST to canned responses by URL, so reconcile.py's real
+    HTTP calls never actually happen in tests."""
+    def __init__(self, positions_response=None, balance_hex="0x0",
+                 raise_on_get=False, raise_on_post=False):
+        self.positions_response = positions_response if positions_response is not None else []
+        self.balance_hex = balance_hex
+        self.raise_on_get = raise_on_get
+        self.raise_on_post = raise_on_post
+
+    def get(self, url, params=None, timeout=None):
+        if self.raise_on_get:
+            raise requests.ConnectionError("simulated network failure")
+        assert "data-api.polymarket.com/positions" in url
+        return _FakeResponse(self.positions_response)
+
+    def post(self, url, json=None, timeout=None):
+        if self.raise_on_post:
+            raise requests.ConnectionError("simulated network failure")
+        assert "polygon-rpc.com" in url
+        return _FakeResponse({"result": self.balance_hex})
+
+
+def _usdc_hex(amount: float) -> str:
+    """Encode a USDC amount (6 decimals) as the hex string eth_call would
+    return."""
+    return hex(int(round(amount * 1e6)))
+
+
+class TestReconcile:
+    FUNDER = "0x" + "1" * 40
+
+    def test_matching_wallet_does_not_exceed_threshold(self):
+        state = {"cash": 60.0, "positions": [{"current_value": 40.0}]}
+        session = _FakeSession(
+            positions_response=[{"currentValue": 40.0}],
+            balance_hex=_usdc_hex(60.0))
+        result = reconcile.check(state, self.FUNDER, session=session)
+        assert result["ok"] is True
+        assert result["exceeded_threshold"] is False
+        assert result["bot_equity"] == pytest.approx(100.0)
+        assert result["real_equity"] == pytest.approx(100.0)
+        assert result["diff_pct"] == pytest.approx(0.0)
+
+    def test_large_divergence_flagged(self):
+        # bot thinks it has $100, real wallet only has $50 -- 50% off
+        state = {"cash": 100.0, "positions": []}
+        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(50.0))
+        result = reconcile.check(state, self.FUNDER, session=session,
+                                 halt_threshold_pct=15.0)
+        assert result["ok"] is True
+        assert result["exceeded_threshold"] is True
+        assert result["diff_pct"] == pytest.approx(100.0, abs=1.0)  # |100-50|/50*100
+
+    def test_small_divergence_within_threshold(self):
+        # $2 off on $100 -- normal fee/rounding noise, should NOT trip
+        state = {"cash": 98.0, "positions": []}
+        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(100.0))
+        result = reconcile.check(state, self.FUNDER, session=session,
+                                 halt_threshold_pct=15.0)
+        assert result["ok"] is True
+        assert result["exceeded_threshold"] is False
+
+    def test_network_failure_on_positions_does_not_raise(self):
+        state = {"cash": 100.0, "positions": []}
+        session = _FakeSession(raise_on_get=True)
+        result = reconcile.check(state, self.FUNDER, session=session)
+        assert result["ok"] is False
+        assert "bot_equity" in result
+
+    def test_network_failure_on_balance_does_not_raise(self):
+        state = {"cash": 100.0, "positions": []}
+        session = _FakeSession(raise_on_post=True)
+        result = reconcile.check(state, self.FUNDER, session=session)
+        assert result["ok"] is False
+
+    def test_empty_real_wallet_with_bot_equity_is_full_divergence(self):
+        """Real wallet reads back completely empty (e.g. never funded, or
+        funds withdrawn) while the bot still thinks it holds money -- must
+        not divide-by-zero, and must clearly flag this as maximal, not 0%,
+        divergence."""
+        state = {"cash": 50.0, "positions": []}
+        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(0.0))
+        result = reconcile.check(state, self.FUNDER, session=session)
+        assert result["ok"] is True
+        assert result["exceeded_threshold"] is True
+        assert result["diff_pct"] == 100.0
+
+    def test_both_empty_is_not_a_divergence(self):
+        """Bot has nothing, real wallet has nothing -- 0% divergence, not
+        a false alarm from the same divide-by-zero edge case above."""
+        state = {"cash": 0.0, "positions": []}
+        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(0.0))
+        result = reconcile.check(state, self.FUNDER, session=session)
+        assert result["ok"] is True
+        assert result["exceeded_threshold"] is False
+        assert result["diff_pct"] == 0.0

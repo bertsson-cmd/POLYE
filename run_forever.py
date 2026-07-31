@@ -19,10 +19,12 @@ Env vars:
 """
 import logging
 import os
+import re
 import signal
 import sys
 import time
 
+from polyedge import config
 from polyedge.api import PolymarketClient
 from polyedge.main import run_cycle
 from polyedge.paper import PaperEngine
@@ -30,6 +32,8 @@ from polyedge.paper import PaperEngine
 log = logging.getLogger("polyedge.run_forever")
 
 _stop = False
+_cycle_count = 0
+_ADDR_RE = re.compile(r"^0x[0-9a-fA-F]{40}$")
 
 
 def _handle_signal(signum, _frame):
@@ -58,6 +62,31 @@ def _apply_controls(engine, client):
     apply_controls(engine, client)
 
 
+def _maybe_reconcile(engine):
+    """Compare the bot's own bookkeeping against the real wallet, every
+    RECONCILE_EVERY_N_CYCLES cycles. No-op entirely if no funder address
+    is configured, OR if it doesn't look like a real 0x-prefixed 40-hex
+    address (e.g. still the "0xREPLACE_ME" template placeholder) -- that
+    is "not set up yet", not a network failure, and should not generate
+    a failed API call and a warning log line every single cycle."""
+    funder = os.environ.get("POLYEDGE_FUNDER_ADDRESS", "")
+    if not config.RECONCILE_ENABLED or not _ADDR_RE.match(funder):
+        return None
+    if _cycle_count % max(1, config.RECONCILE_EVERY_N_CYCLES) != 0:
+        return None
+    from polyedge import reconcile, live
+    result = reconcile.check(engine.state, funder,
+                             halt_threshold_pct=config.RECONCILE_HALT_THRESHOLD_PCT)
+    engine.state["last_reconcile"] = result
+    engine.save()
+    if result.get("exceeded_threshold"):
+        live.write_halt(
+            f"wallet reconciliation divergence {result['diff_pct']:.1f}% exceeds "
+            f"{config.RECONCILE_HALT_THRESHOLD_PCT:.1f}% threshold -- bot equity "
+            f"${result['bot_equity']:.2f} vs real wallet ${result['real_equity']:.2f}")
+    return result
+
+
 def main():
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s %(name)s %(levelname)s %(message)s")
@@ -70,14 +99,19 @@ def main():
     log.info("run_forever starting: engine=%s interval=%.0fs",
             type(engine).__name__, interval)
 
+    global _cycle_count
     while not _stop:
         cycle_start = time.time()
         try:
             _apply_controls(engine, client)
             summary = run_cycle(client, engine)
             log.info("cycle done: %s", summary)
+            recon = _maybe_reconcile(engine)
+            if recon is not None:
+                log.info("reconcile: %s", recon)
         except Exception:
             log.exception("cycle failed -- will retry next interval")
+        _cycle_count += 1
         elapsed = time.time() - cycle_start
         sleep_for = max(1.0, interval - elapsed)
         remaining = sleep_for

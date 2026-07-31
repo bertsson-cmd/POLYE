@@ -30,6 +30,12 @@ really exist, then mark them at locked $1 each for fantasy equity. Guards:
     the main phantom source and often aren't a complete listed set)
   * any single lock is hard-capped at ARB_MAX_POSITION_USD regardless of
     nominal "depth", so a mispriced book can't create a giant order
+  * COMPLETENESS check: if one outcome in a still-open negRisk event
+    closed/delisted early, api.py's active-only filter silently drops it
+    from the fetched group. If that happened, len(markets) undercounts
+    the true partition and the "guaranteed" payout math is no longer
+    actually guaranteed -- so the whole event is skipped rather than
+    traded on a partial, unverifiable set (see scan_event()).
 """
 import logging
 from typing import Dict, List, Optional
@@ -65,6 +71,24 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
     out: List[Opportunity] = []
     ev = markets[0]
     n = len(markets)
+
+    # COMPLETENESS GUARD (added after a confirmed real loss): api.py drops
+    # any individual market that's closed/inactive, even from an event
+    # that's otherwise still open. If one outcome bucket in a negRisk
+    # event closed early (e.g. an extreme temperature/exact-score bucket),
+    # it silently vanishes from `markets`, and the code has no way to
+    # detect the true partition was actually larger -- so `n = len(markets)`
+    # undercounts and the "guaranteed" NO/YES-lock payout math is wrong.
+    # A confirmed real trade (ARB-NO on a 22-outcome NYC-temperature event)
+    # lost a small amount with exactly this fingerprint. Prefer skipping a
+    # real arb over trading a falsely-guaranteed one: a missed opportunity
+    # costs nothing, a broken guarantee costs real money.
+    true_total = ev.event_total_markets
+    if true_total and n != true_total:
+        log.info("arb: event %s has %d/%d outcomes fetched (one or more "
+                 "closed/inactive siblings) -- skipping, guarantee unverifiable",
+                 ev.event_id, n, true_total)
+        return []
 
     # horizon cap: locks have no early exit, don't tie capital up for months;
     # also reject past-dated / expired events (negative days)

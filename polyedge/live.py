@@ -149,7 +149,7 @@ class LiveEngine(PaperEngine):
             log.info("kill switch active via control panel -- refusing to open %s", opp.key)
             return None
         if not live_gates_open():
-            log.info("live gates closed -- refusing to open %s", opp.key)
+            log.info("live gates closed -- refusing to open %s (%s)", opp.key, opp.title)
             return None
         today_pl = self._today_realized_pl()
         if today_pl <= -config.LIVE_MAX_DAILY_LOSS:

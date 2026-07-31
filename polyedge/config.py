@@ -106,6 +106,22 @@ CV_TRUE_P_UPLIFT = _f("POLYEDGE_CV_UPLIFT", 0.20)
 # title patterns) and won't catch 100%. ARB on sports events is deliberately
 # unaffected: locks don't care who wins.
 CV_EXCLUDE_SPORTS = os.environ.get("POLYEDGE_CV_EXCLUDE_SPORTS", "1") not in ("0", "false", "no")
+CV_EXCLUDE_EARNINGS = os.environ.get("POLYEDGE_CV_EXCLUDE_EARNINGS", "1") not in ("0", "false", "no")
+CV_EXCLUDE_BRACKETS = os.environ.get("POLYEDGE_CV_EXCLUDE_BRACKETS", "1") not in ("0", "false", "no")
+CV_EXCLUDE_ELECTIONS = os.environ.get("POLYEDGE_CV_EXCLUDE_ELECTIONS", "1") not in ("0", "false", "no")
+CV_EXCLUDE_RANKINGS = os.environ.get("POLYEDGE_CV_EXCLUDE_RANKINGS", "1") not in ("0", "false", "no")
+
+# ---------------------------------------------------------------- reconciliation
+# Compares the bot's own bookkeeping against Polymarket's real on-chain
+# record for the funder wallet every RECONCILE_EVERY_N_CYCLES cycles.
+# Only runs at all if POLYEDGE_FUNDER_ADDRESS is set -- there is nothing
+# to reconcile against in pure paper mode. A divergence beyond the
+# threshold halts live trading via the same mechanism as the daily-loss
+# circuit breaker (see live.py) -- state that no longer matches the real
+# wallet should stop and wait for a human, not keep trading on it.
+RECONCILE_ENABLED = os.environ.get("POLYEDGE_RECONCILE_ENABLED", "1") not in ("0", "false", "no")
+RECONCILE_HALT_THRESHOLD_PCT = float(os.environ.get("POLYEDGE_RECONCILE_HALT_THRESHOLD_PCT", "15.0"))
+RECONCILE_EVERY_N_CYCLES = int(os.environ.get("POLYEDGE_RECONCILE_EVERY_N_CYCLES", "1"))
 
 # ---------------------------------------------------------------- take-profit (early exit)
 # Sell a position back into the live bid BEFORE resolution, once enough of

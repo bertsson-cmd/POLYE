@@ -107,7 +107,7 @@ _TEMPLATE = r"""<!DOCTYPE html>
     <h1>PolyBert<small>Polymarket paper-trading terminal</small></h1>
   </div>
   <div style="display:flex;gap:8px;flex-wrap:wrap">
-    <span class="badge">Mode <b>Paper</b></span>
+    <span class="badge">Mode <b>__MODE_LABEL__</b></span>
     <span class="badge" id="b-updated">—</span>
     <a class="badge control" href="__CONTROL_PANEL_URL__"
        title="Only reachable with an SSH tunnel or Tailscale connection to the VPS running control_server.py — see LIVE.md">
@@ -193,6 +193,17 @@ const dt = ts => new Date(ts*1000).toISOString().slice(0,16).replace("T"," ");
     ["Settled", closed.length + (closed.length? " · "+(100*wins/closed.length).toFixed(0)+"% won":""), "",
       nVoided? nVoided+" voided (refunded)":""],
   ];
+  const recon = STATE.last_reconcile;
+  if (recon) {
+    if (!recon.ok) {
+      cells.push(["Wallet check", "unreachable", "", "could not reach network last cycle"]);
+    } else {
+      cells.push(["Wallet check",
+        (recon.exceeded_threshold? "⚠ " : "✓ ") + recon.diff_pct.toFixed(1) + "% diff",
+        recon.exceeded_threshold? "dn" : "up",
+        "bot "+money(recon.bot_equity)+" vs real "+money(recon.real_equity)]);
+    }
+  }
   document.getElementById("stats").innerHTML = cells.map(c=>
     `<div class="stat"><div class="l">${c[0]}</div><div class="v ${c[2]}">${c[1]}</div>`+
     (c[3]?`<div class="s">${c[3]}</div>`:"")+`</div>`).join("");
@@ -372,13 +383,31 @@ fill("opps", ["Strategy","Opportunity","Edge","Type","Note"],
 """
 
 
+def render_dashboard_html(state: dict, opportunities=None,
+                          control_panel_url: str = None,
+                          mode_label: str = "Paper") -> str:
+    """Build the dashboard HTML as a string, with no file I/O -- this is
+    what both write_dashboard() (paper bot -> docs/index.html for GitHub
+    Pages) and control_server.py's /dashboard route (VPS live/dry-run
+    state, rendered on demand) call into, so there is exactly one
+    implementation of what the dashboard looks like.
+
+    mode_label should unambiguously say which state is on screen --
+    "Paper", "Dry-run", or "LIVE" -- since the VPS route can show either
+    dry-run or real-money state depending on the gates, and there must
+    never be room to mistake one for the other."""
+    return (_TEMPLATE
+            .replace("__STATE_JSON__", json.dumps(state))
+            .replace("__OPPS_JSON__", json.dumps(opportunities or []))
+            .replace("__MODE_LABEL__", mode_label)
+            .replace("__CONTROL_PANEL_URL__",
+                     control_panel_url or config.CONTROL_PANEL_URL))
+
+
 def write_dashboard(state: dict, opportunities=None, docs_dir: str = None) -> str:
     docs_dir = docs_dir or config.DOCS_DIR
     os.makedirs(docs_dir, exist_ok=True)
-    html = (_TEMPLATE
-            .replace("__STATE_JSON__", json.dumps(state))
-            .replace("__OPPS_JSON__", json.dumps(opportunities or []))
-            .replace("__CONTROL_PANEL_URL__", config.CONTROL_PANEL_URL))
+    html = render_dashboard_html(state, opportunities)
     path = os.path.join(docs_dir, "index.html")
     with open(path, "w") as f:
         f.write(html)

@@ -88,6 +88,11 @@ class Market:
     event_title: str = ""
     neg_risk: bool = False    # True if part of a mutually-exclusive outcome set
     category: str = ""        # lowercase event tags/category from Gamma, if present
+    event_total_markets: int = 0  # TRUE outcome count in the raw event, BEFORE
+    # closed/inactive filtering -- 0 means "unknown" (e.g. hand-built in a
+    # test). Lets ARB detect when one sibling in a still-open negRisk event
+    # was silently dropped for being closed/inactive, which would otherwise
+    # corrupt the guaranteed-payout math (see arbitrage.py's scan_event()).
 
 
 @dataclass

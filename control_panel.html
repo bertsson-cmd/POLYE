@@ -182,7 +182,11 @@ function fmtPct(n) {
 
 function renderBadges(s) {
   const b = [];
-  b.push('<a class="badge link" href="https://bertsson-cmd.github.io/POLYE/">← Dashboard</a>');
+  // Relative link to THIS server's own live/dry-run dashboard, not the
+  // public GitHub Pages paper dashboard (a different bot entirely) --
+  // the token is passed as a query param since this is a real page
+  // navigation, not a fetch() that can carry the X-Control-Token header.
+  b.push(`<a class="badge link" href="/dashboard?token=${encodeURIComponent(token())}">Dashboard</a>`);
   b.push(`<span class="badge ${s.armed ? "warn" : ""}">Armed <b>${s.armed ? "YES" : "no"}</b></span>`);
   b.push(`<span class="badge ${s.halted ? "danger" : "ok"}">Halted <b>${s.halted ? "YES" : "no"}</b></span>`);
   b.push(`<span class="badge ${s.controls.paused ? "warn" : "ok"}">Paused <b>${s.controls.paused ? "YES" : "no"}</b></span>`);
