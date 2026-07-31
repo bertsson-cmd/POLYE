@@ -1,5 +1,5 @@
 {
- "cash": 608.521057,
+ "cash": 611.780613,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.946
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.945
    },
-   "current_value": 26.09541,
-   "unrealized_pl": -0.11034,
-   "unrealized_pl_pct": -0.421
+   "current_value": 26.067825,
+   "unrealized_pl": -0.137925,
+   "unrealized_pl_pct": -0.526
   },
   {
    "key": "CV-2234098",
@@ -88,125 +88,6 @@
    "current_value": 25.536784,
    "unrealized_pl": 0.195534,
    "unrealized_pl_pct": 0.772
-  },
-  {
-   "key": "ARB-NO-766064",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in Toronto on July 30?",
-   "opened": 1785363139.1848984,
-   "cost": 25.52275,
-   "edge": 0.002305,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 10.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-30T12:00:00Z",
-   "note": "11 outcomes, NO asks sum 9.9770 vs payout 10, 4 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "1986410449677715820238040768353924440006688182346968243353270046720398379162",
-     "market_id": "3194808",
-     "label": "NO Will the highest temperature in Toronto be 23\u00b0C or below on July 30?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "63255466385793510447692230855028773361438194086292070448824429460353979382798",
-     "market_id": "3194809",
-     "label": "NO Will the highest temperature in Toronto be 24\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.995,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "47317223407109670731852319366724264831279692162560155674598523538247814867509",
-     "market_id": "3194810",
-     "label": "NO Will the highest temperature in Toronto be 25\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "84366896593444574909763335536760100054568713551609252053062701250020740037060",
-     "market_id": "3194811",
-     "label": "NO Will the highest temperature in Toronto be 26\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "104624338078951949930068843708425982938897560178936923231140737215999741457545",
-     "market_id": "3194812",
-     "label": "NO Will the highest temperature in Toronto be 27\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.67,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "96893623482951465205061073103615034442606109534386947977180650027984861930679",
-     "market_id": "3194813",
-     "label": "NO Will the highest temperature in Toronto be 28\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.52,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "20962694265284128944024114130846727490898897218150590786853033206780780690258",
-     "market_id": "3194814",
-     "label": "NO Will the highest temperature in Toronto be 29\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.86,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "2534616899830838940506689561930731828440064400793411574745050809809489902581",
-     "market_id": "3194815",
-     "label": "NO Will the highest temperature in Toronto be 30\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "26132799188120444904313346115162850942350246676206920880015347486339378679314",
-     "market_id": "3194816",
-     "label": "NO Will the highest temperature in Toronto be 31\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.995,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "41969256704401675812777153040510910408292793242623203975310392024509420067427",
-     "market_id": "3194817",
-     "label": "NO Will the highest temperature in Toronto be 32\u00b0C on July 30?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.558159
-    },
-    {
-     "token_id": "40646675953117081390687445146785175331886542387234732766964494396841310893376",
-     "market_id": "3194818",
-     "label": "NO Will the highest temperature in Toronto be 33\u00b0C or higher on July 30?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.558159
-    }
-   ],
-   "current_prices": {
-    "1986410449677715820238040768353924440006688182346968243353270046720398379162": 0.9995,
-    "63255466385793510447692230855028773361438194086292070448824429460353979382798": 0.9995,
-    "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.9995,
-    "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.9995,
-    "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.9995,
-    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.001,
-    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.9995,
-    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.9995,
-    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.9995,
-    "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.9995,
-    "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.9995
-   },
-   "current_value": 25.58159,
-   "unrealized_pl": 0.05884,
-   "unrealized_pl_pct": 0.231
   },
   {
    "key": "LS-3194845",
@@ -260,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.6635
+    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.741
    },
-   "current_value": 16.929921,
-   "unrealized_pl": -7.693099,
-   "unrealized_pl_pct": -31.244
+   "current_value": 18.907418,
+   "unrealized_pl": -5.715602,
+   "unrealized_pl_pct": -23.212
   },
   {
    "key": "LS-3194919",
@@ -347,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.1995
+    "5823805802875099304203116182652199693089526522530469365767529374822548212673": 0.195
    },
-   "current_value": 5.155665,
-   "unrealized_pl": -19.524335,
-   "unrealized_pl_pct": -79.11
+   "current_value": 5.039372,
+   "unrealized_pl": -19.640628,
+   "unrealized_pl_pct": -79.581
   },
   {
    "key": "CV-2118271",
@@ -376,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.957
+    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.962
    },
-   "current_value": 5.405078,
-   "unrealized_pl": -0.090366,
-   "unrealized_pl_pct": -1.644
+   "current_value": 5.433317,
+   "unrealized_pl": -0.062127,
+   "unrealized_pl_pct": -1.131
   },
   {
    "key": "CV-3158240",
@@ -405,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9785
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9685
    },
-   "current_value": 15.288464,
-   "unrealized_pl": 0.07031,
-   "unrealized_pl_pct": 0.462
+   "current_value": 15.13222,
+   "unrealized_pl": -0.085934,
+   "unrealized_pl_pct": -0.565
   },
   {
    "key": "CV-3202417",
@@ -434,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9655
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.955
    },
-   "current_value": 12.321775,
-   "unrealized_pl": 0.070192,
-   "unrealized_pl_pct": 0.573
+   "current_value": 12.187773,
+   "unrealized_pl": -0.06381,
+   "unrealized_pl_pct": -0.521
   },
   {
    "key": "CV-3101448",
@@ -463,40 +344,11 @@
     }
    ],
    "current_prices": {
-    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.9785
+    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.9755
    },
-   "current_value": 24.706625,
-   "unrealized_pl": -0.012625,
-   "unrealized_pl_pct": -0.051
-  },
-  {
-   "key": "CV-2596202",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
-   "opened": 1785441338.8223915,
-   "cost": 9.094449,
-   "edge": 0.048218,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9583999999999999,
-   "resolve_by": "2026-08-02T23:59:00Z",
-   "note": "YES ask 0.954, 3.2d to resolution, 555% annualized if YES, assumed true P 0.958",
-   "legs": [
-    {
-     "token_id": "20131175058527417013866449499544981255748316136818349034325627543066249892670",
-     "market_id": "2596202",
-     "label": "YES Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office be greater than 280m?",
-     "side": "YES",
-     "entry_price": 0.954,
-     "shares": 9.532965
-    }
-   ],
-   "current_prices": {
-    "20131175058527417013866449499544981255748316136818349034325627543066249892670": 0.9655
-   },
-   "current_value": 9.204078,
-   "unrealized_pl": 0.109629,
-   "unrealized_pl_pct": 1.205
+   "current_value": 24.630877,
+   "unrealized_pl": -0.088373,
+   "unrealized_pl_pct": -0.358
   },
   {
    "key": "ARB-NO-770652",
@@ -601,50 +453,21 @@
     }
    ],
    "current_prices": {
-    "104106808180727648970782591357581629848405536487802249768754015253914937912192": 0.9985,
-    "14297374655663275018574890717559698277950529518607975956718490863631081825807": 0.9985,
+    "104106808180727648970782591357581629848405536487802249768754015253914937912192": 0.9995,
+    "14297374655663275018574890717559698277950529518607975956718490863631081825807": 0.9995,
     "115766611195471577584516100784299696113215032369511686766155482705553253124278": 0.9945,
     "46261670262617868265314197677023132444099356756389332913401078291659369884677": 0.985,
-    "44736105756124586898039570249628640556249547371627870579228631875087377141430": 0.92,
-    "92453494587087867458820728912852311985726838454390767229996704543747279395984": 0.785,
-    "57210893112937713455698250097395553729962085853422384598916069510777246642148": 0.665,
-    "48162901426982353265623854663054457439801501204428226038301920305211317582015": 0.755,
-    "19711148415010817538065046562197581657447351966687171301429987378461662815978": 0.915,
+    "44736105756124586898039570249628640556249547371627870579228631875087377141430": 0.925,
+    "92453494587087867458820728912852311985726838454390767229996704543747279395984": 0.84,
+    "57210893112937713455698250097395553729962085853422384598916069510777246642148": 0.655,
+    "48162901426982353265623854663054457439801501204428226038301920305211317582015": 0.67,
+    "19711148415010817538065046562197581657447351966687171301429987378461662815978": 0.875,
     "94056257358303215851598002280568429612325204257794960925525691171904813147460": 0.9855,
-    "98736189653017905648714216148148286983502502815109462139933783763140978949318": 0.9925
+    "98736189653017905648714216148148286983502502815109462139933783763140978949318": 0.99
    },
    "current_value": 24.83652,
    "unrealized_pl": 0.03477,
    "unrealized_pl_pct": 0.14
-  },
-  {
-   "key": "CV-599305",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Abdul El-Sayed win the 2026 Michigan Democratic Primary",
-   "opened": 1785445959.360291,
-   "cost": 9.9207,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.952,
-   "resolve_by": "2026-08-04T00:00:00Z",
-   "note": "YES ask 0.950, 4.1d to resolution, 467% annualized if YES, assumed true P 0.952",
-   "legs": [
-    {
-     "token_id": "74768395815166461619548348007728690058055087254143355558596876906836785272025",
-     "market_id": "599305",
-     "label": "YES Will Abdul El-Sayed win the 2026 Michigan Democratic Primary?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 10.442842
-    }
-   ],
-   "current_prices": {
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.955
-   },
-   "current_value": 9.972914,
-   "unrealized_pl": 0.052214,
-   "unrealized_pl_pct": 0.526
   },
   {
    "key": "CV-907513",
@@ -669,11 +492,11 @@
     }
    ],
    "current_prices": {
-    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.957
+    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.956
    },
-   "current_value": 24.724244,
-   "unrealized_pl": -0.077506,
-   "unrealized_pl_pct": -0.313
+   "current_value": 24.698409,
+   "unrealized_pl": -0.103341,
+   "unrealized_pl_pct": -0.417
   },
   {
    "key": "CV-2832140",
@@ -698,11 +521,11 @@
     }
    ],
    "current_prices": {
-    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.975
+    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9775
    },
-   "current_value": 17.294325,
-   "unrealized_pl": -0.035475,
-   "unrealized_pl_pct": -0.205
+   "current_value": 17.338669,
+   "unrealized_pl": 0.008869,
+   "unrealized_pl_pct": 0.051
   },
   {
    "key": "CV-2431240",
@@ -727,11 +550,11 @@
     }
    ],
    "current_prices": {
-    "97684851245837777190207368882283121398187673853904169785076167369362546064342": 0.948
+    "97684851245837777190207368882283121398187673853904169785076167369362546064342": 0.921
    },
-   "current_value": 16.69971,
-   "unrealized_pl": -0.264236,
-   "unrealized_pl_pct": -1.558
+   "current_value": 16.224085,
+   "unrealized_pl": -0.739861,
+   "unrealized_pl_pct": -4.361
   },
   {
    "key": "CV-2233784",
@@ -756,11 +579,69 @@
     }
    ],
    "current_prices": {
-    "37593934726560873533197883439457294079580315564021085969196243071890347690669": 0.978
+    "37593934726560873533197883439457294079580315564021085969196243071890347690669": 0.977
    },
-   "current_value": 5.342815,
-   "unrealized_pl": -0.021852,
-   "unrealized_pl_pct": -0.407
+   "current_value": 5.337352,
+   "unrealized_pl": -0.027315,
+   "unrealized_pl_pct": -0.509
+  },
+  {
+   "key": "CV-3082125",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 31?",
+   "opened": 1785472887.666394,
+   "cost": 22.3034,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-07-31T16:00:00Z",
+   "note": "YES ask 0.985, 0.5d to resolution, 1180% annualized if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "97561598506543847913790264815779581261767279839387613390857633810226412398258",
+     "market_id": "3082125",
+     "label": "YES Will the price of Bitcoin be above $62,000 on July 31?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 22.643046
+    }
+   ],
+   "current_prices": {
+    "97561598506543847913790264815779581261767279839387613390857633810226412398258": 0.983
+   },
+   "current_value": 22.258114,
+   "unrealized_pl": -0.045286,
+   "unrealized_pl_pct": -0.203
+  },
+  {
+   "key": "CV-2952486",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 31?",
+   "opened": 1785472887.6664188,
+   "cost": 19.489587,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.985, 0.8d to resolution, 691% annualized if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "107961194152792740725727064379230288293910546811577910480987951504293301797282",
+     "market_id": "2952486",
+     "label": "YES Israel x Iran ceasefire continues through July 31?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 19.786383
+    }
+   ],
+   "current_prices": {
+    "107961194152792740725727064379230288293910546811577910480987951504293301797282": 0.9845
+   },
+   "current_value": 19.479694,
+   "unrealized_pl": -0.009893,
+   "unrealized_pl_pct": -0.051
   }
  ],
  "closed": [
@@ -7809,6 +7690,194 @@
    "payout": 26.458251,
    "pl": 0.592751,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2596202",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "opened": 1785441338.8223915,
+   "cost": 9.094449,
+   "edge": 0.048218,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9583999999999999,
+   "resolve_by": "2026-08-02T23:59:00Z",
+   "note": "YES ask 0.954, 3.2d to resolution, 555% annualized if YES, assumed true P 0.958",
+   "legs": [
+    {
+     "token_id": "20131175058527417013866449499544981255748316136818349034325627543066249892670",
+     "market_id": "2596202",
+     "label": "YES Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office be greater than 280m?",
+     "side": "YES",
+     "entry_price": 0.954,
+     "shares": 9.532965
+    }
+   ],
+   "current_prices": {
+    "20131175058527417013866449499544981255748316136818349034325627543066249892670": 0.9655
+   },
+   "current_value": 9.204078,
+   "unrealized_pl": 0.109629,
+   "unrealized_pl_pct": 1.205,
+   "closed_ts": 1785472887.8775544,
+   "payout": 9.351839,
+   "pl": 0.25739,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-599305",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Abdul El-Sayed win the 2026 Michigan Democratic Primary",
+   "opened": 1785445959.360291,
+   "cost": 9.9207,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-04T00:00:00Z",
+   "note": "YES ask 0.950, 4.1d to resolution, 467% annualized if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "74768395815166461619548348007728690058055087254143355558596876906836785272025",
+     "market_id": "599305",
+     "label": "YES Will Abdul El-Sayed win the 2026 Michigan Democratic Primary?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.442842
+    }
+   ],
+   "current_prices": {
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.955
+   },
+   "current_value": 9.972914,
+   "unrealized_pl": 0.052214,
+   "unrealized_pl_pct": 0.526,
+   "closed_ts": 1785472887.8775544,
+   "payout": 10.119114,
+   "pl": 0.198414,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "ARB-NO-766064",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Toronto on July 30?",
+   "opened": 1785363139.1848984,
+   "cost": 25.52275,
+   "edge": 0.002305,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-30T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9770 vs payout 10, 4 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "1986410449677715820238040768353924440006688182346968243353270046720398379162",
+     "market_id": "3194808",
+     "label": "NO Will the highest temperature in Toronto be 23\u00b0C or below on July 30?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "63255466385793510447692230855028773361438194086292070448824429460353979382798",
+     "market_id": "3194809",
+     "label": "NO Will the highest temperature in Toronto be 24\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "47317223407109670731852319366724264831279692162560155674598523538247814867509",
+     "market_id": "3194810",
+     "label": "NO Will the highest temperature in Toronto be 25\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "84366896593444574909763335536760100054568713551609252053062701250020740037060",
+     "market_id": "3194811",
+     "label": "NO Will the highest temperature in Toronto be 26\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "104624338078951949930068843708425982938897560178936923231140737215999741457545",
+     "market_id": "3194812",
+     "label": "NO Will the highest temperature in Toronto be 27\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.67,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "96893623482951465205061073103615034442606109534386947977180650027984861930679",
+     "market_id": "3194813",
+     "label": "NO Will the highest temperature in Toronto be 28\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.52,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "20962694265284128944024114130846727490898897218150590786853033206780780690258",
+     "market_id": "3194814",
+     "label": "NO Will the highest temperature in Toronto be 29\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.86,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "2534616899830838940506689561930731828440064400793411574745050809809489902581",
+     "market_id": "3194815",
+     "label": "NO Will the highest temperature in Toronto be 30\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "26132799188120444904313346115162850942350246676206920880015347486339378679314",
+     "market_id": "3194816",
+     "label": "NO Will the highest temperature in Toronto be 31\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "41969256704401675812777153040510910408292793242623203975310392024509420067427",
+     "market_id": "3194817",
+     "label": "NO Will the highest temperature in Toronto be 32\u00b0C on July 30?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.558159
+    },
+    {
+     "token_id": "40646675953117081390687445146785175331886542387234732766964494396841310893376",
+     "market_id": "3194818",
+     "label": "NO Will the highest temperature in Toronto be 33\u00b0C or higher on July 30?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.558159
+    }
+   ],
+   "current_prices": {
+    "1986410449677715820238040768353924440006688182346968243353270046720398379162": 0.999,
+    "63255466385793510447692230855028773361438194086292070448824429460353979382798": 0.995,
+    "47317223407109670731852319366724264831279692162560155674598523538247814867509": 0.99,
+    "84366896593444574909763335536760100054568713551609252053062701250020740037060": 0.96,
+    "104624338078951949930068843708425982938897560178936923231140737215999741457545": 0.67,
+    "96893623482951465205061073103615034442606109534386947977180650027984861930679": 0.52,
+    "20962694265284128944024114130846727490898897218150590786853033206780780690258": 0.86,
+    "2534616899830838940506689561930731828440064400793411574745050809809489902581": 0.99,
+    "26132799188120444904313346115162850942350246676206920880015347486339378679314": 0.995,
+    "41969256704401675812777153040510910408292793242623203975310392024509420067427": 0.999,
+    "40646675953117081390687445146785175331886542387234732766964494396841310893376": 0.999
+   },
+   "current_value": 25.58159,
+   "unrealized_pl": 0.05884,
+   "unrealized_pl_pct": 0.231,
+   "closed_ts": 1785472891.9518054,
+   "payout": 25.58159,
+   "pl": 0.05884
   }
  ],
  "history": [
@@ -8730,6 +8799,14 @@
    "open_value": 347.3438,
    "equity": 955.8649,
    "realized_total": 0.6711,
+   "open_positions": 20
+  },
+  {
+   "ts": 1785472887.8791716,
+   "cash": 586.199,
+   "open_value": 370.9379,
+   "equity": 957.137,
+   "realized_total": 1.1269,
    "open_positions": 20
   }
  ],
@@ -12153,6 +12230,53 @@
    "amount": 26.46,
    "pl": 0.59,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1785472887.666394,
+   "type": "OPEN",
+   "key": "CV-3082125",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on July 31?",
+   "amount": 22.3,
+   "pl": null
+  },
+  {
+   "ts": 1785472887.6664188,
+   "type": "OPEN",
+   "key": "CV-2952486",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through July 31?",
+   "amount": 19.49,
+   "pl": null
+  },
+  {
+   "ts": 1785472887.8775544,
+   "type": "CLOSE",
+   "key": "CV-2596202",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "amount": 9.35,
+   "pl": 0.26,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785472887.8775544,
+   "type": "CLOSE",
+   "key": "CV-599305",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Abdul El-Sayed win the 2026 Michigan Democratic Primary",
+   "amount": 10.12,
+   "pl": 0.2,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785472891.9518054,
+   "type": "CLOSE",
+   "key": "ARB-NO-766064",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Toronto on July 30?",
+   "amount": 25.58,
+   "pl": 0.06
   }
  ]
 }
