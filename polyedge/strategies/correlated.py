@@ -31,7 +31,7 @@ import logging
 import os
 from typing import Dict, List
 
-from .. import config
+from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 log = logging.getLogger("polyedge.rel")
@@ -53,7 +53,11 @@ def load_relations(path: str = None) -> List[dict]:
 
 def _lock(kind: str, rel: dict, a: Market, b: Market,
           leg_a: Leg, leg_b: Leg, cost: float) -> Opportunity:
-    edge = (1.0 - cost) - config.FEE_RATE * cost
+    # per-leg taker fees, same pattern as ARB's YES-lock: each leg has its
+    # own price/category, summed because `cost` is a per-set dollar sum
+    # (one share of each leg) -- the same unit fee_per_share is in
+    total_fee = leg_a.fee_per_share + leg_b.fee_per_share
+    edge = (1.0 - cost) - total_fee
     return Opportunity(
         strategy="REL",
         key=f"REL-{rel['type']}-{a.market_id}-{b.market_id}",
@@ -61,7 +65,7 @@ def _lock(kind: str, rel: dict, a: Market, b: Market,
         edge=edge, guaranteed=True, legs=[leg_a, leg_b],
         guaranteed_payout=1.0,
         resolve_by=max(a.end_date, b.end_date),
-        note=rel.get("note", "") + f" | legs sum {cost:.4f}",
+        note=rel.get("note", "") + f" | legs sum {cost:.4f}, fees {total_fee:.4f}",
     )
 
 
@@ -98,8 +102,10 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook],
             size = min(book_b_yes.asks[0].size, book_a_no.asks[0].size)
             if size <= 0:
                 continue
-            leg_b = Leg(b.yes_token, b.market_id, f"YES {b.question}", "YES", pb, size)
-            leg_a = Leg(a.no_token, a.market_id, f"NO {a.question}", "NO", pa, size)
+            leg_b = Leg(b.yes_token, b.market_id, f"YES {b.question}", "YES", pb, size,
+                       fee_per_share=fees.fee_per_share(pb, b.category))
+            leg_a = Leg(a.no_token, a.market_id, f"NO {a.question}", "NO", pa, size,
+                       fee_per_share=fees.fee_per_share(pa, a.category))
             out.append(_lock("IMPLIES", rel, a, b, leg_a, leg_b, cost))
 
         elif rel["type"] == "EXCLUSIVE":
@@ -117,8 +123,10 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook],
             size = min(book_a_no.asks[0].size, book_b_no.asks[0].size)
             if size <= 0:
                 continue
-            leg_a = Leg(a.no_token, a.market_id, f"NO {a.question}", "NO", pa, size)
-            leg_b = Leg(b.no_token, b.market_id, f"NO {b.question}", "NO", pb, size)
+            leg_a = Leg(a.no_token, a.market_id, f"NO {a.question}", "NO", pa, size,
+                       fee_per_share=fees.fee_per_share(pa, a.category))
+            leg_b = Leg(b.no_token, b.market_id, f"NO {b.question}", "NO", pb, size,
+                       fee_per_share=fees.fee_per_share(pb, b.category))
             out.append(_lock("EXCLUSIVE", rel, a, b, leg_a, leg_b, cost))
 
     return out
