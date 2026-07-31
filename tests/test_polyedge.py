@@ -21,12 +21,24 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pytest
 import requests
 
-from polyedge import config, reconcile
+from polyedge import config, fees, reconcile
 from polyedge.api import PolymarketClient
 from polyedge.models import BookLevel, Leg, Market, Opportunity, OrderBook
 from polyedge.paper import PaperEngine
 from polyedge.risk import kelly_fraction, size_opportunities
 from polyedge.strategies import arbitrage, convergence, correlated, longshot
+
+
+@pytest.fixture(autouse=True)
+def _zero_fees_by_default(monkeypatch):
+    """Most of this suite predates fee-awareness and asserts exact pre-fee
+    edge/payoff math (Kelly values, lock payouts, guard thresholds...).
+    Force fees to 0 by default so those tests stay meaningful without
+    hand-computing a fee delta into every expected value. Tests that
+    specifically exercise fee math (TestFees, the per-strategy
+    fee-wiring tests below) override POLYEDGE_FEE_RATE_OVERRIDE back to
+    None (real category table) or a specific rate within their own body."""
+    monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.0)
 
 
 # ------------------------------------------------------------------ helpers
@@ -64,6 +76,57 @@ class TestOrderBook:
         b = OrderBook("t", asks=[BookLevel(0.40, 100), BookLevel(0.50, 100)])
         assert b.avg_fill_price(150) == pytest.approx((100 * .4 + 50 * .5) / 150)
         assert b.avg_fill_price(300) is None      # book too thin
+
+
+# ------------------------------------------------------------------ fees
+class TestFees:
+    def test_known_category_rates(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", None)   # use the real table
+        assert fees.fee_rate_for_category("crypto") == pytest.approx(0.07)
+        assert fees.fee_rate_for_category("Sports") == pytest.approx(0.05)
+        assert fees.fee_rate_for_category("weather") == pytest.approx(0.05)
+        assert fees.fee_rate_for_category("politics") == pytest.approx(0.04)
+        assert fees.fee_rate_for_category("tech") == pytest.approx(0.04)
+        assert fees.fee_rate_for_category("mentions") == pytest.approx(0.04)
+        assert fees.fee_rate_for_category("geopolitics") == pytest.approx(0.0)
+        assert fees.fee_rate_for_category("world affairs") == pytest.approx(0.0)
+
+    def test_unrecognized_category_falls_back_to_default(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", None)
+        assert fees.fee_rate_for_category("some made-up tag") == pytest.approx(fees.DEFAULT_FEE_RATE)
+        assert fees.fee_rate_for_category("") == pytest.approx(fees.DEFAULT_FEE_RATE)
+        assert fees.fee_rate_for_category(None) == pytest.approx(fees.DEFAULT_FEE_RATE)
+
+    def test_fee_per_share_matches_documented_formula(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", None)
+        # fee = feeRate * price * (1 - price)
+        assert fees.fee_per_share(0.5, "crypto") == pytest.approx(0.07 * 0.5 * 0.5)
+        assert fees.fee_per_share(0.96, "politics") == pytest.approx(0.04 * 0.96 * 0.04)
+        assert fees.fee_per_share(0.04, "sport") == pytest.approx(0.05 * 0.04 * 0.96)
+        assert fees.fee_per_share(0.5, "geopolitics") == pytest.approx(0.0)
+
+    def test_fee_peaks_at_50c_and_shrinks_at_extremes(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", None)
+        mid = fees.fee_per_share(0.50, "crypto")
+        near_one = fees.fee_per_share(0.97, "crypto")
+        near_zero = fees.fee_per_share(0.03, "crypto")
+        assert mid > near_one and mid > near_zero
+
+    def test_price_clamped_to_valid_range(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", None)
+        assert fees.fee_per_share(-0.5, "crypto") == pytest.approx(0.0)
+        assert fees.fee_per_share(1.5, "crypto") == pytest.approx(0.0)
+
+    def test_override_takes_priority_over_category_table(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.10)
+        assert fees.fee_rate_for_category("crypto") == pytest.approx(0.10)
+        assert fees.fee_rate_for_category("geopolitics") == pytest.approx(0.10)
+        assert fees.fee_per_share(0.5, "crypto") == pytest.approx(0.10 * 0.5 * 0.5)
+
+    def test_net_of_fee_edge(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)
+        expect = 0.02 - fees.fee_per_share(0.5, "crypto")
+        assert fees.net_of_fee_edge(0.02, 0.5, "crypto") == pytest.approx(expect)
 
 
 # ------------------------------------------------------------------ ARB
@@ -246,12 +309,46 @@ class TestArbitrage:
         # a clear 5c YES-lock, but resolving ~5 months out -> must be skipped
         ms, books = self._mk_event([0.30, 0.35, 0.30], [0.9, 0.9, 0.9])
         for m in ms:
-            m.end_date = "2026-12-31T00:00:00Z"
+            m.end_date = _future(150)
         assert arbitrage.scan(ms, books) == []
         # same lock inside the horizon -> detected
         for m in ms:
-            m.end_date = "2026-08-01T00:00:00Z"
+            m.end_date = _future(5)
         assert [o for o in arbitrage.scan(ms, books) if "YES" in o.key]
+
+    def test_yes_lock_legs_carry_fee_and_reduce_edge(self, monkeypatch):
+        # fixed rate so the expected fee is exact and easy to check
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)
+        ms, books = self._mk_event([0.30, 0.35, 0.30], [0.72, 0.67, 0.72],
+                                   sizes=[5000] * 3)
+        opps = [o for o in arbitrage.scan(ms, books) if "YES" in o.key]
+        assert len(opps) == 1
+        o = opps[0]
+        for leg, ask in zip(o.legs, [0.30, 0.35, 0.30]):
+            assert leg.fee_per_share == pytest.approx(fees.fee_per_share(ask, ""))
+            assert leg.fee_per_share > 0
+        total_fee_per_set = sum(leg.fee_per_share for leg in o.legs)
+        sets = o.legs[0].shares
+        assert o.total_cost() == pytest.approx((sum([0.30, 0.35, 0.30]) + total_fee_per_set) * sets)
+        # control run with fees off must show a strictly better edge and a
+        # strictly lower total_cost for the same inputs
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.0)
+        opps_no_fee = [o for o in arbitrage.scan(ms, books) if "YES" in o.key]
+        assert opps_no_fee[0].edge > o.edge
+        assert opps_no_fee[0].total_cost() < o.total_cost()
+
+    def test_no_lock_legs_carry_fee_and_reduce_edge(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)
+        ms, books = self._mk_event([0.40, 0.35, 0.30], [0.62, 0.64, 0.64])
+        opps = [o for o in arbitrage.scan(ms, books) if "NO" in o.key]
+        assert len(opps) == 1
+        o = opps[0]
+        for leg, ask in zip(o.legs, [0.62, 0.64, 0.64]):
+            assert leg.fee_per_share == pytest.approx(fees.fee_per_share(ask, ""))
+            assert leg.fee_per_share > 0
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.0)
+        opps_no_fee = [o for o in arbitrage.scan(ms, books) if "NO" in o.key]
+        assert opps_no_fee[0].edge > o.edge
 
 
 # ------------------------------------------------------------------ REL
@@ -306,14 +403,37 @@ class TestCorrelated:
         # profitable IMPLIES lock, but leg B resolves ~5 months out ->
         # capital tied until the LAST leg resolves, so the pair is skipped
         a = market("A", 0.35)
-        b = market("B", 0.55, end="2026-12-31T00:00:00Z")
+        b = market("B", 0.55, end=_future(150))
         books = {b.yes_token: book(b.yes_token, 0.55),
                  a.no_token: book(a.no_token, 0.40)}
         rels = [{"type": "IMPLIES", "a_market_id": "A", "b_market_id": "B"}]
         assert correlated.scan([a, b], books, rels) == []
         # same lock with both legs near-dated -> detected
-        b.end_date = "2026-08-01T00:00:00Z"
+        b.end_date = _future(5)
         assert len(correlated.scan([a, b], books, rels)) == 1
+
+    def test_implies_lock_legs_carry_fee_and_reduce_edge(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)
+        a, b = market("A", 0.35), market("B", 0.55)
+        books = {b.yes_token: book(b.yes_token, 0.55),
+                 a.no_token: book(a.no_token, 0.40)}
+        rels = [{"type": "IMPLIES", "a_market_id": "A", "b_market_id": "B"}]
+        opps = correlated.scan([a, b], books, rels)
+        assert len(opps) == 1
+        o = opps[0]
+        leg_b = next(l for l in o.legs if l.side == "YES")
+        leg_a = next(l for l in o.legs if l.side == "NO")
+        assert leg_b.fee_per_share == pytest.approx(fees.fee_per_share(0.55, ""))
+        assert leg_a.fee_per_share == pytest.approx(fees.fee_per_share(0.40, ""))
+        assert leg_b.fee_per_share > 0 and leg_a.fee_per_share > 0
+        sets = leg_a.shares
+        total_fee_per_set = leg_a.fee_per_share + leg_b.fee_per_share
+        assert o.total_cost() == pytest.approx((0.40 + 0.55 + total_fee_per_set) * sets)
+
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.0)
+        opps_no_fee = correlated.scan([a, b], books, rels)
+        assert opps_no_fee[0].edge > o.edge
+        assert opps_no_fee[0].total_cost() < o.total_cost()
 
 
 # ------------------------------------------------------------------ LONGSHOT
@@ -357,6 +477,33 @@ class TestLongshot:
         # EV = (1 - 0.03) - 0.995 = -0.025 < 0
         assert longshot.scan([m], books) == []
 
+    def test_leg_carries_fee_and_ev_uses_price_plus_fee_denominator(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)
+        m = market("L1", 0.04, end=_future(5))
+        a = 0.965
+        books = {m.no_token: book(m.no_token, a)}
+        opps = longshot.scan([m], books)
+        assert len(opps) == 1
+        o = opps[0]
+        leg = o.legs[0]
+        expected_fee = fees.fee_per_share(a, "")
+        assert leg.fee_per_share == pytest.approx(expected_fee)
+        assert leg.fee_per_share > 0
+        true_p_yes = 0.04 * config.LS_BIAS_HAIRCUT
+        p_win = 1 - true_p_yes
+        expect_edge = (p_win - a - expected_fee) / (a + expected_fee)
+        assert o.edge == pytest.approx(expect_edge)
+        # shares are filled in later by risk.py's sizing, but the fee is
+        # already baked into Leg.cost, so total_cost() is fee-aware for
+        # ANY size risk.py ends up choosing -- spot check at a nonzero size
+        leg.shares = 20.0
+        assert o.total_cost() == pytest.approx((a + expected_fee) * 20.0)
+
+        # control run with fees off: strictly better edge for the same inputs
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.0)
+        opps_no_fee = longshot.scan([m], books)
+        assert opps_no_fee[0].edge > o.edge
+
 
 # ------------------------------------------------------------------ CONVERGE
 class TestConvergence:
@@ -399,8 +546,10 @@ class TestConvergence:
     def test_low_annualized_yield_rejected(self):
         # far-dated but still inside CV_MAX_DAYS window won't work as time
         # passes, so force the reject via a very high APY floor instead —
-        # date-robust regardless of when the suite runs
-        m = market("C1", 0.984, end="2026-08-01T00:00:00Z", liq=99999)
+        # and use _future() rather than a fixed calendar date so this stays
+        # date-robust regardless of when the suite runs (a hardcoded date
+        # eventually arrives, which is exactly what made this test flaky)
+        m = market("C1", 0.984, end=_future(365), liq=99999)
         books = {m.yes_token: book(m.yes_token, 0.984)}
         old_apy = config.CV_MIN_ANNUAL_YIELD
         old_days = config.CV_MAX_DAYS
@@ -635,6 +784,31 @@ class TestConvergence:
         assert not convergence.is_election_market(m)
         books = {m.yes_token: book(m.yes_token, 0.96)}
         assert len(convergence.scan([m], books)) == 1
+
+    def test_leg_carries_fee_and_yield_is_net(self, monkeypatch):
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)
+        m = market("C1", 0.96, end=_future(4), liq=99999)
+        a = 0.96
+        books = {m.yes_token: book(m.yes_token, a)}
+        opps = convergence.scan([m], books)
+        assert len(opps) == 1
+        o = opps[0]
+        leg = o.legs[0]
+        expected_fee = fees.fee_per_share(a, "")
+        assert leg.fee_per_share == pytest.approx(expected_fee)
+        assert leg.fee_per_share > 0
+        expect_yield = (1.0 - a - expected_fee) / a
+        assert o.edge == pytest.approx(expect_yield)
+        assert "fee" in o.note
+
+        # control run with fees off must show a strictly better (higher)
+        # net yield/edge for the exact same market and book
+        monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.0)
+        opps_no_fee = convergence.scan([m], books)
+        assert len(opps_no_fee) == 1
+        assert opps_no_fee[0].edge > o.edge
+        assert opps_no_fee[0].legs[0].fee_per_share == 0.0
+        assert opps_no_fee[0].note != o.note
 
 
 # ------------------------------------------------------------------ past-date rejection

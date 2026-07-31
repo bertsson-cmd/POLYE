@@ -40,7 +40,7 @@ really exist, then mark them at locked $1 each for fantasy equity. Guards:
 import logging
 from typing import Dict, List, Optional
 
-from .. import config
+from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 log = logging.getLogger("polyedge.arb")
@@ -117,7 +117,13 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
     if all(b and b.best_ask() is not None for b in yes_books):
         asks = [b.best_ask() for b in yes_books]
         cost = sum(asks)
-        edge = (1.0 - cost) - config.FEE_RATE * cost
+        # per-leg taker fees (each leg has its own price and, usually
+        # shared, category) -- summed because `cost` is already a per-set
+        # dollar sum (one share of each leg), the same unit fee_per_share
+        # is denominated in
+        leg_fees = [fees.fee_per_share(a, m.category) for a, m in zip(asks, markets)]
+        total_fee = sum(leg_fees)
+        edge = (1.0 - cost) - total_fee
         # GUARD 1: no near-zero legs. GUARD 2: cost per set must be realistic
         # (a genuine complete YES-lock sits just under 1.0, not near 0 — a
         # tiny sum means the outcome set is incomplete / not exhaustive).
@@ -128,14 +134,14 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
             if sets > 0 and sets * cost >= config.ARB_MIN_DEPTH_USD:
                 legs = [Leg(token_id=m.yes_token, market_id=m.market_id,
                             label=f"YES {m.question}", side="YES",
-                            entry_price=b.best_ask(), shares=sets)
-                        for m, b in zip(markets, yes_books)]
+                            entry_price=a, shares=sets, fee_per_share=fee)
+                        for m, a, fee in zip(markets, asks, leg_fees)]
                 out.append(Opportunity(
                     strategy="ARB", key=f"ARB-YES-{ev.event_id}",
                     title=f"YES-lock: {ev.event_title}",
                     edge=edge, guaranteed=True, legs=legs,
                     guaranteed_payout=1.0, resolve_by=ev.end_date,
-                    note=f"{n} outcomes, YES asks sum {cost:.4f}, "
+                    note=f"{n} outcomes, YES asks sum {cost:.4f}, fees {total_fee:.4f}, "
                          f"{sets:.0f} sets (capped ${config.ARB_MAX_POSITION_USD:.0f})",
                 ))
 
@@ -145,7 +151,9 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
         asks = [b.best_ask() for b in no_books]
         cost = sum(asks)
         payout = float(n - 1)
-        edge_total = (payout - cost) - config.FEE_RATE * cost
+        leg_fees = [fees.fee_per_share(a, m.category) for a, m in zip(asks, markets)]
+        total_fee = sum(leg_fees)
+        edge_total = (payout - cost) - total_fee
         edge = edge_total / cost if cost > 0 else 0.0
         # GUARD: no near-zero legs (a 0.001 NO ask is a phantom too). The
         # NO-lock cost naturally sums near N-1, so no separate cost floor,
@@ -157,14 +165,15 @@ def scan_event(markets: List[Market], books: Dict[str, OrderBook]) -> List[Oppor
             if sets > 0 and sets * cost >= config.ARB_MIN_DEPTH_USD:
                 legs = [Leg(token_id=m.no_token, market_id=m.market_id,
                             label=f"NO {m.question}", side="NO",
-                            entry_price=b.best_ask(), shares=sets)
-                        for m, b in zip(markets, no_books)]
+                            entry_price=a, shares=sets, fee_per_share=fee)
+                        for m, a, fee in zip(markets, asks, leg_fees)]
                 out.append(Opportunity(
                     strategy="ARB", key=f"ARB-NO-{ev.event_id}",
                     title=f"NO-lock: {ev.event_title}",
                     edge=edge, guaranteed=True, legs=legs,
                     guaranteed_payout=payout, resolve_by=ev.end_date,
                     note=f"{n} outcomes, NO asks sum {cost:.4f} vs payout {payout:.0f}, "
+                         f"fees {total_fee:.4f}, "
                          f"{sets:.0f} sets (capped ${config.ARB_MAX_POSITION_USD:.0f})",
                 ))
     return out

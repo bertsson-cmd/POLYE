@@ -42,7 +42,7 @@ import logging
 import re
 from typing import Dict, List
 
-from .. import config
+from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 log = logging.getLogger("polyedge.converge")
@@ -218,7 +218,8 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         if a >= 0.999 or a < config.CV_MIN_YES_PRICE:
             continue
 
-        yield_pct = (1.0 - a) / a                  # return if resolves YES
+        fee = fees.fee_per_share(a, m.category)
+        yield_pct = (1.0 - a - fee) / a             # NET return if resolves YES
         annual = yield_pct * 365.0 / days
         if annual < config.CV_MIN_ANNUAL_YIELD:
             continue
@@ -236,10 +237,10 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             edge=yield_pct, guaranteed=False,
             est_p_win=p_assumed,
             legs=[Leg(m.yes_token, m.market_id, f"YES {m.question}", "YES",
-                      a, 0.0)],
+                      a, 0.0, fee_per_share=fee)],
             resolve_by=m.end_date,
-            note=f"YES ask {a:.3f}, {days:.1f}d to resolution, "
-                 f"{annual*100:.0f}% annualized if YES, assumed true P {p_assumed:.3f}",
+            note=f"YES ask {a:.3f}, fee {fee:.4f}, {days:.1f}d to resolution, "
+                 f"{annual*100:.0f}% annualized net if YES, assumed true P {p_assumed:.3f}",
         ))
     # sort by annualized yield: same edge resolving sooner ranks higher,
     # which is exactly the near-term, fast-cycling preference

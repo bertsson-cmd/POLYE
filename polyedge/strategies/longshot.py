@@ -27,7 +27,7 @@ true probability and the edge:
 """
 from typing import Dict, List
 
-from .. import config
+from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
 
 
@@ -56,7 +56,10 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
 
         true_p_yes = min(1.0, q * config.LS_BIAS_HAIRCUT)
         p_win = 1.0 - true_p_yes
-        ev_per_cost = (p_win * 1.0 - a) / a     # expected profit per $1 spent
+        fee = fees.fee_per_share(a, m.category)
+        # real cash outlay per share is (a + fee), not just a -- both the
+        # profit numerator and the cost denominator must reflect that
+        ev_per_cost = (p_win - a - fee) / (a + fee)
         if ev_per_cost <= 0:
             continue
 
@@ -67,9 +70,10 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             edge=ev_per_cost, guaranteed=False,
             est_p_win=p_win,
             legs=[Leg(m.no_token, m.market_id, f"NO {m.question}", "NO",
-                      a, 0.0)],           # shares set by risk module
+                      a, 0.0, fee_per_share=fee)],   # shares set by risk module
             resolve_by=m.end_date,
-            note=f"YES at {q:.3f}, assumed true {true_p_yes:.3f}, NO ask {a:.3f}",
+            note=f"YES at {q:.3f}, assumed true {true_p_yes:.3f}, "
+                 f"NO ask {a:.3f}, fee {fee:.4f}",
         ))
     # soonest-resolving first (near-term capital cycling), edge as tiebreak
     out.sort(key=lambda o: (days_to_resolution(o.resolve_by), -o.edge))

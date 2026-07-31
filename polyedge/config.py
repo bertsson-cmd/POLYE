@@ -4,6 +4,7 @@ Every tunable knob lives here. Edit this file (or set environment variables
 with the same names) — you should never need to touch strategy code.
 """
 import os
+from typing import Optional
 
 
 def _f(name: str, default: float) -> float:
@@ -14,10 +15,19 @@ def _i(name: str, default: int) -> int:
     return int(os.environ.get(name, default))
 
 
+def _f_or_none(name: str, default: Optional[float]) -> Optional[float]:
+    raw = os.environ.get(name)
+    return default if raw is None else float(raw)
+
+
 # ---------------------------------------------------------------- general
 MODE = os.environ.get("POLYEDGE_MODE", "paper")   # "paper" only (live = manual)
 STARTING_BANKROLL = _f("POLYEDGE_BANKROLL", 1000.0)  # USD (paper money)
-FEE_RATE = _f("POLYEDGE_FEE", 0.0)                # Polymarket charges no trading fee today; keep configurable
+# Per-category taker fee rates live in polyedge/fees.py (Polymarket's real
+# fee schedule). This is an ESCAPE HATCH for stress-testing "what if fees
+# rise to X%" without touching the category table -- unset (None) means
+# "use fees.py's category table", not "no fee".
+FEE_RATE_OVERRIDE = _f_or_none("POLYEDGE_FEE_RATE_OVERRIDE", None)
 STATE_DIR = os.environ.get("POLYEDGE_STATE_DIR", "state")
 DOCS_DIR = os.environ.get("POLYEDGE_DOCS_DIR", "docs")
 

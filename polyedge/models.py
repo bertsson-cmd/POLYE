@@ -104,10 +104,15 @@ class Leg:
     side: str                # "YES" or "NO" (which outcome token we hold)
     entry_price: float
     shares: float
+    fee_per_share: float = 0.0   # Polymarket taker fee, $ per share (see polyedge.fees).
+    # Default 0.0 for backward compat with any Leg built by hand (e.g. in
+    # tests) without fee-awareness. Folding this into `cost` is what makes
+    # total_cost() -- and therefore paper.py's real cash deduction -- fee-
+    # aware everywhere downstream with no changes needed to paper.py itself.
 
     @property
     def cost(self) -> float:
-        return self.entry_price * self.shares
+        return (self.entry_price + self.fee_per_share) * self.shares
 
 
 @dataclass
