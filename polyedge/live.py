@@ -53,11 +53,15 @@ Two things worth knowing about the V2 rewrite specifically:
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
-    tradeable pUSD balance/allowance via the SDK's own
-    `get_balance_allowance()` before ever attempting a real order, and
-    halts loudly (same mechanism as the daily-loss breaker) rather than
-    repeatedly trying and failing if the funder wallet's USDC.e was never
-    wrapped. This bot does not call wrap() itself -- see LIVE.md.
+    tradeable pUSD balance via a direct on-chain read (the SDK's own
+    `get_balance_allowance()` was tried first and confirmed broken for a
+    signature_type=1/POLY_PROXY funder wallet -- see `_check_pusd_balance`
+    for the full root-cause writeup and LIVE.md for the tracking issue)
+    before ever attempting a real order, and halts loudly (same mechanism
+    as the daily-loss breaker) rather than repeatedly trying and failing
+    if the funder wallet's USDC.e was never wrapped. This bot does not
+    call wrap() itself -- see LIVE.md. Note this only checks balance, not
+    allowance -- see LIVE.md's known-limitations note.
 """
 import logging
 import os
@@ -144,8 +148,8 @@ class LiveEngine(PaperEngine):
         return self._client
 
     def _check_pusd_balance(self) -> bool:
-        """Verify the funder wallet has tradeable pUSD balance/allowance
-        BEFORE attempting a real order. API/programmatic traders must wrap
+        """Verify the funder wallet has tradeable pUSD balance BEFORE
+        attempting a real order. API/programmatic traders must wrap
         USDC.e into pUSD via the Collateral Onramp's wrap() themselves --
         unlike Polymarket's own UI, the CLOB does not do this for you when
         an order comes in through the API. This bot never calls wrap()
@@ -153,27 +157,53 @@ class LiveEngine(PaperEngine):
         automate blind) -- it only checks and fails loudly, pointing the
         operator at LIVE.md, rather than silently assuming funds are ready.
 
-        Uses the SDK's own get_balance_allowance() (COLLATERAL = pUSD)
-        rather than a raw wallet balance: that's the only check that also
-        catches "wrapped but the exchange contract's allowance was never
-        approved," which a plain balanceOf() would miss entirely.
+        Reads pUSD balance via the same direct on-chain call
+        reconcile.fetch_real_pusd_balance() uses -- NOT the SDK's
+        get_balance_allowance(), which was tried first and confirmed
+        broken for this exact account shape: on a signature_type=1
+        (POLY_PROXY) account it returned balance=0, allowance=0 for a
+        funder wallet independently confirmed (via this same on-chain
+        read) to hold real pUSD. Root cause, confirmed against the SDK's
+        actual source: get_balance_allowance()'s request body only ever
+        sends `signature_type` (read from self.builder.signature_type,
+        i.e. whatever was configured when the client was constructed --
+        already correct here) and, optionally, asset_type/token_id -- it
+        never sends a funder/address at all.
+        BalanceAllowanceParams.signature_type exists as a dataclass field
+        but the method body never reads it, so passing it explicitly
+        changes nothing; there is no parameter on this call that could
+        have fixed this. This is the same SDK bug CLASS as
+        Polymarket/py-clob-client-v2#70/#77/#64 (signature-type-aware
+        address resolution not honoring the configured funder) showing up
+        for POLY_PROXY (1) instead of POLY_1271 (3) -- see LIVE.md for
+        the tracking issue.
+
+        Known gap: this only verifies BALANCE, not allowance. There is no
+        proven-correct way to check this account's exchange-contract
+        pUSD allowance either -- the SDK response above is unreliable,
+        and a direct on-chain allowance() call would need a confirmed
+        exchange/spender contract address that hasn't been verified. If
+        USDC.e was wrapped but the exchange was never approved, this
+        check passes but the real order still fails -- that failure
+        surfaces as an unfilled order in _place_order, not here. See
+        LIVE.md's known-limitations note.
         """
-        try:
-            from py_clob_client_v2.clob_types import AssetType, BalanceAllowanceParams
-            client = self._clob_client()
-            resp = client.get_balance_allowance(
-                BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)) or {}
-            balance = float(resp.get("balance", 0) or 0)
-            allowance = float(resp.get("allowance", 0) or 0)
-        except Exception as e:
-            log.error("pUSD balance/allowance check failed: %s", e)
+        funder = os.environ.get("POLYEDGE_FUNDER_ADDRESS")
+        if not funder:
+            log.error("pUSD balance check failed: POLYEDGE_FUNDER_ADDRESS not set")
             return False
-        if balance <= 0 or allowance <= 0:
-            log.error("pUSD balance/allowance check failed: balance=%s allowance=%s -- "
-                     "the funder wallet has no tradeable pUSD. USDC.e deposits must be "
-                     "wrapped into pUSD via the Collateral Onramp's wrap() before this "
-                     "bot can trade -- it does not do that automatically. See LIVE.md.",
-                     balance, allowance)
+        try:
+            from .reconcile import fetch_real_pusd_balance
+            balance = fetch_real_pusd_balance(funder)
+        except Exception as e:
+            log.error("pUSD balance check failed: %s", e)
+            return False
+        if balance is None or balance <= 0:
+            log.error("pUSD balance check failed: balance=%s -- the funder wallet has no "
+                     "tradeable pUSD (or the on-chain check itself failed -- see the log "
+                     "line above, if any). USDC.e deposits must be wrapped into pUSD via "
+                     "the Collateral Onramp's wrap() before this bot can trade -- it does "
+                     "not do that automatically. See LIVE.md.", balance)
             return False
         return True
 
