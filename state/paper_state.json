@@ -1,36 +1,7 @@
 {
- "cash": 561.445,
+ "cash": 624.674718,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-2698835",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will there be between 0 and 20 average daily transits of the",
-   "opened": 1785299540.6027517,
-   "cost": 26.06825,
-   "edge": 0.01833,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.984,
-   "resolve_by": "2026-07-31T23:59:00Z",
-   "note": "YES ask 0.982, 2.8d to resolution, 238% annualized if YES, assumed true P 0.984",
-   "legs": [
-    {
-     "token_id": "88509756147117974161819704911234056439101248286713269153285304071228085766956",
-     "market_id": "2698835",
-     "label": "YES Will there be between 0 and 20 average daily transits of the Strait of Hormuz on July 31?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 26.546079
-    }
-   ],
-   "current_prices": {
-    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.982
-   },
-   "current_value": 26.06825,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
-  },
   {
    "key": "CV-907785",
    "strategy": "CONVERGE",
@@ -54,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.942
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.95
    },
-   "current_value": 25.98507,
-   "unrealized_pl": -0.22068,
-   "unrealized_pl_pct": -0.842
+   "current_value": 26.20575,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0
   },
   {
    "key": "CV-2584969",
@@ -83,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.0035
+    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.0015
    },
-   "current_value": 0.089306,
-   "unrealized_pl": -24.533714,
-   "unrealized_pl_pct": -99.637
+   "current_value": 0.038274,
+   "unrealized_pl": -24.584746,
+   "unrealized_pl_pct": -99.845
   },
   {
    "key": "CV-2118271",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.973
+    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.9765
    },
-   "current_value": 5.495445,
-   "unrealized_pl": 1e-06,
-   "unrealized_pl_pct": 0.0
+   "current_value": 5.515212,
+   "unrealized_pl": 0.019768,
+   "unrealized_pl_pct": 0.36
   },
   {
    "key": "CV-3158240",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.943
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9445
    },
-   "current_value": 14.733798,
-   "unrealized_pl": -0.484356,
-   "unrealized_pl_pct": -3.183
+   "current_value": 14.757234,
+   "unrealized_pl": -0.46092,
+   "unrealized_pl_pct": -3.029
   },
   {
    "key": "CV-3202417",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.914
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.901
    },
-   "current_value": 11.664528,
-   "unrealized_pl": -0.587055,
-   "unrealized_pl_pct": -4.792
+   "current_value": 11.498621,
+   "unrealized_pl": -0.752962,
+   "unrealized_pl_pct": -6.146
   },
   {
    "key": "CV-3101448",
@@ -199,130 +170,11 @@
     }
    ],
    "current_prices": {
-    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.9755
+    "97894328132135900906103514094095453782403967011122356516674332039038215207174": 0.9805
    },
-   "current_value": 24.630877,
-   "unrealized_pl": -0.088373,
-   "unrealized_pl_pct": -0.358
-  },
-  {
-   "key": "ARB-NO-770652",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in Buenos Aires on July 31?",
-   "opened": 1785445959.3602388,
-   "cost": 24.80175,
-   "edge": 0.001402,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 10.0,
-   "est_p_win": null,
-   "resolve_by": "2026-07-31T12:00:00Z",
-   "note": "11 outcomes, NO asks sum 9.9860 vs payout 10, 10 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "104106808180727648970782591357581629848405536487802249768754015253914937912192",
-     "market_id": "3215468",
-     "label": "NO Will the highest temperature in Buenos Aires be 16\u00b0C or below on July 31?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "14297374655663275018574890717559698277950529518607975956718490863631081825807",
-     "market_id": "3215469",
-     "label": "NO Will the highest temperature in Buenos Aires be 17\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "115766611195471577584516100784299696113215032369511686766155482705553253124278",
-     "market_id": "3215470",
-     "label": "NO Will the highest temperature in Buenos Aires be 18\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.997,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "46261670262617868265314197677023132444099356756389332913401078291659369884677",
-     "market_id": "3215471",
-     "label": "NO Will the highest temperature in Buenos Aires be 19\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "44736105756124586898039570249628640556249547371627870579228631875087377141430",
-     "market_id": "3215472",
-     "label": "NO Will the highest temperature in Buenos Aires be 20\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.84,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "92453494587087867458820728912852311985726838454390767229996704543747279395984",
-     "market_id": "3215473",
-     "label": "NO Will the highest temperature in Buenos Aires be 21\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.72,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "57210893112937713455698250097395553729962085853422384598916069510777246642148",
-     "market_id": "3215474",
-     "label": "NO Will the highest temperature in Buenos Aires be 22\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.69,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "48162901426982353265623854663054457439801501204428226038301920305211317582015",
-     "market_id": "3215475",
-     "label": "NO Will the highest temperature in Buenos Aires be 23\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.81,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "19711148415010817538065046562197581657447351966687171301429987378461662815978",
-     "market_id": "3215476",
-     "label": "NO Will the highest temperature in Buenos Aires be 24\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "94056257358303215851598002280568429612325204257794960925525691171904813147460",
-     "market_id": "3215477",
-     "label": "NO Will the highest temperature in Buenos Aires be 25\u00b0C on July 31?",
-     "side": "NO",
-     "entry_price": 0.996,
-     "shares": 2.483652
-    },
-    {
-     "token_id": "98736189653017905648714216148148286983502502815109462139933783763140978949318",
-     "market_id": "3215478",
-     "label": "NO Will the highest temperature in Buenos Aires be 26\u00b0C or higher on July 31?",
-     "side": "NO",
-     "entry_price": 0.995,
-     "shares": 2.483652
-    }
-   ],
-   "current_prices": {
-    "104106808180727648970782591357581629848405536487802249768754015253914937912192": 0.999,
-    "14297374655663275018574890717559698277950529518607975956718490863631081825807": 0.999,
-    "115766611195471577584516100784299696113215032369511686766155482705553253124278": 0.997,
-    "46261670262617868265314197677023132444099356756389332913401078291659369884677": 0.97,
-    "44736105756124586898039570249628640556249547371627870579228631875087377141430": 0.84,
-    "92453494587087867458820728912852311985726838454390767229996704543747279395984": 0.72,
-    "57210893112937713455698250097395553729962085853422384598916069510777246642148": 0.69,
-    "48162901426982353265623854663054457439801501204428226038301920305211317582015": 0.81,
-    "19711148415010817538065046562197581657447351966687171301429987378461662815978": 0.97,
-    "94056257358303215851598002280568429612325204257794960925525691171904813147460": 0.0005,
-    "98736189653017905648714216148148286983502502815109462139933783763140978949318": 0.995
-   },
-   "current_value": 24.83652,
-   "unrealized_pl": 0.03477,
-   "unrealized_pl_pct": 0.14
+   "current_value": 24.757124,
+   "unrealized_pl": 0.037874,
+   "unrealized_pl_pct": 0.153
   },
   {
    "key": "CV-907513",
@@ -376,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9775
+    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9785
    },
-   "current_value": 17.338669,
-   "unrealized_pl": 0.008869,
-   "unrealized_pl_pct": 0.051
+   "current_value": 17.356407,
+   "unrealized_pl": 0.026607,
+   "unrealized_pl_pct": 0.154
   },
   {
    "key": "CV-2233784",
@@ -412,35 +264,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "CV-3101544",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 1?",
-   "opened": 1785483378.152643,
-   "cost": 19.463149,
-   "edge": 0.040583,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9692000000000001,
-   "resolve_by": "2026-08-01T16:00:00Z",
-   "note": "YES ask 0.961, 1.3d to resolution, 1097% annualized if YES, assumed true P 0.969",
-   "legs": [
-    {
-     "token_id": "28866434624121011759297497876335875692932906621580762880599837337252589008601",
-     "market_id": "3101544",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 1?",
-     "side": "YES",
-     "entry_price": 0.961,
-     "shares": 20.253017
-    }
-   ],
-   "current_prices": {
-    "28866434624121011759297497876335875692932906621580762880599837337252589008601": 0.967
-   },
-   "current_value": 19.584667,
-   "unrealized_pl": 0.121518,
-   "unrealized_pl_pct": 0.624
-  },
-  {
    "key": "CV-599305",
    "strategy": "CONVERGE",
    "title": "Converge: Will Abdul El-Sayed win the 2026 Michigan Democratic Primary",
@@ -463,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.9685
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.9705
    },
-   "current_value": 5.305832,
-   "unrealized_pl": -0.008218,
-   "unrealized_pl_pct": -0.155
+   "current_value": 5.316789,
+   "unrealized_pl": 0.002739,
+   "unrealized_pl_pct": 0.052
   },
   {
    "key": "ARB-NO-774896",
@@ -577,12 +400,12 @@
     "43281052118940024836665326745575253050807013557357541609983434467373380220307": 0.9995,
     "8335817627621687537359051128187582979178819246149236429496088538091182309971": 0.9995,
     "94901588063532636718923762544362674645950796189792450274184320151531099737334": 0.9995,
-    "98333692640674036494462390243998385847169548796908022372250351091389927581984": 0.33,
-    "18388098293412396808646247332233438537068586908258782362148027585889699811704": 0.695,
-    "70232244902037331465983570259367739627122541384604575345772736150928482567100": 0.945,
-    "5487702850450736273918562579258577844553033702842165232316640647249274972870": 0.995,
-    "29962263821516431283162618743759949216478736963709640362188977878505417612492": 0.9905,
-    "74352008906750930104336032142205954563637149208403352441814061254430105019199": 0.998
+    "98333692640674036494462390243998385847169548796908022372250351091389927581984": 0.36,
+    "18388098293412396808646247332233438537068586908258782362148027585889699811704": 0.65,
+    "70232244902037331465983570259367739627122541384604575345772736150928482567100": 0.975,
+    "5487702850450736273918562579258577844553033702842165232316640647249274972870": 0.9955,
+    "29962263821516431283162618743759949216478736963709640362188977878505417612492": 0.995,
+    "74352008906750930104336032142205954563637149208403352441814061254430105019199": 0.9985
    },
    "current_value": 23.76928,
    "unrealized_pl": 0.04278,
@@ -611,11 +434,11 @@
     }
    ],
    "current_prices": {
-    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.953
+    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9645
    },
-   "current_value": 13.593483,
-   "unrealized_pl": -0.213959,
-   "unrealized_pl_pct": -1.55
+   "current_value": 13.757518,
+   "unrealized_pl": -0.049924,
+   "unrealized_pl_pct": -0.362
   },
   {
    "key": "LS-3234395",
@@ -640,11 +463,11 @@
     }
    ],
    "current_prices": {
-    "115023025171409387053726221935313721454594581618019843574278793100582575152035": 0.975
+    "115023025171409387053726221935313721454594581618019843574278793100582575152035": 0.98
    },
-   "current_value": 23.826185,
-   "unrealized_pl": 0.122185,
-   "unrealized_pl_pct": 0.515
+   "current_value": 23.948371,
+   "unrealized_pl": 0.244371,
+   "unrealized_pl_pct": 1.031
   },
   {
    "key": "CV-3158069",
@@ -669,40 +492,11 @@
     }
    ],
    "current_prices": {
-    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.979
+    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.9815
    },
-   "current_value": 23.281281,
-   "unrealized_pl": 0.023781,
-   "unrealized_pl_pct": 0.102
-  },
-  {
-   "key": "CV-3101549",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be between $1,800 and $1,900 on A",
-   "opened": 1785534791.1284611,
-   "cost": 15.008066,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-08-01T16:00:00Z",
-   "note": "YES ask 0.950, 0.8d to resolution, 2545% annualized if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "98997903539577541150315931038607833712334522910916634448217615295550991552516",
-     "market_id": "3101549",
-     "label": "YES Will the price of Ethereum be between $1,800 and $1,900 on August 1?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 15.797964
-    }
-   ],
-   "current_prices": {
-    "98997903539577541150315931038607833712334522910916634448217615295550991552516": 0.96
-   },
-   "current_value": 15.166045,
-   "unrealized_pl": 0.157979,
-   "unrealized_pl_pct": 1.053
+   "current_value": 23.340733,
+   "unrealized_pl": 0.083233,
+   "unrealized_pl_pct": 0.358
   },
   {
    "key": "CV-3202407",
@@ -727,11 +521,11 @@
     }
    ],
    "current_prices": {
-    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.961
+    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.962
    },
-   "current_value": 24.372083,
-   "unrealized_pl": -0.208818,
-   "unrealized_pl_pct": -0.85
+   "current_value": 24.397445,
+   "unrealized_pl": -0.183456,
+   "unrealized_pl_pct": -0.746
   },
   {
    "key": "CV-3158228",
@@ -756,11 +550,11 @@
     }
    ],
    "current_prices": {
-    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.9805
+    "74567935957923649791918494985250426808663069897506967238681438641391037965298": 0.9865
    },
-   "current_value": 23.275642,
-   "unrealized_pl": -0.06498,
-   "unrealized_pl_pct": -0.278
+   "current_value": 23.418074,
+   "unrealized_pl": 0.077452,
+   "unrealized_pl_pct": 0.332
   },
   {
    "key": "CV-3214835",
@@ -785,11 +579,40 @@
     }
    ],
    "current_prices": {
-    "33503595741026560000566073062898988839758172182875956679330842233604306516044": 0.9585
+    "33503595741026560000566073062898988839758172182875956679330842233604306516044": 0.9575
    },
-   "current_value": 18.027527,
-   "unrealized_pl": -0.136081,
-   "unrealized_pl_pct": -0.749
+   "current_value": 18.008719,
+   "unrealized_pl": -0.154889,
+   "unrealized_pl_pct": -0.853
+  },
+  {
+   "key": "LS-3137176",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Levante UD 3 - 2 Albacete Balompie?",
+   "opened": 1785565043.2490098,
+   "cost": 22.913176,
+   "edge": 0.007088,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9793,
+   "resolve_by": "2026-08-01T08:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.971, fee 0.0014",
+   "legs": [
+    {
+     "token_id": "66196075924770506861771134387981711050463952154263724427148750282124249357149",
+     "market_id": "3137176",
+     "label": "NO Exact Score: Levante UD 3 - 2 Albacete Balompie?",
+     "side": "NO",
+     "entry_price": 0.971,
+     "shares": 23.563337
+    }
+   ],
+   "current_prices": {
+    "66196075924770506861771134387981711050463952154263724427148750282124249357149": 0.9655
+   },
+   "current_value": 22.750402,
+   "unrealized_pl": -0.162774,
+   "unrealized_pl_pct": -0.71
   }
  ],
  "closed": [
@@ -8579,6 +8402,227 @@
    "closed_ts": 1785555941.7410507,
    "payout": 24.48125,
    "pl": 0.97925
+  },
+  {
+   "key": "CV-2698835",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will there be between 0 and 20 average daily transits of the",
+   "opened": 1785299540.6027517,
+   "cost": 26.06825,
+   "edge": 0.01833,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.984,
+   "resolve_by": "2026-07-31T23:59:00Z",
+   "note": "YES ask 0.982, 2.8d to resolution, 238% annualized if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "88509756147117974161819704911234056439101248286713269153285304071228085766956",
+     "market_id": "2698835",
+     "label": "YES Will there be between 0 and 20 average daily transits of the Strait of Hormuz on July 31?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 26.546079
+    }
+   ],
+   "current_prices": {
+    "88509756147117974161819704911234056439101248286713269153285304071228085766956": 0.982
+   },
+   "current_value": 26.06825,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1785565044.18319,
+   "payout": 26.280618,
+   "pl": 0.212368,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3101544",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 1?",
+   "opened": 1785483378.152643,
+   "cost": 19.463149,
+   "edge": 0.040583,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9692000000000001,
+   "resolve_by": "2026-08-01T16:00:00Z",
+   "note": "YES ask 0.961, 1.3d to resolution, 1097% annualized if YES, assumed true P 0.969",
+   "legs": [
+    {
+     "token_id": "28866434624121011759297497876335875692932906621580762880599837337252589008601",
+     "market_id": "3101544",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 1?",
+     "side": "YES",
+     "entry_price": 0.961,
+     "shares": 20.253017
+    }
+   ],
+   "current_prices": {
+    "28866434624121011759297497876335875692932906621580762880599837337252589008601": 0.967
+   },
+   "current_value": 19.584667,
+   "unrealized_pl": 0.121518,
+   "unrealized_pl_pct": 0.624,
+   "closed_ts": 1785565044.18319,
+   "payout": 19.685933,
+   "pl": 0.222784,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3101549",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be between $1,800 and $1,900 on A",
+   "opened": 1785534791.1284611,
+   "cost": 15.008066,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-01T16:00:00Z",
+   "note": "YES ask 0.950, 0.8d to resolution, 2545% annualized if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "98997903539577541150315931038607833712334522910916634448217615295550991552516",
+     "market_id": "3101549",
+     "label": "YES Will the price of Ethereum be between $1,800 and $1,900 on August 1?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 15.797964
+    }
+   ],
+   "current_prices": {
+    "98997903539577541150315931038607833712334522910916634448217615295550991552516": 0.96
+   },
+   "current_value": 15.166045,
+   "unrealized_pl": 0.157979,
+   "unrealized_pl_pct": 1.053,
+   "closed_ts": 1785565044.18319,
+   "payout": 15.339823,
+   "pl": 0.331757,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "ARB-NO-770652",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Buenos Aires on July 31?",
+   "opened": 1785445959.3602388,
+   "cost": 24.80175,
+   "edge": 0.001402,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-07-31T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9860 vs payout 10, 10 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "104106808180727648970782591357581629848405536487802249768754015253914937912192",
+     "market_id": "3215468",
+     "label": "NO Will the highest temperature in Buenos Aires be 16\u00b0C or below on July 31?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "14297374655663275018574890717559698277950529518607975956718490863631081825807",
+     "market_id": "3215469",
+     "label": "NO Will the highest temperature in Buenos Aires be 17\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "115766611195471577584516100784299696113215032369511686766155482705553253124278",
+     "market_id": "3215470",
+     "label": "NO Will the highest temperature in Buenos Aires be 18\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.997,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "46261670262617868265314197677023132444099356756389332913401078291659369884677",
+     "market_id": "3215471",
+     "label": "NO Will the highest temperature in Buenos Aires be 19\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "44736105756124586898039570249628640556249547371627870579228631875087377141430",
+     "market_id": "3215472",
+     "label": "NO Will the highest temperature in Buenos Aires be 20\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.84,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "92453494587087867458820728912852311985726838454390767229996704543747279395984",
+     "market_id": "3215473",
+     "label": "NO Will the highest temperature in Buenos Aires be 21\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.72,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "57210893112937713455698250097395553729962085853422384598916069510777246642148",
+     "market_id": "3215474",
+     "label": "NO Will the highest temperature in Buenos Aires be 22\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.69,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "48162901426982353265623854663054457439801501204428226038301920305211317582015",
+     "market_id": "3215475",
+     "label": "NO Will the highest temperature in Buenos Aires be 23\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.81,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "19711148415010817538065046562197581657447351966687171301429987378461662815978",
+     "market_id": "3215476",
+     "label": "NO Will the highest temperature in Buenos Aires be 24\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "94056257358303215851598002280568429612325204257794960925525691171904813147460",
+     "market_id": "3215477",
+     "label": "NO Will the highest temperature in Buenos Aires be 25\u00b0C on July 31?",
+     "side": "NO",
+     "entry_price": 0.996,
+     "shares": 2.483652
+    },
+    {
+     "token_id": "98736189653017905648714216148148286983502502815109462139933783763140978949318",
+     "market_id": "3215478",
+     "label": "NO Will the highest temperature in Buenos Aires be 26\u00b0C or higher on July 31?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.483652
+    }
+   ],
+   "current_prices": {
+    "104106808180727648970782591357581629848405536487802249768754015253914937912192": 0.999,
+    "14297374655663275018574890717559698277950529518607975956718490863631081825807": 0.999,
+    "115766611195471577584516100784299696113215032369511686766155482705553253124278": 0.997,
+    "46261670262617868265314197677023132444099356756389332913401078291659369884677": 0.97,
+    "44736105756124586898039570249628640556249547371627870579228631875087377141430": 0.84,
+    "92453494587087867458820728912852311985726838454390767229996704543747279395984": 0.72,
+    "57210893112937713455698250097395553729962085853422384598916069510777246642148": 0.69,
+    "48162901426982353265623854663054457439801501204428226038301920305211317582015": 0.81,
+    "19711148415010817538065046562197581657447351966687171301429987378461662815978": 0.97,
+    "94056257358303215851598002280568429612325204257794960925525691171904813147460": 0.996,
+    "98736189653017905648714216148148286983502502815109462139933783763140978949318": 0.995
+   },
+   "current_value": 24.83652,
+   "unrealized_pl": 0.03477,
+   "unrealized_pl_pct": 0.14,
+   "closed_ts": 1785565049.5540564,
+   "payout": 24.83652,
+   "pl": 0.03477
   }
  ],
  "history": [
@@ -9605,6 +9649,14 @@
    "equity": 931.6767,
    "realized_total": -42.289,
    "open_positions": 22
+  },
+  {
+   "ts": 1785565044.1855288,
+   "cash": 599.8382,
+   "open_value": 333.8389,
+   "equity": 933.6771,
+   "realized_total": -40.5428,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -13407,6 +13459,54 @@
    "title": "Fade: Exact Score: New York City FC 0 - 1 Toronto FC?",
    "amount": 24.48,
    "pl": 0.98
+  },
+  {
+   "ts": 1785565043.2490098,
+   "type": "OPEN",
+   "key": "LS-3137176",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Levante UD 3 - 2 Albacete Balompie?",
+   "amount": 22.91,
+   "pl": null
+  },
+  {
+   "ts": 1785565044.18319,
+   "type": "CLOSE",
+   "key": "CV-2698835",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will there be between 0 and 20 average daily transits of the",
+   "amount": 26.28,
+   "pl": 0.21,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785565044.18319,
+   "type": "CLOSE",
+   "key": "CV-3101544",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 1?",
+   "amount": 19.69,
+   "pl": 0.22,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785565044.18319,
+   "type": "CLOSE",
+   "key": "CV-3101549",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be between $1,800 and $1,900 on A",
+   "amount": 15.34,
+   "pl": 0.33,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785565049.5540564,
+   "type": "CLOSE",
+   "key": "ARB-NO-770652",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Buenos Aires on July 31?",
+   "amount": 24.84,
+   "pl": 0.03
   }
  ]
 }
