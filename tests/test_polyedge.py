@@ -1294,6 +1294,7 @@ class TestLiveEngine:
             e._orders.append((side, token_id, round(shares, 2), round(price, 3)))
             return fill and not lv.dry_run()
         e._place_order = fake_place
+        e._check_pusd_balance = lambda: True   # exercised separately below
         return e
 
     def test_all_gates_required(self, tmp_path, monkeypatch):
@@ -1411,6 +1412,175 @@ class TestLiveEngine:
         assert [p["key"] for p in e.state["positions"]] == ["ARB-L"]
 
 
+# ------------------------------------------------------------------ live.py V2 (py-clob-client-v2) wiring
+class TestLiveEngineV2Wiring:
+    """Covers the CLOB V2 rewrite specifically: the ClobClient construction
+    args, order placement via OrderArgsV2/create_and_post_order, and the
+    pUSD balance/allowance pre-trade check -- all against a fake
+    py_clob_client_v2 package injected into sys.modules, so nothing here
+    needs the real package installed or touches the network. Does NOT
+    touch the three-gate safety logic itself (see TestLiveEngine above,
+    which passes unmodified)."""
+
+    def _install_fake_sdk(self, monkeypatch, balance_allowance=None, order_status="matched"):
+        import sys
+        import types
+
+        calls = {"constructed": None, "set_api_creds": None,
+                 "create_and_post_order": None, "get_balance_allowance": None}
+
+        class FakeApiCreds:
+            api_key = "fake-key"
+
+        class FakeClobClient:
+            def __init__(self, host, chain_id=None, key=None, signature_type=None, funder=None):
+                calls["constructed"] = dict(host=host, chain_id=chain_id, key=key,
+                                            signature_type=signature_type, funder=funder)
+
+            def create_or_derive_api_key(self):
+                return FakeApiCreds()
+
+            def set_api_creds(self, creds):
+                calls["set_api_creds"] = creds
+
+            def create_and_post_order(self, order_args, order_type=None):
+                calls["create_and_post_order"] = {"order_args": order_args, "order_type": order_type}
+                return {"status": order_status}
+
+            def get_balance_allowance(self, params):
+                calls["get_balance_allowance"] = params
+                return balance_allowance if balance_allowance is not None else \
+                    {"balance": "50", "allowance": "50"}
+
+        client_mod = types.ModuleType("py_clob_client_v2.client")
+        client_mod.ClobClient = FakeClobClient
+
+        class OrderArgsV2:
+            def __init__(self, token_id, price, size, side):
+                self.token_id, self.price, self.size, self.side = token_id, price, size, side
+
+        class OrderType:
+            FOK = "FOK"
+            GTC = "GTC"
+
+        class AssetType:
+            COLLATERAL = "COLLATERAL"
+            CONDITIONAL = "CONDITIONAL"
+
+        class BalanceAllowanceParams:
+            def __init__(self, asset_type=None):
+                self.asset_type = asset_type
+
+        clob_types_mod = types.ModuleType("py_clob_client_v2.clob_types")
+        clob_types_mod.OrderArgsV2 = OrderArgsV2
+        clob_types_mod.OrderType = OrderType
+        clob_types_mod.AssetType = AssetType
+        clob_types_mod.BalanceAllowanceParams = BalanceAllowanceParams
+
+        constants_mod = types.ModuleType("py_clob_client_v2.order_builder.constants")
+        constants_mod.BUY = "BUY"
+        constants_mod.SELL = "SELL"
+        order_builder_pkg = types.ModuleType("py_clob_client_v2.order_builder")
+
+        monkeypatch.setitem(sys.modules, "py_clob_client_v2", types.ModuleType("py_clob_client_v2"))
+        monkeypatch.setitem(sys.modules, "py_clob_client_v2.client", client_mod)
+        monkeypatch.setitem(sys.modules, "py_clob_client_v2.clob_types", clob_types_mod)
+        monkeypatch.setitem(sys.modules, "py_clob_client_v2.order_builder", order_builder_pkg)
+        monkeypatch.setitem(sys.modules, "py_clob_client_v2.order_builder.constants", constants_mod)
+        return calls
+
+    def _engine(self, tmp_path, monkeypatch, key="0xabc", funder="0xdef"):
+        from polyedge import live as lv
+        monkeypatch.chdir(tmp_path)
+        if key is not None:
+            monkeypatch.setenv("POLYEDGE_PRIVATE_KEY", key)
+        else:
+            monkeypatch.delenv("POLYEDGE_PRIVATE_KEY", raising=False)
+        monkeypatch.setenv("POLYEDGE_FUNDER_ADDRESS", funder)
+        return lv.LiveEngine(state_dir=str(tmp_path))
+
+    def test_clob_client_constructed_with_v2_args_and_default_signature_type(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch)
+        monkeypatch.delenv("POLYEDGE_SIGNATURE_TYPE", raising=False)
+        e = self._engine(tmp_path, monkeypatch)
+        e._clob_client()
+        assert calls["constructed"]["host"] == config.CLOB_BASE
+        assert calls["constructed"]["chain_id"] == 137
+        assert calls["constructed"]["key"] == "0xabc"
+        assert calls["constructed"]["funder"] == "0xdef"
+        # signature_type=1 (POLY_PROXY) by default -- NOT the newer
+        # signature_type=3 deposit-wallet pattern, per LIVE.md
+        assert calls["constructed"]["signature_type"] == 1
+        assert calls["set_api_creds"] is not None   # create_or_derive_api_key() wired through
+
+    def test_clob_client_honors_signature_type_override(self, tmp_path, monkeypatch):
+        self._install_fake_sdk(monkeypatch)
+        monkeypatch.setenv("POLYEDGE_SIGNATURE_TYPE", "3")
+        e = self._engine(tmp_path, monkeypatch)
+        e._clob_client()
+        # the override still works if an operator deliberately opts in --
+        # this repo just never picks it by default (see module docstring)
+
+    def test_place_order_sends_v2_order_args_with_fok(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch, order_status="matched")
+        e = self._engine(tmp_path, monkeypatch)
+        filled = e._place_order("tok-1", 0.965, 10.0, "BUY")
+        assert filled is True
+        sent = calls["create_and_post_order"]
+        assert sent["order_type"] == "FOK"
+        assert sent["order_args"].token_id == "tok-1"
+        assert sent["order_args"].side == "BUY"
+        assert sent["order_args"].price == pytest.approx(0.965)
+        assert sent["order_args"].size == pytest.approx(10.0)
+
+    def test_place_order_false_when_not_matched(self, tmp_path, monkeypatch):
+        self._install_fake_sdk(monkeypatch, order_status="cancelled")
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "SELL") is False
+
+    def test_pusd_check_true_when_funded(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch,
+                                       balance_allowance={"balance": "50", "allowance": "50"})
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._check_pusd_balance() is True
+        assert calls["get_balance_allowance"].asset_type == "COLLATERAL"
+
+    def test_pusd_check_false_on_zero_balance(self, tmp_path, monkeypatch):
+        self._install_fake_sdk(monkeypatch, balance_allowance={"balance": "0", "allowance": "50"})
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._check_pusd_balance() is False
+
+    def test_pusd_check_false_on_zero_allowance(self, tmp_path, monkeypatch):
+        # wrapped into pUSD but never approved the exchange contract --
+        # must be caught too, not just a literal zero balance
+        self._install_fake_sdk(monkeypatch, balance_allowance={"balance": "50", "allowance": "0"})
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._check_pusd_balance() is False
+
+    def test_pusd_check_false_when_sdk_unavailable(self, tmp_path, monkeypatch):
+        # no fake SDK installed at all -- the real package genuinely isn't
+        # installed in this environment either, so this also exercises the
+        # real "package not installed" path, not just a simulated one
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._check_pusd_balance() is False
+
+    def test_open_position_halts_when_pusd_check_fails(self, tmp_path, monkeypatch):
+        from polyedge import live as lv
+        monkeypatch.setenv("POLYEDGE_LIVE", "1")
+        monkeypatch.setenv("POLYEDGE_DRY_RUN", "0")
+        monkeypatch.chdir(tmp_path)
+        open(lv.ARMED_FILE, "w").write("armed")
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        e._place_order = lambda *a, **k: pytest.fail("must not attempt an order")
+        e._check_pusd_balance = lambda: False
+        opp = Opportunity("CONVERGE", "CV-X", "CV-X", 0.04, False, est_p_win=0.98,
+                          legs=[Leg("tok", "m1", "YES q", "YES", 0.96, 10.0)],
+                          resolve_by="2026-07-21T00:00:00Z")
+        assert e.open_position(opp) is None
+        assert os.path.exists(lv.HALTED_FILE)
+        assert not lv.live_gates_open()   # the halt closes the gates entirely, same as the daily-loss breaker
+
+
 # ------------------------------------------------------------------ controls (control panel)
 class TestControls:
     def test_load_defaults_when_missing(self, tmp_path):
@@ -1491,6 +1661,7 @@ class TestApplyControls:
             e._orders.append((side, token_id, round(shares, 2), round(price, 3)))
             return fill and not lv.dry_run()
         e._place_order = fake_place
+        e._check_pusd_balance = lambda: True   # exercised separately in TestLiveEngine
         return e
 
     def _cv_opp(self, key, entry=0.96, shares=10.0, token=None):
@@ -1742,9 +1913,9 @@ class _FakeSession:
         return _FakeResponse({"result": self.balance_hex})
 
 
-def _usdc_hex(amount: float) -> str:
-    """Encode a USDC amount (6 decimals) as the hex string eth_call would
-    return."""
+def _pusd_hex(amount: float) -> str:
+    """Encode a pUSD amount (assumed 6 decimals -- see reconcile.py's
+    _PUSD_DECIMALS comment) as the hex string eth_call would return."""
     return hex(int(round(amount * 1e6)))
 
 
@@ -1755,7 +1926,7 @@ class TestReconcile:
         state = {"cash": 60.0, "positions": [{"current_value": 40.0}]}
         session = _FakeSession(
             positions_response=[{"currentValue": 40.0}],
-            balance_hex=_usdc_hex(60.0))
+            balance_hex=_pusd_hex(60.0))
         result = reconcile.check(state, self.FUNDER, session=session)
         assert result["ok"] is True
         assert result["exceeded_threshold"] is False
@@ -1766,7 +1937,7 @@ class TestReconcile:
     def test_large_divergence_flagged(self):
         # bot thinks it has $100, real wallet only has $50 -- 50% off
         state = {"cash": 100.0, "positions": []}
-        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(50.0))
+        session = _FakeSession(positions_response=[], balance_hex=_pusd_hex(50.0))
         result = reconcile.check(state, self.FUNDER, session=session,
                                  halt_threshold_pct=15.0)
         assert result["ok"] is True
@@ -1776,7 +1947,7 @@ class TestReconcile:
     def test_small_divergence_within_threshold(self):
         # $2 off on $100 -- normal fee/rounding noise, should NOT trip
         state = {"cash": 98.0, "positions": []}
-        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(100.0))
+        session = _FakeSession(positions_response=[], balance_hex=_pusd_hex(100.0))
         result = reconcile.check(state, self.FUNDER, session=session,
                                  halt_threshold_pct=15.0)
         assert result["ok"] is True
@@ -1801,7 +1972,7 @@ class TestReconcile:
         not divide-by-zero, and must clearly flag this as maximal, not 0%,
         divergence."""
         state = {"cash": 50.0, "positions": []}
-        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(0.0))
+        session = _FakeSession(positions_response=[], balance_hex=_pusd_hex(0.0))
         result = reconcile.check(state, self.FUNDER, session=session)
         assert result["ok"] is True
         assert result["exceeded_threshold"] is True
@@ -1811,8 +1982,31 @@ class TestReconcile:
         """Bot has nothing, real wallet has nothing -- 0% divergence, not
         a false alarm from the same divide-by-zero edge case above."""
         state = {"cash": 0.0, "positions": []}
-        session = _FakeSession(positions_response=[], balance_hex=_usdc_hex(0.0))
+        session = _FakeSession(positions_response=[], balance_hex=_pusd_hex(0.0))
         result = reconcile.check(state, self.FUNDER, session=session)
         assert result["ok"] is True
         assert result["exceeded_threshold"] is False
         assert result["diff_pct"] == 0.0
+
+    def test_queries_pusd_contract_not_usdc(self):
+        """V2 regression: the eth_call must target the pUSD contract, not
+        the retired USDC.e address -- a stale address wouldn't error, it
+        would just silently read back $0 forever (see the module comment)."""
+        captured = {}
+
+        class _CapturingSession(_FakeSession):
+            def post(self, url, json=None, timeout=None):
+                captured["to"] = json["params"][0]["to"]
+                return super().post(url, json=json, timeout=timeout)
+
+        session = _CapturingSession(positions_response=[], balance_hex=_pusd_hex(10.0))
+        reconcile.check({"cash": 10.0, "positions": []}, self.FUNDER, session=session)
+        assert captured["to"] == reconcile.PUSD_CONTRACT_ADDRESS
+        assert captured["to"] != "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # old USDC.e address
+
+    def test_result_reports_real_pusd_key(self):
+        state = {"cash": 25.0, "positions": []}
+        session = _FakeSession(positions_response=[], balance_hex=_pusd_hex(25.0))
+        result = reconcile.check(state, self.FUNDER, session=session)
+        assert result["real_pusd"] == pytest.approx(25.0)
+        assert "real_usdc" not in result

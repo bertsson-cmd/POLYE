@@ -6,6 +6,27 @@ broad rollout -> sports rate revised) and will likely change again --
 verify CATEGORY_FEE_RATES against Polymarket's current published fee
 schedule periodically, especially before increasing position sizes.
 
+RE-CONFIRMED during the CLOB V2 rewrite (V2 cutover April 28, 2026):
+fees are unchanged in formula and roughly unchanged in rate -- this was
+cross-checked two ways, since Polymarket's docs site itself was
+unreachable from the research environment: (1) the published "$ per 100
+shares at peak price" figures (crypto $1.75, sports/economics/culture/
+weather $1.25, politics/finance/tech/mentions $1.00, geopolitics $0) back
+out to EXACTLY the feeRate values below via fee=feeRate*0.25 at the 50c
+peak; (2) an independent community migration cheatsheet quotes the same
+"fee = C * feeRate * p * (1-p)" formula verbatim. One open question: V2's
+py-clob-client-v2 SDK models each market's fee as a
+{fee_rate, exponent, taker_only} triple (see FeeDetails in
+py_clob_client_v2/clob_types.py), and an "exponent" that isn't always 1
+would change this curve's shape. No source found during this research
+pass gave a non-default exponent value for any category, and the "$ per
+100 shares" cross-check above is only consistent with the simple formula
+below (exponent=1) -- but if Polymarket starts varying it per-market,
+this static table would silently go stale. Fetching each market's actual
+FeeDetails via the API instead of this hardcoded table would be more
+robust; out of scope for the V2 rewrite that added this note, worth
+revisiting if position sizes increase enough for fee precision to matter.
+
 Formula: fee = shares * feeRate * price * (1 - price)
 
 This is a curve that PEAKS at a 50c price and shrinks toward the

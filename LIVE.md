@@ -14,9 +14,11 @@ every step below is something you do on purpose.
   first" — the spirit of that (don't go live on a thin or contaminated
   record) matters more than the exact number. If `state/paper_state.json`
   looks freshly reset or thin, wait.
-- **`live.py` has never touched the real Polymarket API.** It was built
-  against `py-clob-client`'s documented surface with no network access in
-  the sandbox that wrote it, and is fully unit-tested with the order
+- **`live.py` has never touched the real Polymarket API.** It targets CLOB
+  V2 (`py-clob-client-v2`) — Polymarket cut over to V2 on April 28, 2026;
+  the old V1 client does not work against production at all — built
+  against the V2 SDK's actual source with no network access in the
+  sandbox that wrote it, and is fully unit-tested with the order
   placement call mocked out. Expect a possible small fix on day one — this
   is exactly why the dry-run stage below exists. Do not skip it.
 - **Never put the private key anywhere but the VPS's own `chmod 600` env
@@ -30,17 +32,41 @@ every step below is something you do on purpose.
 1. Create a **dedicated** wallet for this bot — do not reuse a wallet that
    holds other funds. If the bot has a bug, you want the blast radius
    capped at exactly what you funded it with.
-2. Fund it on **Polygon** with USDC (Polymarket settles in USDC on
-   Polygon) — plus a small amount of POL/MATIC for gas on approvals.
+2. Fund it on **Polygon** with USDC.e (bridged USDC — Polymarket's
+   on-ramp token) — plus a small amount of POL/MATIC for gas on approvals.
 3. Note the wallet's private key and its address (the `funder` address —
    for a plain EOA wallet these are the same address; if you're using
    Polymarket's proxy-wallet / email-login flow, the funder address is
    the proxy address, not the EOA — check Polymarket's own docs for your
    specific account type before assuming).
-4. Approve USDC spending for Polymarket's exchange contracts once, from
-   that wallet, via Polymarket's own UI — `py-clob-client` does not do
+4. Approve USDC.e spending for Polymarket's exchange contracts once, from
+   that wallet, via Polymarket's own UI — `py-clob-client-v2` does not do
    this for you.
-5. Factor in on-ramp costs and any FX exposure converting to USDC, and
+5. **Wrap USDC.e into pUSD.** Since CLOB V2, Polymarket's own collateral
+   token is pUSD, not raw USDC.e — the UI wraps automatically when you
+   deposit through it, but **API/programmatic traders (this bot) must call
+   the Collateral Onramp's `wrap()` function themselves**; the CLOB does
+   not do it for you when an order comes in through the API. Do this once,
+   by hand, via Polymarket's own UI or a wallet transaction — this bot
+   deliberately never calls `wrap()` itself (an infrequent, operator-driven
+   step, not something worth automating blind). `live.py` checks tradeable
+   pUSD balance/allowance before every live order and halts loudly with a
+   clear log message if this step was skipped, rather than repeatedly
+   trying and failing.
+6. **Signature type: POLY_PROXY (1) vs. deposit wallet (3).** This repo
+   defaults to `signature_type=1` (POLY_PROXY), matching the Magic/
+   email-login proxy-wallet setup above. CLOB V2 also offers
+   `signature_type=3` (POLY_1271, a "deposit wallet" pattern with its own
+   distinct address, recommended by Polymarket for brand-new API
+   integrations) — this bot does **not** use it by default: as of this
+   bot's V2 rewrite, POLY_1271 has open, unresolved bugs in
+   `py-clob-client-v2` for programmatic order placement (the CLOB rejects
+   the order because the API key binds to the owner EOA, not the deposit
+   wallet POLY_1271 requires as the order signer). If you want to switch
+   to it anyway, that's a deliberate decision requiring its own
+   separately-funded wallet — don't flip `POLYEDGE_SIGNATURE_TYPE` without
+   re-verifying that bug is fixed first.
+7. Factor in on-ramp costs and any FX exposure converting to USDC.e, and
    check the current legal/tax treatment of prediction-market trading in
    your jurisdiction before funding anything. This is not financial
    advice — it's a measurement instrument.
@@ -66,7 +92,7 @@ sudo apt update && sudo apt install -y python3-venv python3-pip git
 git clone https://github.com/bertsson-cmd/POLYE.git ~/polye
 cd ~/polye
 python3 -m venv .venv
-.venv/bin/pip install -r requirements-live.txt   # adds py-clob-client + flask
+.venv/bin/pip install -r requirements-live.txt   # adds py-clob-client-v2 + flask
                                                   # on top of requirements.txt
 
 cp polybert.env.example polybert.env
@@ -125,6 +151,13 @@ With the service running as above:
 
 Only after step 4 looks clean, and only with your own explicit go-ahead
 (not something to do because a checklist said so):
+
+**Before arming, verify pUSD — not USDC.e — is what's actually funded:**
+check the funder wallet's pUSD balance directly in Polymarket's own UI
+(or via `reconcile.py`'s next scheduled check, if `POLYEDGE_FUNDER_ADDRESS`
+is already set). If §1 step 5's wrap never happened, `live.py` will refuse
+to trade and halt loudly the moment it's armed — better to catch it here
+first.
 
 ```bash
 cd ~/polye
@@ -210,12 +243,26 @@ Tailscale, not an open port.
 - The live order-placement code path (`LiveEngine._place_order`) has never
   been exercised against Polymarket's real API — see step 4's dry-run
   stage, which exists specifically to surface that.
-- `py-clob-client`'s exact response shape for a FOK order is assumed from
-  its published API (`status` in `{"matched", "filled"}` means fully
-  filled); if a real response uses different field names, the first live
-  order will show it in the journal as a fill that silently doesn't
-  record — annoying but safe, since nothing is recorded without a
-  confirmed fill.
-- Gas costs, USDC on/off-ramp costs, and any FX exposure are not modeled
-  anywhere in the risk engine — they are real costs on top of whatever the
-  dashboard shows.
+- `py-clob-client-v2`'s exact response shape for `create_and_post_order`
+  is assumed from its source (`status` in `{"matched", "filled"}` means
+  fully filled), carried forward unverified from the V1 assumption since
+  the actual V2 response body could not be confirmed during the rewrite;
+  if a real response uses different field names, the first live order
+  will show it in the journal as a fill that silently doesn't record —
+  annoying but safe, since nothing is recorded without a confirmed fill.
+- The exact decimal count for pUSD (used by `reconcile.py` to convert its
+  raw on-chain balance read into dollars) could not be independently
+  confirmed and is assumed to be 6, matching USDC.e — cross-check
+  `reconcile.py`'s first real result against your wallet's actual pUSD
+  balance shown in Polymarket's UI before trusting the divergence-halt
+  math, and fix `_PUSD_DECIMALS` in `polyedge/reconcile.py` if they don't
+  match.
+- `polyedge/fees.py`'s per-category fee table was re-confirmed during the
+  V2 rewrite, but `py-clob-client-v2`'s own `FeeDetails` type supports a
+  per-market fee "exponent" beyond the simple parabola this bot assumes
+  (see the comment at the top of `fees.py`) — no source found gave a
+  non-default exponent for any category, but this is a static table, not
+  a live per-market lookup, and could go stale if that changes.
+- Gas costs, USDC on/off-ramp costs, the one-time pUSD wrap, and any FX
+  exposure are not modeled anywhere in the risk engine — they are real
+  costs on top of whatever the dashboard shows.

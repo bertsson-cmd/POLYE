@@ -1,6 +1,13 @@
 # Extra dependencies needed only for live deployment (run_forever.py /
 # live.py / control_server.py) -- NOT needed for the paper-trading GitHub
 # Actions workflow, which only ever installs requirements.txt.
+#
+# py-clob-client-v2 (NOT the archived py-clob-client V1 package) -- Polymarket
+# cut over to CLOB V2 on April 28, 2026 (new Exchange contracts, pUSD
+# collateral, new SDK); the V1 client does not work against production at
+# all. Pinned to the version verified against source during the V2 rewrite
+# of live.py -- bump deliberately, re-checking polyedge/live.py's assumptions
+# against the new version's actual API surface, not blindly.
 -r requirements.txt
-py-clob-client
+py-clob-client-v2==1.1.0
 flask
