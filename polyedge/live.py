@@ -2,7 +2,7 @@
 
 Same accounting semantics as PaperEngine (it subclasses it: same state
 file shape, same mark/resolve/close_early math), but every fill is a real
-Polymarket order placed through py-clob-client instead of a simulated one.
+Polymarket order placed through py-clob-client-v2 instead of a simulated one.
 
 Safety model (do not weaken any of this without the owner explicitly
 asking for it in those terms):
@@ -28,11 +28,36 @@ asking for it in those terms):
     unless the order came back fully filled -- no partial fills, no
     guessing.
 
-This module was written against py-clob-client's documented API surface
-but has never been run against live Polymarket (no network access in the
-sandbox that built it). It is fully unit-tested with `_place_order`
-mocked out -- expect a possible small day-one fix once it hits the real
-API. Do not skip the dry-run stage in LIVE.md.
+This module talks to Polymarket's CLOB V2 (the V1 exchange contracts,
+USDC.e collateral, and `py-clob-client` package were retired at the
+V2 cutover on April 28, 2026 -- V1 clients do not work against
+production at all). It was rewritten against `py-clob-client-v2`'s
+actual source (fetched during the rewrite, not guessed from memory) but
+has still never been run against live Polymarket (no network access in
+the sandbox that did the rewrite). It is fully unit-tested with
+`_place_order` mocked out -- expect a possible small day-one fix once it
+hits the real API, same as before. Do not skip the dry-run stage in
+LIVE.md.
+
+Two things worth knowing about the V2 rewrite specifically:
+  * `signature_type` stays at 1 (POLY_PROXY) by default -- matching the
+    Magic/email-wallet proxy account setup this repo has always assumed.
+    V2 also offers signature_type=3 (POLY_1271, a "deposit wallet" with
+    its own distinct address, separate from the Magic-exported proxy
+    wallet) for NEW integrations, but at the time of this rewrite it has
+    open, unresolved bugs in py-clob-client-v2 for programmatic order
+    placement (the CLOB rejects the order because the API key binds to
+    the owner EOA while POLY_1271 requires the signer to be the deposit
+    wallet itself) -- see LIVE.md. Switching to it is a deliberate future
+    decision, not something to do by default.
+  * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
+    get wrapped automatically when placing an order through the API --
+    only Polymarket's own UI does that for you. `open_position()` checks
+    tradeable pUSD balance/allowance via the SDK's own
+    `get_balance_allowance()` before ever attempting a real order, and
+    halts loudly (same mechanism as the daily-loss breaker) rather than
+    repeatedly trying and failing if the funder wallet's USDC.e was never
+    wrapped. This bot does not call wrap() itself -- see LIVE.md.
 """
 import logging
 import os
@@ -93,21 +118,64 @@ class LiveEngine(PaperEngine):
 
     # ------------------------------------------------------------ CLOB client
     def _clob_client(self):
-        """Lazily build the py-clob-client instance. Only ever reached from
-        the real `_place_order` below -- tests replace `_place_order`
-        wholesale, so the suite never needs credentials or the package
-        installed to import this module."""
+        """Lazily build the py-clob-client-v2 instance. Only ever reached
+        from the real `_place_order`/pUSD-check code below -- tests replace
+        `_place_order` wholesale, so the suite never needs credentials or
+        the package installed to import this module.
+
+        chain_id (not "chain") is the real V2 constructor kwarg, confirmed
+        directly against py_clob_client_v2/client.py's source -- some
+        secondary migration write-ups claim a "chain" rename, but that
+        did not hold up against the actual current source.
+        """
         if self._client is None:
-            from py_clob_client.client import ClobClient
+            from py_clob_client_v2.client import ClobClient
             key = os.environ["POLYEDGE_PRIVATE_KEY"]
             funder = os.environ.get("POLYEDGE_FUNDER_ADDRESS")
             chain_id = int(os.environ.get("POLYEDGE_CHAIN_ID", "137"))
+            # POLY_PROXY (Magic/email-wallet) by default -- see the module
+            # docstring for why this stays at 1 rather than the newer
+            # deposit-wallet signature_type=3.
             signature_type = int(os.environ.get("POLYEDGE_SIGNATURE_TYPE", "1"))
-            client = ClobClient(config.CLOB_BASE, key=key, chain_id=chain_id,
+            client = ClobClient(config.CLOB_BASE, chain_id=chain_id, key=key,
                                 signature_type=signature_type, funder=funder)
-            client.set_api_creds(client.create_or_derive_api_creds())
+            client.set_api_creds(client.create_or_derive_api_key())
             self._client = client
         return self._client
+
+    def _check_pusd_balance(self) -> bool:
+        """Verify the funder wallet has tradeable pUSD balance/allowance
+        BEFORE attempting a real order. API/programmatic traders must wrap
+        USDC.e into pUSD via the Collateral Onramp's wrap() themselves --
+        unlike Polymarket's own UI, the CLOB does not do this for you when
+        an order comes in through the API. This bot never calls wrap()
+        itself (an infrequent, operator-driven action, not something to
+        automate blind) -- it only checks and fails loudly, pointing the
+        operator at LIVE.md, rather than silently assuming funds are ready.
+
+        Uses the SDK's own get_balance_allowance() (COLLATERAL = pUSD)
+        rather than a raw wallet balance: that's the only check that also
+        catches "wrapped but the exchange contract's allowance was never
+        approved," which a plain balanceOf() would miss entirely.
+        """
+        try:
+            from py_clob_client_v2.clob_types import AssetType, BalanceAllowanceParams
+            client = self._clob_client()
+            resp = client.get_balance_allowance(
+                BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)) or {}
+            balance = float(resp.get("balance", 0) or 0)
+            allowance = float(resp.get("allowance", 0) or 0)
+        except Exception as e:
+            log.error("pUSD balance/allowance check failed: %s", e)
+            return False
+        if balance <= 0 or allowance <= 0:
+            log.error("pUSD balance/allowance check failed: balance=%s allowance=%s -- "
+                     "the funder wallet has no tradeable pUSD. USDC.e deposits must be "
+                     "wrapped into pUSD via the Collateral Onramp's wrap() before this "
+                     "bot can trade -- it does not do that automatically. See LIVE.md.",
+                     balance, allowance)
+            return False
+        return True
 
     def _place_order(self, token_id: str, price: float, shares: float,
                      side: str) -> bool:
@@ -115,14 +183,19 @@ class LiveEngine(PaperEngine):
 
         The only method in this module that ever talks to the network --
         overridden wholesale in tests.
+
+        The response shape assumed here (a "status" field with "matched"/
+        "filled" meaning fully filled) is carried over unverified from the
+        V1 rewrite, since research for the V2 rewrite could not confirm the
+        exact V2 response body -- same "expect a possible day-one fix"
+        caveat as everywhere else in this module.
         """
-        from py_clob_client.clob_types import OrderArgs, OrderType
-        from py_clob_client.order_builder.constants import BUY, SELL
+        from py_clob_client_v2.clob_types import OrderArgsV2, OrderType
+        from py_clob_client_v2.order_builder.constants import BUY, SELL
         client = self._clob_client()
-        args = OrderArgs(price=round(price, 3), size=round(shares, 2),
-                         side=BUY if side == "BUY" else SELL, token_id=token_id)
-        signed = client.create_order(args)
-        resp = client.post_order(signed, OrderType.FOK) or {}
+        args = OrderArgsV2(token_id=token_id, price=round(price, 3),
+                           size=round(shares, 2), side=BUY if side == "BUY" else SELL)
+        resp = client.create_and_post_order(args, order_type=OrderType.FOK) or {}
         status = str(resp.get("status", "")).lower()
         return status in ("matched", "filled")
 
@@ -164,6 +237,10 @@ class LiveEngine(PaperEngine):
             log.info("[DRY RUN] would open %s: %d leg(s), cost $%.2f",
                      opp.key, len(opp.legs), opp.total_cost())
             return None
+        if not self._check_pusd_balance():
+            write_halt("pUSD balance/allowance check failed before opening "
+                      f"{opp.key} -- see log for details")
+            return None
         for leg in opp.legs:
             filled = self._place_order(leg.token_id, leg.entry_price, leg.shares, "BUY")
             if not filled:
@@ -174,6 +251,9 @@ class LiveEngine(PaperEngine):
 
     def close_early(self, key: str, exit_prices: Dict[str, float],
                     ts: Optional[float] = None, reason: str = "manual_close") -> Optional[dict]:
+        # no pUSD balance check here on purpose: selling an existing
+        # position needs CONDITIONAL (outcome-token) balance, not COLLATERAL
+        # -- that check is specific to opening new exposure with pUSD cash.
         if not live_gates_open() or dry_run():
             log.info("live gates closed or dry-run -- refusing to close %s", key)
             return None
