@@ -43,18 +43,28 @@ What was verified against py-sdk's actual source before writing this
   - AsyncSecureClient.create() with no `wallet=` argument derives the
     account's deterministic deposit wallet address and deploys it
     on-chain if it isn't deployed yet.
+  - Deposit wallets are gasless (relayed) accounts -- create() raises
+    UserInputError unless it's given an `api_key=` credential for that
+    relayed-transaction path. Confirmed from source: `api_key` takes an
+    `ApiKey` (a `BuilderApiKey | RelayerApiKey` union); `BuilderApiKey`
+    is a frozen dataclass with exactly three fields -- `key`, `secret`,
+    `passphrase` -- matching the Builder API Key/Secret/Passphrase
+    generated at polymarket.com/settings?tab=builder.
 
 Requires (deliberately NOT added to requirements-live.txt -- this is a
 one-off manual diagnostic, not a bot dependency):
     pip install polymarket-client==0.2.0
 
-Reads POLYEDGE_PRIVATE_KEY from the environment -- the SAME key already
-in polybert.env for this account. Does not create a new account, does
-not ask for a new key, does not read or write POLYEDGE_FUNDER_ADDRESS
-(the deposit wallet is a DIFFERENT address from the old POLY_PROXY
-funder, derived fresh by the SDK).
+Reads from the environment (the SAME polybert.env already used for the
+bot -- does not create a new account, does not ask for a new key, does
+not read or write POLYEDGE_FUNDER_ADDRESS, since the deposit wallet is a
+DIFFERENT address from the old POLY_PROXY funder, derived fresh by the SDK):
+    POLYEDGE_PRIVATE_KEY        the same private key already in use
+    POLYEDGE_BUILDER_API_KEY    from polymarket.com/settings?tab=builder
+    POLYEDGE_BUILDER_SECRET     (generate a fresh Builder API Key there --
+    POLYEDGE_BUILDER_PASSPHRASE  it gives you all three values together)
 
-Usage (source your env file first so POLYEDGE_PRIVATE_KEY is set):
+Usage (source your env file first so the above are all set):
     set -a; source polybert.env; set +a
     python scripts/test_deposit_wallet.py
 """
@@ -89,16 +99,27 @@ def _confirm(prompt: str) -> None:
 
 async def main() -> None:
     # ---------------------------------------------------------------- 1/6
-    _status("1/6", "Loading POLYEDGE_PRIVATE_KEY from the environment...")
+    _status("1/6", "Loading credentials from the environment...")
     private_key = os.environ.get("POLYEDGE_PRIVATE_KEY")
     if not private_key or private_key == "0xREPLACE_ME":
         _fail("1/6", "POLYEDGE_PRIVATE_KEY is not set (or is still the template "
              "placeholder). Source polybert.env first:\n"
              "    set -a; source polybert.env; set +a")
-    print("    private key loaded from environment (value not printed)")
+    builder_key = os.environ.get("POLYEDGE_BUILDER_API_KEY")
+    builder_secret = os.environ.get("POLYEDGE_BUILDER_SECRET")
+    builder_passphrase = os.environ.get("POLYEDGE_BUILDER_PASSPHRASE")
+    if not builder_key or not builder_secret or not builder_passphrase:
+        _fail("1/6", "POLYEDGE_BUILDER_API_KEY / POLYEDGE_BUILDER_SECRET / "
+             "POLYEDGE_BUILDER_PASSPHRASE must all be set -- deposit wallets are "
+             "gasless (relayed) accounts, and AsyncSecureClient.create() requires "
+             "a Builder API Key for that. Generate one at "
+             "polymarket.com/settings?tab=builder, then source polybert.env:\n"
+             "    set -a; source polybert.env; set +a")
+    print("    private key and builder API credentials loaded from environment "
+         "(values not printed)")
 
     try:
-        from polymarket import PRODUCTION, AsyncSecureClient
+        from polymarket import PRODUCTION, AsyncSecureClient, BuilderApiKey
     except ImportError:
         _fail("1/6", "polymarket-client is not installed. Run:\n"
              "    pip install polymarket-client==0.2.0")
@@ -106,11 +127,15 @@ async def main() -> None:
 
     # ---------------------------------------------------------------- 2/6
     _status("2/6", "Creating AsyncSecureClient and deriving the deposit wallet "
-                   "address (this signs LOCALLY -- no Privy/Magic network call)...")
+                   "address (private-key signing happens LOCALLY -- no Privy/Magic "
+                   "network call; the builder key below is only for the gasless/"
+                   "relayed-transaction path, not for signing)...")
     client = None
     try:
         client = await AsyncSecureClient.create(
-            private_key=private_key, environment=PRODUCTION)
+            private_key=private_key, environment=PRODUCTION,
+            api_key=BuilderApiKey(key=builder_key, secret=builder_secret,
+                                  passphrase=builder_passphrase))
     except Exception as e:
         _fail("2/6", f"AsyncSecureClient.create() raised: {e!r}")
 
