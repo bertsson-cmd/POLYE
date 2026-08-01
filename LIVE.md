@@ -266,3 +266,40 @@ Tailscale, not an open port.
 - Gas costs, USDC on/off-ramp costs, the one-time pUSD wrap, and any FX
   exposure are not modeled anywhere in the risk engine — they are real
   costs on top of whatever the dashboard shows.
+- **`py-clob-client-v2`'s `get_balance_allowance()` is confirmed broken
+  for signature_type=1 (POLY_PROXY) accounts** — reproduced live: it
+  returned `balance=0, allowance=0` for a funder/proxy wallet
+  independently confirmed (via a direct on-chain read) to hold real
+  pUSD. Root cause, confirmed against the SDK's own source: the
+  request it sends only ever includes `signature_type` (read from the
+  client's own construction-time value) — it never sends a funder or
+  address at all, and `BalanceAllowanceParams.signature_type` is a
+  dead field the method body never reads, so there was no parameter
+  that could have fixed this from the caller's side.
+  `_check_pusd_balance()` in `live.py` now reads pUSD balance via a
+  direct on-chain call instead (the same proven-correct method
+  `reconcile.py` uses) rather than trusting that SDK response. This is
+  almost certainly the same bug class as
+  [Polymarket/py-clob-client-v2#70](https://github.com/Polymarket/py-clob-client-v2/issues/70),
+  [#77](https://github.com/Polymarket/py-clob-client-v2/issues/77), and
+  [#64](https://github.com/Polymarket/py-clob-client-v2/issues/64)
+  (signature-type-aware address resolution not honoring the configured
+  funder) — but all three of those are filed specifically against
+  signature_type=3 (POLY_1271/deposit wallets); a search of that repo's
+  issues turned up nothing filed for this exact POLY_PROXY (1) variant,
+  so it is likely a genuinely new report rather than a duplicate. Filing
+  a new issue against `Polymarket/py-clob-client-v2` documenting this
+  needs the repo owner's go-ahead, since it's a visible action on a
+  third-party project — it has **not** been filed yet as of this note.
+- **Consequence: `_check_pusd_balance()` now only verifies balance, not
+  allowance.** There is no proven-correct way to check this account's
+  exchange-contract pUSD allowance either — the SDK response above is
+  unreliable for the same reason, and a direct on-chain `allowance()`
+  call would need a confirmed exchange/spender contract address that
+  has not been verified (do not guess at this — confirm it before ever
+  relying on it). If USDC.e was wrapped into pUSD but the exchange
+  contract was never approved, this check will pass but the real order
+  will still fail — that failure surfaces as an unfilled order in
+  `_place_order`, not as an earlier, clearer halt. Cross-check allowance
+  by hand (Polymarket's own UI, or watching the first real order
+  attempt closely during the dry-run stage) until this gap is closed.

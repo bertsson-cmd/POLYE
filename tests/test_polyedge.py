@@ -1496,7 +1496,10 @@ class TestLiveEngineV2Wiring:
             monkeypatch.setenv("POLYEDGE_PRIVATE_KEY", key)
         else:
             monkeypatch.delenv("POLYEDGE_PRIVATE_KEY", raising=False)
-        monkeypatch.setenv("POLYEDGE_FUNDER_ADDRESS", funder)
+        if funder is not None:
+            monkeypatch.setenv("POLYEDGE_FUNDER_ADDRESS", funder)
+        else:
+            monkeypatch.delenv("POLYEDGE_FUNDER_ADDRESS", raising=False)
         return lv.LiveEngine(state_dir=str(tmp_path))
 
     def test_clob_client_constructed_with_v2_args_and_default_signature_type(self, tmp_path, monkeypatch):
@@ -1538,30 +1541,49 @@ class TestLiveEngineV2Wiring:
         e = self._engine(tmp_path, monkeypatch)
         assert e._place_order("tok-1", 0.965, 10.0, "SELL") is False
 
-    def test_pusd_check_true_when_funded(self, tmp_path, monkeypatch):
-        calls = self._install_fake_sdk(monkeypatch,
-                                       balance_allowance={"balance": "50", "allowance": "50"})
-        e = self._engine(tmp_path, monkeypatch)
+    # ---- _check_pusd_balance(): rewritten to a direct on-chain read after
+    # a real bug was found -- get_balance_allowance() returned balance=0,
+    # allowance=0 for a signature_type=1 (POLY_PROXY) funder wallet that
+    # genuinely held pUSD. It sends no funder/address at all (only
+    # signature_type, sourced from the client's own construction-time
+    # value), so there was no parameter to "pass through" that would have
+    # fixed it -- see the method's docstring and LIVE.md for the full
+    # writeup and the tracking issue. These tests patch
+    # reconcile.fetch_real_pusd_balance (what _check_pusd_balance now
+    # actually calls) rather than the SDK.
+    def test_pusd_check_true_and_passes_funder_through_correctly(self, tmp_path, monkeypatch):
+        from polyedge import reconcile
+        captured = {}
+
+        def fake_fetch(funder_address, session=None):
+            captured["funder"] = funder_address
+            return 111.50
+
+        monkeypatch.setattr(reconcile, "fetch_real_pusd_balance", fake_fetch)
+        e = self._engine(tmp_path, monkeypatch, funder="0xProxyWalletHoldingRealFunds")
         assert e._check_pusd_balance() is True
-        assert calls["get_balance_allowance"].asset_type == "COLLATERAL"
+        # the actual bug: the funder/proxy address, not the EOA signer
+        # (key="0xabc" in _engine's default), must be what gets checked
+        assert captured["funder"] == "0xProxyWalletHoldingRealFunds"
 
     def test_pusd_check_false_on_zero_balance(self, tmp_path, monkeypatch):
-        self._install_fake_sdk(monkeypatch, balance_allowance={"balance": "0", "allowance": "50"})
+        from polyedge import reconcile
+        monkeypatch.setattr(reconcile, "fetch_real_pusd_balance",
+                            lambda funder_address, session=None: 0.0)
         e = self._engine(tmp_path, monkeypatch)
         assert e._check_pusd_balance() is False
 
-    def test_pusd_check_false_on_zero_allowance(self, tmp_path, monkeypatch):
-        # wrapped into pUSD but never approved the exchange contract --
-        # must be caught too, not just a literal zero balance
-        self._install_fake_sdk(monkeypatch, balance_allowance={"balance": "50", "allowance": "0"})
+    def test_pusd_check_false_when_rpc_unreachable(self, tmp_path, monkeypatch):
+        # fetch_real_pusd_balance returns None (not 0.0) on network failure --
+        # must be treated as "cannot verify, refuse to trade", not as "fine"
+        from polyedge import reconcile
+        monkeypatch.setattr(reconcile, "fetch_real_pusd_balance",
+                            lambda funder_address, session=None: None)
         e = self._engine(tmp_path, monkeypatch)
         assert e._check_pusd_balance() is False
 
-    def test_pusd_check_false_when_sdk_unavailable(self, tmp_path, monkeypatch):
-        # no fake SDK installed at all -- the real package genuinely isn't
-        # installed in this environment either, so this also exercises the
-        # real "package not installed" path, not just a simulated one
-        e = self._engine(tmp_path, monkeypatch)
+    def test_pusd_check_false_when_funder_not_set(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch, funder=None)
         assert e._check_pusd_balance() is False
 
     def test_open_position_halts_when_pusd_check_fails(self, tmp_path, monkeypatch):
