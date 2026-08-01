@@ -277,7 +277,12 @@ class LiveEngine(PaperEngine):
                 log.warning("open_position: BUY order for %s not filled, aborting %s",
                            leg.token_id, opp.key)
                 return None
-        return super().open_position(opp, ts=ts)
+        result = super().open_position(opp, ts=ts)
+        if result and config.LIVE_DEFAULT_STOP_LOSS_PCT:
+            controls.set_stop_loss(opp.key, config.LIVE_DEFAULT_STOP_LOSS_PCT, self.state_dir)
+            log.info("auto-applied %.0f%% stop-loss to %s",
+                     config.LIVE_DEFAULT_STOP_LOSS_PCT, opp.key)
+        return result
 
     def close_early(self, key: str, exit_prices: Dict[str, float],
                     ts: Optional[float] = None, reason: str = "manual_close") -> Optional[dict]:

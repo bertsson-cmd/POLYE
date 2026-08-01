@@ -148,6 +148,13 @@ TAKE_PROFIT_MIN_GAIN = _f("POLYEDGE_TP_MIN_GAIN", 0.005)   # ignore moves smalle
 # POLYEDGE_DRY_RUN=0 are all required.
 LIVE_ALLOW_MULTILEG = os.environ.get("POLYEDGE_LIVE_MULTILEG", "0") == "1"  # ARB/REL locks live: OFF by default
 LIVE_MAX_DAILY_LOSS = _f("POLYEDGE_LIVE_MAX_DAILY_LOSS", 15.0)  # USD realized loss/day before auto-halt
+# Automatically applied to every live position the moment it opens (via
+# controls.set_stop_loss()), so "keep it at 30%" is a real, standing
+# behavior rather than something that has to be re-clicked in the
+# control panel for every new position. None/0 disables auto-stop-loss
+# entirely -- positions would then only stop out via a manually-set
+# per-position override in the control panel, same as before this existed.
+LIVE_DEFAULT_STOP_LOSS_PCT = _f("POLYEDGE_DEFAULT_STOP_LOSS_PCT", 30.0)
 
 # URL for the "Control Panel" button on the generated dashboard. Defaults
 # to localhost -- the control panel is meant to be reached through an SSH

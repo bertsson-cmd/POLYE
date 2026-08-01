@@ -27,6 +27,7 @@ since it already has an authenticated client at that point anyway and
 that call also verifies exchange-contract allowance, not just balance.
 """
 import logging
+import os
 from typing import Optional
 
 import requests
@@ -34,7 +35,23 @@ import requests
 log = logging.getLogger("polyedge.reconcile")
 
 DATA_API_POSITIONS_URL = "https://data-api.polymarket.com/positions"
-POLYGON_RPC_URL = "https://polygon-rpc.com"
+
+# polygon-rpc.com (the original Polygon-Foundation-run public endpoint)
+# was deprecated on July 31, 2026 -- confirmed via the official Polygon
+# forum deprecation notice, and started 401ing the day after. A second
+# attempt at a replacement (polygon.llamarpc.com) turned out to be a
+# dead hostname (NXDOMAIN) despite appearing correct in third-party
+# documentation -- search results are not verification. This one
+# (polygon.publicnode.com) was confirmed differently: curl'd directly
+# from the VPS and got a real HTTP 405 with `allow: OPTIONS, POST` --
+# the actual fingerprint of a live JSON-RPC endpoint responding to a
+# HEAD request, not just a plausible-looking URL from a search result.
+# Made env-overridable regardless, since free public endpoints are
+# exactly the kind of thing that keeps changing -- if reconcile logs
+# start showing "could not fetch real pUSD balance" again, curl the
+# current URL directly from the VPS before assuming anything else is
+# wrong, the same way this one was actually verified.
+POLYGON_RPC_URL = os.environ.get("POLYEDGE_POLYGON_RPC_URL", "https://polygon.publicnode.com")
 
 # pUSD (Polymarket USD) on Polygon -- the V2 collateral token that
 # replaced USDC.e at the CLOB V2 cutover (April 28, 2026). Address

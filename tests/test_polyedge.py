@@ -1316,6 +1316,37 @@ class TestLiveEngine:
         assert e._orders == [("BUY", "tok", 10.0, 0.96)]
         assert e.cash == pytest.approx(start - 9.6)
 
+    def test_default_stop_loss_auto_applied_on_fill(self, tmp_path, monkeypatch):
+        """The actual point of this feature: a live position gets a
+        standing stop-loss the moment it opens, with no separate manual
+        step in the control panel needed."""
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        pos = e.open_position(self._opp("CV-SL"))
+        assert pos is not None
+        ctrl = controls.load(e.state_dir)
+        assert ctrl["stop_loss_pct"].get("CV-SL") == config.LIVE_DEFAULT_STOP_LOSS_PCT
+
+    def test_default_stop_loss_disabled_when_zero(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        old = config.LIVE_DEFAULT_STOP_LOSS_PCT
+        config.LIVE_DEFAULT_STOP_LOSS_PCT = 0
+        try:
+            pos = e.open_position(self._opp("CV-NOSL"))
+            assert pos is not None
+            ctrl = controls.load(e.state_dir)
+            assert "CV-NOSL" not in ctrl["stop_loss_pct"]
+        finally:
+            config.LIVE_DEFAULT_STOP_LOSS_PCT = old
+
+    def test_no_stop_loss_registered_when_order_not_filled(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+        assert e.open_position(self._opp("CV-UNFILLED")) is None
+        ctrl = controls.load(e.state_dir)
+        assert "CV-UNFILLED" not in ctrl["stop_loss_pct"]
+
     def test_unfilled_order_records_nothing(self, tmp_path, monkeypatch):
         e = self._engine(tmp_path, monkeypatch, fill=False)
         start = e.cash
@@ -1931,7 +1962,7 @@ class _FakeSession:
     def post(self, url, json=None, timeout=None):
         if self.raise_on_post:
             raise requests.ConnectionError("simulated network failure")
-        assert "polygon-rpc.com" in url
+        assert url == reconcile.POLYGON_RPC_URL
         return _FakeResponse({"result": self.balance_hex})
 
 
