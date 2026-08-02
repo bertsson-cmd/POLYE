@@ -1,5 +1,5 @@
 {
- "cash": 633.043039,
+ "cash": 634.336758,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9475
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.948
    },
-   "current_value": 26.136788,
-   "unrealized_pl": -0.068962,
-   "unrealized_pl_pct": -0.263
+   "current_value": 26.15058,
+   "unrealized_pl": -0.05517,
+   "unrealized_pl_pct": -0.211
   },
   {
    "key": "CV-2584969",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.978
+    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.9795
    },
-   "current_value": 5.523684,
-   "unrealized_pl": 0.02824,
-   "unrealized_pl_pct": 0.514
+   "current_value": 5.532156,
+   "unrealized_pl": 0.036712,
+   "unrealized_pl_pct": 0.668
   },
   {
    "key": "CV-3158240",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9725
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9645
    },
-   "current_value": 15.194717,
-   "unrealized_pl": -0.023437,
-   "unrealized_pl_pct": -0.154
+   "current_value": 15.069722,
+   "unrealized_pl": -0.148432,
+   "unrealized_pl_pct": -0.975
   },
   {
    "key": "CV-3202417",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.941
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.946
    },
-   "current_value": 12.009104,
-   "unrealized_pl": -0.242479,
-   "unrealized_pl_pct": -1.979
+   "current_value": 12.072914,
+   "unrealized_pl": -0.178669,
+   "unrealized_pl_pct": -1.458
   },
   {
    "key": "CV-907513",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.959
+    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.957
    },
-   "current_value": 24.775915,
-   "unrealized_pl": -0.025835,
-   "unrealized_pl_pct": -0.104
+   "current_value": 24.724244,
+   "unrealized_pl": -0.077506,
+   "unrealized_pl_pct": -0.313
   },
   {
    "key": "CV-2832140",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.9725
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.974
    },
-   "current_value": 5.327746,
-   "unrealized_pl": 0.013696,
-   "unrealized_pl_pct": 0.258
+   "current_value": 5.335964,
+   "unrealized_pl": 0.021914,
+   "unrealized_pl_pct": 0.412
   },
   {
    "key": "CV-3223267",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9745
+    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9755
    },
-   "current_value": 13.900157,
-   "unrealized_pl": 0.092715,
-   "unrealized_pl_pct": 0.671
+   "current_value": 13.914421,
+   "unrealized_pl": 0.106979,
+   "unrealized_pl_pct": 0.775
   },
   {
    "key": "CV-3158069",
@@ -315,40 +315,11 @@
     }
    ],
    "current_prices": {
-    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.963
+    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.964
    },
-   "current_value": 22.90079,
-   "unrealized_pl": -0.35671,
-   "unrealized_pl_pct": -1.534
-  },
-  {
-   "key": "CV-3202407",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 5?",
-   "opened": 1785542628.7909844,
-   "cost": 24.580901,
-   "edge": 0.031816,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9724,
-   "resolve_by": "2026-08-05T16:00:00Z",
-   "note": "YES ask 0.967, fee 0.0022, 4.7d to resolution, 249% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "6317942472811341094293656478360045700492895437312709422593537393109856459100",
-     "market_id": "3202407",
-     "label": "YES Will the price of Bitcoin be above $58,000 on August 5?",
-     "side": "YES",
-     "entry_price": 0.967,
-     "shares": 25.361169
-    }
-   ],
-   "current_prices": {
-    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9665
-   },
-   "current_value": 24.51157,
-   "unrealized_pl": -0.069331,
-   "unrealized_pl_pct": -0.282
+   "current_value": 22.924571,
+   "unrealized_pl": -0.332929,
+   "unrealized_pl_pct": -1.431
   },
   {
    "key": "CV-3214835",
@@ -402,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.9605
+    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.966
    },
-   "current_value": 6.693851,
-   "unrealized_pl": -0.002206,
-   "unrealized_pl_pct": -0.033
+   "current_value": 6.732182,
+   "unrealized_pl": 0.036125,
+   "unrealized_pl_pct": 0.539
   },
   {
    "key": "CV-3128787",
@@ -431,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "112157595552502425360311365480557346272967836691353340001604809204498706086576": 0.983
+    "112157595552502425360311365480557346272967836691353340001604809204498706086576": 0.9855
    },
-   "current_value": 23.490293,
-   "unrealized_pl": 0.047793,
-   "unrealized_pl_pct": 0.204
+   "current_value": 23.550034,
+   "unrealized_pl": 0.107534,
+   "unrealized_pl_pct": 0.459
   },
   {
    "key": "CV-3247963",
@@ -460,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.9625
+    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.973
    },
-   "current_value": 17.819781,
-   "unrealized_pl": -0.212911,
-   "unrealized_pl_pct": -1.181
+   "current_value": 18.014178,
+   "unrealized_pl": -0.018514,
+   "unrealized_pl_pct": -0.103
   },
   {
    "key": "CV-3247965",
@@ -489,11 +460,11 @@
     }
    ],
    "current_prices": {
-    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.9515
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.958
    },
-   "current_value": 19.708615,
-   "unrealized_pl": -0.176062,
-   "unrealized_pl_pct": -0.885
+   "current_value": 19.84325,
+   "unrealized_pl": -0.041427,
+   "unrealized_pl_pct": -0.208
   },
   {
    "key": "LS-3001848",
@@ -518,11 +489,11 @@
     }
    ],
    "current_prices": {
-    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.9635
+    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.961
    },
-   "current_value": 23.32502,
-   "unrealized_pl": -0.123356,
-   "unrealized_pl_pct": -0.526
+   "current_value": 23.264498,
+   "unrealized_pl": -0.183878,
+   "unrealized_pl_pct": -0.784
   },
   {
    "key": "LS-2994243",
@@ -547,11 +518,40 @@
     }
    ],
    "current_prices": {
-    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.963
+    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.965
    },
-   "current_value": 23.337049,
-   "unrealized_pl": -0.112498,
-   "unrealized_pl_pct": -0.48
+   "current_value": 23.385517,
+   "unrealized_pl": -0.06403,
+   "unrealized_pl_pct": -0.273
+  },
+  {
+   "key": "CV-3094322",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "opened": 1785662974.8935173,
+   "cost": 23.509504,
+   "edge": 0.038633,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9692000000000001,
+   "resolve_by": "2026-08-02T23:59:00Z",
+   "note": "YES ask 0.961, fee 0.0019, 0.6d to resolution, 2336% annualized net if YES, assumed true P 0.969",
+   "legs": [
+    {
+     "token_id": "103092369447698008204824401565112575204100111070619746455798317310328461723084",
+     "market_id": "3094322",
+     "label": "YES Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office be at least 350m?",
+     "side": "YES",
+     "entry_price": 0.961,
+     "shares": 24.415973
+    }
+   ],
+   "current_prices": {
+    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.9615
+   },
+   "current_value": 23.475958,
+   "unrealized_pl": -0.033546,
+   "unrealized_pl_pct": -0.143
   }
  ],
  "closed": [
@@ -8978,6 +8978,39 @@
    "closed_ts": 1785655294.8418531,
    "payout": 23.76928,
    "pl": 0.04278
+  },
+  {
+   "key": "CV-3202407",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 5?",
+   "opened": 1785542628.7909844,
+   "cost": 24.580901,
+   "edge": 0.031816,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9724,
+   "resolve_by": "2026-08-05T16:00:00Z",
+   "note": "YES ask 0.967, fee 0.0022, 4.7d to resolution, 249% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "6317942472811341094293656478360045700492895437312709422593537393109856459100",
+     "market_id": "3202407",
+     "label": "YES Will the price of Bitcoin be above $58,000 on August 5?",
+     "side": "YES",
+     "entry_price": 0.967,
+     "shares": 25.361169
+    }
+   ],
+   "current_prices": {
+    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9665
+   },
+   "current_value": 24.51157,
+   "unrealized_pl": -0.069331,
+   "unrealized_pl_pct": -0.282,
+   "closed_ts": 1785662975.0508854,
+   "payout": 24.803223,
+   "pl": 0.222322,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -10148,6 +10181,14 @@
    "equity": 938.5452,
    "realized_total": -35.6322,
    "open_positions": 20
+  },
+  {
+   "ts": 1785662975.0526843,
+   "cash": 634.3368,
+   "open_value": 304.8373,
+   "equity": 939.174,
+   "realized_total": -35.3671,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -14193,6 +14234,25 @@
    "title": "NO-lock: Highest temperature in Buenos Aires on August 1?",
    "amount": 23.77,
    "pl": 0.04
+  },
+  {
+   "ts": 1785662974.8935173,
+   "type": "OPEN",
+   "key": "CV-3094322",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "amount": 23.51,
+   "pl": null
+  },
+  {
+   "ts": 1785662975.0508854,
+   "type": "CLOSE",
+   "key": "CV-3202407",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 5?",
+   "amount": 24.8,
+   "pl": 0.22,
+   "reason": "take_profit"
   }
  ]
 }
