@@ -1,5 +1,5 @@
 {
- "cash": 635.445016,
+ "cash": 633.043039,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.949
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9475
    },
-   "current_value": 26.178165,
-   "unrealized_pl": -0.027585,
-   "unrealized_pl_pct": -0.105
+   "current_value": 26.136788,
+   "unrealized_pl": -0.068962,
+   "unrealized_pl_pct": -0.263
   },
   {
    "key": "CV-2584969",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.9785
+    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.978
    },
-   "current_value": 5.526508,
-   "unrealized_pl": 0.031064,
-   "unrealized_pl_pct": 0.565
+   "current_value": 5.523684,
+   "unrealized_pl": 0.02824,
+   "unrealized_pl_pct": 0.514
   },
   {
    "key": "CV-3158240",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9605
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9725
    },
-   "current_value": 15.007225,
-   "unrealized_pl": -0.210929,
-   "unrealized_pl_pct": -1.386
+   "current_value": 15.194717,
+   "unrealized_pl": -0.023437,
+   "unrealized_pl_pct": -0.154
   },
   {
    "key": "CV-3202417",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.945
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.941
    },
-   "current_value": 12.060152,
-   "unrealized_pl": -0.191431,
-   "unrealized_pl_pct": -1.562
+   "current_value": 12.009104,
+   "unrealized_pl": -0.242479,
+   "unrealized_pl_pct": -1.979
   },
   {
    "key": "CV-907513",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.9585
+    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.959
    },
-   "current_value": 24.762997,
-   "unrealized_pl": -0.038753,
-   "unrealized_pl_pct": -0.156
+   "current_value": 24.775915,
+   "unrealized_pl": -0.025835,
+   "unrealized_pl_pct": -0.104
   },
   {
    "key": "CV-2832140",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9765
+    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9775
    },
-   "current_value": 17.320931,
-   "unrealized_pl": -0.008869,
-   "unrealized_pl_pct": -0.051
+   "current_value": 17.338669,
+   "unrealized_pl": 0.008869,
+   "unrealized_pl_pct": 0.051
   },
   {
    "key": "CV-2233784",
@@ -257,130 +257,11 @@
     }
    ],
    "current_prices": {
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.971
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.9725
    },
-   "current_value": 5.319528,
-   "unrealized_pl": 0.005478,
-   "unrealized_pl_pct": 0.103
-  },
-  {
-   "key": "ARB-NO-774896",
-   "strategy": "ARB",
-   "title": "NO-lock: Highest temperature in Buenos Aires on August 1?",
-   "opened": 1785500435.5591004,
-   "cost": 23.7265,
-   "edge": 0.001803,
-   "guaranteed": true,
-   "guaranteed_payout_sets": 10.0,
-   "est_p_win": null,
-   "resolve_by": "2026-08-01T12:00:00Z",
-   "note": "11 outcomes, NO asks sum 9.9820 vs payout 10, 5 sets (capped $100)",
-   "legs": [
-    {
-     "token_id": "78196330178206388229188637659426098000571802305622405337894296004960726549182",
-     "market_id": "3234408",
-     "label": "NO Will the highest temperature in Buenos Aires be 14\u00b0C or below on August 1?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "55429929863621788931208713021119157394369115333013938202933831557726880750535",
-     "market_id": "3234409",
-     "label": "NO Will the highest temperature in Buenos Aires be 15\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "43281052118940024836665326745575253050807013557357541609983434467373380220307",
-     "market_id": "3234410",
-     "label": "NO Will the highest temperature in Buenos Aires be 16\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.995,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "8335817627621687537359051128187582979178819246149236429496088538091182309971",
-     "market_id": "3234411",
-     "label": "NO Will the highest temperature in Buenos Aires be 17\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "94901588063532636718923762544362674645950796189792450274184320151531099737334",
-     "market_id": "3234412",
-     "label": "NO Will the highest temperature in Buenos Aires be 18\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.92,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "98333692640674036494462390243998385847169548796908022372250351091389927581984",
-     "market_id": "3234413",
-     "label": "NO Will the highest temperature in Buenos Aires be 19\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.72,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "18388098293412396808646247332233438537068586908258782362148027585889699811704",
-     "market_id": "3234414",
-     "label": "NO Will the highest temperature in Buenos Aires be 20\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.64,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "70232244902037331465983570259367739627122541384604575345772736150928482567100",
-     "market_id": "3234415",
-     "label": "NO Will the highest temperature in Buenos Aires be 21\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.76,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "5487702850450736273918562579258577844553033702842165232316640647249274972870",
-     "market_id": "3234416",
-     "label": "NO Will the highest temperature in Buenos Aires be 22\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "29962263821516431283162618743759949216478736963709640362188977878505417612492",
-     "market_id": "3234417",
-     "label": "NO Will the highest temperature in Buenos Aires be 23\u00b0C on August 1?",
-     "side": "NO",
-     "entry_price": 0.99,
-     "shares": 2.376928
-    },
-    {
-     "token_id": "74352008906750930104336032142205954563637149208403352441814061254430105019199",
-     "market_id": "3234418",
-     "label": "NO Will the highest temperature in Buenos Aires be 24\u00b0C or higher on August 1?",
-     "side": "NO",
-     "entry_price": 0.999,
-     "shares": 2.376928
-    }
-   ],
-   "current_prices": {
-    "78196330178206388229188637659426098000571802305622405337894296004960726549182": 0.999,
-    "55429929863621788931208713021119157394369115333013938202933831557726880750535": 0.999,
-    "43281052118940024836665326745575253050807013557357541609983434467373380220307": 0.995,
-    "8335817627621687537359051128187582979178819246149236429496088538091182309971": 0.99,
-    "94901588063532636718923762544362674645950796189792450274184320151531099737334": 0.92,
-    "98333692640674036494462390243998385847169548796908022372250351091389927581984": 0.0005,
-    "18388098293412396808646247332233438537068586908258782362148027585889699811704": 0.64,
-    "70232244902037331465983570259367739627122541384604575345772736150928482567100": 0.76,
-    "5487702850450736273918562579258577844553033702842165232316640647249274972870": 0.97,
-    "29962263821516431283162618743759949216478736963709640362188977878505417612492": 0.99,
-    "74352008906750930104336032142205954563637149208403352441814061254430105019199": 0.999
-   },
-   "current_value": 23.76928,
-   "unrealized_pl": 0.04278,
-   "unrealized_pl_pct": 0.18
+   "current_value": 5.327746,
+   "unrealized_pl": 0.013696,
+   "unrealized_pl_pct": 0.258
   },
   {
    "key": "CV-3223267",
@@ -405,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9735
+    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9745
    },
-   "current_value": 13.885893,
-   "unrealized_pl": 0.078451,
-   "unrealized_pl_pct": 0.568
+   "current_value": 13.900157,
+   "unrealized_pl": 0.092715,
+   "unrealized_pl_pct": 0.671
   },
   {
    "key": "CV-3158069",
@@ -434,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.9565
+    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.963
    },
-   "current_value": 22.746216,
-   "unrealized_pl": -0.511284,
-   "unrealized_pl_pct": -2.198
+   "current_value": 22.90079,
+   "unrealized_pl": -0.35671,
+   "unrealized_pl_pct": -1.534
   },
   {
    "key": "CV-3202407",
@@ -521,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.9695
+    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.9605
    },
-   "current_value": 6.756573,
-   "unrealized_pl": 0.060516,
-   "unrealized_pl_pct": 0.904
+   "current_value": 6.693851,
+   "unrealized_pl": -0.002206,
+   "unrealized_pl_pct": -0.033
   },
   {
    "key": "CV-3128787",
@@ -550,40 +431,11 @@
     }
    ],
    "current_prices": {
-    "112157595552502425360311365480557346272967836691353340001604809204498706086576": 0.9815
+    "112157595552502425360311365480557346272967836691353340001604809204498706086576": 0.983
    },
-   "current_value": 23.454448,
-   "unrealized_pl": 0.011948,
-   "unrealized_pl_pct": 0.051
-  },
-  {
-   "key": "CV-3094322",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
-   "opened": 1785645839.4097464,
-   "cost": 20.431668,
-   "edge": 0.045918,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.958,
-   "resolve_by": "2026-08-02T23:59:00Z",
-   "note": "YES ask 0.954, fee 0.0022, 0.8d to resolution, 2090% annualized net if YES, assumed true P 0.958",
-   "legs": [
-    {
-     "token_id": "103092369447698008204824401565112575204100111070619746455798317310328461723084",
-     "market_id": "3094322",
-     "label": "YES Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office be at least 350m?",
-     "side": "YES",
-     "entry_price": 0.954,
-     "shares": 21.367697
-    }
-   ],
-   "current_prices": {
-    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.9475
-   },
-   "current_value": 20.245893,
-   "unrealized_pl": -0.185775,
-   "unrealized_pl_pct": -0.909
+   "current_value": 23.490293,
+   "unrealized_pl": 0.047793,
+   "unrealized_pl_pct": 0.204
   },
   {
    "key": "CV-3247963",
@@ -608,11 +460,11 @@
     }
    ],
    "current_prices": {
-    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.97
+    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.9625
    },
-   "current_value": 17.958636,
-   "unrealized_pl": -0.074056,
-   "unrealized_pl_pct": -0.411
+   "current_value": 17.819781,
+   "unrealized_pl": -0.212911,
+   "unrealized_pl_pct": -1.181
   },
   {
    "key": "CV-3247965",
@@ -637,11 +489,69 @@
     }
    ],
    "current_prices": {
-    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.955
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.9515
    },
-   "current_value": 19.781111,
-   "unrealized_pl": -0.103566,
-   "unrealized_pl_pct": -0.521
+   "current_value": 19.708615,
+   "unrealized_pl": -0.176062,
+   "unrealized_pl_pct": -0.885
+  },
+  {
+   "key": "LS-3001848",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-2.5)",
+   "opened": 1785655293.1034849,
+   "cost": 23.448376,
+   "edge": 0.009813,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9781,
+   "resolve_by": "2026-08-02T10:00:00Z",
+   "note": "YES at 0.036, assumed true 0.022, NO ask 0.967, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "83844990902758212642115342489823745070104349408580862340054644407172233225240",
+     "market_id": "3001848",
+     "label": "NO Spread: Qingdao Hainiu FC (-2.5)",
+     "side": "NO",
+     "entry_price": 0.967,
+     "shares": 24.208635
+    }
+   ],
+   "current_prices": {
+    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.9635
+   },
+   "current_value": 23.32502,
+   "unrealized_pl": -0.123356,
+   "unrealized_pl_pct": -0.526
+  },
+  {
+   "key": "LS-2994243",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: FC Anyang (-2.5)",
+   "opened": 1785655293.1035075,
+   "cost": 23.449547,
+   "edge": 0.010497,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-08-02T10:30:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "23120313174493563397215017646610605981098535561850655564371329232242336578769",
+     "market_id": "2994243",
+     "label": "NO Spread: FC Anyang (-2.5)",
+     "side": "NO",
+     "entry_price": 0.966,
+     "shares": 24.233696
+    }
+   ],
+   "current_prices": {
+    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.963
+   },
+   "current_value": 23.337049,
+   "unrealized_pl": -0.112498,
+   "unrealized_pl_pct": -0.48
   }
  ],
  "closed": [
@@ -8913,6 +8823,161 @@
    "closed_ts": 1785645840.0474994,
    "payout": 24.149371,
    "pl": 1.057882
+  },
+  {
+   "key": "CV-3094322",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "opened": 1785645839.4097464,
+   "cost": 20.431668,
+   "edge": 0.045918,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.958,
+   "resolve_by": "2026-08-02T23:59:00Z",
+   "note": "YES ask 0.954, fee 0.0022, 0.8d to resolution, 2090% annualized net if YES, assumed true P 0.958",
+   "legs": [
+    {
+     "token_id": "103092369447698008204824401565112575204100111070619746455798317310328461723084",
+     "market_id": "3094322",
+     "label": "YES Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office be at least 350m?",
+     "side": "YES",
+     "entry_price": 0.954,
+     "shares": 21.367697
+    }
+   ],
+   "current_prices": {
+    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.9475
+   },
+   "current_value": 20.245893,
+   "unrealized_pl": -0.185775,
+   "unrealized_pl_pct": -0.909,
+   "closed_ts": 1785655293.2227647,
+   "payout": 20.726666,
+   "pl": 0.294998,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "ARB-NO-774896",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Buenos Aires on August 1?",
+   "opened": 1785500435.5591004,
+   "cost": 23.7265,
+   "edge": 0.001803,
+   "guaranteed": true,
+   "guaranteed_payout_sets": 10.0,
+   "est_p_win": null,
+   "resolve_by": "2026-08-01T12:00:00Z",
+   "note": "11 outcomes, NO asks sum 9.9820 vs payout 10, 5 sets (capped $100)",
+   "legs": [
+    {
+     "token_id": "78196330178206388229188637659426098000571802305622405337894296004960726549182",
+     "market_id": "3234408",
+     "label": "NO Will the highest temperature in Buenos Aires be 14\u00b0C or below on August 1?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "55429929863621788931208713021119157394369115333013938202933831557726880750535",
+     "market_id": "3234409",
+     "label": "NO Will the highest temperature in Buenos Aires be 15\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "43281052118940024836665326745575253050807013557357541609983434467373380220307",
+     "market_id": "3234410",
+     "label": "NO Will the highest temperature in Buenos Aires be 16\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.995,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "8335817627621687537359051128187582979178819246149236429496088538091182309971",
+     "market_id": "3234411",
+     "label": "NO Will the highest temperature in Buenos Aires be 17\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "94901588063532636718923762544362674645950796189792450274184320151531099737334",
+     "market_id": "3234412",
+     "label": "NO Will the highest temperature in Buenos Aires be 18\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.92,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "98333692640674036494462390243998385847169548796908022372250351091389927581984",
+     "market_id": "3234413",
+     "label": "NO Will the highest temperature in Buenos Aires be 19\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.72,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "18388098293412396808646247332233438537068586908258782362148027585889699811704",
+     "market_id": "3234414",
+     "label": "NO Will the highest temperature in Buenos Aires be 20\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.64,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "70232244902037331465983570259367739627122541384604575345772736150928482567100",
+     "market_id": "3234415",
+     "label": "NO Will the highest temperature in Buenos Aires be 21\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.76,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "5487702850450736273918562579258577844553033702842165232316640647249274972870",
+     "market_id": "3234416",
+     "label": "NO Will the highest temperature in Buenos Aires be 22\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "29962263821516431283162618743759949216478736963709640362188977878505417612492",
+     "market_id": "3234417",
+     "label": "NO Will the highest temperature in Buenos Aires be 23\u00b0C on August 1?",
+     "side": "NO",
+     "entry_price": 0.99,
+     "shares": 2.376928
+    },
+    {
+     "token_id": "74352008906750930104336032142205954563637149208403352441814061254430105019199",
+     "market_id": "3234418",
+     "label": "NO Will the highest temperature in Buenos Aires be 24\u00b0C or higher on August 1?",
+     "side": "NO",
+     "entry_price": 0.999,
+     "shares": 2.376928
+    }
+   ],
+   "current_prices": {
+    "78196330178206388229188637659426098000571802305622405337894296004960726549182": 0.999,
+    "55429929863621788931208713021119157394369115333013938202933831557726880750535": 0.999,
+    "43281052118940024836665326745575253050807013557357541609983434467373380220307": 0.995,
+    "8335817627621687537359051128187582979178819246149236429496088538091182309971": 0.99,
+    "94901588063532636718923762544362674645950796189792450274184320151531099737334": 0.92,
+    "98333692640674036494462390243998385847169548796908022372250351091389927581984": 0.72,
+    "18388098293412396808646247332233438537068586908258782362148027585889699811704": 0.64,
+    "70232244902037331465983570259367739627122541384604575345772736150928482567100": 0.76,
+    "5487702850450736273918562579258577844553033702842165232316640647249274972870": 0.97,
+    "29962263821516431283162618743759949216478736963709640362188977878505417612492": 0.99,
+    "74352008906750930104336032142205954563637149208403352441814061254430105019199": 0.999
+   },
+   "current_value": 23.76928,
+   "unrealized_pl": 0.04278,
+   "unrealized_pl_pct": 0.18,
+   "closed_ts": 1785655294.8418531,
+   "payout": 23.76928,
+   "pl": 0.04278
   }
  ],
  "history": [
@@ -10075,6 +10140,14 @@
    "equity": 936.3946,
    "realized_total": -37.7182,
    "open_positions": 21
+  },
+  {
+   "ts": 1785655293.2246017,
+   "cash": 609.2738,
+   "open_value": 329.2714,
+   "equity": 938.5452,
+   "realized_total": -35.6322,
+   "open_positions": 20
   }
  ],
  "trades": [
@@ -14083,6 +14156,43 @@
    "title": "Fade: Exact Score: Inter Miami CF 1 - 2 Columbus Crew?",
    "amount": 24.15,
    "pl": 1.06
+  },
+  {
+   "ts": 1785655293.1034849,
+   "type": "OPEN",
+   "key": "LS-3001848",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-2.5)",
+   "amount": 23.45,
+   "pl": null
+  },
+  {
+   "ts": 1785655293.1035075,
+   "type": "OPEN",
+   "key": "LS-2994243",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: FC Anyang (-2.5)",
+   "amount": 23.45,
+   "pl": null
+  },
+  {
+   "ts": 1785655293.2227647,
+   "type": "CLOSE",
+   "key": "CV-3094322",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" Opening Weekend Box Office ",
+   "amount": 20.73,
+   "pl": 0.29,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785655294.8418531,
+   "type": "CLOSE",
+   "key": "ARB-NO-774896",
+   "strategy": "ARB",
+   "title": "NO-lock: Highest temperature in Buenos Aires on August 1?",
+   "amount": 23.77,
+   "pl": 0.04
   }
  ]
 }
