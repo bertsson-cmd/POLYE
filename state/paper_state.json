@@ -1,5 +1,5 @@
 {
- "cash": 634.336758,
+ "cash": 657.922637,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.948
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9475
    },
-   "current_value": 26.15058,
-   "unrealized_pl": -0.05517,
-   "unrealized_pl_pct": -0.211
+   "current_value": 26.136788,
+   "unrealized_pl": -0.068962,
+   "unrealized_pl_pct": -0.263
   },
   {
    "key": "CV-2584969",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.9795
+    "92627738454088898681124217233222155368027889520652411825112064915412845139298": 0.9805
    },
-   "current_value": 5.532156,
-   "unrealized_pl": 0.036712,
-   "unrealized_pl_pct": 0.668
+   "current_value": 5.537804,
+   "unrealized_pl": 0.04236,
+   "unrealized_pl_pct": 0.771
   },
   {
    "key": "CV-3158240",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9645
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9585
    },
-   "current_value": 15.069722,
-   "unrealized_pl": -0.148432,
-   "unrealized_pl_pct": -0.975
+   "current_value": 14.975976,
+   "unrealized_pl": -0.242178,
+   "unrealized_pl_pct": -1.591
   },
   {
    "key": "CV-3202417",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.946
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9345
    },
-   "current_value": 12.072914,
-   "unrealized_pl": -0.178669,
-   "unrealized_pl_pct": -1.458
+   "current_value": 11.926151,
+   "unrealized_pl": -0.325432,
+   "unrealized_pl_pct": -2.656
   },
   {
    "key": "CV-907513",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.957
+    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.958
    },
-   "current_value": 24.724244,
-   "unrealized_pl": -0.077506,
-   "unrealized_pl_pct": -0.313
+   "current_value": 24.750079,
+   "unrealized_pl": -0.051671,
+   "unrealized_pl_pct": -0.208
   },
   {
    "key": "CV-2832140",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9755
+    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9695
    },
-   "current_value": 13.914421,
-   "unrealized_pl": 0.106979,
-   "unrealized_pl_pct": 0.775
+   "current_value": 13.828837,
+   "unrealized_pl": 0.021395,
+   "unrealized_pl_pct": 0.155
   },
   {
    "key": "CV-3158069",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.964
+    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.9645
    },
-   "current_value": 22.924571,
-   "unrealized_pl": -0.332929,
-   "unrealized_pl_pct": -1.431
+   "current_value": 22.936461,
+   "unrealized_pl": -0.321039,
+   "unrealized_pl_pct": -1.38
   },
   {
    "key": "CV-3214835",
@@ -380,35 +380,6 @@
    "unrealized_pl_pct": 0.539
   },
   {
-   "key": "CV-3128787",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through August 2?",
-   "opened": 1785645839.4097219,
-   "cost": 23.4425,
-   "edge": 0.019368,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9852000000000001,
-   "resolve_by": "2026-08-02T23:59:00Z",
-   "note": "YES ask 0.981, fee 0.0000, 0.8d to resolution, 881% annualized net if YES, assumed true P 0.985",
-   "legs": [
-    {
-     "token_id": "112157595552502425360311365480557346272967836691353340001604809204498706086576",
-     "market_id": "3128787",
-     "label": "YES Israel x Iran ceasefire continues through August 2?",
-     "side": "YES",
-     "entry_price": 0.981,
-     "shares": 23.896534
-    }
-   ],
-   "current_prices": {
-    "112157595552502425360311365480557346272967836691353340001604809204498706086576": 0.9855
-   },
-   "current_value": 23.550034,
-   "unrealized_pl": 0.107534,
-   "unrealized_pl_pct": 0.459
-  },
-  {
    "key": "CV-3247963",
    "strategy": "CONVERGE",
    "title": "Converge: Israel x Iran ceasefire continues through August 3?",
@@ -431,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.973
+    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.9685
    },
-   "current_value": 18.014178,
-   "unrealized_pl": -0.018514,
-   "unrealized_pl_pct": -0.103
+   "current_value": 17.930865,
+   "unrealized_pl": -0.101827,
+   "unrealized_pl_pct": -0.565
   },
   {
    "key": "CV-3247965",
@@ -460,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.958
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.951
    },
-   "current_value": 19.84325,
-   "unrealized_pl": -0.041427,
-   "unrealized_pl_pct": -0.208
+   "current_value": 19.698258,
+   "unrealized_pl": -0.186419,
+   "unrealized_pl_pct": -0.938
   },
   {
    "key": "LS-3001848",
@@ -489,11 +460,11 @@
     }
    ],
    "current_prices": {
-    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.961
+    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.999
    },
-   "current_value": 23.264498,
-   "unrealized_pl": -0.183878,
-   "unrealized_pl_pct": -0.784
+   "current_value": 24.184426,
+   "unrealized_pl": 0.73605,
+   "unrealized_pl_pct": 3.139
   },
   {
    "key": "LS-2994243",
@@ -518,11 +489,11 @@
     }
    ],
    "current_prices": {
-    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.965
+    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.9495
    },
-   "current_value": 23.385517,
-   "unrealized_pl": -0.06403,
-   "unrealized_pl_pct": -0.273
+   "current_value": 23.009894,
+   "unrealized_pl": -0.439653,
+   "unrealized_pl_pct": -1.875
   },
   {
    "key": "CV-3094322",
@@ -547,11 +518,11 @@
     }
    ],
    "current_prices": {
-    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.9615
+    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.9635
    },
-   "current_value": 23.475958,
-   "unrealized_pl": -0.033546,
-   "unrealized_pl_pct": -0.143
+   "current_value": 23.52479,
+   "unrealized_pl": 0.015286,
+   "unrealized_pl_pct": 0.065
   }
  ],
  "closed": [
@@ -9011,6 +8982,39 @@
    "payout": 24.803223,
    "pl": 0.222322,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3128787",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 2?",
+   "opened": 1785645839.4097219,
+   "cost": 23.4425,
+   "edge": 0.019368,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-08-02T23:59:00Z",
+   "note": "YES ask 0.981, fee 0.0000, 0.8d to resolution, 881% annualized net if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "112157595552502425360311365480557346272967836691353340001604809204498706086576",
+     "market_id": "3128787",
+     "label": "YES Israel x Iran ceasefire continues through August 2?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 23.896534
+    }
+   ],
+   "current_prices": {
+    "112157595552502425360311365480557346272967836691353340001604809204498706086576": 0.9855
+   },
+   "current_value": 23.550034,
+   "unrealized_pl": 0.107534,
+   "unrealized_pl_pct": 0.459,
+   "closed_ts": 1785668647.0816457,
+   "payout": 23.585879,
+   "pl": 0.143379,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -10189,6 +10193,14 @@
    "equity": 939.174,
    "realized_total": -35.3671,
    "open_positions": 19
+  },
+  {
+   "ts": 1785668647.0834134,
+   "cash": 657.9226,
+   "open_value": 281.3555,
+   "equity": 939.2782,
+   "realized_total": -35.2237,
+   "open_positions": 18
   }
  ],
  "trades": [
@@ -14252,6 +14264,16 @@
    "title": "Converge: Will the price of Bitcoin be above $58,000 on August 5?",
    "amount": 24.8,
    "pl": 0.22,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785668647.0816457,
+   "type": "CLOSE",
+   "key": "CV-3128787",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 2?",
+   "amount": 23.59,
+   "pl": 0.14,
    "reason": "take_profit"
   }
  ]
