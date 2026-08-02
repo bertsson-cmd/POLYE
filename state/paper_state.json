@@ -1,5 +1,5 @@
 {
- "cash": 706.437972,
+ "cash": 735.377706,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9735
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9745
    },
-   "current_value": 15.210342,
-   "unrealized_pl": -0.007812,
-   "unrealized_pl_pct": -0.051
+   "current_value": 15.225966,
+   "unrealized_pl": 0.007812,
+   "unrealized_pl_pct": 0.051
   },
   {
    "key": "CV-3202417",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.952
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.956
    },
-   "current_value": 12.149487,
-   "unrealized_pl": -0.102096,
-   "unrealized_pl_pct": -0.833
+   "current_value": 12.200535,
+   "unrealized_pl": -0.051048,
+   "unrealized_pl_pct": -0.417
   },
   {
    "key": "CV-907513",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.966
+    "6864792964781918721937334716065868892125249145313476299156115929904357754621": 0.9575
    },
-   "current_value": 24.956761,
-   "unrealized_pl": 0.155011,
-   "unrealized_pl_pct": 0.625
+   "current_value": 24.737162,
+   "unrealized_pl": -0.064588,
+   "unrealized_pl_pct": -0.26
   },
   {
    "key": "CV-2832140",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.977
+    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9785
    },
-   "current_value": 17.3298,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 17.356407,
+   "unrealized_pl": 0.026607,
+   "unrealized_pl_pct": 0.154
   },
   {
    "key": "CV-2233784",
@@ -315,69 +315,11 @@
     }
    ],
    "current_prices": {
-    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.967
+    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.9685
    },
-   "current_value": 6.739151,
-   "unrealized_pl": 0.043094,
-   "unrealized_pl_pct": 0.644
-  },
-  {
-   "key": "CV-3247963",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through August 3?",
-   "opened": 1785645839.4097643,
-   "cost": 18.032692,
-   "edge": 0.026694,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-08-03T23:59:00Z",
-   "note": "YES ask 0.974, fee 0.0000, 1.8d to resolution, 541% annualized net if YES, assumed true P 0.976",
-   "legs": [
-    {
-     "token_id": "33031857528917237204569970205279313088825982927565857984494884985176333977929",
-     "market_id": "3247963",
-     "label": "YES Israel x Iran ceasefire continues through August 3?",
-     "side": "YES",
-     "entry_price": 0.974,
-     "shares": 18.514058
-    }
-   ],
-   "current_prices": {
-    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.977
-   },
-   "current_value": 18.088235,
-   "unrealized_pl": 0.055543,
-   "unrealized_pl_pct": 0.308
-  },
-  {
-   "key": "CV-3247965",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through August 4?",
-   "opened": 1785645839.4097772,
-   "cost": 19.884677,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-04T23:59:00Z",
-   "note": "YES ask 0.960, fee 0.0000, 2.8d to resolution, 543% annualized net if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "33744138537867316771530492434898210310112816831581011996696181212558287270655",
-     "market_id": "3247965",
-     "label": "YES Israel x Iran ceasefire continues through August 4?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 20.713205
-    }
-   ],
-   "current_prices": {
-    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.968
-   },
-   "current_value": 20.050382,
-   "unrealized_pl": 0.165705,
-   "unrealized_pl_pct": 0.833
+   "current_value": 6.749604,
+   "unrealized_pl": 0.053547,
+   "unrealized_pl_pct": 0.8
   },
   {
    "key": "CV-3262726",
@@ -402,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.9685
+    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.9675
    },
-   "current_value": 9.400541,
-   "unrealized_pl": -0.034331,
-   "unrealized_pl_pct": -0.364
+   "current_value": 9.390835,
+   "unrealized_pl": -0.044037,
+   "unrealized_pl_pct": -0.467
   },
   {
    "key": "LS-3138170",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "80544442268686565466705851934192698814784342802204479475345584482672253549615": 0.9685
+    "80544442268686565466705851934192698814784342802204479475345584482672253549615": 0.5
    },
-   "current_value": 23.479628,
-   "unrealized_pl": -0.048534,
-   "unrealized_pl_pct": -0.206
+   "current_value": 12.121646,
+   "unrealized_pl": -11.406516,
+   "unrealized_pl_pct": -48.48
   },
   {
    "key": "LS-3278508",
@@ -465,6 +407,35 @@
    "current_value": 23.128476,
    "unrealized_pl": -0.398512,
    "unrealized_pl_pct": -1.694
+  },
+  {
+   "key": "CV-2758457",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" score at least 90 on the Ro",
+   "opened": 1785702926.2115095,
+   "cost": 9.448362,
+   "edge": 0.050132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-03T00:00:00Z",
+   "note": "YES ask 0.950, fee 0.0024, 0.1d to resolution, 12881% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "92062876943642517334204166558488649767389043731898736327419367578333707352166",
+     "market_id": "2758457",
+     "label": "YES Will \"Spider-Man: Brand New Day\" score at least 90 on the Rotten Tomatoes Tomatometer?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 9.920842
+    }
+   ],
+   "current_prices": {
+    "92062876943642517334204166558488649767389043731898736327419367578333707352166": 0.94
+   },
+   "current_value": 9.325591,
+   "unrealized_pl": -0.122771,
+   "unrealized_pl_pct": -1.299
   }
  ],
  "closed": [
@@ -9120,6 +9091,72 @@
    "payout": 18.319052,
    "pl": 0.155444,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3247963",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 3?",
+   "opened": 1785645839.4097643,
+   "cost": 18.032692,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-03T23:59:00Z",
+   "note": "YES ask 0.974, fee 0.0000, 1.8d to resolution, 541% annualized net if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "33031857528917237204569970205279313088825982927565857984494884985176333977929",
+     "market_id": "3247963",
+     "label": "YES Israel x Iran ceasefire continues through August 3?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 18.514058
+    }
+   ],
+   "current_prices": {
+    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.977
+   },
+   "current_value": 18.088235,
+   "unrealized_pl": 0.055543,
+   "unrealized_pl_pct": 0.308,
+   "closed_ts": 1785702926.3364494,
+   "payout": 18.254861,
+   "pl": 0.222169,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3247965",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 4?",
+   "opened": 1785645839.4097772,
+   "cost": 19.884677,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-04T23:59:00Z",
+   "note": "YES ask 0.960, fee 0.0000, 2.8d to resolution, 543% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "33744138537867316771530492434898210310112816831581011996696181212558287270655",
+     "market_id": "3247965",
+     "label": "YES Israel x Iran ceasefire continues through August 4?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 20.713205
+    }
+   ],
+   "current_prices": {
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.968
+   },
+   "current_value": 20.050382,
+   "unrealized_pl": 0.165705,
+   "unrealized_pl_pct": 0.833,
+   "closed_ts": 1785702926.3364494,
+   "payout": 20.133235,
+   "pl": 0.248558,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -10362,6 +10399,14 @@
    "equity": 942.4757,
    "realized_total": -32.5969,
    "open_positions": 16
+  },
+  {
+   "ts": 1785702926.3384523,
+   "cash": 735.3777,
+   "open_value": 195.7411,
+   "equity": 931.1188,
+   "realized_total": -32.1261,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -14510,6 +14555,35 @@
    "title": "Converge: Will \"Ransom Canyon: Season 2\" be the #2 US Netflix show thi",
    "amount": 18.32,
    "pl": 0.16,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785702926.2115095,
+   "type": "OPEN",
+   "key": "CV-2758457",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" score at least 90 on the Ro",
+   "amount": 9.45,
+   "pl": null
+  },
+  {
+   "ts": 1785702926.3364494,
+   "type": "CLOSE",
+   "key": "CV-3247963",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 3?",
+   "amount": 18.25,
+   "pl": 0.22,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785702926.3364494,
+   "type": "CLOSE",
+   "key": "CV-3247965",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 4?",
+   "amount": 20.13,
+   "pl": 0.25,
    "reason": "take_profit"
   }
  ]
