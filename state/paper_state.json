@@ -1,5 +1,5 @@
 {
- "cash": 657.922637,
+ "cash": 696.930096,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.949
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9485
    },
-   "current_value": 26.178165,
-   "unrealized_pl": -0.027585,
-   "unrealized_pl_pct": -0.105
+   "current_value": 26.164373,
+   "unrealized_pl": -0.041377,
+   "unrealized_pl_pct": -0.158
   },
   {
    "key": "CV-2584969",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9595
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9585
    },
-   "current_value": 14.9916,
-   "unrealized_pl": -0.226554,
-   "unrealized_pl_pct": -1.489
+   "current_value": 14.975976,
+   "unrealized_pl": -0.242178,
+   "unrealized_pl_pct": -1.591
   },
   {
    "key": "CV-3202417",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9465
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9415
    },
-   "current_value": 12.079295,
-   "unrealized_pl": -0.172288,
-   "unrealized_pl_pct": -1.406
+   "current_value": 12.015485,
+   "unrealized_pl": -0.236098,
+   "unrealized_pl_pct": -1.927
   },
   {
    "key": "CV-907513",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.963
+    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.9585
    },
-   "current_value": 22.90079,
-   "unrealized_pl": -0.35671,
-   "unrealized_pl_pct": -1.534
+   "current_value": 22.793777,
+   "unrealized_pl": -0.463723,
+   "unrealized_pl_pct": -1.994
   },
   {
    "key": "CV-3214835",
@@ -373,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.9705
+    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.967
    },
-   "current_value": 6.763543,
-   "unrealized_pl": 0.067486,
-   "unrealized_pl_pct": 1.008
+   "current_value": 6.739151,
+   "unrealized_pl": 0.043094,
+   "unrealized_pl_pct": 0.644
   },
   {
    "key": "CV-3247963",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.9725
+    "33031857528917237204569970205279313088825982927565857984494884985176333977929": 0.9715
    },
-   "current_value": 18.004921,
-   "unrealized_pl": -0.027771,
-   "unrealized_pl_pct": -0.154
+   "current_value": 17.986407,
+   "unrealized_pl": -0.046285,
+   "unrealized_pl_pct": -0.257
   },
   {
    "key": "CV-3247965",
@@ -431,69 +431,11 @@
     }
    ],
    "current_prices": {
-    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.9675
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.966
    },
-   "current_value": 20.040026,
-   "unrealized_pl": 0.155349,
-   "unrealized_pl_pct": 0.781
-  },
-  {
-   "key": "LS-3001848",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Spread: Qingdao Hainiu FC (-2.5)",
-   "opened": 1785655293.1034849,
-   "cost": 23.448376,
-   "edge": 0.009813,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9781,
-   "resolve_by": "2026-08-02T10:00:00Z",
-   "note": "YES at 0.036, assumed true 0.022, NO ask 0.967, fee 0.0016",
-   "legs": [
-    {
-     "token_id": "83844990902758212642115342489823745070104349408580862340054644407172233225240",
-     "market_id": "3001848",
-     "label": "NO Spread: Qingdao Hainiu FC (-2.5)",
-     "side": "NO",
-     "entry_price": 0.967,
-     "shares": 24.208635
-    }
-   ],
-   "current_prices": {
-    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.9995
-   },
-   "current_value": 24.196531,
-   "unrealized_pl": 0.748155,
-   "unrealized_pl_pct": 3.191
-  },
-  {
-   "key": "LS-2994243",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Spread: FC Anyang (-2.5)",
-   "opened": 1785655293.1035075,
-   "cost": 23.449547,
-   "edge": 0.010497,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9778,
-   "resolve_by": "2026-08-02T10:30:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966, fee 0.0016",
-   "legs": [
-    {
-     "token_id": "23120313174493563397215017646610605981098535561850655564371329232242336578769",
-     "market_id": "2994243",
-     "label": "NO Spread: FC Anyang (-2.5)",
-     "side": "NO",
-     "entry_price": 0.966,
-     "shares": 24.233696
-    }
-   ],
-   "current_prices": {
-    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.9995
-   },
-   "current_value": 24.221579,
-   "unrealized_pl": 0.772032,
-   "unrealized_pl_pct": 3.292
+   "current_value": 20.008956,
+   "unrealized_pl": 0.124279,
+   "unrealized_pl_pct": 0.625
   },
   {
    "key": "CV-3094322",
@@ -518,11 +460,40 @@
     }
    ],
    "current_prices": {
-    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.9715
+    "103092369447698008204824401565112575204100111070619746455798317310328461723084": 0.976
    },
-   "current_value": 23.720118,
-   "unrealized_pl": 0.210614,
-   "unrealized_pl_pct": 0.896
+   "current_value": 23.82999,
+   "unrealized_pl": 0.320486,
+   "unrealized_pl_pct": 1.363
+  },
+  {
+   "key": "CV-3262726",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 8?",
+   "opened": 1785683382.7450423,
+   "cost": 9.434872,
+   "edge": 0.028828,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9712,
+   "resolve_by": "2026-08-08T16:00:00Z",
+   "note": "YES ask 0.970, fee 0.0020, 6.0d to resolution, 174% annualized net if YES, assumed true P 0.971",
+   "legs": [
+    {
+     "token_id": "61349607419285836854662832542595973803464881904164493709462082947344994785612",
+     "market_id": "3262726",
+     "label": "YES Will the price of Bitcoin be above $58,000 on August 8?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 9.706289
+    }
+   ],
+   "current_prices": {
+    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.964
+   },
+   "current_value": 9.356863,
+   "unrealized_pl": -0.078009,
+   "unrealized_pl_pct": -0.827
   }
  ],
  "closed": [
@@ -9015,6 +8986,70 @@
    "payout": 23.585879,
    "pl": 0.143379,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3001848",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-2.5)",
+   "opened": 1785655293.1034849,
+   "cost": 23.448376,
+   "edge": 0.009813,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9781,
+   "resolve_by": "2026-08-02T10:00:00Z",
+   "note": "YES at 0.036, assumed true 0.022, NO ask 0.967, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "83844990902758212642115342489823745070104349408580862340054644407172233225240",
+     "market_id": "3001848",
+     "label": "NO Spread: Qingdao Hainiu FC (-2.5)",
+     "side": "NO",
+     "entry_price": 0.967,
+     "shares": 24.208635
+    }
+   ],
+   "current_prices": {
+    "83844990902758212642115342489823745070104349408580862340054644407172233225240": 0.967
+   },
+   "current_value": 23.40975,
+   "unrealized_pl": -0.038626,
+   "unrealized_pl_pct": -0.165,
+   "closed_ts": 1785683385.2967556,
+   "payout": 24.208635,
+   "pl": 0.760259
+  },
+  {
+   "key": "LS-2994243",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: FC Anyang (-2.5)",
+   "opened": 1785655293.1035075,
+   "cost": 23.449547,
+   "edge": 0.010497,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-08-02T10:30:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "23120313174493563397215017646610605981098535561850655564371329232242336578769",
+     "market_id": "2994243",
+     "label": "NO Spread: FC Anyang (-2.5)",
+     "side": "NO",
+     "entry_price": 0.966,
+     "shares": 24.233696
+    }
+   ],
+   "current_prices": {
+    "23120313174493563397215017646610605981098535561850655564371329232242336578769": 0.966
+   },
+   "current_value": 23.40975,
+   "unrealized_pl": -0.039797,
+   "unrealized_pl_pct": -0.17,
+   "closed_ts": 1785683385.2967556,
+   "payout": 24.233696,
+   "pl": 0.784149
   }
  ],
  "history": [
@@ -10217,6 +10252,14 @@
    "equity": 941.515,
    "realized_total": -35.2237,
    "open_positions": 18
+  },
+  {
+   "ts": 1785683382.9220507,
+   "cash": 648.4878,
+   "open_value": 291.1862,
+   "equity": 939.674,
+   "realized_total": -35.2237,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -14291,6 +14334,33 @@
    "amount": 23.59,
    "pl": 0.14,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1785683382.7450423,
+   "type": "OPEN",
+   "key": "CV-3262726",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 8?",
+   "amount": 9.43,
+   "pl": null
+  },
+  {
+   "ts": 1785683385.2967556,
+   "type": "CLOSE",
+   "key": "LS-3001848",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-2.5)",
+   "amount": 24.21,
+   "pl": 0.76
+  },
+  {
+   "ts": 1785683385.2967556,
+   "type": "CLOSE",
+   "key": "LS-2994243",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: FC Anyang (-2.5)",
+   "amount": 24.23,
+   "pl": 0.78
   }
  ]
 }
