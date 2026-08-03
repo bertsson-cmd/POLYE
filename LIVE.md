@@ -14,13 +14,28 @@ every step below is something you do on purpose.
   first" — the spirit of that (don't go live on a thin or contaminated
   record) matters more than the exact number. If `state/paper_state.json`
   looks freshly reset or thin, wait.
-- **`live.py` has never touched the real Polymarket API.** It targets CLOB
-  V2 (`py-clob-client-v2`) — Polymarket cut over to V2 on April 28, 2026;
-  the old V1 client does not work against production at all — built
-  against the V2 SDK's actual source with no network access in the
-  sandbox that wrote it, and is fully unit-tested with the order
-  placement call mocked out. Expect a possible small fix on day one — this
-  is exactly why the dry-run stage below exists. Do not skip it.
+- **`live.py`'s own order-placement wiring has never itself run against the
+  real Polymarket API.** It targets CLOB V2 (Polymarket cut over to V2 on
+  April 28, 2026; the old V1 client does not work against production at
+  all) via `polymarket-client` (imports as `polymarket`,
+  GitHub Polymarket/py-sdk), Polymarket's official unified SDK — the
+  account's original `py-clob-client-v2` / signature_type=1 (POLY_PROXY)
+  path is fully retired: that exchange started hard-rejecting those
+  orders outright ("maker address not allowed, please use the deposit
+  wallet flow"), and `py-clob-client-v2`'s own deposit-wallet
+  (signature_type=3/POLY_1271) support is separately confirmed broken
+  (see §7). `polymarket-client`'s `AsyncSecureClient` itself was verified
+  end-to-end for this exact account — including one real $1 order that
+  actually filled — via `scripts/test_deposit_wallet.py` before `live.py`
+  was rewritten to use it, so this is not a cold, wholly-unverified SDK
+  swap. What's specifically NOT yet verified is `live.py`'s own wiring
+  around it (`_place_order`'s `asyncio.run()` bridging, `max_price`/
+  `min_price`-based market orders in place of the old limit-order shape,
+  fill detection from `AcceptedOrder`/`RejectedOrder`) — built against the
+  SDK's actual source, fully unit-tested with the order-placement call
+  mocked out, but not yet run against production. Expect a possible small
+  fix on day one — this is exactly why the dry-run stage below exists. Do
+  not skip it.
 - **Never put the private key anywhere but the VPS's own `chmod 600` env
   file.** Not in the repo, not in a commit, not in a chat message, not in
   a log line.
@@ -34,14 +49,22 @@ every step below is something you do on purpose.
    capped at exactly what you funded it with.
 2. Fund it on **Polygon** with USDC.e (bridged USDC — Polymarket's
    on-ramp token) — plus a small amount of POL/MATIC for gas on approvals.
-3. Note the wallet's private key and its address (the `funder` address —
-   for a plain EOA wallet these are the same address; if you're using
-   Polymarket's proxy-wallet / email-login flow, the funder address is
-   the proxy address, not the EOA — check Polymarket's own docs for your
-   specific account type before assuming).
+3. Note the wallet's private key. Its address for trading purposes is the
+   **deposit wallet** address (signature_type=3/POLY_1271) —
+   `polymarket-client`'s `AsyncSecureClient` derives this automatically
+   from the private key (confirmed from source: `AsyncSecureClient.create()`
+   has no `signature_type`/`chain_id` parameter at all — its `wallet=`
+   argument, when omitted, "defaults to the signer's Deposit Wallet"). For
+   this bot's account, the deposit wallet and the already-funded
+   `POLYEDGE_FUNDER_ADDRESS` are confirmed to be the SAME address — check
+   Polymarket's own "Upgrade your account" flow for your own account
+   before assuming this holds for a different wallet.
 4. Approve USDC.e spending for Polymarket's exchange contracts once, from
-   that wallet, via Polymarket's own UI — `py-clob-client-v2` does not do
-   this for you.
+   that wallet, via Polymarket's own UI — `polymarket-client` does not do
+   this for you (though it does have its own `setup_trading_approvals()`
+   call, which `live.py` also runs before every order as a cheap,
+   idempotent safety net — see the `_aplace_order` docstring in
+   `polyedge/live.py`).
 5. **Wrap USDC.e into pUSD.** Since CLOB V2, Polymarket's own collateral
    token is pUSD, not raw USDC.e — the UI wraps automatically when you
    deposit through it, but **API/programmatic traders (this bot) must call
@@ -50,22 +73,27 @@ every step below is something you do on purpose.
    by hand, via Polymarket's own UI or a wallet transaction — this bot
    deliberately never calls `wrap()` itself (an infrequent, operator-driven
    step, not something worth automating blind). `live.py` checks tradeable
-   pUSD balance/allowance before every live order and halts loudly with a
+   pUSD balance before every live order and halts loudly with a
    clear log message if this step was skipped, rather than repeatedly
    trying and failing.
-6. **Signature type: POLY_PROXY (1) vs. deposit wallet (3).** This repo
-   defaults to `signature_type=1` (POLY_PROXY), matching the Magic/
-   email-login proxy-wallet setup above. CLOB V2 also offers
-   `signature_type=3` (POLY_1271, a "deposit wallet" pattern with its own
-   distinct address, recommended by Polymarket for brand-new API
-   integrations) — this bot does **not** use it by default: as of this
-   bot's V2 rewrite, POLY_1271 has open, unresolved bugs in
-   `py-clob-client-v2` for programmatic order placement (the CLOB rejects
+6. **Signature type: POLY_PROXY (1) is retired for this account; deposit
+   wallet (3) is what actually works.** This bot originally defaulted to
+   `signature_type=1` (POLY_PROXY, the Magic/email-login proxy-wallet
+   pattern) via `py-clob-client-v2`. That stopped working outright: the
+   account's exchange began hard-rejecting POLY_PROXY orders ("maker
+   address not allowed, please use the deposit wallet flow" — a real
+   production error, reproduced repeatedly). Switching to
+   `signature_type=3` (POLY_1271, the deposit wallet) via
+   `py-clob-client-v2` was tried and separately confirmed broken for
+   programmatic order placement (open, unresolved bugs — the CLOB rejects
    the order because the API key binds to the owner EOA, not the deposit
-   wallet POLY_1271 requires as the order signer). If you want to switch
-   to it anyway, that's a deliberate decision requiring its own
-   separately-funded wallet — don't flip `POLYEDGE_SIGNATURE_TYPE` without
-   re-verifying that bug is fixed first.
+   wallet POLY_1271 requires as the order signer; see §7's tracking
+   issues). The fix was switching SDKs, not signature types:
+   `polymarket-client`'s `AsyncSecureClient` handles the deposit-wallet
+   flow correctly — verified end-to-end for this account via
+   `scripts/test_deposit_wallet.py`, including a real $1 order that
+   filled. There is no `POLYEDGE_SIGNATURE_TYPE` config left to flip; the
+   deposit-wallet address is derived automatically from the private key.
 7. Factor in on-ramp costs and any FX exposure converting to USDC.e, and
    check the current legal/tax treatment of prediction-market trading in
    your jurisdiction before funding anything. This is not financial
@@ -92,13 +120,14 @@ sudo apt update && sudo apt install -y python3-venv python3-pip git
 git clone https://github.com/bertsson-cmd/POLYE.git ~/polye
 cd ~/polye
 python3 -m venv .venv
-.venv/bin/pip install -r requirements-live.txt   # adds py-clob-client-v2 + flask
+.venv/bin/pip install -r requirements-live.txt   # adds polymarket-client + flask
                                                   # on top of requirements.txt
 
 cp polybert.env.example polybert.env
 chmod 600 polybert.env
 $EDITOR polybert.env             # fill in the real private key, funder
-                                  # address, and control-panel token
+                                  # address, Builder API Key/Secret/
+                                  # Passphrase, and control-panel token
 ```
 
 Leave `POLYEDGE_DRY_RUN=1` in `polybert.env` for now — that's the next
@@ -240,16 +269,22 @@ Tailscale, not an open port.
 
 ## 7. Honest limitations, carried over from MANUAL.md
 
-- The live order-placement code path (`LiveEngine._place_order`) has never
-  been exercised against Polymarket's real API — see step 4's dry-run
-  stage, which exists specifically to surface that.
-- `py-clob-client-v2`'s exact response shape for `create_and_post_order`
-  is assumed from its source (`status` in `{"matched", "filled"}` means
-  fully filled), carried forward unverified from the V1 assumption since
-  the actual V2 response body could not be confirmed during the rewrite;
-  if a real response uses different field names, the first live order
-  will show it in the journal as a fill that silently doesn't record —
-  annoying but safe, since nothing is recorded without a confirmed fill.
+- `LiveEngine._place_order`'s own wiring (the `asyncio.run()` bridge, and
+  the `place_market_order(..., max_price=..., order_type="FOK")` /
+  `place_market_order(..., min_price=..., order_type="FOK")` calls it
+  makes) has never been exercised against Polymarket's real API — see
+  step 4's dry-run stage, which exists specifically to surface that.
+  Unlike the retired `py-clob-client-v2` path, the response shape used to
+  decide "filled" (`OrderResponse = AcceptedOrder | RejectedOrder`;
+  `AcceptedOrder.status == "matched"` means filled, a FOK order that
+  can't fill comes back as `RejectedOrder(code="fok_not_filled")`) is
+  confirmed directly from `polymarket-client`'s source, not assumed. What
+  is NOT proven against production is the translation itself: the old
+  code placed a limit order at an exact `(price, size)`; the new code
+  places a market order with `amount`/`shares` and a `max_price`/
+  `min_price` cap/floor at that same price — a considered analogue, not
+  a proven-identical one. If the first live fill's actual execution price
+  looks off, this translation is the first place to check.
 - The exact decimal count for pUSD (used by `reconcile.py` to convert its
   raw on-chain balance read into dollars) could not be independently
   confirmed and is assumed to be 6, matching USDC.e — cross-check
@@ -303,3 +338,16 @@ Tailscale, not an open port.
   `_place_order`, not as an earlier, clearer halt. Cross-check allowance
   by hand (Polymarket's own UI, or watching the first real order
   attempt closely during the dry-run stage) until this gap is closed.
+- **Status as of the polymarket-client switch:** the `get_balance_allowance()`
+  bug above was specific to `py-clob-client-v2`, which is now fully
+  retired for this account — `_check_pusd_balance()` was deliberately
+  left unchanged (still `reconcile.fetch_real_pusd_balance()`'s direct
+  on-chain read) rather than switched to `polymarket-client`'s own
+  `AsyncSecureClient.get_balance_allowance()`. That method looks
+  architecturally sound from source (the client is bound to a single
+  derived wallet, unlike `py-clob-client-v2`'s broken funder-address
+  handling) and would close the allowance gap above too, but it has never
+  been exercised against this account — stacking a second unverified
+  real-money surface on top of the order-placement rewrite the same day
+  was judged not worth it. Revisit once the new order-placement path has
+  some real-world confirmation.

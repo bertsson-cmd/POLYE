@@ -2,12 +2,19 @@
 # live.py / control_server.py) -- NOT needed for the paper-trading GitHub
 # Actions workflow, which only ever installs requirements.txt.
 #
-# py-clob-client-v2 (NOT the archived py-clob-client V1 package) -- Polymarket
-# cut over to CLOB V2 on April 28, 2026 (new Exchange contracts, pUSD
-# collateral, new SDK); the V1 client does not work against production at
-# all. Pinned to the version verified against source during the V2 rewrite
-# of live.py -- bump deliberately, re-checking polyedge/live.py's assumptions
-# against the new version's actual API surface, not blindly.
+# polymarket-client (imports as `polymarket`, GitHub Polymarket/py-sdk) --
+# Polymarket's official unified SDK, used instead of py-clob-client-v2.
+# py-clob-client-v2 is fully retired for this account: its deposit-wallet
+# (signature_type=3/POLY_1271) order placement is confirmed broken
+# (Polymarket/py-clob-client-v2 issues #64, #70, #75, #105, all open), and
+# this account's exchange started hard-rejecting signature_type=1
+# (POLY_PROXY) orders outright ("maker address not allowed, please use the
+# deposit wallet flow"). polymarket-client's AsyncSecureClient was verified
+# end-to-end for this exact account via scripts/test_deposit_wallet.py
+# before live.py was switched over -- see LIVE.md. Pinned to the version
+# verified against source during that switch -- bump deliberately,
+# re-checking polyedge/live.py's assumptions against the new version's
+# actual API surface, not blindly.
 -r requirements.txt
-py-clob-client-v2==1.1.0
+polymarket-client==0.2.0
 flask
