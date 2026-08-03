@@ -2,7 +2,9 @@
 
 Same accounting semantics as PaperEngine (it subclasses it: same state
 file shape, same mark/resolve/close_early math), but every fill is a real
-Polymarket order placed through py-clob-client-v2 instead of a simulated one.
+Polymarket order placed through `polymarket-client` (imports as
+`polymarket`, GitHub Polymarket/py-sdk -- Polymarket's official unified
+SDK) instead of a simulated one.
 
 Safety model (do not weaken any of this without the owner explicitly
 asking for it in those terms):
@@ -29,40 +31,69 @@ asking for it in those terms):
     guessing.
 
 This module talks to Polymarket's CLOB V2 (the V1 exchange contracts,
-USDC.e collateral, and `py-clob-client` package were retired at the
-V2 cutover on April 28, 2026 -- V1 clients do not work against
-production at all). It was rewritten against `py-clob-client-v2`'s
-actual source (fetched during the rewrite, not guessed from memory) but
-has still never been run against live Polymarket (no network access in
-the sandbox that did the rewrite). It is fully unit-tested with
-`_place_order` mocked out -- expect a possible small day-one fix once it
-hits the real API, same as before. Do not skip the dry-run stage in
-LIVE.md.
+USDC.e collateral, and `py-clob-client` package were retired at the V2
+cutover on April 28, 2026). `py-clob-client-v2` is fully retired for this
+account: its deposit-wallet (signature_type=3/POLY_1271) order placement
+is confirmed broken (Polymarket/py-clob-client-v2 issues #64, #70, #75,
+#105, all open), and this account's exchange started hard-rejecting
+signature_type=1 (POLY_PROXY) orders outright ("maker address not
+allowed, please use the deposit wallet flow" -- a real production error,
+reproduced repeatedly, not a guess). `polymarket-client`'s
+`AsyncSecureClient` was verified end-to-end for this exact account via
+`scripts/test_deposit_wallet.py` before this switch -- see LIVE.md.
 
-Two things worth knowing about the V2 rewrite specifically:
-  * `signature_type` stays at 1 (POLY_PROXY) by default -- matching the
-    Magic/email-wallet proxy account setup this repo has always assumed.
-    V2 also offers signature_type=3 (POLY_1271, a "deposit wallet" with
-    its own distinct address, separate from the Magic-exported proxy
-    wallet) for NEW integrations, but at the time of this rewrite it has
-    open, unresolved bugs in py-clob-client-v2 for programmatic order
-    placement (the CLOB rejects the order because the API key binds to
-    the owner EOA while POLY_1271 requires the signer to be the deposit
-    wallet itself) -- see LIVE.md. Switching to it is a deliberate future
-    decision, not something to do by default.
+Things worth knowing about the polymarket-client switch specifically:
+  * This account's deposit wallet (signature_type=3/POLY_1271) and its
+    already-funded `POLYEDGE_FUNDER_ADDRESS` are the SAME address
+    (confirmed directly by the operator) -- no new funding step was
+    needed, only the client swap. `AsyncSecureClient.create()` derives
+    the deposit wallet address from the signing private key itself (its
+    `wallet=` param defaults to "the signer's Deposit Wallet", confirmed
+    from source); there is no `signature_type` or `chain_id` constructor
+    argument at all -- `create()`'s full parameter list, confirmed from
+    source, is `private_key`, `wallet`, `environment`, `credentials`,
+    `api_key`, `nonce`, `logger`. `POLYEDGE_SIGNATURE_TYPE` and
+    `POLYEDGE_CHAIN_ID` are therefore no longer read by this module.
+  * Deposit wallets are gasless (relayed) accounts -- `create()` raises
+    `UserInputError` unless given an `api_key=` credential for that
+    relayed-transaction path (confirmed by hitting this exact error while
+    testing `scripts/test_deposit_wallet.py`). `_builder_api_key()` below
+    reads `POLYEDGE_BUILDER_API_KEY`/`_SECRET`/`_PASSPHRASE` and builds a
+    `BuilderApiKey` from them, the same construction already proven
+    working by that diagnostic script.
+  * `polymarket-client`'s client is async; the rest of this module (and
+    `run_forever.py`'s plain synchronous polling loop that drives it) is
+    not. Rather than convert `PaperEngine`, `main.run_cycle`,
+    `run_forever.py`'s loop, and `control_server.py`'s Flask routes to
+    async for a ~5-minute polling cycle that doesn't need it, `_place_order`
+    wraps a single `asyncio.run()` call per order: a fresh
+    `AsyncSecureClient` is built, used, and closed within that one
+    event-loop run. It is deliberately NOT cached across calls -- each
+    `asyncio.run()` gets its own event loop, and an async client's
+    underlying HTTP session bound to one loop breaks if reused from
+    another. This was judged the smaller, safer change.
+  * Orders are placed via `place_market_order(..., order_type="FOK")` --
+    explicitly overriding the SDK's own "FAK" default (fill some, kill the
+    rest), which would silently reintroduce partial fills. Confirmed from
+    source (`polymarket/models/clob/order_response.py`): `OrderResponse`
+    is `AcceptedOrder | RejectedOrder`; a FOK order that can't fully fill
+    comes back as a `RejectedOrder` (`ok=False`,
+    `code="fok_not_filled"`), not an accepted-but-unfilled order sitting
+    on the book -- `_place_order` treats `resp.ok and resp.status ==
+    "matched"` as the only "filled" case.
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
-    tradeable pUSD balance via a direct on-chain read (the SDK's own
-    `get_balance_allowance()` was tried first and confirmed broken for a
-    signature_type=1/POLY_PROXY funder wallet -- see `_check_pusd_balance`
-    for the full root-cause writeup and LIVE.md for the tracking issue)
-    before ever attempting a real order, and halts loudly (same mechanism
-    as the daily-loss breaker) rather than repeatedly trying and failing
-    if the funder wallet's USDC.e was never wrapped. This bot does not
-    call wrap() itself -- see LIVE.md. Note this only checks balance, not
-    allowance -- see LIVE.md's known-limitations note.
+    tradeable pUSD balance via a direct on-chain read
+    (`_check_pusd_balance`, unchanged by this switch -- see its own
+    docstring for why) before ever attempting a real order, and halts
+    loudly (same mechanism as the daily-loss breaker) rather than
+    repeatedly trying and failing if the funder wallet's USDC.e was never
+    wrapped. This bot does not call wrap() itself -- see LIVE.md. Note
+    this only checks balance, not allowance -- see LIVE.md's
+    known-limitations note.
 """
+import asyncio
 import logging
 import os
 from typing import Dict, Optional
@@ -116,36 +147,74 @@ def clear_halt() -> None:
 
 
 class LiveEngine(PaperEngine):
-    def __init__(self, state_dir: str = None):
-        super().__init__(state_dir=state_dir)
-        self._client = None
+    # ------------------------------------------------------------ polymarket-client
+    def _builder_api_key(self):
+        """BuilderApiKey for the deposit wallet's gasless/relayed order
+        path -- read from the same three env vars, and built the same way,
+        already proven working by scripts/test_deposit_wallet.py. Only
+        ever reached from the real `_aplace_order` code below -- tests
+        replace `_place_order` wholesale, so the suite never needs
+        credentials or the package installed to import this module."""
+        from polymarket import BuilderApiKey
+        key = os.environ.get("POLYEDGE_BUILDER_API_KEY")
+        secret = os.environ.get("POLYEDGE_BUILDER_SECRET")
+        passphrase = os.environ.get("POLYEDGE_BUILDER_PASSPHRASE")
+        if not key or not secret or not passphrase:
+            raise RuntimeError(
+                "POLYEDGE_BUILDER_API_KEY/POLYEDGE_BUILDER_SECRET/"
+                "POLYEDGE_BUILDER_PASSPHRASE must all be set -- deposit "
+                "wallets are gasless (relayed) accounts and "
+                "AsyncSecureClient.create() requires a Builder API Key for "
+                "that path. Generate one at polymarket.com/settings?tab=builder.")
+        return BuilderApiKey(key=key, secret=secret, passphrase=passphrase)
 
-    # ------------------------------------------------------------ CLOB client
-    def _clob_client(self):
-        """Lazily build the py-clob-client-v2 instance. Only ever reached
-        from the real `_place_order`/pUSD-check code below -- tests replace
-        `_place_order` wholesale, so the suite never needs credentials or
-        the package installed to import this module.
+    async def _aplace_order(self, token_id: str, price: float, shares: float,
+                            side: str) -> bool:
+        """The actual async order-placement call -- run inside a fresh
+        `asyncio.run()` by `_place_order` below. Builds, uses, and closes
+        one short-lived AsyncSecureClient per call; see the module
+        docstring for why it isn't cached/reused across calls.
 
-        chain_id (not "chain") is the real V2 constructor kwarg, confirmed
-        directly against py_clob_client_v2/client.py's source -- some
-        secondary migration write-ups claim a "chain" rename, but that
-        did not hold up against the actual current source.
+        `setup_trading_approvals()` is called before every order, not just
+        once at startup -- confirmed idempotent from source (it skips
+        allowances already in place), so after the first real call this is
+        a cheap on-chain read, not a repeated approval transaction. This
+        mirrors the exact sequence already proven end-to-end by
+        scripts/test_deposit_wallet.py rather than trying to shortcut it.
+
+        There is no exact price/size limit-order equivalent used here --
+        `place_market_order` is called instead, with `max_price`/`min_price`
+        set to the risk engine's computed entry price as a cap/floor, so a
+        FOK fill can't happen at a worse price than what sized the
+        position. This is a considered translation of the old
+        OrderArgsV2(price, size, FOK) limit order, not a proven-identical
+        one -- flag this if the first live fill's actual price looks off.
         """
-        if self._client is None:
-            from py_clob_client_v2.client import ClobClient
-            key = os.environ["POLYEDGE_PRIVATE_KEY"]
-            funder = os.environ.get("POLYEDGE_FUNDER_ADDRESS")
-            chain_id = int(os.environ.get("POLYEDGE_CHAIN_ID", "137"))
-            # POLY_PROXY (Magic/email-wallet) by default -- see the module
-            # docstring for why this stays at 1 rather than the newer
-            # deposit-wallet signature_type=3.
-            signature_type = int(os.environ.get("POLYEDGE_SIGNATURE_TYPE", "1"))
-            client = ClobClient(config.CLOB_BASE, chain_id=chain_id, key=key,
-                                signature_type=signature_type, funder=funder)
-            client.set_api_creds(client.create_or_derive_api_key())
-            self._client = client
-        return self._client
+        from polymarket import PRODUCTION, AsyncSecureClient
+        private_key = os.environ["POLYEDGE_PRIVATE_KEY"]
+        client = await AsyncSecureClient.create(
+            private_key=private_key, environment=PRODUCTION,
+            api_key=self._builder_api_key())
+        try:
+            await client.setup_trading_approvals()
+            price, shares = round(price, 3), round(shares, 2)
+            if side == "BUY":
+                resp = await client.place_market_order(
+                    token_id=token_id, side="BUY",
+                    amount=round(price * shares, 2), max_price=price,
+                    order_type="FOK")
+            else:
+                resp = await client.place_market_order(
+                    token_id=token_id, side="SELL",
+                    shares=shares, min_price=price, order_type="FOK")
+        finally:
+            await client.close()
+        filled = bool(getattr(resp, "ok", False)) and getattr(resp, "status", None) == "matched"
+        if not filled:
+            log.warning("order not filled: token=%s side=%s ok=%s detail=%s",
+                       token_id, side, getattr(resp, "ok", None),
+                       getattr(resp, "code", None) or getattr(resp, "status", None))
+        return filled
 
     def _check_pusd_balance(self) -> bool:
         """Verify the funder wallet has tradeable pUSD balance BEFORE
@@ -187,6 +256,17 @@ class LiveEngine(PaperEngine):
         check passes but the real order still fails -- that failure
         surfaces as an unfilled order in _place_order, not here. See
         LIVE.md's known-limitations note.
+
+        Deliberately kept unchanged by the polymarket-client switch.
+        `AsyncSecureClient.get_balance_allowance(asset_type="COLLATERAL")`
+        looks architecturally sound from source (the client is bound to a
+        single derived wallet, unlike py-clob-client-v2's broken
+        funder-address handling) and would close the allowance gap noted
+        above too, but it has never been exercised against this account --
+        this switch already carries one unverified real-money surface
+        (order placement); stacking a second one (the balance/allowance
+        pre-trade gate) the same day was judged not worth it. Revisit once
+        the new order-placement path has some real-world confirmation.
         """
         funder = os.environ.get("POLYEDGE_FUNDER_ADDRESS")
         if not funder:
@@ -212,22 +292,18 @@ class LiveEngine(PaperEngine):
         """Submit a real fill-or-kill order. Returns True iff fully filled.
 
         The only method in this module that ever talks to the network --
-        overridden wholesale in tests.
+        overridden wholesale in tests. Runs `_aplace_order` (the actual
+        polymarket-client/AsyncSecureClient call) inside its own
+        `asyncio.run()` -- see the module docstring for why a fresh event
+        loop and client are used per call instead of caching one.
 
-        The response shape assumed here (a "status" field with "matched"/
-        "filled" meaning fully filled) is carried over unverified from the
-        V1 rewrite, since research for the V2 rewrite could not confirm the
-        exact V2 response body -- same "expect a possible day-one fix"
-        caveat as everywhere else in this module.
+        Unlike the retired py-clob-client-v2 path, the "filled" check here
+        is confirmed from source, not assumed: a FOK order that can't
+        fully fill comes back as `RejectedOrder(ok=False,
+        code="fok_not_filled")`, not an ambiguous status string -- see
+        `_aplace_order`'s docstring.
         """
-        from py_clob_client_v2.clob_types import OrderArgsV2, OrderType
-        from py_clob_client_v2.order_builder.constants import BUY, SELL
-        client = self._clob_client()
-        args = OrderArgsV2(token_id=token_id, price=round(price, 3),
-                           size=round(shares, 2), side=BUY if side == "BUY" else SELL)
-        resp = client.create_and_post_order(args, order_type=OrderType.FOK) or {}
-        status = str(resp.get("status", "")).lower()
-        return status in ("matched", "filled")
+        return asyncio.run(self._aplace_order(token_id, price, shares, side))
 
     # ------------------------------------------------------------ daily halt
     def _today_realized_pl(self) -> float:

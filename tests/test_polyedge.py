@@ -54,6 +54,22 @@ def _future(days=5):
             ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+class _FakeAcceptedOrder:
+    """Stand-in for polymarket-client's AcceptedOrder (ok=True, status in
+    {"live", "matched", "delayed"} -- confirmed from source)."""
+    def __init__(self, status="matched"):
+        self.ok = True
+        self.status = status
+
+
+class _FakeRejectedOrder:
+    """Stand-in for polymarket-client's RejectedOrder (ok=False, code e.g.
+    "fok_not_filled" -- confirmed from source)."""
+    def __init__(self, code="fok_not_filled"):
+        self.ok = False
+        self.code = code
+
+
 def market(mid, yes_price, *, neg_risk=False, event="EV1", liq=50000.0,
            end=None, question=None):
     return Market(market_id=mid, question=question or f"Q{mid}",
@@ -1443,84 +1459,57 @@ class TestLiveEngine:
         assert [p["key"] for p in e.state["positions"]] == ["ARB-L"]
 
 
-# ------------------------------------------------------------------ live.py V2 (py-clob-client-v2) wiring
-class TestLiveEngineV2Wiring:
-    """Covers the CLOB V2 rewrite specifically: the ClobClient construction
-    args, order placement via OrderArgsV2/create_and_post_order, and the
-    pUSD balance/allowance pre-trade check -- all against a fake
-    py_clob_client_v2 package injected into sys.modules, so nothing here
+# ------------------------------------------------------------------ live.py polymarket-client wiring
+class TestLiveEnginePolymarketClientWiring:
+    """Covers the polymarket-client (AsyncSecureClient) switch specifically:
+    client construction (private_key/environment/api_key), the FOK
+    market-order call shape, fill determination from AcceptedOrder/
+    RejectedOrder, and the pUSD balance pre-trade check -- all against a
+    fake `polymarket` package injected into sys.modules, so nothing here
     needs the real package installed or touches the network. Does NOT
     touch the three-gate safety logic itself (see TestLiveEngine above,
     which passes unmodified)."""
 
-    def _install_fake_sdk(self, monkeypatch, balance_allowance=None, order_status="matched"):
+    def _install_fake_sdk(self, monkeypatch, order_response=None):
         import sys
         import types
 
-        calls = {"constructed": None, "set_api_creds": None,
-                 "create_and_post_order": None, "get_balance_allowance": None}
+        calls = {"create_kwargs": None, "setup_trading_approvals_calls": 0,
+                 "place_market_order_kwargs": None, "closed": False}
+        resp = order_response if order_response is not None else \
+            _FakeAcceptedOrder("matched")
 
-        class FakeApiCreds:
-            api_key = "fake-key"
+        class FakeBuilderApiKey:
+            def __init__(self, key, secret, passphrase):
+                self.key, self.secret, self.passphrase = key, secret, passphrase
 
-        class FakeClobClient:
-            def __init__(self, host, chain_id=None, key=None, signature_type=None, funder=None):
-                calls["constructed"] = dict(host=host, chain_id=chain_id, key=key,
-                                            signature_type=signature_type, funder=funder)
+        class FakeAsyncSecureClient:
+            @classmethod
+            async def create(cls, **kwargs):
+                calls["create_kwargs"] = kwargs
+                return cls()
 
-            def create_or_derive_api_key(self):
-                return FakeApiCreds()
+            async def setup_trading_approvals(self):
+                calls["setup_trading_approvals_calls"] += 1
 
-            def set_api_creds(self, creds):
-                calls["set_api_creds"] = creds
+            async def place_market_order(self, **kwargs):
+                calls["place_market_order_kwargs"] = kwargs
+                if isinstance(resp, Exception):
+                    raise resp
+                return resp
 
-            def create_and_post_order(self, order_args, order_type=None):
-                calls["create_and_post_order"] = {"order_args": order_args, "order_type": order_type}
-                return {"status": order_status}
+            async def close(self):
+                calls["closed"] = True
 
-            def get_balance_allowance(self, params):
-                calls["get_balance_allowance"] = params
-                return balance_allowance if balance_allowance is not None else \
-                    {"balance": "50", "allowance": "50"}
-
-        client_mod = types.ModuleType("py_clob_client_v2.client")
-        client_mod.ClobClient = FakeClobClient
-
-        class OrderArgsV2:
-            def __init__(self, token_id, price, size, side):
-                self.token_id, self.price, self.size, self.side = token_id, price, size, side
-
-        class OrderType:
-            FOK = "FOK"
-            GTC = "GTC"
-
-        class AssetType:
-            COLLATERAL = "COLLATERAL"
-            CONDITIONAL = "CONDITIONAL"
-
-        class BalanceAllowanceParams:
-            def __init__(self, asset_type=None):
-                self.asset_type = asset_type
-
-        clob_types_mod = types.ModuleType("py_clob_client_v2.clob_types")
-        clob_types_mod.OrderArgsV2 = OrderArgsV2
-        clob_types_mod.OrderType = OrderType
-        clob_types_mod.AssetType = AssetType
-        clob_types_mod.BalanceAllowanceParams = BalanceAllowanceParams
-
-        constants_mod = types.ModuleType("py_clob_client_v2.order_builder.constants")
-        constants_mod.BUY = "BUY"
-        constants_mod.SELL = "SELL"
-        order_builder_pkg = types.ModuleType("py_clob_client_v2.order_builder")
-
-        monkeypatch.setitem(sys.modules, "py_clob_client_v2", types.ModuleType("py_clob_client_v2"))
-        monkeypatch.setitem(sys.modules, "py_clob_client_v2.client", client_mod)
-        monkeypatch.setitem(sys.modules, "py_clob_client_v2.clob_types", clob_types_mod)
-        monkeypatch.setitem(sys.modules, "py_clob_client_v2.order_builder", order_builder_pkg)
-        monkeypatch.setitem(sys.modules, "py_clob_client_v2.order_builder.constants", constants_mod)
+        polymarket_mod = types.ModuleType("polymarket")
+        polymarket_mod.PRODUCTION = "PRODUCTION"
+        polymarket_mod.AsyncSecureClient = FakeAsyncSecureClient
+        polymarket_mod.BuilderApiKey = FakeBuilderApiKey
+        monkeypatch.setitem(sys.modules, "polymarket", polymarket_mod)
         return calls
 
-    def _engine(self, tmp_path, monkeypatch, key="0xabc", funder="0xdef"):
+    def _engine(self, tmp_path, monkeypatch, key="0xabc", funder="0xdef",
+               builder_creds=("bkey", "bsecret", "bpass")):
         from polyedge import live as lv
         monkeypatch.chdir(tmp_path)
         if key is not None:
@@ -1531,46 +1520,98 @@ class TestLiveEngineV2Wiring:
             monkeypatch.setenv("POLYEDGE_FUNDER_ADDRESS", funder)
         else:
             monkeypatch.delenv("POLYEDGE_FUNDER_ADDRESS", raising=False)
+        if builder_creds is not None:
+            bkey, bsecret, bpass = builder_creds
+            monkeypatch.setenv("POLYEDGE_BUILDER_API_KEY", bkey)
+            monkeypatch.setenv("POLYEDGE_BUILDER_SECRET", bsecret)
+            monkeypatch.setenv("POLYEDGE_BUILDER_PASSPHRASE", bpass)
+        else:
+            monkeypatch.delenv("POLYEDGE_BUILDER_API_KEY", raising=False)
+            monkeypatch.delenv("POLYEDGE_BUILDER_SECRET", raising=False)
+            monkeypatch.delenv("POLYEDGE_BUILDER_PASSPHRASE", raising=False)
         return lv.LiveEngine(state_dir=str(tmp_path))
 
-    def test_clob_client_constructed_with_v2_args_and_default_signature_type(self, tmp_path, monkeypatch):
+    def test_client_created_with_private_key_environment_and_builder_api_key(self, tmp_path, monkeypatch):
         calls = self._install_fake_sdk(monkeypatch)
-        monkeypatch.delenv("POLYEDGE_SIGNATURE_TYPE", raising=False)
         e = self._engine(tmp_path, monkeypatch)
-        e._clob_client()
-        assert calls["constructed"]["host"] == config.CLOB_BASE
-        assert calls["constructed"]["chain_id"] == 137
-        assert calls["constructed"]["key"] == "0xabc"
-        assert calls["constructed"]["funder"] == "0xdef"
-        # signature_type=1 (POLY_PROXY) by default -- NOT the newer
-        # signature_type=3 deposit-wallet pattern, per LIVE.md
-        assert calls["constructed"]["signature_type"] == 1
-        assert calls["set_api_creds"] is not None   # create_or_derive_api_key() wired through
+        e._place_order("tok-1", 0.965, 10.0, "BUY")
+        sent = calls["create_kwargs"]
+        assert sent["private_key"] == "0xabc"
+        assert sent["environment"] == "PRODUCTION"
+        assert sent["api_key"].key == "bkey"
+        assert sent["api_key"].secret == "bsecret"
+        assert sent["api_key"].passphrase == "bpass"
+        # no signature_type/chain_id knob -- AsyncSecureClient.create()
+        # has no such parameter (confirmed from source, see live.py's
+        # module docstring)
+        assert "signature_type" not in sent and "chain_id" not in sent
 
-    def test_clob_client_honors_signature_type_override(self, tmp_path, monkeypatch):
+    def test_missing_builder_credentials_raises(self, tmp_path, monkeypatch):
         self._install_fake_sdk(monkeypatch)
-        monkeypatch.setenv("POLYEDGE_SIGNATURE_TYPE", "3")
-        e = self._engine(tmp_path, monkeypatch)
-        e._clob_client()
-        # the override still works if an operator deliberately opts in --
-        # this repo just never picks it by default (see module docstring)
+        e = self._engine(tmp_path, monkeypatch, builder_creds=None)
+        with pytest.raises(RuntimeError, match="POLYEDGE_BUILDER_API_KEY"):
+            e._place_order("tok-1", 0.965, 10.0, "BUY")
 
-    def test_place_order_sends_v2_order_args_with_fok(self, tmp_path, monkeypatch):
-        calls = self._install_fake_sdk(monkeypatch, order_status="matched")
+    def test_setup_trading_approvals_called_before_every_order(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch)
+        e = self._engine(tmp_path, monkeypatch)
+        e._place_order("tok-1", 0.965, 10.0, "BUY")
+        assert calls["setup_trading_approvals_calls"] == 1
+
+    def test_client_closed_after_a_successful_order(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch)
+        e = self._engine(tmp_path, monkeypatch)
+        e._place_order("tok-1", 0.965, 10.0, "BUY")
+        assert calls["closed"] is True
+
+    def test_client_closed_even_when_the_order_call_raises(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch, order_response=RuntimeError("boom"))
+        e = self._engine(tmp_path, monkeypatch)
+        with pytest.raises(RuntimeError, match="boom"):
+            e._place_order("tok-1", 0.965, 10.0, "BUY")
+        assert calls["closed"] is True
+
+    def test_buy_sends_fok_market_order_with_amount_and_max_price(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch)
         e = self._engine(tmp_path, monkeypatch)
         filled = e._place_order("tok-1", 0.965, 10.0, "BUY")
         assert filled is True
-        sent = calls["create_and_post_order"]
+        sent = calls["place_market_order_kwargs"]
+        assert sent["token_id"] == "tok-1"
+        assert sent["side"] == "BUY"
         assert sent["order_type"] == "FOK"
-        assert sent["order_args"].token_id == "tok-1"
-        assert sent["order_args"].side == "BUY"
-        assert sent["order_args"].price == pytest.approx(0.965)
-        assert sent["order_args"].size == pytest.approx(10.0)
+        assert sent["amount"] == pytest.approx(9.65)     # price * shares
+        assert sent["max_price"] == pytest.approx(0.965)
+        assert "shares" not in sent and "min_price" not in sent
 
-    def test_place_order_false_when_not_matched(self, tmp_path, monkeypatch):
-        self._install_fake_sdk(monkeypatch, order_status="cancelled")
+    def test_sell_sends_fok_market_order_with_shares_and_min_price(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(monkeypatch)
+        e = self._engine(tmp_path, monkeypatch)
+        filled = e._place_order("tok-1", 0.90, 10.0, "SELL")
+        assert filled is True
+        sent = calls["place_market_order_kwargs"]
+        assert sent["side"] == "SELL"
+        assert sent["order_type"] == "FOK"
+        assert sent["shares"] == pytest.approx(10.0)
+        assert sent["min_price"] == pytest.approx(0.90)
+        assert "amount" not in sent and "max_price" not in sent
+
+    def test_place_order_true_when_accepted_and_matched(self, tmp_path, monkeypatch):
+        self._install_fake_sdk(monkeypatch, order_response=_FakeAcceptedOrder("matched"))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is True
+
+    def test_place_order_false_when_rejected_fok_not_filled(self, tmp_path, monkeypatch):
+        self._install_fake_sdk(monkeypatch, order_response=_FakeRejectedOrder("fok_not_filled"))
         e = self._engine(tmp_path, monkeypatch)
         assert e._place_order("tok-1", 0.965, 10.0, "SELL") is False
+
+    def test_place_order_false_when_accepted_but_not_matched(self, tmp_path, monkeypatch):
+        # defensive case -- a FOK order should never come back "live" or
+        # "delayed" per source, but _place_order must not treat it as filled
+        self._install_fake_sdk(monkeypatch, order_response=_FakeAcceptedOrder("live"))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
 
     # ---- _check_pusd_balance(): rewritten to a direct on-chain read after
     # a real bug was found -- get_balance_allowance() returned balance=0,
