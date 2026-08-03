@@ -1,5 +1,5 @@
 {
- "cash": 638.013715,
+ "cash": 638.948587,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.957
+    "7542437468156958963085282310210526488532310459870037284043838227272438514792": 0.9475
    },
-   "current_value": 26.398845,
-   "unrealized_pl": 0.193095,
-   "unrealized_pl_pct": 0.737
+   "current_value": 26.136788,
+   "unrealized_pl": -0.068962,
+   "unrealized_pl_pct": -0.263
   },
   {
    "key": "CV-907513",
@@ -90,35 +90,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "CV-3158069",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,700 on August 4?",
-   "opened": 1785530916.272101,
-   "cost": 23.2575,
-   "edge": 0.022495,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9812000000000001,
-   "resolve_by": "2026-08-04T16:00:00Z",
-   "note": "YES ask 0.978, 3.8d to resolution, 216% annualized if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "110658614661632419763526565145358648157234053888281404381469823030921587655931",
-     "market_id": "3158069",
-     "label": "YES Will the price of Ethereum be above $1,700 on August 4?",
-     "side": "YES",
-     "entry_price": 0.978,
-     "shares": 23.780675
-    }
-   ],
-   "current_prices": {
-    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.9835
-   },
-   "current_value": 23.388294,
-   "unrealized_pl": 0.130794,
-   "unrealized_pl_pct": 0.562
-  },
-  {
    "key": "CV-3262726",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $58,000 on August 8?",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.976
+    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.9755
    },
-   "current_value": 9.473338,
-   "unrealized_pl": 0.038466,
-   "unrealized_pl_pct": 0.408
+   "current_value": 9.468485,
+   "unrealized_pl": 0.033613,
+   "unrealized_pl_pct": 0.356
   },
   {
    "key": "LS-3278508",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "56680494151473299871435629304774950421243729695540320897201708517449510380758": 0.905
+    "56680494151473299871435629304774950421243729695540320897201708517449510380758": 0.95
    },
-   "current_value": 21.917561,
-   "unrealized_pl": -1.609427,
-   "unrealized_pl_pct": -6.841
+   "current_value": 23.007384,
+   "unrealized_pl": -0.519604,
+   "unrealized_pl_pct": -2.209
   },
   {
    "key": "LS-3254124",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.9895
+    "6317942472811341094293656478360045700492895437312709422593537393109856459100": 0.991
    },
-   "current_value": 13.835223,
-   "unrealized_pl": 0.035427,
-   "unrealized_pl_pct": 0.257
+   "current_value": 13.856196,
+   "unrealized_pl": 0.0564,
+   "unrealized_pl_pct": 0.409
   },
   {
    "key": "CV-3202287",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.9885
+    "105607061721936471384731443872695401395845237741825820614070454897715047469002": 0.986
    },
-   "current_value": 11.816794,
-   "unrealized_pl": 0.040619,
-   "unrealized_pl_pct": 0.345
+   "current_value": 11.786908,
+   "unrealized_pl": 0.010733,
+   "unrealized_pl_pct": 0.091
   },
   {
    "key": "CV-3158254",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "110265694267936992469417700335614533467196469203686817149366068640963818137254": 0.965
+    "110265694267936992469417700335614533467196469203686817149366068640963818137254": 0.9675
    },
-   "current_value": 23.705828,
-   "unrealized_pl": 0.056796,
-   "unrealized_pl_pct": 0.24
+   "current_value": 23.767242,
+   "unrealized_pl": 0.11821,
+   "unrealized_pl_pct": 0.5
   },
   {
    "key": "CV-3262740",
@@ -373,40 +344,11 @@
     }
    ],
    "current_prices": {
-    "35250895225318082802098861369196626601000494298661865939480010651325793211598": 0.966
+    "35250895225318082802098861369196626601000494298661865939480010651325793211598": 0.9655
    },
-   "current_value": 18.788601,
-   "unrealized_pl": -0.117418,
-   "unrealized_pl_pct": -0.621
-  },
-  {
-   "key": "CV-3239561",
-   "strategy": "CONVERGE",
-   "title": "Converge: S&P 500 (SPY) closes above $755 on August 3?",
-   "opened": 1785781710.2466128,
-   "cost": 23.69048,
-   "edge": 0.051701,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9583999999999999,
-   "resolve_by": "2026-08-03T20:00:00Z",
-   "note": "YES ask 0.949, fee 0.0019, 0.1d to resolution, 29700% annualized net if YES, assumed true P 0.958",
-   "legs": [
-    {
-     "token_id": "106369723362303150807348870486125704945563275067723586170437001150593092125336",
-     "market_id": "3239561",
-     "label": "YES S&P 500 (SPY) closes above $755 on August 3?",
-     "side": "YES",
-     "entry_price": 0.949,
-     "shares": 24.912803
-    }
-   ],
-   "current_prices": {
-    "106369723362303150807348870486125704945563275067723586170437001150593092125336": 0.948
-   },
-   "current_value": 23.617337,
-   "unrealized_pl": -0.073143,
-   "unrealized_pl_pct": -0.309
+   "current_value": 18.778876,
+   "unrealized_pl": -0.127143,
+   "unrealized_pl_pct": -0.673
   },
   {
    "key": "CV-3158089",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "41623891651289160465420636322321881225642624731277247760640188322627301345925": 0.945
+    "41623891651289160465420636322321881225642624731277247760640188322627301345925": 0.9595
    },
-   "current_value": 23.517817,
-   "unrealized_pl": -0.207181,
-   "unrealized_pl_pct": -0.873
+   "current_value": 23.878673,
+   "unrealized_pl": 0.153675,
+   "unrealized_pl_pct": 0.648
   },
   {
    "key": "CV-3202417",
@@ -460,11 +402,69 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9835
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9775
    },
-   "current_value": 23.606246,
-   "unrealized_pl": -0.060828,
-   "unrealized_pl_pct": -0.257
+   "current_value": 23.462233,
+   "unrealized_pl": -0.204841,
+   "unrealized_pl_pct": -0.866
+  },
+  {
+   "key": "CV-3247965",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 4?",
+   "opened": 1785788096.9409368,
+   "cost": 23.6435,
+   "edge": 0.014199,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-08-04T23:59:00Z",
+   "note": "YES ask 0.986, fee 0.0000, 1.2d to resolution, 448% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "33744138537867316771530492434898210310112816831581011996696181212558287270655",
+     "market_id": "3247965",
+     "label": "YES Israel x Iran ceasefire continues through August 4?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 23.979209
+    }
+   ],
+   "current_prices": {
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.985
+   },
+   "current_value": 23.619521,
+   "unrealized_pl": -0.023979,
+   "unrealized_pl_pct": -0.101
+  },
+  {
+   "key": "CV-3241070",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
+   "opened": 1785788096.9409523,
+   "cost": 23.709702,
+   "edge": 0.038867,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-07T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0027, 3.8d to resolution, 371% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "106460286776671198996232462489525403284014954473393072782175486295233294409818",
+     "market_id": "3241070",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 7?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.628646
+    }
+   ],
+   "current_prices": {
+    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.955
+   },
+   "current_value": 23.520357,
+   "unrealized_pl": -0.189345,
+   "unrealized_pl_pct": -0.799
   }
  ],
  "closed": [
@@ -9679,6 +9679,72 @@
    "payout": 23.867955,
    "pl": 0.239795,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3158069",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on August 4?",
+   "opened": 1785530916.272101,
+   "cost": 23.2575,
+   "edge": 0.022495,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-08-04T16:00:00Z",
+   "note": "YES ask 0.978, 3.8d to resolution, 216% annualized if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "110658614661632419763526565145358648157234053888281404381469823030921587655931",
+     "market_id": "3158069",
+     "label": "YES Will the price of Ethereum be above $1,700 on August 4?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 23.780675
+    }
+   ],
+   "current_prices": {
+    "110658614661632419763526565145358648157234053888281404381469823030921587655931": 0.9835
+   },
+   "current_value": 23.388294,
+   "unrealized_pl": 0.130794,
+   "unrealized_pl_pct": 0.562,
+   "closed_ts": 1785788097.0568671,
+   "payout": 23.400184,
+   "pl": 0.142684,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3239561",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $755 on August 3?",
+   "opened": 1785781710.2466128,
+   "cost": 23.69048,
+   "edge": 0.051701,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9583999999999999,
+   "resolve_by": "2026-08-03T20:00:00Z",
+   "note": "YES ask 0.949, fee 0.0019, 0.1d to resolution, 29700% annualized net if YES, assumed true P 0.958",
+   "legs": [
+    {
+     "token_id": "106369723362303150807348870486125704945563275067723586170437001150593092125336",
+     "market_id": "3239561",
+     "label": "YES S&P 500 (SPY) closes above $755 on August 3?",
+     "side": "YES",
+     "entry_price": 0.949,
+     "shares": 24.912803
+    }
+   ],
+   "current_prices": {
+    "106369723362303150807348870486125704945563275067723586170437001150593092125336": 0.948
+   },
+   "current_value": 23.617337,
+   "unrealized_pl": -0.073143,
+   "unrealized_pl_pct": -0.309,
+   "closed_ts": 1785788097.0568671,
+   "payout": 24.88789,
+   "pl": 1.19741,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -11008,6 +11074,14 @@
    "open_value": 307.7221,
    "equity": 945.7358,
    "realized_total": -53.5772,
+   "open_positions": 16
+  },
+  {
+   "ts": 1785788097.058662,
+   "cash": 638.9486,
+   "open_value": 308.9389,
+   "equity": 947.8874,
+   "realized_total": -52.2371,
    "open_positions": 16
   }
  ],
@@ -15478,6 +15552,44 @@
    "title": "Converge: Will the price of Solana be above $70 on August 4?",
    "amount": 23.87,
    "pl": 0.24,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785788096.9409368,
+   "type": "OPEN",
+   "key": "CV-3247965",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 4?",
+   "amount": 23.64,
+   "pl": null
+  },
+  {
+   "ts": 1785788096.9409523,
+   "type": "OPEN",
+   "key": "CV-3241070",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
+   "amount": 23.71,
+   "pl": null
+  },
+  {
+   "ts": 1785788097.0568671,
+   "type": "CLOSE",
+   "key": "CV-3158069",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on August 4?",
+   "amount": 23.4,
+   "pl": 0.14,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785788097.0568671,
+   "type": "CLOSE",
+   "key": "CV-3239561",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $755 on August 3?",
+   "amount": 24.89,
+   "pl": 1.2,
    "reason": "take_profit"
   }
  ]
