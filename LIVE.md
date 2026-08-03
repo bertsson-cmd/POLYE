@@ -272,19 +272,36 @@ Tailscale, not an open port.
 - `LiveEngine._place_order`'s own wiring (the `asyncio.run()` bridge, and
   the `place_market_order(..., max_price=..., order_type="FOK")` /
   `place_market_order(..., min_price=..., order_type="FOK")` calls it
-  makes) has never been exercised against Polymarket's real API — see
-  step 4's dry-run stage, which exists specifically to surface that.
-  Unlike the retired `py-clob-client-v2` path, the response shape used to
-  decide "filled" (`OrderResponse = AcceptedOrder | RejectedOrder`;
-  `AcceptedOrder.status == "matched"` means filled, a FOK order that
-  can't fill comes back as `RejectedOrder(code="fok_not_filled")`) is
-  confirmed directly from `polymarket-client`'s source, not assumed. What
-  is NOT proven against production is the translation itself: the old
-  code placed a limit order at an exact `(price, size)`; the new code
-  places a market order with `amount`/`shares` and a `max_price`/
-  `min_price` cap/floor at that same price — a considered analogue, not
-  a proven-identical one. If the first live fill's actual execution price
-  looks off, this translation is the first place to check.
+  makes) has never been exercised end-to-end against Polymarket's real API
+  through `live.py` itself — see step 4's dry-run stage, which exists
+  specifically to surface that. What is NOT proven against production is
+  the price translation: the old code placed a limit order at an exact
+  `(price, size)`; the new code places a market order with `amount`/
+  `shares` and a `max_price`/`min_price` cap/floor at that same price — a
+  considered analogue, not a proven-identical one. If the first live
+  fill's actual execution price looks off, this translation is the first
+  place to check.
+- **`AcceptedOrder.status == "matched"` alone is NOT a reliable "filled"
+  signal — this was a real bug, caught and fixed.** A real order placed
+  against this account (via `scripts/test_deposit_wallet.py`, before this
+  was caught) came back `AcceptedOrder(ok=True, status='delayed',
+  making_amount=Decimal('0'), taking_amount=Decimal('0'), trade_ids=(),
+  transactions_hashes=())` and was independently confirmed to have
+  actually filled — the synchronous response for a `"delayed"` order
+  carries no fill data whatsoever, not even `trade_ids` (whose own
+  docstring says it's "empty when the order did not match" — that claim
+  does not hold for `"delayed"`). `polymarket-client`'s source has no
+  special-casing or documentation for what `"delayed"` means; `status` is
+  passed straight through from the raw CLOB API response with no SDK-side
+  interpretation. `LiveEngine._resolve_fill()` now polls
+  `list_account_trades()` for a trade whose `taker_order_id` matches the
+  order before deciding "not filled" on a `"delayed"` response (see its
+  docstring in `polyedge/live.py` for the full writeup, poll parameters,
+  and remaining caveats — notably, that endpoint's sort order was never
+  confirmed against source or production, so a fill could theoretically
+  be missed by the scan cap on a very high-volume token). This is now
+  covered by a regression test in `tests/test_polyedge.py` using the
+  exact real response values above, not a synthetic guess.
 - The exact decimal count for pUSD (used by `reconcile.py` to convert its
   raw on-chain balance read into dollars) could not be independently
   confirmed and is assumed to be 6, matching USDC.e — cross-check

@@ -57,9 +57,35 @@ def _future(days=5):
 class _FakeAcceptedOrder:
     """Stand-in for polymarket-client's AcceptedOrder (ok=True, status in
     {"live", "matched", "delayed"} -- confirmed from source)."""
-    def __init__(self, status="matched"):
+    def __init__(self, status="matched", order_id="fake-order-id"):
         self.ok = True
         self.status = status
+        self.order_id = order_id
+
+
+class _FakeTrade:
+    """Stand-in for polymarket-client's ClobTrade -- only the field
+    LiveEngine._resolve_fill actually reads (taker_order_id "identifies
+    the originating order" -- confirmed from source)."""
+    def __init__(self, taker_order_id):
+        self.taker_order_id = taker_order_id
+
+
+class _FakeTradesPaginator:
+    """Stand-in for the AsyncPaginator[ClobTrade] list_account_trades()
+    returns -- only .iter_items() (an async generator) is used by
+    LiveEngine._resolve_fill."""
+    def __init__(self, items=(), error=None):
+        self._items = items
+        self._error = error
+
+    def iter_items(self):
+        async def _gen():
+            if self._error is not None:
+                raise self._error
+            for item in self._items:
+                yield item
+        return _gen()
 
 
 class _FakeRejectedOrder:
@@ -1470,12 +1496,14 @@ class TestLiveEnginePolymarketClientWiring:
     touch the three-gate safety logic itself (see TestLiveEngine above,
     which passes unmodified)."""
 
-    def _install_fake_sdk(self, monkeypatch, order_response=None):
+    def _install_fake_sdk(self, monkeypatch, order_response=None, trades=(),
+                          trades_error=None):
         import sys
         import types
 
         calls = {"create_kwargs": None, "setup_trading_approvals_calls": 0,
-                 "place_market_order_kwargs": None, "closed": False}
+                 "place_market_order_kwargs": None, "closed": False,
+                 "list_account_trades_kwargs": []}
         resp = order_response if order_response is not None else \
             _FakeAcceptedOrder("matched")
 
@@ -1497,6 +1525,10 @@ class TestLiveEnginePolymarketClientWiring:
                 if isinstance(resp, Exception):
                     raise resp
                 return resp
+
+            def list_account_trades(self, **kwargs):
+                calls["list_account_trades_kwargs"].append(kwargs)
+                return _FakeTradesPaginator(trades, error=trades_error)
 
             async def close(self):
                 calls["closed"] = True
@@ -1606,10 +1638,78 @@ class TestLiveEnginePolymarketClientWiring:
         e = self._engine(tmp_path, monkeypatch)
         assert e._place_order("tok-1", 0.965, 10.0, "SELL") is False
 
-    def test_place_order_false_when_accepted_but_not_matched(self, tmp_path, monkeypatch):
-        # defensive case -- a FOK order should never come back "live" or
-        # "delayed" per source, but _place_order must not treat it as filled
+    def test_place_order_false_when_accepted_but_status_live(self, tmp_path, monkeypatch):
+        # defensive case -- a FOK order should never come back resting
+        # ("live") per source, but _place_order must not treat it as filled
         self._install_fake_sdk(monkeypatch, order_response=_FakeAcceptedOrder("live"))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
+
+    # ---- status="delayed": a REAL production bug. An order placed against
+    # this account returned AcceptedOrder(ok=True, status='delayed',
+    # making_amount=0, taking_amount=0, trade_ids=(), transactions_hashes=())
+    # and was independently confirmed to have actually filled -- under the
+    # original status=="matched"-only check this real fill would have been
+    # (and was) treated as NOT filled. _resolve_fill polls
+    # list_account_trades() for a trade whose taker_order_id matches the
+    # order instead of trusting the synchronous response for this status.
+    def test_delayed_status_polls_and_confirms_fill_via_matching_trade(self, tmp_path, monkeypatch):
+        from polyedge import live as lv
+        monkeypatch.setattr(lv, "_DELAYED_FILL_POLL_DELAY_S", 0)
+        resp = _FakeAcceptedOrder("delayed", order_id="0xorder-1")
+        calls = self._install_fake_sdk(monkeypatch, order_response=resp,
+                                       trades=[_FakeTrade("0xorder-1")])
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is True
+        assert calls["list_account_trades_kwargs"][0]["token_id"] == "tok-1"
+
+    def test_delayed_status_regression_real_production_response(self, tmp_path, monkeypatch):
+        """The exact real response captured tonight -- verbatim field
+        values, not a synthetic guess -- as a regression case."""
+        from decimal import Decimal
+        from polyedge import live as lv
+        monkeypatch.setattr(lv, "_DELAYED_FILL_POLL_DELAY_S", 0)
+
+        class _RealAcceptedOrderRepro:
+            ok = True
+            order_id = ("0x797207817e6152494a283e8b981e343856b19d872d04c2f0"
+                       "71c0575273c01c4f")
+            status = "delayed"
+            making_amount = Decimal("0")
+            taking_amount = Decimal("0")
+            trade_ids = ()
+            transactions_hashes = ()
+
+        resp = _RealAcceptedOrderRepro()
+        self._install_fake_sdk(monkeypatch, order_response=resp,
+                               trades=[_FakeTrade(resp.order_id)])
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is True
+
+    def test_delayed_status_no_matching_trade_returns_false_after_polling(self, tmp_path, monkeypatch):
+        from polyedge import live as lv
+        monkeypatch.setattr(lv, "_DELAYED_FILL_POLL_DELAY_S", 0)
+        resp = _FakeAcceptedOrder("delayed", order_id="0xorder-1")
+        # a trade for a DIFFERENT order is present -- must not false-match
+        calls = self._install_fake_sdk(monkeypatch, order_response=resp,
+                                       trades=[_FakeTrade("0xsome-other-order")])
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
+        assert len(calls["list_account_trades_kwargs"]) == lv._DELAYED_FILL_POLL_ATTEMPTS
+
+    def test_delayed_status_poll_error_logged_and_treated_as_not_filled(self, tmp_path, monkeypatch):
+        from polyedge import live as lv
+        monkeypatch.setattr(lv, "_DELAYED_FILL_POLL_DELAY_S", 0)
+        resp = _FakeAcceptedOrder("delayed", order_id="0xorder-1")
+        self._install_fake_sdk(monkeypatch, order_response=resp,
+                               trades_error=RuntimeError("network blip"))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
+
+    def test_delayed_status_without_order_id_returns_false(self, tmp_path, monkeypatch):
+        # defensive: can't poll for a trade without an order_id to match on
+        self._install_fake_sdk(monkeypatch,
+                               order_response=_FakeAcceptedOrder("delayed", order_id=""))
         e = self._engine(tmp_path, monkeypatch)
         assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
 
