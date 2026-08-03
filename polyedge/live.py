@@ -79,8 +79,31 @@ Things worth knowing about the polymarket-client switch specifically:
     is `AcceptedOrder | RejectedOrder`; a FOK order that can't fully fill
     comes back as a `RejectedOrder` (`ok=False`,
     `code="fok_not_filled"`), not an accepted-but-unfilled order sitting
-    on the book -- `_place_order` treats `resp.ok and resp.status ==
-    "matched"` as the only "filled" case.
+    on the book.
+  * `AcceptedOrder.status` is one of `"live"`, `"matched"`, `"delayed"`
+    (confirmed from source) -- **and `status == "matched"` alone is NOT a
+    reliable "filled" signal.** A real order placed against this account
+    came back `AcceptedOrder(ok=True, status='delayed', making_amount=0,
+    taking_amount=0, trade_ids=(), transactions_hashes=())` and was
+    independently confirmed to have actually filled -- the synchronous
+    response for a "delayed" order carries NO fill data at all (not even
+    `trade_ids`, despite that field's own docstring saying it's "empty
+    when the order did not match"). polymarket-client's source has no
+    special-casing or documentation for what "delayed" means; `status` is
+    passed straight through from the raw CLOB API response
+    (`normalize_order_response()` in `order_response.py`) with no
+    SDK-side interpretation. The working theory -- inferred, not proven --
+    is that "delayed" is specific to gasless/relayed (deposit wallet)
+    accounts: the CLOB accepted the order but genuinely cannot report the
+    outcome synchronously. `_resolve_fill()` handles this by polling
+    `list_account_trades()` for a trade whose `taker_order_id` matches
+    the order (confirmed from source: `ClobTrade.taker_order_id`
+    "identifies the originating order"; there is no order-id filter on
+    that endpoint itself -- its own `id` query param maps to a trade's
+    own id, confirmed against the request-builder source -- so this
+    scans recent trades for the token and matches client-side). See
+    `_resolve_fill`'s docstring for the exact poll parameters and their
+    caveats.
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
@@ -106,6 +129,14 @@ log = logging.getLogger("polyedge.live")
 
 ARMED_FILE = "ARMED"
 HALTED_FILE = "HALTED"
+
+# How hard to poll list_account_trades() for a "delayed" order's real
+# outcome before giving up and treating it as not filled (see
+# LiveEngine._resolve_fill's docstring for why this polling exists at
+# all). Module-level so tests can monkeypatch the delay to 0.
+_DELAYED_FILL_POLL_ATTEMPTS = 5
+_DELAYED_FILL_POLL_DELAY_S = 2.0
+_DELAYED_FILL_SCAN_LIMIT = 50
 
 
 # ---------------------------------------------------------------- gates
@@ -207,14 +238,81 @@ class LiveEngine(PaperEngine):
                 resp = await client.place_market_order(
                     token_id=token_id, side="SELL",
                     shares=shares, min_price=price, order_type="FOK")
+            filled = await self._resolve_fill(client, resp, token_id)
         finally:
             await client.close()
-        filled = bool(getattr(resp, "ok", False)) and getattr(resp, "status", None) == "matched"
         if not filled:
             log.warning("order not filled: token=%s side=%s ok=%s detail=%s",
                        token_id, side, getattr(resp, "ok", None),
                        getattr(resp, "code", None) or getattr(resp, "status", None))
         return filled
+
+    async def _resolve_fill(self, client, resp, token_id: str) -> bool:
+        """Decide whether `resp` (from `place_market_order`) represents a
+        real fill. Called from inside `_aplace_order`'s still-open client,
+        BEFORE `client.close()` -- the "delayed" branch below needs a live
+        client to poll with.
+
+        `status == "matched"` is a reliable "filled" signal. `status ==
+        "delayed"` is NOT: a real order against this account came back
+        `AcceptedOrder(ok=True, status='delayed', making_amount=0,
+        taking_amount=0, trade_ids=(), transactions_hashes=())` and was
+        independently confirmed to have actually filled -- the synchronous
+        response for "delayed" carries no fill data at all, not even
+        `trade_ids` (whose own docstring says it's "empty when the order
+        did not match" -- that claim does not hold for "delayed"). There is
+        no documented reason for this in polymarket-client's source; the
+        working theory is that "delayed" means the CLOB accepted the order
+        but genuinely can't report the outcome synchronously for this
+        account's gasless/relayed (deposit wallet) order path.
+
+        For "delayed", the only way found to positively confirm a fill is
+        to poll `list_account_trades()` and look for a trade whose
+        `taker_order_id` matches this order's `order_id` (confirmed from
+        source: `ClobTrade.taker_order_id` "identifies the originating
+        order"). That endpoint has no order-id filter of its own -- its
+        `id` query parameter maps to a trade's own id, not an order id
+        (confirmed against the request-builder source) -- so this scans
+        up to `_DELAYED_FILL_SCAN_LIMIT` of the account's most recent
+        trades for `token_id` per attempt, for up to
+        `_DELAYED_FILL_POLL_ATTEMPTS` attempts, `_DELAYED_FILL_POLL_DELAY_S`
+        apart. Sort order of that endpoint's results was not confirmed
+        against source or production -- if it turns out to be oldest-first
+        rather than newest-first, a very recent fill could be missed by the
+        scan cap on a token with heavy trade volume. Any "live" status (or
+        anything else unrecognized) is treated as not filled rather than
+        assumed -- a FOK order should never come back resting on the book.
+
+        Returns False (never True) on a poll that can't positively confirm
+        a fill -- silently NOT recording a real fill is the failure mode
+        this leans toward, since silently recording a fill that didn't
+        happen would corrupt paper-accounting state against real money.
+        """
+        if not getattr(resp, "ok", False):
+            return False
+        status = getattr(resp, "status", None)
+        if status == "matched":
+            return True
+        if status != "delayed":
+            return False
+        order_id = getattr(resp, "order_id", None)
+        if not order_id:
+            return False
+        for _ in range(_DELAYED_FILL_POLL_ATTEMPTS):
+            await asyncio.sleep(_DELAYED_FILL_POLL_DELAY_S)
+            try:
+                scanned = 0
+                async for trade in client.list_account_trades(token_id=token_id).iter_items():
+                    if getattr(trade, "taker_order_id", None) == order_id:
+                        return True
+                    scanned += 1
+                    if scanned >= _DELAYED_FILL_SCAN_LIMIT:
+                        break
+            except Exception as e:
+                log.warning("delayed-fill poll failed for order %s: %s", order_id, e)
+        log.warning("delayed order %s never showed up in list_account_trades after %d "
+                   "poll(s) -- treating as not filled", order_id, _DELAYED_FILL_POLL_ATTEMPTS)
+        return False
 
     def _check_pusd_balance(self) -> bool:
         """Verify the funder wallet has tradeable pUSD balance BEFORE
@@ -297,11 +395,15 @@ class LiveEngine(PaperEngine):
         `asyncio.run()` -- see the module docstring for why a fresh event
         loop and client are used per call instead of caching one.
 
-        Unlike the retired py-clob-client-v2 path, the "filled" check here
-        is confirmed from source, not assumed: a FOK order that can't
-        fully fill comes back as `RejectedOrder(ok=False,
-        code="fok_not_filled")`, not an ambiguous status string -- see
-        `_aplace_order`'s docstring.
+        A FOK order that can't fully fill comes back as
+        `RejectedOrder(ok=False, code="fok_not_filled")` -- straightforward.
+        A FOK order that DID fill can come back either as
+        `AcceptedOrder(status="matched")` (straightforward) or, on this
+        account's gasless/relayed deposit-wallet order path,
+        `AcceptedOrder(status="delayed")` with no fill data in the
+        response at all -- confirmed against a real production order.
+        See `_resolve_fill`'s docstring for the full writeup and how the
+        "delayed" case is confirmed via polling instead of trusted blind.
         """
         return asyncio.run(self._aplace_order(token_id, price, shares, side))
 
