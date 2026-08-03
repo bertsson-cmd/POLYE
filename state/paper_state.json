@@ -1,5 +1,5 @@
 {
- "cash": 681.224311,
+ "cash": 675.073458,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -30,35 +30,6 @@
    "current_value": 26.191958,
    "unrealized_pl": -0.013792,
    "unrealized_pl_pct": -0.053
-  },
-  {
-   "key": "CV-2584969",
-   "strategy": "CONVERGE",
-   "title": "Converge: U.S. anti-cartel operation outside of the U.S. by July 31?",
-   "opened": 1785382519.3429441,
-   "cost": 24.62302,
-   "edge": 0.036269,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9688,
-   "resolve_by": "2026-07-31T11:59:00Z",
-   "note": "YES ask 0.965, 1.3d to resolution, 981% annualized if YES, assumed true P 0.969",
-   "legs": [
-    {
-     "token_id": "101199866997875475477762302945563324496302554506520238019180264738090486376688",
-     "market_id": "2584969",
-     "label": "YES U.S. anti-cartel operation outside of the U.S. by July 31?",
-     "side": "YES",
-     "entry_price": 0.965,
-     "shares": 25.516083
-    }
-   ],
-   "current_prices": {
-    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.0005
-   },
-   "current_value": 0.012758,
-   "unrealized_pl": -24.610262,
-   "unrealized_pl_pct": -99.948
   },
   {
    "key": "CV-2118271",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.9635
+    "100447473999583318525394175805866886577554436378977722198114719095367150281687": 0.942
    },
-   "current_value": 12.296251,
-   "unrealized_pl": 0.044668,
-   "unrealized_pl_pct": 0.365
+   "current_value": 12.021866,
+   "unrealized_pl": -0.229717,
+   "unrealized_pl_pct": -1.875
   },
   {
    "key": "CV-907513",
@@ -146,35 +117,6 @@
    "current_value": 24.892173,
    "unrealized_pl": 0.090423,
    "unrealized_pl_pct": 0.365
-  },
-  {
-   "key": "CV-2832140",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Nigel Farage win the Clacton by-election?",
-   "opened": 1785445959.3603172,
-   "cost": 17.3298,
-   "edge": 0.023541,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.98,
-   "resolve_by": "2026-08-13T16:00:00Z",
-   "note": "YES ask 0.977, 13.8d to resolution, 62% annualized if YES, assumed true P 0.980",
-   "legs": [
-    {
-     "token_id": "96493470136581654430268359631814450290137534659017161119334974730318350734648",
-     "market_id": "2832140",
-     "label": "YES Will Nigel Farage win the Clacton by-election?",
-     "side": "YES",
-     "entry_price": 0.977,
-     "shares": 17.737769
-    }
-   ],
-   "current_prices": {
-    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9825
-   },
-   "current_value": 17.427358,
-   "unrealized_pl": 0.097558,
-   "unrealized_pl_pct": 0.563
   },
   {
    "key": "CV-2233784",
@@ -228,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.972
+    "74768395815166461619548348007728690058055087254143355558596876906836785272025": 0.9765
    },
-   "current_value": 5.325007,
-   "unrealized_pl": 0.010957,
-   "unrealized_pl_pct": 0.206
+   "current_value": 5.34966,
+   "unrealized_pl": 0.03561,
+   "unrealized_pl_pct": 0.67
   },
   {
    "key": "CV-3158069",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.972
+    "42863385125433831764279638424484151617778205536218479926119315701467026039407": 0.965
    },
-   "current_value": 6.773996,
-   "unrealized_pl": 0.077939,
-   "unrealized_pl_pct": 1.164
+   "current_value": 6.725212,
+   "unrealized_pl": 0.029155,
+   "unrealized_pl_pct": 0.435
   },
   {
    "key": "CV-3262726",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.965
+    "61349607419285836854662832542595973803464881904164493709462082947344994785612": 0.961
    },
-   "current_value": 9.366569,
-   "unrealized_pl": -0.068303,
-   "unrealized_pl_pct": -0.724
+   "current_value": 9.327744,
+   "unrealized_pl": -0.107128,
+   "unrealized_pl_pct": -1.135
   },
   {
    "key": "LS-3278508",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "56680494151473299871435629304774950421243729695540320897201708517449510380758": 0.93
+    "56680494151473299871435629304774950421243729695540320897201708517449510380758": 0.905
    },
-   "current_value": 22.523018,
-   "unrealized_pl": -1.00397,
-   "unrealized_pl_pct": -4.267
+   "current_value": 21.917561,
+   "unrealized_pl": -1.609427,
+   "unrealized_pl_pct": -6.841
   },
   {
    "key": "CV-3247965",
@@ -373,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.9835
+    "33744138537867316771530492434898210310112816831581011996696181212558287270655": 0.9845
    },
-   "current_value": 23.384998,
-   "unrealized_pl": 0.106998,
-   "unrealized_pl_pct": 0.46
+   "current_value": 23.408775,
+   "unrealized_pl": 0.130775,
+   "unrealized_pl_pct": 0.562
   },
   {
    "key": "CV-3223277",
@@ -402,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.945
+    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.915
    },
-   "current_value": 9.262194,
-   "unrealized_pl": -0.081595,
-   "unrealized_pl_pct": -0.873
+   "current_value": 8.968156,
+   "unrealized_pl": -0.375633,
+   "unrealized_pl_pct": -4.02
   },
   {
    "key": "CV-2758457",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "92062876943642517334204166558488649767389043731898736327419367578333707352166": 0.9705
+    "92062876943642517334204166558488649767389043731898736327419367578333707352166": 0.9655
    },
-   "current_value": 23.317501,
-   "unrealized_pl": -0.251795,
-   "unrealized_pl_pct": -1.068
+   "current_value": 23.197369,
+   "unrealized_pl": -0.371927,
+   "unrealized_pl_pct": -1.578
   },
   {
    "key": "CV-3158565",
@@ -460,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "88978238963237470781692770605414029617596842896064070863696005215616906527117": 0.925
+    "88978238963237470781692770605414029617596842896064070863696005215616906527117": 0.915
    },
-   "current_value": 22.926125,
-   "unrealized_pl": -0.702035,
-   "unrealized_pl_pct": -2.971
+   "current_value": 22.678275,
+   "unrealized_pl": -0.949885,
+   "unrealized_pl_pct": -4.02
   },
   {
    "key": "CV-3158240",
@@ -489,11 +431,40 @@
     }
    ],
    "current_prices": {
-    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.977
+    "106493285142278333379534357055206998136964598981386160531814587710228089828027": 0.9695
    },
-   "current_value": 23.467649,
-   "unrealized_pl": -0.149822,
-   "unrealized_pl_pct": -0.634
+   "current_value": 23.287499,
+   "unrealized_pl": -0.329972,
+   "unrealized_pl_pct": -1.397
+  },
+  {
+   "key": "LS-3254124",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Paris be 34\u00b0C on August 3?",
+   "opened": 1785732649.9761002,
+   "cost": 23.58708,
+   "edge": 0.011519,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-08-03T12:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "3245061478898748337098511558020960001979610680156622717062706270287655605483",
+     "market_id": "3254124",
+     "label": "NO Will the highest temperature in Paris be 34\u00b0C on August 3?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 24.520833
+    }
+   ],
+   "current_prices": {
+    "3245061478898748337098511558020960001979610680156622717062706270287655605483": 0.955
+   },
+   "current_value": 23.417396,
+   "unrealized_pl": -0.169684,
+   "unrealized_pl_pct": -0.719
   }
  ],
  "closed": [
@@ -9313,6 +9284,71 @@
    "closed_ts": 1785719631.7805665,
    "payout": 24.243292,
    "pl": 0.71513
+  },
+  {
+   "key": "CV-2832140",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Nigel Farage win the Clacton by-election?",
+   "opened": 1785445959.3603172,
+   "cost": 17.3298,
+   "edge": 0.023541,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.98,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.977, 13.8d to resolution, 62% annualized if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "96493470136581654430268359631814450290137534659017161119334974730318350734648",
+     "market_id": "2832140",
+     "label": "YES Will Nigel Farage win the Clacton by-election?",
+     "side": "YES",
+     "entry_price": 0.977,
+     "shares": 17.737769
+    }
+   ],
+   "current_prices": {
+    "96493470136581654430268359631814450290137534659017161119334974730318350734648": 0.9825
+   },
+   "current_value": 17.427358,
+   "unrealized_pl": 0.097558,
+   "unrealized_pl_pct": 0.563,
+   "closed_ts": 1785732656.275468,
+   "payout": 17.436227,
+   "pl": 0.106427,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2584969",
+   "strategy": "CONVERGE",
+   "title": "Converge: U.S. anti-cartel operation outside of the U.S. by July 31?",
+   "opened": 1785382519.3429441,
+   "cost": 24.62302,
+   "edge": 0.036269,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9688,
+   "resolve_by": "2026-07-31T11:59:00Z",
+   "note": "YES ask 0.965, 1.3d to resolution, 981% annualized if YES, assumed true P 0.969",
+   "legs": [
+    {
+     "token_id": "101199866997875475477762302945563324496302554506520238019180264738090486376688",
+     "market_id": "2584969",
+     "label": "YES U.S. anti-cartel operation outside of the U.S. by July 31?",
+     "side": "YES",
+     "entry_price": 0.965,
+     "shares": 25.516083
+    }
+   ],
+   "current_prices": {
+    "101199866997875475477762302945563324496302554506520238019180264738090486376688": 0.965
+   },
+   "current_value": 24.62302,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1785732656.6081808,
+   "payout": 0.0,
+   "pl": -24.62302
   }
  ],
  "history": [
@@ -10595,6 +10631,14 @@
    "equity": 941.6034,
    "realized_total": -31.7526,
    "open_positions": 18
+  },
+  {
+   "ts": 1785732656.277112,
+   "cash": 675.0735,
+   "open_value": 289.9697,
+   "equity": 965.0432,
+   "realized_total": -30.9311,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -14847,6 +14891,34 @@
    "title": "Fade: Exact Score: Liverpool FC 0 - 0 Leeds United?",
    "amount": 24.24,
    "pl": 0.72
+  },
+  {
+   "ts": 1785732649.9761002,
+   "type": "OPEN",
+   "key": "LS-3254124",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Paris be 34\u00b0C on August 3?",
+   "amount": 23.59,
+   "pl": null
+  },
+  {
+   "ts": 1785732656.275468,
+   "type": "CLOSE",
+   "key": "CV-2832140",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Nigel Farage win the Clacton by-election?",
+   "amount": 17.44,
+   "pl": 0.11,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785732656.6081808,
+   "type": "CLOSE",
+   "key": "CV-2584969",
+   "strategy": "CONVERGE",
+   "title": "Converge: U.S. anti-cartel operation outside of the U.S. by July 31?",
+   "amount": 0.0,
+   "pl": -24.62
   }
  ]
 }
