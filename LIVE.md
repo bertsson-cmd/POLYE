@@ -302,6 +302,29 @@ Tailscale, not an open port.
   be missed by the scan cap on a very high-volume token). This is now
   covered by a regression test in `tests/test_polyedge.py` using the
   exact real response values above, not a synthetic guess.
+- **`place_market_order()` can raise instead of returning a `RejectedOrder`
+  — this was also a real bug, caught in production and fixed.** A FOK
+  order that couldn't fill raised `polymarket.errors.RequestRejectedError`
+  rather than coming back as a `RejectedOrder` response object, and with
+  no handling that exception propagated all the way up through
+  `open_position()` and crashed the entire `run_cycle()` — not just that
+  one rejected order, every other queued opportunity that cycle too.
+  `_aplace_order` now wraps the `place_market_order()` call in a
+  try/except for `polymarket.errors.PolymarketError`, the base class for
+  the SDK's whole error hierarchy (`UserInputError`,
+  `UnexpectedResponseError`, `TransportError`, `ConnectionLostError`,
+  `RequestRejectedError`, `RateLimitError`, `TimeoutError`,
+  `TransactionFailedError`, `CancelledSigningError`,
+  `InsufficientLiquidityError`, `SigningError`,
+  `InsufficientAllowanceError` — confirmed from `polymarket/errors.py`,
+  a flat hierarchy, all direct subclasses) — catching only
+  `RequestRejectedError` would have left the same crash open for
+  `InsufficientLiquidityError` (an expected, common FOK-rejection reason)
+  or any of the others. A caught error is logged and treated as "not
+  filled", the same as a `RejectedOrder` — `open_position`/`close_early`
+  already handle that gracefully. Anything outside that hierarchy (an
+  actual bug in this module's own code, not an SDK-modeled failure) still
+  propagates and crashes the cycle, deliberately.
 - The exact decimal count for pUSD (used by `reconcile.py` to convert its
   raw on-chain balance read into dollars) could not be independently
   confirmed and is assumed to be 6, matching USDC.e — cross-check

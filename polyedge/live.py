@@ -104,6 +104,18 @@ Things worth knowing about the polymarket-client switch specifically:
     scans recent trades for the token and matches client-side). See
     `_resolve_fill`'s docstring for the exact poll parameters and their
     caveats.
+  * `place_market_order()` can RAISE instead of returning a `RejectedOrder`
+    -- confirmed in production: a FOK order that couldn't fill raised
+    `RequestRejectedError`, and with no handling that crashed the entire
+    `run_cycle()`, skipping every other queued opportunity that cycle
+    too. `_aplace_order` now wraps that call in a try/except for
+    `polymarket.errors.PolymarketError` (the base class for the SDK's
+    whole flat error hierarchy, not just `RequestRejectedError` -- see
+    `_aplace_order`'s docstring), treating a caught error the same as a
+    `RejectedOrder`: logged, not filled, that leg's `open_position`/
+    `close_early` call aborts gracefully. Anything outside that hierarchy
+    (an actual bug in this module) still propagates and crashes the cycle
+    -- that's deliberate, not something this fix papers over.
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
@@ -220,8 +232,35 @@ class LiveEngine(PaperEngine):
         position. This is a considered translation of the old
         OrderArgsV2(price, size, FOK) limit order, not a proven-identical
         one -- flag this if the first live fill's actual price looks off.
+
+        The `place_market_order()` call itself is wrapped in its own
+        try/except for `polymarket.errors.PolymarketError` -- confirmed in
+        production: a FOK order that couldn't fill raised
+        `RequestRejectedError` rather than coming back as a `RejectedOrder`
+        response object, and with no handling here that exception
+        propagated all the way up through `open_position()` and crashed
+        the entire `run_cycle()` for a single rejected order, skipping
+        every other queued opportunity that cycle too. `PolymarketError`
+        is the base class for the SDK's ENTIRE error hierarchy (confirmed
+        from `polymarket/errors.py`: `UserInputError`,
+        `UnexpectedResponseError`, `TransportError`, `ConnectionLostError`,
+        `RequestRejectedError`, `RateLimitError`, `TimeoutError`,
+        `TransactionFailedError`, `CancelledSigningError`,
+        `InsufficientLiquidityError`, `SigningError`,
+        `InsufficientAllowanceError` -- a flat hierarchy, all direct
+        subclasses, no deeper nesting) -- catching only `RequestRejectedError`
+        would have left this exact class of crash open for
+        `InsufficientLiquidityError` (an expected, common FOK-rejection
+        reason) or any of the others. A caught error here is logged and
+        treated as "not filled", exactly like a `RejectedOrder` response --
+        `open_position`/`close_early` already handle a not-filled leg
+        gracefully (log a warning, abort just that position). Anything NOT
+        in this hierarchy (a plain `ValueError`/`TypeError`/etc, i.e. an
+        actual bug in this module's own code) still propagates uncaught --
+        that distinction is deliberate, not an oversight.
         """
         from polymarket import PRODUCTION, AsyncSecureClient
+        from polymarket.errors import PolymarketError
         private_key = os.environ["POLYEDGE_PRIVATE_KEY"]
         client = await AsyncSecureClient.create(
             private_key=private_key, environment=PRODUCTION,
@@ -229,15 +268,20 @@ class LiveEngine(PaperEngine):
         try:
             await client.setup_trading_approvals()
             price, shares = round(price, 3), round(shares, 2)
-            if side == "BUY":
-                resp = await client.place_market_order(
-                    token_id=token_id, side="BUY",
-                    amount=round(price * shares, 2), max_price=price,
-                    order_type="FOK")
-            else:
-                resp = await client.place_market_order(
-                    token_id=token_id, side="SELL",
-                    shares=shares, min_price=price, order_type="FOK")
+            try:
+                if side == "BUY":
+                    resp = await client.place_market_order(
+                        token_id=token_id, side="BUY",
+                        amount=round(price * shares, 2), max_price=price,
+                        order_type="FOK")
+                else:
+                    resp = await client.place_market_order(
+                        token_id=token_id, side="SELL",
+                        shares=shares, min_price=price, order_type="FOK")
+            except PolymarketError as e:
+                log.warning("order not filled: token=%s side=%s rejected by SDK "
+                           "(%s): %s", token_id, side, type(e).__name__, e)
+                return False
             filled = await self._resolve_fill(client, resp, token_id)
         finally:
             await client.close()
@@ -404,6 +448,9 @@ class LiveEngine(PaperEngine):
         response at all -- confirmed against a real production order.
         See `_resolve_fill`'s docstring for the full writeup and how the
         "delayed" case is confirmed via polling instead of trusted blind.
+        Never raises a `polymarket.errors.PolymarketError` -- `_aplace_order`
+        catches that whole hierarchy around the order-placement call and
+        returns False instead; see its docstring for why.
         """
         return asyncio.run(self._aplace_order(token_id, price, shares, side))
 

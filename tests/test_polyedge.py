@@ -96,6 +96,27 @@ class _FakeRejectedOrder:
         self.code = code
 
 
+class _FakePolymarketError(Exception):
+    """Stand-in for polymarket.errors.PolymarketError, the base class for
+    the SDK's whole error hierarchy -- confirmed from source."""
+
+
+class _FakeRequestRejectedError(_FakePolymarketError):
+    """Stand-in for polymarket.errors.RequestRejectedError -- the class a
+    real FOK order that couldn't fill actually raised in production,
+    instead of coming back as a RejectedOrder response object."""
+    def __init__(self, message, status=None, retry_after=None):
+        super().__init__(message)
+        self.status = status
+        self.retry_after = retry_after
+
+
+class _FakeInsufficientLiquidityError(_FakePolymarketError):
+    """Stand-in for polymarket.errors.InsufficientLiquidityError -- another
+    PolymarketError subclass a FOK order could plausibly raise for, which
+    catching only RequestRejectedError would have missed."""
+
+
 def market(mid, yes_price, *, neg_risk=False, event="EV1", liq=50000.0,
            end=None, question=None):
     return Market(market_id=mid, question=question or f"Q{mid}",
@@ -1538,6 +1559,10 @@ class TestLiveEnginePolymarketClientWiring:
         polymarket_mod.AsyncSecureClient = FakeAsyncSecureClient
         polymarket_mod.BuilderApiKey = FakeBuilderApiKey
         monkeypatch.setitem(sys.modules, "polymarket", polymarket_mod)
+
+        errors_mod = types.ModuleType("polymarket.errors")
+        errors_mod.PolymarketError = _FakePolymarketError
+        monkeypatch.setitem(sys.modules, "polymarket.errors", errors_mod)
         return calls
 
     def _engine(self, tmp_path, monkeypatch, key="0xabc", funder="0xdef",
@@ -1602,6 +1627,54 @@ class TestLiveEnginePolymarketClientWiring:
         with pytest.raises(RuntimeError, match="boom"):
             e._place_order("tok-1", 0.965, 10.0, "BUY")
         assert calls["closed"] is True
+
+    # ---- a real production bug: place_market_order() RAISED for a FOK
+    # order that couldn't fill (RequestRejectedError), instead of coming
+    # back as a RejectedOrder response object. With no handling, that
+    # exception propagated all the way up through open_position() and
+    # crashed the whole run_cycle() -- not just the one rejected order,
+    # every other queued opportunity that cycle too. _aplace_order now
+    # catches the SDK's whole PolymarketError hierarchy around that call.
+    def test_request_rejected_error_caught_and_returns_false(self, tmp_path, monkeypatch):
+        calls = self._install_fake_sdk(
+            monkeypatch,
+            order_response=_FakeRequestRejectedError("no liquidity", status=400))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
+        # graceful failure, not a crash -- the client is still closed
+        assert calls["closed"] is True
+
+    def test_other_polymarket_error_subclasses_also_caught_not_just_request_rejected(
+            self, tmp_path, monkeypatch):
+        # catching only RequestRejectedError (the one class actually
+        # observed in production) would still leave this class of crash
+        # open for every OTHER PolymarketError subclass -- the fix must
+        # catch the base class, not one hardcoded sibling
+        calls = self._install_fake_sdk(
+            monkeypatch, order_response=_FakeInsufficientLiquidityError("no liquidity"))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order("tok-1", 0.965, 10.0, "SELL") is False
+        assert calls["closed"] is True
+
+    def test_polymarket_error_does_not_abort_the_whole_open_position_call(self, tmp_path, monkeypatch):
+        """The actual point of the fix: one rejected leg must not raise
+        out of open_position() and abort processing of other opportunities
+        in the same run_cycle(). Exercises the real _place_order/
+        _aplace_order path (not mocked out, unlike TestLiveEngine) with
+        the gates open, same as a real live cycle would."""
+        from polyedge import live as lv
+        monkeypatch.setenv("POLYEDGE_LIVE", "1")
+        monkeypatch.setenv("POLYEDGE_DRY_RUN", "0")
+        self._install_fake_sdk(monkeypatch, order_response=_FakeRequestRejectedError("rejected"))
+        e = self._engine(tmp_path, monkeypatch)   # chdir(tmp_path) happens here
+        open(lv.ARMED_FILE, "w").write("armed")
+        e._check_pusd_balance = lambda: True
+        opp = Opportunity("CONVERGE", "CV-X", "CV-X", 0.04, False, est_p_win=0.98,
+                          legs=[Leg("tok-1", "m1", "YES q", "YES", 0.96, 10.0)],
+                          resolve_by="2026-07-21T00:00:00Z")
+        # open_position must return None (order not filled) rather than
+        # letting the SDK exception propagate out of this call
+        assert e.open_position(opp) is None
 
     def test_buy_sends_fok_market_order_with_amount_and_max_price(self, tmp_path, monkeypatch):
         calls = self._install_fake_sdk(monkeypatch)
