@@ -1,5 +1,5 @@
 {
- "cash": 763.682613,
+ "cash": 703.331221,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.968
+    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.965
    },
-   "current_value": 24.146251,
-   "unrealized_pl": 0.366061,
-   "unrealized_pl_pct": 1.539
+   "current_value": 24.071417,
+   "unrealized_pl": 0.291227,
+   "unrealized_pl_pct": 1.225
   },
   {
    "key": "CV-2840115",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "20992515569090486217463783647279468285511601675039625152486367474981713405303": 0.0055
+    "20992515569090486217463783647279468285511601675039625152486367474981713405303": 0.0005
    },
-   "current_value": 0.137387,
-   "unrealized_pl": -23.640574,
-   "unrealized_pl_pct": -99.422
+   "current_value": 0.01249,
+   "unrealized_pl": -23.765471,
+   "unrealized_pl_pct": -99.947
   },
   {
    "key": "CV-3303750",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "82575682487692543160662011176637297183549773034214476335694896599617758091925": 0.945
+    "82575682487692543160662011176637297183549773034214476335694896599617758091925": 0.94
    },
-   "current_value": 23.15623,
-   "unrealized_pl": -0.203996,
-   "unrealized_pl_pct": -0.873
+   "current_value": 23.03371,
+   "unrealized_pl": -0.326516,
+   "unrealized_pl_pct": -1.398
   },
   {
    "key": "CV-3202298",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "33675166806875650988155128133262922113147168635004923452255252690799905088861": 0.982
+    "33675166806875650988155128133262922113147168635004923452255252690799905088861": 0.977
    },
-   "current_value": 23.430831,
-   "unrealized_pl": 0.037243,
-   "unrealized_pl_pct": 0.159
+   "current_value": 23.31153,
+   "unrealized_pl": -0.082058,
+   "unrealized_pl_pct": -0.351
   },
   {
    "key": "CV-3223288",
@@ -257,11 +257,98 @@
     }
    ],
    "current_prices": {
-    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.977
+    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.9705
    },
-   "current_value": 23.35925,
-   "unrealized_pl": -0.037608,
-   "unrealized_pl_pct": -0.161
+   "current_value": 23.203841,
+   "unrealized_pl": -0.193017,
+   "unrealized_pl_pct": -0.825
+  },
+  {
+   "key": "LS-3054339",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Clube do Remo 2 - 0 Santos FC?",
+   "opened": 1785878596.9069273,
+   "cost": 23.002035,
+   "edge": 0.01273,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9703,
+   "resolve_by": "2026-08-05T00:30:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.956, fee 0.0021",
+   "legs": [
+    {
+     "token_id": "106119600496465317952295670399861083435851378461327716051811055393881153381347",
+     "market_id": "3054339",
+     "label": "NO Exact Score: Clube do Remo 2 - 0 Santos FC?",
+     "side": "NO",
+     "entry_price": 0.956,
+     "shares": 24.007889
+    }
+   ],
+   "current_prices": {
+    "106119600496465317952295670399861083435851378461327716051811055393881153381347": 0.9505
+   },
+   "current_value": 22.819498,
+   "unrealized_pl": -0.182537,
+   "unrealized_pl_pct": -0.794
+  },
+  {
+   "key": "CV-3202421",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 5?",
+   "opened": 1785878596.9069924,
+   "cost": 23.342124,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-08-05T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 0.8d to resolution, 803% annualized net if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "36842437685322270692352133991311219570859897119188341575202231580322859252283",
+     "market_id": "3202421",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 5?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 23.740071
+    }
+   ],
+   "current_prices": {
+    "36842437685322270692352133991311219570859897119188341575202231580322859252283": 0.9815
+   },
+   "current_value": 23.30088,
+   "unrealized_pl": -0.041244,
+   "unrealized_pl_pct": -0.177
+  },
+  {
+   "key": "CV-3241070",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
+   "opened": 1785878596.9070075,
+   "cost": 14.007233,
+   "edge": 0.019008,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-08-07T16:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 2.8d to resolution, 250% annualized net if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "106460286776671198996232462489525403284014954473393072782175486295233294409818",
+     "market_id": "3241070",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 7?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 14.273112
+    }
+   ],
+   "current_prices": {
+    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.9765
+   },
+   "current_value": 13.937694,
+   "unrealized_pl": -0.069539,
+   "unrealized_pl_pct": -0.496
   }
  ],
  "closed": [
@@ -11764,6 +11851,14 @@
    "equity": 932.5128,
    "realized_total": -44.5319,
    "open_positions": 10
+  },
+  {
+   "ts": 1785878597.0156426,
+   "cash": 703.3312,
+   "open_value": 229.4355,
+   "equity": 932.7667,
+   "realized_total": -43.4423,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -16661,6 +16756,33 @@
    "title": "Fade: Ararat-Armenia FA vs. NK Celje: O/U 5.5",
    "amount": 24.87,
    "pl": 1.09
+  },
+  {
+   "ts": 1785878596.9069273,
+   "type": "OPEN",
+   "key": "LS-3054339",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Clube do Remo 2 - 0 Santos FC?",
+   "amount": 23.0,
+   "pl": null
+  },
+  {
+   "ts": 1785878596.9069924,
+   "type": "OPEN",
+   "key": "CV-3202421",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 5?",
+   "amount": 23.34,
+   "pl": null
+  },
+  {
+   "ts": 1785878596.9070075,
+   "type": "OPEN",
+   "key": "CV-3241070",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
+   "amount": 14.01,
+   "pl": null
   }
  ]
 }
