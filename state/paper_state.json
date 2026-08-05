@@ -1,5 +1,5 @@
 {
- "cash": 758.67744,
+ "cash": 853.737783,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -32,64 +32,6 @@
    "unrealized_pl_pct": -0.0
   },
   {
-   "key": "CV-2840115",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Count Binface get second place in the Clacton by-electi",
-   "opened": 1785792794.7652988,
-   "cost": 22.703014,
-   "edge": 0.040067,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-13T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0015, 9.8d to resolution, 150% annualized net if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "81447450383664195636595565283033889220683502219622758879760419790560852069403",
-     "market_id": "2840115",
-     "label": "YES Will Count Binface get second place in the Clacton by-election?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 23.611195
-    }
-   ],
-   "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.97
-   },
-   "current_value": 22.902859,
-   "unrealized_pl": 0.199845,
-   "unrealized_pl_pct": 0.88
-  },
-  {
-   "key": "CV-3262740",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 8?",
-   "opened": 1785873733.6957843,
-   "cost": 23.396858,
-   "edge": 0.021931,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9816,
-   "resolve_by": "2026-08-08T16:00:00Z",
-   "note": "YES ask 0.977, fee 0.0016, 3.8d to resolution, 209% annualized net if YES, assumed true P 0.982",
-   "legs": [
-    {
-     "token_id": "43092921790062877562527003378789481782878794746787681374141761105342690972188",
-     "market_id": "3262740",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 8?",
-     "side": "YES",
-     "entry_price": 0.977,
-     "shares": 23.909161
-    }
-   ],
-   "current_prices": {
-    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.9835
-   },
-   "current_value": 23.51466,
-   "unrealized_pl": 0.117802,
-   "unrealized_pl_pct": 0.503
-  },
-  {
    "key": "CV-3338654",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 11?",
@@ -112,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "31283228497063687749750632752569342828982557162127019682710784499948859141108": 0.956
+    "31283228497063687749750632752569342828982557162127019682710784499948859141108": 0.9605
    },
-   "current_value": 9.390134,
-   "unrealized_pl": 0.026275,
-   "unrealized_pl_pct": 0.281
+   "current_value": 9.434335,
+   "unrealized_pl": 0.070476,
+   "unrealized_pl_pct": 0.753
   },
   {
    "key": "CV-3128786",
@@ -141,98 +83,11 @@
     }
    ],
    "current_prices": {
-    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.945
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.955
    },
-   "current_value": 22.77893,
-   "unrealized_pl": -0.36157,
-   "unrealized_pl_pct": -1.562
-  },
-  {
-   "key": "CV-3223182",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 6?",
-   "opened": 1785914185.1399696,
-   "cost": 23.443014,
-   "edge": 0.049132,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-08-06T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 1.4d to resolution, 1315% annualized net if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "69605551236011640769623742330866699112983861179268633317415161883683293792842",
-     "market_id": "3223182",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 6?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 24.590789
-    }
-   ],
-   "current_prices": {
-    "69605551236011640769623742330866699112983861179268633317415161883683293792842": 0.96
-   },
-   "current_value": 23.607157,
-   "unrealized_pl": 0.164143,
-   "unrealized_pl_pct": 0.7
-  },
-  {
-   "key": "LS-3188975",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Spread: Juventus Turin (-2.5)",
-   "opened": 1785924055.0549238,
-   "cost": 23.374008,
-   "edge": 0.004679,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-08-05T11:30:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015",
-   "legs": [
-    {
-     "token_id": "88062266356938725650201949167311285821113646967902840349454894797914721273783",
-     "market_id": "3188975",
-     "label": "NO Spread: Juventus Turin (-2.5)",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 24.060825
-    }
-   ],
-   "current_prices": {
-    "88062266356938725650201949167311285821113646967902840349454894797914721273783": 0.9995
-   },
-   "current_value": 24.048795,
-   "unrealized_pl": 0.674787,
-   "unrealized_pl_pct": 2.887
-  },
-  {
-   "key": "LS-3138353",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
-   "opened": 1785924055.054943,
-   "cost": 23.369341,
-   "edge": 0.002598,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9778,
-   "resolve_by": "2026-08-05T11:30:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.974, fee 0.0013",
-   "legs": [
-    {
-     "token_id": "14943729587282349432628968533953336934417767667685321050704580792540731150058",
-     "market_id": "3138353",
-     "label": "NO Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
-     "side": "NO",
-     "entry_price": 0.974,
-     "shares": 23.962012
-    }
-   ],
-   "current_prices": {
-    "14943729587282349432628968533953336934417767667685321050704580792540731150058": 0.9995
-   },
-   "current_value": 23.950031,
-   "unrealized_pl": 0.58069,
-   "unrealized_pl_pct": 2.485
+   "current_value": 23.019977,
+   "unrealized_pl": -0.120523,
+   "unrealized_pl_pct": -0.521
   },
   {
    "key": "CV-3241073",
@@ -257,11 +112,40 @@
     }
    ],
    "current_prices": {
-    "52816431198695871439531332926588064118921042095977090662419664428255778586338": 0.945
+    "52816431198695871439531332926588064118921042095977090662419664428255778586338": 0.9545
    },
-   "current_value": 23.268636,
-   "unrealized_pl": -0.204985,
-   "unrealized_pl_pct": -0.873
+   "current_value": 23.502553,
+   "unrealized_pl": 0.028932,
+   "unrealized_pl_pct": 0.123
+  },
+  {
+   "key": "CV-3223288",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 6?",
+   "opened": 1785946686.352614,
+   "cost": 23.467031,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-08-06T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 1.0d to resolution, 631% annualized net if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "43652889434855544783127623186394045333766959241793588244624051687891019352054",
+     "market_id": "3223288",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 6?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 23.867108
+    }
+   ],
+   "current_prices": {
+    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.9805
+   },
+   "current_value": 23.401699,
+   "unrealized_pl": -0.065332,
+   "unrealized_pl_pct": -0.278
   }
  ],
  "closed": [
@@ -10723,6 +10607,169 @@
    "payout": 24.163582,
    "pl": 0.189238,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2840115",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Count Binface get second place in the Clacton by-electi",
+   "opened": 1785792794.7652988,
+   "cost": 22.703014,
+   "edge": 0.040067,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0015, 9.8d to resolution, 150% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "81447450383664195636595565283033889220683502219622758879760419790560852069403",
+     "market_id": "2840115",
+     "label": "YES Will Count Binface get second place in the Clacton by-election?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 23.611195
+    }
+   ],
+   "current_prices": {
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.97
+   },
+   "current_value": 22.902859,
+   "unrealized_pl": 0.199845,
+   "unrealized_pl_pct": 0.88,
+   "closed_ts": 1785946686.4679525,
+   "payout": 22.902859,
+   "pl": 0.199845,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3262740",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 8?",
+   "opened": 1785873733.6957843,
+   "cost": 23.396858,
+   "edge": 0.021931,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9816,
+   "resolve_by": "2026-08-08T16:00:00Z",
+   "note": "YES ask 0.977, fee 0.0016, 3.8d to resolution, 209% annualized net if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "43092921790062877562527003378789481782878794746787681374141761105342690972188",
+     "market_id": "3262740",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 8?",
+     "side": "YES",
+     "entry_price": 0.977,
+     "shares": 23.909161
+    }
+   ],
+   "current_prices": {
+    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.9835
+   },
+   "current_value": 23.51466,
+   "unrealized_pl": 0.117802,
+   "unrealized_pl_pct": 0.503,
+   "closed_ts": 1785946686.4679525,
+   "payout": 23.502705,
+   "pl": 0.105847,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3223182",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 6?",
+   "opened": 1785914185.1399696,
+   "cost": 23.443014,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-06T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 1.4d to resolution, 1315% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "69605551236011640769623742330866699112983861179268633317415161883683293792842",
+     "market_id": "3223182",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 6?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 24.590789
+    }
+   ],
+   "current_prices": {
+    "69605551236011640769623742330866699112983861179268633317415161883683293792842": 0.96
+   },
+   "current_value": 23.607157,
+   "unrealized_pl": 0.164143,
+   "unrealized_pl_pct": 0.7,
+   "closed_ts": 1785946686.4679525,
+   "payout": 24.098973,
+   "pl": 0.655959,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3188975",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Juventus Turin (-2.5)",
+   "opened": 1785924055.0549238,
+   "cost": 23.374008,
+   "edge": 0.004679,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-05T11:30:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "88062266356938725650201949167311285821113646967902840349454894797914721273783",
+     "market_id": "3188975",
+     "label": "NO Spread: Juventus Turin (-2.5)",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 24.060825
+    }
+   ],
+   "current_prices": {
+    "88062266356938725650201949167311285821113646967902840349454894797914721273783": 0.97
+   },
+   "current_value": 23.339,
+   "unrealized_pl": -0.035008,
+   "unrealized_pl_pct": -0.15,
+   "closed_ts": 1785946686.930917,
+   "payout": 24.060825,
+   "pl": 0.686817
+  },
+  {
+   "key": "LS-3138353",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
+   "opened": 1785924055.054943,
+   "cost": 23.369341,
+   "edge": 0.002598,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-08-05T11:30:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.974, fee 0.0013",
+   "legs": [
+    {
+     "token_id": "14943729587282349432628968533953336934417767667685321050704580792540731150058",
+     "market_id": "3138353",
+     "label": "NO Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
+     "side": "NO",
+     "entry_price": 0.974,
+     "shares": 23.962012
+    }
+   ],
+   "current_prices": {
+    "14943729587282349432628968533953336934417767667685321050704580792540731150058": 0.974
+   },
+   "current_value": 23.339,
+   "unrealized_pl": -0.030341,
+   "unrealized_pl_pct": -0.13,
+   "closed_ts": 1785946686.930917,
+   "payout": 23.962012,
+   "pl": 0.592671
   }
  ],
  "history": [
@@ -12229,6 +12276,14 @@
    "equity": 937.5033,
    "realized_total": -63.6937,
    "open_positions": 9
+  },
+  {
+   "ts": 1785946686.469752,
+   "cash": 805.7149,
+   "open_value": 131.4012,
+   "equity": 937.1162,
+   "realized_total": -62.732,
+   "open_positions": 7
   }
  ],
  "trades": [
@@ -17351,6 +17406,63 @@
    "amount": 24.16,
    "pl": 0.19,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1785946686.352614,
+   "type": "OPEN",
+   "key": "CV-3223288",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 6?",
+   "amount": 23.47,
+   "pl": null
+  },
+  {
+   "ts": 1785946686.4679525,
+   "type": "CLOSE",
+   "key": "CV-2840115",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Count Binface get second place in the Clacton by-electi",
+   "amount": 22.9,
+   "pl": 0.2,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785946686.4679525,
+   "type": "CLOSE",
+   "key": "CV-3262740",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 8?",
+   "amount": 23.5,
+   "pl": 0.11,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785946686.4679525,
+   "type": "CLOSE",
+   "key": "CV-3223182",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 6?",
+   "amount": 24.1,
+   "pl": 0.66,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785946686.930917,
+   "type": "CLOSE",
+   "key": "LS-3188975",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Juventus Turin (-2.5)",
+   "amount": 24.06,
+   "pl": 0.69
+  },
+  {
+   "ts": 1785946686.930917,
+   "type": "CLOSE",
+   "key": "LS-3138353",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
+   "amount": 23.96,
+   "pl": 0.59
   }
  ]
 }
