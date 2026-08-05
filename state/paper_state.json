@@ -1,5 +1,5 @@
 {
- "cash": 736.628288,
+ "cash": 710.714262,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.9635
+    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.966
    },
-   "current_value": 23.444414,
-   "unrealized_pl": 0.019758,
-   "unrealized_pl_pct": 0.084
+   "current_value": 23.505245,
+   "unrealized_pl": 0.080589,
+   "unrealized_pl_pct": 0.344
   },
   {
    "key": "CV-3262740",
@@ -146,64 +146,6 @@
    "current_value": 23.442932,
    "unrealized_pl": 0.046074,
    "unrealized_pl_pct": 0.197
-  },
-  {
-   "key": "CV-3241070",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
-   "opened": 1785878596.9070075,
-   "cost": 14.007233,
-   "edge": 0.019008,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9812000000000001,
-   "resolve_by": "2026-08-07T16:00:00Z",
-   "note": "YES ask 0.980, fee 0.0014, 2.8d to resolution, 250% annualized net if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "106460286776671198996232462489525403284014954473393072782175486295233294409818",
-     "market_id": "3241070",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 7?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 14.273112
-    }
-   ],
-   "current_prices": {
-    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.9865
-   },
-   "current_value": 14.080425,
-   "unrealized_pl": 0.073192,
-   "unrealized_pl_pct": 0.523
-  },
-  {
-   "key": "CV-3223277",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 6?",
-   "opened": 1785886776.593806,
-   "cost": 6.671675,
-   "edge": 0.013219,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9863999999999999,
-   "resolve_by": "2026-08-06T16:00:00Z",
-   "note": "YES ask 0.986, fee 0.0010, 1.7d to resolution, 287% annualized net if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "35202091605821863454545173268662657263961912544646092754107683775810997592653",
-     "market_id": "3223277",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 6?",
-     "side": "YES",
-     "entry_price": 0.986,
-     "shares": 6.75978
-    }
-   ],
-   "current_prices": {
-    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.9885
-   },
-   "current_value": 6.682043,
-   "unrealized_pl": 0.010368,
-   "unrealized_pl_pct": 0.155
   },
   {
    "key": "CV-3338654",
@@ -257,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.9715
+    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.9745
    },
-   "current_value": 24.076841,
-   "unrealized_pl": 0.102497,
-   "unrealized_pl_pct": 0.428
+   "current_value": 24.15119,
+   "unrealized_pl": 0.176846,
+   "unrealized_pl_pct": 0.738
   },
   {
    "key": "CV-3128786",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.955
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.945
    },
-   "current_value": 23.019977,
-   "unrealized_pl": -0.120523,
-   "unrealized_pl_pct": -0.521
+   "current_value": 22.77893,
+   "unrealized_pl": -0.36157,
+   "unrealized_pl_pct": -1.562
   },
   {
    "key": "CV-3223182",
@@ -315,11 +257,69 @@
     }
    ],
    "current_prices": {
-    "69605551236011640769623742330866699112983861179268633317415161883683293792842": 0.945
+    "69605551236011640769623742330866699112983861179268633317415161883683293792842": 0.95
    },
-   "current_value": 23.238296,
-   "unrealized_pl": -0.204718,
-   "unrealized_pl_pct": -0.873
+   "current_value": 23.36125,
+   "unrealized_pl": -0.081764,
+   "unrealized_pl_pct": -0.349
+  },
+  {
+   "key": "LS-3188975",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Juventus Turin (-2.5)",
+   "opened": 1785924055.0549238,
+   "cost": 23.374008,
+   "edge": 0.004679,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-05T11:30:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "88062266356938725650201949167311285821113646967902840349454894797914721273783",
+     "market_id": "3188975",
+     "label": "NO Spread: Juventus Turin (-2.5)",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 24.060825
+    }
+   ],
+   "current_prices": {
+    "88062266356938725650201949167311285821113646967902840349454894797914721273783": 0.96
+   },
+   "current_value": 23.098392,
+   "unrealized_pl": -0.275616,
+   "unrealized_pl_pct": -1.179
+  },
+  {
+   "key": "LS-3138353",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
+   "opened": 1785924055.054943,
+   "cost": 23.369341,
+   "edge": 0.002598,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-08-05T11:30:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.974, fee 0.0013",
+   "legs": [
+    {
+     "token_id": "14943729587282349432628968533953336934417767667685321050704580792540731150058",
+     "market_id": "3138353",
+     "label": "NO Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
+     "side": "NO",
+     "entry_price": 0.974,
+     "shares": 23.962012
+    }
+   ],
+   "current_prices": {
+    "14943729587282349432628968533953336934417767667685321050704580792540731150058": 0.963
+   },
+   "current_value": 23.075418,
+   "unrealized_pl": -0.293923,
+   "unrealized_pl_pct": -1.258
   }
  ],
  "closed": [
@@ -10616,6 +10616,72 @@
    "closed_ts": 1785914186.0932782,
    "payout": 24.007889,
    "pl": 1.005854
+  },
+  {
+   "key": "CV-3241070",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
+   "opened": 1785878596.9070075,
+   "cost": 14.007233,
+   "edge": 0.019008,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-08-07T16:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 2.8d to resolution, 250% annualized net if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "106460286776671198996232462489525403284014954473393072782175486295233294409818",
+     "market_id": "3241070",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 7?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 14.273112
+    }
+   ],
+   "current_prices": {
+    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.9865
+   },
+   "current_value": 14.080425,
+   "unrealized_pl": 0.073192,
+   "unrealized_pl_pct": 0.523,
+   "closed_ts": 1785924055.2317712,
+   "payout": 14.130381,
+   "pl": 0.123148,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3223277",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 6?",
+   "opened": 1785886776.593806,
+   "cost": 6.671675,
+   "edge": 0.013219,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-08-06T16:00:00Z",
+   "note": "YES ask 0.986, fee 0.0010, 1.7d to resolution, 287% annualized net if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "35202091605821863454545173268662657263961912544646092754107683775810997592653",
+     "market_id": "3223277",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 6?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 6.75978
+    }
+   ],
+   "current_prices": {
+    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.9885
+   },
+   "current_value": 6.682043,
+   "unrealized_pl": 0.010368,
+   "unrealized_pl_pct": 0.155,
+   "closed_ts": 1785924055.2317712,
+   "payout": 6.698942,
+   "pl": 0.027267,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -12098,6 +12164,14 @@
    "equity": 933.5597,
    "realized_total": -66.2231,
    "open_positions": 13
+  },
+  {
+   "ts": 1785924055.233533,
+   "cash": 710.7143,
+   "open_value": 224.1473,
+   "equity": 934.8615,
+   "realized_total": -64.3713,
+   "open_positions": 11
   }
  ],
  "trades": [
@@ -17143,6 +17217,44 @@
    "title": "Fade: Exact Score: Clube do Remo 2 - 0 Santos FC?",
    "amount": 24.01,
    "pl": 1.01
+  },
+  {
+   "ts": 1785924055.0549238,
+   "type": "OPEN",
+   "key": "LS-3188975",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Juventus Turin (-2.5)",
+   "amount": 23.37,
+   "pl": null
+  },
+  {
+   "ts": 1785924055.054943,
+   "type": "OPEN",
+   "key": "LS-3138353",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Chelsea FC 0 - 0 Juventus Turin?",
+   "amount": 23.37,
+   "pl": null
+  },
+  {
+   "ts": 1785924055.2317712,
+   "type": "CLOSE",
+   "key": "CV-3241070",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 7?",
+   "amount": 14.13,
+   "pl": 0.12,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785924055.2317712,
+   "type": "CLOSE",
+   "key": "CV-3223277",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 6?",
+   "amount": 6.7,
+   "pl": 0.03,
+   "reason": "take_profit"
   }
  ]
 }
