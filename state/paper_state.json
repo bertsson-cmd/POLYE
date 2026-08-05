@@ -1,5 +1,5 @@
 {
- "cash": 701.967353,
+ "cash": 687.805503,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "82575682487692543160662011176637297183549773034214476335694896599617758091925": 0.95
+    "82575682487692543160662011176637297183549773034214476335694896599617758091925": 0.9495
    },
-   "current_value": 23.27875,
-   "unrealized_pl": -0.081476,
-   "unrealized_pl_pct": -0.349
+   "current_value": 23.266498,
+   "unrealized_pl": -0.093728,
+   "unrealized_pl_pct": -0.401
   },
   {
    "key": "CV-3202298",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "33675166806875650988155128133262922113147168635004923452255252690799905088861": 0.9765
+    "33675166806875650988155128133262922113147168635004923452255252690799905088861": 0.971
    },
-   "current_value": 23.2996,
-   "unrealized_pl": -0.093988,
-   "unrealized_pl_pct": -0.402
+   "current_value": 23.168368,
+   "unrealized_pl": -0.22522,
+   "unrealized_pl_pct": -0.963
   },
   {
    "key": "CV-3223288",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.955
+    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.956
    },
-   "current_value": 23.237587,
-   "unrealized_pl": -0.187069,
-   "unrealized_pl_pct": -0.799
+   "current_value": 23.26192,
+   "unrealized_pl": -0.162736,
+   "unrealized_pl_pct": -0.695
   },
   {
    "key": "CV-3262740",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.975
+    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.966
    },
-   "current_value": 23.311432,
-   "unrealized_pl": -0.085426,
-   "unrealized_pl_pct": -0.365
+   "current_value": 23.09625,
+   "unrealized_pl": -0.300608,
+   "unrealized_pl_pct": -1.285
   },
   {
    "key": "LS-3054339",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "106119600496465317952295670399861083435851378461327716051811055393881153381347": 0.952
+    "106119600496465317952295670399861083435851378461327716051811055393881153381347": 0.65
    },
-   "current_value": 22.85551,
-   "unrealized_pl": -0.146525,
-   "unrealized_pl_pct": -0.637
+   "current_value": 15.605128,
+   "unrealized_pl": -7.396907,
+   "unrealized_pl_pct": -32.158
   },
   {
    "key": "CV-3202421",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.982
+    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.977
    },
-   "current_value": 14.016196,
-   "unrealized_pl": 0.008963,
-   "unrealized_pl_pct": 0.064
+   "current_value": 13.94483,
+   "unrealized_pl": -0.062403,
+   "unrealized_pl_pct": -0.446
   },
   {
    "key": "CV-3223277",
@@ -315,40 +315,11 @@
     }
    ],
    "current_prices": {
-    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.983
+    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.9895
    },
-   "current_value": 6.644864,
-   "unrealized_pl": -0.026811,
-   "unrealized_pl_pct": -0.402
-  },
-  {
-   "key": "CV-3248917",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will WTI Crude Oil (WTI) hit (LOW) $75 Week of August 3 2026",
-   "opened": 1785886776.5938337,
-   "cost": 9.349862,
-   "edge": 0.050632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.952,
-   "resolve_by": "2026-08-07T21:00:00Z",
-   "note": "YES ask 0.950, fee 0.0019, 2.9d to resolution, 640% annualized net if YES, assumed true P 0.952",
-   "legs": [
-    {
-     "token_id": "30059061373820508828275414088376907449012168550842125280413538485849163162260",
-     "market_id": "3248917",
-     "label": "YES Will WTI Crude Oil (WTI) hit (LOW) $75 Week of August 3 2026?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 9.822316
-    }
-   ],
-   "current_prices": {
-    "30059061373820508828275414088376907449012168550842125280413538485849163162260": 0.94
-   },
-   "current_value": 9.232977,
-   "unrealized_pl": -0.116885,
-   "unrealized_pl_pct": -1.25
+   "current_value": 6.688802,
+   "unrealized_pl": 0.017127,
+   "unrealized_pl_pct": 0.257
   },
   {
    "key": "CV-3338654",
@@ -373,11 +344,40 @@
     }
    ],
    "current_prices": {
-    "31283228497063687749750632752569342828982557162127019682710784499948859141108": 0.94
+    "31283228497063687749750632752569342828982557162127019682710784499948859141108": 0.93
    },
-   "current_value": 9.232977,
-   "unrealized_pl": -0.130882,
-   "unrealized_pl_pct": -1.398
+   "current_value": 9.134754,
+   "unrealized_pl": -0.229105,
+   "unrealized_pl_pct": -2.447
+  },
+  {
+   "key": "CV-3290744",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 9?",
+   "opened": 1785891924.0180976,
+   "cost": 23.974344,
+   "edge": 0.033819,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9692000000000001,
+   "resolve_by": "2026-08-09T16:00:00Z",
+   "note": "YES ask 0.965, fee 0.0024, 4.6d to resolution, 267% annualized net if YES, assumed true P 0.969",
+   "legs": [
+    {
+     "token_id": "17985837504686215788989590409563496791683016120010821262087079176453347608285",
+     "market_id": "3290744",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 9?",
+     "side": "YES",
+     "entry_price": 0.965,
+     "shares": 24.783161
+    }
+   ],
+   "current_prices": {
+    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.9615
+   },
+   "current_value": 23.829009,
+   "unrealized_pl": -0.145335,
+   "unrealized_pl_pct": -0.606
   }
  ],
  "closed": [
@@ -10511,6 +10511,39 @@
    "closed_ts": 1785886784.6121066,
    "payout": 0.0,
    "pl": -23.777961
+  },
+  {
+   "key": "CV-3248917",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will WTI Crude Oil (WTI) hit (LOW) $75 Week of August 3 2026",
+   "opened": 1785886776.5938337,
+   "cost": 9.349862,
+   "edge": 0.050632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-07T21:00:00Z",
+   "note": "YES ask 0.950, fee 0.0019, 2.9d to resolution, 640% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "30059061373820508828275414088376907449012168550842125280413538485849163162260",
+     "market_id": "3248917",
+     "label": "YES Will WTI Crude Oil (WTI) hit (LOW) $75 Week of August 3 2026?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 9.822316
+    }
+   ],
+   "current_prices": {
+    "30059061373820508828275414088376907449012168550842125280413538485849163162260": 0.94
+   },
+   "current_value": 9.232977,
+   "unrealized_pl": -0.116885,
+   "unrealized_pl_pct": -1.25,
+   "closed_ts": 1785891924.1348774,
+   "payout": 9.812494,
+   "pl": 0.462632,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -11969,6 +12002,14 @@
    "equity": 956.6272,
    "realized_total": -43.2009,
    "open_positions": 14
+  },
+  {
+   "ts": 1785891924.1375027,
+   "cash": 687.8055,
+   "open_value": 237.8151,
+   "equity": 925.6206,
+   "realized_total": -66.5163,
+   "open_positions": 13
   }
  ],
  "trades": [
@@ -16939,6 +16980,25 @@
    "title": "Converge: WTI Crude Oil (WTI) closes above $79 on August 4?",
    "amount": 0.0,
    "pl": -23.78
+  },
+  {
+   "ts": 1785891924.0180976,
+   "type": "OPEN",
+   "key": "CV-3290744",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 9?",
+   "amount": 23.97,
+   "pl": null
+  },
+  {
+   "ts": 1785891924.1348774,
+   "type": "CLOSE",
+   "key": "CV-3248917",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will WTI Crude Oil (WTI) hit (LOW) $75 Week of August 3 2026",
+   "amount": 9.81,
+   "pl": 0.46,
+   "reason": "take_profit"
   }
  ]
 }
