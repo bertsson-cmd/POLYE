@@ -1,5 +1,5 @@
 {
- "cash": 664.665003,
+ "cash": 736.628288,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,40 +54,11 @@
     }
    ],
    "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9655
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.966
    },
-   "current_value": 22.796609,
-   "unrealized_pl": 0.093595,
-   "unrealized_pl_pct": 0.412
-  },
-  {
-   "key": "LS-3296759",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Miami be between 86-87\u00b0F on ",
-   "opened": 1785800784.493919,
-   "cost": 23.673958,
-   "edge": 0.007767,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.979,
-   "resolve_by": "2026-08-04T12:00:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.970, fee 0.0015",
-   "legs": [
-    {
-     "token_id": "12126210902880986878949029939322993334900546588947498848670041215932450175698",
-     "market_id": "3296759",
-     "label": "NO Will the highest temperature in Miami be between 86-87\u00b0F on August 4?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 24.369588
-    }
-   ],
-   "current_prices": {
-    "12126210902880986878949029939322993334900546588947498848670041215932450175698": 0.9995
-   },
-   "current_value": 24.357403,
-   "unrealized_pl": 0.683445,
-   "unrealized_pl_pct": 2.887
+   "current_value": 22.808414,
+   "unrealized_pl": 0.1054,
+   "unrealized_pl_pct": 0.464
   },
   {
    "key": "CV-3303750",
@@ -112,40 +83,11 @@
     }
    ],
    "current_prices": {
-    "82575682487692543160662011176637297183549773034214476335694896599617758091925": 0.953
+    "82575682487692543160662011176637297183549773034214476335694896599617758091925": 0.95
    },
-   "current_value": 23.352261,
-   "unrealized_pl": -0.007965,
-   "unrealized_pl_pct": -0.034
-  },
-  {
-   "key": "CV-3202298",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 5?",
-   "opened": 1785873733.6957505,
-   "cost": 23.393588,
-   "edge": 0.01998,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9856,
-   "resolve_by": "2026-08-05T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 0.8d to resolution, 877% annualized net if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "33675166806875650988155128133262922113147168635004923452255252690799905088861",
-     "market_id": "3202298",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 5?",
-     "side": "YES",
-     "entry_price": 0.979,
-     "shares": 23.860317
-    }
-   ],
-   "current_prices": {
-    "33675166806875650988155128133262922113147168635004923452255252690799905088861": 0.9755
-   },
-   "current_value": 23.275739,
-   "unrealized_pl": -0.117849,
-   "unrealized_pl_pct": -0.504
+   "current_value": 23.27875,
+   "unrealized_pl": -0.081476,
+   "unrealized_pl_pct": -0.349
   },
   {
    "key": "CV-3223288",
@@ -170,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.9565
+    "43652889434855544783127623186394045333766959241793588244624051687891019352054": 0.9635
    },
-   "current_value": 23.274086,
-   "unrealized_pl": -0.15057,
-   "unrealized_pl_pct": -0.643
+   "current_value": 23.444414,
+   "unrealized_pl": 0.019758,
+   "unrealized_pl_pct": 0.084
   },
   {
    "key": "CV-3262740",
@@ -199,69 +141,11 @@
     }
    ],
    "current_prices": {
-    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.97
+    "43092921790062877562527003378789481782878794746787681374141761105342690972188": 0.9805
    },
-   "current_value": 23.191886,
-   "unrealized_pl": -0.204972,
-   "unrealized_pl_pct": -0.876
-  },
-  {
-   "key": "LS-3054339",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Clube do Remo 2 - 0 Santos FC?",
-   "opened": 1785878596.9069273,
-   "cost": 23.002035,
-   "edge": 0.01273,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9703,
-   "resolve_by": "2026-08-05T00:30:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.956, fee 0.0021",
-   "legs": [
-    {
-     "token_id": "106119600496465317952295670399861083435851378461327716051811055393881153381347",
-     "market_id": "3054339",
-     "label": "NO Exact Score: Clube do Remo 2 - 0 Santos FC?",
-     "side": "NO",
-     "entry_price": 0.956,
-     "shares": 24.007889
-    }
-   ],
-   "current_prices": {
-    "106119600496465317952295670399861083435851378461327716051811055393881153381347": 0.9995
-   },
-   "current_value": 23.995885,
-   "unrealized_pl": 0.99385,
-   "unrealized_pl_pct": 4.321
-  },
-  {
-   "key": "CV-3202421",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 5?",
-   "opened": 1785878596.9069924,
-   "cost": 23.342124,
-   "edge": 0.01707,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9852000000000001,
-   "resolve_by": "2026-08-05T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 0.8d to resolution, 803% annualized net if YES, assumed true P 0.985",
-   "legs": [
-    {
-     "token_id": "36842437685322270692352133991311219570859897119188341575202231580322859252283",
-     "market_id": "3202421",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 5?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 23.740071
-    }
-   ],
-   "current_prices": {
-    "36842437685322270692352133991311219570859897119188341575202231580322859252283": 0.9825
-   },
-   "current_value": 23.32462,
-   "unrealized_pl": -0.017504,
-   "unrealized_pl_pct": -0.075
+   "current_value": 23.442932,
+   "unrealized_pl": 0.046074,
+   "unrealized_pl_pct": 0.197
   },
   {
    "key": "CV-3241070",
@@ -286,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.9815
+    "106460286776671198996232462489525403284014954473393072782175486295233294409818": 0.9865
    },
-   "current_value": 14.009059,
-   "unrealized_pl": 0.001826,
-   "unrealized_pl_pct": 0.013
+   "current_value": 14.080425,
+   "unrealized_pl": 0.073192,
+   "unrealized_pl_pct": 0.523
   },
   {
    "key": "CV-3223277",
@@ -315,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.9895
+    "35202091605821863454545173268662657263961912544646092754107683775810997592653": 0.9885
    },
-   "current_value": 6.688802,
-   "unrealized_pl": 0.017127,
-   "unrealized_pl_pct": 0.257
+   "current_value": 6.682043,
+   "unrealized_pl": 0.010368,
+   "unrealized_pl_pct": 0.155
   },
   {
    "key": "CV-3338654",
@@ -344,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "31283228497063687749750632752569342828982557162127019682710784499948859141108": 0.94
+    "31283228497063687749750632752569342828982557162127019682710784499948859141108": 0.945
    },
-   "current_value": 9.232977,
-   "unrealized_pl": -0.130882,
-   "unrealized_pl_pct": -1.398
+   "current_value": 9.282089,
+   "unrealized_pl": -0.08177,
+   "unrealized_pl_pct": -0.873
   },
   {
    "key": "CV-3290744",
@@ -373,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.9645
+    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.9715
    },
-   "current_value": 23.903359,
-   "unrealized_pl": -0.070985,
-   "unrealized_pl_pct": -0.296
+   "current_value": 24.076841,
+   "unrealized_pl": 0.102497,
+   "unrealized_pl_pct": 0.428
   },
   {
    "key": "CV-3128786",
@@ -407,6 +291,35 @@
    "current_value": 23.019977,
    "unrealized_pl": -0.120523,
    "unrealized_pl_pct": -0.521
+  },
+  {
+   "key": "CV-3223182",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 6?",
+   "opened": 1785914185.1399696,
+   "cost": 23.443014,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-06T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 1.4d to resolution, 1315% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "69605551236011640769623742330866699112983861179268633317415161883683293792842",
+     "market_id": "3223182",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 6?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 24.590789
+    }
+   ],
+   "current_prices": {
+    "69605551236011640769623742330866699112983861179268633317415161883683293792842": 0.945
+   },
+   "current_value": 23.238296,
+   "unrealized_pl": -0.204718,
+   "unrealized_pl_pct": -0.873
   }
  ],
  "closed": [
@@ -10573,6 +10486,136 @@
    "payout": 9.812494,
    "pl": 0.462632,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3202298",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 5?",
+   "opened": 1785873733.6957505,
+   "cost": 23.393588,
+   "edge": 0.01998,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9856,
+   "resolve_by": "2026-08-05T16:00:00Z",
+   "note": "YES ask 0.979, fee 0.0014, 0.8d to resolution, 877% annualized net if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "33675166806875650988155128133262922113147168635004923452255252690799905088861",
+     "market_id": "3202298",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 5?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 23.860317
+    }
+   ],
+   "current_prices": {
+    "33675166806875650988155128133262922113147168635004923452255252690799905088861": 0.9755
+   },
+   "current_value": 23.275739,
+   "unrealized_pl": -0.117849,
+   "unrealized_pl_pct": -0.504,
+   "closed_ts": 1785914185.3478174,
+   "payout": 23.502412,
+   "pl": 0.108824,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3202421",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 5?",
+   "opened": 1785878596.9069924,
+   "cost": 23.342124,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-08-05T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 0.8d to resolution, 803% annualized net if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "36842437685322270692352133991311219570859897119188341575202231580322859252283",
+     "market_id": "3202421",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 5?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 23.740071
+    }
+   ],
+   "current_prices": {
+    "36842437685322270692352133991311219570859897119188341575202231580322859252283": 0.9825
+   },
+   "current_value": 23.32462,
+   "unrealized_pl": -0.017504,
+   "unrealized_pl_pct": -0.075,
+   "closed_ts": 1785914185.3478174,
+   "payout": 23.52641,
+   "pl": 0.184286,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3296759",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Miami be between 86-87\u00b0F on ",
+   "opened": 1785800784.493919,
+   "cost": 23.673958,
+   "edge": 0.007767,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.979,
+   "resolve_by": "2026-08-04T12:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.970, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "12126210902880986878949029939322993334900546588947498848670041215932450175698",
+     "market_id": "3296759",
+     "label": "NO Will the highest temperature in Miami be between 86-87\u00b0F on August 4?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 24.369588
+    }
+   ],
+   "current_prices": {
+    "12126210902880986878949029939322993334900546588947498848670041215932450175698": 0.97
+   },
+   "current_value": 23.6385,
+   "unrealized_pl": -0.035458,
+   "unrealized_pl_pct": -0.15,
+   "closed_ts": 1785914186.0932782,
+   "payout": 24.369588,
+   "pl": 0.69563
+  },
+  {
+   "key": "LS-3054339",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Clube do Remo 2 - 0 Santos FC?",
+   "opened": 1785878596.9069273,
+   "cost": 23.002035,
+   "edge": 0.01273,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9703,
+   "resolve_by": "2026-08-05T00:30:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.956, fee 0.0021",
+   "legs": [
+    {
+     "token_id": "106119600496465317952295670399861083435851378461327716051811055393881153381347",
+     "market_id": "3054339",
+     "label": "NO Exact Score: Clube do Remo 2 - 0 Santos FC?",
+     "side": "NO",
+     "entry_price": 0.956,
+     "shares": 24.007889
+    }
+   ],
+   "current_prices": {
+    "106119600496465317952295670399861083435851378461327716051811055393881153381347": 0.956
+   },
+   "current_value": 22.951542,
+   "unrealized_pl": -0.050493,
+   "unrealized_pl_pct": -0.22,
+   "closed_ts": 1785914186.0932782,
+   "payout": 24.007889,
+   "pl": 1.005854
   }
  ],
  "history": [
@@ -12047,6 +12090,14 @@
    "equity": 934.4523,
    "realized_total": -66.5163,
    "open_positions": 14
+  },
+  {
+   "ts": 1785914185.3500307,
+   "cash": 688.2508,
+   "open_value": 245.3089,
+   "equity": 933.5597,
+   "realized_total": -66.2231,
+   "open_positions": 13
   }
  ],
  "trades": [
@@ -17045,6 +17096,53 @@
    "title": "Converge: Israel x Iran ceasefire continues through August 9?",
    "amount": 23.14,
    "pl": null
+  },
+  {
+   "ts": 1785914185.1399696,
+   "type": "OPEN",
+   "key": "CV-3223182",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 6?",
+   "amount": 23.44,
+   "pl": null
+  },
+  {
+   "ts": 1785914185.3478174,
+   "type": "CLOSE",
+   "key": "CV-3202298",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 5?",
+   "amount": 23.5,
+   "pl": 0.11,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785914185.3478174,
+   "type": "CLOSE",
+   "key": "CV-3202421",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 5?",
+   "amount": 23.53,
+   "pl": 0.18,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1785914186.0932782,
+   "type": "CLOSE",
+   "key": "LS-3296759",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Miami be between 86-87\u00b0F on ",
+   "amount": 24.37,
+   "pl": 0.7
+  },
+  {
+   "ts": 1785914186.0932782,
+   "type": "CLOSE",
+   "key": "LS-3054339",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Clube do Remo 2 - 0 Santos FC?",
+   "amount": 24.01,
+   "pl": 1.01
   }
  ]
 }
