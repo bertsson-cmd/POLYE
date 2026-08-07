@@ -1,5 +1,5 @@
 {
- "cash": 682.536457,
+ "cash": 731.270732,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -61,35 +61,6 @@
    "unrealized_pl_pct": -0.124
   },
   {
-   "key": "LS-2775408",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the July 2026 unemployment rate be 4.4%?",
-   "opened": 1786073697.4615312,
-   "cost": 23.609101,
-   "edge": 0.015766,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9703,
-   "resolve_by": "2026-08-07T08:30:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.953, fee 0.0022",
-   "legs": [
-    {
-     "token_id": "89765366400621536687258229461832063826385219452802981604743459470788801831926",
-     "market_id": "2775408",
-     "label": "NO Will the July 2026 unemployment rate be 4.4%?",
-     "side": "NO",
-     "entry_price": 0.953,
-     "shares": 24.715373
-    }
-   ],
-   "current_prices": {
-    "89765366400621536687258229461832063826385219452802981604743459470788801831926": 0.9995
-   },
-   "current_value": 24.703015,
-   "unrealized_pl": 1.093914,
-   "unrealized_pl_pct": 4.633
-  },
-  {
    "key": "CV-3361370",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 12?",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "48829548718236940852685991275450765234159292340226353004133004275869633560341": 0.98
+    "48829548718236940852685991275450765234159292340226353004133004275869633560341": 0.982
    },
-   "current_value": 23.796572,
-   "unrealized_pl": 0.193359,
-   "unrealized_pl_pct": 0.819
+   "current_value": 23.845136,
+   "unrealized_pl": 0.241923,
+   "unrealized_pl_pct": 1.025
   },
   {
    "key": "CV-3290744",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.977
+    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.978
    },
-   "current_value": 19.293747,
-   "unrealized_pl": -0.134989,
-   "unrealized_pl_pct": -0.695
+   "current_value": 19.313495,
+   "unrealized_pl": -0.115241,
+   "unrealized_pl_pct": -0.593
   },
   {
    "key": "CV-3128786",
@@ -228,40 +199,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.955
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.962
    },
-   "current_value": 23.545475,
-   "unrealized_pl": -0.189548,
-   "unrealized_pl_pct": -0.799
-  },
-  {
-   "key": "CV-3241076",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 7?",
-   "opened": 1786108356.0905533,
-   "cost": 23.599831,
-   "edge": 0.02291,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.984,
-   "resolve_by": "2026-08-07T16:00:00Z",
-   "note": "YES ask 0.976, fee 0.0016, 0.1d to resolution, 7193% annualized net if YES, assumed true P 0.984",
-   "legs": [
-    {
-     "token_id": "80833697408654238110277536174035835919081626918462723989615066293717655271236",
-     "market_id": "3241076",
-     "label": "YES Will the price of Bitcoin be above $64,000 on August 7?",
-     "side": "YES",
-     "entry_price": 0.976,
-     "shares": 24.1396
-    }
-   ],
-   "current_prices": {
-    "80833697408654238110277536174035835919081626918462723989615066293717655271236": 0.9645
-   },
-   "current_value": 23.282644,
-   "unrealized_pl": -0.317187,
-   "unrealized_pl_pct": -1.344
+   "current_value": 23.71806,
+   "unrealized_pl": -0.016963,
+   "unrealized_pl_pct": -0.071
   },
   {
    "key": "CV-3361383",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.915
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.935
    },
-   "current_value": 22.692241,
-   "unrealized_pl": -0.95047,
-   "unrealized_pl_pct": -4.02
+   "current_value": 23.188246,
+   "unrealized_pl": -0.454465,
+   "unrealized_pl_pct": -1.922
   },
   {
    "key": "LS-3090284",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.9745
+    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.979
    },
-   "current_value": 6.739237,
-   "unrealized_pl": -0.041073,
-   "unrealized_pl_pct": -0.606
+   "current_value": 6.770357,
+   "unrealized_pl": -0.009953,
+   "unrealized_pl_pct": -0.147
   }
  ],
  "closed": [
@@ -11794,6 +11736,71 @@
    "payout": 9.526645,
    "pl": 0.092556,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3241076",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 7?",
+   "opened": 1786108356.0905533,
+   "cost": 23.599831,
+   "edge": 0.02291,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.984,
+   "resolve_by": "2026-08-07T16:00:00Z",
+   "note": "YES ask 0.976, fee 0.0016, 0.1d to resolution, 7193% annualized net if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "80833697408654238110277536174035835919081626918462723989615066293717655271236",
+     "market_id": "3241076",
+     "label": "YES Will the price of Bitcoin be above $64,000 on August 7?",
+     "side": "YES",
+     "entry_price": 0.976,
+     "shares": 24.1396
+    }
+   ],
+   "current_prices": {
+    "80833697408654238110277536174035835919081626918462723989615066293717655271236": 0.9645
+   },
+   "current_value": 23.282644,
+   "unrealized_pl": -0.317187,
+   "unrealized_pl_pct": -1.344,
+   "closed_ts": 1786115677.2460773,
+   "payout": 24.018902,
+   "pl": 0.419071,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-2775408",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the July 2026 unemployment rate be 4.4%?",
+   "opened": 1786073697.4615312,
+   "cost": 23.609101,
+   "edge": 0.015766,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9703,
+   "resolve_by": "2026-08-07T08:30:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.953, fee 0.0022",
+   "legs": [
+    {
+     "token_id": "89765366400621536687258229461832063826385219452802981604743459470788801831926",
+     "market_id": "2775408",
+     "label": "NO Will the July 2026 unemployment rate be 4.4%?",
+     "side": "NO",
+     "entry_price": 0.953,
+     "shares": 24.715373
+    }
+   ],
+   "current_prices": {
+    "89765366400621536687258229461832063826385219452802981604743459470788801831926": 0.953
+   },
+   "current_value": 23.55375,
+   "unrealized_pl": -0.055351,
+   "unrealized_pl_pct": -0.234,
+   "closed_ts": 1786115678.064232,
+   "payout": 24.715373,
+   "pl": 1.106272
   }
  ],
  "history": [
@@ -13492,6 +13499,14 @@
    "equity": 922.926,
    "realized_total": -76.5529,
    "open_positions": 12
+  },
+  {
+   "ts": 1786115677.2478817,
+   "cash": 706.5554,
+   "open_value": 216.7257,
+   "equity": 923.2811,
+   "realized_total": -76.1339,
+   "open_positions": 11
   }
  ],
  "trades": [
@@ -19205,6 +19220,25 @@
    "amount": 9.53,
    "pl": 0.09,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786115677.2460773,
+   "type": "CLOSE",
+   "key": "CV-3241076",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 7?",
+   "amount": 24.02,
+   "pl": 0.42,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786115678.064232,
+   "type": "CLOSE",
+   "key": "LS-2775408",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the July 2026 unemployment rate be 4.4%?",
+   "amount": 24.72,
+   "pl": 1.11
   }
  ]
 }
