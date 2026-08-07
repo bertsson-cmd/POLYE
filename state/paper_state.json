@@ -1,5 +1,5 @@
 {
- "cash": 688.941155,
+ "cash": 727.215884,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.9675
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.9685
    },
-   "current_value": 23.321286,
-   "unrealized_pl": 0.180786,
-   "unrealized_pl_pct": 0.781
+   "current_value": 23.34539,
+   "unrealized_pl": 0.20489,
+   "unrealized_pl_pct": 0.885
   },
   {
    "key": "CV-2840115",
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.973
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9785
    },
-   "current_value": 12.713577,
-   "unrealized_pl": -0.076578,
-   "unrealized_pl_pct": -0.599
+   "current_value": 12.785442,
+   "unrealized_pl": -0.004713,
+   "unrealized_pl_pct": -0.037
   },
   {
    "key": "CV-3231662",
@@ -83,69 +83,11 @@
     }
    ],
    "current_prices": {
-    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.9285
+    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.961
    },
-   "current_value": 22.709805,
-   "unrealized_pl": -0.817406,
-   "unrealized_pl_pct": -3.474
-  },
-  {
-   "key": "CV-3241115",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of XRP be above $1.00 on August 7?",
-   "opened": 1786007638.8294992,
-   "cost": 13.440721,
-   "edge": 0.026847,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9736,
-   "resolve_by": "2026-08-07T16:00:00Z",
-   "note": "YES ask 0.972, fee 0.0019, 1.3d to resolution, 764% annualized net if YES, assumed true P 0.974",
-   "legs": [
-    {
-     "token_id": "35487809742385782436200442397527142510726392565266765117710970165257671557342",
-     "market_id": "3241115",
-     "label": "YES Will the price of XRP be above $1.00 on August 7?",
-     "side": "YES",
-     "entry_price": 0.972,
-     "shares": 13.800852
-    }
-   ],
-   "current_prices": {
-    "35487809742385782436200442397527142510726392565266765117710970165257671557342": 0.957
-   },
-   "current_value": 13.207415,
-   "unrealized_pl": -0.233306,
-   "unrealized_pl_pct": -1.736
-  },
-  {
-   "key": "CV-3262750",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 8?",
-   "opened": 1786016107.0734308,
-   "cost": 20.180619,
-   "edge": 0.026847,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9743999999999999,
-   "resolve_by": "2026-08-08T16:00:00Z",
-   "note": "YES ask 0.972, fee 0.0019, 2.2d to resolution, 449% annualized net if YES, assumed true P 0.974",
-   "legs": [
-    {
-     "token_id": "8494758042985501963851988550605334482990243625581112569545399073420064031173",
-     "market_id": "3262750",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 8?",
-     "side": "YES",
-     "entry_price": 0.972,
-     "shares": 20.72134
-    }
-   ],
-   "current_prices": {
-    "8494758042985501963851988550605334482990243625581112569545399073420064031173": 0.9785
-   },
-   "current_value": 20.275831,
-   "unrealized_pl": 0.095212,
-   "unrealized_pl_pct": 0.472
+   "current_value": 23.504709,
+   "unrealized_pl": -0.022502,
+   "unrealized_pl_pct": -0.096
   },
   {
    "key": "CV-3303768",
@@ -170,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.93
+    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.96
    },
-   "current_value": 22.774476,
-   "unrealized_pl": -0.571199,
-   "unrealized_pl_pct": -2.447
+   "current_value": 23.509137,
+   "unrealized_pl": 0.163462,
+   "unrealized_pl_pct": 0.7
   },
   {
    "key": "CV-3340236",
@@ -199,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.965
+    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.969
    },
-   "current_value": 22.705883,
-   "unrealized_pl": -0.122389,
-   "unrealized_pl_pct": -0.536
+   "current_value": 22.8,
+   "unrealized_pl": -0.028272,
+   "unrealized_pl_pct": -0.124
   },
   {
    "key": "LS-2775408",
@@ -228,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "89765366400621536687258229461832063826385219452802981604743459470788801831926": 0.9145
+    "89765366400621536687258229461832063826385219452802981604743459470788801831926": 0.953
    },
-   "current_value": 22.602209,
-   "unrealized_pl": -1.006892,
-   "unrealized_pl_pct": -4.265
+   "current_value": 23.55375,
+   "unrealized_pl": -0.055351,
+   "unrealized_pl_pct": -0.234
   },
   {
    "key": "CV-3361370",
@@ -257,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "48829548718236940852685991275450765234159292340226353004133004275869633560341": 0.969
+    "48829548718236940852685991275450765234159292340226353004133004275869633560341": 0.97
    },
-   "current_value": 23.529467,
-   "unrealized_pl": -0.073746,
-   "unrealized_pl_pct": -0.312
+   "current_value": 23.55375,
+   "unrealized_pl": -0.049463,
+   "unrealized_pl_pct": -0.21
   },
   {
    "key": "CV-3290744",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "59284867194461866785250290128415034817625932454937947484978699278667960137070": 0.965
+    "59284867194461866785250290128415034817625932454937947484978699278667960137070": 0.97
    },
-   "current_value": 23.617771,
-   "unrealized_pl": 0.075381,
-   "unrealized_pl_pct": 0.32
+   "current_value": 23.740143,
+   "unrealized_pl": 0.197753,
+   "unrealized_pl_pct": 0.84
   },
   {
    "key": "CV-3241096",
@@ -344,40 +286,40 @@
     }
    ],
    "current_prices": {
-    "92547507679058191528004101285120190440832013172754639868862362865948979034369": 0.976
+    "92547507679058191528004101285120190440832013172754639868862362865948979034369": 0.98
    },
-   "current_value": 9.382447,
-   "unrealized_pl": -0.051642,
-   "unrealized_pl_pct": -0.547
+   "current_value": 9.4209,
+   "unrealized_pl": -0.013189,
+   "unrealized_pl_pct": -0.14
   },
   {
-   "key": "CV-3290746",
+   "key": "CV-3323685",
    "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 9?",
-   "opened": 1786089609.9757032,
-   "cost": 23.628619,
-   "edge": 0.027836,
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be l",
+   "opened": 1786093979.7901237,
+   "cost": 19.428736,
+   "edge": 0.016444,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9764,
-   "resolve_by": "2026-08-09T16:00:00Z",
-   "note": "YES ask 0.971, fee 0.0020, 2.3d to resolution, 435% annualized net if YES, assumed true P 0.976",
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-08-09T23:59:00Z",
+   "note": "YES ask 0.983, fee 0.0008, 2.6d to resolution, 229% annualized net if YES, assumed true P 0.984",
    "legs": [
     {
-     "token_id": "33639888159856516661557571240315470099034254602840140360233912285818616371238",
-     "market_id": "3290746",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 9?",
+     "token_id": "22669943546284513285356710530283904158915753131726189357249503888348485994676",
+     "market_id": "3323685",
+     "label": "YES Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be less than 180m?",
      "side": "YES",
-     "entry_price": 0.971,
-     "shares": 24.285015
+     "entry_price": 0.983,
+     "shares": 19.74795
     }
    ],
    "current_prices": {
-    "33639888159856516661557571240315470099034254602840140360233912285818616371238": 0.9705
+    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.9805
    },
-   "current_value": 23.568607,
-   "unrealized_pl": -0.060012,
-   "unrealized_pl_pct": -0.254
+   "current_value": 19.362865,
+   "unrealized_pl": -0.065871,
+   "unrealized_pl_pct": -0.339
   }
  ],
  "closed": [
@@ -11560,6 +11502,105 @@
    "payout": 9.608631,
    "pl": 0.194296,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3241115",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.00 on August 7?",
+   "opened": 1786007638.8294992,
+   "cost": 13.440721,
+   "edge": 0.026847,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9736,
+   "resolve_by": "2026-08-07T16:00:00Z",
+   "note": "YES ask 0.972, fee 0.0019, 1.3d to resolution, 764% annualized net if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "35487809742385782436200442397527142510726392565266765117710970165257671557342",
+     "market_id": "3241115",
+     "label": "YES Will the price of XRP be above $1.00 on August 7?",
+     "side": "YES",
+     "entry_price": 0.972,
+     "shares": 13.800852
+    }
+   ],
+   "current_prices": {
+    "35487809742385782436200442397527142510726392565266765117710970165257671557342": 0.957
+   },
+   "current_value": 13.207415,
+   "unrealized_pl": -0.233306,
+   "unrealized_pl_pct": -1.736,
+   "closed_ts": 1786093980.1419184,
+   "payout": 13.538636,
+   "pl": 0.097915,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3262750",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 8?",
+   "opened": 1786016107.0734308,
+   "cost": 20.180619,
+   "edge": 0.026847,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9743999999999999,
+   "resolve_by": "2026-08-08T16:00:00Z",
+   "note": "YES ask 0.972, fee 0.0019, 2.2d to resolution, 449% annualized net if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "8494758042985501963851988550605334482990243625581112569545399073420064031173",
+     "market_id": "3262750",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 8?",
+     "side": "YES",
+     "entry_price": 0.972,
+     "shares": 20.72134
+    }
+   ],
+   "current_prices": {
+    "8494758042985501963851988550605334482990243625581112569545399073420064031173": 0.9785
+   },
+   "current_value": 20.275831,
+   "unrealized_pl": 0.095212,
+   "unrealized_pl_pct": 0.472,
+   "closed_ts": 1786093980.1419184,
+   "payout": 20.389799,
+   "pl": 0.20918,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3290746",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 9?",
+   "opened": 1786089609.9757032,
+   "cost": 23.628619,
+   "edge": 0.027836,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9764,
+   "resolve_by": "2026-08-09T16:00:00Z",
+   "note": "YES ask 0.971, fee 0.0020, 2.3d to resolution, 435% annualized net if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "33639888159856516661557571240315470099034254602840140360233912285818616371238",
+     "market_id": "3290746",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 9?",
+     "side": "YES",
+     "entry_price": 0.971,
+     "shares": 24.285015
+    }
+   ],
+   "current_prices": {
+    "33639888159856516661557571240315470099034254602840140360233912285818616371238": 0.9705
+   },
+   "current_value": 23.568607,
+   "unrealized_pl": -0.060012,
+   "unrealized_pl_pct": -0.254,
+   "closed_ts": 1786093980.1419184,
+   "payout": 23.77503,
+   "pl": 0.146411,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -13210,6 +13251,14 @@
    "equity": 942.885,
    "realized_total": -54.5015,
    "open_positions": 13
+  },
+  {
+   "ts": 1786093980.1433666,
+   "cash": 727.2159,
+   "open_value": 219.1111,
+   "equity": 946.327,
+   "realized_total": -54.048,
+   "open_positions": 11
   }
  ],
  "trades": [
@@ -18781,6 +18830,45 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 9?",
    "amount": 23.63,
    "pl": null
+  },
+  {
+   "ts": 1786093979.7901237,
+   "type": "OPEN",
+   "key": "CV-3323685",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be l",
+   "amount": 19.43,
+   "pl": null
+  },
+  {
+   "ts": 1786093980.1419184,
+   "type": "CLOSE",
+   "key": "CV-3241115",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.00 on August 7?",
+   "amount": 13.54,
+   "pl": 0.1,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786093980.1419184,
+   "type": "CLOSE",
+   "key": "CV-3262750",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 8?",
+   "amount": 20.39,
+   "pl": 0.21,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786093980.1419184,
+   "type": "CLOSE",
+   "key": "CV-3290746",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 9?",
+   "amount": 23.78,
+   "pl": 0.15,
+   "reason": "take_profit"
   }
  ]
 }
