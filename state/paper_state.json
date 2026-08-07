@@ -1,5 +1,5 @@
 {
- "cash": 676.540591,
+ "cash": 697.445193,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -90,35 +90,6 @@
    "unrealized_pl_pct": 0.871
   },
   {
-   "key": "CV-3323685",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be l",
-   "opened": 1786093979.7901237,
-   "cost": 19.428736,
-   "edge": 0.016444,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9844,
-   "resolve_by": "2026-08-09T23:59:00Z",
-   "note": "YES ask 0.983, fee 0.0008, 2.6d to resolution, 229% annualized net if YES, assumed true P 0.984",
-   "legs": [
-    {
-     "token_id": "22669943546284513285356710530283904158915753131726189357249503888348485994676",
-     "market_id": "3323685",
-     "label": "YES Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be less than 180m?",
-     "side": "YES",
-     "entry_price": 0.983,
-     "shares": 19.74795
-    }
-   ],
-   "current_prices": {
-    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.983
-   },
-   "current_value": 19.412235,
-   "unrealized_pl": -0.016501,
-   "unrealized_pl_pct": -0.085
-  },
-  {
    "key": "CV-3128786",
    "strategy": "CONVERGE",
    "title": "Converge: Israel x Iran ceasefire continues through August 9?",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.9625
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.968
    },
-   "current_value": 23.413332,
-   "unrealized_pl": -0.255418,
-   "unrealized_pl_pct": -1.079
+   "current_value": 23.547123,
+   "unrealized_pl": -0.121627,
+   "unrealized_pl_pct": -0.514
   },
   {
    "key": "CV-3338665",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.97
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.9705
    },
-   "current_value": 23.9153,
-   "unrealized_pl": 0.180277,
-   "unrealized_pl_pct": 0.76
+   "current_value": 23.927627,
+   "unrealized_pl": 0.192604,
+   "unrealized_pl_pct": 0.811
   },
   {
    "key": "CV-3361383",
@@ -204,35 +175,6 @@
    "current_value": 23.436249,
    "unrealized_pl": -0.206462,
    "unrealized_pl_pct": -0.873
-  },
-  {
-   "key": "LS-3090284",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Sandefjord Fotball 0 - 2 KFUM-Kameratene Oslo?",
-   "opened": 1786112398.0318632,
-   "cost": 23.737718,
-   "edge": 0.011184,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9775,
-   "resolve_by": "2026-08-07T17:00:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.965, fee 0.0017",
-   "legs": [
-    {
-     "token_id": "46971272490988369635568277163700421238919044827130888435671141296743465817109",
-     "market_id": "3090284",
-     "label": "NO Exact Score: Sandefjord Fotball 0 - 2 KFUM-Kameratene Oslo?",
-     "side": "NO",
-     "entry_price": 0.965,
-     "shares": 24.555699
-    }
-   ],
-   "current_prices": {
-    "46971272490988369635568277163700421238919044827130888435671141296743465817109": 0.9995
-   },
-   "current_value": 24.543421,
-   "unrealized_pl": 0.805703,
-   "unrealized_pl_pct": 3.394
   },
   {
    "key": "CV-3303768",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.9595
+    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.9555
    },
-   "current_value": 22.855705,
-   "unrealized_pl": -0.262072,
-   "unrealized_pl_pct": -1.134
+   "current_value": 22.760424,
+   "unrealized_pl": -0.357353,
+   "unrealized_pl_pct": -1.546
   },
   {
    "key": "CV-3381130",
@@ -349,6 +291,35 @@
    "current_value": 23.18526,
    "unrealized_pl": 0.050166,
    "unrealized_pl_pct": 0.217
+  },
+  {
+   "key": "CV-3263294",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.00 on August 8?",
+   "opened": 1786138294.7565606,
+   "cost": 23.201567,
+   "edge": 0.018038,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9872,
+   "resolve_by": "2026-08-08T16:00:00Z",
+   "note": "YES ask 0.981, fee 0.0013, 0.8d to resolution, 855% annualized net if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "2987821679152005808703960348715125629572285934552494758239864365356588992484",
+     "market_id": "3263294",
+     "label": "YES Will the price of XRP be above $1.00 on August 8?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 23.619521
+    }
+   ],
+   "current_prices": {
+    "2987821679152005808703960348715125629572285934552494758239864365356588992484": 0.984
+   },
+   "current_value": 23.241609,
+   "unrealized_pl": 0.040042,
+   "unrealized_pl_pct": 0.173
   }
  ],
  "closed": [
@@ -11925,6 +11896,71 @@
    "payout": 23.52419,
    "pl": 0.451969,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3323685",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be l",
+   "opened": 1786093979.7901237,
+   "cost": 19.428736,
+   "edge": 0.016444,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-08-09T23:59:00Z",
+   "note": "YES ask 0.983, fee 0.0008, 2.6d to resolution, 229% annualized net if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "22669943546284513285356710530283904158915753131726189357249503888348485994676",
+     "market_id": "3323685",
+     "label": "YES Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be less than 180m?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 19.74795
+    }
+   ],
+   "current_prices": {
+    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.983
+   },
+   "current_value": 19.412235,
+   "unrealized_pl": -0.016501,
+   "unrealized_pl_pct": -0.085,
+   "closed_ts": 1786138294.8945289,
+   "payout": 19.55047,
+   "pl": 0.121734,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3090284",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Sandefjord Fotball 0 - 2 KFUM-Kameratene Oslo?",
+   "opened": 1786112398.0318632,
+   "cost": 23.737718,
+   "edge": 0.011184,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9775,
+   "resolve_by": "2026-08-07T17:00:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.965, fee 0.0017",
+   "legs": [
+    {
+     "token_id": "46971272490988369635568277163700421238919044827130888435671141296743465817109",
+     "market_id": "3090284",
+     "label": "NO Exact Score: Sandefjord Fotball 0 - 2 KFUM-Kameratene Oslo?",
+     "side": "NO",
+     "entry_price": 0.965,
+     "shares": 24.555699
+    }
+   ],
+   "current_prices": {
+    "46971272490988369635568277163700421238919044827130888435671141296743465817109": 0.965
+   },
+   "current_value": 23.69625,
+   "unrealized_pl": -0.041468,
+   "unrealized_pl_pct": -0.175,
+   "closed_ts": 1786138295.920597,
+   "payout": 24.555699,
+   "pl": 0.817981
   }
  ],
  "history": [
@@ -13678,6 +13714,14 @@
    "open_value": 250.2935,
    "equity": 926.8341,
    "realized_total": -74.5205,
+   "open_positions": 12
+  },
+  {
+   "ts": 1786138294.896317,
+   "cash": 672.8895,
+   "open_value": 253.3265,
+   "equity": 926.216,
+   "realized_total": -74.3988,
    "open_positions": 12
   }
  ],
@@ -19467,6 +19511,34 @@
    "amount": 23.52,
    "pl": 0.45,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786138294.7565606,
+   "type": "OPEN",
+   "key": "CV-3263294",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.00 on August 8?",
+   "amount": 23.2,
+   "pl": null
+  },
+  {
+   "ts": 1786138294.8945289,
+   "type": "CLOSE",
+   "key": "CV-3323685",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be l",
+   "amount": 19.55,
+   "pl": 0.12,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786138295.920597,
+   "type": "CLOSE",
+   "key": "LS-3090284",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Sandefjord Fotball 0 - 2 KFUM-Kameratene Oslo?",
+   "amount": 24.56,
+   "pl": 0.82
   }
  ]
 }
