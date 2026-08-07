@@ -1,5 +1,5 @@
 {
- "cash": 703.193658,
+ "cash": 726.99187,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -32,35 +32,6 @@
    "unrealized_pl_pct": -0.037
   },
   {
-   "key": "CV-3231662",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Super Typhoon Dolphin hit China?",
-   "opened": 1785987741.7048497,
-   "cost": 23.527211,
-   "edge": 0.039667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.966,
-   "resolve_by": "2026-08-16T03:59:00Z",
-   "note": "YES ask 0.960, fee 0.0019, 10.0d to resolution, 145% annualized net if YES, assumed true P 0.966",
-   "legs": [
-    {
-     "token_id": "91099852114173050547086888302413205840478498120262573183069717821032924658138",
-     "market_id": "3231662",
-     "label": "YES Will Super Typhoon Dolphin hit China?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 24.458594
-    }
-   ],
-   "current_prices": {
-    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.964
-   },
-   "current_value": 23.578085,
-   "unrealized_pl": 0.050874,
-   "unrealized_pl_pct": 0.216
-  },
-  {
    "key": "CV-3303768",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 10?",
@@ -83,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.969
+    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.9705
    },
-   "current_value": 23.729535,
-   "unrealized_pl": 0.38386,
-   "unrealized_pl_pct": 1.644
+   "current_value": 23.766268,
+   "unrealized_pl": 0.420593,
+   "unrealized_pl_pct": 1.802
   },
   {
    "key": "CV-3340236",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.9675
+    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.968
    },
-   "current_value": 22.764706,
-   "unrealized_pl": -0.063566,
-   "unrealized_pl_pct": -0.278
+   "current_value": 22.776471,
+   "unrealized_pl": -0.051801,
+   "unrealized_pl_pct": -0.227
   },
   {
    "key": "LS-2775408",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "48829548718236940852685991275450765234159292340226353004133004275869633560341": 0.9795
+    "48829548718236940852685991275450765234159292340226353004133004275869633560341": 0.977
    },
-   "current_value": 23.784431,
-   "unrealized_pl": 0.181218,
-   "unrealized_pl_pct": 0.768
+   "current_value": 23.723725,
+   "unrealized_pl": 0.120512,
+   "unrealized_pl_pct": 0.511
   },
   {
    "key": "CV-3290744",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "59284867194461866785250290128415034817625932454937947484978699278667960137070": 0.6355
+    "59284867194461866785250290128415034817625932454937947484978699278667960137070": 0.783
    },
-   "current_value": 15.553465,
-   "unrealized_pl": -7.988925,
-   "unrealized_pl_pct": -33.934
+   "current_value": 19.163435,
+   "unrealized_pl": -4.378955,
+   "unrealized_pl_pct": -18.6
   },
   {
    "key": "CV-3241096",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.98
+    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.9805
    },
-   "current_value": 19.352991,
-   "unrealized_pl": -0.075745,
-   "unrealized_pl_pct": -0.39
+   "current_value": 19.362865,
+   "unrealized_pl": -0.065871,
+   "unrealized_pl_pct": -0.339
   },
   {
    "key": "CV-3128786",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.955
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.96
    },
-   "current_value": 23.545475,
-   "unrealized_pl": -0.189548,
-   "unrealized_pl_pct": -0.799
+   "current_value": 23.66875,
+   "unrealized_pl": -0.066273,
+   "unrealized_pl_pct": -0.279
   }
  ],
  "closed": [
@@ -11663,6 +11634,39 @@
    "payout": 23.381547,
    "pl": 0.241047,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3231662",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Super Typhoon Dolphin hit China?",
+   "opened": 1785987741.7048497,
+   "cost": 23.527211,
+   "edge": 0.039667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.966,
+   "resolve_by": "2026-08-16T03:59:00Z",
+   "note": "YES ask 0.960, fee 0.0019, 10.0d to resolution, 145% annualized net if YES, assumed true P 0.966",
+   "legs": [
+    {
+     "token_id": "91099852114173050547086888302413205840478498120262573183069717821032924658138",
+     "market_id": "3231662",
+     "label": "YES Will Super Typhoon Dolphin hit China?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.458594
+    }
+   ],
+   "current_prices": {
+    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.964
+   },
+   "current_value": 23.578085,
+   "unrealized_pl": 0.050874,
+   "unrealized_pl_pct": 0.216,
+   "closed_ts": 1786103777.810237,
+   "payout": 23.798212,
+   "pl": 0.271001,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -13337,6 +13341,14 @@
    "equity": 938.4541,
    "realized_total": -53.807,
    "open_positions": 12
+  },
+  {
+   "ts": 1786103777.812054,
+   "cash": 726.9919,
+   "open_value": 215.4133,
+   "equity": 942.4051,
+   "realized_total": -53.5359,
+   "open_positions": 11
   }
  ],
  "trades": [
@@ -18975,6 +18987,16 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 11?",
    "amount": 23.74,
    "pl": null
+  },
+  {
+   "ts": 1786103777.810237,
+   "type": "CLOSE",
+   "key": "CV-3231662",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Super Typhoon Dolphin hit China?",
+   "amount": 23.8,
+   "pl": 0.27,
+   "reason": "take_profit"
   }
  ]
 }
