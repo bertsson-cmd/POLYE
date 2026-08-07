@@ -1,5 +1,5 @@
 {
- "cash": 750.597431,
+ "cash": 703.193658,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.9695
+    "36381002659939086504841352563546701762675800166411461249609103842857380199592": 0.969
    },
-   "current_value": 23.741779,
-   "unrealized_pl": 0.396104,
-   "unrealized_pl_pct": 1.697
+   "current_value": 23.729535,
+   "unrealized_pl": 0.38386,
+   "unrealized_pl_pct": 1.644
   },
   {
    "key": "CV-3340236",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.965
+    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.9675
    },
-   "current_value": 22.705883,
-   "unrealized_pl": -0.122389,
-   "unrealized_pl_pct": -0.536
+   "current_value": 22.764706,
+   "unrealized_pl": -0.063566,
+   "unrealized_pl_pct": -0.278
   },
   {
    "key": "LS-2775408",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.99
+    "17985837504686215788989590409563496791683016120010821262087079176453347608285": 0.9905
    },
-   "current_value": 13.528231,
-   "unrealized_pl": 0.041455,
-   "unrealized_pl_pct": 0.307
+   "current_value": 13.535064,
+   "unrealized_pl": 0.048288,
+   "unrealized_pl_pct": 0.358
   },
   {
    "key": "LS-3156897",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "59284867194461866785250290128415034817625932454937947484978699278667960137070": 0.969
+    "59284867194461866785250290128415034817625932454937947484978699278667960137070": 0.6355
    },
-   "current_value": 23.715668,
-   "unrealized_pl": 0.173278,
-   "unrealized_pl_pct": 0.736
+   "current_value": 15.553465,
+   "unrealized_pl": -7.988925,
+   "unrealized_pl_pct": -33.934
   },
   {
    "key": "CV-3241096",
@@ -286,11 +286,69 @@
     }
    ],
    "current_prices": {
-    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.9795
+    "22669943546284513285356710530283904158915753131726189357249503888348485994676": 0.98
    },
-   "current_value": 19.343117,
-   "unrealized_pl": -0.085619,
-   "unrealized_pl_pct": -0.441
+   "current_value": 19.352991,
+   "unrealized_pl": -0.075745,
+   "unrealized_pl_pct": -0.39
+  },
+  {
+   "key": "CV-3128786",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
+   "opened": 1786100905.65477,
+   "cost": 23.66875,
+   "edge": 0.027749,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.978,
+   "resolve_by": "2026-08-09T23:59:00Z",
+   "note": "YES ask 0.973, fee 0.0000, 2.5d to resolution, 400% annualized net if YES, assumed true P 0.978",
+   "legs": [
+    {
+     "token_id": "51783880760599120440014289525159847949469877325479084384177696513850906603472",
+     "market_id": "3128786",
+     "label": "YES Israel x Iran ceasefire continues through August 9?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 24.32554
+    }
+   ],
+   "current_prices": {
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.9725
+   },
+   "current_value": 23.656588,
+   "unrealized_pl": -0.012162,
+   "unrealized_pl_pct": -0.051
+  },
+  {
+   "key": "CV-3338665",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 11?",
+   "opened": 1786100905.654789,
+   "cost": 23.735023,
+   "edge": 0.038867,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-11T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0027, 4.2d to resolution, 338% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "29746632104994638451261116182389593654398795200360033564389162863432585665009",
+     "market_id": "3338665",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 11?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.654948
+    }
+   ],
+   "current_prices": {
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.955
+   },
+   "current_value": 23.545475,
+   "unrealized_pl": -0.189548,
+   "unrealized_pl_pct": -0.799
   }
  ],
  "closed": [
@@ -13271,6 +13329,14 @@
    "equity": 946.7547,
    "realized_total": -53.807,
    "open_positions": 10
+  },
+  {
+   "ts": 1786100905.8476133,
+   "cash": 703.1937,
+   "open_value": 235.2604,
+   "equity": 938.4541,
+   "realized_total": -53.807,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -18891,6 +18957,24 @@
    "amount": 23.38,
    "pl": 0.24,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786100905.65477,
+   "type": "OPEN",
+   "key": "CV-3128786",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
+   "amount": 23.67,
+   "pl": null
+  },
+  {
+   "ts": 1786100905.654789,
+   "type": "OPEN",
+   "key": "CV-3338665",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 11?",
+   "amount": 23.74,
+   "pl": null
   }
  ]
 }
