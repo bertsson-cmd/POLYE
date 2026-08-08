@@ -116,6 +116,17 @@ Things worth knowing about the polymarket-client switch specifically:
     `close_early` call aborts gracefully. Anything outside that hierarchy
     (an actual bug in this module) still propagates and crashes the cycle
     -- that's deliberate, not something this fix papers over.
+  * A rejected order does NOT change the rejected token's edge/price/
+    liquidity inputs, so risk.py's sizing would otherwise keep re-picking
+    it as the best candidate cycle after cycle -- confirmed in production:
+    one token was retried for over an hour straight, starving every other
+    real candidate that cycle of a sizing slot. `open_position()` now
+    records `token_id: time.time()` in `self.rejected_cooldown` on a
+    not-filled BUY leg; `risk.size_opportunities()` skips any candidate
+    with a leg still inside `POLYEDGE_REJECTED_COOLDOWN_MIN` minutes of
+    that timestamp, before it can consume a sizing slot. See
+    `rejected_cooldown`'s own comment in `__init__` for why this is
+    in-memory only, not persisted across restarts.
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
@@ -131,6 +142,7 @@ Things worth knowing about the polymarket-client switch specifically:
 import asyncio
 import logging
 import os
+import time
 from typing import Dict, Optional
 
 from . import config, controls
@@ -190,6 +202,33 @@ def clear_halt() -> None:
 
 
 class LiveEngine(PaperEngine):
+    def __init__(self, state_dir: str = None):
+        super().__init__(state_dir=state_dir)
+        # token_id -> time.time() of its most recent BUY-leg rejection.
+        # Read by risk.size_opportunities() (via main.run_cycle()'s
+        # getattr(engine, "rejected_cooldown", None)) to skip re-selecting
+        # a recently-dead token as the "best" candidate -- see
+        # open_position()'s not-filled branch below for where this gets
+        # written, and config.LIVE_REJECTED_COOLDOWN_MIN for the window.
+        #
+        # Deliberately in-memory only, NOT persisted to state.json:
+        # the failure this fixes (the same token re-selected and
+        # re-rejected every ~5-minute cycle for over an hour) is entirely
+        # a same-process phenomenon -- an in-memory dict already covers
+        # the bot's whole uptime between restarts, which is what actually
+        # happened in production. A process restart is infrequent
+        # (deploy/crash/reboot, not part of the reported failure pattern)
+        # and losing this on restart just costs one possible wasted retry
+        # of a since-cooled-down token before it re-enters cooldown on the
+        # next rejection -- a minor efficiency cost, not a safety issue;
+        # none of the three live-order gates or the daily-loss halt are
+        # affected either way. Persisting would mean either growing
+        # state.json's schema (shared with PaperEngine's accounting, and
+        # rendered to the dashboard) or a whole separate file, for a
+        # purely advisory, self-expiring 30-minute-default signal --
+        # disproportionate for what it buys here.
+        self.rejected_cooldown: Dict[str, float] = {}
+
     # ------------------------------------------------------------ polymarket-client
     def _builder_api_key(self):
         """BuilderApiKey for the deposit wallet's gasless/relayed order
@@ -501,6 +540,7 @@ class LiveEngine(PaperEngine):
             if not filled:
                 log.warning("open_position: BUY order for %s not filled, aborting %s",
                            leg.token_id, opp.key)
+                self.rejected_cooldown[leg.token_id] = time.time()
                 return None
         result = super().open_position(opp, ts=ts)
         if result and config.LIVE_DEFAULT_STOP_LOSS_PCT:

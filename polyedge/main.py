@@ -149,6 +149,10 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
         total_exposure=engine.total_open_cost(),
         open_keys=engine.open_keys(),
         open_longshots=engine.open_longshot_count(),
+        # only LiveEngine has this attribute (a real order can actually
+        # get rejected) -- PaperEngine has nothing to fail against, so
+        # this is always None there and the cooldown check is a no-op
+        rejected_cooldown=getattr(engine, "rejected_cooldown", None),
     )
 
     # 5) trade
