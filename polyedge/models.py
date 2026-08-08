@@ -117,6 +117,15 @@ class Leg:
     # tests) without fee-awareness. Folding this into `cost` is what makes
     # total_cost() -- and therefore paper.py's real cash deduction -- fee-
     # aware everywhere downstream with no changes needed to paper.py itself.
+    min_order_size: Optional[float] = None   # diagnostic only, not accounting.
+    # Stashed by risk.size_opportunities() from the book it checked at sizing
+    # time (see risk.py), purely so live.py can log it alongside the actual
+    # order it submits -- a real rejection (CV-3290748) happened at a
+    # razor-thin ~0.1% margin above this floor that risk.py's own check said
+    # was fine, and the next occurrence needs to be diagnosable from a single
+    # log line instead of another manual book-fetch-and-reason-through-it
+    # session. None whenever sizing had no book/min_order_size to check
+    # against (paper mode with no books=, or a token missing from the fetch).
 
     @property
     def cost(self) -> float:
