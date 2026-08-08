@@ -1,5 +1,5 @@
 {
- "cash": 739.607998,
+ "cash": 757.594618,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.995
+    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.9965
    },
-   "current_value": 23.800246,
-   "unrealized_pl": 0.563193,
-   "unrealized_pl_pct": 2.424
+   "current_value": 23.836126,
+   "unrealized_pl": 0.599073,
+   "unrealized_pl_pct": 2.578
   },
   {
    "key": "LS-3393223",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "60405981740206131636770472030550572006320596063586488197319188484809716850661": 0.9965
+    "60405981740206131636770472030550572006320596063586488197319188484809716850661": 0.999
    },
-   "current_value": 23.836126,
-   "unrealized_pl": 0.599073,
-   "unrealized_pl_pct": 2.578
+   "current_value": 23.895925,
+   "unrealized_pl": 0.658872,
+   "unrealized_pl_pct": 2.835
   },
   {
    "key": "CV-3338665",
@@ -233,35 +233,6 @@
    "current_value": 6.660651,
    "unrealized_pl": 0.003808,
    "unrealized_pl_pct": 0.057
-  },
-  {
-   "key": "CV-3231662",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Super Typhoon Dolphin hit China?",
-   "opened": 1786173330.5325952,
-   "cost": 17.907594,
-   "edge": 0.012521,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.988,
-   "resolve_by": "2026-08-16T03:59:00Z",
-   "note": "YES ask 0.987, fee 0.0006, 7.9d to resolution, 58% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "91099852114173050547086888302413205840478498120262573183069717821032924658138",
-     "market_id": "3231662",
-     "label": "YES Will Super Typhoon Dolphin hit China?",
-     "side": "YES",
-     "entry_price": 0.987,
-     "shares": 18.131673
-    }
-   ],
-   "current_prices": {
-    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.992
-   },
-   "current_value": 17.98662,
-   "unrealized_pl": 0.079026,
-   "unrealized_pl_pct": 0.441
   },
   {
    "key": "CV-3372714",
@@ -12523,6 +12494,39 @@
    "payout": 23.590665,
    "pl": 0.264409,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3231662",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Super Typhoon Dolphin hit China?",
+   "opened": 1786173330.5325952,
+   "cost": 17.907594,
+   "edge": 0.012521,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-08-16T03:59:00Z",
+   "note": "YES ask 0.987, fee 0.0006, 7.9d to resolution, 58% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "91099852114173050547086888302413205840478498120262573183069717821032924658138",
+     "market_id": "3231662",
+     "label": "YES Will Super Typhoon Dolphin hit China?",
+     "side": "YES",
+     "entry_price": 0.987,
+     "shares": 18.131673
+    }
+   ],
+   "current_prices": {
+    "91099852114173050547086888302413205840478498120262573183069717821032924658138": 0.992
+   },
+   "current_value": 17.98662,
+   "unrealized_pl": 0.079026,
+   "unrealized_pl_pct": 0.441,
+   "closed_ts": 1786225700.0074742,
+   "payout": 17.98662,
+   "pl": 0.079026,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -14541,6 +14545,14 @@
    "equity": 932.857,
    "realized_total": -68.1935,
    "open_positions": 10
+  },
+  {
+   "ts": 1786225700.009269,
+   "cash": 757.5946,
+   "open_value": 175.358,
+   "equity": 932.9526,
+   "realized_total": -68.1145,
+   "open_positions": 9
   }
  ],
  "trades": [
@@ -20686,6 +20698,16 @@
    "title": "Converge: Will the price of Bitcoin be above $64,000 on August 9?",
    "amount": 23.59,
    "pl": 0.26,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786225700.0074742,
+   "type": "CLOSE",
+   "key": "CV-3231662",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Super Typhoon Dolphin hit China?",
+   "amount": 17.99,
+   "pl": 0.08,
    "reason": "take_profit"
   }
  ]
