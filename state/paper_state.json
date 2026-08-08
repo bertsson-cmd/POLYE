@@ -1,5 +1,5 @@
 {
- "cash": 692.285822,
+ "cash": 668.999572,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.992
+    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.989
    },
-   "current_value": 23.728486,
-   "unrealized_pl": 0.491433,
-   "unrealized_pl_pct": 2.115
+   "current_value": 23.656727,
+   "unrealized_pl": 0.419674,
+   "unrealized_pl_pct": 1.806
   },
   {
    "key": "LS-3393223",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.974
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.976
    },
-   "current_value": 6.613123,
-   "unrealized_pl": -0.04372,
-   "unrealized_pl_pct": -0.657
+   "current_value": 6.626702,
+   "unrealized_pl": -0.030141,
+   "unrealized_pl_pct": -0.453
   },
   {
    "key": "CV-3231662",
@@ -349,6 +349,35 @@
    "current_value": 23.212338,
    "unrealized_pl": -0.109417,
    "unrealized_pl_pct": -0.469
+  },
+  {
+   "key": "CV-3128786",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
+   "opened": 1786212865.5272603,
+   "cost": 23.28625,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-09T23:59:00Z",
+   "note": "YES ask 0.985, fee 0.0000, 1.2d to resolution, 449% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "51783880760599120440014289525159847949469877325479084384177696513850906603472",
+     "market_id": "3128786",
+     "label": "YES Israel x Iran ceasefire continues through August 9?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 23.640863
+    }
+   ],
+   "current_prices": {
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.9845
+   },
+   "current_value": 23.27443,
+   "unrealized_pl": -0.01182,
+   "unrealized_pl_pct": -0.051
   }
  ],
  "closed": [
@@ -14452,6 +14481,14 @@
    "equity": 931.4469,
    "realized_total": -68.9691,
    "open_positions": 12
+  },
+  {
+   "ts": 1786212865.6369781,
+   "cash": 668.9996,
+   "open_value": 262.3773,
+   "equity": 931.3769,
+   "realized_total": -68.9691,
+   "open_positions": 13
   }
  ],
  "trades": [
@@ -20558,6 +20595,15 @@
    "strategy": "CONVERGE",
    "title": "Converge: Will \"My Life with the Walter Boys: Season 3\" be the #2 US N",
    "amount": 23.32,
+   "pl": null
+  },
+  {
+   "ts": 1786212865.5272603,
+   "type": "OPEN",
+   "key": "CV-3128786",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
+   "amount": 23.29,
    "pl": null
   }
  ]
