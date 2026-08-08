@@ -16,7 +16,7 @@ import time
 from typing import Dict, List, Optional
 
 from . import config
-from .models import Opportunity
+from .models import OrderBook, Opportunity
 
 log = logging.getLogger("polyedge.risk")
 
@@ -34,7 +34,8 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
                        total_exposure: float,
                        open_keys: Optional[set] = None,
                        open_longshots: int = 0,
-                       rejected_cooldown: Optional[Dict[str, float]] = None) -> List[Opportunity]:
+                       rejected_cooldown: Optional[Dict[str, float]] = None,
+                       books: Optional[Dict[str, OrderBook]] = None) -> List[Opportunity]:
     """Return a list of opportunities with leg sizes set, respecting all caps.
 
     strategy_exposure / total_exposure = current open cost basis.
@@ -53,13 +54,29 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     price/liquidity inputs. None/empty (the default, and always the case
     for PaperEngine, which has no order-book-depth concept to fail
     against) makes this check a no-op.
+
+    books: the same {token_id: OrderBook} dict main.run_cycle() already
+    fetched for the strategy scans, passed through here so a candidate's
+    real min_order_size (in SHARES, not dollars -- confirmed from
+    Polymarket's own /book response schema) can be checked before it's
+    sized. Applies to BOTH CONVERGE and LONGSHOT (they share this sizing
+    branch) -- deliberately NOT scoped to LiveEngine only, unlike
+    rejected_cooldown above: PaperEngine's fills are meant to simulate
+    what live trading could actually achieve, so silently sizing below an
+    exchange's real minimum would make paper an inaccurate simulator, not
+    just a live-only correctness issue. A candidate missing from `books`,
+    or a book with no min_order_size, makes the check a no-op for that
+    candidate (be conservative -- "can't check it" is not "no floor", but
+    there's nothing to check it against).
     """
     open_keys = open_keys or set()
     rejected_cooldown = rejected_cooldown or {}
+    books = books or {}
     cooldown_cutoff = time.time() - config.LIVE_REJECTED_COOLDOWN_MIN * 60.0
     sized: List[Opportunity] = []
     reasons = {"sized": 0, "in_cooldown": 0, "already_held": 0, "ls_slots_full": 0,
-               "caps_exhausted": 0, "kelly_zero": 0, "below_min_ticket": 0}
+               "caps_exhausted": 0, "kelly_zero": 0, "below_min_ticket": 0,
+               "below_min_order_size": 0}
     cash_left = cash
     expo_left = max(0.0, bankroll * config.MAX_TOTAL_EXPOSURE_PCT - total_exposure)
     strat_left = {
@@ -121,6 +138,22 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
             if budget < config.MIN_TICKET:
                 reasons["below_min_ticket"] += 1
                 continue
+
+            # exchange min_order_size floor, in SHARES -- confirmed real:
+            # a $5 CONVERGE ticket near 0.95-0.99 buys only ~5.05-5.3
+            # shares, right at typical 1-5 share floors, and gets
+            # rejected outright even against a deep book. Price-aware:
+            # recomputed at THIS candidate's own entry price, since a
+            # flat dollar bump that clears the floor at 95c would not
+            # clear it at 99c.
+            min_order_size = getattr(books.get(leg.token_id), "min_order_size", None)
+            if min_order_size and (budget / a) < min_order_size:
+                min_dollar = min_order_size * a
+                if not config.MIN_ORDER_SIZE_BUMP or min_dollar > cap:
+                    reasons["below_min_order_size"] += 1
+                    continue
+                budget = min_dollar
+
             leg.shares = budget / a
 
         if budget < config.MIN_TICKET:

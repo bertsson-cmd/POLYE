@@ -153,6 +153,10 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
         # get rejected) -- PaperEngine has nothing to fail against, so
         # this is always None there and the cooldown check is a no-op
         rejected_cooldown=getattr(engine, "rejected_cooldown", None),
+        # same books already fetched for the strategy scans above -- lets
+        # sizing check each candidate's real min_order_size before
+        # finalizing its share count (see risk.py's docstring)
+        books=books,
     )
 
     # 5) trade

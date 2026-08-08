@@ -30,6 +30,14 @@ class OrderBook:
     token_id: str
     asks: list = field(default_factory=list)  # list[BookLevel], lowest price first
     bids: list = field(default_factory=list)  # list[BookLevel], highest price first
+    # Exchange-enforced minimum order size for this market, in SHARES (not
+    # dollars) -- confirmed from Polymarket's own /book response schema
+    # (the raw JSON key is literally "min_order_size") and from a real
+    # production rejection: a FOK order sized below this got rejected
+    # ("order couldn't be fully filled") even against a deep book. None
+    # means the raw response didn't include it (be conservative -- risk.py
+    # treats a missing value as "can't check it", not "no floor").
+    min_order_size: Optional[float] = None
 
     def best_ask(self) -> Optional[float]:
         return self.asks[0].price if self.asks else None

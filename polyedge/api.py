@@ -212,7 +212,16 @@ class PolymarketClient:
             bids = sorted(
                 (BookLevel(float(x["price"]), float(x["size"])) for x in data.get("bids", [])),
                 key=lambda l: -l.price)
-            return OrderBook(token_id=token_id, asks=asks, bids=bids)
+            # "min_order_size" is the raw JSON key exactly as returned --
+            # confirmed against Polymarket's own /book response schema, no
+            # camelCase alias. In SHARES, not dollars (see risk.py, where
+            # it's actually used) -- missing/unparseable is left as None,
+            # not defaulted to 0, since 0 would silently disable the check
+            # this field exists to support.
+            raw_min = data.get("min_order_size")
+            min_order_size = float(raw_min) if raw_min is not None else None
+            return OrderBook(token_id=token_id, asks=asks, bids=bids,
+                             min_order_size=min_order_size)
         except (TypeError, ValueError, KeyError):
             return None
 

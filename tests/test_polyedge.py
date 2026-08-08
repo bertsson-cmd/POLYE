@@ -1061,6 +1061,132 @@ class TestRisk:
                                rejected_cooldown=cooldown)
         assert any("in_cooldown" in r.message for r in caplog.records)
 
+    # ---- min_order_size: a real production rejection. Confirmed from
+    # Polymarket's own /book response schema and independently from a
+    # third-party writeup: min_order_size is in SHARES, not dollars, and
+    # applies to FOK/FAK orders (which never rest, so the larger 5-share
+    # GTC/GTD-only minimum does NOT apply to them). Real reproduction: a
+    # flat ~$5 CONVERGE ticket on a market trading near 0.95-0.99 buys
+    # only ~5.05-5.3 shares -- right at/barely above typical min_order_size
+    # floors -- and got rejected ("order couldn't be fully filled") even
+    # against a confirmed-deep book (49,885 shares resting at 0.999).
+    #
+    # A CONVERGE opportunity's real est_p_win sits only slightly above its
+    # own price (see convergence.py's p_assumed formula), so its raw Kelly
+    # edge -- and therefore whether the position cap or Kelly itself binds
+    # -- is sensitive to the exact price/probability pairing. Rather than
+    # hand-pick a p_win and hope the resulting dollar figure lands
+    # somewhere useful, this solves for the est_p_win that makes Kelly
+    # sizing land at an exact target budget (here, the real ~$5 ticket),
+    # so the tests below are robust to config changes rather than tied to
+    # one brittle hand-picked probability.
+    def _convergence_leg_at_target_budget(self, price, target_budget, bankroll, key):
+        net_odds = (1.0 - price) / price
+        f_target = target_budget / (bankroll * config.KELLY_FRACTION)
+        p_win = (1.0 + f_target * net_odds) / (1.0 + net_odds)
+        assert 0.0 < p_win < 1.0, "test setup: target_budget not achievable at this price"
+        return Opportunity(strategy="CONVERGE", key=key, title=key,
+                           edge=0.03, guaranteed=False, est_p_win=p_win,
+                           legs=[Leg(f"tok-{key}", f"m-{key}", "YES q", "YES", price, 0.0)])
+
+    def test_ticket_bumped_to_clear_min_order_size_regression_real_numbers(self):
+        price = 0.99            # high end of the real 0.95-0.99 reproduction range
+        bankroll = 1000.0       # cap = bankroll * MAX_POSITION_PCT = $25 -- headroom for the bump
+        target_budget = 5.02     # the real "~$5 ticket" (5.02 not 5.00 -- keeps the
+        # solved budget comfortably clear of MIN_TICKET despite float noise
+        # in the kelly_fraction round-trip)
+        opp = self._convergence_leg_at_target_budget(price, target_budget, bankroll, "CV-REAL")
+
+        shares_before_bump = target_budget / price   # the real ~5.05-5.3 share range
+        assert 5.0 <= shares_before_bump <= 5.5        # sanity: matches the real report
+        min_order_size = 5.15   # "right at/barely above" what the $5 ticket buys at 0.99
+
+        book = OrderBook("tok-CV-REAL", min_order_size=min_order_size)
+        sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   books={"tok-CV-REAL": book})
+        assert sized and sized[0].legs[0].shares == pytest.approx(min_order_size)
+        # price-aware: the bumped dollar cost is min_order_size * price, not
+        # some flat bump that could still fall short (or overshoot) elsewhere
+        assert sized[0].legs[0].shares * price == pytest.approx(min_order_size * price)
+        assert sized[0].legs[0].shares * price <= bankroll * config.MAX_POSITION_PCT + 1e-9
+
+    def test_lower_price_in_the_real_range_clears_without_bumping(self):
+        """Price-aware: the SAME min_order_size (5.15) that forces a bump
+        at 0.99 (buys only ~5.05 shares from the same $5 ticket) must NOT
+        force one at 0.95 (buys ~5.26 shares from that same $5 ticket) --
+        a flat, non-price-aware bump could not distinguish these two real
+        points in the reproduction's 0.95-0.99 price range."""
+        bankroll = 1000.0
+        target_budget = 5.02
+        min_order_size = 5.15   # same floor used in the 0.99 regression test above
+
+        price = 0.95
+        shares_at_95 = target_budget / price
+        assert shares_at_95 >= min_order_size   # clears the SAME floor unaided
+        opp = self._convergence_leg_at_target_budget(price, target_budget, bankroll, "CV-REAL-95")
+
+        book = OrderBook("tok-CV-REAL-95", min_order_size=min_order_size)
+        sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   books={"tok-CV-REAL-95": book})
+        assert sized and sized[0].legs[0].shares == pytest.approx(shares_at_95)
+
+    def test_skipped_entirely_when_bump_would_exceed_position_cap(self):
+        bankroll = 1000.0
+        price = 0.97
+        opp = self._convergence_leg_at_target_budget(price, 5.02, bankroll, "CV-HUGE")
+        huge_min_order_size = 100000.0   # nothing could bump this within any sane cap
+        book = OrderBook("tok-CV-HUGE", min_order_size=huge_min_order_size)
+        sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   books={"tok-CV-HUGE": book})
+        assert sized == []
+
+    def test_bump_disabled_via_config_skips_instead_of_bumping(self):
+        bankroll = 1000.0
+        price = 0.99
+        opp = self._convergence_leg_at_target_budget(price, 5.02, bankroll, "CV-NOBUMP")
+        min_order_size = 5.15   # same floor as the regression test -- bump WOULD fit in cap
+        book = OrderBook("tok-CV-NOBUMP", min_order_size=min_order_size)
+        old = config.MIN_ORDER_SIZE_BUMP
+        config.MIN_ORDER_SIZE_BUMP = False
+        try:
+            sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                       strategy_exposure={}, total_exposure=0,
+                                       books={"tok-CV-NOBUMP": book})
+            assert sized == []
+        finally:
+            config.MIN_ORDER_SIZE_BUMP = old
+
+    def test_missing_book_or_min_order_size_is_a_noop(self):
+        bankroll = 1000.0
+        price = 0.99
+        opp = self._convergence_leg_at_target_budget(price, 5.02, bankroll, "CV-NOBOOK")
+        expected_shares = 5.02 / price
+        # no books= at all, and a book present but with min_order_size=None
+        for books in (None, {}, {"tok-CV-NOBOOK": OrderBook("tok-CV-NOBOOK")}):
+            sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                       strategy_exposure={}, total_exposure=0,
+                                       books=books)
+            assert sized and sized[0].legs[0].shares == pytest.approx(expected_shares)
+
+    def test_longshot_range_price_never_triggers_the_min_order_size_check(self):
+        """LONGSHOT-range price (3-5c): the same ~$5 ticket buys 100+
+        shares, comfortably clearing any realistic min_order_size floor
+        (1-5 shares seen in real examples) -- confirms the general fix
+        doesn't change LONGSHOT behavior, since it was never broken here."""
+        price = 0.04
+        opp = Opportunity(strategy="LONGSHOT", key="LS-RANGE", title="LS-RANGE",
+                          edge=0.10, guaranteed=False, est_p_win=0.97,
+                          legs=[Leg("tok-ls", "m-ls", "NO x", "NO", price, 0.0)])
+        book = OrderBook("tok-ls", min_order_size=5.0)   # top of the real 1-5 range
+        sized = size_opportunities([opp], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   books={"tok-ls": book})
+        assert sized
+        assert sized[0].legs[0].shares >= 100.0
+
 
 # ------------------------------------------------------------------ resolution / straggler recovery
 class TestResolutionDetection:
