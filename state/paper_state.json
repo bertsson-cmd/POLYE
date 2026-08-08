@@ -1,5 +1,5 @@
 {
- "cash": 668.999572,
+ "cash": 716.017333,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -119,35 +119,6 @@
    "unrealized_pl_pct": -0.14
   },
   {
-   "key": "CV-3304168",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Solana be above $70 on August 10?",
-   "opened": 1786140536.4923232,
-   "cost": 23.220335,
-   "edge": 0.038867,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-10T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 2.7d to resolution, 517% annualized net if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "61723789815847375024738679476944077710260906045927342033092293863751108439287",
-     "market_id": "3304168",
-     "label": "YES Will the price of Solana be above $70 on August 10?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 24.120313
-    }
-   ],
-   "current_prices": {
-    "61723789815847375024738679476944077710260906045927342033092293863751108439287": 0.96
-   },
-   "current_value": 23.1555,
-   "unrealized_pl": -0.064835,
-   "unrealized_pl_pct": -0.279
-  },
-  {
    "key": "CV-1999469",
    "strategy": "CONVERGE",
    "title": "Converge: Will the Workers' Party nominate Lula for President of Brazi",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.9955
+    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.9995
    },
-   "current_value": 23.812206,
-   "unrealized_pl": 0.575153,
-   "unrealized_pl_pct": 2.475
+   "current_value": 23.907885,
+   "unrealized_pl": 0.670832,
+   "unrealized_pl_pct": 2.887
   },
   {
    "key": "LS-3393223",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "15001217761569713800908278763658478996071325020582957014060305276373009757713": 0.978
+    "15001217761569713800908278763658478996071325020582957014060305276373009757713": 0.9775
    },
-   "current_value": 23.446819,
-   "unrealized_pl": 0.120563,
-   "unrealized_pl_pct": 0.517
+   "current_value": 23.434832,
+   "unrealized_pl": 0.108576,
+   "unrealized_pl_pct": 0.465
   },
   {
    "key": "CV-3372714",
@@ -349,35 +320,6 @@
    "current_value": 23.212338,
    "unrealized_pl": -0.109417,
    "unrealized_pl_pct": -0.469
-  },
-  {
-   "key": "CV-3128786",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
-   "opened": 1786212865.5272603,
-   "cost": 23.28625,
-   "edge": 0.015228,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-09T23:59:00Z",
-   "note": "YES ask 0.985, fee 0.0000, 1.2d to resolution, 449% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "51783880760599120440014289525159847949469877325479084384177696513850906603472",
-     "market_id": "3128786",
-     "label": "YES Israel x Iran ceasefire continues through August 9?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 23.640863
-    }
-   ],
-   "current_prices": {
-    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.989
-   },
-   "current_value": 23.380814,
-   "unrealized_pl": 0.094564,
-   "unrealized_pl_pct": 0.406
   }
  ],
  "closed": [
@@ -12511,6 +12453,72 @@
    "payout": 23.542945,
    "pl": 0.308909,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3304168",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Solana be above $70 on August 10?",
+   "opened": 1786140536.4923232,
+   "cost": 23.220335,
+   "edge": 0.038867,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-10T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0027, 2.7d to resolution, 517% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "61723789815847375024738679476944077710260906045927342033092293863751108439287",
+     "market_id": "3304168",
+     "label": "YES Will the price of Solana be above $70 on August 10?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.120313
+    }
+   ],
+   "current_prices": {
+    "61723789815847375024738679476944077710260906045927342033092293863751108439287": 0.96
+   },
+   "current_value": 23.1555,
+   "unrealized_pl": -0.064835,
+   "unrealized_pl_pct": -0.279,
+   "closed_ts": 1786221867.4509504,
+   "payout": 23.589666,
+   "pl": 0.369331,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3128786",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
+   "opened": 1786212865.5272603,
+   "cost": 23.28625,
+   "edge": 0.015228,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-09T23:59:00Z",
+   "note": "YES ask 0.985, fee 0.0000, 1.2d to resolution, 449% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "51783880760599120440014289525159847949469877325479084384177696513850906603472",
+     "market_id": "3128786",
+     "label": "YES Israel x Iran ceasefire continues through August 9?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 23.640863
+    }
+   ],
+   "current_prices": {
+    "51783880760599120440014289525159847949469877325479084384177696513850906603472": 0.989
+   },
+   "current_value": 23.380814,
+   "unrealized_pl": 0.094564,
+   "unrealized_pl_pct": 0.406,
+   "closed_ts": 1786221867.4509504,
+   "payout": 23.428095,
+   "pl": 0.141845,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -14513,6 +14521,14 @@
    "equity": 932.1445,
    "realized_total": -68.9691,
    "open_positions": 13
+  },
+  {
+   "ts": 1786221867.452781,
+   "cash": 716.0173,
+   "open_value": 216.6923,
+   "equity": 932.7097,
+   "realized_total": -68.458,
+   "open_positions": 11
   }
  ],
  "trades": [
@@ -20629,6 +20645,26 @@
    "title": "Converge: Israel x Iran ceasefire continues through August 9?",
    "amount": 23.29,
    "pl": null
+  },
+  {
+   "ts": 1786221867.4509504,
+   "type": "CLOSE",
+   "key": "CV-3304168",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Solana be above $70 on August 10?",
+   "amount": 23.59,
+   "pl": 0.37,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786221867.4509504,
+   "type": "CLOSE",
+   "key": "CV-3128786",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 9?",
+   "amount": 23.43,
+   "pl": 0.14,
+   "reason": "take_profit"
   }
  ]
 }
