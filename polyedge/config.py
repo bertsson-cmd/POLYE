@@ -58,6 +58,22 @@ MAX_STRATEGY_EXPOSURE_PCT = {                              # per-strategy caps
 KELLY_FRACTION = _f("POLYEDGE_KELLY_FRACTION", 0.25)       # quarter-Kelly (conservative)
 MIN_TICKET = _f("POLYEDGE_MIN_TICKET", 5.0)                # skip trades smaller than $5
 MAX_POSITION_ABS_USD = _f("POLYEDGE_MAX_POS_ABS", 100.0)   # absolute $ ceiling on ANY single position (final backstop)
+# Confirmed in production: Polymarket's exchange-enforced min_order_size is
+# denominated in SHARES, not dollars -- a flat $5 CONVERGE ticket near
+# 0.95-0.99 buys only ~5.05-5.3 shares, right at or barely above typical
+# 1-5 share floors seen on real books, and gets rejected outright even
+# against a deep book (FOK/FAK orders don't rest, so the larger 5-share
+# GTC/GTD-only minimum doesn't apply -- only this smaller per-market one).
+# When a Kelly-sized ticket would fall short, this bumps it up to the
+# minimum dollar amount that actually clears min_order_size AT THAT
+# CANDIDATE'S OWN PRICE (price-aware, since the same flat bump that clears
+# the floor at 95c would not clear it at 99c) -- but never bumps past the
+# position cap; if the bump itself would exceed the cap, the candidate is
+# skipped instead (see risk.py's "below_min_order_size" sizing reason).
+# Set to 0/false to always skip a too-small ticket rather than bump it --
+# a reasonable choice for an operator who wants strict Kelly-fraction
+# discipline over squeezing every candidate above the exchange floor.
+MIN_ORDER_SIZE_BUMP = os.environ.get("POLYEDGE_MIN_ORDER_SIZE_BUMP", "1") not in ("0", "false", "no")
 
 # ---------------------------------------------------------------- strategy: ARB (Dutch book)
 ARB_MIN_EDGE = _f("POLYEDGE_ARB_MIN_EDGE", 0.01)     # require >= 1 cent per $1 payout set
