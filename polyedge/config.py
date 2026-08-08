@@ -74,6 +74,29 @@ MAX_POSITION_ABS_USD = _f("POLYEDGE_MAX_POS_ABS", 100.0)   # absolute $ ceiling 
 # a reasonable choice for an operator who wants strict Kelly-fraction
 # discipline over squeezing every candidate above the exchange floor.
 MIN_ORDER_SIZE_BUMP = os.environ.get("POLYEDGE_MIN_ORDER_SIZE_BUMP", "1") not in ("0", "false", "no")
+# A real rejection (CV-3290748, seven times over six hours, against a
+# CONFIRMED-DEEP book -- not a liquidity problem) happened at a razor-thin
+# ~0.1% margin ABOVE min_order_size: a $5 ticket at price 0.999 computes to
+# ~5.005 shares against a min_order_size of 5 -- risk.py's exact "<"
+# comparison concluded this was already fine and never bumped it, yet the
+# real order still got rejected. Read from polymarket-client's actual
+# order-building source (polymarket/_internal/actions/orders/market.py):
+# for a max_price-protected BUY (our case), the dollar amount gets floored
+# (round DOWN, never to-nearest) to whole cents BEFORE being divided by
+# price to compute the share count -- confirmed via RoundingConfig(amount=5,
+# price=3, size=2) for a 0.001 tick size. The share count itself then
+# rounds UP if it has excess precision, but that only protects against
+# LOSING more from that step -- it does not undo the initial floor. Separately,
+# risk.py's own check uses the book's raw (possibly >3-decimal) entry price
+# while live.py rounds price to 3dp before actually submitting the order --
+# two independent roundings of what should be the same number. Either
+# mechanism, or ordinary price drift between when sizing ran and when the
+# order actually executes, is plausible and cannot be fully distinguished
+# from source alone -- see live.py's new pre-order logging for that.
+# effective_min = min_order_size * (1 + this/100) is applied to BOTH the
+# comparison and the bump target, so a razor-thin case like CV-3290748 now
+# gets bumped instead of silently passing the check and failing for real.
+MIN_ORDER_SIZE_MARGIN_PCT = _f("POLYEDGE_MIN_ORDER_SIZE_MARGIN_PCT", 2.0)
 
 # ---------------------------------------------------------------- strategy: ARB (Dutch book)
 ARB_MIN_EDGE = _f("POLYEDGE_ARB_MIN_EDGE", 0.01)     # require >= 1 cent per $1 payout set

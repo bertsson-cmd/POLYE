@@ -1089,7 +1089,13 @@ class TestRisk:
                            edge=0.03, guaranteed=False, est_p_win=p_win,
                            legs=[Leg(f"tok-{key}", f"m-{key}", "YES q", "YES", price, 0.0)])
 
-    def test_ticket_bumped_to_clear_min_order_size_regression_real_numbers(self):
+    def test_ticket_bumped_to_clear_min_order_size_regression_real_numbers(self, monkeypatch):
+        # isolates the BUMP MECHANIC itself from POLYEDGE_MIN_ORDER_SIZE_MARGIN_PCT
+        # (added in a later task, default 2% -- tested on its own below,
+        # including the CV-3290748 regression that motivated it) so this
+        # test keeps proving the original, simpler claim: price-aware
+        # bumping to exactly min_order_size, within the position cap.
+        monkeypatch.setattr(config, "MIN_ORDER_SIZE_MARGIN_PCT", 0.0)
         price = 0.99            # high end of the real 0.95-0.99 reproduction range
         bankroll = 1000.0       # cap = bankroll * MAX_POSITION_PCT = $25 -- headroom for the bump
         target_budget = 5.02     # the real "~$5 ticket" (5.02 not 5.00 -- keeps the
@@ -1111,12 +1117,13 @@ class TestRisk:
         assert sized[0].legs[0].shares * price == pytest.approx(min_order_size * price)
         assert sized[0].legs[0].shares * price <= bankroll * config.MAX_POSITION_PCT + 1e-9
 
-    def test_lower_price_in_the_real_range_clears_without_bumping(self):
+    def test_lower_price_in_the_real_range_clears_without_bumping(self, monkeypatch):
         """Price-aware: the SAME min_order_size (5.15) that forces a bump
         at 0.99 (buys only ~5.05 shares from the same $5 ticket) must NOT
         force one at 0.95 (buys ~5.26 shares from that same $5 ticket) --
         a flat, non-price-aware bump could not distinguish these two real
         points in the reproduction's 0.95-0.99 price range."""
+        monkeypatch.setattr(config, "MIN_ORDER_SIZE_MARGIN_PCT", 0.0)   # see test above
         bankroll = 1000.0
         target_budget = 5.02
         min_order_size = 5.15   # same floor used in the 0.99 regression test above
@@ -1131,6 +1138,66 @@ class TestRisk:
                                    strategy_exposure={}, total_exposure=0,
                                    books={"tok-CV-REAL-95": book})
         assert sized and sized[0].legs[0].shares == pytest.approx(shares_at_95)
+
+    # ---- POLYEDGE_MIN_ORDER_SIZE_MARGIN_PCT: a SECOND real rejection.
+    # CV-3290748 (token
+    # 15001217761569713800908278763658478996071325020582957014060305276373009757713)
+    # failed "order couldn't be fully filled" seven times over six hours
+    # against a CONFIRMED-DEEP book (51,917 shares resting at 0.999) -- not
+    # a liquidity problem. At price 0.999, a $5 ticket computes to ~5.005
+    # shares against min_order_size=5 -- risk.py's exact "<" comparison
+    # (before this margin existed) judged that as already fine, yet the
+    # real order still got rejected. Read from polymarket-client's actual
+    # order-building source: for a max_price-protected BUY, the dollar
+    # amount is floored (round DOWN) to whole cents BEFORE being divided
+    # by price to get the share count -- a real, source-confirmed
+    # mechanism that could shave a razor-thin margin below the floor,
+    # though source alone couldn't fully rule out ordinary price drift
+    # between sizing and execution as an alternate/contributing cause
+    # (see live.py's new pre-order logging for that). Either way, a margin
+    # applied to both the comparison and the bump target closes the gap.
+    def test_cv3290748_regression_now_gets_bumped_instead_of_slipping_through(self):
+        """The exact real case: price ~0.999, min_order_size 5, ~$5 ticket
+        -> ~5.005 shares. Under the old exact "<" comparison this passed
+        the check untouched and still failed for real. With the default
+        2% margin it must now be bumped."""
+        price = 0.999
+        bankroll = 1000.0
+        target_budget = 5.02   # the real "~$5 ticket"
+        min_order_size = 5.0   # the real observed floor
+
+        opp = self._convergence_leg_at_target_budget(price, target_budget, bankroll, "CV-3290748")
+        shares_before_bump = target_budget / price
+        assert 5.0 <= shares_before_bump <= 5.05   # the real razor-thin ~5.005-5.03 margin
+        assert shares_before_bump >= min_order_size   # -- and the OLD exact check called it fine
+
+        book = OrderBook("tok-CV-3290748", min_order_size=min_order_size)
+        sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   books={"tok-CV-3290748": book})
+        effective_min = min_order_size * (1.0 + config.MIN_ORDER_SIZE_MARGIN_PCT / 100.0)
+        assert effective_min > shares_before_bump, \
+            "test setup: the default margin must actually change the outcome here"
+        assert sized and sized[0].legs[0].shares == pytest.approx(effective_min)
+        assert sized[0].legs[0].shares >= min_order_size * 1.01   # comfortably clear, not razor-thin again
+
+    def test_margin_pct_zero_reproduces_the_original_razor_thin_failure_mode(self):
+        """Confirms the margin is what changed the outcome above -- with it
+        explicitly disabled, CV-3290748's exact real numbers reproduce the
+        original bug (passes the check untouched at ~5.005 shares)."""
+        price = 0.999
+        bankroll = 1000.0
+        opp = self._convergence_leg_at_target_budget(price, 5.02, bankroll, "CV-3290748-NOMARGIN")
+        book = OrderBook("tok-CV-3290748-NOMARGIN", min_order_size=5.0)
+        old = config.MIN_ORDER_SIZE_MARGIN_PCT
+        config.MIN_ORDER_SIZE_MARGIN_PCT = 0.0
+        try:
+            sized = size_opportunities([opp], bankroll=bankroll, cash=1000,
+                                       strategy_exposure={}, total_exposure=0,
+                                       books={"tok-CV-3290748-NOMARGIN": book})
+            assert sized and sized[0].legs[0].shares == pytest.approx(5.02 / price)
+        finally:
+            config.MIN_ORDER_SIZE_MARGIN_PCT = old
 
     def test_skipped_entirely_when_bump_would_exceed_position_cap(self):
         bankroll = 1000.0
@@ -1186,6 +1253,23 @@ class TestRisk:
                                    books={"tok-ls": book})
         assert sized
         assert sized[0].legs[0].shares >= 100.0
+
+    # ---- leg.min_order_size: diagnostic only (not accounting), stashed so
+    # live.py can log the real number a real order was actually sized
+    # against without needing another manual book-fetch session.
+    def test_leg_min_order_size_stashed_for_diagnostics(self):
+        opp = self._convergence_leg_at_target_budget(0.999, 5.02, 1000.0, "CV-DIAG")
+        book = OrderBook("tok-CV-DIAG", min_order_size=5.0)
+        sized = size_opportunities([opp], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   books={"tok-CV-DIAG": book})
+        assert sized and sized[0].legs[0].min_order_size == 5.0
+
+    def test_leg_min_order_size_left_none_when_book_missing(self):
+        opp = self._convergence_leg_at_target_budget(0.999, 5.02, 1000.0, "CV-NODIAG")
+        sized = size_opportunities([opp], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0, books=None)
+        assert sized and sized[0].legs[0].min_order_size is None
 
 
 # ------------------------------------------------------------------ resolution / straggler recovery
@@ -1617,6 +1701,39 @@ class TestLiveEngine:
         assert e.open_position(opp) is not None
         assert e.rejected_cooldown == {}
 
+    # ---- pre-order logging: a real rejection (CV-3290748) happened at a
+    # razor-thin margin risk.py's own check judged as fine, and diagnosing
+    # it required a manual book-fetch-and-reason-through-it session. The
+    # next one should be diagnosable from a single log line instead.
+    def test_order_inputs_logged_before_placement_including_min_order_size(
+            self, tmp_path, monkeypatch, caplog):
+        import logging as _logging
+        e = self._engine(tmp_path, monkeypatch, fill=True)
+        # 5.02 shares (not the razor-thin 5.005), so PaperEngine's OWN
+        # MIN_TICKET check (cost >= $5.00) doesn't separately reject this --
+        # unrelated to what this test is verifying (the log line's content)
+        leg = Leg("tok-CV-3290748", "m1", "YES q", "YES", 0.999, 5.02)
+        leg.min_order_size = 5.0   # what risk.py would have stashed
+        opp = self._opp("CV-3290748", "CONVERGE", legs=[leg])
+        with caplog.at_level(_logging.INFO, logger="polyedge.live"):
+            assert e.open_position(opp) is not None
+        msgs = [r.message for r in caplog.records]
+        assert any("tok-CV-3290748" in m and "min_order_size=5.0" in m
+                  and "0.999" in m for m in msgs)
+
+    def test_not_filled_warning_includes_price_shares_and_min_order_size(
+            self, tmp_path, monkeypatch, caplog):
+        import logging as _logging
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+        leg = Leg("tok-CV-3290748", "m1", "YES q", "YES", 0.999, 5.005)
+        leg.min_order_size = 5.0
+        opp = self._opp("CV-3290748", "CONVERGE", legs=[leg])
+        with caplog.at_level(_logging.WARNING, logger="polyedge.live"):
+            assert e.open_position(opp) is None
+        msgs = [r.message for r in caplog.records]
+        assert any("not filled" in m and "tok-CV-3290748" in m
+                  and "min_order_size=5.0" in m for m in msgs)
+
     def test_unfilled_order_records_nothing(self, tmp_path, monkeypatch):
         e = self._engine(tmp_path, monkeypatch, fill=False)
         start = e.cash
@@ -1895,6 +2012,19 @@ class TestLiveEnginePolymarketClientWiring:
         assert sent["amount"] == pytest.approx(9.65)     # price * shares
         assert sent["max_price"] == pytest.approx(0.965)
         assert "shares" not in sent and "min_price" not in sent
+
+    def test_order_inputs_after_rounding_are_logged_before_submission(self, tmp_path, monkeypatch, caplog):
+        """Task: the next real min_order_size-margin rejection should show
+        exact numbers from logs alone, not require another manual
+        book-fetch-and-reason-through-it session."""
+        import logging as _logging
+        self._install_fake_sdk(monkeypatch)
+        e = self._engine(tmp_path, monkeypatch)
+        with caplog.at_level(_logging.INFO, logger="polyedge.live"):
+            e._place_order("tok-CV-3290748", 0.999, 5.005, "BUY")
+        msgs = [r.message for r in caplog.records]
+        assert any("order inputs after local rounding" in m and "tok-CV-3290748" in m
+                  and "price=0.999000" in m for m in msgs)
 
     def test_sell_sends_fok_market_order_with_shares_and_min_price(self, tmp_path, monkeypatch):
         calls = self._install_fake_sdk(monkeypatch)

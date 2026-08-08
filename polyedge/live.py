@@ -297,6 +297,32 @@ class LiveEngine(PaperEngine):
         in this hierarchy (a plain `ValueError`/`TypeError`/etc, i.e. an
         actual bug in this module's own code) still propagates uncaught --
         that distinction is deliberate, not an oversight.
+
+        What polymarket-client itself does internally with the price/amount
+        we submit -- confirmed from its actual order-building source
+        (`polymarket/_internal/actions/orders/market.py`), since a real
+        rejection (CV-3290748) happened at a razor-thin ~0.1% margin above
+        min_order_size that our own sizing math judged as fine: for a
+        max_price-protected BUY (our case, since we always set `max_price`),
+        `_compute_market_order_amounts()` first floors (`round_down`, never
+        to-nearest) the dollar amount to `RoundingConfig.size` decimal
+        places (2, i.e. whole cents, for a 0.001 tick size), THEN divides by
+        price to get the share count -- and only rounds that share count UP
+        if it has too many decimal places to represent, which protects
+        against losing further precision at THAT step but does not restore
+        anything already lost from the initial floor. Separately (and
+        entirely within this codebase, not the SDK): `risk.py`'s
+        min_order_size check runs against the book's raw entry price
+        (whatever precision Polymarket's /book endpoint returned), while
+        the `round(price, 3)` two lines below submits a SEPARATELY, possibly
+        differently, rounded price for the actual order -- two independent
+        roundings of what should be the same number. Either mechanism, or
+        ordinary price drift between when sizing ran and when the order
+        actually executes, is plausible; source alone could not fully
+        distinguish between them (see config.MIN_ORDER_SIZE_MARGIN_PCT).
+        The log line right after the rounding below exists so the next real
+        rejection shows exact numbers instead of requiring another manual
+        book-fetch-and-reason-through-it session like this one.
         """
         from polymarket import PRODUCTION, AsyncSecureClient
         from polymarket.errors import PolymarketError
@@ -307,26 +333,34 @@ class LiveEngine(PaperEngine):
         try:
             await client.setup_trading_approvals()
             price, shares = round(price, 3), round(shares, 2)
+            amount = round(price * shares, 2)
+            log.info("order inputs after local rounding: token=%s side=%s "
+                    "price=%.6f shares=%.6f amount=$%.4f", token_id, side,
+                    price, shares, amount)
             try:
                 if side == "BUY":
                     resp = await client.place_market_order(
                         token_id=token_id, side="BUY",
-                        amount=round(price * shares, 2), max_price=price,
+                        amount=amount, max_price=price,
                         order_type="FOK")
                 else:
                     resp = await client.place_market_order(
                         token_id=token_id, side="SELL",
                         shares=shares, min_price=price, order_type="FOK")
             except PolymarketError as e:
-                log.warning("order not filled: token=%s side=%s rejected by SDK "
-                           "(%s): %s", token_id, side, type(e).__name__, e)
+                log.warning("order not filled: token=%s side=%s price=%.6f "
+                           "shares=%.6f amount=$%.4f rejected by SDK (%s): %s",
+                           token_id, side, price, shares, amount,
+                           type(e).__name__, e)
                 return False
             filled = await self._resolve_fill(client, resp, token_id)
         finally:
             await client.close()
         if not filled:
-            log.warning("order not filled: token=%s side=%s ok=%s detail=%s",
-                       token_id, side, getattr(resp, "ok", None),
+            log.warning("order not filled: token=%s side=%s price=%.6f shares=%.6f "
+                       "amount=$%.4f ok=%s detail=%s",
+                       token_id, side, price, shares, amount,
+                       getattr(resp, "ok", None),
                        getattr(resp, "code", None) or getattr(resp, "status", None))
         return filled
 
@@ -536,10 +570,21 @@ class LiveEngine(PaperEngine):
                       f"{opp.key} -- see log for details")
             return None
         for leg in opp.legs:
+            # exact numbers going into this specific order, including the
+            # book's min_order_size AS SEEN AT SIZING TIME (leg.min_order_size,
+            # stashed by risk.py -- see its comment) -- a real rejection
+            # (CV-3290748) happened at a razor-thin margin risk.py's own
+            # check judged as fine, and diagnosing that required a manual
+            # book fetch after the fact; this line means the next one won't.
+            log.info("opening %s: BUY token=%s price=%.6f shares=%.6f "
+                    "cost=$%.4f min_order_size=%s", opp.key, leg.token_id,
+                    leg.entry_price, leg.shares, leg.cost, leg.min_order_size)
             filled = self._place_order(leg.token_id, leg.entry_price, leg.shares, "BUY")
             if not filled:
-                log.warning("open_position: BUY order for %s not filled, aborting %s",
-                           leg.token_id, opp.key)
+                log.warning("open_position: BUY order for %s not filled, aborting %s "
+                           "(price=%.6f shares=%.6f cost=$%.4f min_order_size=%s)",
+                           leg.token_id, opp.key, leg.entry_price, leg.shares,
+                           leg.cost, leg.min_order_size)
                 self.rejected_cooldown[leg.token_id] = time.time()
                 return None
         result = super().open_position(opp, ts=ts)

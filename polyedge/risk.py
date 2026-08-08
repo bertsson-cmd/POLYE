@@ -67,7 +67,14 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     just a live-only correctness issue. A candidate missing from `books`,
     or a book with no min_order_size, makes the check a no-op for that
     candidate (be conservative -- "can't check it" is not "no floor", but
-    there's nothing to check it against).
+    there's nothing to check it against). The comparison and any bump both
+    use min_order_size inflated by config.MIN_ORDER_SIZE_MARGIN_PCT, not
+    the raw value -- a real order was rejected at a razor-thin margin the
+    raw comparison judged as fine (see that config's comment). Whenever a
+    book's min_order_size is found for a leg's token, it's also stashed on
+    `leg.min_order_size` -- diagnostic only, not used in any further
+    accounting math -- purely so live.py can log the real number a real
+    order was actually sized against.
     """
     open_keys = open_keys or set()
     rejected_cooldown = rejected_cooldown or {}
@@ -146,13 +153,24 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
             # recomputed at THIS candidate's own entry price, since a
             # flat dollar bump that clears the floor at 95c would not
             # clear it at 99c.
+            #
+            # A MARGIN, not the raw min_order_size, is what's actually
+            # compared and bumped to -- a real rejection (CV-3290748)
+            # happened at a razor-thin ~0.1% margin ABOVE the exact floor
+            # (5.005 shares against min_order_size=5) that this exact "<"
+            # comparison, without a margin, judged as already fine. See
+            # config.MIN_ORDER_SIZE_MARGIN_PCT's comment for what's known
+            # (and not known) about why that razor-thin case still failed.
             min_order_size = getattr(books.get(leg.token_id), "min_order_size", None)
-            if min_order_size and (budget / a) < min_order_size:
-                min_dollar = min_order_size * a
-                if not config.MIN_ORDER_SIZE_BUMP or min_dollar > cap:
-                    reasons["below_min_order_size"] += 1
-                    continue
-                budget = min_dollar
+            if min_order_size:
+                leg.min_order_size = min_order_size   # diagnostic only -- see Leg's field comment
+                effective_min = min_order_size * (1.0 + config.MIN_ORDER_SIZE_MARGIN_PCT / 100.0)
+                if (budget / a) < effective_min:
+                    min_dollar = effective_min * a
+                    if not config.MIN_ORDER_SIZE_BUMP or min_dollar > cap:
+                        reasons["below_min_order_size"] += 1
+                        continue
+                    budget = min_dollar
 
             leg.shares = budget / a
 
