@@ -155,6 +155,17 @@ LIVE_MAX_DAILY_LOSS = _f("POLYEDGE_LIVE_MAX_DAILY_LOSS", 15.0)  # USD realized l
 # entirely -- positions would then only stop out via a manually-set
 # per-position override in the control panel, same as before this existed.
 LIVE_DEFAULT_STOP_LOSS_PCT = _f("POLYEDGE_DEFAULT_STOP_LOSS_PCT", 30.0)
+# Confirmed in production: a token whose FOK order gets rejected
+# (RequestRejectedError -- see live.py) can keep scoring as risk.py's best
+# candidate cycle after cycle, since nothing about the rejection itself
+# changes its edge/price/liquidity inputs -- one dead token was retried for
+# over an hour straight, starving every other real candidate that cycle of
+# a sizing slot. LiveEngine.rejected_cooldown records the token_id/timestamp
+# of a BUY leg that didn't fill; risk.size_opportunities() skips any
+# candidate with a leg still inside this window (age < this many minutes)
+# entirely, before it can consume a slot. Paper mode has no order-book-depth
+# concept to fail against, so this never applies there.
+LIVE_REJECTED_COOLDOWN_MIN = _f("POLYEDGE_REJECTED_COOLDOWN_MIN", 30.0)
 
 # URL for the "Control Panel" button on the generated dashboard. Defaults
 # to localhost -- the control panel is meant to be reached through an SSH

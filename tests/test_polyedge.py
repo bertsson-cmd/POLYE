@@ -1007,6 +1007,60 @@ class TestRisk:
                                    strategy_exposure={}, total_exposure=0)
         assert sized and sized[0].key == "ARB-L"   # lock funded first regardless
 
+    # ---- rejected_cooldown: a real production incident where a single
+    # token whose FOK order kept getting rejected (RequestRejectedError --
+    # see live.py) was re-selected as risk.py's best candidate cycle after
+    # cycle for over an hour, starving every other real candidate of a
+    # sizing slot -- nothing about a rejection changes the token's edge/
+    # price/liquidity inputs. Uses the EXACT real token_id/opportunity key
+    # from that incident as a literal regression case.
+    _REAL_REJECTED_TOKEN_ID = ("24179142020748386308900785500935095928275106"
+                               "841229237369829185074319749593959")
+
+    def _real_ls_opp(self):
+        return Opportunity(strategy="LONGSHOT", key="LS-3144825", title="LS-3144825",
+                           edge=0.10, guaranteed=False, est_p_win=0.97,
+                           legs=[Leg(self._REAL_REJECTED_TOKEN_ID, "m", "NO x",
+                                    "NO", 0.95, 0.0)])
+
+    def test_rejected_cooldown_excludes_recently_rejected_real_token(self):
+        import time
+        opp = self._real_ls_opp()
+        cooldown = {self._REAL_REJECTED_TOKEN_ID: time.time()}   # just rejected
+        sized = size_opportunities([opp], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   rejected_cooldown=cooldown)
+        assert sized == []
+
+    def test_rejected_cooldown_expires_after_the_configured_window(self):
+        import time
+        opp = self._real_ls_opp()
+        stale_ts = time.time() - (config.LIVE_REJECTED_COOLDOWN_MIN + 1) * 60
+        cooldown = {self._REAL_REJECTED_TOKEN_ID: stale_ts}
+        sized = size_opportunities([opp], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   rejected_cooldown=cooldown)
+        assert sized and sized[0].key == "LS-3144825"
+
+    def test_rejected_cooldown_none_or_empty_is_a_noop(self):
+        opp = self._real_ls_opp()
+        for cooldown in (None, {}):
+            sized = size_opportunities([opp], bankroll=1000, cash=1000,
+                                       strategy_exposure={}, total_exposure=0,
+                                       rejected_cooldown=cooldown)
+            assert sized and sized[0].key == "LS-3144825"
+
+    def test_in_cooldown_counted_and_logged(self, caplog):
+        import logging as _logging
+        import time
+        opp = self._real_ls_opp()
+        cooldown = {self._REAL_REJECTED_TOKEN_ID: time.time()}
+        with caplog.at_level(_logging.INFO, logger="polyedge.risk"):
+            size_opportunities([opp], bankroll=1000, cash=1000,
+                               strategy_exposure={}, total_exposure=0,
+                               rejected_cooldown=cooldown)
+        assert any("in_cooldown" in r.message for r in caplog.records)
+
 
 # ------------------------------------------------------------------ resolution / straggler recovery
 class TestResolutionDetection:
@@ -1409,6 +1463,33 @@ class TestLiveEngine:
         assert e.open_position(self._opp("CV-UNFILLED")) is None
         ctrl = controls.load(e.state_dir)
         assert "CV-UNFILLED" not in ctrl["stop_loss_pct"]
+
+    # ---- rejected_cooldown: real production incident where a token whose
+    # FOK order kept getting rejected was re-selected as the best candidate
+    # cycle after cycle for over an hour. Uses the EXACT real token_id/
+    # opportunity key from that incident as a literal regression case.
+    _REAL_REJECTED_TOKEN_ID = ("24179142020748386308900785500935095928275106"
+                               "841229237369829185074319749593959")
+
+    def test_rejected_cooldown_recorded_on_unfilled_buy_regression_real_token(
+            self, tmp_path, monkeypatch):
+        import time as _t
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+        opp = self._opp("LS-3144825", "LONGSHOT",
+                        legs=[Leg(self._REAL_REJECTED_TOKEN_ID, "m1", "NO x",
+                                 "NO", 0.95, 10.0)])
+        before = _t.time()
+        assert e.open_position(opp) is None
+        assert self._REAL_REJECTED_TOKEN_ID in e.rejected_cooldown
+        assert e.rejected_cooldown[self._REAL_REJECTED_TOKEN_ID] >= before
+
+    def test_rejected_cooldown_not_recorded_on_successful_fill(self, tmp_path, monkeypatch):
+        e = self._engine(tmp_path, monkeypatch, fill=True)
+        opp = self._opp("LS-3144825", "LONGSHOT",
+                        legs=[Leg(self._REAL_REJECTED_TOKEN_ID, "m1", "NO x",
+                                 "NO", 0.95, 10.0)])
+        assert e.open_position(opp) is not None
+        assert e.rejected_cooldown == {}
 
     def test_unfilled_order_records_nothing(self, tmp_path, monkeypatch):
         e = self._engine(tmp_path, monkeypatch, fill=False)

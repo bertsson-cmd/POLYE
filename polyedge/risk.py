@@ -12,6 +12,7 @@ We use KELLY_FRACTION * f*  (default quarter-Kelly) because the win
 probability is itself an estimate — full Kelly on a wrong p is ruin.
 """
 import logging
+import time
 from typing import Dict, List, Optional
 
 from . import config
@@ -32,15 +33,32 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
                        strategy_exposure: Dict[str, float],
                        total_exposure: float,
                        open_keys: Optional[set] = None,
-                       open_longshots: int = 0) -> List[Opportunity]:
+                       open_longshots: int = 0,
+                       rejected_cooldown: Optional[Dict[str, float]] = None) -> List[Opportunity]:
     """Return a list of opportunities with leg sizes set, respecting all caps.
 
     strategy_exposure / total_exposure = current open cost basis.
     Mutates nothing; returns new sized list (skips zero-size results).
+
+    rejected_cooldown: optional {token_id: time.time() of its most recent
+    BUY-leg rejection}, as tracked by LiveEngine.rejected_cooldown (see
+    live.py for why that's in-memory only, not persisted). Any candidate
+    with a leg whose token was rejected within POLYEDGE_REJECTED_COOLDOWN_MIN
+    minutes is skipped entirely -- BEFORE the cap/Kelly sizing below, so a
+    dead candidate never consumes cash/exposure/LONGSHOT-slot budget that a
+    real candidate further down the sorted list could have used instead.
+    Confirmed in production: without this, a single token whose FOK order
+    kept getting rejected scored as the best candidate cycle after cycle
+    for over an hour, since nothing about a rejection changes its edge/
+    price/liquidity inputs. None/empty (the default, and always the case
+    for PaperEngine, which has no order-book-depth concept to fail
+    against) makes this check a no-op.
     """
     open_keys = open_keys or set()
+    rejected_cooldown = rejected_cooldown or {}
+    cooldown_cutoff = time.time() - config.LIVE_REJECTED_COOLDOWN_MIN * 60.0
     sized: List[Opportunity] = []
-    reasons = {"sized": 0, "already_held": 0, "ls_slots_full": 0,
+    reasons = {"sized": 0, "in_cooldown": 0, "already_held": 0, "ls_slots_full": 0,
                "caps_exhausted": 0, "kelly_zero": 0, "below_min_ticket": 0}
     cash_left = cash
     expo_left = max(0.0, bankroll * config.MAX_TOTAL_EXPOSURE_PCT - total_exposure)
@@ -56,6 +74,10 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     for opp in sorted(opps, key=lambda o: (not o.guaranteed,
                                            days_to_resolution(o.resolve_by),
                                            -o.edge)):
+        if any(rejected_cooldown.get(leg.token_id, 0.0) > cooldown_cutoff
+              for leg in opp.legs):
+            reasons["in_cooldown"] += 1
+            continue                      # recently rejected -- give a real candidate the slot
         if opp.key in open_keys:
             reasons["already_held"] += 1
             continue                      # already holding this
