@@ -1,5 +1,5 @@
 {
- "cash": 715.607577,
+ "cash": 692.285822,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9825
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9845
    },
-   "current_value": 12.837708,
-   "unrealized_pl": 0.047553,
-   "unrealized_pl_pct": 0.372
+   "current_value": 12.86384,
+   "unrealized_pl": 0.073685,
+   "unrealized_pl_pct": 0.576
   },
   {
    "key": "CV-3340236",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.9905
+    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.992
    },
-   "current_value": 23.692606,
-   "unrealized_pl": 0.455553,
-   "unrealized_pl_pct": 1.96
+   "current_value": 23.728486,
+   "unrealized_pl": 0.491433,
+   "unrealized_pl_pct": 2.115
   },
   {
    "key": "LS-3393223",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "60405981740206131636770472030550572006320596063586488197319188484809716850661": 0.97
+    "60405981740206131636770472030550572006320596063586488197319188484809716850661": 0.975
    },
-   "current_value": 23.20225,
-   "unrealized_pl": -0.034803,
-   "unrealized_pl_pct": -0.15
+   "current_value": 23.321849,
+   "unrealized_pl": 0.084796,
+   "unrealized_pl_pct": 0.365
   },
   {
    "key": "CV-3338665",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.975
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.974
    },
-   "current_value": 6.619913,
-   "unrealized_pl": -0.03693,
-   "unrealized_pl_pct": -0.555
+   "current_value": 6.613123,
+   "unrealized_pl": -0.04372,
+   "unrealized_pl_pct": -0.657
   },
   {
    "key": "CV-3231662",
@@ -320,6 +320,35 @@
    "current_value": 23.410858,
    "unrealized_pl": 0.084602,
    "unrealized_pl_pct": 0.363
+  },
+  {
+   "key": "CV-3372714",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"My Life with the Walter Boys: Season 3\" be the #2 US N",
+   "opened": 1786211098.9137306,
+   "cost": 23.321755,
+   "edge": 0.031458,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-08-11T23:59:00Z",
+   "note": "YES ask 0.968, fee 0.0015, 3.3d to resolution, 352% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "2308076526730779139330697159020656992180689713484659762636354245523438792545",
+     "market_id": "3372714",
+     "label": "YES Will \"My Life with the Walter Boys: Season 3\" be the #2 US Netflix show this week?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 24.054236
+    }
+   ],
+   "current_prices": {
+    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.965
+   },
+   "current_value": 23.212338,
+   "unrealized_pl": -0.109417,
+   "unrealized_pl_pct": -0.469
   }
  ],
  "closed": [
@@ -14415,6 +14444,14 @@
    "equity": 931.3815,
    "realized_total": -68.9691,
    "open_positions": 11
+  },
+  {
+   "ts": 1786211099.0867803,
+   "cash": 692.2858,
+   "open_value": 239.1611,
+   "equity": 931.4469,
+   "realized_total": -68.9691,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -20512,6 +20549,15 @@
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $64,000 on August 9?",
    "amount": 23.33,
+   "pl": null
+  },
+  {
+   "ts": 1786211098.9137306,
+   "type": "OPEN",
+   "key": "CV-3372714",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"My Life with the Walter Boys: Season 3\" be the #2 US N",
+   "amount": 23.32,
    "pl": null
   }
  ]
