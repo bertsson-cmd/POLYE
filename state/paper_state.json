@@ -1,5 +1,5 @@
 {
- "cash": 759.755748,
+ "cash": 736.384993,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.959
+    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.9655
    },
-   "current_value": 23.068012,
-   "unrealized_pl": -0.253743,
-   "unrealized_pl_pct": -1.088
+   "current_value": 23.224365,
+   "unrealized_pl": -0.09739,
+   "unrealized_pl_pct": -0.418
   },
   {
    "key": "LS-3293753",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.9395
+    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.759
    },
-   "current_value": 22.81566,
-   "unrealized_pl": -0.544467,
-   "unrealized_pl_pct": -2.331
+   "current_value": 18.432236,
+   "unrealized_pl": -4.927891,
+   "unrealized_pl_pct": -21.095
   },
   {
    "key": "CV-3361383",
@@ -257,11 +257,40 @@
     }
    ],
    "current_prices": {
-    "51615109489291624692581965062304906737852529287981568287553080541605374209575": 0.935
+    "51615109489291624692581965062304906737852529287981568287553080541605374209575": 0.95
    },
-   "current_value": 22.426865,
-   "unrealized_pl": -0.874408,
-   "unrealized_pl_pct": -3.753
+   "current_value": 22.786654,
+   "unrealized_pl": -0.514619,
+   "unrealized_pl_pct": -2.209
+  },
+  {
+   "key": "CV-3290728",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,900 on August 9?",
+   "opened": 1786270686.3455882,
+   "cost": 23.370755,
+   "edge": 0.038867,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-09T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0027, 0.2d to resolution, 5975% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "68297130409206892242095888732797027131610612050663898174112729241546288340252",
+     "market_id": "3290728",
+     "label": "YES Will the price of Ethereum be above $1,900 on August 9?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.276563
+    }
+   ],
+   "current_prices": {
+    "68297130409206892242095888732797027131610612050663898174112729241546288340252": 0.955
+   },
+   "current_value": 23.184118,
+   "unrealized_pl": -0.186637,
+   "unrealized_pl_pct": -0.799
   }
  ],
  "closed": [
@@ -14820,6 +14849,14 @@
    "equity": 932.22,
    "realized_total": -65.9994,
    "open_positions": 9
+  },
+  {
+   "ts": 1786270686.4513352,
+   "cash": 736.385,
+   "open_value": 191.7811,
+   "equity": 928.1661,
+   "realized_total": -65.9994,
+   "open_positions": 10
   }
  ],
  "trades": [
@@ -21069,6 +21106,15 @@
    "amount": 23.51,
    "pl": 0.16,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786270686.3455882,
+   "type": "OPEN",
+   "key": "CV-3290728",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,900 on August 9?",
+   "amount": 23.37,
+   "pl": null
   }
  ]
 }
