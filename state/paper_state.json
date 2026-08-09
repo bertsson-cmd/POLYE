@@ -1,5 +1,5 @@
 {
- "cash": 711.569992,
+ "cash": 734.88491,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -30,35 +30,6 @@
    "current_value": 22.8,
    "unrealized_pl": -0.028272,
    "unrealized_pl_pct": -0.124
-  },
-  {
-   "key": "CV-3381130",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 13?",
-   "opened": 1786122549.494972,
-   "cost": 23.135094,
-   "edge": 0.019008,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9823999999999999,
-   "resolve_by": "2026-08-13T16:00:00Z",
-   "note": "YES ask 0.980, fee 0.0014, 6.0d to resolution, 117% annualized net if YES, assumed true P 0.982",
-   "legs": [
-    {
-     "token_id": "60463823359392765409338033918803983915714240788995151827464156048949577809273",
-     "market_id": "3381130",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 13?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 23.574235
-    }
-   ],
-   "current_prices": {
-    "60463823359392765409338033918803983915714240788995151827464156048949577809273": 0.98
-   },
-   "current_value": 23.10275,
-   "unrealized_pl": -0.032344,
-   "unrealized_pl_pct": -0.14
   },
   {
    "key": "CV-1999469",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.981
+    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9815
    },
-   "current_value": 9.28977,
-   "unrealized_pl": -0.003522,
-   "unrealized_pl_pct": -0.038
+   "current_value": 9.294505,
+   "unrealized_pl": 0.001213,
+   "unrealized_pl_pct": 0.013
   },
   {
    "key": "CV-2840115",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.974
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9695
    },
-   "current_value": 14.423692,
-   "unrealized_pl": -0.026251,
-   "unrealized_pl_pct": -0.182
+   "current_value": 14.357053,
+   "unrealized_pl": -0.09289,
+   "unrealized_pl_pct": -0.643
   },
   {
    "key": "CV-2952488",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "11140433689301181080251630771795463502265959677328684758568796325208873168489": 0.97
+    "11140433689301181080251630771795463502265959677328684758568796325208873168489": 0.9685
    },
-   "current_value": 23.102314,
-   "unrealized_pl": -0.352185,
-   "unrealized_pl_pct": -1.502
+   "current_value": 23.066589,
+   "unrealized_pl": -0.38791,
+   "unrealized_pl_pct": -1.654
   },
   {
    "key": "LS-3331683",
@@ -13010,6 +12981,39 @@
    "closed_ts": 1786311163.945658,
    "payout": 24.424242,
    "pl": 0.999988
+  },
+  {
+   "key": "CV-3381130",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 13?",
+   "opened": 1786122549.494972,
+   "cost": 23.135094,
+   "edge": 0.019008,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9823999999999999,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 6.0d to resolution, 117% annualized net if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "60463823359392765409338033918803983915714240788995151827464156048949577809273",
+     "market_id": "3381130",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 13?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 23.574235
+    }
+   ],
+   "current_prices": {
+    "60463823359392765409338033918803983915714240788995151827464156048949577809273": 0.98
+   },
+   "current_value": 23.10275,
+   "unrealized_pl": -0.032344,
+   "unrealized_pl_pct": -0.14,
+   "closed_ts": 1786315412.8450918,
+   "payout": 23.314918,
+   "pl": 0.179824,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -15292,6 +15296,14 @@
    "equity": 936.7169,
    "realized_total": -62.8919,
    "open_positions": 11
+  },
+  {
+   "ts": 1786315412.8469176,
+   "cash": 734.8849,
+   "open_value": 201.9465,
+   "equity": 936.8315,
+   "realized_total": -62.7121,
+   "open_positions": 10
   }
  ],
  "trades": [
@@ -21709,6 +21721,16 @@
    "title": "Fade: AA Argentinos Juniors vs. Racing Club: Racing Club O/U 2.5",
    "amount": 23.46,
    "pl": null
+  },
+  {
+   "ts": 1786315412.8450918,
+   "type": "CLOSE",
+   "key": "CV-3381130",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 13?",
+   "amount": 23.31,
+   "pl": 0.18,
+   "reason": "take_profit"
   }
  ]
 }
