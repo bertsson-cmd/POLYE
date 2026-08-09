@@ -1,5 +1,5 @@
 {
- "cash": 764.097301,
+ "cash": 788.382197,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -148,35 +148,6 @@
    "unrealized_pl_pct": -0.16
   },
   {
-   "key": "LS-3293753",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will Fremantle City FC win on 2026-08-09?",
-   "opened": 1786255411.6516843,
-   "cost": 23.360127,
-   "edge": 0.011519,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-08-09T09:40:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
-   "legs": [
-    {
-     "token_id": "41585778671499564174979169152153934158686645757163908086276877239347224710883",
-     "market_id": "3293753",
-     "label": "NO Will Fremantle City FC win on 2026-08-09?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 24.284896
-    }
-   ],
-   "current_prices": {
-    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.9995
-   },
-   "current_value": 24.272754,
-   "unrealized_pl": 0.912627,
-   "unrealized_pl_pct": 3.907
-  },
-  {
    "key": "CV-3361383",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 12?",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9655
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.95
    },
-   "current_value": 23.70836,
-   "unrealized_pl": 0.298963,
-   "unrealized_pl_pct": 1.277
+   "current_value": 23.32775,
+   "unrealized_pl": -0.081647,
+   "unrealized_pl_pct": -0.349
   },
   {
    "key": "LS-3394556",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "51615109489291624692581965062304906737852529287981568287553080541605374209575": 0.9565
+    "51615109489291624692581965062304906737852529287981568287553080541605374209575": 0.9875
    },
-   "current_value": 22.942563,
-   "unrealized_pl": -0.35871,
-   "unrealized_pl_pct": -1.539
+   "current_value": 23.686128,
+   "unrealized_pl": 0.384855,
+   "unrealized_pl_pct": 1.652
   },
   {
    "key": "CV-3400683",
@@ -12822,6 +12793,38 @@
    "payout": 12.611035,
    "pl": 0.22882,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3293753",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will Fremantle City FC win on 2026-08-09?",
+   "opened": 1786255411.6516843,
+   "cost": 23.360127,
+   "edge": 0.011519,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-08-09T09:40:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "41585778671499564174979169152153934158686645757163908086276877239347224710883",
+     "market_id": "3293753",
+     "label": "NO Will Fremantle City FC win on 2026-08-09?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 24.284896
+    }
+   ],
+   "current_prices": {
+    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.96
+   },
+   "current_value": 23.3135,
+   "unrealized_pl": -0.046627,
+   "unrealized_pl_pct": -0.2,
+   "closed_ts": 1786286620.220439,
+   "payout": 24.284896,
+   "pl": 0.924769
   }
  ],
  "history": [
@@ -14998,6 +15001,14 @@
    "cash": 764.0973,
    "open_value": 171.4554,
    "equity": 935.5527,
+   "realized_total": -65.1547,
+   "open_positions": 9
+  },
+  {
+   "ts": 1786286619.4962711,
+   "cash": 764.0973,
+   "open_value": 170.8591,
+   "equity": 934.9564,
    "realized_total": -65.1547,
    "open_positions": 9
   }
@@ -21325,6 +21336,15 @@
    "amount": 12.61,
    "pl": 0.23,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786286620.220439,
+   "type": "CLOSE",
+   "key": "LS-3293753",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will Fremantle City FC win on 2026-08-09?",
+   "amount": 24.28,
+   "pl": 0.92
   }
  ]
 }
