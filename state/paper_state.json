@@ -1,36 +1,7 @@
 {
- "cash": 732.077659,
+ "cash": 751.486266,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-2840115",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Count Binface get second place in the Clacton by-electi",
-   "opened": 1785952730.4637508,
-   "cost": 12.790155,
-   "edge": 0.021615,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9792,
-   "resolve_by": "2026-08-13T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0009, 7.9d to resolution, 100% annualized net if YES, assumed true P 0.979",
-   "legs": [
-    {
-     "token_id": "81447450383664195636595565283033889220683502219622758879760419790560852069403",
-     "market_id": "2840115",
-     "label": "YES Will Count Binface get second place in the Clacton by-election?",
-     "side": "YES",
-     "entry_price": 0.978,
-     "shares": 13.066369
-    }
-   ],
-   "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9845
-   },
-   "current_value": 12.86384,
-   "unrealized_pl": 0.073685,
-   "unrealized_pl_pct": 0.576
-  },
   {
    "key": "CV-3340236",
    "strategy": "CONVERGE",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.646
+    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.9995
    },
-   "current_value": 15.688043,
-   "unrealized_pl": -7.672084,
-   "unrealized_pl_pct": -32.843
+   "current_value": 24.272754,
+   "unrealized_pl": 0.912627,
+   "unrealized_pl_pct": 3.907
   },
   {
    "key": "CV-3361383",
@@ -264,35 +235,6 @@
    "unrealized_pl_pct": 0.365
   },
   {
-   "key": "CV-3434976",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Bitcoin reach $65,000 on August 9?",
-   "opened": 1786275357.0335715,
-   "cost": 18.586585,
-   "edge": 0.019008,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9816,
-   "resolve_by": "2026-08-10T04:00:00Z",
-   "note": "YES ask 0.980, fee 0.0014, 0.7d to resolution, 1015% annualized net if YES, assumed true P 0.982",
-   "legs": [
-    {
-     "token_id": "109209775244156558751813520796683985361138118330866874282450668858101954195425",
-     "market_id": "3434976",
-     "label": "YES Will Bitcoin reach $65,000 on August 9?",
-     "side": "YES",
-     "entry_price": 0.98,
-     "shares": 18.939388
-    }
-   ],
-   "current_prices": {
-    "109209775244156558751813520796683985361138118330866874282450668858101954195425": 0.977
-   },
-   "current_value": 18.503782,
-   "unrealized_pl": -0.082803,
-   "unrealized_pl_pct": -0.445
-  },
-  {
    "key": "CV-3400683",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 14?",
@@ -315,11 +257,40 @@
     }
    ],
    "current_prices": {
-    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.976
+    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9765
    },
-   "current_value": 9.242421,
-   "unrealized_pl": -0.050871,
-   "unrealized_pl_pct": -0.547
+   "current_value": 9.247156,
+   "unrealized_pl": -0.046136,
+   "unrealized_pl_pct": -0.496
+  },
+  {
+   "key": "CV-3290728",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,900 on August 9?",
+   "opened": 1786276866.3309896,
+   "cost": 12.382215,
+   "edge": 0.028828,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9716,
+   "resolve_by": "2026-08-09T16:00:00Z",
+   "note": "YES ask 0.970, fee 0.0020, 0.2d to resolution, 6343% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "68297130409206892242095888732797027131610612050663898174112729241546288340252",
+     "market_id": "3290728",
+     "label": "YES Will the price of Ethereum be above $1,900 on August 9?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 12.738419
+    }
+   ],
+   "current_prices": {
+    "68297130409206892242095888732797027131610612050663898174112729241546288340252": 0.9645
+   },
+   "current_value": 12.286205,
+   "unrealized_pl": -0.09601,
+   "unrealized_pl_pct": -0.775
   }
  ],
  "closed": [
@@ -12781,6 +12752,72 @@
    "payout": 23.572543,
    "pl": 0.201788,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2840115",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Count Binface get second place in the Clacton by-electi",
+   "opened": 1785952730.4637508,
+   "cost": 12.790155,
+   "edge": 0.021615,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9792,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.978, fee 0.0009, 7.9d to resolution, 100% annualized net if YES, assumed true P 0.979",
+   "legs": [
+    {
+     "token_id": "81447450383664195636595565283033889220683502219622758879760419790560852069403",
+     "market_id": "2840115",
+     "label": "YES Will Count Binface get second place in the Clacton by-election?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 13.066369
+    }
+   ],
+   "current_prices": {
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9845
+   },
+   "current_value": 12.86384,
+   "unrealized_pl": 0.073685,
+   "unrealized_pl_pct": 0.576,
+   "closed_ts": 1786276866.5152092,
+   "payout": 12.870373,
+   "pl": 0.080218,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3434976",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bitcoin reach $65,000 on August 9?",
+   "opened": 1786275357.0335715,
+   "cost": 18.586585,
+   "edge": 0.019008,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9816,
+   "resolve_by": "2026-08-10T04:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 0.7d to resolution, 1015% annualized net if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "109209775244156558751813520796683985361138118330866874282450668858101954195425",
+     "market_id": "3434976",
+     "label": "YES Will Bitcoin reach $65,000 on August 9?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 18.939388
+    }
+   ],
+   "current_prices": {
+    "109209775244156558751813520796683985361138118330866874282450668858101954195425": 0.977
+   },
+   "current_value": 18.503782,
+   "unrealized_pl": -0.082803,
+   "unrealized_pl_pct": -0.445,
+   "closed_ts": 1786276866.5152092,
+   "payout": 18.920449,
+   "pl": 0.333864,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -14935,6 +14972,14 @@
    "equity": 926.7171,
    "realized_total": -65.7976,
    "open_positions": 11
+  },
+  {
+   "ts": 1786276866.5166876,
+   "cash": 751.4863,
+   "open_value": 184.1474,
+   "equity": 935.6337,
+   "realized_total": -65.3835,
+   "open_positions": 10
   }
  ],
  "trades": [
@@ -21220,6 +21265,35 @@
    "title": "Converge: Will the price of Ethereum be above $1,900 on August 9?",
    "amount": 23.57,
    "pl": 0.2,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786276866.3309896,
+   "type": "OPEN",
+   "key": "CV-3290728",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,900 on August 9?",
+   "amount": 12.38,
+   "pl": null
+  },
+  {
+   "ts": 1786276866.5152092,
+   "type": "CLOSE",
+   "key": "CV-2840115",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Count Binface get second place in the Clacton by-electi",
+   "amount": 12.87,
+   "pl": 0.08,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786276866.5152092,
+   "type": "CLOSE",
+   "key": "CV-3434976",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bitcoin reach $65,000 on August 9?",
+   "amount": 18.92,
+   "pl": 0.33,
    "reason": "take_profit"
   }
  ]
