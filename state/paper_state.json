@@ -1,5 +1,5 @@
 {
- "cash": 736.241988,
+ "cash": 759.755748,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -170,40 +170,11 @@
     }
    ],
    "current_prices": {
-    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.963
+    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.9625
    },
-   "current_value": 23.164229,
-   "unrealized_pl": -0.157526,
-   "unrealized_pl_pct": -0.675
-  },
-  {
-   "key": "CV-3290748",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 9?",
-   "opened": 1786227196.1930451,
-   "cost": 23.353138,
-   "edge": 0.01707,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9848,
-   "resolve_by": "2026-08-09T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 0.7d to resolution, 841% annualized net if YES, assumed true P 0.985",
-   "legs": [
-    {
-     "token_id": "15001217761569713800908278763658478996071325020582957014060305276373009757713",
-     "market_id": "3290748",
-     "label": "YES Will the price of Bitcoin be above $64,000 on August 9?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 23.751273
-    }
-   ],
-   "current_prices": {
-    "15001217761569713800908278763658478996071325020582957014060305276373009757713": 0.9735
-   },
-   "current_value": 23.121864,
-   "unrealized_pl": -0.231274,
-   "unrealized_pl_pct": -0.99
+   "current_value": 23.152202,
+   "unrealized_pl": -0.169553,
+   "unrealized_pl_pct": -0.727
   },
   {
    "key": "LS-3293753",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.955
+    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.948
    },
-   "current_value": 23.192076,
-   "unrealized_pl": -0.168051,
-   "unrealized_pl_pct": -0.719
+   "current_value": 23.022081,
+   "unrealized_pl": -0.338046,
+   "unrealized_pl_pct": -1.447
   },
   {
    "key": "CV-3361383",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "51615109489291624692581965062304906737852529287981568287553080541605374209575": 0.955
+    "51615109489291624692581965062304906737852529287981568287553080541605374209575": 0.945
    },
-   "current_value": 22.906584,
-   "unrealized_pl": -0.394689,
-   "unrealized_pl_pct": -1.694
+   "current_value": 22.666725,
+   "unrealized_pl": -0.634548,
+   "unrealized_pl_pct": -2.723
   }
  ],
  "closed": [
@@ -12686,6 +12657,39 @@
    "closed_ts": 1786259487.09712,
    "payout": 23.919845,
    "pl": 0.682792
+  },
+  {
+   "key": "CV-3290748",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 9?",
+   "opened": 1786227196.1930451,
+   "cost": 23.353138,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9848,
+   "resolve_by": "2026-08-09T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 0.7d to resolution, 841% annualized net if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "15001217761569713800908278763658478996071325020582957014060305276373009757713",
+     "market_id": "3290748",
+     "label": "YES Will the price of Bitcoin be above $64,000 on August 9?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 23.751273
+    }
+   ],
+   "current_prices": {
+    "15001217761569713800908278763658478996071325020582957014060305276373009757713": 0.9735
+   },
+   "current_value": 23.121864,
+   "unrealized_pl": -0.231274,
+   "unrealized_pl_pct": -0.99,
+   "closed_ts": 1786265821.9467294,
+   "payout": 23.51376,
+   "pl": 0.160622,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -14800,6 +14804,14 @@
    "equity": 932.7436,
    "realized_total": -66.16,
    "open_positions": 10
+  },
+  {
+   "ts": 1786265821.9485192,
+   "cash": 759.7557,
+   "open_value": 172.9579,
+   "equity": 932.7136,
+   "realized_total": -65.9994,
+   "open_positions": 9
   }
  ],
  "trades": [
@@ -21039,6 +21051,16 @@
    "title": "Fade: Will the highest temperature in Amsterdam be 31\u00b0C on August ",
    "amount": 23.3,
    "pl": null
+  },
+  {
+   "ts": 1786265821.9467294,
+   "type": "CLOSE",
+   "key": "CV-3290748",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 9?",
+   "amount": 23.51,
+   "pl": 0.16,
+   "reason": "take_profit"
   }
  ]
 }
