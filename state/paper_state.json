@@ -1,5 +1,5 @@
 {
- "cash": 759.032813,
+ "cash": 759.543261,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -119,35 +119,6 @@
    "unrealized_pl_pct": -0.06
   },
   {
-   "key": "LS-3393266",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Houston be between 96-97\u00b0F o",
-   "opened": 1786164168.4702547,
-   "cost": 23.237053,
-   "edge": 0.004679,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-08-08T12:00:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015",
-   "legs": [
-    {
-     "token_id": "11447071175243443375832245512259608966307371065400839176460396628934503212286",
-     "market_id": "3393266",
-     "label": "NO Will the highest temperature in Houston be between 96-97\u00b0F on August 8?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 23.919845
-    }
-   ],
-   "current_prices": {
-    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.9995
-   },
-   "current_value": 23.907885,
-   "unrealized_pl": 0.670832,
-   "unrealized_pl_pct": 2.887
-  },
-  {
    "key": "CV-3338665",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 11?",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.9755
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.976
    },
-   "current_value": 6.623307,
-   "unrealized_pl": -0.033536,
-   "unrealized_pl_pct": -0.504
+   "current_value": 6.626702,
+   "unrealized_pl": -0.030141,
+   "unrealized_pl_pct": -0.453
   },
   {
    "key": "CV-3372714",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.964
+    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.9625
    },
-   "current_value": 23.188284,
-   "unrealized_pl": -0.133471,
-   "unrealized_pl_pct": -0.572
+   "current_value": 23.152202,
+   "unrealized_pl": -0.169553,
+   "unrealized_pl_pct": -0.727
   },
   {
    "key": "CV-3290748",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "15001217761569713800908278763658478996071325020582957014060305276373009757713": 0.9665
+    "15001217761569713800908278763658478996071325020582957014060305276373009757713": 0.9725
    },
-   "current_value": 22.955605,
-   "unrealized_pl": -0.397533,
-   "unrealized_pl_pct": -1.702
+   "current_value": 23.098113,
+   "unrealized_pl": -0.255025,
+   "unrealized_pl_pct": -1.092
   },
   {
    "key": "LS-3293753",
@@ -257,11 +228,40 @@
     }
    ],
    "current_prices": {
-    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.955
+    "41585778671499564174979169152153934158686645757163908086276877239347224710883": 0.9605
    },
-   "current_value": 23.192076,
-   "unrealized_pl": -0.168051,
-   "unrealized_pl_pct": -0.719
+   "current_value": 23.325643,
+   "unrealized_pl": -0.034484,
+   "unrealized_pl_pct": -0.148
+  },
+  {
+   "key": "CV-3361383",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 12?",
+   "opened": 1786259486.3404891,
+   "cost": 23.409397,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9588,
+   "resolve_by": "2026-08-12T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 3.4d to resolution, 533% annualized net if YES, assumed true P 0.959",
+   "legs": [
+    {
+     "token_id": "5997364395002296386166175441678231565887801974544060353102197702217373896109",
+     "market_id": "3361383",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 12?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 24.555526
+    }
+   ],
+   "current_prices": {
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9485
+   },
+   "current_value": 23.290916,
+   "unrealized_pl": -0.118481,
+   "unrealized_pl_pct": -0.506
   }
  ],
  "closed": [
@@ -12625,6 +12625,38 @@
    "closed_ts": 1786252658.150981,
    "payout": 23.919845,
    "pl": 0.682792
+  },
+  {
+   "key": "LS-3393266",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Houston be between 96-97\u00b0F o",
+   "opened": 1786164168.4702547,
+   "cost": 23.237053,
+   "edge": 0.004679,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-08T12:00:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "11447071175243443375832245512259608966307371065400839176460396628934503212286",
+     "market_id": "3393266",
+     "label": "NO Will the highest temperature in Houston be between 96-97\u00b0F on August 8?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 23.919845
+    }
+   ],
+   "current_prices": {
+    "11447071175243443375832245512259608966307371065400839176460396628934503212286": 0.97
+   },
+   "current_value": 23.20225,
+   "unrealized_pl": -0.034803,
+   "unrealized_pl_pct": -0.15,
+   "closed_ts": 1786259487.09712,
+   "payout": 23.919845,
+   "pl": 0.682792
   }
  ],
  "history": [
@@ -14723,6 +14755,14 @@
    "equity": 933.1123,
    "realized_total": -66.8428,
    "open_positions": 9
+  },
+  {
+   "ts": 1786259486.455038,
+   "cash": 735.6234,
+   "open_value": 196.9082,
+   "equity": 932.5316,
+   "realized_total": -66.8428,
+   "open_positions": 10
   }
  ],
  "trades": [
@@ -20935,6 +20975,24 @@
    "title": "Fade: Will Fremantle City FC win on 2026-08-09?",
    "amount": 23.36,
    "pl": null
+  },
+  {
+   "ts": 1786259486.3404891,
+   "type": "OPEN",
+   "key": "CV-3361383",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 12?",
+   "amount": 23.41,
+   "pl": null
+  },
+  {
+   "ts": 1786259487.09712,
+   "type": "CLOSE",
+   "key": "LS-3393266",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Houston be between 96-97\u00b0F o",
+   "amount": 23.92,
+   "pl": 0.68
   }
  ]
 }
