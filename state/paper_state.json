@@ -1,36 +1,7 @@
 {
- "cash": 613.109711,
+ "cash": 636.215594,
  "starting_bankroll": 1000.0,
  "positions": [
-  {
-   "key": "CV-3340236",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
-   "opened": 1786062785.7158074,
-   "cost": 22.828272,
-   "edge": 0.030752,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.972,
-   "resolve_by": "2026-08-15T14:59:00Z",
-   "note": "YES ask 0.969, fee 0.0012, 8.6d to resolution, 130% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "62769982295885766816806292078202738855919636469645485544849233237261536489213",
-     "market_id": "3340236",
-     "label": "YES Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
-     "side": "YES",
-     "entry_price": 0.969,
-     "shares": 23.529412
-    }
-   ],
-   "current_prices": {
-    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.969
-   },
-   "current_value": 22.8,
-   "unrealized_pl": -0.028272,
-   "unrealized_pl_pct": -0.124
-  },
   {
    "key": "CV-1999469",
    "strategy": "CONVERGE",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.986
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9865
    },
-   "current_value": 23.404,
-   "unrealized_pl": -0.013106,
-   "unrealized_pl_pct": -0.056
+   "current_value": 23.415868,
+   "unrealized_pl": -0.001238,
+   "unrealized_pl_pct": -0.005
   },
   {
    "key": "CV-3361383",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9395
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9435
    },
-   "current_value": 13.912792,
-   "unrealized_pl": -0.537151,
-   "unrealized_pl_pct": -3.717
+   "current_value": 13.972026,
+   "unrealized_pl": -0.477917,
+   "unrealized_pl_pct": -3.307
   },
   {
    "key": "CV-2952488",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9585
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.958
    },
-   "current_value": 23.401628,
-   "unrealized_pl": -0.036622,
-   "unrealized_pl_pct": -0.156
+   "current_value": 23.389421,
+   "unrealized_pl": -0.048829,
+   "unrealized_pl_pct": -0.208
   },
   {
    "key": "CV-3338665",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.9755
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.9795
    },
-   "current_value": 23.194864,
-   "unrealized_pl": -0.250478,
-   "unrealized_pl_pct": -1.068
+   "current_value": 23.289974,
+   "unrealized_pl": -0.155368,
+   "unrealized_pl_pct": -0.663
   },
   {
    "key": "CV-3361254",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "46917500919787484634947793503566048470683833024716400830495357681559100848944": 0.945
+    "46917500919787484634947793503566048470683833024716400830495357681559100848944": 0.9435
    },
-   "current_value": 15.198912,
-   "unrealized_pl": -0.43485,
-   "unrealized_pl_pct": -2.781
+   "current_value": 15.174787,
+   "unrealized_pl": -0.458975,
+   "unrealized_pl_pct": -2.936
   },
   {
    "key": "CV-3421365",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.895
    },
-   "current_value": 21.997969,
-   "unrealized_pl": -1.532232,
-   "unrealized_pl_pct": -6.512
+   "current_value": 21.875758,
+   "unrealized_pl": -1.654443,
+   "unrealized_pl_pct": -7.031
   },
   {
    "key": "LS-3415690",
@@ -402,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "50829061891867105009062957082531925490364356699535424187461547208607023079887": 0.9835
+    "50829061891867105009062957082531925490364356699535424187461547208607023079887": 0.979
    },
-   "current_value": 23.524718,
-   "unrealized_pl": 0.050901,
-   "unrealized_pl_pct": 0.217
+   "current_value": 23.417081,
+   "unrealized_pl": -0.056736,
+   "unrealized_pl_pct": -0.242
   },
   {
    "key": "CV-2937526",
@@ -13544,6 +13515,39 @@
    "payout": 23.793002,
    "pl": 0.338503,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3340236",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
+   "opened": 1786062785.7158074,
+   "cost": 22.828272,
+   "edge": 0.030752,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-08-15T14:59:00Z",
+   "note": "YES ask 0.969, fee 0.0012, 8.6d to resolution, 130% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "62769982295885766816806292078202738855919636469645485544849233237261536489213",
+     "market_id": "3340236",
+     "label": "YES Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
+     "side": "YES",
+     "entry_price": 0.969,
+     "shares": 23.529412
+    }
+   ],
+   "current_prices": {
+    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.969
+   },
+   "current_value": 22.8,
+   "unrealized_pl": -0.028272,
+   "unrealized_pl_pct": -0.124,
+   "closed_ts": 1786398512.928952,
+   "payout": 23.105883,
+   "pl": 0.277611,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -15986,6 +15990,14 @@
    "equity": 939.2798,
    "realized_total": -58.2947,
    "open_positions": 17
+  },
+  {
+   "ts": 1786398512.930283,
+   "cash": 636.2156,
+   "open_value": 303.2701,
+   "equity": 939.4857,
+   "realized_total": -58.0171,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -22662,6 +22674,16 @@
    "title": "Converge: Will \"Spider-Man: Brand New Day\" 2nd Weekend Box Office be b",
    "amount": 23.79,
    "pl": 0.34,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786398512.928952,
+   "type": "CLOSE",
+   "key": "CV-3340236",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
+   "amount": 23.11,
+   "pl": 0.28,
    "reason": "take_profit"
   }
  ]
