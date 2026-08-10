@@ -1,5 +1,5 @@
 {
- "cash": 688.383476,
+ "cash": 665.163402,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -61,35 +61,6 @@
    "unrealized_pl_pct": -0.06
   },
   {
-   "key": "CV-3372714",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"My Life with the Walter Boys: Season 3\" be the #2 US N",
-   "opened": 1786211098.9137306,
-   "cost": 23.321755,
-   "edge": 0.031458,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.972,
-   "resolve_by": "2026-08-11T23:59:00Z",
-   "note": "YES ask 0.968, fee 0.0015, 3.3d to resolution, 352% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "2308076526730779139330697159020656992180689713484659762636354245523438792545",
-     "market_id": "3372714",
-     "label": "YES Will \"My Life with the Walter Boys: Season 3\" be the #2 US Netflix show this week?",
-     "side": "YES",
-     "entry_price": 0.968,
-     "shares": 24.054236
-    }
-   ],
-   "current_prices": {
-    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.968
-   },
-   "current_value": 23.2845,
-   "unrealized_pl": -0.037255,
-   "unrealized_pl_pct": -0.16
-  },
-  {
    "key": "CV-3400683",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 14?",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.983
+    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9845
    },
-   "current_value": 9.308709,
-   "unrealized_pl": 0.015417,
-   "unrealized_pl_pct": 0.166
+   "current_value": 9.322914,
+   "unrealized_pl": 0.029622,
+   "unrealized_pl_pct": 0.319
   },
   {
    "key": "CV-2840115",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.949
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9525
    },
-   "current_value": 23.169687,
-   "unrealized_pl": -0.268563,
-   "unrealized_pl_pct": -1.146
+   "current_value": 23.255139,
+   "unrealized_pl": -0.183111,
+   "unrealized_pl_pct": -0.781
   },
   {
    "key": "CV-3372825",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "11140433689301181080251630771795463502265959677328684758568796325208873168489": 0.9695
+    "11140433689301181080251630771795463502265959677328684758568796325208873168489": 0.971
    },
-   "current_value": 23.090406,
-   "unrealized_pl": -0.364093,
-   "unrealized_pl_pct": -1.552
+   "current_value": 23.126131,
+   "unrealized_pl": -0.328368,
+   "unrealized_pl_pct": -1.4
   },
   {
    "key": "CV-3338665",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.9855
+    "29746632104994638451261116182389593654398795200360033564389162863432585665009": 0.988
    },
-   "current_value": 23.432639,
-   "unrealized_pl": -0.012703,
-   "unrealized_pl_pct": -0.054
+   "current_value": 23.492082,
+   "unrealized_pl": 0.04674,
+   "unrealized_pl_pct": 0.199
   },
   {
    "key": "CV-3361254",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9815
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.985
    },
-   "current_value": 10.312524,
-   "unrealized_pl": -0.018254,
-   "unrealized_pl_pct": -0.177
+   "current_value": 10.349298,
+   "unrealized_pl": 0.01852,
+   "unrealized_pl_pct": 0.179
   },
   {
    "key": "LS-3433839",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "84396412972385483207988358694155615707191458077486526465620213179666493865541": 0.945
+    "84396412972385483207988358694155615707191458077486526465620213179666493865541": 0.93
    },
-   "current_value": 23.081379,
-   "unrealized_pl": -0.413267,
-   "unrealized_pl_pct": -1.759
+   "current_value": 22.715008,
+   "unrealized_pl": -0.779638,
+   "unrealized_pl_pct": -3.318
   },
   {
    "key": "CV-3381139",
@@ -378,6 +349,93 @@
    "current_value": 23.34229,
    "unrealized_pl": -0.187911,
    "unrealized_pl_pct": -0.799
+  },
+  {
+   "key": "LS-3415690",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Madrid be 38\u00b0C on August 10?",
+   "opened": 1786354983.7386894,
+   "cost": 23.434765,
+   "edge": 0.00104,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.982,
+   "resolve_by": "2026-08-10T12:00:00Z",
+   "note": "YES at 0.030, assumed true 0.018, NO ask 0.980, fee 0.0010",
+   "legs": [
+    {
+     "token_id": "28799428881147349626617470275190716893354771677104768249575674254480191666764",
+     "market_id": "3415690",
+     "label": "NO Will the highest temperature in Madrid be 38\u00b0C on August 10?",
+     "side": "NO",
+     "entry_price": 0.98,
+     "shares": 23.889137
+    }
+   ],
+   "current_prices": {
+    "28799428881147349626617470275190716893354771677104768249575674254480191666764": 0.97
+   },
+   "current_value": 23.172463,
+   "unrealized_pl": -0.262302,
+   "unrealized_pl_pct": -1.119
+  },
+  {
+   "key": "CV-3303781",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 10?",
+   "opened": 1786354983.7387064,
+   "cost": 11.184512,
+   "edge": 0.01998,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.98,
+   "resolve_by": "2026-08-10T16:00:00Z",
+   "note": "YES ask 0.979, fee 0.0014, 0.3d to resolution, 2786% annualized net if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "64425931229850052021637169665574932195363591761126526769477890220531389865120",
+     "market_id": "3303781",
+     "label": "YES Will the price of Bitcoin be above $64,000 on August 10?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 11.407656
+    }
+   ],
+   "current_prices": {
+    "64425931229850052021637169665574932195363591761126526769477890220531389865120": 0.975
+   },
+   "current_value": 11.122465,
+   "unrealized_pl": -0.062047,
+   "unrealized_pl_pct": -0.555
+  },
+  {
+   "key": "CV-3398273",
+   "strategy": "CONVERGE",
+   "title": "Converge: WTI Crude Oil (WTI) closes above $76 on August 10?",
+   "opened": 1786354983.738717,
+   "cost": 12.173948,
+   "edge": 0.026669,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9743999999999999,
+   "resolve_by": "2026-08-10T21:00:00Z",
+   "note": "YES ask 0.973, fee 0.0011, 0.5d to resolution, 2071% annualized net if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "31461057475444568972622790795378923665832624054999158807329256283339467709031",
+     "market_id": "3398273",
+     "label": "YES WTI Crude Oil (WTI) closes above $76 on August 10?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 12.498268
+    }
+   ],
+   "current_prices": {
+    "31461057475444568972622790795378923665832624054999158807329256283339467709031": 0.968
+   },
+   "current_value": 12.098323,
+   "unrealized_pl": -0.075625,
+   "unrealized_pl_pct": -0.621
   }
  ],
  "closed": [
@@ -13263,6 +13321,39 @@
    "closed_ts": 1786348816.2160535,
    "payout": 23.95552,
    "pl": 0.935081
+  },
+  {
+   "key": "CV-3372714",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"My Life with the Walter Boys: Season 3\" be the #2 US N",
+   "opened": 1786211098.9137306,
+   "cost": 23.321755,
+   "edge": 0.031458,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-08-11T23:59:00Z",
+   "note": "YES ask 0.968, fee 0.0015, 3.3d to resolution, 352% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "2308076526730779139330697159020656992180689713484659762636354245523438792545",
+     "market_id": "3372714",
+     "label": "YES Will \"My Life with the Walter Boys: Season 3\" be the #2 US Netflix show this week?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 24.054236
+    }
+   ],
+   "current_prices": {
+    "2308076526730779139330697159020656992180689713484659762636354245523438792545": 0.968
+   },
+   "current_value": 23.2845,
+   "unrealized_pl": -0.037255,
+   "unrealized_pl_pct": -0.16,
+   "closed_ts": 1786354983.9280238,
+   "payout": 23.573151,
+   "pl": 0.251396,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -15609,6 +15700,14 @@
    "equity": 938.1174,
    "realized_total": -60.4718,
    "open_positions": 14
+  },
+  {
+   "ts": 1786354983.9294853,
+   "cash": 665.1634,
+   "open_value": 273.69,
+   "equity": 938.8534,
+   "realized_total": -59.2854,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -22155,6 +22254,43 @@
    "title": "Fade: Exact Score: San Diego FC 0 - 0 Club Tijuana?",
    "amount": 23.96,
    "pl": 0.94
+  },
+  {
+   "ts": 1786354983.7386894,
+   "type": "OPEN",
+   "key": "LS-3415690",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Madrid be 38\u00b0C on August 10?",
+   "amount": 23.43,
+   "pl": null
+  },
+  {
+   "ts": 1786354983.7387064,
+   "type": "OPEN",
+   "key": "CV-3303781",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $64,000 on August 10?",
+   "amount": 11.18,
+   "pl": null
+  },
+  {
+   "ts": 1786354983.738717,
+   "type": "OPEN",
+   "key": "CV-3398273",
+   "strategy": "CONVERGE",
+   "title": "Converge: WTI Crude Oil (WTI) closes above $76 on August 10?",
+   "amount": 12.17,
+   "pl": null
+  },
+  {
+   "ts": 1786354983.9280238,
+   "type": "CLOSE",
+   "key": "CV-3372714",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"My Life with the Walter Boys: Season 3\" be the #2 US N",
+   "amount": 23.57,
+   "pl": 0.25,
+   "reason": "take_profit"
   }
  ]
 }
