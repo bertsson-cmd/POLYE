@@ -1,5 +1,5 @@
 {
- "cash": 624.727839,
+ "cash": 669.618646,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.97
+    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9755
    },
-   "current_value": 9.185603,
-   "unrealized_pl": -0.107689,
-   "unrealized_pl_pct": -1.159
+   "current_value": 9.237686,
+   "unrealized_pl": -0.055606,
+   "unrealized_pl_pct": -0.598
   },
   {
    "key": "CV-2840115",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9425
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.9595
    },
-   "current_value": 13.957218,
-   "unrealized_pl": -0.492725,
-   "unrealized_pl_pct": -3.41
+   "current_value": 14.208966,
+   "unrealized_pl": -0.240977,
+   "unrealized_pl_pct": -1.668
   },
   {
    "key": "CV-2952488",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9705
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9695
    },
-   "current_value": 23.694606,
-   "unrealized_pl": 0.256356,
-   "unrealized_pl_pct": 1.094
+   "current_value": 23.670191,
+   "unrealized_pl": 0.231941,
+   "unrealized_pl_pct": 0.99
   },
   {
    "key": "CV-3421365",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.96
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9665
    },
-   "current_value": 10.086626,
-   "unrealized_pl": -0.244152,
-   "unrealized_pl_pct": -2.363
+   "current_value": 10.154921,
+   "unrealized_pl": -0.175857,
+   "unrealized_pl_pct": -1.702
   },
   {
    "key": "CV-3381139",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.868
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.894
    },
-   "current_value": 21.215819,
-   "unrealized_pl": -2.314382,
-   "unrealized_pl_pct": -9.836
+   "current_value": 21.851316,
+   "unrealized_pl": -1.678885,
+   "unrealized_pl_pct": -7.135
   },
   {
    "key": "CV-3145207",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "100552431054592067159009047862058109487191573660751322702353957711570433725343": 0.986
+    "100552431054592067159009047862058109487191573660751322702353957711570433725343": 0.9855
    },
-   "current_value": 10.826289,
-   "unrealized_pl": -0.016616,
-   "unrealized_pl_pct": -0.153
+   "current_value": 10.820799,
+   "unrealized_pl": -0.022106,
+   "unrealized_pl_pct": -0.204
   },
   {
    "key": "CV-3487549",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "25555797528303709628565806458655269572949245471041397479153001745029868656982": 0.915
+    "25555797528303709628565806458655269572949245471041397479153001745029868656982": 0.92
    },
-   "current_value": 22.681646,
-   "unrealized_pl": -0.914703,
-   "unrealized_pl_pct": -3.876
+   "current_value": 22.805589,
+   "unrealized_pl": -0.79076,
+   "unrealized_pl_pct": -3.351
   },
   {
    "key": "CV-3492211",
@@ -315,40 +315,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.93
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.935
    },
-   "current_value": 9.210622,
-   "unrealized_pl": -0.231008,
-   "unrealized_pl_pct": -2.447
-  },
-  {
-   "key": "CV-3482461",
-   "strategy": "CONVERGE",
-   "title": "Converge: S&P 500 (SPY) closes above $770 on August 11?",
-   "opened": 1786459564.8657763,
-   "cost": 23.653212,
-   "edge": 0.050632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-08-11T20:00:00Z",
-   "note": "YES ask 0.950, fee 0.0019, 0.2d to resolution, 8477% annualized net if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "215842872773304646668096688186134099867361776969593031579447100674153190815",
-     "market_id": "3482461",
-     "label": "YES S&P 500 (SPY) closes above $770 on August 11?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 24.848421
-    }
-   ],
-   "current_prices": {
-    "215842872773304646668096688186134099867361776969593031579447100674153190815": 0.89
-   },
-   "current_value": 22.115095,
-   "unrealized_pl": -1.538117,
-   "unrealized_pl_pct": -6.503
+   "current_value": 9.260142,
+   "unrealized_pl": -0.181488,
+   "unrealized_pl_pct": -1.922
   },
   {
    "key": "CV-3451184",
@@ -373,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.952
+    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.9545
    },
-   "current_value": 23.215819,
-   "unrealized_pl": -0.443058,
-   "unrealized_pl_pct": -1.873
+   "current_value": 23.276784,
+   "unrealized_pl": -0.382093,
+   "unrealized_pl_pct": -1.615
   },
   {
    "key": "CV-3055004",
@@ -431,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.9745
+    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.9825
    },
-   "current_value": 6.681574,
-   "unrealized_pl": -0.040722,
-   "unrealized_pl_pct": -0.606
+   "current_value": 6.736426,
+   "unrealized_pl": 0.01413,
+   "unrealized_pl_pct": 0.21
   },
   {
    "key": "LS-3143112",
@@ -467,91 +438,62 @@
    "unrealized_pl_pct": -0.719
   },
   {
-   "key": "CV-3501332",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Russia target Kyiv on August 11, 2026?",
-   "opened": 1786473452.825168,
-   "cost": 23.46425,
-   "edge": 0.030928,
+   "key": "LS-3261074",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Fluminense FC vs. CS Independiente Rivadavia: CS Independien",
+   "opened": 1786480069.9740062,
+   "cost": 23.518958,
+   "edge": 0.00635,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9772000000000001,
-   "resolve_by": "2026-08-11T23:59:00Z",
-   "note": "YES ask 0.970, fee 0.0000, 0.2d to resolution, 5057% annualized net if YES, assumed true P 0.977",
+   "est_p_win": 0.9805,
+   "resolve_by": "2026-08-11T22:00:00Z",
+   "note": "YES at 0.033, assumed true 0.019, NO ask 0.973, fee 0.0013",
    "legs": [
     {
-     "token_id": "57268887968810136032925485464624858194806689892144444452159777337273972795253",
-     "market_id": "3501332",
-     "label": "YES Will Russia target Kyiv on August 11, 2026?",
-     "side": "YES",
-     "entry_price": 0.97,
-     "shares": 24.189948
+     "token_id": "55102192688984000210782235969533889943343904542667333437124832771243001303431",
+     "market_id": "3261074",
+     "label": "NO Fluminense FC vs. CS Independiente Rivadavia: CS Independiente Rivadavia O/U 2.5",
+     "side": "NO",
+     "entry_price": 0.973,
+     "shares": 24.139003
     }
    ],
    "current_prices": {
-    "57268887968810136032925485464624858194806689892144444452159777337273972795253": 0.9745
+    "55102192688984000210782235969533889943343904542667333437124832771243001303431": 0.9675
    },
-   "current_value": 23.573104,
-   "unrealized_pl": 0.108854,
-   "unrealized_pl_pct": 0.464
+   "current_value": 23.354485,
+   "unrealized_pl": -0.164473,
+   "unrealized_pl_pct": -0.699
   },
   {
-   "key": "CV-3361254",
+   "key": "CV-2937526",
    "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 12?",
-   "opened": 1786473452.8251789,
-   "cost": 23.513525,
-   "edge": 0.028828,
+   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
+   "opened": 1786480069.9740336,
+   "cost": 23.48725,
+   "edge": 0.034126,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9743999999999999,
-   "resolve_by": "2026-08-12T16:00:00Z",
-   "note": "YES ask 0.970, fee 0.0020, 0.9d to resolution, 1181% annualized net if YES, assumed true P 0.974",
+   "est_p_win": 0.9716,
+   "resolve_by": "2026-08-14T23:59:00Z",
+   "note": "YES ask 0.967, fee 0.0000, 3.1d to resolution, 396% annualized net if YES, assumed true P 0.972",
    "legs": [
     {
-     "token_id": "46917500919787484634947793503566048470683833024716400830495357681559100848944",
-     "market_id": "3361254",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 12?",
+     "token_id": "60736604095974956194543682313156464544142668961532964567135396949190081432607",
+     "market_id": "2937526",
+     "label": "YES US x Iran Effective Ceasefire by August 14?",
      "side": "YES",
-     "entry_price": 0.97,
-     "shares": 24.189948
+     "entry_price": 0.967,
+     "shares": 24.28878
     }
    ],
    "current_prices": {
-    "46917500919787484634947793503566048470683833024716400830495357681559100848944": 0.975
+    "60736604095974956194543682313156464544142668961532964567135396949190081432607": 0.9645
    },
-   "current_value": 23.585199,
-   "unrealized_pl": 0.071674,
-   "unrealized_pl_pct": 0.305
-  },
-  {
-   "key": "CV-3483033",
-   "strategy": "CONVERGE",
-   "title": "Converge: WTI Crude Oil (WTI) Up or Down on August 11?",
-   "opened": 1786477484.9485211,
-   "cost": 18.664571,
-   "edge": 0.029728,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9724,
-   "resolve_by": "2026-08-11T21:00:00Z",
-   "note": "YES ask 0.970, fee 0.0012, 0.1d to resolution, 20764% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "95704932682163662163994409750609812233282816655756995236115773171965513820251",
-     "market_id": "3483033",
-     "label": "YES WTI Crude Oil (WTI) Up or Down on August 11?",
-     "side": "YES",
-     "entry_price": 0.97,
-     "shares": 19.218763
-    }
-   ],
-   "current_prices": {
-    "95704932682163662163994409750609812233282816655756995236115773171965513820251": 0.9655
-   },
-   "current_value": 18.555716,
-   "unrealized_pl": -0.108855,
-   "unrealized_pl_pct": -0.583
+   "current_value": 23.426528,
+   "unrealized_pl": -0.060722,
+   "unrealized_pl_pct": -0.259
   }
  ],
  "closed": [
@@ -14059,6 +14001,136 @@
    "closed_ts": 1786477486.5741947,
    "payout": 24.626959,
    "pl": 1.008288
+  },
+  {
+   "key": "CV-3361254",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 12?",
+   "opened": 1786473452.8251789,
+   "cost": 23.513525,
+   "edge": 0.028828,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9743999999999999,
+   "resolve_by": "2026-08-12T16:00:00Z",
+   "note": "YES ask 0.970, fee 0.0020, 0.9d to resolution, 1181% annualized net if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "46917500919787484634947793503566048470683833024716400830495357681559100848944",
+     "market_id": "3361254",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 12?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 24.189948
+    }
+   ],
+   "current_prices": {
+    "46917500919787484634947793503566048470683833024716400830495357681559100848944": 0.975
+   },
+   "current_value": 23.585199,
+   "unrealized_pl": 0.071674,
+   "unrealized_pl_pct": 0.305,
+   "closed_ts": 1786480076.4731224,
+   "payout": 23.851289,
+   "pl": 0.337764,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3483033",
+   "strategy": "CONVERGE",
+   "title": "Converge: WTI Crude Oil (WTI) Up or Down on August 11?",
+   "opened": 1786477484.9485211,
+   "cost": 18.664571,
+   "edge": 0.029728,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9724,
+   "resolve_by": "2026-08-11T21:00:00Z",
+   "note": "YES ask 0.970, fee 0.0012, 0.1d to resolution, 20764% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "95704932682163662163994409750609812233282816655756995236115773171965513820251",
+     "market_id": "3483033",
+     "label": "YES WTI Crude Oil (WTI) Up or Down on August 11?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 19.218763
+    }
+   ],
+   "current_prices": {
+    "95704932682163662163994409750609812233282816655756995236115773171965513820251": 0.9655
+   },
+   "current_value": 18.555716,
+   "unrealized_pl": -0.108855,
+   "unrealized_pl_pct": -0.583,
+   "closed_ts": 1786480076.4731224,
+   "payout": 19.007357,
+   "pl": 0.342786,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3482461",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $770 on August 11?",
+   "opened": 1786459564.8657763,
+   "cost": 23.653212,
+   "edge": 0.050632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-11T20:00:00Z",
+   "note": "YES ask 0.950, fee 0.0019, 0.2d to resolution, 8477% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "215842872773304646668096688186134099867361776969593031579447100674153190815",
+     "market_id": "3482461",
+     "label": "YES S&P 500 (SPY) closes above $770 on August 11?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 24.848421
+    }
+   ],
+   "current_prices": {
+    "215842872773304646668096688186134099867361776969593031579447100674153190815": 0.95
+   },
+   "current_value": 23.606,
+   "unrealized_pl": -0.047212,
+   "unrealized_pl_pct": -0.2,
+   "closed_ts": 1786480078.6780295,
+   "payout": 24.848421,
+   "pl": 1.195209
+  },
+  {
+   "key": "CV-3501332",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Russia target Kyiv on August 11, 2026?",
+   "opened": 1786473452.825168,
+   "cost": 23.46425,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9772000000000001,
+   "resolve_by": "2026-08-11T23:59:00Z",
+   "note": "YES ask 0.970, fee 0.0000, 0.2d to resolution, 5057% annualized net if YES, assumed true P 0.977",
+   "legs": [
+    {
+     "token_id": "57268887968810136032925485464624858194806689892144444452159777337273972795253",
+     "market_id": "3501332",
+     "label": "YES Will Russia target Kyiv on August 11, 2026?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 24.189948
+    }
+   ],
+   "current_prices": {
+    "57268887968810136032925485464624858194806689892144444452159777337273972795253": 0.97
+   },
+   "current_value": 23.46425,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0,
+   "closed_ts": 1786480078.6780295,
+   "payout": 24.189948,
+   "pl": 0.725698
   }
  ],
  "history": [
@@ -16677,6 +16749,14 @@
    "equity": 939.4905,
    "realized_total": -53.3817,
    "open_positions": 20
+  },
+  {
+   "ts": 1786480076.4753637,
+   "cash": 620.5803,
+   "open_value": 323.1108,
+   "equity": 943.691,
+   "realized_total": -51.6929,
+   "open_positions": 19
   }
  ],
  "trades": [
@@ -23633,6 +23713,62 @@
    "title": "Fade: Exact Score: FK Kauno \u017dalgiris 1 - 0 GNK Dinamo Zagreb?",
    "amount": 24.63,
    "pl": 1.01
+  },
+  {
+   "ts": 1786480069.9740062,
+   "type": "OPEN",
+   "key": "LS-3261074",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Fluminense FC vs. CS Independiente Rivadavia: CS Independien",
+   "amount": 23.52,
+   "pl": null
+  },
+  {
+   "ts": 1786480069.9740336,
+   "type": "OPEN",
+   "key": "CV-2937526",
+   "strategy": "CONVERGE",
+   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
+   "amount": 23.49,
+   "pl": null
+  },
+  {
+   "ts": 1786480076.4731224,
+   "type": "CLOSE",
+   "key": "CV-3361254",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 12?",
+   "amount": 23.85,
+   "pl": 0.34,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786480076.4731224,
+   "type": "CLOSE",
+   "key": "CV-3483033",
+   "strategy": "CONVERGE",
+   "title": "Converge: WTI Crude Oil (WTI) Up or Down on August 11?",
+   "amount": 19.01,
+   "pl": 0.34,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786480078.6780295,
+   "type": "CLOSE",
+   "key": "CV-3482461",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $770 on August 11?",
+   "amount": 24.85,
+   "pl": 1.2
+  },
+  {
+   "ts": 1786480078.6780295,
+   "type": "CLOSE",
+   "key": "CV-3501332",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Russia target Kyiv on August 11, 2026?",
+   "amount": 24.19,
+   "pl": 0.73
   }
  ]
 }
