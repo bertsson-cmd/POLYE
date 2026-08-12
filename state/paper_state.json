@@ -1,5 +1,5 @@
 {
- "cash": 587.581779,
+ "cash": 704.462129,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9765
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9825
    },
-   "current_value": 10.25999,
-   "unrealized_pl": -0.070788,
-   "unrealized_pl_pct": -0.685
+   "current_value": 10.323031,
+   "unrealized_pl": -0.007747,
+   "unrealized_pl_pct": -0.075
   },
   {
    "key": "CV-3145207",
@@ -148,35 +148,6 @@
    "unrealized_pl_pct": -0.052
   },
   {
-   "key": "CV-3487549",
-   "strategy": "CONVERGE",
-   "title": "Converge: Grok 4.6 released by August 21, 2026?",
-   "opened": 1786421592.1876626,
-   "cost": 23.596349,
-   "edge": 0.050632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-08-21T23:59:00Z",
-   "note": "YES ask 0.950, fee 0.0019, 10.8d to resolution, 171% annualized net if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "25555797528303709628565806458655269572949245471041397479153001745029868656982",
-     "market_id": "3487549",
-     "label": "YES Grok 4.6 released by August 21, 2026?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 24.788684
-    }
-   ],
-   "current_prices": {
-    "25555797528303709628565806458655269572949245471041397479153001745029868656982": 0.96
-   },
-   "current_value": 23.797137,
-   "unrealized_pl": 0.200788,
-   "unrealized_pl_pct": 0.851
-  },
-  {
    "key": "CV-3492211",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9415
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9485
    },
-   "current_value": 9.324517,
-   "unrealized_pl": -0.117113,
-   "unrealized_pl_pct": -1.24
+   "current_value": 9.393844,
+   "unrealized_pl": -0.047786,
+   "unrealized_pl_pct": -0.506
   },
   {
    "key": "CV-3451184",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.9715
+    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.971
    },
-   "current_value": 23.691353,
-   "unrealized_pl": 0.032476,
-   "unrealized_pl_pct": 0.137
+   "current_value": 23.679159,
+   "unrealized_pl": 0.020282,
+   "unrealized_pl_pct": 0.086
   },
   {
    "key": "CV-3055004",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.985
+    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.979
    },
-   "current_value": 6.753567,
-   "unrealized_pl": 0.031271,
-   "unrealized_pl_pct": 0.465
+   "current_value": 6.712428,
+   "unrealized_pl": -0.009868,
+   "unrealized_pl_pct": -0.147
   },
   {
    "key": "LS-3474887",
@@ -344,40 +315,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.92
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.93
    },
-   "current_value": 9.203389,
-   "unrealized_pl": -0.333373,
-   "unrealized_pl_pct": -3.496
-  },
-  {
-   "key": "CV-2937526",
-   "strategy": "CONVERGE",
-   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
-   "opened": 1786518014.048705,
-   "cost": 23.79275,
-   "edge": 0.01626,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9868,
-   "resolve_by": "2026-08-14T23:59:00Z",
-   "note": "YES ask 0.984, fee 0.0000, 2.7d to resolution, 219% annualized net if YES, assumed true P 0.987",
-   "legs": [
-    {
-     "token_id": "60736604095974956194543682313156464544142668961532964567135396949190081432607",
-     "market_id": "2937526",
-     "label": "YES US x Iran Effective Ceasefire by August 14?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 24.179624
-    }
-   ],
-   "current_prices": {
-    "60736604095974956194543682313156464544142668961532964567135396949190081432607": 0.9855
-   },
-   "current_value": 23.829019,
-   "unrealized_pl": 0.036269,
-   "unrealized_pl_pct": 0.152
+   "current_value": 9.303426,
+   "unrealized_pl": -0.233336,
+   "unrealized_pl_pct": -2.447
   },
   {
    "key": "LS-3504660",
@@ -402,69 +344,11 @@
     }
    ],
    "current_prices": {
-    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.935
+    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.915
    },
-   "current_value": 22.496993,
-   "unrealized_pl": -1.106323,
-   "unrealized_pl_pct": -4.687
-  },
-  {
-   "key": "CV-3361838",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of XRP be above $1.00 on August 12?",
-   "opened": 1786523146.4296124,
-   "cost": 23.769501,
-   "edge": 0.048095,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9756,
-   "resolve_by": "2026-08-12T16:00:00Z",
-   "note": "YES ask 0.951, fee 0.0033, 0.3d to resolution, 5565% annualized net if YES, assumed true P 0.976",
-   "legs": [
-    {
-     "token_id": "21448449731593722507520902430215613397293180160913466395379326159335020573217",
-     "market_id": "3361838",
-     "label": "YES Will the price of XRP be above $1.00 on August 12?",
-     "side": "YES",
-     "entry_price": 0.951,
-     "shares": 24.90878
-    }
-   ],
-   "current_prices": {
-    "21448449731593722507520902430215613397293180160913466395379326159335020573217": 0.9835
-   },
-   "current_value": 24.497785,
-   "unrealized_pl": 0.728284,
-   "unrealized_pl_pct": 3.064
-  },
-  {
-   "key": "CV-3492567",
-   "strategy": "CONVERGE",
-   "title": "Converge: Solana Up or Down on August 12?",
-   "opened": 1786527684.643633,
-   "cost": 18.202351,
-   "edge": 0.049132,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-08-12T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 0.3d to resolution, 6821% annualized net if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "88624141065524743864921889617117952145219374203294573229813760298959988664740",
-     "market_id": "3492567",
-     "label": "YES Solana Up or Down on August 12?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 19.093542
-    }
-   ],
-   "current_prices": {
-    "88624141065524743864921889617117952145219374203294573229813760298959988664740": 0.899
-   },
-   "current_value": 17.165094,
-   "unrealized_pl": -1.037257,
-   "unrealized_pl_pct": -5.698
+   "current_value": 22.015774,
+   "unrealized_pl": -1.587542,
+   "unrealized_pl_pct": -6.726
   },
   {
    "key": "CV-3381139",
@@ -489,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9165
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9375
    },
-   "current_value": 22.386265,
-   "unrealized_pl": -1.447784,
-   "unrealized_pl_pct": -6.074
+   "current_value": 22.899207,
+   "unrealized_pl": -0.934842,
+   "unrealized_pl_pct": -3.922
   },
   {
    "key": "CV-3451146",
@@ -518,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "37094156644846522068220621663556521315388620185867185107986420360356019327489": 0.885
+    "37094156644846522068220621663556521315388620185867185107986420360356019327489": 0.95
    },
-   "current_value": 8.865185,
-   "unrealized_pl": -0.684422,
-   "unrealized_pl_pct": -7.167
+   "current_value": 9.5163,
+   "unrealized_pl": -0.033307,
+   "unrealized_pl_pct": -0.349
   },
   {
    "key": "CV-3400558",
@@ -547,40 +431,11 @@
     }
    ],
    "current_prices": {
-    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9385
+    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9475
    },
-   "current_value": 13.542239,
-   "unrealized_pl": -0.470446,
-   "unrealized_pl_pct": -3.357
-  },
-  {
-   "key": "CV-3381021",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
-   "opened": 1786547246.5430765,
-   "cost": 23.900336,
-   "edge": 0.025859,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9772000000000001,
-   "resolve_by": "2026-08-13T16:00:00Z",
-   "note": "YES ask 0.973, fee 0.0018, 1.0d to resolution, 911% annualized net if YES, assumed true P 0.977",
-   "legs": [
-    {
-     "token_id": "65525940755131202977657525308347226911721402524304485499272945539620763496326",
-     "market_id": "3381021",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 13?",
-     "side": "YES",
-     "entry_price": 0.973,
-     "shares": 24.517215
-    }
-   ],
-   "current_prices": {
-    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9715
-   },
-   "current_value": 23.818474,
-   "unrealized_pl": -0.081862,
-   "unrealized_pl_pct": -0.343
+   "current_value": 13.672106,
+   "unrealized_pl": -0.340579,
+   "unrealized_pl_pct": -2.431
   },
   {
    "key": "CV-3400683",
@@ -605,11 +460,11 @@
     }
    ],
    "current_prices": {
-    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.979
+    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9815
    },
-   "current_value": 15.854915,
-   "unrealized_pl": -0.068623,
-   "unrealized_pl_pct": -0.431
+   "current_value": 15.895402,
+   "unrealized_pl": -0.028136,
+   "unrealized_pl_pct": -0.177
   },
   {
    "key": "CV-3516855",
@@ -634,11 +489,11 @@
     }
    ],
    "current_prices": {
-    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.9845
+    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.9855
    },
-   "current_value": 8.530733,
-   "unrealized_pl": -0.02137,
-   "unrealized_pl_pct": -0.25
+   "current_value": 8.539398,
+   "unrealized_pl": -0.012705,
+   "unrealized_pl_pct": -0.149
   }
  ],
  "closed": [
@@ -14637,6 +14492,171 @@
    "payout": 15.511005,
    "pl": 0.069079,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3487549",
+   "strategy": "CONVERGE",
+   "title": "Converge: Grok 4.6 released by August 21, 2026?",
+   "opened": 1786421592.1876626,
+   "cost": 23.596349,
+   "edge": 0.050632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-21T23:59:00Z",
+   "note": "YES ask 0.950, fee 0.0019, 10.8d to resolution, 171% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "25555797528303709628565806458655269572949245471041397479153001745029868656982",
+     "market_id": "3487549",
+     "label": "YES Grok 4.6 released by August 21, 2026?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 24.788684
+    }
+   ],
+   "current_prices": {
+    "25555797528303709628565806458655269572949245471041397479153001745029868656982": 0.96
+   },
+   "current_value": 23.797137,
+   "unrealized_pl": 0.200788,
+   "unrealized_pl_pct": 0.851,
+   "closed_ts": 1786550879.885417,
+   "payout": 24.763895,
+   "pl": 1.167546,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2937526",
+   "strategy": "CONVERGE",
+   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
+   "opened": 1786518014.048705,
+   "cost": 23.79275,
+   "edge": 0.01626,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-08-14T23:59:00Z",
+   "note": "YES ask 0.984, fee 0.0000, 2.7d to resolution, 219% annualized net if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "60736604095974956194543682313156464544142668961532964567135396949190081432607",
+     "market_id": "2937526",
+     "label": "YES US x Iran Effective Ceasefire by August 14?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 24.179624
+    }
+   ],
+   "current_prices": {
+    "60736604095974956194543682313156464544142668961532964567135396949190081432607": 0.9855
+   },
+   "current_value": 23.829019,
+   "unrealized_pl": 0.036269,
+   "unrealized_pl_pct": 0.152,
+   "closed_ts": 1786550879.885417,
+   "payout": 24.131265,
+   "pl": 0.338515,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3361838",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.00 on August 12?",
+   "opened": 1786523146.4296124,
+   "cost": 23.769501,
+   "edge": 0.048095,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9756,
+   "resolve_by": "2026-08-12T16:00:00Z",
+   "note": "YES ask 0.951, fee 0.0033, 0.3d to resolution, 5565% annualized net if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "21448449731593722507520902430215613397293180160913466395379326159335020573217",
+     "market_id": "3361838",
+     "label": "YES Will the price of XRP be above $1.00 on August 12?",
+     "side": "YES",
+     "entry_price": 0.951,
+     "shares": 24.90878
+    }
+   ],
+   "current_prices": {
+    "21448449731593722507520902430215613397293180160913466395379326159335020573217": 0.9835
+   },
+   "current_value": 24.497785,
+   "unrealized_pl": 0.728284,
+   "unrealized_pl_pct": 3.064,
+   "closed_ts": 1786550879.885417,
+   "payout": 24.883871,
+   "pl": 1.11437,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3492567",
+   "strategy": "CONVERGE",
+   "title": "Converge: Solana Up or Down on August 12?",
+   "opened": 1786527684.643633,
+   "cost": 18.202351,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-12T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 0.3d to resolution, 6821% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "88624141065524743864921889617117952145219374203294573229813760298959988664740",
+     "market_id": "3492567",
+     "label": "YES Solana Up or Down on August 12?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 19.093542
+    }
+   ],
+   "current_prices": {
+    "88624141065524743864921889617117952145219374203294573229813760298959988664740": 0.899
+   },
+   "current_value": 17.165094,
+   "unrealized_pl": -1.037257,
+   "unrealized_pl_pct": -5.698,
+   "closed_ts": 1786550879.885417,
+   "payout": 19.074448,
+   "pl": 0.872097,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3381021",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
+   "opened": 1786547246.5430765,
+   "cost": 23.900336,
+   "edge": 0.025859,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9772000000000001,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.973, fee 0.0018, 1.0d to resolution, 911% annualized net if YES, assumed true P 0.977",
+   "legs": [
+    {
+     "token_id": "65525940755131202977657525308347226911721402524304485499272945539620763496326",
+     "market_id": "3381021",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 13?",
+     "side": "YES",
+     "entry_price": 0.973,
+     "shares": 24.517215
+    }
+   ],
+   "current_prices": {
+    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9715
+   },
+   "current_value": 23.818474,
+   "unrealized_pl": -0.081862,
+   "unrealized_pl_pct": -0.343,
+   "closed_ts": 1786550879.885417,
+   "payout": 24.026871,
+   "pl": 0.126535,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -17383,6 +17403,14 @@
    "equity": 949.4973,
    "realized_total": -46.4131,
    "open_positions": 22
+  },
+  {
+   "ts": 1786550879.8872032,
+   "cash": 704.4621,
+   "open_value": 249.849,
+   "equity": 954.3111,
+   "realized_total": -42.794,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -24646,6 +24674,56 @@
    "title": "Converge: Will the Workers' Party nominate Lula for President of Brazi",
    "amount": 15.51,
    "pl": 0.07,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786550879.885417,
+   "type": "CLOSE",
+   "key": "CV-3487549",
+   "strategy": "CONVERGE",
+   "title": "Converge: Grok 4.6 released by August 21, 2026?",
+   "amount": 24.76,
+   "pl": 1.17,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786550879.885417,
+   "type": "CLOSE",
+   "key": "CV-2937526",
+   "strategy": "CONVERGE",
+   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
+   "amount": 24.13,
+   "pl": 0.34,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786550879.885417,
+   "type": "CLOSE",
+   "key": "CV-3361838",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of XRP be above $1.00 on August 12?",
+   "amount": 24.88,
+   "pl": 1.11,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786550879.885417,
+   "type": "CLOSE",
+   "key": "CV-3492567",
+   "strategy": "CONVERGE",
+   "title": "Converge: Solana Up or Down on August 12?",
+   "amount": 19.07,
+   "pl": 0.87,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786550879.885417,
+   "type": "CLOSE",
+   "key": "CV-3381021",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
+   "amount": 24.03,
+   "pl": 0.13,
    "reason": "take_profit"
   }
  ]
