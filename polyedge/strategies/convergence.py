@@ -10,7 +10,7 @@ The risk is precisely the "actually not decided" surprise, so:
   * only short horizons (CV_MAX_DAYS),
   * an annualized-yield floor so capital isn't parked for pennies,
   * treated as probabilistic, never guaranteed,
-  * four categories excluded (each independently toggleable) where a
+  * six categories excluded (each independently toggleable) where a
     price near $1 does NOT mean "effectively decided" -- it means
     "priced against a discrete, hard-to-predict reveal", which is a
     different (and historically costly) kind of risk than a market
@@ -37,6 +37,13 @@ The risk is precisely the "actually not decided" surprise, so:
       flip in one trading day -- confirmed twice in paper data, where
       two legs of the same market-cap reshuffle went from ~96c to near
       zero together.
+    - CV_EXCLUDE_WEATHER: "highest temperature between 72-73°F" is a
+      narrow bracket on a continuously-moving quantity -- the same
+      coin-flip-shaped risk as CV_EXCLUDE_BRACKETS, just not caught by
+      that detector's patterns (no $ or % sign, not a countable noun).
+      Real evidence: LS-3412924, an actual live LONGSHOT position with
+      exactly this structure (see longshot.py -- this exclusion also
+      applies there, unlike sports).
 """
 import logging
 import re
@@ -183,10 +190,68 @@ def is_ranking_market(m: Market) -> bool:
     return bool(_RANKING_TITLE_PATTERNS.search(text))
 
 
+# --- weather detection --------------------------------------------------
+# Real evidence: LS-3412924, an actual live LONGSHOT position ("Fade: Will
+# the highest temperature in Seattle be between 72-73°F...") -- a narrow
+# bracket on a continuously-moving quantity, the same risk shape as the
+# tweet-count bracket that caused CONVERGE's original documented loss
+# (-$26.21, see the module docstring). is_bracket_market() above does NOT
+# catch this: its numeric-range patterns require $ or % signs, or one of a
+# fixed set of countable nouns (tweets, goals, ...) -- "72-73°F" matches
+# neither, so a dedicated detector is needed rather than widening that one.
+#
+# Research done before writing this (per the task): fees.py's
+# CATEGORY_FEE_RATES table already carries a "weather" entry with its own
+# fee rate, cross-checked against Polymarket's own published "$ per 100
+# shares" fee schedule during the V2 rewrite -- confirming "weather" is a
+# real, populated Gamma category/tag value on this bot's actual data, not
+# a guess. That makes category a MORE reliable signal here than for
+# is_election_market()/is_ranking_market() above (whose comments explain
+# why a bare category would be too broad or too unreliable for those
+# specific cases) -- so, like is_sports_match() above (the one other
+# detector with a confirmed-reliable category signal), this checks BOTH
+# title patterns AND category, not title alone.
+#
+# "rain"/"snow" are deliberately NOT matched as bare words -- tried first,
+# and confirmed by hand to false-positive on a plausible real title shape
+# ("Will Kanye's new album 'Rain' go platinum?", a legitimate culture-
+# category CONVERGE/LONGSHOT candidate with no weather content at all).
+# Real weather markets asking about rain/snow overwhelmingly use one of
+# the recognizable question phrasings below ("will it rain", "chance of
+# snow", "rain tomorrow") rather than the bare noun as a title subject --
+# matching those instead avoids the proper-noun collision while still
+# catching "will it rain in X" style markets that rainfall/rainy alone
+# would miss.
+_WEATHER_TITLE_PATTERNS = re.compile(
+    r"\btemperature\b|\bweather\b|\brainfall\b|\bsnowfall\b|"
+    r"\bprecipitation\b|\bhumidity\b|\bwind\s*speed\b|\bheat\s*wave\b|"
+    r"\bhurricane\b|\btornado\b|\bblizzard\b|\bdrought\b|\bwildfire\b|"
+    r"\bhigh(est)?\s+temp\b|\blow(est)?\s+temp\b|"
+    r"\brainy\b|\bsnowy\b|"
+    r"\bwill\s+it\s+(rain|snow)\b|\bchance\s+of\s+(rain|snow)\b|"
+    r"\b(rain|snow)\s+(today|tomorrow|this\s+week|next\s+week)\b|"
+    r"°\s*[FC]\b|\d+\s*[-–]\s*\d+\s*°\s*[FC]\b",
+    re.IGNORECASE)
+
+_WEATHER_CATEGORY_KEYWORDS = ("weather", "climate")
+
+
+def is_weather_market(m: Market) -> bool:
+    """True if this market asks about a weather quantity (temperature,
+    rain/snowfall, wind, etc.) -- narrow brackets on these are the same
+    coin-flip-shaped risk as is_bracket_market() catches for counts, just
+    not phrased in a way that detector's patterns match."""
+    text = f"{m.question} {m.event_title}"
+    if _WEATHER_TITLE_PATTERNS.search(text):
+        return True
+    cat = (m.category or "").lower()
+    return any(k in cat for k in _WEATHER_CATEGORY_KEYWORDS)
+
+
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
     out: List[Opportunity] = []
     skipped = {"sports": 0, "earnings": 0, "brackets": 0, "elections": 0,
-               "rankings": 0}
+               "rankings": 0, "weather": 0}
     for m in all_markets:
         if not (config.CV_MIN_YES_PRICE <= m.yes_price <= config.CV_MAX_YES_PRICE):
             continue
@@ -209,6 +274,9 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             continue
         if config.CV_EXCLUDE_RANKINGS and is_ranking_market(m):
             skipped["rankings"] += 1
+            continue
+        if config.CV_EXCLUDE_WEATHER and is_weather_market(m):
+            skipped["weather"] += 1
             continue
 
         book = books.get(m.yes_token)

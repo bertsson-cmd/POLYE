@@ -567,6 +567,48 @@ class TestLongshot:
         opps_no_fee = longshot.scan([m], books)
         assert opps_no_fee[0].edge > o.edge
 
+    # ---- weather exclusion -- real evidence: LS-3412924, an actual live
+    # LONGSHOT position that motivated this whole task. LONGSHOT had NONE
+    # of CONVERGE's exclusion filters before this -- a real gap, not just
+    # a CONVERGE-side one, since a narrow bracket on a volatile continuous
+    # quantity is the same risk regardless of which strategy trades it.
+    def test_ls3412924_regression_real_title_now_excluded(self):
+        """The exact real title, verbatim, from the live position that
+        motivated this task."""
+        m = market("L1", 0.04, end=_future(5),
+                   question="Fade: Will the highest temperature in "
+                            "Seattle be between 72-73°F...")
+        assert longshot.is_weather_market(m)   # reused from convergence.py, not duplicated
+        books = {m.no_token: book(m.no_token, 0.965)}
+        assert longshot.scan([m], books) == []
+
+    def test_weather_excluded_alongside_a_real_fade(self):
+        wx = market("L1", 0.04, end=_future(5),
+                   question="Fade: Will the highest temperature in "
+                            "Seattle be between 72-73°F...")
+        real = market("L2", 0.04, end=_future(5), event="OTHER",
+                      question="Will X post fewer than 10 statements this week?")
+        books = {m.no_token: book(m.no_token, 0.965) for m in (wx, real)}
+        out = longshot.scan([wx, real], books)
+        assert [o.key for o in out] == ["LS-L2"]
+
+    def test_weather_exclusion_toggle_off(self, monkeypatch):
+        monkeypatch.setattr(config, "LS_EXCLUDE_WEATHER", False)
+        m = market("L1", 0.04, end=_future(5),
+                   question="Fade: Will the highest temperature in "
+                            "Seattle be between 72-73°F...")
+        books = {m.no_token: book(m.no_token, 0.965)}
+        assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
+
+    def test_sports_still_not_excluded_from_longshot(self):
+        """Deliberate difference from weather: LONGSHOT fades cheap sports
+        outcomes as core to its edge, unlike weather brackets, which are a
+        real risk regardless of strategy -- not a judgment call."""
+        m = market("L1", 0.04, end=_future(5),
+                   question="Lakers vs. Celtics: O/U 210.5")
+        books = {m.no_token: book(m.no_token, 0.965)}
+        assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
+
 
 # ------------------------------------------------------------------ CONVERGE
 class TestConvergence:
@@ -847,6 +889,69 @@ class TestConvergence:
         assert not convergence.is_election_market(m)
         books = {m.yes_token: book(m.yes_token, 0.96)}
         assert len(convergence.scan([m], books)) == 1
+
+    # ---- weather exclusion ----
+    # Real evidence: LS-3412924, an actual live LONGSHOT position ("Fade:
+    # Will the highest temperature in Seattle be between 72-73°F...") --
+    # a narrow bracket on a continuously-moving quantity, the same risk
+    # shape as the tweet-count bracket that caused CONVERGE's original
+    # documented loss. is_bracket_market() does NOT catch it (no $ or %
+    # sign, no countable noun), so it's tested here as its own detector.
+    def test_weather_titles_detected(self):
+        weather_titles = [
+            "Will the highest temperature in Seattle be between 72-73°F "
+            "on August 15?",                      # LS-3412924's real title, CONVERGE-shaped
+            "Will NYC see over 6 inches of snowfall by January?",
+            "Will it rain in Miami on July 4th?",
+            "Chance of snow in Denver exceeds 50% tomorrow?",
+            "Will humidity in Phoenix exceed 40% today?",
+            "Will a hurricane make landfall in Florida this season?",
+            "Highest temp in Chicago on July 20?",
+        ]
+        for t in weather_titles:
+            m = market("W1", 0.96, question=t)
+            assert convergence.is_weather_market(m), f"should detect: {t}"
+
+    def test_weather_category_tag_detection(self):
+        m = market("W2", 0.96, question="Chicago high on July 20?")
+        m.category = "weather culture"
+        assert convergence.is_weather_market(m)
+
+    def test_weather_false_positive_guard_proper_noun_title(self):
+        """CRITICAL false-positive guard: bare "rain"/"snow" word matching
+        was tried first and confirmed (by hand) to false-positive on this
+        exact title shape -- a legitimate culture-category market whose
+        title happens to quote a proper noun that collides with weather
+        vocabulary. The detector deliberately requires recognizable
+        weather-question phrasing (rainfall/rainy/"will it rain"/"chance
+        of snow"/etc.) rather than the bare noun, specifically to avoid this."""
+        non_weather_titles = [
+            "Will Kanye's new album 'Rain' go platinum?",
+            "Will 'Purple Rain' reissue chart at #1 on Billboard?",
+            "Will the movie 'Snow' win Best Picture?",
+        ]
+        for t in non_weather_titles:
+            m = market("W3", 0.96, question=t)
+            assert not convergence.is_weather_market(m), f"false positive: {t}"
+
+    def test_scan_excludes_weather(self):
+        wx = market("WX", 0.96, end=_future(3), liq=99999,
+                   question="Will the highest temperature in Seattle be "
+                            "between 72-73°F on August 15?")
+        news = market("NW6", 0.96, end=_future(3), liq=99999,
+                      question="Israeli parliament dissolved by July 17?")
+        books = {m.yes_token: book(m.yes_token, 0.96) for m in (wx, news)}
+        out = convergence.scan([wx, news], books)
+        assert [o.key for o in out] == ["CV-NW6"]
+
+    def test_scan_includes_weather_when_disabled(self, monkeypatch):
+        monkeypatch.setattr(config, "CV_EXCLUDE_WEATHER", False)
+        wx = market("WX2", 0.96, end=_future(3), liq=99999,
+                   question="Will the highest temperature in Seattle be "
+                            "between 72-73°F on August 15?")
+        books = {wx.yes_token: book(wx.yes_token, 0.96)}
+        out = convergence.scan([wx], books)
+        assert [o.key for o in out] == ["CV-WX2"]
 
     def test_leg_carries_fee_and_yield_is_net(self, monkeypatch):
         monkeypatch.setattr(config, "FEE_RATE_OVERRIDE", 0.05)

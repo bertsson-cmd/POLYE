@@ -24,16 +24,33 @@ true probability and the edge:
   buy NO at ask a (≈ 1-q):  win (1-a) per share with prob (1 - true_p)
                             lose a per share with prob true_p
   EV per $1 cost = [(1-true_p) * 1 - a] / a
+
+LS_EXCLUDE_WEATHER (default on) excludes weather markets (temperature
+ranges, rain/snow, etc.), reusing convergence.is_weather_market() --
+real evidence: LS-3412924, an actual live position ("Fade: Will the
+highest temperature in Seattle be between 72-73°F...") -- a narrow
+bracket on a continuously-moving quantity, the same risk shape as the
+tweet-count bracket that caused CONVERGE's original documented loss.
+This is deliberately UNLIKE sports, which LONGSHOT does NOT exclude
+(fading cheap sports outcomes is core to its edge, a strategy-specific
+judgment call) -- a narrow bracket on a volatile continuous quantity is
+a real risk regardless of which strategy is trading it, not a judgment
+call the way sports exclusion was.
 """
+import logging
 from typing import Dict, List
 
 from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
+from .convergence import is_weather_market
+
+log = logging.getLogger("polyedge.longshot")
 
 
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
     out: List[Opportunity] = []
     seen_events = set()
+    skipped_weather = 0
     for m in all_markets:
         q = m.yes_price
         if not (config.LS_MIN_YES_PRICE <= q <= config.LS_MAX_YES_PRICE):
@@ -45,6 +62,20 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
             continue
         # one fade per event — fading 5 outcomes of the same event is one bet
         if m.event_id in seen_events:
+            continue
+        # Unlike sports (deliberately NOT excluded here -- fading cheap
+        # sports outcomes is core to LONGSHOT's edge, a strategy-specific
+        # judgment call), a narrow bracket on a volatile continuous
+        # quantity is a real risk regardless of which strategy is trading
+        # it -- not a judgment call. Real evidence: LS-3412924, an actual
+        # live LONGSHOT position ("Fade: Will the highest temperature in
+        # Seattle be between 72-73°F...") -- structurally the same
+        # "narrow band on a continuously-moving quantity" risk pattern as
+        # the tweet-count bracket that caused CONVERGE's documented loss.
+        # Reuses convergence.is_weather_market() rather than duplicating
+        # the detection logic.
+        if config.LS_EXCLUDE_WEATHER and is_weather_market(m):
+            skipped_weather += 1
             continue
 
         book = books.get(m.no_token)
@@ -77,4 +108,6 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         ))
     # soonest-resolving first (near-term capital cycling), edge as tiebreak
     out.sort(key=lambda o: (days_to_resolution(o.resolve_by), -o.edge))
+    if skipped_weather:
+        log.info("longshot: excluded %d weather market(s)", skipped_weather)
     return out
