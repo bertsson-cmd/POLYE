@@ -1,5 +1,5 @@
 {
- "cash": 680.234991,
+ "cash": 705.14209,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.94
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.93
    },
-   "current_value": 9.403463,
-   "unrealized_pl": -0.133299,
-   "unrealized_pl_pct": -1.398
+   "current_value": 9.303426,
+   "unrealized_pl": -0.233336,
+   "unrealized_pl_pct": -2.447
   },
   {
    "key": "LS-3504660",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.9965
+    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.9995
    },
-   "current_value": 23.976742,
-   "unrealized_pl": 0.373426,
-   "unrealized_pl_pct": 1.582
+   "current_value": 24.048925,
+   "unrealized_pl": 0.445609,
+   "unrealized_pl_pct": 1.888
   },
   {
    "key": "CV-3381139",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9685
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.966
    },
-   "current_value": 23.656408,
-   "unrealized_pl": -0.177641,
-   "unrealized_pl_pct": -0.745
+   "current_value": 23.595343,
+   "unrealized_pl": -0.238706,
+   "unrealized_pl_pct": -1.002
   },
   {
    "key": "CV-3451146",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9385
+    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9375
    },
-   "current_value": 13.542239,
-   "unrealized_pl": -0.470446,
-   "unrealized_pl_pct": -3.357
+   "current_value": 13.527809,
+   "unrealized_pl": -0.484876,
+   "unrealized_pl_pct": -3.46
   },
   {
    "key": "CV-3516855",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9845
+    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.981
    },
-   "current_value": 23.845639,
-   "unrealized_pl": -0.037162,
-   "unrealized_pl_pct": -0.156
+   "current_value": 23.760866,
+   "unrealized_pl": -0.121935,
+   "unrealized_pl_pct": -0.511
   },
   {
    "key": "LS-3222645",
@@ -431,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "14172635218769132615390162761583405664010590380704701049242842709796680588315": 0.9645
+    "14172635218769132615390162761583405664010590380704701049242842709796680588315": 0.9785
    },
-   "current_value": 23.936294,
-   "unrealized_pl": 0.016683,
-   "unrealized_pl_pct": 0.07
+   "current_value": 24.283736,
+   "unrealized_pl": 0.364125,
+   "unrealized_pl_pct": 1.522
   },
   {
    "key": "CV-2952488",
@@ -460,40 +460,11 @@
     }
    ],
    "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9825
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9835
    },
-   "current_value": 23.883786,
-   "unrealized_pl": -0.036464,
-   "unrealized_pl_pct": -0.152
-  },
-  {
-   "key": "CV-3409541",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Kai and Speed beat the Minecraft challenge by August 17",
-   "opened": 1786571811.1732728,
-   "cost": 23.98262,
-   "edge": 0.039667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-17T23:59:00Z",
-   "note": "YES ask 0.960, fee 0.0019, 5.1d to resolution, 285% annualized net if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "101885144930706737105576340105373476383506126608825983231914615563722778767317",
-     "market_id": "3409541",
-     "label": "YES Will Kai and Speed beat the Minecraft challenge by August 17?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 24.932031
-    }
-   ],
-   "current_prices": {
-    "101885144930706737105576340105373476383506126608825983231914615563722778767317": 0.955
-   },
-   "current_value": 23.81009,
-   "unrealized_pl": -0.17253,
-   "unrealized_pl_pct": -0.719
+   "current_value": 23.908095,
+   "unrealized_pl": -0.012155,
+   "unrealized_pl_pct": -0.051
   }
  ],
  "closed": [
@@ -14854,6 +14825,39 @@
    "payout": 6.816767,
    "pl": 0.104338,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3409541",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Kai and Speed beat the Minecraft challenge by August 17",
+   "opened": 1786571811.1732728,
+   "cost": 23.98262,
+   "edge": 0.039667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-17T23:59:00Z",
+   "note": "YES ask 0.960, fee 0.0019, 5.1d to resolution, 285% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "101885144930706737105576340105373476383506126608825983231914615563722778767317",
+     "market_id": "3409541",
+     "label": "YES Will Kai and Speed beat the Minecraft challenge by August 17?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.932031
+    }
+   ],
+   "current_prices": {
+    "101885144930706737105576340105373476383506126608825983231914615563722778767317": 0.955
+   },
+   "current_value": 23.81009,
+   "unrealized_pl": -0.17253,
+   "unrealized_pl_pct": -0.719,
+   "closed_ts": 1786574929.9327877,
+   "payout": 24.907099,
+   "pl": 0.924479,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -17656,6 +17660,14 @@
    "equity": 957.1772,
    "realized_total": -41.1868,
    "open_positions": 17
+  },
+  {
+   "ts": 1786574929.9344165,
+   "cash": 705.1421,
+   "open_value": 253.3157,
+   "equity": 958.4578,
+   "realized_total": -40.2624,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -25082,6 +25094,16 @@
    "title": "Converge: Will Houthis successfully target shipping on August 11, 2026",
    "amount": 6.82,
    "pl": 0.1,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786574929.9327877,
+   "type": "CLOSE",
+   "key": "CV-3409541",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Kai and Speed beat the Minecraft challenge by August 17",
+   "amount": 24.91,
+   "pl": 0.92,
    "reason": "take_profit"
   }
  ]
