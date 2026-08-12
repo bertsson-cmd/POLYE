@@ -1,5 +1,5 @@
 {
- "cash": 720.8849,
+ "cash": 697.275263,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.988
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9875
    },
-   "current_value": 23.451472,
-   "unrealized_pl": 0.034366,
-   "unrealized_pl_pct": 0.147
+   "current_value": 23.439604,
+   "unrealized_pl": 0.022498,
+   "unrealized_pl_pct": 0.096
   },
   {
    "key": "CV-3421365",
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.984
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9855
    },
-   "current_value": 10.338792,
-   "unrealized_pl": 0.008014,
-   "unrealized_pl_pct": 0.078
+   "current_value": 10.354552,
+   "unrealized_pl": 0.023774,
+   "unrealized_pl_pct": 0.23
   },
   {
    "key": "CV-3145207",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9485
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9505
    },
-   "current_value": 9.393844,
-   "unrealized_pl": -0.047786,
-   "unrealized_pl_pct": -0.506
+   "current_value": 9.413652,
+   "unrealized_pl": -0.027978,
+   "unrealized_pl_pct": -0.296
   },
   {
    "key": "CV-3451184",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.94
+    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.9945
    },
-   "current_value": 22.617298,
-   "unrealized_pl": -0.986018,
-   "unrealized_pl_pct": -4.177
+   "current_value": 23.92862,
+   "unrealized_pl": 0.325304,
+   "unrealized_pl_pct": 1.378
   },
   {
    "key": "CV-3381139",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9585
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.955
    },
-   "current_value": 23.412149,
-   "unrealized_pl": -0.4219,
-   "unrealized_pl_pct": -1.77
+   "current_value": 23.326659,
+   "unrealized_pl": -0.50739,
+   "unrealized_pl_pct": -2.129
   },
   {
    "key": "CV-3451146",
@@ -373,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.949
+    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9515
    },
-   "current_value": 13.69375,
-   "unrealized_pl": -0.318935,
-   "unrealized_pl_pct": -2.276
+   "current_value": 13.729824,
+   "unrealized_pl": -0.282861,
+   "unrealized_pl_pct": -2.019
   },
   {
    "key": "CV-3516855",
@@ -409,35 +409,6 @@
    "unrealized_pl_pct": -0.149
   },
   {
-   "key": "CV-3512841",
-   "strategy": "CONVERGE",
-   "title": "Converge: SPY (SPY) Up or Down on August 12?",
-   "opened": 1786554653.6865819,
-   "cost": 23.905465,
-   "edge": 0.050632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.968,
-   "resolve_by": "2026-08-12T20:00:00Z",
-   "note": "YES ask 0.950, fee 0.0019, 0.1d to resolution, 15737% annualized net if YES, assumed true P 0.968",
-   "legs": [
-    {
-     "token_id": "5240387707303294004847523373756722247535884190127665644733618347171399450637",
-     "market_id": "3512841",
-     "label": "YES SPY (SPY) Up or Down on August 12?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 25.113421
-    }
-   ],
-   "current_prices": {
-    "5240387707303294004847523373756722247535884190127665644733618347171399450637": 0.96
-   },
-   "current_value": 24.108884,
-   "unrealized_pl": 0.203419,
-   "unrealized_pl_pct": 0.851
-  },
-  {
    "key": "CV-3381021",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
@@ -460,11 +431,69 @@
     }
    ],
    "current_prices": {
-    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9845
+    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.984
    },
-   "current_value": 23.845639,
-   "unrealized_pl": -0.037162,
-   "unrealized_pl_pct": -0.156
+   "current_value": 23.833529,
+   "unrealized_pl": -0.049272,
+   "unrealized_pl_pct": -0.206
+  },
+  {
+   "key": "LS-3222645",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: SE Palmeiras 0 - 1 Club Cerro Porte\u00f1o?",
+   "opened": 1786558050.7429192,
+   "cost": 23.919611,
+   "edge": 0.013252,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9766,
+   "resolve_by": "2026-08-12T22:00:00Z",
+   "note": "YES at 0.039, assumed true 0.023, NO ask 0.962, fee 0.0018",
+   "legs": [
+    {
+     "token_id": "14172635218769132615390162761583405664010590380704701049242842709796680588315",
+     "market_id": "3222645",
+     "label": "NO Exact Score: SE Palmeiras 0 - 1 Club Cerro Porte\u00f1o?",
+     "side": "NO",
+     "entry_price": 0.962,
+     "shares": 24.817308
+    }
+   ],
+   "current_prices": {
+    "14172635218769132615390162761583405664010590380704701049242842709796680588315": 0.961
+   },
+   "current_value": 23.849433,
+   "unrealized_pl": -0.070178,
+   "unrealized_pl_pct": -0.293
+  },
+  {
+   "key": "CV-2952488",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
+   "opened": 1786558050.7429345,
+   "cost": 23.87425,
+   "edge": 0.026694,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9772000000000001,
+   "resolve_by": "2026-08-15T23:59:00Z",
+   "note": "YES ask 0.974, fee 0.0000, 3.2d to resolution, 300% annualized net if YES, assumed true P 0.977",
+   "legs": [
+    {
+     "token_id": "77550960228341204288120509394963885549177211314903311399404330431381651171385",
+     "market_id": "2952488",
+     "label": "YES Israel x Iran ceasefire continues through August 15?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 24.51155
+    }
+   ],
+   "current_prices": {
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9715
+   },
+   "current_value": 23.812971,
+   "unrealized_pl": -0.061279,
+   "unrealized_pl_pct": -0.257
   }
  ],
  "closed": [
@@ -14726,6 +14755,39 @@
    "closed_ts": 1786554657.0319097,
    "payout": 24.544163,
    "pl": 0.747399
+  },
+  {
+   "key": "CV-3512841",
+   "strategy": "CONVERGE",
+   "title": "Converge: SPY (SPY) Up or Down on August 12?",
+   "opened": 1786554653.6865819,
+   "cost": 23.905465,
+   "edge": 0.050632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.968,
+   "resolve_by": "2026-08-12T20:00:00Z",
+   "note": "YES ask 0.950, fee 0.0019, 0.1d to resolution, 15737% annualized net if YES, assumed true P 0.968",
+   "legs": [
+    {
+     "token_id": "5240387707303294004847523373756722247535884190127665644733618347171399450637",
+     "market_id": "3512841",
+     "label": "YES SPY (SPY) Up or Down on August 12?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 25.113421
+    }
+   ],
+   "current_prices": {
+    "5240387707303294004847523373756722247535884190127665644733618347171399450637": 0.96
+   },
+   "current_value": 24.108884,
+   "unrealized_pl": 0.203419,
+   "unrealized_pl_pct": 0.851,
+   "closed_ts": 1786558050.9289124,
+   "payout": 24.184224,
+   "pl": 0.278759,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -17487,6 +17549,14 @@
    "open_value": 258.6288,
    "equity": 954.9696,
    "realized_total": -42.4889,
+   "open_positions": 17
+  },
+  {
+   "ts": 1786558050.9307866,
+   "cash": 697.2753,
+   "open_value": 259.6971,
+   "equity": 956.9724,
+   "realized_total": -41.4628,
    "open_positions": 17
   }
  ],
@@ -24849,6 +24919,34 @@
    "title": "Fade: Will the highest temperature in Kuala Lumpur be 35\u00b0C on Augu",
    "amount": 24.54,
    "pl": 0.75
+  },
+  {
+   "ts": 1786558050.7429192,
+   "type": "OPEN",
+   "key": "LS-3222645",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: SE Palmeiras 0 - 1 Club Cerro Porte\u00f1o?",
+   "amount": 23.92,
+   "pl": null
+  },
+  {
+   "ts": 1786558050.7429345,
+   "type": "OPEN",
+   "key": "CV-2952488",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
+   "amount": 23.87,
+   "pl": null
+  },
+  {
+   "ts": 1786558050.9289124,
+   "type": "CLOSE",
+   "key": "CV-3512841",
+   "strategy": "CONVERGE",
+   "title": "Converge: SPY (SPY) Up or Down on August 12?",
+   "amount": 24.18,
+   "pl": 0.28,
+   "reason": "take_profit"
   }
  ]
 }
