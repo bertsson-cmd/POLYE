@@ -1,5 +1,5 @@
 {
- "cash": 679.668892,
+ "cash": 684.637283,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -61,35 +61,6 @@
    "unrealized_pl_pct": -0.107
   },
   {
-   "key": "CV-3361383",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 12?",
-   "opened": 1786299354.0434847,
-   "cost": 14.449943,
-   "edge": 0.024874,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9756,
-   "resolve_by": "2026-08-12T16:00:00Z",
-   "note": "YES ask 0.974, fee 0.0018, 2.9d to resolution, 312% annualized net if YES, assumed true P 0.976",
-   "legs": [
-    {
-     "token_id": "5997364395002296386166175441678231565887801974544060353102197702217373896109",
-     "market_id": "3361383",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 12?",
-     "side": "YES",
-     "entry_price": 0.974,
-     "shares": 14.808719
-    }
-   ],
-   "current_prices": {
-    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.967
-   },
-   "current_value": 14.320031,
-   "unrealized_pl": -0.129912,
-   "unrealized_pl_pct": -0.899
-  },
-  {
    "key": "CV-2952488",
    "strategy": "CONVERGE",
    "title": "Converge: Israel x Iran ceasefire continues through August 15?",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9635
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.967
    },
-   "current_value": 23.523702,
-   "unrealized_pl": 0.085452,
-   "unrealized_pl_pct": 0.365
+   "current_value": 23.609154,
+   "unrealized_pl": 0.170904,
+   "unrealized_pl_pct": 0.729
   },
   {
    "key": "CV-3421365",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.973
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.975
    },
-   "current_value": 10.223216,
-   "unrealized_pl": -0.107562,
-   "unrealized_pl_pct": -1.041
+   "current_value": 10.244229,
+   "unrealized_pl": -0.086549,
+   "unrealized_pl_pct": -0.838
   },
   {
    "key": "CV-3381139",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9485
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.95
    },
-   "current_value": 23.183415,
-   "unrealized_pl": -0.346786,
-   "unrealized_pl_pct": -1.474
+   "current_value": 23.220079,
+   "unrealized_pl": -0.310122,
+   "unrealized_pl_pct": -1.318
   },
   {
    "key": "CV-3145207",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "25555797528303709628565806458655269572949245471041397479153001745029868656982": 0.945
+    "25555797528303709628565806458655269572949245471041397479153001745029868656982": 0.95
    },
-   "current_value": 23.425306,
-   "unrealized_pl": -0.171043,
-   "unrealized_pl_pct": -0.725
+   "current_value": 23.54925,
+   "unrealized_pl": -0.047099,
+   "unrealized_pl_pct": -0.2
   },
   {
    "key": "CV-3492211",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "101782539649627240683781543248281093390573931868220791348782499310940240460745": 0.9495
+    "101782539649627240683781543248281093390573931868220791348782499310940240460745": 0.97
    },
-   "current_value": 6.604613,
-   "unrealized_pl": -0.107816,
-   "unrealized_pl_pct": -1.606
+   "current_value": 6.747208,
+   "unrealized_pl": 0.034779,
+   "unrealized_pl_pct": 0.518
   },
   {
    "key": "CV-3451145",
@@ -373,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.9825
+    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.983
    },
-   "current_value": 6.736426,
-   "unrealized_pl": 0.01413,
-   "unrealized_pl_pct": 0.21
+   "current_value": 6.739854,
+   "unrealized_pl": 0.017558,
+   "unrealized_pl_pct": 0.261
   },
   {
    "key": "LS-3143112",
@@ -402,40 +373,11 @@
     }
    ],
    "current_prices": {
-    "93921402574869182314653080115218014566077456519067412292257748647129732650088": 0.9945
+    "93921402574869182314653080115218014566077456519067412292257748647129732650088": 0.9955
    },
-   "current_value": 24.147526,
-   "unrealized_pl": 0.791077,
-   "unrealized_pl_pct": 3.387
-  },
-  {
-   "key": "CV-2937526",
-   "strategy": "CONVERGE",
-   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
-   "opened": 1786480069.9740336,
-   "cost": 23.48725,
-   "edge": 0.034126,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9716,
-   "resolve_by": "2026-08-14T23:59:00Z",
-   "note": "YES ask 0.967, fee 0.0000, 3.1d to resolution, 396% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "60736604095974956194543682313156464544142668961532964567135396949190081432607",
-     "market_id": "2937526",
-     "label": "YES US x Iran Effective Ceasefire by August 14?",
-     "side": "YES",
-     "entry_price": 0.967,
-     "shares": 24.28878
-    }
-   ],
-   "current_prices": {
-    "60736604095974956194543682313156464544142668961532964567135396949190081432607": 0.9755
-   },
-   "current_value": 23.693705,
-   "unrealized_pl": 0.206455,
-   "unrealized_pl_pct": 0.879
+   "current_value": 24.171807,
+   "unrealized_pl": 0.815358,
+   "unrealized_pl_pct": 3.491
   },
   {
    "key": "CV-3381021",
@@ -460,11 +402,69 @@
     }
    ],
    "current_prices": {
-    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.975
+    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9835
    },
-   "current_value": 23.58512,
-   "unrealized_pl": -0.08643,
-   "unrealized_pl_pct": -0.365
+   "current_value": 23.790734,
+   "unrealized_pl": 0.119184,
+   "unrealized_pl_pct": 0.503
+  },
+  {
+   "key": "LS-3474887",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Kuala Lumpur be 35\u00b0C on Augu",
+   "opened": 1786513777.752549,
+   "cost": 23.796764,
+   "edge": 0.010367,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9796,
+   "resolve_by": "2026-08-12T12:00:00Z",
+   "note": "YES at 0.034, assumed true 0.020, NO ask 0.968, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "80968524715680693239928866502655858163028059394896226639618870064471388912114",
+     "market_id": "3474887",
+     "label": "NO Will the highest temperature in Kuala Lumpur be 35\u00b0C on August 12?",
+     "side": "NO",
+     "entry_price": 0.968,
+     "shares": 24.544163
+    }
+   ],
+   "current_prices": {
+    "80968524715680693239928866502655858163028059394896226639618870064471388912114": 0.966
+   },
+   "current_value": 23.709661,
+   "unrealized_pl": -0.087103,
+   "unrealized_pl_pct": -0.366
+  },
+  {
+   "key": "CV-3516858",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 18?",
+   "opened": 1786513777.7525628,
+   "cost": 9.536762,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-18T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 6.4d to resolution, 279% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "94133643939986345772497485934689137685064261309842554788726410541215530809225",
+     "market_id": "3516858",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 18?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.003684
+    }
+   ],
+   "current_prices": {
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.94
+   },
+   "current_value": 9.403463,
+   "unrealized_pl": -0.133299,
+   "unrealized_pl_pct": -1.398
   }
  ],
  "closed": [
@@ -14200,6 +14200,72 @@
    "closed_ts": 1786508142.552398,
    "payout": 24.139003,
    "pl": 0.620045
+  },
+  {
+   "key": "CV-3361383",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 12?",
+   "opened": 1786299354.0434847,
+   "cost": 14.449943,
+   "edge": 0.024874,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9756,
+   "resolve_by": "2026-08-12T16:00:00Z",
+   "note": "YES ask 0.974, fee 0.0018, 2.9d to resolution, 312% annualized net if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "5997364395002296386166175441678231565887801974544060353102197702217373896109",
+     "market_id": "3361383",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 12?",
+     "side": "YES",
+     "entry_price": 0.974,
+     "shares": 14.808719
+    }
+   ],
+   "current_prices": {
+    "5997364395002296386166175441678231565887801974544060353102197702217373896109": 0.967
+   },
+   "current_value": 14.320031,
+   "unrealized_pl": -0.129912,
+   "unrealized_pl_pct": -0.899,
+   "closed_ts": 1786513777.9459565,
+   "payout": 14.571779,
+   "pl": 0.121836,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2937526",
+   "strategy": "CONVERGE",
+   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
+   "opened": 1786480069.9740336,
+   "cost": 23.48725,
+   "edge": 0.034126,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9716,
+   "resolve_by": "2026-08-14T23:59:00Z",
+   "note": "YES ask 0.967, fee 0.0000, 3.1d to resolution, 396% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "60736604095974956194543682313156464544142668961532964567135396949190081432607",
+     "market_id": "2937526",
+     "label": "YES US x Iran Effective Ceasefire by August 14?",
+     "side": "YES",
+     "entry_price": 0.967,
+     "shares": 24.28878
+    }
+   ],
+   "current_prices": {
+    "60736604095974956194543682313156464544142668961532964567135396949190081432607": 0.9755
+   },
+   "current_value": 23.693705,
+   "unrealized_pl": 0.206455,
+   "unrealized_pl_pct": 0.879,
+   "closed_ts": 1786513777.9459565,
+   "payout": 23.730138,
+   "pl": 0.242888,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -16874,6 +16940,14 @@
    "equity": 950.3502,
    "realized_total": -49.4824,
    "open_positions": 17
+  },
+  {
+   "ts": 1786513777.9470549,
+   "cash": 684.6373,
+   "open_value": 267.0755,
+   "equity": 951.7128,
+   "realized_total": -48.4977,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -23933,6 +24007,44 @@
    "title": "Fade: Fluminense FC vs. CS Independiente Rivadavia: CS Independien",
    "amount": 24.14,
    "pl": 0.62
+  },
+  {
+   "ts": 1786513777.752549,
+   "type": "OPEN",
+   "key": "LS-3474887",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Kuala Lumpur be 35\u00b0C on Augu",
+   "amount": 23.8,
+   "pl": null
+  },
+  {
+   "ts": 1786513777.7525628,
+   "type": "OPEN",
+   "key": "CV-3516858",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 18?",
+   "amount": 9.54,
+   "pl": null
+  },
+  {
+   "ts": 1786513777.9459565,
+   "type": "CLOSE",
+   "key": "CV-3361383",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 12?",
+   "amount": 14.57,
+   "pl": 0.12,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786513777.9459565,
+   "type": "CLOSE",
+   "key": "CV-2937526",
+   "strategy": "CONVERGE",
+   "title": "Converge: US x Iran Effective Ceasefire by August 14?",
+   "amount": 23.73,
+   "pl": 0.24,
+   "reason": "take_profit"
   }
  ]
 }
