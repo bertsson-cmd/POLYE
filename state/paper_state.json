@@ -1,5 +1,5 @@
 {
- "cash": 704.462129,
+ "cash": 720.8849,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -32,35 +32,6 @@
    "unrealized_pl_pct": 0.147
   },
   {
-   "key": "CV-2952488",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
-   "opened": 1786308897.5538104,
-   "cost": 23.43825,
-   "edge": 0.041667,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-15T23:59:00Z",
-   "note": "YES ask 0.960, fee 0.0000, 6.1d to resolution, 248% annualized net if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "77550960228341204288120509394963885549177211314903311399404330431381651171385",
-     "market_id": "2952488",
-     "label": "YES Israel x Iran ceasefire continues through August 15?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 24.414844
-    }
-   ],
-   "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.969
-   },
-   "current_value": 23.657984,
-   "unrealized_pl": 0.219734,
-   "unrealized_pl_pct": 0.938
-  },
-  {
    "key": "CV-3421365",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
@@ -83,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9825
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.984
    },
-   "current_value": 10.323031,
-   "unrealized_pl": -0.007747,
-   "unrealized_pl_pct": -0.075
+   "current_value": 10.338792,
+   "unrealized_pl": 0.008014,
+   "unrealized_pl_pct": 0.078
   },
   {
    "key": "CV-3145207",
@@ -264,35 +235,6 @@
    "unrealized_pl_pct": -0.147
   },
   {
-   "key": "LS-3474887",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Will the highest temperature in Kuala Lumpur be 35\u00b0C on Augu",
-   "opened": 1786513777.752549,
-   "cost": 23.796764,
-   "edge": 0.010367,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9796,
-   "resolve_by": "2026-08-12T12:00:00Z",
-   "note": "YES at 0.034, assumed true 0.020, NO ask 0.968, fee 0.0015",
-   "legs": [
-    {
-     "token_id": "80968524715680693239928866502655858163028059394896226639618870064471388912114",
-     "market_id": "3474887",
-     "label": "NO Will the highest temperature in Kuala Lumpur be 35\u00b0C on August 12?",
-     "side": "NO",
-     "entry_price": 0.968,
-     "shares": 24.544163
-    }
-   ],
-   "current_prices": {
-    "80968524715680693239928866502655858163028059394896226639618870064471388912114": 0.9995
-   },
-   "current_value": 24.531891,
-   "unrealized_pl": 0.735127,
-   "unrealized_pl_pct": 3.089
-  },
-  {
    "key": "CV-3516858",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 18?",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.915
+    "75233700636656850516474529602577063406433604847142662959187438659864895546105": 0.94
    },
-   "current_value": 22.015774,
-   "unrealized_pl": -1.587542,
-   "unrealized_pl_pct": -6.726
+   "current_value": 22.617298,
+   "unrealized_pl": -0.986018,
+   "unrealized_pl_pct": -4.177
   },
   {
    "key": "CV-3381139",
@@ -373,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9375
+    "69477867028009154750033437741727431701866309861686531685842443739528571608491": 0.9585
    },
-   "current_value": 22.899207,
-   "unrealized_pl": -0.934842,
-   "unrealized_pl_pct": -3.922
+   "current_value": 23.412149,
+   "unrealized_pl": -0.4219,
+   "unrealized_pl_pct": -1.77
   },
   {
    "key": "CV-3451146",
@@ -431,40 +373,11 @@
     }
    ],
    "current_prices": {
-    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9475
+    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.949
    },
-   "current_value": 13.672106,
-   "unrealized_pl": -0.340579,
-   "unrealized_pl_pct": -2.431
-  },
-  {
-   "key": "CV-3400683",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 14?",
-   "opened": 1786547246.5430946,
-   "cost": 15.923538,
-   "edge": 0.01707,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9832,
-   "resolve_by": "2026-08-14T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 2.0d to resolution, 306% annualized net if YES, assumed true P 0.983",
-   "legs": [
-    {
-     "token_id": "5324650569138592067579701098348901190164341695315492604083290469765160228177",
-     "market_id": "3400683",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 14?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 16.19501
-    }
-   ],
-   "current_prices": {
-    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9815
-   },
-   "current_value": 15.895402,
-   "unrealized_pl": -0.028136,
-   "unrealized_pl_pct": -0.177
+   "current_value": 13.69375,
+   "unrealized_pl": -0.318935,
+   "unrealized_pl_pct": -2.276
   },
   {
    "key": "CV-3516855",
@@ -494,6 +407,64 @@
    "current_value": 8.539398,
    "unrealized_pl": -0.012705,
    "unrealized_pl_pct": -0.149
+  },
+  {
+   "key": "CV-3512841",
+   "strategy": "CONVERGE",
+   "title": "Converge: SPY (SPY) Up or Down on August 12?",
+   "opened": 1786554653.6865819,
+   "cost": 23.905465,
+   "edge": 0.050632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.968,
+   "resolve_by": "2026-08-12T20:00:00Z",
+   "note": "YES ask 0.950, fee 0.0019, 0.1d to resolution, 15737% annualized net if YES, assumed true P 0.968",
+   "legs": [
+    {
+     "token_id": "5240387707303294004847523373756722247535884190127665644733618347171399450637",
+     "market_id": "3512841",
+     "label": "YES SPY (SPY) Up or Down on August 12?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 25.113421
+    }
+   ],
+   "current_prices": {
+    "5240387707303294004847523373756722247535884190127665644733618347171399450637": 0.96
+   },
+   "current_value": 24.108884,
+   "unrealized_pl": 0.203419,
+   "unrealized_pl_pct": 0.851
+  },
+  {
+   "key": "CV-3381021",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
+   "opened": 1786554653.6866004,
+   "cost": 23.882801,
+   "edge": 0.014178,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 1.0d to resolution, 544% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "65525940755131202977657525308347226911721402524304485499272945539620763496326",
+     "market_id": "3381021",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 13?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 24.221066
+    }
+   ],
+   "current_prices": {
+    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9845
+   },
+   "current_value": 23.845639,
+   "unrealized_pl": -0.037162,
+   "unrealized_pl_pct": -0.156
   }
  ],
  "closed": [
@@ -14657,6 +14628,104 @@
    "payout": 24.026871,
    "pl": 0.126535,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2952488",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
+   "opened": 1786308897.5538104,
+   "cost": 23.43825,
+   "edge": 0.041667,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-15T23:59:00Z",
+   "note": "YES ask 0.960, fee 0.0000, 6.1d to resolution, 248% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "77550960228341204288120509394963885549177211314903311399404330431381651171385",
+     "market_id": "2952488",
+     "label": "YES Israel x Iran ceasefire continues through August 15?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 24.414844
+    }
+   ],
+   "current_prices": {
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.969
+   },
+   "current_value": 23.657984,
+   "unrealized_pl": 0.219734,
+   "unrealized_pl_pct": 0.938,
+   "closed_ts": 1786554654.236806,
+   "payout": 23.682399,
+   "pl": 0.244149,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3400683",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 14?",
+   "opened": 1786547246.5430946,
+   "cost": 15.923538,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9832,
+   "resolve_by": "2026-08-14T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 2.0d to resolution, 306% annualized net if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "5324650569138592067579701098348901190164341695315492604083290469765160228177",
+     "market_id": "3400683",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 14?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 16.19501
+    }
+   ],
+   "current_prices": {
+    "5324650569138592067579701098348901190164341695315492604083290469765160228177": 0.9815
+   },
+   "current_value": 15.895402,
+   "unrealized_pl": -0.028136,
+   "unrealized_pl_pct": -0.177,
+   "closed_ts": 1786554654.236806,
+   "payout": 15.984475,
+   "pl": 0.060937,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3474887",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Kuala Lumpur be 35\u00b0C on Augu",
+   "opened": 1786513777.752549,
+   "cost": 23.796764,
+   "edge": 0.010367,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9796,
+   "resolve_by": "2026-08-12T12:00:00Z",
+   "note": "YES at 0.034, assumed true 0.020, NO ask 0.968, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "80968524715680693239928866502655858163028059394896226639618870064471388912114",
+     "market_id": "3474887",
+     "label": "NO Will the highest temperature in Kuala Lumpur be 35\u00b0C on August 12?",
+     "side": "NO",
+     "entry_price": 0.968,
+     "shares": 24.544163
+    }
+   ],
+   "current_prices": {
+    "80968524715680693239928866502655858163028059394896226639618870064471388912114": 0.968
+   },
+   "current_value": 23.75875,
+   "unrealized_pl": -0.038014,
+   "unrealized_pl_pct": -0.16,
+   "closed_ts": 1786554657.0319097,
+   "payout": 24.544163,
+   "pl": 0.747399
   }
  ],
  "history": [
@@ -17410,6 +17479,14 @@
    "open_value": 249.849,
    "equity": 954.3111,
    "realized_total": -42.794,
+   "open_positions": 17
+  },
+  {
+   "ts": 1786554654.2390835,
+   "cash": 696.3407,
+   "open_value": 258.6288,
+   "equity": 954.9696,
+   "realized_total": -42.4889,
    "open_positions": 17
   }
  ],
@@ -24725,6 +24802,53 @@
    "amount": 24.03,
    "pl": 0.13,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786554653.6865819,
+   "type": "OPEN",
+   "key": "CV-3512841",
+   "strategy": "CONVERGE",
+   "title": "Converge: SPY (SPY) Up or Down on August 12?",
+   "amount": 23.91,
+   "pl": null
+  },
+  {
+   "ts": 1786554653.6866004,
+   "type": "OPEN",
+   "key": "CV-3381021",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
+   "amount": 23.88,
+   "pl": null
+  },
+  {
+   "ts": 1786554654.236806,
+   "type": "CLOSE",
+   "key": "CV-2952488",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
+   "amount": 23.68,
+   "pl": 0.24,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786554654.236806,
+   "type": "CLOSE",
+   "key": "CV-3400683",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 14?",
+   "amount": 15.98,
+   "pl": 0.06,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786554657.0319097,
+   "type": "CLOSE",
+   "key": "LS-3474887",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Will the highest temperature in Kuala Lumpur be 35\u00b0C on Augu",
+   "amount": 24.54,
+   "pl": 0.75
   }
  ]
 }
