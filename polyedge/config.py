@@ -130,6 +130,17 @@ LS_BIAS_HAIRCUT = _f("POLYEDGE_LS_HAIRCUT", 0.60)    # assume true P(yes) = 60% 
 LS_MAX_DAYS = _i("POLYEDGE_LS_MAX_DAYS", 21)         # near-dated only (was 45) — capital shouldn't sit for months
 LS_MIN_LIQUIDITY = _f("POLYEDGE_LS_MIN_LIQ", 1000.0) # market liquidity floor (USD)
 LS_MAX_OPEN = _i("POLYEDGE_LS_MAX_OPEN", 3)          # reduced from 10 — fewer tail-risk bets
+# Real evidence: LS-3412924, an actual live LONGSHOT position ("Fade: Will
+# the highest temperature in Seattle be between 72-73°F...") -- a narrow
+# temperature bracket, structurally the same "narrow band on a continuously-
+# moving quantity" risk pattern as the tweet-count bracket that caused
+# CONVERGE's original documented loss. Unlike CV_EXCLUDE_SPORTS (a
+# strategy-specific judgment call -- fading cheap sports outcomes is core to
+# LONGSHOT's edge, so LONGSHOT deliberately does NOT exclude sports), this
+# is NOT a judgment call: a narrow bracket on a volatile continuous quantity
+# is a real risk regardless of which strategy is trading it. Reuses
+# convergence.is_weather_market() rather than duplicating the detection logic.
+LS_EXCLUDE_WEATHER = os.environ.get("POLYEDGE_LS_EXCLUDE_WEATHER", "1") not in ("0", "false", "no")
 
 # ---------------------------------------------------------------- strategy: CONVERGE (near-resolution yield)
 CV_MIN_YES_PRICE = _f("POLYEDGE_CV_MIN_YES", 0.94)
@@ -159,6 +170,13 @@ CV_EXCLUDE_EARNINGS = os.environ.get("POLYEDGE_CV_EXCLUDE_EARNINGS", "1") not in
 CV_EXCLUDE_BRACKETS = os.environ.get("POLYEDGE_CV_EXCLUDE_BRACKETS", "1") not in ("0", "false", "no")
 CV_EXCLUDE_ELECTIONS = os.environ.get("POLYEDGE_CV_EXCLUDE_ELECTIONS", "1") not in ("0", "false", "no")
 CV_EXCLUDE_RANKINGS = os.environ.get("POLYEDGE_CV_EXCLUDE_RANKINGS", "1") not in ("0", "false", "no")
+# "Will the highest temperature in Seattle be between 72-73°F" -- a narrow
+# bracket on a continuously-moving quantity, the same risk shape as the
+# tweet-count bracket CV_EXCLUDE_BRACKETS already covers, but is_bracket_market()
+# doesn't catch it (its numeric-range patterns require $ or % signs, or one
+# of a fixed set of countable nouns -- temperature/°F/°C match neither).
+# See is_weather_market() in convergence.py.
+CV_EXCLUDE_WEATHER = os.environ.get("POLYEDGE_CV_EXCLUDE_WEATHER", "1") not in ("0", "false", "no")
 
 # ---------------------------------------------------------------- reconciliation
 # Compares the bot's own bookkeeping against Polymarket's real on-chain
