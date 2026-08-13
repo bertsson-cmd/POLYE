@@ -1,5 +1,5 @@
 {
- "cash": 710.540029,
+ "cash": 730.472941,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,40 +25,11 @@
     }
    ],
    "current_prices": {
-    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9805
+    "81447450383664195636595565283033889220683502219622758879760419790560852069403": 0.9795
    },
-   "current_value": 23.27345,
-   "unrealized_pl": -0.143656,
-   "unrealized_pl_pct": -0.613
-  },
-  {
-   "key": "CV-3421365",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
-   "opened": 1786322374.5409567,
-   "cost": 10.330778,
-   "edge": 0.01707,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9828,
-   "resolve_by": "2026-08-15T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 5.6d to resolution, 110% annualized net if YES, assumed true P 0.983",
-   "legs": [
-    {
-     "token_id": "111909035052452502081996541964700464241653639043689028474507826040178246663191",
-     "market_id": "3421365",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 15?",
-     "side": "YES",
-     "entry_price": 0.982,
-     "shares": 10.506902
-    }
-   ],
-   "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.988
-   },
-   "current_value": 10.380819,
-   "unrealized_pl": 0.050041,
-   "unrealized_pl_pct": 0.484
+   "current_value": 23.249714,
+   "unrealized_pl": -0.167392,
+   "unrealized_pl_pct": -0.715
   },
   {
    "key": "CV-3145207",
@@ -117,35 +88,6 @@
    "current_value": 10.837269,
    "unrealized_pl": -0.005636,
    "unrealized_pl_pct": -0.052
-  },
-  {
-   "key": "CV-3492211",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
-   "opened": 1786434565.379431,
-   "cost": 9.44163,
-   "edge": 0.049132,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.952,
-   "resolve_by": "2026-08-17T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 6.3d to resolution, 283% annualized net if YES, assumed true P 0.952",
-   "legs": [
-    {
-     "token_id": "113983165526071264902528797136266833339193992449210420894725600071227807587622",
-     "market_id": "3492211",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 17?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 9.903895
-    }
-   ],
-   "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9655
-   },
-   "current_value": 9.562211,
-   "unrealized_pl": 0.120581,
-   "unrealized_pl_pct": 1.277
   },
   {
    "key": "CV-3451184",
@@ -228,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.95
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.965
    },
-   "current_value": 9.5035,
-   "unrealized_pl": -0.033262,
-   "unrealized_pl_pct": -0.349
+   "current_value": 9.653555,
+   "unrealized_pl": 0.116793,
+   "unrealized_pl_pct": 1.225
   },
   {
    "key": "CV-3451146",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9725
+    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.973
    },
-   "current_value": 14.032847,
-   "unrealized_pl": 0.020162,
-   "unrealized_pl_pct": 0.144
+   "current_value": 14.040062,
+   "unrealized_pl": 0.027377,
+   "unrealized_pl_pct": 0.195
   },
   {
    "key": "CV-3516855",
@@ -320,35 +262,6 @@
    "current_value": 8.548063,
    "unrealized_pl": -0.00404,
    "unrealized_pl_pct": -0.047
-  },
-  {
-   "key": "CV-3381021",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
-   "opened": 1786554653.6866004,
-   "cost": 23.882801,
-   "edge": 0.014178,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-13T16:00:00Z",
-   "note": "YES ask 0.985, fee 0.0010, 1.0d to resolution, 544% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "65525940755131202977657525308347226911721402524304485499272945539620763496326",
-     "market_id": "3381021",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 13?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 24.221066
-    }
-   ],
-   "current_prices": {
-    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9845
-   },
-   "current_value": 23.845639,
-   "unrealized_pl": -0.037162,
-   "unrealized_pl_pct": -0.156
   },
   {
    "key": "CV-2952488",
@@ -402,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "21179415176109613544182969324872898595463030982650733092227697739224104149490": 0.972
+    "21179415176109613544182969324872898595463030982650733092227697739224104149490": 0.9745
    },
-   "current_value": 23.726808,
-   "unrealized_pl": -0.242441,
-   "unrealized_pl_pct": -1.011
+   "current_value": 23.787833,
+   "unrealized_pl": -0.181416,
+   "unrealized_pl_pct": -0.757
   },
   {
    "key": "CV-3400694",
@@ -431,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "91085131833566002734162215051977764763163621828182856421756536836580111610975": 0.945
+    "91085131833566002734162215051977764763163621828182856421756536836580111610975": 0.9635
    },
-   "current_value": 23.834144,
-   "unrealized_pl": -0.209967,
-   "unrealized_pl_pct": -0.873
+   "current_value": 24.300738,
+   "unrealized_pl": 0.256627,
+   "unrealized_pl_pct": 1.067
   },
   {
    "key": "CV-3421327",
@@ -460,11 +373,40 @@
     }
    ],
    "current_prices": {
-    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9575
+    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9835
    },
-   "current_value": 19.316275,
-   "unrealized_pl": -0.161271,
-   "unrealized_pl_pct": -0.828
+   "current_value": 19.84079,
+   "unrealized_pl": 0.363244,
+   "unrealized_pl_pct": 1.865
+  },
+  {
+   "key": "LS-3256858",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Tobyl FK (-2.5)",
+   "opened": 1786600981.1304228,
+   "cost": 24.023033,
+   "edge": 0.005237,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9775,
+   "resolve_by": "2026-08-13T15:00:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.971, fee 0.0014",
+   "legs": [
+    {
+     "token_id": "99281991957275351736779955512072091911149240635236888876047223757634248624609",
+     "market_id": "3256858",
+     "label": "NO Spread: Tobyl FK (-2.5)",
+     "side": "NO",
+     "entry_price": 0.971,
+     "shares": 24.704686
+    }
+   ],
+   "current_prices": {
+    "99281991957275351736779955512072091911149240635236888876047223757634248624609": 0.9625
+   },
+   "current_value": 23.77826,
+   "unrealized_pl": -0.244773,
+   "unrealized_pl_pct": -1.019
   }
  ],
  "closed": [
@@ -14955,6 +14897,105 @@
    "closed_ts": 1786595547.1518264,
    "payout": 24.060955,
    "pl": 0.457639
+  },
+  {
+   "key": "CV-3421365",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
+   "opened": 1786322374.5409567,
+   "cost": 10.330778,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-08-15T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 5.6d to resolution, 110% annualized net if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "111909035052452502081996541964700464241653639043689028474507826040178246663191",
+     "market_id": "3421365",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 15?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 10.506902
+    }
+   ],
+   "current_prices": {
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.988
+   },
+   "current_value": 10.380819,
+   "unrealized_pl": 0.050041,
+   "unrealized_pl_pct": 0.484,
+   "closed_ts": 1786600981.3098378,
+   "payout": 10.370312,
+   "pl": 0.039534,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3492211",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
+   "opened": 1786434565.379431,
+   "cost": 9.44163,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-17T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 6.3d to resolution, 283% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "113983165526071264902528797136266833339193992449210420894725600071227807587622",
+     "market_id": "3492211",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 17?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 9.903895
+    }
+   ],
+   "current_prices": {
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9655
+   },
+   "current_value": 9.562211,
+   "unrealized_pl": 0.120581,
+   "unrealized_pl_pct": 1.277,
+   "closed_ts": 1786600981.3098378,
+   "payout": 9.606778,
+   "pl": 0.165148,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3381021",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
+   "opened": 1786554653.6866004,
+   "cost": 23.882801,
+   "edge": 0.014178,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-13T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 1.0d to resolution, 544% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "65525940755131202977657525308347226911721402524304485499272945539620763496326",
+     "market_id": "3381021",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 13?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 24.221066
+    }
+   ],
+   "current_prices": {
+    "65525940755131202977657525308347226911721402524304485499272945539620763496326": 0.9845
+   },
+   "current_value": 23.845639,
+   "unrealized_pl": -0.037162,
+   "unrealized_pl_pct": -0.156,
+   "closed_ts": 1786600981.3098378,
+   "payout": 23.978855,
+   "pl": 0.096054,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -17797,6 +17838,14 @@
    "equity": 959.5289,
    "realized_total": -39.1881,
    "open_positions": 17
+  },
+  {
+   "ts": 1786600981.3114243,
+   "cash": 730.4729,
+   "open_value": 230.6453,
+   "equity": 961.1182,
+   "realized_total": -38.4298,
+   "open_positions": 14
   }
  ],
  "trades": [
@@ -25289,6 +25338,45 @@
    "title": "Fade: Will the highest temperature in Toronto be 29\u00b0C on August 12",
    "amount": 24.06,
    "pl": 0.46
+  },
+  {
+   "ts": 1786600981.1304228,
+   "type": "OPEN",
+   "key": "LS-3256858",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Tobyl FK (-2.5)",
+   "amount": 24.02,
+   "pl": null
+  },
+  {
+   "ts": 1786600981.3098378,
+   "type": "CLOSE",
+   "key": "CV-3421365",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
+   "amount": 10.37,
+   "pl": 0.04,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786600981.3098378,
+   "type": "CLOSE",
+   "key": "CV-3492211",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
+   "amount": 9.61,
+   "pl": 0.17,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786600981.3098378,
+   "type": "CLOSE",
+   "key": "CV-3381021",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 13?",
+   "amount": 23.98,
+   "pl": 0.1,
+   "reason": "take_profit"
   }
  ]
 }
