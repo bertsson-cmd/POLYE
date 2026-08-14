@@ -1,5 +1,5 @@
 {
- "cash": 600.999893,
+ "cash": 654.426518,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.88
+    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.9
    },
-   "current_value": 8.658644,
-   "unrealized_pl": -0.712125,
-   "unrealized_pl_pct": -7.599
+   "current_value": 8.855431,
+   "unrealized_pl": -0.515338,
+   "unrealized_pl_pct": -5.499
   },
   {
    "key": "CV-3081797",
@@ -177,35 +177,6 @@
    "unrealized_pl_pct": -0.301
   },
   {
-   "key": "CV-2952488",
-   "strategy": "CONVERGE",
-   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
-   "opened": 1786568468.5698094,
-   "cost": 23.92025,
-   "edge": 0.01626,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.986,
-   "resolve_by": "2026-08-15T23:59:00Z",
-   "note": "YES ask 0.984, fee 0.0000, 3.1d to resolution, 190% annualized net if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "77550960228341204288120509394963885549177211314903311399404330431381651171385",
-     "market_id": "2952488",
-     "label": "YES Israel x Iran ceasefire continues through August 15?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 24.309197
-    }
-   ],
-   "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9885
-   },
-   "current_value": 24.029641,
-   "unrealized_pl": 0.109391,
-   "unrealized_pl_pct": 0.457
-  },
-  {
    "key": "CV-3421368",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.873
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.8275
    },
-   "current_value": 22.074264,
-   "unrealized_pl": -2.03106,
-   "unrealized_pl_pct": -8.426
+   "current_value": 20.923773,
+   "unrealized_pl": -3.181551,
+   "unrealized_pl_pct": -13.199
   },
   {
    "key": "CV-3492211",
@@ -257,40 +228,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.97
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9625
    },
-   "current_value": 23.934401,
-   "unrealized_pl": -0.096357,
-   "unrealized_pl_pct": -0.401
-  },
-  {
-   "key": "CV-3340236",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
-   "opened": 1786635704.7209659,
-   "cost": 24.041138,
-   "edge": 0.021615,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9808,
-   "resolve_by": "2026-08-15T14:59:00Z",
-   "note": "YES ask 0.978, fee 0.0009, 2.0d to resolution, 400% annualized net if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "62769982295885766816806292078202738855919636469645485544849233237261536489213",
-     "market_id": "3340236",
-     "label": "YES Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
-     "side": "YES",
-     "entry_price": 0.978,
-     "shares": 24.560327
-    }
-   ],
-   "current_prices": {
-    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.978
-   },
-   "current_value": 24.02,
-   "unrealized_pl": -0.021138,
-   "unrealized_pl_pct": -0.088
+   "current_value": 23.749341,
+   "unrealized_pl": -0.281417,
+   "unrealized_pl_pct": -1.171
   },
   {
    "key": "CV-3541750",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9395
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9295
    },
-   "current_value": 22.74639,
-   "unrealized_pl": -0.334719,
-   "unrealized_pl_pct": -1.45
+   "current_value": 22.504278,
+   "unrealized_pl": -0.576831,
+   "unrealized_pl_pct": -2.499
   },
   {
    "key": "CV-3421327",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9855
+    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9835
    },
-   "current_value": 24.08722,
-   "unrealized_pl": -0.013059,
-   "unrealized_pl_pct": -0.054
+   "current_value": 24.038337,
+   "unrealized_pl": -0.061942,
+   "unrealized_pl_pct": -0.257
   },
   {
    "key": "CV-3400694",
@@ -373,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "91085131833566002734162215051977764763163621828182856421756536836580111610975": 0.952
+    "91085131833566002734162215051977764763163621828182856421756536836580111610975": 0.9405
    },
-   "current_value": 23.523188,
-   "unrealized_pl": -0.610472,
-   "unrealized_pl_pct": -2.53
+   "current_value": 23.239032,
+   "unrealized_pl": -0.894628,
+   "unrealized_pl_pct": -3.707
   },
   {
    "key": "LS-3263530",
@@ -402,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "39647927150839268921611644117083692199952919482563512361670210594299620303514": 0.992
+    "39647927150839268921611644117083692199952919482563512361670210594299620303514": 0.9995
    },
-   "current_value": 24.978508,
-   "unrealized_pl": 0.757412,
-   "unrealized_pl_pct": 3.127
+   "current_value": 25.167358,
+   "unrealized_pl": 0.946262,
+   "unrealized_pl_pct": 3.907
   },
   {
    "key": "CV-3350264",
@@ -489,40 +431,11 @@
     }
    ],
    "current_prices": {
-    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.9785
+    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.976
    },
-   "current_value": 23.966304,
-   "unrealized_pl": -0.207363,
-   "unrealized_pl_pct": -0.858
-  },
-  {
-   "key": "CV-3421365",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
-   "opened": 1786699057.4607232,
-   "cost": 24.109723,
-   "edge": 0.01514,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9868,
-   "resolve_by": "2026-08-15T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 1.3d to resolution, 432% annualized net if YES, assumed true P 0.987",
-   "legs": [
-    {
-     "token_id": "111909035052452502081996541964700464241653639043689028474507826040178246663191",
-     "market_id": "3421365",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 15?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 24.474339
-    }
-   ],
-   "current_prices": {
-    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9865
-   },
-   "current_value": 24.143935,
-   "unrealized_pl": 0.034212,
-   "unrealized_pl_pct": 0.142
+   "current_value": 23.905071,
+   "unrealized_pl": -0.268596,
+   "unrealized_pl_pct": -1.111
   },
   {
    "key": "CV-3451184",
@@ -547,11 +460,40 @@
     }
    ],
    "current_prices": {
-    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.981
+    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.9785
    },
-   "current_value": 24.033751,
-   "unrealized_pl": -0.077657,
-   "unrealized_pl_pct": -0.322
+   "current_value": 23.972503,
+   "unrealized_pl": -0.138905,
+   "unrealized_pl_pct": -0.576
+  },
+  {
+   "key": "CV-3565411",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 20?",
+   "opened": 1786714602.4343247,
+   "cost": 19.355305,
+   "edge": 0.023891,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9796,
+   "resolve_by": "2026-08-20T16:00:00Z",
+   "note": "YES ask 0.975, fee 0.0017, 6.1d to resolution, 143% annualized net if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "91535631961820384113122661744990263298407343385959110963669887664963432258147",
+     "market_id": "3565411",
+     "label": "YES Will the price of Bitcoin be above $58,000 on August 20?",
+     "side": "YES",
+     "entry_price": 0.975,
+     "shares": 19.816915
+    }
+   ],
+   "current_prices": {
+    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.9745
+   },
+   "current_value": 19.311584,
+   "unrealized_pl": -0.043721,
+   "unrealized_pl_pct": -0.226
   }
  ],
  "closed": [
@@ -15764,6 +15706,105 @@
    "payout": 24.29608,
    "pl": 0.089488,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-2952488",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
+   "opened": 1786568468.5698094,
+   "cost": 23.92025,
+   "edge": 0.01626,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.986,
+   "resolve_by": "2026-08-15T23:59:00Z",
+   "note": "YES ask 0.984, fee 0.0000, 3.1d to resolution, 190% annualized net if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "77550960228341204288120509394963885549177211314903311399404330431381651171385",
+     "market_id": "2952488",
+     "label": "YES Israel x Iran ceasefire continues through August 15?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 24.309197
+    }
+   ],
+   "current_prices": {
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9885
+   },
+   "current_value": 24.029641,
+   "unrealized_pl": 0.109391,
+   "unrealized_pl_pct": 0.457,
+   "closed_ts": 1786714602.6121178,
+   "payout": 24.114723,
+   "pl": 0.194473,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3340236",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
+   "opened": 1786635704.7209659,
+   "cost": 24.041138,
+   "edge": 0.021615,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9808,
+   "resolve_by": "2026-08-15T14:59:00Z",
+   "note": "YES ask 0.978, fee 0.0009, 2.0d to resolution, 400% annualized net if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "62769982295885766816806292078202738855919636469645485544849233237261536489213",
+     "market_id": "3340236",
+     "label": "YES Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 24.560327
+    }
+   ],
+   "current_prices": {
+    "62769982295885766816806292078202738855919636469645485544849233237261536489213": 0.978
+   },
+   "current_value": 24.02,
+   "unrealized_pl": -0.021138,
+   "unrealized_pl_pct": -0.088,
+   "closed_ts": 1786714602.6121178,
+   "payout": 24.462086,
+   "pl": 0.420948,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3421365",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
+   "opened": 1786699057.4607232,
+   "cost": 24.109723,
+   "edge": 0.01514,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-08-15T16:00:00Z",
+   "note": "YES ask 0.984, fee 0.0011, 1.3d to resolution, 432% annualized net if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "111909035052452502081996541964700464241653639043689028474507826040178246663191",
+     "market_id": "3421365",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 15?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 24.474339
+    }
+   ],
+   "current_prices": {
+    "111909035052452502081996541964700464241653639043689028474507826040178246663191": 0.9865
+   },
+   "current_value": 24.143935,
+   "unrealized_pl": 0.034212,
+   "unrealized_pl_pct": 0.142,
+   "closed_ts": 1786714602.6121178,
+   "payout": 24.205121,
+   "pl": 0.095398,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -18814,6 +18855,14 @@
    "equity": 965.3585,
    "realized_total": -32.0806,
    "open_positions": 19
+  },
+  {
+   "ts": 1786714602.6147978,
+   "cash": 654.4265,
+   "open_value": 309.8291,
+   "equity": 964.2556,
+   "realized_total": -31.3698,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -26747,6 +26796,45 @@
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 16?",
    "amount": 24.11,
    "pl": null
+  },
+  {
+   "ts": 1786714602.4343247,
+   "type": "OPEN",
+   "key": "CV-3565411",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 20?",
+   "amount": 19.36,
+   "pl": null
+  },
+  {
+   "ts": 1786714602.6121178,
+   "type": "CLOSE",
+   "key": "CV-2952488",
+   "strategy": "CONVERGE",
+   "title": "Converge: Israel x Iran ceasefire continues through August 15?",
+   "amount": 24.11,
+   "pl": 0.19,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786714602.6121178,
+   "type": "CLOSE",
+   "key": "CV-3340236",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alfredo Gaspar be the VP candidate of Flavio Bolsonaro?",
+   "amount": 24.46,
+   "pl": 0.42,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786714602.6121178,
+   "type": "CLOSE",
+   "key": "CV-3421365",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 15?",
+   "amount": 24.21,
+   "pl": 0.1,
+   "reason": "take_profit"
   }
  ]
 }
