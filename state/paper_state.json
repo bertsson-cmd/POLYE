@@ -1,5 +1,5 @@
 {
- "cash": 696.801866,
+ "cash": 673.24249,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.9895
+    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.9885
    },
-   "current_value": 8.574058,
-   "unrealized_pl": 0.021955,
-   "unrealized_pl_pct": 0.257
+   "current_value": 8.565393,
+   "unrealized_pl": 0.01329,
+   "unrealized_pl_pct": 0.155
   },
   {
    "key": "CV-2952488",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9855
+    "77550960228341204288120509394963885549177211314903311399404330431381651171385": 0.9865
    },
-   "current_value": 23.956714,
-   "unrealized_pl": 0.036464,
-   "unrealized_pl_pct": 0.152
+   "current_value": 23.981023,
+   "unrealized_pl": 0.060773,
+   "unrealized_pl_pct": 0.254
   },
   {
    "key": "CV-3421368",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.945
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.947
    },
-   "current_value": 23.894822,
-   "unrealized_pl": -0.210502,
-   "unrealized_pl_pct": -0.873
+   "current_value": 23.945393,
+   "unrealized_pl": -0.159931,
+   "unrealized_pl_pct": -0.663
   },
   {
    "key": "CV-3492211",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.981
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9805
    },
-   "current_value": 24.205822,
-   "unrealized_pl": 0.175064,
-   "unrealized_pl_pct": 0.728
+   "current_value": 24.193485,
+   "unrealized_pl": 0.162727,
+   "unrealized_pl_pct": 0.677
   },
   {
    "key": "CV-3340236",
@@ -315,40 +315,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.954
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9525
    },
-   "current_value": 23.097451,
-   "unrealized_pl": 0.016342,
-   "unrealized_pl_pct": 0.071
-  },
-  {
-   "key": "CV-3400558",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 14?",
-   "opened": 1786652592.369276,
-   "cost": 24.101964,
-   "edge": 0.01514,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.986,
-   "resolve_by": "2026-08-14T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 0.8d to resolution, 676% annualized net if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "108893559757146081510954606655948927501665393344667873247070440291954645617940",
-     "market_id": "3400558",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 14?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 24.466463
-    }
-   ],
-   "current_prices": {
-    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9875
-   },
-   "current_value": 24.160632,
-   "unrealized_pl": 0.058668,
-   "unrealized_pl_pct": 0.243
+   "current_value": 23.061135,
+   "unrealized_pl": -0.019974,
+   "unrealized_pl_pct": -0.087
   },
   {
    "key": "CV-3421327",
@@ -373,40 +344,11 @@
     }
    ],
    "current_prices": {
-    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9855
+    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9835
    },
-   "current_value": 24.08722,
-   "unrealized_pl": -0.013059,
-   "unrealized_pl_pct": -0.054
-  },
-  {
-   "key": "LS-3336042",
-   "strategy": "LONGSHOT",
-   "title": "Fade: CA Rosario Central vs. SC Corinthians Paulista: SC Corinthia",
-   "opened": 1786658717.9570942,
-   "cost": 24.063526,
-   "edge": 0.006715,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9751,
-   "resolve_by": "2026-08-14T00:30:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.967, fee 0.0016",
-   "legs": [
-    {
-     "token_id": "30900478018322589040702456925616914247031086673346950461081198635882172608803",
-     "market_id": "3336042",
-     "label": "NO CA Rosario Central vs. SC Corinthians Paulista: SC Corinthians Paulista O/U 2.5",
-     "side": "NO",
-     "entry_price": 0.967,
-     "shares": 24.84373
-    }
-   ],
-   "current_prices": {
-    "30900478018322589040702456925616914247031086673346950461081198635882172608803": 0.9995
-   },
-   "current_value": 24.831308,
-   "unrealized_pl": 0.767782,
-   "unrealized_pl_pct": 3.191
+   "current_value": 24.038337,
+   "unrealized_pl": -0.061942,
+   "unrealized_pl_pct": -0.257
   },
   {
    "key": "CV-3400694",
@@ -436,6 +378,93 @@
    "current_value": 24.25211,
    "unrealized_pl": 0.11845,
    "unrealized_pl_pct": 0.491
+  },
+  {
+   "key": "LS-3263530",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-1.5)",
+   "opened": 1786684668.952833,
+   "cost": 24.221096,
+   "edge": 0.011519,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-08-14T11:35:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "39647927150839268921611644117083692199952919482563512361670210594299620303514",
+     "market_id": "3263530",
+     "label": "NO Spread: Qingdao Hainiu FC (-1.5)",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 25.179948
+    }
+   ],
+   "current_prices": {
+    "39647927150839268921611644117083692199952919482563512361670210594299620303514": 0.955
+   },
+   "current_value": 24.04685,
+   "unrealized_pl": -0.174246,
+   "unrealized_pl_pct": -0.719
+  },
+  {
+   "key": "CV-3350264",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ukraine strikes another vessel in the Black Sea by August 15",
+   "opened": 1786684668.952848,
+   "cost": 24.17275,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-15T23:59:00Z",
+   "note": "YES ask 0.950, fee 0.0000, 1.8d to resolution, 1080% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "98414169206552875069771715880593624268023902933339608819270646460493024528482",
+     "market_id": "3350264",
+     "label": "YES Ukraine strikes another vessel in the Black Sea by August 15, 2026?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 25.445
+    }
+   ],
+   "current_prices": {
+    "98414169206552875069771715880593624268023902933339608819270646460493024528482": 0.945
+   },
+   "current_value": 24.045525,
+   "unrealized_pl": -0.127225,
+   "unrealized_pl_pct": -0.526
+  },
+  {
+   "key": "CV-3451184",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 16?",
+   "opened": 1786684668.952859,
+   "cost": 24.206592,
+   "edge": 0.019008,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 2.4d to resolution, 284% annualized net if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "112686284032008522364373330360044739494235424756194288793124277063053197159906",
+     "market_id": "3451184",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 16?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 24.666071
+    }
+   ],
+   "current_prices": {
+    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.9785
+   },
+   "current_value": 24.13575,
+   "unrealized_pl": -0.070842,
+   "unrealized_pl_pct": -0.293
   }
  ],
  "closed": [
@@ -15550,6 +15579,71 @@
    "closed_ts": 1786678271.1884289,
    "payout": 24.819588,
    "pl": 0.708475
+  },
+  {
+   "key": "CV-3400558",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 14?",
+   "opened": 1786652592.369276,
+   "cost": 24.101964,
+   "edge": 0.01514,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.986,
+   "resolve_by": "2026-08-14T16:00:00Z",
+   "note": "YES ask 0.984, fee 0.0011, 0.8d to resolution, 676% annualized net if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "108893559757146081510954606655948927501665393344667873247070440291954645617940",
+     "market_id": "3400558",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 14?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 24.466463
+    }
+   ],
+   "current_prices": {
+    "108893559757146081510954606655948927501665393344667873247070440291954645617940": 0.9875
+   },
+   "current_value": 24.160632,
+   "unrealized_pl": 0.058668,
+   "unrealized_pl_pct": 0.243,
+   "closed_ts": 1786684669.0769076,
+   "payout": 24.197332,
+   "pl": 0.095368,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3336042",
+   "strategy": "LONGSHOT",
+   "title": "Fade: CA Rosario Central vs. SC Corinthians Paulista: SC Corinthia",
+   "opened": 1786658717.9570942,
+   "cost": 24.063526,
+   "edge": 0.006715,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9751,
+   "resolve_by": "2026-08-14T00:30:00Z",
+   "note": "YES at 0.042, assumed true 0.025, NO ask 0.967, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "30900478018322589040702456925616914247031086673346950461081198635882172608803",
+     "market_id": "3336042",
+     "label": "NO CA Rosario Central vs. SC Corinthians Paulista: SC Corinthians Paulista O/U 2.5",
+     "side": "NO",
+     "entry_price": 0.967,
+     "shares": 24.84373
+    }
+   ],
+   "current_prices": {
+    "30900478018322589040702456925616914247031086673346950461081198635882172608803": 0.967
+   },
+   "current_value": 24.023887,
+   "unrealized_pl": -0.039639,
+   "unrealized_pl_pct": -0.165,
+   "closed_ts": 1786684670.086995,
+   "payout": 24.84373,
+   "pl": 0.780204
   }
  ],
  "history": [
@@ -18544,6 +18638,14 @@
    "equity": 966.9142,
    "realized_total": -33.7542,
    "open_positions": 16
+  },
+  {
+   "ts": 1786684669.0783145,
+   "cash": 648.3988,
+   "open_value": 318.0857,
+   "equity": 966.4844,
+   "realized_total": -32.9503,
+   "open_positions": 17
   }
  ],
  "trades": [
@@ -26385,6 +26487,52 @@
    "title": "Fade: Mirassol FC vs. LDU de Quito: LDU de Quito 1st Half O/U 1.5",
    "amount": 24.82,
    "pl": 0.71
+  },
+  {
+   "ts": 1786684668.952833,
+   "type": "OPEN",
+   "key": "LS-3263530",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-1.5)",
+   "amount": 24.22,
+   "pl": null
+  },
+  {
+   "ts": 1786684668.952848,
+   "type": "OPEN",
+   "key": "CV-3350264",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ukraine strikes another vessel in the Black Sea by August 15",
+   "amount": 24.17,
+   "pl": null
+  },
+  {
+   "ts": 1786684668.952859,
+   "type": "OPEN",
+   "key": "CV-3451184",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 16?",
+   "amount": 24.21,
+   "pl": null
+  },
+  {
+   "ts": 1786684669.0769076,
+   "type": "CLOSE",
+   "key": "CV-3400558",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 14?",
+   "amount": 24.2,
+   "pl": 0.1,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786684670.086995,
+   "type": "CLOSE",
+   "key": "LS-3336042",
+   "strategy": "LONGSHOT",
+   "title": "Fade: CA Rosario Central vs. SC Corinthians Paulista: SC Corinthia",
+   "amount": 24.84,
+   "pl": 0.78
   }
  ]
 }
