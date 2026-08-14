@@ -1,5 +1,5 @@
 {
- "cash": 725.051886,
+ "cash": 750.392367,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9435
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.945
    },
-   "current_value": 22.843234,
-   "unrealized_pl": -0.237875,
-   "unrealized_pl_pct": -1.031
+   "current_value": 22.879551,
+   "unrealized_pl": -0.201558,
+   "unrealized_pl_pct": -0.873
   },
   {
    "key": "CV-3350264",
@@ -235,35 +235,6 @@
    "unrealized_pl_pct": -0.005
   },
   {
-   "key": "LS-3253794",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Wolverhampton Wanderers FC 0 - 1 Blackburn Rove",
-   "opened": 1786728615.6270654,
-   "cost": 24.278796,
-   "edge": 0.014609,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9721,
-   "resolve_by": "2026-08-14T19:00:00Z",
-   "note": "YES at 0.046, assumed true 0.028, NO ask 0.956, fee 0.0021",
-   "legs": [
-    {
-     "token_id": "19457123315086893247310467813446475390294192409224238364837031136356028878741",
-     "market_id": "3253794",
-     "label": "NO Exact Score: Wolverhampton Wanderers FC 0 - 1 Blackburn Rovers FC?",
-     "side": "NO",
-     "entry_price": 0.956,
-     "shares": 25.340481
-    }
-   ],
-   "current_prices": {
-    "19457123315086893247310467813446475390294192409224238364837031136356028878741": 0.9995
-   },
-   "current_value": 25.327811,
-   "unrealized_pl": 1.049015,
-   "unrealized_pl_pct": 4.321
-  },
-  {
    "key": "LS-3268670",
    "strategy": "LONGSHOT",
    "title": "Fade: Exact Score: Sporting CP 0 - 0 Vit\u00f3ria SC?",
@@ -373,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9745
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9755
    },
-   "current_value": 24.018177,
-   "unrealized_pl": -0.054376,
-   "unrealized_pl_pct": -0.226
+   "current_value": 24.042824,
+   "unrealized_pl": -0.029729,
+   "unrealized_pl_pct": -0.123
   }
  ],
  "closed": [
@@ -16083,6 +16054,38 @@
    "payout": 24.512596,
    "pl": 0.174343,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3253794",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Wolverhampton Wanderers FC 0 - 1 Blackburn Rove",
+   "opened": 1786728615.6270654,
+   "cost": 24.278796,
+   "edge": 0.014609,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9721,
+   "resolve_by": "2026-08-14T19:00:00Z",
+   "note": "YES at 0.046, assumed true 0.028, NO ask 0.956, fee 0.0021",
+   "legs": [
+    {
+     "token_id": "19457123315086893247310467813446475390294192409224238364837031136356028878741",
+     "market_id": "3253794",
+     "label": "NO Exact Score: Wolverhampton Wanderers FC 0 - 1 Blackburn Rovers FC?",
+     "side": "NO",
+     "entry_price": 0.956,
+     "shares": 25.340481
+    }
+   ],
+   "current_prices": {
+    "19457123315086893247310467813446475390294192409224238364837031136356028878741": 0.956
+   },
+   "current_value": 24.2255,
+   "unrealized_pl": -0.053296,
+   "unrealized_pl_pct": -0.22,
+   "closed_ts": 1786749506.3080962,
+   "payout": 25.340481,
+   "pl": 1.061685
   }
  ],
  "history": [
@@ -19243,6 +19246,14 @@
    "cash": 725.0519,
    "open_value": 249.0719,
    "equity": 974.1238,
+   "realized_total": -27.2222,
+   "open_positions": 13
+  },
+  {
+   "ts": 1786749505.1111038,
+   "cash": 725.0519,
+   "open_value": 248.0305,
+   "equity": 973.0824,
    "realized_total": -27.2222,
    "open_positions": 13
   }
@@ -27407,6 +27418,15 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
    "amount": 24.07,
    "pl": null
+  },
+  {
+   "ts": 1786749506.3080962,
+   "type": "CLOSE",
+   "key": "LS-3253794",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Wolverhampton Wanderers FC 0 - 1 Blackburn Rove",
+   "amount": 25.34,
+   "pl": 1.06
   }
  ]
 }
