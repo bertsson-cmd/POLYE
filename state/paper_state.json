@@ -1,5 +1,5 @@
 {
- "cash": 672.170193,
+ "cash": 787.484667,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.895
+    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.905
    },
-   "current_value": 8.806234,
-   "unrealized_pl": -0.564535,
-   "unrealized_pl_pct": -6.024
+   "current_value": 8.904628,
+   "unrealized_pl": -0.466141,
+   "unrealized_pl_pct": -4.974
   },
   {
    "key": "CV-3081797",
@@ -61,35 +61,6 @@
    "unrealized_pl_pct": -0.052
   },
   {
-   "key": "CV-3451145",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,700 on August 16?",
-   "opened": 1786470078.7560456,
-   "cost": 6.722296,
-   "edge": 0.01998,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9796,
-   "resolve_by": "2026-08-16T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 4.9d to resolution, 148% annualized net if YES, assumed true P 0.980",
-   "legs": [
-    {
-     "token_id": "13587857222361574150329688681900668441426572878530653868686310474691156561352",
-     "market_id": "3451145",
-     "label": "YES Will the price of Ethereum be above $1,700 on August 16?",
-     "side": "YES",
-     "entry_price": 0.979,
-     "shares": 6.856413
-    }
-   ],
-   "current_prices": {
-    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.979
-   },
-   "current_value": 6.712428,
-   "unrealized_pl": -0.009868,
-   "unrealized_pl_pct": -0.147
-  },
-  {
    "key": "CV-3516858",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 18?",
@@ -112,40 +83,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.9425
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.9535
    },
-   "current_value": 9.428472,
-   "unrealized_pl": -0.10829,
-   "unrealized_pl_pct": -1.135
-  },
-  {
-   "key": "CV-3451146",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 16?",
-   "opened": 1786531420.0474813,
-   "cost": 9.549607,
-   "edge": 0.049132,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.952,
-   "resolve_by": "2026-08-16T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 4.2d to resolution, 425% annualized net if YES, assumed true P 0.952",
-   "legs": [
-    {
-     "token_id": "37094156644846522068220621663556521315388620185867185107986420360356019327489",
-     "market_id": "3451146",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 16?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 10.017158
-    }
-   ],
-   "current_prices": {
-    "37094156644846522068220621663556521315388620185867185107986420360356019327489": 0.95
-   },
-   "current_value": 9.5163,
-   "unrealized_pl": -0.033307,
-   "unrealized_pl_pct": -0.349
+   "current_value": 9.538513,
+   "unrealized_pl": 0.001751,
+   "unrealized_pl_pct": 0.018
   },
   {
    "key": "CV-3516855",
@@ -170,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.983
+    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.989
    },
-   "current_value": 8.517735,
-   "unrealized_pl": -0.034368,
-   "unrealized_pl_pct": -0.402
+   "current_value": 8.569726,
+   "unrealized_pl": 0.017623,
+   "unrealized_pl_pct": 0.206
   },
   {
    "key": "CV-3421368",
@@ -199,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.8535
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9505
    },
-   "current_value": 21.581196,
-   "unrealized_pl": -2.524128,
-   "unrealized_pl_pct": -10.471
+   "current_value": 24.033892,
+   "unrealized_pl": -0.071432,
+   "unrealized_pl_pct": -0.296
   },
   {
    "key": "CV-3492211",
@@ -228,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9635
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9755
    },
-   "current_value": 23.774016,
-   "unrealized_pl": -0.256742,
-   "unrealized_pl_pct": -1.068
+   "current_value": 24.070111,
+   "unrealized_pl": 0.039353,
+   "unrealized_pl_pct": 0.164
   },
   {
    "key": "CV-3541750",
@@ -257,69 +199,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.926
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.944
    },
-   "current_value": 22.419539,
-   "unrealized_pl": -0.66157,
-   "unrealized_pl_pct": -2.866
-  },
-  {
-   "key": "CV-3421327",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 15?",
-   "opened": 1786652592.369295,
-   "cost": 24.100279,
-   "edge": 0.014178,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-15T16:00:00Z",
-   "note": "YES ask 0.985, fee 0.0010, 1.8d to resolution, 285% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "55067824582311161137399810048542626197623834914037573577658969539985015785739",
-     "market_id": "3421327",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 15?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 24.441624
-    }
-   ],
-   "current_prices": {
-    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9825
-   },
-   "current_value": 24.013896,
-   "unrealized_pl": -0.086383,
-   "unrealized_pl_pct": -0.358
-  },
-  {
-   "key": "LS-3263530",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Spread: Qingdao Hainiu FC (-1.5)",
-   "opened": 1786684668.952833,
-   "cost": 24.221096,
-   "edge": 0.011519,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-08-14T11:35:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
-   "legs": [
-    {
-     "token_id": "39647927150839268921611644117083692199952919482563512361670210594299620303514",
-     "market_id": "3263530",
-     "label": "NO Spread: Qingdao Hainiu FC (-1.5)",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 25.179948
-    }
-   ],
-   "current_prices": {
-    "39647927150839268921611644117083692199952919482563512361670210594299620303514": 0.9995
-   },
-   "current_value": 25.167358,
-   "unrealized_pl": 0.946262,
-   "unrealized_pl_pct": 3.907
+   "current_value": 22.85534,
+   "unrealized_pl": -0.225769,
+   "unrealized_pl_pct": -0.978
   },
   {
    "key": "CV-3350264",
@@ -351,35 +235,6 @@
    "unrealized_pl_pct": 0.0
   },
   {
-   "key": "LS-3247226",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Shandong Taishan FC 1 - 2 Qingdao Hainiu FC?",
-   "opened": 1786690117.9165952,
-   "cost": 24.143879,
-   "edge": 0.010497,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9778,
-   "resolve_by": "2026-08-14T11:35:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966, fee 0.0016",
-   "legs": [
-    {
-     "token_id": "85843093883347449663079140539273866136848394941027011273300792164592382033490",
-     "market_id": "3247226",
-     "label": "NO Exact Score: Shandong Taishan FC 1 - 2 Qingdao Hainiu FC?",
-     "side": "NO",
-     "entry_price": 0.966,
-     "shares": 24.951246
-    }
-   ],
-   "current_prices": {
-    "85843093883347449663079140539273866136848394941027011273300792164592382033490": 0.9995
-   },
-   "current_value": 24.93877,
-   "unrealized_pl": 0.794891,
-   "unrealized_pl_pct": 3.292
-  },
-  {
    "key": "CV-3541748",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $58,000 on August 19?",
@@ -402,40 +257,11 @@
     }
    ],
    "current_prices": {
-    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.977
+    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.9815
    },
-   "current_value": 23.929564,
-   "unrealized_pl": -0.244103,
-   "unrealized_pl_pct": -1.01
-  },
-  {
-   "key": "CV-3451184",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 16?",
-   "opened": 1786699057.4607413,
-   "cost": 24.111408,
-   "edge": 0.016104,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9852000000000001,
-   "resolve_by": "2026-08-16T16:00:00Z",
-   "note": "YES ask 0.983, fee 0.0012, 2.3d to resolution, 258% annualized net if YES, assumed true P 0.985",
-   "legs": [
-    {
-     "token_id": "112686284032008522364373330360044739494235424756194288793124277063053197159906",
-     "market_id": "3451184",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 16?",
-     "side": "YES",
-     "entry_price": 0.983,
-     "shares": 24.499237
-    }
-   ],
-   "current_prices": {
-    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.9785
-   },
-   "current_value": 23.972503,
-   "unrealized_pl": -0.138905,
-   "unrealized_pl_pct": -0.576
+   "current_value": 24.039782,
+   "unrealized_pl": -0.133885,
+   "unrealized_pl_pct": -0.554
   },
   {
    "key": "CV-3565411",
@@ -460,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.973
+    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.984
    },
-   "current_value": 19.281858,
-   "unrealized_pl": -0.073447,
-   "unrealized_pl_pct": -0.379
+   "current_value": 19.499844,
+   "unrealized_pl": 0.144539,
+   "unrealized_pl_pct": 0.747
   },
   {
    "key": "CV-908045",
@@ -489,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "47790737258455850776111259123678312701050204532067054925435432957323735063786": 0.9835
+    "47790737258455850776111259123678312701050204532067054925435432957323735063786": 0.984
    },
-   "current_value": 6.870108,
-   "unrealized_pl": -0.02132,
-   "unrealized_pl_pct": -0.309
+   "current_value": 6.873601,
+   "unrealized_pl": -0.017827,
+   "unrealized_pl_pct": -0.259
   }
  ],
  "closed": [
@@ -15838,6 +15664,202 @@
    "payout": 24.635103,
    "pl": 0.501443,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3451145",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on August 16?",
+   "opened": 1786470078.7560456,
+   "cost": 6.722296,
+   "edge": 0.01998,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9796,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.979, fee 0.0014, 4.9d to resolution, 148% annualized net if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "13587857222361574150329688681900668441426572878530653868686310474691156561352",
+     "market_id": "3451145",
+     "label": "YES Will the price of Ethereum be above $1,700 on August 16?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 6.856413
+    }
+   ],
+   "current_prices": {
+    "13587857222361574150329688681900668441426572878530653868686310474691156561352": 0.979
+   },
+   "current_value": 6.712428,
+   "unrealized_pl": -0.009868,
+   "unrealized_pl_pct": -0.147,
+   "closed_ts": 1786724808.0097651,
+   "payout": 6.801562,
+   "pl": 0.079266,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3451146",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 16?",
+   "opened": 1786531420.0474813,
+   "cost": 9.549607,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 4.2d to resolution, 425% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "37094156644846522068220621663556521315388620185867185107986420360356019327489",
+     "market_id": "3451146",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 16?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.017158
+    }
+   ],
+   "current_prices": {
+    "37094156644846522068220621663556521315388620185867185107986420360356019327489": 0.95
+   },
+   "current_value": 9.5163,
+   "unrealized_pl": -0.033307,
+   "unrealized_pl_pct": -0.349,
+   "closed_ts": 1786724808.0097651,
+   "payout": 9.856883,
+   "pl": 0.307276,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3421327",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 15?",
+   "opened": 1786652592.369295,
+   "cost": 24.100279,
+   "edge": 0.014178,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-15T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 1.8d to resolution, 285% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "55067824582311161137399810048542626197623834914037573577658969539985015785739",
+     "market_id": "3421327",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 15?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 24.441624
+    }
+   ],
+   "current_prices": {
+    "55067824582311161137399810048542626197623834914037573577658969539985015785739": 0.9825
+   },
+   "current_value": 24.013896,
+   "unrealized_pl": -0.086383,
+   "unrealized_pl_pct": -0.358,
+   "closed_ts": 1786724808.0097651,
+   "payout": 24.246091,
+   "pl": 0.145812,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3451184",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 16?",
+   "opened": 1786699057.4607413,
+   "cost": 24.111408,
+   "edge": 0.016104,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.983, fee 0.0012, 2.3d to resolution, 258% annualized net if YES, assumed true P 0.985",
+   "legs": [
+    {
+     "token_id": "112686284032008522364373330360044739494235424756194288793124277063053197159906",
+     "market_id": "3451184",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 16?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 24.499237
+    }
+   ],
+   "current_prices": {
+    "112686284032008522364373330360044739494235424756194288793124277063053197159906": 0.9785
+   },
+   "current_value": 23.972503,
+   "unrealized_pl": -0.138905,
+   "unrealized_pl_pct": -0.576,
+   "closed_ts": 1786724808.0097651,
+   "payout": 24.278744,
+   "pl": 0.167336,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3263530",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-1.5)",
+   "opened": 1786684668.952833,
+   "cost": 24.221096,
+   "edge": 0.011519,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-08-14T11:35:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "39647927150839268921611644117083692199952919482563512361670210594299620303514",
+     "market_id": "3263530",
+     "label": "NO Spread: Qingdao Hainiu FC (-1.5)",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 25.179948
+    }
+   ],
+   "current_prices": {
+    "39647927150839268921611644117083692199952919482563512361670210594299620303514": 0.96
+   },
+   "current_value": 24.17275,
+   "unrealized_pl": -0.048346,
+   "unrealized_pl_pct": -0.2,
+   "closed_ts": 1786724809.1318493,
+   "payout": 25.179948,
+   "pl": 0.958852
+  },
+  {
+   "key": "LS-3247226",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Shandong Taishan FC 1 - 2 Qingdao Hainiu FC?",
+   "opened": 1786690117.9165952,
+   "cost": 24.143879,
+   "edge": 0.010497,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-08-14T11:35:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.966, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "85843093883347449663079140539273866136848394941027011273300792164592382033490",
+     "market_id": "3247226",
+     "label": "NO Exact Score: Shandong Taishan FC 1 - 2 Qingdao Hainiu FC?",
+     "side": "NO",
+     "entry_price": 0.966,
+     "shares": 24.951246
+    }
+   ],
+   "current_prices": {
+    "85843093883347449663079140539273866136848394941027011273300792164592382033490": 0.966
+   },
+   "current_value": 24.102904,
+   "unrealized_pl": -0.040975,
+   "unrealized_pl_pct": -0.17,
+   "closed_ts": 1786724809.1318493,
+   "payout": 24.951246,
+   "pl": 0.807367
   }
  ],
  "history": [
@@ -18912,6 +18934,14 @@
    "equity": 966.1102,
    "realized_total": -30.8684,
    "open_positions": 17
+  },
+  {
+   "ts": 1786724808.011413,
+   "cash": 737.3535,
+   "open_value": 231.6711,
+   "equity": 969.0246,
+   "realized_total": -30.1687,
+   "open_positions": 13
   }
  ],
  "trades": [
@@ -26903,6 +26933,64 @@
    "amount": 24.64,
    "pl": 0.5,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786724808.0097651,
+   "type": "CLOSE",
+   "key": "CV-3451145",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on August 16?",
+   "amount": 6.8,
+   "pl": 0.08,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786724808.0097651,
+   "type": "CLOSE",
+   "key": "CV-3451146",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 16?",
+   "amount": 9.86,
+   "pl": 0.31,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786724808.0097651,
+   "type": "CLOSE",
+   "key": "CV-3421327",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 15?",
+   "amount": 24.25,
+   "pl": 0.15,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786724808.0097651,
+   "type": "CLOSE",
+   "key": "CV-3451184",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 16?",
+   "amount": 24.28,
+   "pl": 0.17,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786724809.1318493,
+   "type": "CLOSE",
+   "key": "LS-3263530",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Qingdao Hainiu FC (-1.5)",
+   "amount": 25.18,
+   "pl": 0.96
+  },
+  {
+   "ts": 1786724809.1318493,
+   "type": "CLOSE",
+   "key": "LS-3247226",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Shandong Taishan FC 1 - 2 Qingdao Hainiu FC?",
+   "amount": 24.95,
+   "pl": 0.81
   }
  ]
 }
