@@ -1,5 +1,5 @@
 {
- "cash": 790.595457,
+ "cash": 815.874503,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.9755
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.977
    },
-   "current_value": 10.606733,
-   "unrealized_pl": -0.033414,
-   "unrealized_pl_pct": -0.314
+   "current_value": 10.623043,
+   "unrealized_pl": -0.017104,
+   "unrealized_pl_pct": -0.161
   },
   {
    "key": "CV-3565411",
@@ -175,35 +175,6 @@
    "current_value": 24.47675,
    "unrealized_pl": -0.023987,
    "unrealized_pl_pct": -0.098
-  },
-  {
-   "key": "LS-3280020",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
-   "opened": 1786795009.8636048,
-   "cost": 24.461071,
-   "edge": 0.012048,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9793,
-   "resolve_by": "2026-08-15T14:00:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.966, fee 0.0016",
-   "legs": [
-    {
-     "token_id": "84702494572466766526870988016103021174882790822654978871563215792027949874635",
-     "market_id": "3280020",
-     "label": "NO Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
-     "side": "NO",
-     "entry_price": 0.966,
-     "shares": 25.279046
-    }
-   ],
-   "current_prices": {
-    "84702494572466766526870988016103021174882790822654978871563215792027949874635": 0.9995
-   },
-   "current_value": 25.266406,
-   "unrealized_pl": 0.805335,
-   "unrealized_pl_pct": 3.292
   },
   {
    "key": "CV-3516858",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9795
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9835
    },
-   "current_value": 24.518452,
-   "unrealized_pl": -0.070207,
-   "unrealized_pl_pct": -0.286
+   "current_value": 24.618579,
+   "unrealized_pl": 0.02992,
+   "unrealized_pl_pct": 0.122
   },
   {
    "key": "LS-3282866",
@@ -16649,6 +16620,38 @@
    "payout": 23.436408,
    "pl": 0.355299,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3280020",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
+   "opened": 1786795009.8636048,
+   "cost": 24.461071,
+   "edge": 0.012048,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9793,
+   "resolve_by": "2026-08-15T14:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.966, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "84702494572466766526870988016103021174882790822654978871563215792027949874635",
+     "market_id": "3280020",
+     "label": "NO Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
+     "side": "NO",
+     "entry_price": 0.966,
+     "shares": 25.279046
+    }
+   ],
+   "current_prices": {
+    "84702494572466766526870988016103021174882790822654978871563215792027949874635": 0.966
+   },
+   "current_value": 24.419558,
+   "unrealized_pl": -0.041513,
+   "unrealized_pl_pct": -0.17,
+   "closed_ts": 1786817566.0006073,
+   "payout": 25.279046,
+   "pl": 0.817975
   }
  ],
  "history": [
@@ -20105,6 +20108,14 @@
    "cash": 790.5955,
    "open_value": 191.9641,
    "equity": 982.5595,
+   "realized_total": -17.7755,
+   "open_positions": 10
+  },
+  {
+   "ts": 1786817564.4139185,
+   "cash": 790.5955,
+   "open_value": 191.2337,
+   "equity": 981.8291,
    "realized_total": -17.7755,
    "open_positions": 10
   }
@@ -28615,6 +28626,15 @@
    "amount": 23.44,
    "pl": 0.36,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786817566.0006073,
+   "type": "CLOSE",
+   "key": "LS-3280020",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
+   "amount": 25.28,
+   "pl": 0.82
   }
  ]
 }
