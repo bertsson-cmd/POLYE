@@ -1,5 +1,5 @@
 {
- "cash": 760.171569,
+ "cash": 736.830585,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.974
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.975
    },
-   "current_value": 24.315215,
-   "unrealized_pl": -0.020944,
-   "unrealized_pl_pct": -0.086
+   "current_value": 24.340179,
+   "unrealized_pl": 0.00402,
+   "unrealized_pl_pct": 0.017
   },
   {
    "key": "CV-3565413",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9725
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9735
    },
-   "current_value": 16.273334,
-   "unrealized_pl": 0.007748,
-   "unrealized_pl_pct": 0.048
+   "current_value": 16.290067,
+   "unrealized_pl": 0.024481,
+   "unrealized_pl_pct": 0.151
   },
   {
    "key": "CV-3492211",
@@ -262,35 +262,6 @@
    "current_value": 18.362723,
    "unrealized_pl": -0.03535,
    "unrealized_pl_pct": -0.192
-  },
-  {
-   "key": "LS-3290049",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Kashima Antlers vs. Nagoya Grampus: O/U 5.5",
-   "opened": 1786778637.4777434,
-   "cost": 24.455987,
-   "edge": 0.018506,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.97,
-   "resolve_by": "2026-08-15T09:00:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.950, fee 0.0024",
-   "legs": [
-    {
-     "token_id": "51363707442935406216402262160079411636212563701101053063314800616820416696742",
-     "market_id": "3290049",
-     "label": "NO Kashima Antlers vs. Nagoya Grampus: O/U 5.5",
-     "side": "NO",
-     "entry_price": 0.95,
-     "shares": 25.678947
-    }
-   ],
-   "current_prices": {
-    "51363707442935406216402262160079411636212563701101053063314800616820416696742": 0.9995
-   },
-   "current_value": 25.666108,
-   "unrealized_pl": 1.210121,
-   "unrealized_pl_pct": 4.948
   },
   {
    "key": "CV-3492169",
@@ -344,11 +315,69 @@
     }
    ],
    "current_prices": {
-    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.9855
+    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.985
    },
-   "current_value": 24.464338,
-   "unrealized_pl": -0.036399,
-   "unrealized_pl_pct": -0.149
+   "current_value": 24.451926,
+   "unrealized_pl": -0.048811,
+   "unrealized_pl_pct": -0.199
+  },
+  {
+   "key": "LS-3438082",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Mjallby AIF (-2.5)",
+   "opened": 1786793968.586005,
+   "cost": 24.516942,
+   "edge": 0.008447,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9787,
+   "resolve_by": "2026-08-15T13:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.969, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "89713383069068288159673281283230966914065437351300349590728499539331377784858",
+     "market_id": "3438082",
+     "label": "NO Spread: Mjallby AIF (-2.5)",
+     "side": "NO",
+     "entry_price": 0.969,
+     "shares": 25.262126
+    }
+   ],
+   "current_prices": {
+    "89713383069068288159673281283230966914065437351300349590728499539331377784858": 0.9645
+   },
+   "current_value": 24.365321,
+   "unrealized_pl": -0.151621,
+   "unrealized_pl_pct": -0.618
+  },
+  {
+   "key": "CV-3421368",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
+   "opened": 1786793968.5860276,
+   "cost": 24.502989,
+   "edge": 0.013219,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-08-15T16:00:00Z",
+   "note": "YES ask 0.986, fee 0.0010, 0.2d to resolution, 2667% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "36106189331167700802316037313290479143045542251824312741989679222708690004294",
+     "market_id": "3421368",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 15?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 24.826572
+    }
+   ],
+   "current_prices": {
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.985
+   },
+   "current_value": 24.454173,
+   "unrealized_pl": -0.048816,
+   "unrealized_pl_pct": -0.199
   }
  ],
  "closed": [
@@ -16445,6 +16474,38 @@
    "closed_ts": 1786792750.1615398,
    "payout": 25.411458,
    "pl": 0.967668
+  },
+  {
+   "key": "LS-3290049",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Kashima Antlers vs. Nagoya Grampus: O/U 5.5",
+   "opened": 1786778637.4777434,
+   "cost": 24.455987,
+   "edge": 0.018506,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.97,
+   "resolve_by": "2026-08-15T09:00:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.950, fee 0.0024",
+   "legs": [
+    {
+     "token_id": "51363707442935406216402262160079411636212563701101053063314800616820416696742",
+     "market_id": "3290049",
+     "label": "NO Kashima Antlers vs. Nagoya Grampus: O/U 5.5",
+     "side": "NO",
+     "entry_price": 0.95,
+     "shares": 25.678947
+    }
+   ],
+   "current_prices": {
+    "51363707442935406216402262160079411636212563701101053063314800616820416696742": 0.95
+   },
+   "current_value": 24.395,
+   "unrealized_pl": -0.060987,
+   "unrealized_pl_pct": -0.249,
+   "closed_ts": 1786793969.6083534,
+   "payout": 25.678947,
+   "pl": 1.22296
   }
  ],
  "history": [
@@ -19783,6 +19844,14 @@
    "equity": 979.1593,
    "realized_total": -21.7594,
    "open_positions": 13
+  },
+  {
+   "ts": 1786793968.760979,
+   "cash": 711.1516,
+   "open_value": 267.5818,
+   "equity": 978.7335,
+   "realized_total": -20.7918,
+   "open_positions": 14
   }
  ],
  "trades": [
@@ -28159,6 +28228,33 @@
    "title": "Fade: FC Mito Holly Hock vs. Gamba \u014csaka: O/U 5.5",
    "amount": 25.41,
    "pl": 0.97
+  },
+  {
+   "ts": 1786793968.586005,
+   "type": "OPEN",
+   "key": "LS-3438082",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Mjallby AIF (-2.5)",
+   "amount": 24.52,
+   "pl": null
+  },
+  {
+   "ts": 1786793968.5860276,
+   "type": "OPEN",
+   "key": "CV-3421368",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
+   "amount": 24.5,
+   "pl": null
+  },
+  {
+   "ts": 1786793969.6083534,
+   "type": "CLOSE",
+   "key": "LS-3290049",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Kashima Antlers vs. Nagoya Grampus: O/U 5.5",
+   "amount": 25.68,
+   "pl": 1.22
   }
  ]
 }
