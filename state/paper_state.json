@@ -1,5 +1,5 @@
 {
- "cash": 772.560948,
+ "cash": 791.746125,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -148,35 +148,6 @@
    "unrealized_pl_pct": -0.349
   },
   {
-   "key": "CV-3492211",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
-   "opened": 1786766575.1620498,
-   "cost": 18.398073,
-   "edge": 0.012261,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.988,
-   "resolve_by": "2026-08-17T16:00:00Z",
-   "note": "YES ask 0.987, fee 0.0009, 2.5d to resolution, 179% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "113983165526071264902528797136266833339193992449210420894725600071227807587622",
-     "market_id": "3492211",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 17?",
-     "side": "YES",
-     "entry_price": 0.987,
-     "shares": 18.623451
-    }
-   ],
-   "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.989
-   },
-   "current_value": 18.418593,
-   "unrealized_pl": 0.02052,
-   "unrealized_pl_pct": 0.112
-  },
-  {
    "key": "CV-3492169",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 17?",
@@ -235,35 +206,6 @@
    "unrealized_pl_pct": -0.098
   },
   {
-   "key": "LS-3438082",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Spread: Mjallby AIF (-2.5)",
-   "opened": 1786793968.586005,
-   "cost": 24.516942,
-   "edge": 0.008447,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9787,
-   "resolve_by": "2026-08-15T13:00:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.969, fee 0.0015",
-   "legs": [
-    {
-     "token_id": "89713383069068288159673281283230966914065437351300349590728499539331377784858",
-     "market_id": "3438082",
-     "label": "NO Spread: Mjallby AIF (-2.5)",
-     "side": "NO",
-     "entry_price": 0.969,
-     "shares": 25.262126
-    }
-   ],
-   "current_prices": {
-    "89713383069068288159673281283230966914065437351300349590728499539331377784858": 0.9995
-   },
-   "current_value": 25.249495,
-   "unrealized_pl": 0.732553,
-   "unrealized_pl_pct": 2.988
-  },
-  {
    "key": "LS-3280020",
    "strategy": "LONGSHOT",
    "title": "Fade: Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
@@ -320,6 +262,35 @@
    "current_value": 13.995282,
    "unrealized_pl": -0.049325,
    "unrealized_pl_pct": -0.351
+  },
+  {
+   "key": "CV-3451188",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
+   "opened": 1786813241.5688934,
+   "cost": 24.588659,
+   "edge": 0.018038,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.981, fee 0.0013, 1.0d to resolution, 687% annualized net if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "93991658494283110553983708513335297356344102822868037801368743339877523735945",
+     "market_id": "3451188",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 16?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 25.0316
+    }
+   ],
+   "current_prices": {
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9805
+   },
+   "current_value": 24.543484,
+   "unrealized_pl": -0.045175,
+   "unrealized_pl_pct": -0.184
   }
  ],
  "closed": [
@@ -16580,6 +16551,71 @@
    "payout": 16.382101,
    "pl": 0.116515,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3492211",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
+   "opened": 1786766575.1620498,
+   "cost": 18.398073,
+   "edge": 0.012261,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-08-17T16:00:00Z",
+   "note": "YES ask 0.987, fee 0.0009, 2.5d to resolution, 179% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "113983165526071264902528797136266833339193992449210420894725600071227807587622",
+     "market_id": "3492211",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 17?",
+     "side": "YES",
+     "entry_price": 0.987,
+     "shares": 18.623451
+    }
+   ],
+   "current_prices": {
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.989
+   },
+   "current_value": 18.418593,
+   "unrealized_pl": 0.02052,
+   "unrealized_pl_pct": 0.112,
+   "closed_ts": 1786813241.7544518,
+   "payout": 18.51171,
+   "pl": 0.113637,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3438082",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Mjallby AIF (-2.5)",
+   "opened": 1786793968.586005,
+   "cost": 24.516942,
+   "edge": 0.008447,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9787,
+   "resolve_by": "2026-08-15T13:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.969, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "89713383069068288159673281283230966914065437351300349590728499539331377784858",
+     "market_id": "3438082",
+     "label": "NO Spread: Mjallby AIF (-2.5)",
+     "side": "NO",
+     "entry_price": 0.969,
+     "shares": 25.262126
+    }
+   ],
+   "current_prices": {
+    "89713383069068288159673281283230966914065437351300349590728499539331377784858": 0.969
+   },
+   "current_value": 24.479,
+   "unrealized_pl": -0.037942,
+   "unrealized_pl_pct": -0.155,
+   "closed_ts": 1786813243.570066,
+   "payout": 25.262126,
+   "pl": 0.745184
   }
  ],
  "history": [
@@ -20013,6 +20049,14 @@
    "open_value": 209.6828,
    "equity": 982.2437,
    "realized_total": -18.9896,
+   "open_positions": 11
+  },
+  {
+   "ts": 1786813241.7565284,
+   "cash": 766.484,
+   "open_value": 215.0372,
+   "equity": 981.5212,
+   "realized_total": -18.876,
    "open_positions": 11
   }
  ],
@@ -28475,6 +28519,34 @@
    "amount": 16.38,
    "pl": 0.12,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786813241.5688934,
+   "type": "OPEN",
+   "key": "CV-3451188",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
+   "amount": 24.59,
+   "pl": null
+  },
+  {
+   "ts": 1786813241.7544518,
+   "type": "CLOSE",
+   "key": "CV-3492211",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
+   "amount": 18.51,
+   "pl": 0.11,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786813243.570066,
+   "type": "CLOSE",
+   "key": "LS-3438082",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Mjallby AIF (-2.5)",
+   "amount": 25.26,
+   "pl": 0.75
   }
  ]
 }
