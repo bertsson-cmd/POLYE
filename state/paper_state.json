@@ -1,5 +1,5 @@
 {
- "cash": 737.395385,
+ "cash": 794.45325,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.9895
+    "61048115363196344065316623899335147857107676170433618160809122351095948366674": 0.9935
    },
-   "current_value": 8.574058,
-   "unrealized_pl": 0.021955,
-   "unrealized_pl_pct": 0.257
+   "current_value": 8.608718,
+   "unrealized_pl": 0.056615,
+   "unrealized_pl_pct": 0.662
   },
   {
    "key": "CV-3541750",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.961
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9575
    },
-   "current_value": 23.26693,
-   "unrealized_pl": 0.185821,
-   "unrealized_pl_pct": 0.805
+   "current_value": 23.18219,
+   "unrealized_pl": 0.101081,
+   "unrealized_pl_pct": 0.438
   },
   {
    "key": "CV-3541748",
@@ -141,40 +141,11 @@
     }
    ],
    "current_prices": {
-    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.988
+    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.9865
    },
-   "current_value": 24.198986,
-   "unrealized_pl": 0.025319,
-   "unrealized_pl_pct": 0.105
-  },
-  {
-   "key": "CV-908045",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will Tom Begich advance from the 2026 Alaska Governor primar",
-   "opened": 1786718215.059955,
-   "cost": 6.891428,
-   "edge": 0.013639,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9863999999999999,
-   "resolve_by": "2026-08-18T00:00:00Z",
-   "note": "YES ask 0.986, fee 0.0006, 3.4d to resolution, 147% annualized net if YES, assumed true P 0.986",
-   "legs": [
-    {
-     "token_id": "47790737258455850776111259123678312701050204532067054925435432957323735063786",
-     "market_id": "908045",
-     "label": "YES Will Tom Begich advance from the 2026 Alaska Governor primary election?",
-     "side": "YES",
-     "entry_price": 0.986,
-     "shares": 6.985367
-    }
-   ],
-   "current_prices": {
-    "47790737258455850776111259123678312701050204532067054925435432957323735063786": 0.993
-   },
-   "current_value": 6.936469,
-   "unrealized_pl": 0.045041,
-   "unrealized_pl_pct": 0.654
+   "current_value": 24.162247,
+   "unrealized_pl": -0.01142,
+   "unrealized_pl_pct": -0.047
   },
   {
    "key": "CV-3516858",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.977
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.978
    },
-   "current_value": 24.390107,
-   "unrealized_pl": 0.053948,
-   "unrealized_pl_pct": 0.222
+   "current_value": 24.415072,
+   "unrealized_pl": 0.078913,
+   "unrealized_pl_pct": 0.324
   },
   {
    "key": "CV-3421368",
@@ -228,69 +199,11 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9765
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9775
    },
-   "current_value": 24.06747,
-   "unrealized_pl": -0.005083,
-   "unrealized_pl_pct": -0.021
-  },
-  {
-   "key": "LS-3258967",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: AD San Carlos 2 - 0 CS Herediano?",
-   "opened": 1786750951.318902,
-   "cost": 24.375654,
-   "edge": 0.008712,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9703,
-   "resolve_by": "2026-08-15T02:00:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.960, fee 0.0019",
-   "legs": [
-    {
-     "token_id": "97251884300171693133383123548816852836788845353749111508674545935888570193996",
-     "market_id": "3258967",
-     "label": "NO Exact Score: AD San Carlos 2 - 0 CS Herediano?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 25.340625
-    }
-   ],
-   "current_prices": {
-    "97251884300171693133383123548816852836788845353749111508674545935888570193996": 0.9995
-   },
-   "current_value": 25.327955,
-   "unrealized_pl": 0.952301,
-   "unrealized_pl_pct": 3.907
-  },
-  {
-   "key": "LS-3258975",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: AD San Carlos 1 - 3 CS Herediano?",
-   "opened": 1786752091.212443,
-   "cost": 24.323145,
-   "edge": 0.00104,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.982,
-   "resolve_by": "2026-08-15T02:00:00Z",
-   "note": "YES at 0.030, assumed true 0.018, NO ask 0.980, fee 0.0010",
-   "legs": [
-    {
-     "token_id": "52680631511329974171080172434889621574648353105148642909282630014850857801117",
-     "market_id": "3258975",
-     "label": "NO Exact Score: AD San Carlos 1 - 3 CS Herediano?",
-     "side": "NO",
-     "entry_price": 0.98,
-     "shares": 24.794741
-    }
-   ],
-   "current_prices": {
-    "52680631511329974171080172434889621574648353105148642909282630014850857801117": 0.9995
-   },
-   "current_value": 24.782344,
-   "unrealized_pl": 0.459199,
-   "unrealized_pl_pct": 1.888
+   "current_value": 24.092117,
+   "unrealized_pl": 0.019564,
+   "unrealized_pl_pct": 0.081
   },
   {
    "key": "CV-3565413",
@@ -315,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.95
+    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.945
    },
-   "current_value": 24.33425,
-   "unrealized_pl": -0.08517,
-   "unrealized_pl_pct": -0.349
+   "current_value": 24.206175,
+   "unrealized_pl": -0.213245,
+   "unrealized_pl_pct": -0.873
   },
   {
    "key": "CV-3451188",
@@ -344,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.973
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9695
    },
-   "current_value": 16.2817,
-   "unrealized_pl": 0.016114,
-   "unrealized_pl_pct": 0.099
+   "current_value": 16.223133,
+   "unrealized_pl": -0.042453,
+   "unrealized_pl_pct": -0.261
   },
   {
    "key": "CV-3492211",
@@ -16279,6 +16192,103 @@
    "payout": 25.215995,
    "pl": 1.043245,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-908045",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Tom Begich advance from the 2026 Alaska Governor primar",
+   "opened": 1786718215.059955,
+   "cost": 6.891428,
+   "edge": 0.013639,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-08-18T00:00:00Z",
+   "note": "YES ask 0.986, fee 0.0006, 3.4d to resolution, 147% annualized net if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "47790737258455850776111259123678312701050204532067054925435432957323735063786",
+     "market_id": "908045",
+     "label": "YES Will Tom Begich advance from the 2026 Alaska Governor primary election?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 6.985367
+    }
+   ],
+   "current_prices": {
+    "47790737258455850776111259123678312701050204532067054925435432957323735063786": 0.993
+   },
+   "current_value": 6.936469,
+   "unrealized_pl": 0.045041,
+   "unrealized_pl_pct": 0.654,
+   "closed_ts": 1786776725.5731766,
+   "payout": 6.922499,
+   "pl": 0.031071,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3258967",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: AD San Carlos 2 - 0 CS Herediano?",
+   "opened": 1786750951.318902,
+   "cost": 24.375654,
+   "edge": 0.008712,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9703,
+   "resolve_by": "2026-08-15T02:00:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "97251884300171693133383123548816852836788845353749111508674545935888570193996",
+     "market_id": "3258967",
+     "label": "NO Exact Score: AD San Carlos 2 - 0 CS Herediano?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 25.340625
+    }
+   ],
+   "current_prices": {
+    "97251884300171693133383123548816852836788845353749111508674545935888570193996": 0.96
+   },
+   "current_value": 24.327,
+   "unrealized_pl": -0.048654,
+   "unrealized_pl_pct": -0.2,
+   "closed_ts": 1786776726.5373456,
+   "payout": 25.340625,
+   "pl": 0.964971
+  },
+  {
+   "key": "LS-3258975",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: AD San Carlos 1 - 3 CS Herediano?",
+   "opened": 1786752091.212443,
+   "cost": 24.323145,
+   "edge": 0.00104,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.982,
+   "resolve_by": "2026-08-15T02:00:00Z",
+   "note": "YES at 0.030, assumed true 0.018, NO ask 0.980, fee 0.0010",
+   "legs": [
+    {
+     "token_id": "52680631511329974171080172434889621574648353105148642909282630014850857801117",
+     "market_id": "3258975",
+     "label": "NO Exact Score: AD San Carlos 1 - 3 CS Herediano?",
+     "side": "NO",
+     "entry_price": 0.98,
+     "shares": 24.794741
+    }
+   ],
+   "current_prices": {
+    "52680631511329974171080172434889621574648353105148642909282630014850857801117": 0.98
+   },
+   "current_value": 24.298846,
+   "unrealized_pl": -0.024299,
+   "unrealized_pl_pct": -0.1,
+   "closed_ts": 1786776726.5373456,
+   "payout": 24.794741,
+   "pl": 0.471596
   }
  ],
  "history": [
@@ -19529,6 +19539,14 @@
    "equity": 977.522,
    "realized_total": -23.502,
    "open_positions": 13
+  },
+  {
+   "ts": 1786776725.5747926,
+   "cash": 744.3179,
+   "open_value": 231.4818,
+   "equity": 975.7997,
+   "realized_total": -23.471,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -27803,6 +27821,34 @@
    "amount": 25.22,
    "pl": 1.04,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786776725.5731766,
+   "type": "CLOSE",
+   "key": "CV-908045",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Tom Begich advance from the 2026 Alaska Governor primar",
+   "amount": 6.92,
+   "pl": 0.03,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786776726.5373456,
+   "type": "CLOSE",
+   "key": "LS-3258967",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: AD San Carlos 2 - 0 CS Herediano?",
+   "amount": 25.34,
+   "pl": 0.96
+  },
+  {
+   "ts": 1786776726.5373456,
+   "type": "CLOSE",
+   "key": "LS-3258975",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: AD San Carlos 1 - 3 CS Herediano?",
+   "amount": 24.79,
+   "pl": 0.47
   }
  ]
 }
