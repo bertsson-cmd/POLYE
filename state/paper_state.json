@@ -1,5 +1,5 @@
 {
- "cash": 730.577463,
+ "cash": 737.395385,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,40 +112,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.959
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9605
    },
-   "current_value": 23.218507,
-   "unrealized_pl": 0.137398,
-   "unrealized_pl_pct": 0.595
-  },
-  {
-   "key": "CV-3350264",
-   "strategy": "CONVERGE",
-   "title": "Converge: Ukraine strikes another vessel in the Black Sea by August 15",
-   "opened": 1786684668.952848,
-   "cost": 24.17275,
-   "edge": 0.052632,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.956,
-   "resolve_by": "2026-08-15T23:59:00Z",
-   "note": "YES ask 0.950, fee 0.0000, 1.8d to resolution, 1080% annualized net if YES, assumed true P 0.956",
-   "legs": [
-    {
-     "token_id": "98414169206552875069771715880593624268023902933339608819270646460493024528482",
-     "market_id": "3350264",
-     "label": "YES Ukraine strikes another vessel in the Black Sea by August 15, 2026?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 25.445
-    }
-   ],
-   "current_prices": {
-    "98414169206552875069771715880593624268023902933339608819270646460493024528482": 0.95
-   },
-   "current_value": 24.17275,
-   "unrealized_pl": 0.0,
-   "unrealized_pl_pct": 0.0
+   "current_value": 23.254824,
+   "unrealized_pl": 0.173715,
+   "unrealized_pl_pct": 0.753
   },
   {
    "key": "CV-3541748",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "47790737258455850776111259123678312701050204532067054925435432957323735063786": 0.9865
+    "47790737258455850776111259123678312701050204532067054925435432957323735063786": 0.99
    },
-   "current_value": 6.891065,
-   "unrealized_pl": -0.000363,
-   "unrealized_pl_pct": -0.005
+   "current_value": 6.915513,
+   "unrealized_pl": 0.024085,
+   "unrealized_pl_pct": 0.349
   },
   {
    "key": "CV-3516858",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.973
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9745
    },
-   "current_value": 23.981207,
-   "unrealized_pl": -0.091346,
-   "unrealized_pl_pct": -0.379
+   "current_value": 24.018177,
+   "unrealized_pl": -0.054376,
+   "unrealized_pl_pct": -0.226
   },
   {
    "key": "LS-3258967",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "97251884300171693133383123548816852836788845353749111508674545935888570193996": 0.651
+    "97251884300171693133383123548816852836788845353749111508674545935888570193996": 0.9975
    },
-   "current_value": 16.496747,
-   "unrealized_pl": -7.878907,
-   "unrealized_pl_pct": -32.323
+   "current_value": 25.277273,
+   "unrealized_pl": 0.901619,
+   "unrealized_pl_pct": 3.699
   },
   {
    "key": "LS-3258975",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "52680631511329974171080172434889621574648353105148642909282630014850857801117": 0.534
+    "52680631511329974171080172434889621574648353105148642909282630014850857801117": 0.9975
    },
-   "current_value": 13.240392,
-   "unrealized_pl": -11.082753,
-   "unrealized_pl_pct": -45.565
+   "current_value": 24.732754,
+   "unrealized_pl": 0.409609,
+   "unrealized_pl_pct": 1.684
   },
   {
    "key": "CV-3565413",
@@ -373,11 +344,40 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9755
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9735
    },
-   "current_value": 16.323534,
-   "unrealized_pl": 0.057948,
-   "unrealized_pl_pct": 0.356
+   "current_value": 16.290067,
+   "unrealized_pl": 0.024481,
+   "unrealized_pl_pct": 0.151
+  },
+  {
+   "key": "CV-3492211",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
+   "opened": 1786766575.1620498,
+   "cost": 18.398073,
+   "edge": 0.012261,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-08-17T16:00:00Z",
+   "note": "YES ask 0.987, fee 0.0009, 2.5d to resolution, 179% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "113983165526071264902528797136266833339193992449210420894725600071227807587622",
+     "market_id": "3492211",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 17?",
+     "side": "YES",
+     "entry_price": 0.987,
+     "shares": 18.623451
+    }
+   ],
+   "current_prices": {
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.985
+   },
+   "current_value": 18.344099,
+   "unrealized_pl": -0.053974,
+   "unrealized_pl_pct": -0.293
   }
  ],
  "closed": [
@@ -16246,6 +16246,39 @@
    "payout": 24.823995,
    "pl": 0.401565,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3350264",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ukraine strikes another vessel in the Black Sea by August 15",
+   "opened": 1786684668.952848,
+   "cost": 24.17275,
+   "edge": 0.052632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-15T23:59:00Z",
+   "note": "YES ask 0.950, fee 0.0000, 1.8d to resolution, 1080% annualized net if YES, assumed true P 0.956",
+   "legs": [
+    {
+     "token_id": "98414169206552875069771715880593624268023902933339608819270646460493024528482",
+     "market_id": "3350264",
+     "label": "YES Ukraine strikes another vessel in the Black Sea by August 15, 2026?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 25.445
+    }
+   ],
+   "current_prices": {
+    "98414169206552875069771715880593624268023902933339608819270646460493024528482": 0.95
+   },
+   "current_value": 24.17275,
+   "unrealized_pl": 0.0,
+   "unrealized_pl_pct": 0.0,
+   "closed_ts": 1786766575.3279152,
+   "payout": 25.215995,
+   "pl": 1.043245,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -19455,6 +19488,14 @@
    "open_value": 225.2513,
    "equity": 955.8288,
    "realized_total": -24.5453,
+   "open_positions": 13
+  },
+  {
+   "ts": 1786766575.3291452,
+   "cash": 737.3954,
+   "open_value": 239.7598,
+   "equity": 977.1552,
+   "realized_total": -23.502,
    "open_positions": 13
   }
  ],
@@ -27711,6 +27752,25 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
    "amount": 16.27,
    "pl": null
+  },
+  {
+   "ts": 1786766575.1620498,
+   "type": "OPEN",
+   "key": "CV-3492211",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 17?",
+   "amount": 18.4,
+   "pl": null
+  },
+  {
+   "ts": 1786766575.3279152,
+   "type": "CLOSE",
+   "key": "CV-3350264",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ukraine strikes another vessel in the Black Sea by August 15",
+   "amount": 25.22,
+   "pl": 1.04,
+   "reason": "take_profit"
   }
  ]
 }
