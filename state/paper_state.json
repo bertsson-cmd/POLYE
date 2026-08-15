@@ -1,5 +1,5 @@
 {
- "cash": 734.703821,
+ "cash": 759.260848,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9565
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.956
    },
-   "current_value": 23.157979,
-   "unrealized_pl": 0.07687,
-   "unrealized_pl_pct": 0.333
+   "current_value": 23.145874,
+   "unrealized_pl": 0.064765,
+   "unrealized_pl_pct": 0.281
   },
   {
    "key": "CV-3541748",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.961
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.962
    },
-   "current_value": 16.080898,
-   "unrealized_pl": -0.184688,
-   "unrealized_pl_pct": -1.135
+   "current_value": 16.097632,
+   "unrealized_pl": -0.167954,
+   "unrealized_pl_pct": -1.033
   },
   {
    "key": "CV-3492211",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9865
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.985
    },
-   "current_value": 18.372034,
-   "unrealized_pl": -0.026039,
-   "unrealized_pl_pct": -0.142
+   "current_value": 18.344099,
+   "unrealized_pl": -0.053974,
+   "unrealized_pl_pct": -0.293
   },
   {
    "key": "LS-3290049",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "51363707442935406216402262160079411636212563701101053063314800616820416696742": 0.95
+    "51363707442935406216402262160079411636212563701101053063314800616820416696742": 0.861
    },
-   "current_value": 24.395,
-   "unrealized_pl": -0.060987,
-   "unrealized_pl_pct": -0.249
+   "current_value": 22.109573,
+   "unrealized_pl": -2.346414,
+   "unrealized_pl_pct": -9.594
   },
   {
    "key": "LS-3290082",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "37128094043638165494445528570873956616373841518584513453110967211876186217078": 0.808
+    "37128094043638165494445528570873956616373841518584513453110967211876186217078": 0.896
    },
-   "current_value": 20.532458,
-   "unrealized_pl": -3.911332,
-   "unrealized_pl_pct": -16.001
+   "current_value": 22.768666,
+   "unrealized_pl": -1.675124,
+   "unrealized_pl_pct": -6.853
   },
   {
    "key": "CV-3492169",
@@ -344,40 +344,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.969
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.973
    },
-   "current_value": 10.536058,
-   "unrealized_pl": -0.104089,
-   "unrealized_pl_pct": -0.978
-  },
-  {
-   "key": "CV-3421368",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
-   "opened": 1786785142.4011714,
-   "cost": 24.461825,
-   "edge": 0.016104,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-15T16:00:00Z",
-   "note": "YES ask 0.983, fee 0.0012, 0.3d to resolution, 2076% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "36106189331167700802316037313290479143045542251824312741989679222708690004294",
-     "market_id": "3421368",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 15?",
-     "side": "YES",
-     "entry_price": 0.983,
-     "shares": 24.85529
-    }
-   ],
-   "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9845
-   },
-   "current_value": 24.470033,
-   "unrealized_pl": 0.008208,
-   "unrealized_pl_pct": 0.034
+   "current_value": 10.579551,
+   "unrealized_pl": -0.060596,
+   "unrealized_pl_pct": -0.57
   }
  ],
  "closed": [
@@ -16409,6 +16380,39 @@
    "payout": 24.25232,
    "pl": 0.179767,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3421368",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
+   "opened": 1786785142.4011714,
+   "cost": 24.461825,
+   "edge": 0.016104,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-15T16:00:00Z",
+   "note": "YES ask 0.983, fee 0.0012, 0.3d to resolution, 2076% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "36106189331167700802316037313290479143045542251824312741989679222708690004294",
+     "market_id": "3421368",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 15?",
+     "side": "YES",
+     "entry_price": 0.983,
+     "shares": 24.85529
+    }
+   ],
+   "current_prices": {
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.9845
+   },
+   "current_value": 24.470033,
+   "unrealized_pl": 0.008208,
+   "unrealized_pl_pct": 0.034,
+   "closed_ts": 1786786991.1492815,
+   "payout": 24.557027,
+   "pl": 0.095202,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -19707,6 +19711,14 @@
    "equity": 973.7661,
    "realized_total": -21.8546,
    "open_positions": 13
+  },
+  {
+   "ts": 1786786991.1510074,
+   "cash": 759.2608,
+   "open_value": 214.5632,
+   "equity": 973.824,
+   "realized_total": -21.7594,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -28055,6 +28067,16 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
    "amount": 24.46,
    "pl": null
+  },
+  {
+   "ts": 1786786991.1492815,
+   "type": "CLOSE",
+   "key": "CV-3421368",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 15?",
+   "amount": 24.56,
+   "pl": 0.1,
+   "reason": "take_profit"
   }
  ]
 }
