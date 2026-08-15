@@ -1,5 +1,5 @@
 {
- "cash": 734.760111,
+ "cash": 760.171569,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "100552431054592067159009047862058109487191573660751322702353957711570433725343": 0.974
+    "100552431054592067159009047862058109487191573660751322702353957711570433725343": 0.987
    },
-   "current_value": 10.694529,
-   "unrealized_pl": -0.148376,
-   "unrealized_pl_pct": -1.368
+   "current_value": 10.837269,
+   "unrealized_pl": -0.005636,
+   "unrealized_pl_pct": -0.052
   },
   {
    "key": "CV-3516855",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.956
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9565
    },
-   "current_value": 23.145874,
-   "unrealized_pl": 0.064765,
-   "unrealized_pl_pct": 0.281
+   "current_value": 23.157979,
+   "unrealized_pl": 0.07687,
+   "unrealized_pl_pct": 0.333
   },
   {
    "key": "CV-3541748",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9715
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9725
    },
-   "current_value": 16.2566,
-   "unrealized_pl": -0.008986,
-   "unrealized_pl_pct": -0.055
+   "current_value": 16.273334,
+   "unrealized_pl": 0.007748,
+   "unrealized_pl_pct": 0.048
   },
   {
    "key": "CV-3492211",
@@ -286,40 +286,11 @@
     }
    ],
    "current_prices": {
-    "51363707442935406216402262160079411636212563701101053063314800616820416696742": 0.9945
+    "51363707442935406216402262160079411636212563701101053063314800616820416696742": 0.9995
    },
-   "current_value": 25.537713,
-   "unrealized_pl": 1.081726,
-   "unrealized_pl_pct": 4.423
-  },
-  {
-   "key": "LS-3290082",
-   "strategy": "LONGSHOT",
-   "title": "Fade: FC Mito Holly Hock vs. Gamba \u014csaka: O/U 5.5",
-   "opened": 1786778637.4777763,
-   "cost": 24.44379,
-   "edge": 0.013702,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9751,
-   "resolve_by": "2026-08-15T09:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.960, fee 0.0019",
-   "legs": [
-    {
-     "token_id": "37128094043638165494445528570873956616373841518584513453110967211876186217078",
-     "market_id": "3290082",
-     "label": "NO FC Mito Holly Hock vs. Gamba \u014csaka: O/U 5.5",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 25.411458
-    }
-   ],
-   "current_prices": {
-    "37128094043638165494445528570873956616373841518584513453110967211876186217078": 0.948
-   },
-   "current_value": 24.090062,
-   "unrealized_pl": -0.353728,
-   "unrealized_pl_pct": -1.447
+   "current_value": 25.666108,
+   "unrealized_pl": 1.210121,
+   "unrealized_pl_pct": 4.948
   },
   {
    "key": "CV-3492169",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.972
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.974
    },
-   "current_value": 10.568677,
-   "unrealized_pl": -0.07147,
-   "unrealized_pl_pct": -0.672
+   "current_value": 10.590424,
+   "unrealized_pl": -0.049723,
+   "unrealized_pl_pct": -0.467
   },
   {
    "key": "CV-3565411",
@@ -373,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.985
+    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.9855
    },
-   "current_value": 24.451926,
-   "unrealized_pl": -0.048811,
-   "unrealized_pl_pct": -0.199
+   "current_value": 24.464338,
+   "unrealized_pl": -0.036399,
+   "unrealized_pl_pct": -0.149
   }
  ],
  "closed": [
@@ -16442,6 +16413,38 @@
    "payout": 24.557027,
    "pl": 0.095202,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3290082",
+   "strategy": "LONGSHOT",
+   "title": "Fade: FC Mito Holly Hock vs. Gamba \u014csaka: O/U 5.5",
+   "opened": 1786778637.4777763,
+   "cost": 24.44379,
+   "edge": 0.013702,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9751,
+   "resolve_by": "2026-08-15T09:00:00Z",
+   "note": "YES at 0.042, assumed true 0.025, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "37128094043638165494445528570873956616373841518584513453110967211876186217078",
+     "market_id": "3290082",
+     "label": "NO FC Mito Holly Hock vs. Gamba \u014csaka: O/U 5.5",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 25.411458
+    }
+   ],
+   "current_prices": {
+    "37128094043638165494445528570873956616373841518584513453110967211876186217078": 0.96
+   },
+   "current_value": 24.395,
+   "unrealized_pl": -0.04879,
+   "unrealized_pl_pct": -0.2,
+   "closed_ts": 1786792750.1615398,
+   "payout": 25.411458,
+   "pl": 0.967668
   }
  ],
  "history": [
@@ -19770,6 +19773,14 @@
    "cash": 734.7601,
    "open_value": 243.7601,
    "equity": 978.5202,
+   "realized_total": -21.7594,
+   "open_positions": 13
+  },
+  {
+   "ts": 1786792749.5828307,
+   "cash": 734.7601,
+   "open_value": 244.3992,
+   "equity": 979.1593,
    "realized_total": -21.7594,
    "open_positions": 13
   }
@@ -28139,6 +28150,15 @@
    "title": "Converge: Will the price of Bitcoin be above $58,000 on August 20?",
    "amount": 24.5,
    "pl": null
+  },
+  {
+   "ts": 1786792750.1615398,
+   "type": "CLOSE",
+   "key": "LS-3290082",
+   "strategy": "LONGSHOT",
+   "title": "Fade: FC Mito Holly Hock vs. Gamba \u014csaka: O/U 5.5",
+   "amount": 25.41,
+   "pl": 0.97
   }
  ]
 }
