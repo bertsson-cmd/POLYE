@@ -1,5 +1,5 @@
 {
- "cash": 791.746125,
+ "cash": 790.595457,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -59,35 +59,6 @@
    "current_value": 10.837269,
    "unrealized_pl": -0.005636,
    "unrealized_pl_pct": -0.052
-  },
-  {
-   "key": "CV-3541750",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 19?",
-   "opened": 1786635704.72099,
-   "cost": 23.081109,
-   "edge": 0.049132,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9623999999999999,
-   "resolve_by": "2026-08-19T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 6.0d to resolution, 298% annualized net if YES, assumed true P 0.962",
-   "legs": [
-    {
-     "token_id": "11542773637852133604493494955474891568068842012191690545253155959690912624732",
-     "market_id": "3541750",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 19?",
-     "side": "YES",
-     "entry_price": 0.95,
-     "shares": 24.211165
-    }
-   ],
-   "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.95
-   },
-   "current_value": 23.000607,
-   "unrealized_pl": -0.080502,
-   "unrealized_pl_pct": -0.349
   },
   {
    "key": "CV-3541748",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.9755
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.9775
    },
-   "current_value": 10.606733,
-   "unrealized_pl": -0.033414,
-   "unrealized_pl_pct": -0.314
+   "current_value": 10.62848,
+   "unrealized_pl": -0.011667,
+   "unrealized_pl_pct": -0.11
   },
   {
    "key": "CV-3565411",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.9835
+    "94133643939986345772497485934689137685064261309842554788726410541215530809225": 0.985
    },
-   "current_value": 13.995282,
-   "unrealized_pl": -0.049325,
-   "unrealized_pl_pct": -0.351
+   "current_value": 14.016627,
+   "unrealized_pl": -0.02798,
+   "unrealized_pl_pct": -0.199
   },
   {
    "key": "CV-3451188",
@@ -286,11 +257,40 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9805
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.977
    },
-   "current_value": 24.543484,
-   "unrealized_pl": -0.045175,
-   "unrealized_pl_pct": -0.184
+   "current_value": 24.455873,
+   "unrealized_pl": -0.132786,
+   "unrealized_pl_pct": -0.54
+  },
+  {
+   "key": "LS-3282866",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Sevilla FC 0 - 2 Rayo Vallecano de Madrid?",
+   "opened": 1786814998.9861412,
+   "cost": 24.587076,
+   "edge": 0.011519,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-08-15T19:30:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "63152365323096409953322749904857959979168118238120490900841622853757924049679",
+     "market_id": "3282866",
+     "label": "NO Exact Score: Sevilla FC 0 - 2 Rayo Vallecano de Madrid?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 25.560417
+    }
+   ],
+   "current_prices": {
+    "63152365323096409953322749904857959979168118238120490900841622853757924049679": 0.955
+   },
+   "current_value": 24.410198,
+   "unrealized_pl": -0.176878,
+   "unrealized_pl_pct": -0.719
   }
  ],
  "closed": [
@@ -16616,6 +16616,39 @@
    "closed_ts": 1786813243.570066,
    "payout": 25.262126,
    "pl": 0.745184
+  },
+  {
+   "key": "CV-3541750",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 19?",
+   "opened": 1786635704.72099,
+   "cost": 23.081109,
+   "edge": 0.049132,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9623999999999999,
+   "resolve_by": "2026-08-19T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 6.0d to resolution, 298% annualized net if YES, assumed true P 0.962",
+   "legs": [
+    {
+     "token_id": "11542773637852133604493494955474891568068842012191690545253155959690912624732",
+     "market_id": "3541750",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 19?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 24.211165
+    }
+   ],
+   "current_prices": {
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.95
+   },
+   "current_value": 23.000607,
+   "unrealized_pl": -0.080502,
+   "unrealized_pl_pct": -0.349,
+   "closed_ts": 1786814999.1499903,
+   "payout": 23.436408,
+   "pl": 0.355299,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -20058,6 +20091,14 @@
    "equity": 981.5212,
    "realized_total": -18.876,
    "open_positions": 11
+  },
+  {
+   "ts": 1786814999.1517868,
+   "cash": 790.5955,
+   "open_value": 191.9233,
+   "equity": 982.5187,
+   "realized_total": -17.7755,
+   "open_positions": 10
   }
  ],
  "trades": [
@@ -28547,6 +28588,25 @@
    "title": "Fade: Spread: Mjallby AIF (-2.5)",
    "amount": 25.26,
    "pl": 0.75
+  },
+  {
+   "ts": 1786814998.9861412,
+   "type": "OPEN",
+   "key": "LS-3282866",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Sevilla FC 0 - 2 Rayo Vallecano de Madrid?",
+   "amount": 24.59,
+   "pl": null
+  },
+  {
+   "ts": 1786814999.1499903,
+   "type": "CLOSE",
+   "key": "CV-3541750",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 19?",
+   "amount": 23.44,
+   "pl": 0.36,
+   "reason": "take_profit"
   }
  ]
 }
