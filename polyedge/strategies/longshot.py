@@ -31,18 +31,24 @@ real evidence: LS-3412924, an actual live position ("Fade: Will the
 highest temperature in Seattle be between 72-73°F...") -- a narrow
 bracket on a continuously-moving quantity, the same risk shape as the
 tweet-count bracket that caused CONVERGE's original documented loss.
-This is deliberately UNLIKE sports, which LONGSHOT does NOT exclude
-(fading cheap sports outcomes is core to its edge, a strategy-specific
-judgment call) -- a narrow bracket on a volatile continuous quantity is
-a real risk regardless of which strategy is trading it, not a judgment
-call the way sports exclusion was.
+This is a real risk regardless of which strategy is trading it.
+
+LS_EXCLUDE_SPORTS (default on) excludes sports markets, reusing
+convergence.is_sports_match() -- a REVERSAL, based on real trading
+results, not a theoretical reassessment. This project originally left
+LONGSHOT deliberately NOT excluding sports: the theory was that fading
+cheap sports outcomes was core to the strategy's edge, a strategy-
+specific judgment call (unlike weather, which was never a judgment call
+either way). Actual production results overrode that theory: sports-
+category positions account for the large majority of LONGSHOT's real
+losses so far. Excluded now, same as CONVERGE.
 """
 import logging
 from typing import Dict, List
 
 from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
-from .convergence import is_weather_market
+from .convergence import is_sports_match, is_weather_market
 
 log = logging.getLogger("polyedge.longshot")
 
@@ -50,7 +56,7 @@ log = logging.getLogger("polyedge.longshot")
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
     out: List[Opportunity] = []
     seen_events = set()
-    skipped_weather = 0
+    skipped = {"weather": 0, "sports": 0}
     for m in all_markets:
         q = m.yes_price
         if not (config.LS_MIN_YES_PRICE <= q <= config.LS_MAX_YES_PRICE):
@@ -63,19 +69,27 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         # one fade per event — fading 5 outcomes of the same event is one bet
         if m.event_id in seen_events:
             continue
-        # Unlike sports (deliberately NOT excluded here -- fading cheap
-        # sports outcomes is core to LONGSHOT's edge, a strategy-specific
-        # judgment call), a narrow bracket on a volatile continuous
-        # quantity is a real risk regardless of which strategy is trading
-        # it -- not a judgment call. Real evidence: LS-3412924, an actual
-        # live LONGSHOT position ("Fade: Will the highest temperature in
-        # Seattle be between 72-73°F...") -- structurally the same
-        # "narrow band on a continuously-moving quantity" risk pattern as
-        # the tweet-count bracket that caused CONVERGE's documented loss.
-        # Reuses convergence.is_weather_market() rather than duplicating
-        # the detection logic.
+        # A narrow bracket on a volatile continuous quantity is a real
+        # risk regardless of which strategy is trading it. Real evidence:
+        # LS-3412924, an actual live LONGSHOT position ("Fade: Will the
+        # highest temperature in Seattle be between 72-73°F...") --
+        # structurally the same "narrow band on a continuously-moving
+        # quantity" risk pattern as the tweet-count bracket that caused
+        # CONVERGE's documented loss. Reuses convergence.is_weather_market()
+        # rather than duplicating the detection logic.
         if config.LS_EXCLUDE_WEATHER and is_weather_market(m):
-            skipped_weather += 1
+            skipped["weather"] += 1
+            continue
+        # REVERSAL, based on real trading results, not a theoretical
+        # reassessment: this exclusion did NOT exist originally -- LONGSHOT
+        # deliberately left sports UN-excluded, on the theory that fading
+        # cheap sports outcomes was core to the strategy's edge. Real
+        # trading results overrode that theory: sports-category positions
+        # account for the large majority of LONGSHOT's real losses so far.
+        # Excluded now, same as CONVERGE, reusing convergence.is_sports_match()
+        # rather than duplicating the detection logic.
+        if config.LS_EXCLUDE_SPORTS and is_sports_match(m):
+            skipped["sports"] += 1
             continue
 
         book = books.get(m.no_token)
@@ -108,6 +122,8 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         ))
     # soonest-resolving first (near-term capital cycling), edge as tiebreak
     out.sort(key=lambda o: (days_to_resolution(o.resolve_by), -o.edge))
-    if skipped_weather:
-        log.info("longshot: excluded %d weather market(s)", skipped_weather)
+    skipped_total = sum(skipped.values())
+    if skipped_total:
+        log.info("longshot: excluded %d market(s) -- %s", skipped_total,
+                 ", ".join(f"{k}={v}" for k, v in skipped.items() if v))
     return out

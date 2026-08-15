@@ -134,13 +134,21 @@ LS_MAX_OPEN = _i("POLYEDGE_LS_MAX_OPEN", 3)          # reduced from 10 — fewer
 # the highest temperature in Seattle be between 72-73°F...") -- a narrow
 # temperature bracket, structurally the same "narrow band on a continuously-
 # moving quantity" risk pattern as the tweet-count bracket that caused
-# CONVERGE's original documented loss. Unlike CV_EXCLUDE_SPORTS (a
-# strategy-specific judgment call -- fading cheap sports outcomes is core to
-# LONGSHOT's edge, so LONGSHOT deliberately does NOT exclude sports), this
-# is NOT a judgment call: a narrow bracket on a volatile continuous quantity
-# is a real risk regardless of which strategy is trading it. Reuses
-# convergence.is_weather_market() rather than duplicating the detection logic.
+# CONVERGE's original documented loss. This is a real risk regardless of
+# which strategy is trading it. Reuses convergence.is_weather_market()
+# rather than duplicating the detection logic.
 LS_EXCLUDE_WEATHER = os.environ.get("POLYEDGE_LS_EXCLUDE_WEATHER", "1") not in ("0", "false", "no")
+# REVERSAL, based on real trading results, not a theoretical reassessment:
+# LONGSHOT previously did NOT exclude sports by design -- the original
+# reasoning was that fading cheap sports outcomes was core to the
+# strategy's edge, a deliberate strategy-specific judgment call (see the
+# weather-exclusion comment above, and LIVE.md's design-rationale note,
+# for how that reasoning used to read). Actual production results
+# overrode that theory: sports-category positions account for the large
+# majority of LONGSHOT's real losses so far. Excluded now, same as
+# CONVERGE, reusing convergence.is_sports_match() rather than duplicating
+# the detection logic.
+LS_EXCLUDE_SPORTS = os.environ.get("POLYEDGE_LS_EXCLUDE_SPORTS", "1") not in ("0", "false", "no")
 
 # ---------------------------------------------------------------- strategy: CONVERGE (near-resolution yield)
 CV_MIN_YES_PRICE = _f("POLYEDGE_CV_MIN_YES", 0.94)

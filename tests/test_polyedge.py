@@ -600,14 +600,57 @@ class TestLongshot:
         books = {m.no_token: book(m.no_token, 0.965)}
         assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
 
-    def test_sports_still_not_excluded_from_longshot(self):
-        """Deliberate difference from weather: LONGSHOT fades cheap sports
-        outcomes as core to its edge, unlike weather brackets, which are a
-        real risk regardless of strategy -- not a judgment call."""
+    # ---- sports exclusion -- a REVERSAL, based on real trading results,
+    # not a theoretical reassessment. LONGSHOT originally left sports
+    # deliberately UN-excluded (fading cheap sports outcomes was thought
+    # core to its edge); real production results showed sports-category
+    # positions account for the large majority of LONGSHOT's real losses,
+    # overriding that theory. Titles below are real LONGSHOT candidates
+    # that actually appeared in production logs.
+    def test_ls_exact_score_regression_real_title_now_excluded(self):
         m = market("L1", 0.04, end=_future(5),
-                   question="Lakers vs. Celtics: O/U 210.5")
+                   question="Exact Score: Ilves Tampere 0 - 0 UMF Stjarnan?")
+        m.category = "sports soccer"   # realistic Gamma tag for a match market
+        assert convergence.is_sports_match(m)   # reused from convergence.py, not duplicated
+        books = {m.no_token: book(m.no_token, 0.965)}
+        assert longshot.scan([m], books) == []
+
+    def test_ls_spread_regression_real_title_now_excluded(self):
+        m = market("L1", 0.04, end=_future(5),
+                   question="Spread: ACF Fiorentina (-2.5)")
+        assert convergence.is_sports_match(m)
+        books = {m.no_token: book(m.no_token, 0.965)}
+        assert longshot.scan([m], books) == []
+
+    def test_ls_non_sports_candidate_not_over_excluded(self):
+        """A genuine, realistic non-sports LONGSHOT candidate -- a crypto
+        price-threshold fade -- must NOT be touched by the sports
+        exclusion, proving it doesn't over-trigger."""
+        m = market("L1", 0.04, end=_future(5),
+                   question="Will Bitcoin fall below $40,000 by August 1?")
+        m.category = "crypto"
+        assert not convergence.is_sports_match(m)
         books = {m.no_token: book(m.no_token, 0.965)}
         assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
+
+    def test_ls_sports_exclusion_toggle_off(self, monkeypatch):
+        monkeypatch.setattr(config, "LS_EXCLUDE_SPORTS", False)
+        m = market("L1", 0.04, end=_future(5),
+                   question="Spread: ACF Fiorentina (-2.5)")
+        books = {m.no_token: book(m.no_token, 0.965)}
+        assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
+
+    def test_ls_sports_and_weather_excluded_alongside_a_real_fade(self):
+        sport = market("L1", 0.04, end=_future(5),
+                       question="Spread: ACF Fiorentina (-2.5)")
+        wx = market("L2", 0.04, end=_future(5), event="OTHER",
+                   question="Fade: Will the highest temperature in "
+                            "Seattle be between 72-73°F...")
+        real = market("L3", 0.04, end=_future(5), event="OTHER2",
+                      question="Will Bitcoin fall below $40,000 by August 1?")
+        books = {m.no_token: book(m.no_token, 0.965) for m in (sport, wx, real)}
+        out = longshot.scan([sport, wx, real], books)
+        assert [o.key for o in out] == ["LS-L3"]
 
 
 # ------------------------------------------------------------------ CONVERGE
