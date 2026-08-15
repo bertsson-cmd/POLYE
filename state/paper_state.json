@@ -1,5 +1,5 @@
 {
- "cash": 736.830585,
+ "cash": 712.369514,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.987
+    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.9885
    },
-   "current_value": 24.174493,
-   "unrealized_pl": 0.000826,
-   "unrealized_pl_pct": 0.003
+   "current_value": 24.211233,
+   "unrealized_pl": 0.037566,
+   "unrealized_pl_pct": 0.155
   },
   {
    "key": "CV-3516858",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9735
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.969
    },
-   "current_value": 16.290067,
-   "unrealized_pl": 0.024481,
-   "unrealized_pl_pct": 0.151
+   "current_value": 16.214766,
+   "unrealized_pl": -0.05082,
+   "unrealized_pl_pct": -0.312
   },
   {
    "key": "CV-3492211",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.986
+    "113983165526071264902528797136266833339193992449210420894725600071227807587622": 0.9885
    },
-   "current_value": 18.362723,
-   "unrealized_pl": -0.03535,
-   "unrealized_pl_pct": -0.192
+   "current_value": 18.409281,
+   "unrealized_pl": 0.011208,
+   "unrealized_pl_pct": 0.061
   },
   {
    "key": "CV-3492169",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.985
+    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.9865
    },
-   "current_value": 24.451926,
-   "unrealized_pl": -0.048811,
-   "unrealized_pl_pct": -0.199
+   "current_value": 24.489162,
+   "unrealized_pl": -0.011575,
+   "unrealized_pl_pct": -0.047
   },
   {
    "key": "LS-3438082",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "89713383069068288159673281283230966914065437351300349590728499539331377784858": 0.9645
+    "89713383069068288159673281283230966914065437351300349590728499539331377784858": 0.963
    },
-   "current_value": 24.365321,
-   "unrealized_pl": -0.151621,
-   "unrealized_pl_pct": -0.618
+   "current_value": 24.327427,
+   "unrealized_pl": -0.189515,
+   "unrealized_pl_pct": -0.773
   },
   {
    "key": "CV-3421368",
@@ -373,11 +373,40 @@
     }
    ],
    "current_prices": {
-    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.985
+    "36106189331167700802316037313290479143045542251824312741989679222708690004294": 0.989
    },
-   "current_value": 24.454173,
-   "unrealized_pl": -0.048816,
-   "unrealized_pl_pct": -0.199
+   "current_value": 24.55348,
+   "unrealized_pl": 0.050491,
+   "unrealized_pl_pct": 0.206
+  },
+  {
+   "key": "LS-3280020",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
+   "opened": 1786795009.8636048,
+   "cost": 24.461071,
+   "edge": 0.012048,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9793,
+   "resolve_by": "2026-08-15T14:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.966, fee 0.0016",
+   "legs": [
+    {
+     "token_id": "84702494572466766526870988016103021174882790822654978871563215792027949874635",
+     "market_id": "3280020",
+     "label": "NO Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
+     "side": "NO",
+     "entry_price": 0.966,
+     "shares": 25.279046
+    }
+   ],
+   "current_prices": {
+    "84702494572466766526870988016103021174882790822654978871563215792027949874635": 0.9655
+   },
+   "current_value": 24.406919,
+   "unrealized_pl": -0.054152,
+   "unrealized_pl_pct": -0.221
   }
  ],
  "closed": [
@@ -19852,6 +19881,14 @@
    "equity": 978.7335,
    "realized_total": -20.7918,
    "open_positions": 14
+  },
+  {
+   "ts": 1786795010.0348866,
+   "cash": 712.3695,
+   "open_value": 267.7004,
+   "equity": 980.0699,
+   "realized_total": -19.5688,
+   "open_positions": 14
   }
  ],
  "trades": [
@@ -28255,6 +28292,15 @@
    "title": "Fade: Kashima Antlers vs. Nagoya Grampus: O/U 5.5",
    "amount": 25.68,
    "pl": 1.22
+  },
+  {
+   "ts": 1786795009.8636048,
+   "type": "OPEN",
+   "key": "LS-3280020",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Middlesbrough FC 0 - 1 Lincoln City FC?",
+   "amount": 24.46,
+   "pl": null
   }
  ]
 }
