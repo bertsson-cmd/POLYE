@@ -1,5 +1,5 @@
 {
- "cash": 854.071784,
+ "cash": 829.398119,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -204,6 +204,35 @@
    "current_value": 24.340946,
    "unrealized_pl": -0.26089,
    "unrealized_pl_pct": -1.06
+  },
+  {
+   "key": "LS-3295266",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Yokohama FC 0 - 2 J\u00fabilo Iwata?",
+   "opened": 1786858476.3451881,
+   "cost": 24.673665,
+   "edge": 0.009439,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9787,
+   "resolve_by": "2026-08-16T09:00:00Z",
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.968, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "73207771046498352933607660096821147484726311483443918761317155240853143296768",
+     "market_id": "3295266",
+     "label": "NO Exact Score: Yokohama FC 0 - 2 J\u00fabilo Iwata?",
+     "side": "NO",
+     "entry_price": 0.968,
+     "shares": 25.448605
+    }
+   ],
+   "current_prices": {
+    "73207771046498352933607660096821147484726311483443918761317155240853143296768": 0.9645
+   },
+   "current_value": 24.54518,
+   "unrealized_pl": -0.128485,
+   "unrealized_pl_pct": -0.521
   }
  ],
  "closed": [
@@ -20382,6 +20411,14 @@
    "equity": 985.3683,
    "realized_total": -13.9743,
    "open_positions": 7
+  },
+  {
+   "ts": 1786858476.490832,
+   "cash": 829.3981,
+   "open_value": 155.8417,
+   "equity": 985.2398,
+   "realized_total": -13.9743,
+   "open_positions": 8
   }
  ],
  "trades": [
@@ -28973,6 +29010,15 @@
    "title": "Fade: Exact Score: Nashville SC 0 - 0 Inter Miami CF?",
    "amount": 25.52,
    "pl": 0.92
+  },
+  {
+   "ts": 1786858476.3451881,
+   "type": "OPEN",
+   "key": "LS-3295266",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Yokohama FC 0 - 2 J\u00fabilo Iwata?",
+   "amount": 24.67,
+   "pl": null
   }
  ]
 }
