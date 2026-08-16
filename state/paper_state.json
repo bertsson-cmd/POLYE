@@ -1,5 +1,5 @@
 {
- "cash": 778.373406,
+ "cash": 828.547875,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.989
+    "91535631961820384113122661744990263298407343385959110963669887664963432258147": 0.9885
    },
-   "current_value": 24.551223,
-   "unrealized_pl": 0.050486,
-   "unrealized_pl_pct": 0.206
+   "current_value": 24.538811,
+   "unrealized_pl": 0.038074,
+   "unrealized_pl_pct": 0.155
   },
   {
    "key": "CV-3516858",
@@ -177,64 +177,6 @@
    "unrealized_pl_pct": -0.047
   },
   {
-   "key": "CV-3451188",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
-   "opened": 1786813241.5688934,
-   "cost": 24.588659,
-   "edge": 0.018038,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9844,
-   "resolve_by": "2026-08-16T16:00:00Z",
-   "note": "YES ask 0.981, fee 0.0013, 1.0d to resolution, 687% annualized net if YES, assumed true P 0.984",
-   "legs": [
-    {
-     "token_id": "93991658494283110553983708513335297356344102822868037801368743339877523735945",
-     "market_id": "3451188",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 16?",
-     "side": "YES",
-     "entry_price": 0.981,
-     "shares": 25.0316
-    }
-   ],
-   "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9815
-   },
-   "current_value": 24.568515,
-   "unrealized_pl": -0.020144,
-   "unrealized_pl_pct": -0.082
-  },
-  {
-   "key": "LS-3313943",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Spread: New England Revolution (-2.5)",
-   "opened": 1786819733.6938748,
-   "cost": 24.547307,
-   "edge": 0.011494,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9778,
-   "resolve_by": "2026-08-15T23:30:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.965, fee 0.0017",
-   "legs": [
-    {
-     "token_id": "54876803025449258708713424728652566416135928536350526404814261362921411366839",
-     "market_id": "3313943",
-     "label": "NO Spread: New England Revolution (-2.5)",
-     "side": "NO",
-     "entry_price": 0.965,
-     "shares": 25.393185
-    }
-   ],
-   "current_prices": {
-    "54876803025449258708713424728652566416135928536350526404814261362921411366839": 0.9995
-   },
-   "current_value": 25.380488,
-   "unrealized_pl": 0.833181,
-   "unrealized_pl_pct": 3.394
-  },
-  {
    "key": "LS-3306926",
    "strategy": "LONGSHOT",
    "title": "Fade: Exact Score: Nashville SC 0 - 0 Inter Miami CF?",
@@ -257,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "24522116023555608537590384299790919961613870506437075191671483441173771968165": 0.9795
+    "24522116023555608537590384299790919961613870506437075191671483441173771968165": 0.9955
    },
-   "current_value": 25.000669,
-   "unrealized_pl": 0.400016,
-   "unrealized_pl_pct": 1.626
+   "current_value": 25.409051,
+   "unrealized_pl": 0.808398,
+   "unrealized_pl_pct": 3.286
   },
   {
    "key": "CV-3492169",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.986
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.976
    },
-   "current_value": 24.57775,
-   "unrealized_pl": -0.024086,
-   "unrealized_pl_pct": -0.098
+   "current_value": 24.328483,
+   "unrealized_pl": -0.273353,
+   "unrealized_pl_pct": -1.111
   }
  ],
  "closed": [
@@ -16746,6 +16688,71 @@
    "payout": 10.688282,
    "pl": 0.048135,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3451188",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
+   "opened": 1786813241.5688934,
+   "cost": 24.588659,
+   "edge": 0.018038,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.981, fee 0.0013, 1.0d to resolution, 687% annualized net if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "93991658494283110553983708513335297356344102822868037801368743339877523735945",
+     "market_id": "3451188",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 16?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 25.0316
+    }
+   ],
+   "current_prices": {
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.9815
+   },
+   "current_value": 24.568515,
+   "unrealized_pl": -0.020144,
+   "unrealized_pl_pct": -0.082,
+   "closed_ts": 1786848689.4502695,
+   "payout": 24.781284,
+   "pl": 0.192625,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3313943",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: New England Revolution (-2.5)",
+   "opened": 1786819733.6938748,
+   "cost": 24.547307,
+   "edge": 0.011494,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9778,
+   "resolve_by": "2026-08-15T23:30:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.965, fee 0.0017",
+   "legs": [
+    {
+     "token_id": "54876803025449258708713424728652566416135928536350526404814261362921411366839",
+     "market_id": "3313943",
+     "label": "NO Spread: New England Revolution (-2.5)",
+     "side": "NO",
+     "entry_price": 0.965,
+     "shares": 25.393185
+    }
+   ],
+   "current_prices": {
+    "54876803025449258708713424728652566416135928536350526404814261362921411366839": 0.965
+   },
+   "current_value": 24.504424,
+   "unrealized_pl": -0.042883,
+   "unrealized_pl_pct": -0.175,
+   "closed_ts": 1786848689.9125683,
+   "payout": 25.393185,
+   "pl": 0.845878
   }
  ],
  "history": [
@@ -20340,6 +20347,14 @@
    "equity": 984.8561,
    "realized_total": -15.936,
    "open_positions": 10
+  },
+  {
+   "ts": 1786848689.4517388,
+   "cash": 803.1547,
+   "open_value": 181.1848,
+   "equity": 984.3395,
+   "realized_total": -15.7434,
+   "open_positions": 9
   }
  ],
  "trades": [
@@ -28903,6 +28918,25 @@
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 17?",
    "amount": 24.6,
    "pl": null
+  },
+  {
+   "ts": 1786848689.4502695,
+   "type": "CLOSE",
+   "key": "CV-3451188",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
+   "amount": 24.78,
+   "pl": 0.19,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786848689.9125683,
+   "type": "CLOSE",
+   "key": "LS-3313943",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: New England Revolution (-2.5)",
+   "amount": 25.39,
+   "pl": 0.85
   }
  ]
 }
