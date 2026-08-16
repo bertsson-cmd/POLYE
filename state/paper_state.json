@@ -1,5 +1,5 @@
 {
- "cash": 829.398119,
+ "cash": 804.777819,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.9765
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.977
    },
-   "current_value": 24.340946,
-   "unrealized_pl": -0.26089,
-   "unrealized_pl_pct": -1.06
+   "current_value": 24.353409,
+   "unrealized_pl": -0.248427,
+   "unrealized_pl_pct": -1.01
   },
   {
    "key": "LS-3295266",
@@ -228,11 +228,40 @@
     }
    ],
    "current_prices": {
-    "73207771046498352933607660096821147484726311483443918761317155240853143296768": 0.9645
+    "73207771046498352933607660096821147484726311483443918761317155240853143296768": 0.967
    },
-   "current_value": 24.54518,
-   "unrealized_pl": -0.128485,
-   "unrealized_pl_pct": -0.521
+   "current_value": 24.608801,
+   "unrealized_pl": -0.064864,
+   "unrealized_pl_pct": -0.263
+  },
+  {
+   "key": "LS-3295635",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Sagan Tosu (-2.5)",
+   "opened": 1786859928.207632,
+   "cost": 24.6203,
+   "edge": 0.006597,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9817,
+   "resolve_by": "2026-08-16T10:00:00Z",
+   "note": "YES at 0.030, assumed true 0.018, NO ask 0.974, fee 0.0013",
+   "legs": [
+    {
+     "token_id": "56523632663015712679441999564312784370709280686204828430673861686982499735977",
+     "market_id": "3295635",
+     "label": "NO Spread: Sagan Tosu (-2.5)",
+     "side": "NO",
+     "entry_price": 0.974,
+     "shares": 25.244697
+    }
+   ],
+   "current_prices": {
+    "56523632663015712679441999564312784370709280686204828430673861686982499735977": 0.9695
+   },
+   "current_value": 24.474734,
+   "unrealized_pl": -0.145566,
+   "unrealized_pl_pct": -0.591
   }
  ],
  "closed": [
@@ -20419,6 +20448,14 @@
    "equity": 985.2398,
    "realized_total": -13.9743,
    "open_positions": 8
+  },
+  {
+   "ts": 1786859928.3121977,
+   "cash": 804.7778,
+   "open_value": 180.3925,
+   "equity": 985.1703,
+   "realized_total": -13.9743,
+   "open_positions": 9
   }
  ],
  "trades": [
@@ -29018,6 +29055,15 @@
    "strategy": "LONGSHOT",
    "title": "Fade: Exact Score: Yokohama FC 0 - 2 J\u00fabilo Iwata?",
    "amount": 24.67,
+   "pl": null
+  },
+  {
+   "ts": 1786859928.207632,
+   "type": "OPEN",
+   "key": "LS-3295635",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Spread: Sagan Tosu (-2.5)",
+   "amount": 24.62,
    "pl": null
   }
  ]
