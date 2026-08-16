@@ -55,6 +55,10 @@ This is the strategy that makes the demo data instructive: **it wins ~95% of the
 
 The haircut (60%) is an *assumption*, not a measurement. The entire point of the paper phase is to calibrate it: if after 100+ settled fades your longshots land more often than `price × 0.6` predicted, the haircut is too generous and the strategy's true EV may be negative.
 
+**Exclusions, both reusing CONVERGE's detectors rather than duplicating them (`LS_EXCLUDE_WEATHER`, `LS_EXCLUDE_SPORTS`, both default on):**
+- **Weather** markets (temperature ranges, rain/snow, etc.) are excluded — real evidence: LS-3412924, an actual live position ("Fade: Will the highest temperature in Seattle be between 72-73°F...") — a narrow bracket on a continuously-moving quantity, the same risk shape as the tweet-count bracket that caused CONVERGE's original documented loss.
+- **Sports** markets are excluded — and this is a **reversal**, based on real trading results, not a theoretical reassessment. LONGSHOT originally left sports deliberately *un*-excluded: the design theory was that fading cheap sports outcomes (a team down 3-0 late, a huge point-spread underdog) was core to the strategy's edge, a strategy-specific judgment call distinct from CONVERGE's exclusions. That theory has since been overridden by actual observed results: sports-category positions account for the large majority of LONGSHOT's real losses so far. It's excluded now, same as CONVERGE always has been. If you're reading this after LONGSHOT's design changed mid-project and wondering why the original reasoning above no longer matches the code — this is why.
+
 ### CONVERGE — near-resolution yield (probabilistic)
 
 Markets that are effectively decided often trade at 94–98c days before formal resolution, because holders pay for early liquidity. Buying YES at 0.96 five days before resolution yields 4.2% in five days if it resolves YES. Filters: high liquidity only (crowd conviction), ≤14 days out, and a 25% minimum *annualized* yield so capital isn't parked for pennies. The risk is exactly the "actually not decided" surprise — a VAR-review-style reversal. It is treated as probabilistic, never guaranteed.
