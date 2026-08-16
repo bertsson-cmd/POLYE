@@ -1,5 +1,5 @@
 {
- "cash": 780.127964,
+ "cash": 804.976955,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.9555
+    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.9565
    },
-   "current_value": 24.475132,
-   "unrealized_pl": 0.055712,
-   "unrealized_pl_pct": 0.228
+   "current_value": 24.500747,
+   "unrealized_pl": 0.081328,
+   "unrealized_pl_pct": 0.333
   },
   {
    "key": "CV-3565411",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "73207771046498352933607660096821147484726311483443918761317155240853143296768": 0.969
+    "73207771046498352933607660096821147484726311483443918761317155240853143296768": 0.9765
    },
-   "current_value": 24.659698,
-   "unrealized_pl": -0.013967,
-   "unrealized_pl_pct": -0.057
+   "current_value": 24.850563,
+   "unrealized_pl": 0.176898,
+   "unrealized_pl_pct": 0.717
   },
   {
    "key": "LS-3295635",
@@ -257,40 +257,11 @@
     }
    ],
    "current_prices": {
-    "56523632663015712679441999564312784370709280686204828430673861686982499735977": 0.9595
+    "56523632663015712679441999564312784370709280686204828430673861686982499735977": 0.9545
    },
-   "current_value": 24.222287,
-   "unrealized_pl": -0.398013,
-   "unrealized_pl_pct": -1.617
-  },
-  {
-   "key": "CV-3451188",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
-   "opened": 1786869023.5619009,
-   "cost": 24.649855,
-   "edge": 0.014178,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9872,
-   "resolve_by": "2026-08-16T16:00:00Z",
-   "note": "YES ask 0.985, fee 0.0010, 0.3d to resolution, 1657% annualized net if YES, assumed true P 0.987",
-   "legs": [
-    {
-     "token_id": "93991658494283110553983708513335297356344102822868037801368743339877523735945",
-     "market_id": "3451188",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 16?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 24.998985
-    }
-   ],
-   "current_prices": {
-    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.986
-   },
-   "current_value": 24.648999,
-   "unrealized_pl": -0.000856,
-   "unrealized_pl_pct": -0.003
+   "current_value": 24.096063,
+   "unrealized_pl": -0.524237,
+   "unrealized_pl_pct": -2.129
   }
  ],
  "closed": [
@@ -16843,6 +16814,39 @@
    "closed_ts": 1786851600.986847,
    "payout": 25.523909,
    "pl": 0.923256
+  },
+  {
+   "key": "CV-3451188",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
+   "opened": 1786869023.5619009,
+   "cost": 24.649855,
+   "edge": 0.014178,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9872,
+   "resolve_by": "2026-08-16T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 0.3d to resolution, 1657% annualized net if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "93991658494283110553983708513335297356344102822868037801368743339877523735945",
+     "market_id": "3451188",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 16?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 24.998985
+    }
+   ],
+   "current_prices": {
+    "93991658494283110553983708513335297356344102822868037801368743339877523735945": 0.986
+   },
+   "current_value": 24.648999,
+   "unrealized_pl": -0.000856,
+   "unrealized_pl_pct": -0.003,
+   "closed_ts": 1786872941.9281206,
+   "payout": 24.848991,
+   "pl": 0.199136,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -20525,6 +20529,14 @@
    "equity": 984.9257,
    "realized_total": -13.9743,
    "open_positions": 10
+  },
+  {
+   "ts": 1786872941.9304323,
+   "cash": 804.977,
+   "open_value": 180.239,
+   "equity": 985.2159,
+   "realized_total": -13.7751,
+   "open_positions": 9
   }
  ],
  "trades": [
@@ -29143,6 +29155,16 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
    "amount": 24.65,
    "pl": null
+  },
+  {
+   "ts": 1786872941.9281206,
+   "type": "CLOSE",
+   "key": "CV-3451188",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 16?",
+   "amount": 24.85,
+   "pl": 0.2,
+   "reason": "take_profit"
   }
  ]
 }
