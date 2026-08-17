@@ -1,5 +1,5 @@
 {
- "cash": 749.701662,
+ "cash": 772.23269,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,40 +83,11 @@
     }
    ],
    "current_prices": {
-    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.9445
+    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.958
    },
-   "current_value": 23.950793,
-   "unrealized_pl": -0.756016,
-   "unrealized_pl_pct": -3.06
-  },
-  {
-   "key": "CV-3516823",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 18?",
-   "opened": 1786901430.7429116,
-   "cost": 22.40536,
-   "edge": 0.020955,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.98,
-   "resolve_by": "2026-08-18T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0015, 1.9d to resolution, 395% annualized net if YES, assumed true P 0.980",
-   "legs": [
-    {
-     "token_id": "2276951803397144300368051867184213147701667066179794278618712316742376813638",
-     "market_id": "3516823",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 18?",
-     "side": "YES",
-     "entry_price": 0.978,
-     "shares": 22.87414
-    }
-   ],
-   "current_prices": {
-    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.986
-   },
-   "current_value": 22.553902,
-   "unrealized_pl": 0.148542,
-   "unrealized_pl_pct": 0.663
+   "current_value": 24.293128,
+   "unrealized_pl": -0.413681,
+   "unrealized_pl_pct": -1.674
   },
   {
    "key": "LS-3574143",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.9795
+    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.9835
    },
-   "current_value": 24.837659,
-   "unrealized_pl": 0.276509,
-   "unrealized_pl_pct": 1.126
+   "current_value": 24.939089,
+   "unrealized_pl": 0.377939,
+   "unrealized_pl_pct": 1.539
   },
   {
    "key": "CV-2955043",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9475
+    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9495
    },
-   "current_value": 9.026534,
-   "unrealized_pl": -0.064419,
-   "unrealized_pl_pct": -0.709
+   "current_value": 9.045587,
+   "unrealized_pl": -0.045366,
+   "unrealized_pl_pct": -0.499
   },
   {
    "key": "CV-908044",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "15768454938835109453170507320061782116509677127457387299988068900261245833755": 0.94
+    "15768454938835109453170507320061782116509677127457387299988068900261245833755": 0.925
    },
-   "current_value": 24.6625,
-   "unrealized_pl": -0.05919,
-   "unrealized_pl_pct": -0.239
+   "current_value": 24.268949,
+   "unrealized_pl": -0.452741,
+   "unrealized_pl_pct": -1.831
   },
   {
    "key": "CV-3565413",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "72178777889296742259673657589005807196294915613235717011557235912521159313041": 0.94
+    "72178777889296742259673657589005807196294915613235717011557235912521159313041": 0.935
    },
-   "current_value": 9.775802,
-   "unrealized_pl": -0.138577,
-   "unrealized_pl_pct": -1.398
+   "current_value": 9.723803,
+   "unrealized_pl": -0.190576,
+   "unrealized_pl_pct": -1.922
   },
   {
    "key": "CV-3516861",
@@ -373,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "84793475685279469419570040687299977922110653191395415891048305853149021253133": 0.9655
+    "84793475685279469419570040687299977922110653191395415891048305853149021253133": 0.956
    },
-   "current_value": 23.833281,
-   "unrealized_pl": -0.138302,
-   "unrealized_pl_pct": -0.577
+   "current_value": 23.598774,
+   "unrealized_pl": -0.372809,
+   "unrealized_pl_pct": -1.555
   },
   {
    "key": "CV-3565391",
@@ -17452,6 +17423,39 @@
    "payout": 25.037847,
    "pl": 0.338896,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3516823",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 18?",
+   "opened": 1786901430.7429116,
+   "cost": 22.40536,
+   "edge": 0.020955,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.98,
+   "resolve_by": "2026-08-18T16:00:00Z",
+   "note": "YES ask 0.978, fee 0.0015, 1.9d to resolution, 395% annualized net if YES, assumed true P 0.980",
+   "legs": [
+    {
+     "token_id": "2276951803397144300368051867184213147701667066179794278618712316742376813638",
+     "market_id": "3516823",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 18?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 22.87414
+    }
+   ],
+   "current_prices": {
+    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.986
+   },
+   "current_value": 22.553902,
+   "unrealized_pl": 0.148542,
+   "unrealized_pl_pct": 0.663,
+   "closed_ts": 1786970688.6978626,
+   "payout": 22.531028,
+   "pl": 0.125668,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -21542,6 +21546,14 @@
    "equity": 988.3547,
    "realized_total": -10.4436,
    "open_positions": 14
+  },
+  {
+   "ts": 1786970688.6993918,
+   "cash": 772.2327,
+   "open_value": 215.8819,
+   "equity": 988.1145,
+   "realized_total": -10.3179,
+   "open_positions": 13
   }
  ],
  "trades": [
@@ -30479,6 +30491,16 @@
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 20?",
    "amount": 24.79,
    "pl": null
+  },
+  {
+   "ts": 1786970688.6978626,
+   "type": "CLOSE",
+   "key": "CV-3516823",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 18?",
+   "amount": 22.53,
+   "pl": 0.13,
+   "reason": "take_profit"
   }
  ]
 }
