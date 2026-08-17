@@ -1,5 +1,5 @@
 {
- "cash": 678.4877,
+ "cash": 709.594785,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.961
+    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.98
    },
-   "current_value": 24.369202,
-   "unrealized_pl": -0.337607,
-   "unrealized_pl_pct": -1.366
+   "current_value": 24.851008,
+   "unrealized_pl": 0.144199,
+   "unrealized_pl_pct": 0.584
   },
   {
    "key": "LS-3574143",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9615
+    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9625
    },
-   "current_value": 9.159908,
-   "unrealized_pl": 0.068955,
-   "unrealized_pl_pct": 0.758
+   "current_value": 9.169434,
+   "unrealized_pl": 0.078481,
+   "unrealized_pl_pct": 0.863
   },
   {
    "key": "CV-908044",
@@ -233,35 +233,6 @@
    "current_value": 24.6625,
    "unrealized_pl": -0.05919,
    "unrealized_pl_pct": -0.239
-  },
-  {
-   "key": "CV-3565413",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 20?",
-   "opened": 1786964309.563434,
-   "cost": 6.181791,
-   "edge": 0.01514,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9844,
-   "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 3.2d to resolution, 172% annualized net if YES, assumed true P 0.984",
-   "legs": [
-    {
-     "token_id": "30316734010949993811546450986568737239157211309052580314607939723023831482221",
-     "market_id": "3565413",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 20?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 6.275279
-    }
-   ],
-   "current_prices": {
-    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.9845
-   },
-   "current_value": 6.178012,
-   "unrealized_pl": -0.003779,
-   "unrealized_pl_pct": -0.061
   },
   {
    "key": "CV-3651171",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.95
+    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.964
    },
-   "current_value": 24.459531,
-   "unrealized_pl": -0.326677,
-   "unrealized_pl_pct": -1.318
+   "current_value": 24.819987,
+   "unrealized_pl": 0.03378,
+   "unrealized_pl_pct": 0.136
   },
   {
    "key": "CV-3651160",
@@ -373,40 +344,11 @@
     }
    ],
    "current_prices": {
-    "92643695689244345294689462853982772729101134582381878751266219239474550318805": 0.9775
+    "92643695689244345294689462853982772729101134582381878751266219239474550318805": 0.968
    },
-   "current_value": 25.208808,
-   "unrealized_pl": 0.411696,
-   "unrealized_pl_pct": 1.66
-  },
-  {
-   "key": "CV-3580751",
-   "strategy": "CONVERGE",
-   "title": "Converge: S&P 500 (SPY) closes above $770 on August 17?",
-   "opened": 1786985905.8083012,
-   "cost": 24.770779,
-   "edge": 0.021615,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.982,
-   "resolve_by": "2026-08-17T20:00:00Z",
-   "note": "YES ask 0.978, fee 0.0009, 0.1d to resolution, 6257% annualized net if YES, assumed true P 0.982",
-   "legs": [
-    {
-     "token_id": "1712906738144545320396927696351556473897721438004692965866844514190632489262",
-     "market_id": "3580751",
-     "label": "YES S&P 500 (SPY) closes above $770 on August 17?",
-     "side": "YES",
-     "entry_price": 0.978,
-     "shares": 25.305726
-    }
-   ],
-   "current_prices": {
-    "1712906738144545320396927696351556473897721438004692965866844514190632489262": 0.9755
-   },
-   "current_value": 24.685736,
-   "unrealized_pl": -0.085043,
-   "unrealized_pl_pct": -0.343
+   "current_value": 24.963812,
+   "unrealized_pl": 0.1667,
+   "unrealized_pl_pct": 0.672
   },
   {
    "key": "CV-3565415",
@@ -431,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.955
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.945
    },
-   "current_value": 24.879258,
-   "unrealized_pl": 0.043636,
-   "unrealized_pl_pct": 0.176
+   "current_value": 24.618742,
+   "unrealized_pl": -0.21688,
+   "unrealized_pl_pct": -0.873
   },
   {
    "key": "CV-3651204",
@@ -489,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "33147262383755281169613796284524792937651620672807387828588855382539033471898": 0.9665
+    "33147262383755281169613796284524792937651620672807387828588855382539033471898": 0.974
    },
-   "current_value": 10.558416,
-   "unrealized_pl": -0.080896,
-   "unrealized_pl_pct": -0.76
+   "current_value": 10.640349,
+   "unrealized_pl": 0.001037,
+   "unrealized_pl_pct": 0.01
   }
  ],
  "closed": [
@@ -17803,6 +17745,72 @@
    "payout": 25.313218,
    "pl": 0.557034,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3565413",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 20?",
+   "opened": 1786964309.563434,
+   "cost": 6.181791,
+   "edge": 0.01514,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9844,
+   "resolve_by": "2026-08-20T16:00:00Z",
+   "note": "YES ask 0.984, fee 0.0011, 3.2d to resolution, 172% annualized net if YES, assumed true P 0.984",
+   "legs": [
+    {
+     "token_id": "30316734010949993811546450986568737239157211309052580314607939723023831482221",
+     "market_id": "3565413",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 20?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 6.275279
+    }
+   ],
+   "current_prices": {
+    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.9845
+   },
+   "current_value": 6.178012,
+   "unrealized_pl": -0.003779,
+   "unrealized_pl_pct": -0.061,
+   "closed_ts": 1786996170.1100671,
+   "payout": 6.206251,
+   "pl": 0.02446,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3580751",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $770 on August 17?",
+   "opened": 1786985905.8083012,
+   "cost": 24.770779,
+   "edge": 0.021615,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.982,
+   "resolve_by": "2026-08-17T20:00:00Z",
+   "note": "YES ask 0.978, fee 0.0009, 0.1d to resolution, 6257% annualized net if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "1712906738144545320396927696351556473897721438004692965866844514190632489262",
+     "market_id": "3580751",
+     "label": "YES S&P 500 (SPY) closes above $770 on August 17?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 25.305726
+    }
+   ],
+   "current_prices": {
+    "1712906738144545320396927696351556473897721438004692965866844514190632489262": 0.9755
+   },
+   "current_value": 24.685736,
+   "unrealized_pl": -0.085043,
+   "unrealized_pl_pct": -0.343,
+   "closed_ts": 1786996170.1100671,
+   "payout": 24.900834,
+   "pl": 0.130055,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -21997,6 +22005,14 @@
    "equity": 991.3443,
    "realized_total": -8.2017,
    "open_positions": 17
+  },
+  {
+   "ts": 1786996170.1119385,
+   "cash": 709.5948,
+   "open_value": 282.421,
+   "equity": 992.0158,
+   "realized_total": -8.0472,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -31112,6 +31128,26 @@
    "title": "Converge: WTI Crude Oil (WTI) Up or Down on August 17?",
    "amount": 25.31,
    "pl": 0.56,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786996170.1100671,
+   "type": "CLOSE",
+   "key": "CV-3565413",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 20?",
+   "amount": 6.21,
+   "pl": 0.02,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1786996170.1100671,
+   "type": "CLOSE",
+   "key": "CV-3580751",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $770 on August 17?",
+   "amount": 24.9,
+   "pl": 0.13,
    "reason": "take_profit"
   }
  ]
