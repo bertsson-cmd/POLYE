@@ -1,5 +1,5 @@
 {
- "cash": 722.691513,
+ "cash": 748.15079,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.9705
+    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.971
    },
-   "current_value": 24.610105,
-   "unrealized_pl": -0.096704,
-   "unrealized_pl_pct": -0.391
+   "current_value": 24.622784,
+   "unrealized_pl": -0.084025,
+   "unrealized_pl_pct": -0.34
   },
   {
    "key": "LS-3574143",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.9865
+    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.9945
    },
-   "current_value": 25.015162,
-   "unrealized_pl": 0.454012,
-   "unrealized_pl_pct": 1.848
+   "current_value": 25.218022,
+   "unrealized_pl": 0.656872,
+   "unrealized_pl_pct": 2.674
   },
   {
    "key": "CV-2955043",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9485
+    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.949
    },
-   "current_value": 9.036061,
-   "unrealized_pl": -0.054892,
-   "unrealized_pl_pct": -0.604
+   "current_value": 9.040824,
+   "unrealized_pl": -0.050129,
+   "unrealized_pl_pct": -0.551
   },
   {
    "key": "CV-908044",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "72178777889296742259673657589005807196294915613235717011557235912521159313041": 0.935
+    "72178777889296742259673657589005807196294915613235717011557235912521159313041": 0.94
    },
-   "current_value": 9.723803,
-   "unrealized_pl": -0.190576,
-   "unrealized_pl_pct": -1.922
+   "current_value": 9.775802,
+   "unrealized_pl": -0.138577,
+   "unrealized_pl_pct": -1.398
   },
   {
    "key": "CV-3516861",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "84793475685279469419570040687299977922110653191395415891048305853149021253133": 0.9675
+    "84793475685279469419570040687299977922110653191395415891048305853149021253133": 0.9695
    },
-   "current_value": 23.88265,
-   "unrealized_pl": -0.088933,
-   "unrealized_pl_pct": -0.371
+   "current_value": 23.93202,
+   "unrealized_pl": -0.039563,
+   "unrealized_pl_pct": -0.165
   },
   {
    "key": "CV-3565391",
@@ -373,40 +373,11 @@
     }
    ],
    "current_prices": {
-    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.95
+    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.955
    },
-   "current_value": 24.459531,
-   "unrealized_pl": -0.326677,
-   "unrealized_pl_pct": -1.318
-  },
-  {
-   "key": "CV-3634849",
-   "strategy": "CONVERGE",
-   "title": "Converge: Bitcoin Up or Down on August 17?",
-   "opened": 1786977537.4877126,
-   "cost": 24.780968,
-   "edge": 0.037853,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.972,
-   "resolve_by": "2026-08-17T16:00:00Z",
-   "note": "YES ask 0.961, fee 0.0026, 0.1d to resolution, 24549% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "18801897563803077575841417929779441635338226034695252384051865819461512959356",
-     "market_id": "3634849",
-     "label": "YES Bitcoin Up or Down on August 17?",
-     "side": "YES",
-     "entry_price": 0.961,
-     "shares": 25.716441
-    }
-   ],
-   "current_prices": {
-    "18801897563803077575841417929779441635338226034695252384051865819461512959356": 0.965
-   },
-   "current_value": 24.816366,
-   "unrealized_pl": 0.035398,
-   "unrealized_pl_pct": 0.143
+   "current_value": 24.588266,
+   "unrealized_pl": -0.197942,
+   "unrealized_pl_pct": -0.799
   },
   {
    "key": "CV-3516823",
@@ -431,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.9725
+    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.9785
    },
-   "current_value": 24.700801,
-   "unrealized_pl": -0.059408,
-   "unrealized_pl_pct": -0.24
+   "current_value": 24.853196,
+   "unrealized_pl": 0.092987,
+   "unrealized_pl_pct": 0.376
   }
  ],
  "closed": [
@@ -17514,6 +17485,39 @@
    "payout": 22.531028,
    "pl": 0.125668,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3634849",
+   "strategy": "CONVERGE",
+   "title": "Converge: Bitcoin Up or Down on August 17?",
+   "opened": 1786977537.4877126,
+   "cost": 24.780968,
+   "edge": 0.037853,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.972,
+   "resolve_by": "2026-08-17T16:00:00Z",
+   "note": "YES ask 0.961, fee 0.0026, 0.1d to resolution, 24549% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "18801897563803077575841417929779441635338226034695252384051865819461512959356",
+     "market_id": "3634849",
+     "label": "YES Bitcoin Up or Down on August 17?",
+     "side": "YES",
+     "entry_price": 0.961,
+     "shares": 25.716441
+    }
+   ],
+   "current_prices": {
+    "18801897563803077575841417929779441635338226034695252384051865819461512959356": 0.965
+   },
+   "current_value": 24.816366,
+   "unrealized_pl": 0.035398,
+   "unrealized_pl_pct": 0.143,
+   "closed_ts": 1786978883.890432,
+   "payout": 25.459277,
+   "pl": 0.678309,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -21636,6 +21640,14 @@
    "equity": 988.9973,
    "realized_total": -10.3179,
    "open_positions": 15
+  },
+  {
+   "ts": 1786978883.892132,
+   "cash": 748.1508,
+   "open_value": 242.0923,
+   "equity": 990.2431,
+   "realized_total": -9.6396,
+   "open_positions": 14
   }
  ],
  "trades": [
@@ -30601,6 +30613,16 @@
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 18?",
    "amount": 24.76,
    "pl": null
+  },
+  {
+   "ts": 1786978883.890432,
+   "type": "CLOSE",
+   "key": "CV-3634849",
+   "strategy": "CONVERGE",
+   "title": "Converge: Bitcoin Up or Down on August 17?",
+   "amount": 25.46,
+   "pl": 0.68,
+   "reason": "take_profit"
   }
  ]
 }
