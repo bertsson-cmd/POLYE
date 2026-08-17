@@ -1,5 +1,5 @@
 {
- "cash": 789.229501,
+ "cash": 764.507811,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.906
+    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.9065
    },
-   "current_value": 22.974503,
-   "unrealized_pl": -1.732306,
-   "unrealized_pl_pct": -7.011
+   "current_value": 22.987182,
+   "unrealized_pl": -1.719627,
+   "unrealized_pl_pct": -6.96
   },
   {
    "key": "CV-3516823",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.985
+    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.9845
    },
-   "current_value": 22.531028,
-   "unrealized_pl": 0.125668,
-   "unrealized_pl_pct": 0.561
+   "current_value": 22.519591,
+   "unrealized_pl": 0.114231,
+   "unrealized_pl_pct": 0.51
   },
   {
    "key": "LS-3574143",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.979
+    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.9805
    },
-   "current_value": 24.824981,
-   "unrealized_pl": 0.263831,
-   "unrealized_pl_pct": 1.074
+   "current_value": 24.863017,
+   "unrealized_pl": 0.301867,
+   "unrealized_pl_pct": 1.229
   },
   {
    "key": "CV-2955043",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.966
+    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.974
    },
-   "current_value": 24.541534,
-   "unrealized_pl": -0.106742,
-   "unrealized_pl_pct": -0.433
+   "current_value": 24.744777,
+   "unrealized_pl": 0.096501,
+   "unrealized_pl_pct": 0.392
   },
   {
    "key": "CV-2954946",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "84793475685279469419570040687299977922110653191395415891048305853149021253133": 0.943
+    "84793475685279469419570040687299977922110653191395415891048305853149021253133": 0.9385
    },
-   "current_value": 24.465142,
-   "unrealized_pl": -0.267872,
-   "unrealized_pl_pct": -1.083
+   "current_value": 24.348394,
+   "unrealized_pl": -0.38462,
+   "unrealized_pl_pct": -1.555
   },
   {
    "key": "CV-3541712",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "65679891071670910257908887073080190190488648468960152613547701480538225145664": 0.968
+    "65679891071670910257908887073080190190488648468960152613547701480538225145664": 0.972
    },
-   "current_value": 14.584599,
-   "unrealized_pl": -0.201473,
-   "unrealized_pl_pct": -1.363
+   "current_value": 14.644866,
+   "unrealized_pl": -0.141206,
+   "unrealized_pl_pct": -0.955
   },
   {
    "key": "CV-3635540",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9335
+    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.93
    },
-   "current_value": 8.89316,
-   "unrealized_pl": -0.197793,
-   "unrealized_pl_pct": -2.176
+   "current_value": 8.859817,
+   "unrealized_pl": -0.231136,
+   "unrealized_pl_pct": -2.542
   },
   {
    "key": "CV-3492217",
@@ -315,11 +315,40 @@
     }
    ],
    "current_prices": {
-    "74388807305626854625499618361343486213563665918917889809552232821434252148720": 0.9775
+    "74388807305626854625499618361343486213563665918917889809552232821434252148720": 0.9815
    },
-   "current_value": 24.67187,
-   "unrealized_pl": -0.027081,
-   "unrealized_pl_pct": -0.11
+   "current_value": 24.772829,
+   "unrealized_pl": 0.073878,
+   "unrealized_pl_pct": 0.299
+  },
+  {
+   "key": "CV-908044",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bernadette Wilson advance from the 2026 Alaska Governor",
+   "opened": 1786960401.5757031,
+   "cost": 24.72169,
+   "edge": 0.06143,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-18T00:00:00Z",
+   "note": "YES ask 0.940, fee 0.0023, 0.6d to resolution, 3814% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "15768454938835109453170507320061782116509677127457387299988068900261245833755",
+     "market_id": "908044",
+     "label": "YES Will Bernadette Wilson advance from the 2026 Alaska Governor primary election?",
+     "side": "YES",
+     "entry_price": 0.94,
+     "shares": 26.236702
+    }
+   ],
+   "current_prices": {
+    "15768454938835109453170507320061782116509677127457387299988068900261245833755": 0.94
+   },
+   "current_value": 24.6625,
+   "unrealized_pl": -0.05919,
+   "unrealized_pl_pct": -0.239
   }
  ],
  "closed": [
@@ -21349,6 +21378,14 @@
    "equity": 986.4995,
    "realized_total": -11.0594,
    "open_positions": 11
+  },
+  {
+   "ts": 1786960401.7134619,
+   "cash": 764.5078,
+   "open_value": 222.1861,
+   "equity": 986.6939,
+   "realized_total": -11.0594,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -30221,6 +30258,15 @@
    "amount": 24.6,
    "pl": 0.1,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1786960401.5757031,
+   "type": "OPEN",
+   "key": "CV-908044",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Bernadette Wilson advance from the 2026 Alaska Governor",
+   "amount": 24.72,
+   "pl": null
   }
  ]
 }
