@@ -1,5 +1,5 @@
 {
- "cash": 779.62738,
+ "cash": 769.384775,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -61,35 +61,6 @@
    "unrealized_pl_pct": -0.052
   },
   {
-   "key": "CV-3541748",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 19?",
-   "opened": 1786694657.9874167,
-   "cost": 24.173667,
-   "edge": 0.013219,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-19T16:00:00Z",
-   "note": "YES ask 0.986, fee 0.0010, 5.3d to resolution, 91% annualized net if YES, assumed true P 0.988",
-   "legs": [
-    {
-     "token_id": "66855916058749722886692619889568539914355735061389108003240861460230590897619",
-     "market_id": "3541748",
-     "label": "YES Will the price of Bitcoin be above $58,000 on August 19?",
-     "side": "YES",
-     "entry_price": 0.986,
-     "shares": 24.492901
-    }
-   ],
-   "current_prices": {
-    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.993
-   },
-   "current_value": 24.321451,
-   "unrealized_pl": 0.147784,
-   "unrealized_pl_pct": 0.611
-  },
-  {
    "key": "CV-3565413",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $60,000 on August 20?",
@@ -112,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.96
+    "30316734010949993811546450986568737239157211309052580314607939723023831482221": 0.9615
    },
-   "current_value": 24.5904,
-   "unrealized_pl": 0.17098,
-   "unrealized_pl_pct": 0.7
+   "current_value": 24.628822,
+   "unrealized_pl": 0.209402,
+   "unrealized_pl_pct": 0.858
   },
   {
    "key": "CV-3565411",
@@ -170,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.982
+    "106486687544936443007603754844349759006565681443278120191558334209148684219576": 0.984
    },
-   "current_value": 24.478043,
-   "unrealized_pl": -0.123793,
-   "unrealized_pl_pct": -0.503
+   "current_value": 24.527896,
+   "unrealized_pl": -0.07394,
+   "unrealized_pl_pct": -0.301
   },
   {
    "key": "LS-3574145",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.9075
+    "63726239256070672154937152433743902813012912287656144194816620909414070027401": 0.912
    },
-   "current_value": 23.01254,
-   "unrealized_pl": -1.694269,
-   "unrealized_pl_pct": -6.857
+   "current_value": 23.126652,
+   "unrealized_pl": -1.580157,
+   "unrealized_pl_pct": -6.396
   },
   {
    "key": "CV-3492217",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "74388807305626854625499618361343486213563665918917889809552232821434252148720": 0.9005
+    "74388807305626854625499618361343486213563665918917889809552232821434252148720": 0.941
    },
-   "current_value": 9.347,
-   "unrealized_pl": -0.548313,
-   "unrealized_pl_pct": -5.541
+   "current_value": 9.767381,
+   "unrealized_pl": -0.127932,
+   "unrealized_pl_pct": -1.293
   },
   {
    "key": "CV-3516823",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.966
+    "2276951803397144300368051867184213147701667066179794278618712316742376813638": 0.979
    },
-   "current_value": 22.096419,
-   "unrealized_pl": -0.308941,
-   "unrealized_pl_pct": -1.379
+   "current_value": 22.393783,
+   "unrealized_pl": -0.011577,
+   "unrealized_pl_pct": -0.052
   },
   {
    "key": "CV-3541750",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9815
+    "11542773637852133604493494955474891568068842012191690545253155959690912624732": 0.9865
    },
-   "current_value": 8.668312,
-   "unrealized_pl": -0.023578,
-   "unrealized_pl_pct": -0.271
+   "current_value": 8.71247,
+   "unrealized_pl": 0.02058,
+   "unrealized_pl_pct": 0.237
   },
   {
    "key": "LS-3574143",
@@ -315,11 +286,69 @@
     }
    ],
    "current_prices": {
-    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.9625
+    "8254272192598744108809709410729481576086694207598777356785386738403480883835": 0.921
    },
-   "current_value": 24.406582,
-   "unrealized_pl": -0.154568,
-   "unrealized_pl_pct": -0.629
+   "current_value": 23.354246,
+   "unrealized_pl": -1.206904,
+   "unrealized_pl_pct": -4.914
+  },
+  {
+   "key": "CV-2955043",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
+   "opened": 1786929486.4995472,
+   "cost": 24.648276,
+   "edge": 0.030752,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9736,
+   "resolve_by": "2026-08-31T00:00:00Z",
+   "note": "YES ask 0.969, fee 0.0012, 13.9d to resolution, 80% annualized net if YES, assumed true P 0.974",
+   "legs": [
+    {
+     "token_id": "112835487580149024170516422015943749261671957810997115126758688640706835176306",
+     "market_id": "2955043",
+     "label": "YES Will Anthropic have the best AI model at the end of August 2026?",
+     "side": "YES",
+     "entry_price": 0.969,
+     "shares": 25.405315
+    }
+   ],
+   "current_prices": {
+    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.967
+   },
+   "current_value": 24.56694,
+   "unrealized_pl": -0.081336,
+   "unrealized_pl_pct": -0.33
+  },
+  {
+   "key": "CV-2954946",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
+   "opened": 1786929486.4995708,
+   "cost": 9.866794,
+   "edge": 0.050632,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.952,
+   "resolve_by": "2026-08-31T00:00:00Z",
+   "note": "YES ask 0.950, fee 0.0019, 13.9d to resolution, 133% annualized net if YES, assumed true P 0.952",
+   "legs": [
+    {
+     "token_id": "33257313448889142117338202598803323983660140128346778402748443216212913313148",
+     "market_id": "2954946",
+     "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 10.365368
+    }
+   ],
+   "current_prices": {
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.94
+   },
+   "current_value": 9.743446,
+   "unrealized_pl": -0.123348,
+   "unrealized_pl_pct": -1.25
   }
  ],
  "closed": [
@@ -17035,6 +17064,39 @@
    "payout": 19.804933,
    "pl": 0.072947,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3541748",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 19?",
+   "opened": 1786694657.9874167,
+   "cost": 24.173667,
+   "edge": 0.013219,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-08-19T16:00:00Z",
+   "note": "YES ask 0.986, fee 0.0010, 5.3d to resolution, 91% annualized net if YES, assumed true P 0.988",
+   "legs": [
+    {
+     "token_id": "66855916058749722886692619889568539914355735061389108003240861460230590897619",
+     "market_id": "3541748",
+     "label": "YES Will the price of Bitcoin be above $58,000 on August 19?",
+     "side": "YES",
+     "entry_price": 0.986,
+     "shares": 24.492901
+    }
+   ],
+   "current_prices": {
+    "66855916058749722886692619889568539914355735061389108003240861460230590897619": 0.993
+   },
+   "current_value": 24.321451,
+   "unrealized_pl": 0.147784,
+   "unrealized_pl_pct": 0.611,
+   "closed_ts": 1786929486.6884704,
+   "payout": 24.272465,
+   "pl": 0.098798,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -21005,6 +21067,14 @@
    "equity": 984.7061,
    "realized_total": -12.2028,
    "open_positions": 11
+  },
+  {
+   "ts": 1786929486.6900067,
+   "cash": 769.3848,
+   "open_value": 214.9796,
+   "equity": 984.3644,
+   "realized_total": -12.104,
+   "open_positions": 12
   }
  ],
  "trades": [
@@ -29725,6 +29795,34 @@
    "title": "Fade: Will \"Spider-Man: Brand New Day\" 3rd Weekend Box Office be b",
    "amount": 24.56,
    "pl": null
+  },
+  {
+   "ts": 1786929486.4995472,
+   "type": "OPEN",
+   "key": "CV-2955043",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
+   "amount": 24.65,
+   "pl": null
+  },
+  {
+   "ts": 1786929486.4995708,
+   "type": "OPEN",
+   "key": "CV-2954946",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
+   "amount": 9.87,
+   "pl": null
+  },
+  {
+   "ts": 1786929486.6884704,
+   "type": "CLOSE",
+   "key": "CV-3541748",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $58,000 on August 19?",
+   "amount": 24.27,
+   "pl": 0.1,
+   "reason": "take_profit"
   }
  ]
 }
