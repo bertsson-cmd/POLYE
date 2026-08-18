@@ -1,5 +1,5 @@
 {
- "cash": 608.934117,
+ "cash": 633.872858,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9635
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.95
    },
-   "current_value": 9.987032,
-   "unrealized_pl": 0.120238,
-   "unrealized_pl_pct": 1.219
+   "current_value": 9.8471,
+   "unrealized_pl": -0.019694,
+   "unrealized_pl_pct": -0.2
   },
   {
    "key": "CV-3651171",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.967
+    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.9735
    },
-   "current_value": 24.897228,
-   "unrealized_pl": 0.11102,
-   "unrealized_pl_pct": 0.448
+   "current_value": 25.064583,
+   "unrealized_pl": 0.278375,
+   "unrealized_pl_pct": 1.123
   },
   {
    "key": "CV-3651160",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "83294480382608992359502145878085659369856484639513532410154459148838228153500": 0.9845
+    "83294480382608992359502145878085659369856484639513532410154459148838228153500": 0.985
    },
-   "current_value": 24.869675,
-   "unrealized_pl": 0.079017,
-   "unrealized_pl_pct": 0.319
+   "current_value": 24.882306,
+   "unrealized_pl": 0.091648,
+   "unrealized_pl_pct": 0.37
   },
   {
    "key": "CV-3651204",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "7083817659320132372406380617472156307813868746008982590587905019735470346617": 0.979
+    "7083817659320132372406380617472156307813868746008982590587905019735470346617": 0.9865
    },
-   "current_value": 24.749,
-   "unrealized_pl": -0.036381,
-   "unrealized_pl_pct": -0.147
+   "current_value": 24.938599,
+   "unrealized_pl": 0.153218,
+   "unrealized_pl_pct": 0.618
   },
   {
    "key": "CV-3565415",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.971
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9705
    },
-   "current_value": 21.770617,
-   "unrealized_pl": -0.127939,
-   "unrealized_pl_pct": -0.584
+   "current_value": 21.759407,
+   "unrealized_pl": -0.139149,
+   "unrealized_pl_pct": -0.635
   },
   {
    "key": "CV-3651161",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.925
+    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.935
    },
-   "current_value": 9.675013,
-   "unrealized_pl": -0.296265,
-   "unrealized_pl_pct": -2.971
+   "current_value": 9.779608,
+   "unrealized_pl": -0.19167,
+   "unrealized_pl_pct": -1.922
   },
   {
    "key": "CV-3121262",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.941
+    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.94
    },
-   "current_value": 24.502742,
-   "unrealized_pl": -0.338508,
-   "unrealized_pl_pct": -1.363
+   "current_value": 24.476703,
+   "unrealized_pl": -0.364547,
+   "unrealized_pl_pct": -1.468
   },
   {
    "key": "CV-3541752",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "33147262383755281169613796284524792937651620672807387828588855382539033471898": 0.9725
+    "33147262383755281169613796284524792937651620672807387828588855382539033471898": 0.979
    },
-   "current_value": 24.519095,
-   "unrealized_pl": -0.341231,
-   "unrealized_pl_pct": -1.373
+   "current_value": 24.682976,
+   "unrealized_pl": -0.17735,
+   "unrealized_pl_pct": -0.713
   },
   {
    "key": "CV-3145216",
@@ -315,40 +315,11 @@
     }
    ],
    "current_prices": {
-    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.92
+    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.93
    },
-   "current_value": 9.620004,
-   "unrealized_pl": -0.33853,
-   "unrealized_pl_pct": -3.399
-  },
-  {
-   "key": "CV-3541712",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 19?",
-   "opened": 1787022358.3432102,
-   "cost": 24.813777,
-   "edge": 0.014178,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9868,
-   "resolve_by": "2026-08-19T16:00:00Z",
-   "note": "YES ask 0.985, fee 0.0010, 1.5d to resolution, 337% annualized net if YES, assumed true P 0.987",
-   "legs": [
-    {
-     "token_id": "65679891071670910257908887073080190190488648468960152613547701480538225145664",
-     "market_id": "3541712",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 19?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 25.165228
-    }
-   ],
-   "current_prices": {
-    "65679891071670910257908887073080190190488648468960152613547701480538225145664": 0.9915
-   },
-   "current_value": 24.951324,
-   "unrealized_pl": 0.137547,
-   "unrealized_pl_pct": 0.554
+   "current_value": 9.724569,
+   "unrealized_pl": -0.233965,
+   "unrealized_pl_pct": -2.349
   },
   {
    "key": "CV-2955043",
@@ -431,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.967
+    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.965
    },
-   "current_value": 19.980839,
-   "unrealized_pl": 0.089098,
-   "unrealized_pl_pct": 0.448
+   "current_value": 19.939513,
+   "unrealized_pl": 0.047772,
+   "unrealized_pl_pct": 0.24
   },
   {
    "key": "CV-3145214",
@@ -489,11 +460,11 @@
     }
    ],
    "current_prices": {
-    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9745
+    "40480842643683527841750766150093997189710786647213518832108336694389314530032": 0.9765
    },
-   "current_value": 22.488163,
-   "unrealized_pl": 0.035281,
-   "unrealized_pl_pct": 0.157
+   "current_value": 22.534317,
+   "unrealized_pl": 0.081435,
+   "unrealized_pl_pct": 0.363
   },
   {
    "key": "CV-2952493",
@@ -18222,6 +18193,39 @@
    "payout": 25.187234,
    "pl": 0.465544,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3541712",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 19?",
+   "opened": 1787022358.3432102,
+   "cost": 24.813777,
+   "edge": 0.014178,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-08-19T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 1.5d to resolution, 337% annualized net if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "65679891071670910257908887073080190190488648468960152613547701480538225145664",
+     "market_id": "3541712",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 19?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 25.165228
+    }
+   ],
+   "current_prices": {
+    "65679891071670910257908887073080190190488648468960152613547701480538225145664": 0.9915
+   },
+   "current_value": 24.951324,
+   "unrealized_pl": 0.137547,
+   "unrealized_pl_pct": 0.554,
+   "closed_ts": 1787053037.256134,
+   "payout": 24.938741,
+   "pl": 0.124964,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -22624,6 +22628,14 @@
    "equity": 991.4682,
    "realized_total": -4.7627,
    "open_positions": 19
+  },
+  {
+   "ts": 1787053037.258038,
+   "cash": 633.8729,
+   "open_value": 358.153,
+   "equity": 992.0259,
+   "realized_total": -4.6377,
+   "open_positions": 18
   }
  ],
  "trades": [
@@ -31965,6 +31977,16 @@
    "title": "Fade: Will James Fishback win 20\u201325% of votes in the Florida Repub",
    "amount": 24.82,
    "pl": null
+  },
+  {
+   "ts": 1787053037.256134,
+   "type": "CLOSE",
+   "key": "CV-3541712",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 19?",
+   "amount": 24.94,
+   "pl": 0.12,
+   "reason": "take_profit"
   }
  ],
  "last_scan_opportunities": [
@@ -32027,9 +32049,9 @@
      "label": "NO Will James Fishback win 20\u201325% of votes in the Florida Republican Governor primary?",
      "side": "NO",
      "entry_price": 0.954,
-     "shares": 25.96851467505241,
+     "shares": 0.0,
      "fee_per_share": 0.0017553600000000016,
-     "min_order_size": 5.0
+     "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
@@ -32041,7 +32063,7 @@
    "strategy": "CONVERGE",
    "key": "CV-3541752",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 19?",
-   "edge": 0.023891025641025663,
+   "edge": 0.01900816326530614,
    "guaranteed": false,
    "legs": [
     {
@@ -32049,16 +32071,16 @@
      "market_id": "3541752",
      "label": "YES Will the price of Bitcoin be above $62,000 on August 19?",
      "side": "YES",
-     "entry_price": 0.975,
+     "entry_price": 0.98,
      "shares": 0.0,
-     "fee_per_share": 0.0017062500000000016,
+     "fee_per_share": 0.0013720000000000015,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.978,
+   "est_p_win": 0.9832,
    "resolve_by": "2026-08-19T16:00:00Z",
-   "note": "YES ask 0.975, fee 0.0017, 1.2d to resolution, 724% annualized net if YES, assumed true P 0.978"
+   "note": "YES ask 0.980, fee 0.0014, 1.2d to resolution, 587% annualized net if YES, assumed true P 0.983"
   },
   {
    "strategy": "CONVERGE",
@@ -32079,15 +32101,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9768,
+   "est_p_win": 0.9764,
    "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.971, fee 0.0020, 2.2d to resolution, 461% annualized net if YES, assumed true P 0.977"
+   "note": "YES ask 0.971, fee 0.0020, 2.2d to resolution, 466% annualized net if YES, assumed true P 0.976"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3565391",
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 20?",
-   "edge": 0.022910163934426252,
+   "edge": 0.011305748987854261,
    "guaranteed": false,
    "legs": [
     {
@@ -32095,16 +32117,16 @@
      "market_id": "3565391",
      "label": "YES Will the price of Ethereum be above $1,800 on August 20?",
      "side": "YES",
-     "entry_price": 0.976,
+     "entry_price": 0.988,
      "shares": 0.0,
-     "fee_per_share": 0.0016396800000000016,
+     "fee_per_share": 0.0008299200000000007,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9736,
+   "est_p_win": 0.9788,
    "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.976, fee 0.0016, 2.2d to resolution, 379% annualized net if YES, assumed true P 0.974"
+   "note": "YES ask 0.988, fee 0.0008, 2.2d to resolution, 189% annualized net if YES, assumed true P 0.979"
   },
   {
    "strategy": "CONVERGE",
@@ -32125,9 +32147,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9736,
+   "est_p_win": 0.972,
    "resolve_by": "2026-08-24T16:00:00Z",
-   "note": "YES ask 0.970, fee 0.0020, 6.2d to resolution, 170% annualized net if YES, assumed true P 0.974"
+   "note": "YES ask 0.970, fee 0.0020, 6.2d to resolution, 170% annualized net if YES, assumed true P 0.972"
   },
   {
    "strategy": "CONVERGE",
@@ -32148,9 +32170,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9528,
+   "est_p_win": 0.952,
    "resolve_by": "2026-08-31T23:59:00Z",
-   "note": "YES ask 0.949, fee 0.0000, 13.5d to resolution, 145% annualized net if YES, assumed true P 0.953"
+   "note": "YES ask 0.949, fee 0.0000, 13.5d to resolution, 145% annualized net if YES, assumed true P 0.952"
   },
   {
    "strategy": "CONVERGE",
@@ -32194,9 +32216,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9796,
+   "est_p_win": 0.9812000000000001,
    "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 5.2d to resolution, 120% annualized net if YES, assumed true P 0.980"
+   "note": "YES ask 0.982, fee 0.0012, 5.2d to resolution, 120% annualized net if YES, assumed true P 0.981"
   },
   {
    "strategy": "CONVERGE",
@@ -32217,32 +32239,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9876,
+   "est_p_win": 0.988,
    "resolve_by": "2026-08-21T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 3.2d to resolution, 107% annualized net if YES, assumed true P 0.988"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-2954946",
-   "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.03383668737060044,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "33257313448889142117338202598803323983660140128346778402748443216212913313148",
-     "market_id": "2954946",
-     "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
-     "side": "YES",
-     "entry_price": 0.966,
-     "shares": 0.0,
-     "fee_per_share": 0.0013137600000000013,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9708,
-   "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.966, fee 0.0013, 12.5d to resolution, 99% annualized net if YES, assumed true P 0.971"
+   "note": "YES ask 0.990, fee 0.0007, 3.2d to resolution, 108% annualized net if YES, assumed true P 0.988"
   },
   {
    "strategy": "CONVERGE",
