@@ -1,5 +1,5 @@
 {
- "cash": 651.538821,
+ "cash": 601.873629,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.91
+    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.915
    },
-   "current_value": 8.953825,
-   "unrealized_pl": -0.416944,
-   "unrealized_pl_pct": -4.449
+   "current_value": 9.003022,
+   "unrealized_pl": -0.367747,
+   "unrealized_pl_pct": -3.924
   },
   {
    "key": "CV-3651204",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.921
+    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.9335
    },
-   "current_value": 23.981961,
-   "unrealized_pl": -0.859289,
-   "unrealized_pl_pct": -3.459
+   "current_value": 24.307449,
+   "unrealized_pl": -0.533801,
+   "unrealized_pl_pct": -2.149
   },
   {
    "key": "CV-3145216",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.885
+    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.87
    },
-   "current_value": 9.254026,
-   "unrealized_pl": -0.704508,
-   "unrealized_pl_pct": -7.074
+   "current_value": 9.097178,
+   "unrealized_pl": -0.861356,
+   "unrealized_pl_pct": -8.649
   },
   {
    "key": "CV-2955043",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.982
+    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.9825
    },
-   "current_value": 24.747348,
-   "unrealized_pl": -0.066273,
-   "unrealized_pl_pct": -0.267
+   "current_value": 24.759948,
+   "unrealized_pl": -0.053673,
+   "unrealized_pl_pct": -0.216
   },
   {
    "key": "LS-2674155",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.946
+    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.945
    },
-   "current_value": 9.883111,
-   "unrealized_pl": -0.076526,
-   "unrealized_pl_pct": -0.768
+   "current_value": 9.872664,
+   "unrealized_pl": -0.086973,
+   "unrealized_pl_pct": -0.873
   },
   {
    "key": "CV-2954946",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.972
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9735
    },
-   "current_value": 24.699037,
-   "unrealized_pl": -0.190734,
-   "unrealized_pl_pct": -0.766
+   "current_value": 24.737153,
+   "unrealized_pl": -0.152618,
+   "unrealized_pl_pct": -0.613
   },
   {
    "key": "CV-3635505",
@@ -460,11 +460,69 @@
     }
    ],
    "current_prices": {
-    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.9645
+    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.961
    },
-   "current_value": 24.782014,
-   "unrealized_pl": -0.121631,
-   "unrealized_pl_pct": -0.488
+   "current_value": 24.692085,
+   "unrealized_pl": -0.21156,
+   "unrealized_pl_pct": -0.85
+  },
+  {
+   "key": "CV-3664748",
+   "strategy": "CONVERGE",
+   "title": "Converge: WTI Crude Oil (WTI) closes above $83 on August 18?",
+   "opened": 1787076895.0658035,
+   "cost": 24.852942,
+   "edge": 0.041113,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-18T21:00:00Z",
+   "note": "YES ask 0.959, fee 0.0016, 0.1d to resolution, 13090% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "40635719084351626869491765991552995168900250451180616322714119309974109202902",
+     "market_id": "3664748",
+     "label": "YES WTI Crude Oil (WTI) closes above $83 on August 18?",
+     "side": "YES",
+     "entry_price": 0.959,
+     "shares": 25.873045
+    }
+   ],
+   "current_prices": {
+    "40635719084351626869491765991552995168900250451180616322714119309974109202902": 0.955
+   },
+   "current_value": 24.708758,
+   "unrealized_pl": -0.144184,
+   "unrealized_pl_pct": -0.58
+  },
+  {
+   "key": "CV-2853652",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Russia capture Kostyantynivka by August 31?",
+   "opened": 1787076895.0658183,
+   "cost": 24.81225,
+   "edge": 0.030928,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-31T12:00:00Z",
+   "note": "YES ask 0.970, fee 0.0000, 12.7d to resolution, 89% annualized net if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "75450938030663819696107743188961274408991378337732826543927521255350461461621",
+     "market_id": "2853652",
+     "label": "YES Will Russia capture Kostyantynivka by August 31?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 25.579639
+    }
+   ],
+   "current_prices": {
+    "75450938030663819696107743188961274408991378337732826543927521255350461461621": 0.97
+   },
+   "current_value": 24.81225,
+   "unrealized_pl": -0.0,
+   "unrealized_pl_pct": -0.0
   }
  ],
  "closed": [
@@ -22889,6 +22947,14 @@
    "equity": 992.4908,
    "realized_total": -3.4926,
    "open_positions": 16
+  },
+  {
+   "ts": 1787076895.1902194,
+   "cash": 601.8736,
+   "open_value": 390.6412,
+   "equity": 992.5148,
+   "realized_total": -3.4926,
+   "open_positions": 18
   }
  ],
  "trades": [
@@ -32355,83 +32421,55 @@
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 21?",
    "amount": 24.9,
    "pl": null
+  },
+  {
+   "ts": 1787076895.0658035,
+   "type": "OPEN",
+   "key": "CV-3664748",
+   "strategy": "CONVERGE",
+   "title": "Converge: WTI Crude Oil (WTI) closes above $83 on August 18?",
+   "amount": 24.85,
+   "pl": null
+  },
+  {
+   "ts": 1787076895.0658183,
+   "type": "OPEN",
+   "key": "CV-2853652",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Russia capture Kostyantynivka by August 31?",
+   "amount": 24.81,
+   "pl": null
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3545844",
-   "title": "Fade: Exact Score: GNK Dinamo Zagreb 0 - 0 Viking FK?",
-   "edge": 0.011518629407850976,
+   "key": "LS-3364910",
+   "title": "Fade: Exact Score: Recoleta FC 1 - 0 CA Boca Juniors?",
+   "edge": 0.01850636566478542,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "78790764655585986283288581797076503105709579457508886968413428603703137127638",
-     "market_id": "3545844",
-     "label": "NO Exact Score: GNK Dinamo Zagreb 0 - 0 Viking FK?",
+     "token_id": "6336985450629658109160456932692177699133646226950853178603352489236756724992",
+     "market_id": "3364910",
+     "label": "NO Exact Score: Recoleta FC 1 - 0 CA Boca Juniors?",
      "side": "NO",
-     "entry_price": 0.96,
+     "entry_price": 0.95,
      "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
+     "fee_per_share": 0.002375000000000002,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-08-18T19:00:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3545777",
-   "title": "Fade: Exact Score: Fenerbah\u00e7e SK 0 - 2 Olympique Lyonnais?",
-   "edge": 0.015813129018601036,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "65112936026286259508433254731476022047101362644192090700902920197402068401499",
-     "market_id": "3545777",
-     "label": "NO Exact Score: Fenerbah\u00e7e SK 0 - 2 Olympique Lyonnais?",
-     "side": "NO",
-     "entry_price": 0.961,
-     "shares": 0.0,
-     "fee_per_share": 0.0018739500000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9781,
-   "resolve_by": "2026-08-18T19:00:00Z",
-   "note": "YES at 0.036, assumed true 0.022, NO ask 0.961, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3545814",
-   "title": "Fade: Exact Score: PFK Levski Sofia 2 - 0 AEK?",
-   "edge": 0.011518629407850976,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "102468116135502203507956556081330361434969268171585211834985892686680158846224",
-     "market_id": "3545814",
-     "label": "NO Exact Score: PFK Levski Sofia 2 - 0 AEK?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-08-18T19:00:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
+   "est_p_win": 0.97,
+   "resolve_by": "2026-08-18T22:00:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.950, fee 0.0024"
   },
   {
    "strategy": "LONGSHOT",
    "key": "LS-3359969",
    "title": "Fade: Exact Score: CS Independiente Rivadavia 2 - 2 Fluminense FC?",
-   "edge": 0.013701763140385896,
+   "edge": 0.014013639387890967,
    "guaranteed": false,
    "legs": [
     {
@@ -32446,32 +32484,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9751,
+   "est_p_win": 0.9754,
    "resolve_by": "2026-08-18T22:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3364910",
-   "title": "Fade: Exact Score: Recoleta FC 1 - 0 CA Boca Juniors?",
-   "edge": 0.008399866932801071,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "6336985450629658109160456932692177699133646226950853178603352489236756724992",
-     "market_id": "3364910",
-     "label": "NO Exact Score: Recoleta FC 1 - 0 CA Boca Juniors?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.97,
-   "resolve_by": "2026-08-18T22:00:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.960, fee 0.0019"
+   "note": "YES at 0.041, assumed true 0.025, NO ask 0.960, fee 0.0019"
   },
   {
    "strategy": "LONGSHOT",
@@ -32498,29 +32513,6 @@
   },
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3379525",
-   "title": "Fade: Spread: CS Independiente Rivadavia (-2.5)",
-   "edge": 0.011183796232241314,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "105343082722706636278660524883383849026041650652081675719412761677883448719546",
-     "market_id": "3379525",
-     "label": "NO Spread: CS Independiente Rivadavia (-2.5)",
-     "side": "NO",
-     "entry_price": 0.965,
-     "shares": 0.0,
-     "fee_per_share": 0.0016887500000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9775,
-   "resolve_by": "2026-08-18T22:00:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.965, fee 0.0017"
-  },
-  {
-   "strategy": "LONGSHOT",
    "key": "LS-3069674",
    "title": "Fade: Will Kevin Christensen be the WY-AL Republican nominee?",
    "edge": 0.00806866811372745,
@@ -32543,56 +32535,10 @@
    "note": "YES at 0.035, assumed true 0.021, NO ask 0.970, fee 0.0012"
   },
   {
-   "strategy": "LONGSHOT",
-   "key": "LS-3380374",
-   "title": "Fade: S\u00e3o Paulo FC vs. Club Bol\u00edvar: Club Bol\u00edvar O/U 2.5",
-   "edge": 0.008384330720414277,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "83710053311974616485634449540153910595376217383292597889451762641156559651384",
-     "market_id": "3380374",
-     "label": "NO S\u00e3o Paulo FC vs. Club Bol\u00edvar: Club Bol\u00edvar O/U 2.5",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 0.0,
-     "fee_per_share": 0.0014550000000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9796,
-   "resolve_by": "2026-08-19T00:30:00Z",
-   "note": "YES at 0.034, assumed true 0.020, NO ask 0.970, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3261010",
-   "title": "Fade: Spread: Independiente del Valle (-2.5)",
-   "edge": 0.008017219587984147,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "92292210914776835960816239367171813178605991777176899721309136037959132362537",
-     "market_id": "3261010",
-     "label": "NO Spread: Independiente del Valle (-2.5)",
-     "side": "NO",
-     "entry_price": 0.966,
-     "shares": 0.0,
-     "fee_per_share": 0.0016422000000000016,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9754,
-   "resolve_by": "2026-08-19T00:30:00Z",
-   "note": "YES at 0.041, assumed true 0.025, NO ask 0.966, fee 0.0016"
-  },
-  {
    "strategy": "CONVERGE",
    "key": "CV-3664748",
    "title": "Converge: WTI Crude Oil (WTI) closes above $83 on August 18?",
-   "edge": 0.02262145342886389,
+   "edge": 0.04111286757038586,
    "guaranteed": false,
    "legs": [
     {
@@ -32600,16 +32546,16 @@
      "market_id": "3664748",
      "label": "YES WTI Crude Oil (WTI) closes above $83 on August 18?",
      "side": "YES",
-     "entry_price": 0.977,
-     "shares": 0.0,
-     "fee_per_share": 0.0008988400000000007,
-     "min_order_size": null
+     "entry_price": 0.959,
+     "shares": 25.87304483837331,
+     "fee_per_share": 0.0015727600000000014,
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9672,
+   "est_p_win": 0.964,
    "resolve_by": "2026-08-18T21:00:00Z",
-   "note": "YES ask 0.977, fee 0.0009, 0.1d to resolution, 6157% annualized net if YES, assumed true P 0.967"
+   "note": "YES ask 0.959, fee 0.0016, 0.1d to resolution, 13090% annualized net if YES, assumed true P 0.964"
   },
   {
    "strategy": "CONVERGE",
@@ -32630,15 +32576,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9776,
+   "est_p_win": 0.9788,
    "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.974, fee 0.0018, 1.9d to resolution, 471% annualized net if YES, assumed true P 0.978"
+   "note": "YES ask 0.974, fee 0.0018, 1.9d to resolution, 476% annualized net if YES, assumed true P 0.979"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3651205",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 22?",
-   "edge": 0.04706016806722694,
+   "edge": 0.04913157894736847,
    "guaranteed": false,
    "legs": [
     {
@@ -32646,16 +32592,16 @@
      "market_id": "3651205",
      "label": "YES Will the price of Bitcoin be above $62,000 on August 22?",
      "side": "YES",
-     "entry_price": 0.952,
+     "entry_price": 0.95,
      "shares": 0.0,
-     "fee_per_share": 0.003198720000000003,
+     "fee_per_share": 0.0033250000000000033,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9568,
+   "est_p_win": 0.956,
    "resolve_by": "2026-08-22T16:00:00Z",
-   "note": "YES ask 0.952, fee 0.0032, 3.9d to resolution, 438% annualized net if YES, assumed true P 0.957"
+   "note": "YES ask 0.950, fee 0.0033, 3.9d to resolution, 459% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
@@ -32676,9 +32622,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9716,
+   "est_p_win": 0.9688,
    "resolve_by": "2026-08-21T16:00:00Z",
-   "note": "YES ask 0.967, fee 0.0022, 2.9d to resolution, 397% annualized net if YES, assumed true P 0.972"
+   "note": "YES ask 0.967, fee 0.0022, 2.9d to resolution, 400% annualized net if YES, assumed true P 0.969"
   },
   {
    "strategy": "CONVERGE",
@@ -32701,7 +32647,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.952,
    "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 4.9d to resolution, 364% annualized net if YES, assumed true P 0.952"
+   "note": "YES ask 0.950, fee 0.0033, 4.9d to resolution, 366% annualized net if YES, assumed true P 0.952"
   },
   {
    "strategy": "CONVERGE",
@@ -32770,7 +32716,30 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9712,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.968, fee 0.0012, 12.3d to resolution, 95% annualized net if YES, assumed true P 0.971"
+   "note": "YES ask 0.968, fee 0.0012, 12.2d to resolution, 95% annualized net if YES, assumed true P 0.971"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-2853652",
+   "title": "Converge: Will Russia capture Kostyantynivka by August 31?",
+   "edge": 0.03092783505154642,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "75450938030663819696107743188961274408991378337732826543927521255350461461621",
+     "market_id": "2853652",
+     "label": "YES Will Russia capture Kostyantynivka by August 31?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 25.579639175257736,
+     "fee_per_share": 0.0,
+     "min_order_size": 5.0
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-31T12:00:00Z",
+   "note": "YES ask 0.970, fee 0.0000, 12.7d to resolution, 89% annualized net if YES, assumed true P 0.976"
   },
   {
    "strategy": "CONVERGE",
@@ -32791,7 +32760,7 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9872,
+   "est_p_win": 0.9868,
    "resolve_by": "2026-08-23T16:00:00Z",
    "note": "YES ask 0.990, fee 0.0007, 4.9d to resolution, 70% annualized net if YES, assumed true P 0.987"
   },
@@ -32837,9 +32806,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9856,
+   "est_p_win": 0.986,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.984, fee 0.0006, 12.3d to resolution, 47% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.984, fee 0.0006, 12.2d to resolution, 47% annualized net if YES, assumed true P 0.986"
   }
  ]
 }
