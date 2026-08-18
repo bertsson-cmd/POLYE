@@ -24,7 +24,7 @@ import os
 
 from flask import Flask, Response, jsonify, request
 
-from polyedge import controls
+from polyedge import config, controls
 from polyedge.paper import PaperEngine
 
 app = Flask(__name__)
@@ -106,8 +106,12 @@ def dashboard():
         mode = "Dry-run"
     else:
         mode = "Paper"
+    # opportunities left unset (None) -- render_dashboard_html() falls back
+    # to state["last_scan_opportunities"], written by run_forever.py's own
+    # scan cycle. Used to hardcode [] here, which is why "Latest scan"
+    # always rendered empty on this route -- see that function's docstring.
     html = report.render_dashboard_html(
-        engine.state, opportunities=[],
+        engine.state,
         control_panel_url=f"/?token={request.args.get('token', '')}",
         mode_label=mode)
     return Response(html, mimetype="text/html")
@@ -137,6 +141,13 @@ def api_state():
         })
     return jsonify({
         "controls": ctrl,
+        # the slider's ACTUAL effective value -- ctrl["default_stop_loss_pct"]
+        # alone is None whenever no override has ever been set, which would
+        # otherwise leave the control panel showing a blank/misleading
+        # slider position instead of the config/env-var default really in
+        # effect (see controls.set_default_stop_loss_pct's docstring)
+        "effective_default_stop_loss_pct":
+            ctrl.get("default_stop_loss_pct") or config.LIVE_DEFAULT_STOP_LOSS_PCT,
         "stats": stats,
         "positions": positions,
         "halted": os.path.exists("HALTED"),
@@ -194,6 +205,20 @@ def api_stop_loss():
     if not key:
         return jsonify({"error": "missing key"}), 400
     return jsonify(controls.set_stop_loss(key, body.get("pct")))
+
+
+@app.route("/api/default_stop_loss", methods=["POST"])
+def api_default_stop_loss():
+    """Runtime override for the % auto-applied to every NEW live position
+    on fill (polyedge.config.LIVE_DEFAULT_STOP_LOSS_PCT otherwise) -- does
+    NOT retroactively change stop-losses already applied to currently-open
+    positions, only ones opened after this changes. See
+    controls.set_default_stop_loss_pct's docstring."""
+    err = _require_auth()
+    if err:
+        return err
+    body = request.get_json(force=True, silent=True) or {}
+    return jsonify(controls.set_default_stop_loss_pct(body.get("pct")))
 
 
 if __name__ == "__main__":

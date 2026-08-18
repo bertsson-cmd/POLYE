@@ -395,10 +395,28 @@ def render_dashboard_html(state: dict, opportunities=None,
     mode_label should unambiguously say which state is on screen --
     "Paper", "Dry-run", or "LIVE" -- since the VPS route can show either
     dry-run or real-money state depending on the gates, and there must
-    never be room to mistake one for the other."""
+    never be room to mistake one for the other.
+
+    opportunities=None (the default) falls back to
+    state.get("last_scan_opportunities", []) -- the "Latest scan" card
+    used to always render empty for control_server.py's /dashboard route,
+    which runs as its OWN process from run_forever.py's and only ever had
+    access to whatever process last called this function directly. The
+    scan's opportunity list was computed fresh in run_cycle()'s local
+    scope and handed straight to write_dashboard() as a function argument
+    -- never written into `state` itself -- so it was structurally
+    impossible for a second process reading state.json to ever see it,
+    not a rendering bug. run_cycle() now stashes it on engine.state before
+    saving (see main.py), making state.json the single source of truth
+    both dashboard call sites read from. Pass an explicit opportunities=[]
+    (as the maintenance scripts cleanup_phantom_arbs.py/cancel_stale_locks.py
+    do -- no scan ran, so there's nothing fresh to show) to force empty
+    regardless of what's in state."""
+    if opportunities is None:
+        opportunities = state.get("last_scan_opportunities", [])
     return (_TEMPLATE
             .replace("__STATE_JSON__", json.dumps(state))
-            .replace("__OPPS_JSON__", json.dumps(opportunities or []))
+            .replace("__OPPS_JSON__", json.dumps(opportunities))
             .replace("__MODE_LABEL__", mode_label)
             .replace("__CONTROL_PANEL_URL__",
                      control_panel_url or config.CONTROL_PANEL_URL))

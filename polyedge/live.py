@@ -588,10 +588,20 @@ class LiveEngine(PaperEngine):
                 self.rejected_cooldown[leg.token_id] = time.time()
                 return None
         result = super().open_position(opp, ts=ts)
-        if result and config.LIVE_DEFAULT_STOP_LOSS_PCT:
-            controls.set_stop_loss(opp.key, config.LIVE_DEFAULT_STOP_LOSS_PCT, self.state_dir)
-            log.info("auto-applied %.0f%% stop-loss to %s",
-                     config.LIVE_DEFAULT_STOP_LOSS_PCT, opp.key)
+        if result:
+            # runtime control-panel value (controls.set_default_stop_loss_pct)
+            # takes priority; None means "no override set yet", fall back to
+            # the config/env-var default. Reuses the SAME `ctrl` loaded at
+            # the top of this call -- nothing between there and here writes
+            # to controls.json, so it's still fresh. Snapshotting this
+            # value into stop_loss_pct[opp.key] now (not re-reading the
+            # control live later) is what makes a later slider change
+            # non-retroactive for this position -- see
+            # set_default_stop_loss_pct's docstring.
+            default_sl = ctrl.get("default_stop_loss_pct") or config.LIVE_DEFAULT_STOP_LOSS_PCT
+            if default_sl:
+                controls.set_stop_loss(opp.key, default_sl, self.state_dir)
+                log.info("auto-applied %.0f%% stop-loss to %s", default_sl, opp.key)
         return result
 
     def close_early(self, key: str, exit_prices: Dict[str, float],

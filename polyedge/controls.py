@@ -30,6 +30,9 @@ DEFAULTS = {
     "max_allocation_usd": None,   # None = no cap
     "liquidate_queue": [],        # position keys queued for manual liquidation
     "stop_loss_pct": {},          # position key -> loss threshold, 0-100 (percent of cost basis)
+    "default_stop_loss_pct": None,  # 5-90, runtime override of config.LIVE_DEFAULT_STOP_LOSS_PCT
+    # (see set_default_stop_loss_pct) -- None means "no runtime override
+    # set yet, use the config/env-var default".
 }
 
 
@@ -115,6 +118,28 @@ def set_stop_loss(key: str, pct: Optional[float], state_dir: Optional[str] = Non
         st["stop_loss_pct"].pop(key, None)
     else:
         st["stop_loss_pct"][key] = max(0.0, min(float(pct), 100.0))
+    save(st, state_dir)
+    return st
+
+
+def set_default_stop_loss_pct(pct: Optional[float], state_dir: Optional[str] = None) -> dict:
+    """Runtime override of config.LIVE_DEFAULT_STOP_LOSS_PCT, the % applied
+    automatically to every NEW live position the moment it fills (see
+    live.py's open_position()). pct None resets to "no override -- use the
+    config/env-var default"; otherwise clamped to 5-90 (matching the
+    control panel's slider range -- 90 rather than 100, since a 100%
+    stop-loss would trigger on any loss at all down to zero, which isn't
+    a meaningful "stop" threshold).
+
+    Deliberately does NOT touch stop_loss_pct{} (the per-position dict) --
+    changing this control only affects positions opened AFTER the change.
+    Already-open positions keep whatever value open_position() snapshotted
+    into stop_loss_pct[key] at the moment they filled; nothing here ever
+    revisits that per-key value once written, so it's already the correct
+    "don't retroactively change existing positions" behavior with no
+    special-casing needed."""
+    st = load(state_dir)
+    st["default_stop_loss_pct"] = None if pct is None else max(5.0, min(float(pct), 90.0))
     save(st, state_dir)
     return st
 

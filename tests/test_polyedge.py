@@ -1822,6 +1822,40 @@ class TestLiveEngine:
         ctrl = controls.load(e.state_dir)
         assert "CV-UNFILLED" not in ctrl["stop_loss_pct"]
 
+    # ---- control-panel-adjustable default stop-loss (controls.
+    # default_stop_loss_pct), overriding config.LIVE_DEFAULT_STOP_LOSS_PCT
+    def test_control_panel_default_stop_loss_overrides_config(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        controls.set_default_stop_loss_pct(55, e.state_dir)
+        pos = e.open_position(self._opp("CV-OVERRIDE"))
+        assert pos is not None
+        ctrl = controls.load(e.state_dir)
+        assert ctrl["stop_loss_pct"]["CV-OVERRIDE"] == 55.0
+
+    def test_falls_back_to_config_when_no_control_panel_override_set(self, tmp_path, monkeypatch):
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        assert controls.load(e.state_dir)["default_stop_loss_pct"] is None  # never set
+        pos = e.open_position(self._opp("CV-FALLBACK"))
+        assert pos is not None
+        ctrl = controls.load(e.state_dir)
+        assert ctrl["stop_loss_pct"]["CV-FALLBACK"] == config.LIVE_DEFAULT_STOP_LOSS_PCT
+
+    def test_control_panel_default_change_is_not_retroactive(self, tmp_path, monkeypatch):
+        """The task's explicit requirement: changing the slider must only
+        affect positions opened AFTER the change, never rewrite the
+        stop-loss already snapshotted onto a currently-open position."""
+        from polyedge import controls
+        e = self._engine(tmp_path, monkeypatch)
+        controls.set_default_stop_loss_pct(20, e.state_dir)
+        assert e.open_position(self._opp("CV-BEFORE")) is not None
+        controls.set_default_stop_loss_pct(70, e.state_dir)   # slider moved later
+        assert e.open_position(self._opp("CV-AFTER")) is not None
+        ctrl = controls.load(e.state_dir)
+        assert ctrl["stop_loss_pct"]["CV-BEFORE"] == 20.0   # untouched by the later change
+        assert ctrl["stop_loss_pct"]["CV-AFTER"] == 70.0    # picked up the new default
+
     # ---- rejected_cooldown: real production incident where a token whose
     # FOK order kept getting rejected was re-selected as the best candidate
     # cycle after cycle for over an hour. Uses the EXACT real token_id/
@@ -2340,7 +2374,7 @@ class TestControls:
         st = controls.load(str(tmp_path))
         assert st == {"paused": False, "kill_switch": False,
                       "max_allocation_usd": None, "liquidate_queue": [],
-                      "stop_loss_pct": {}}
+                      "stop_loss_pct": {}, "default_stop_loss_pct": None}
 
     def test_corrupt_file_returns_defaults(self, tmp_path):
         from polyedge import controls
@@ -2383,6 +2417,32 @@ class TestControls:
         from polyedge import controls
         controls.set_stop_loss("CV-X", 500, str(tmp_path))
         assert controls.load(str(tmp_path))["stop_loss_pct"]["CV-X"] == 100.0
+
+    # ---- default_stop_loss_pct: runtime control-panel override of
+    # config.LIVE_DEFAULT_STOP_LOSS_PCT
+    def test_set_default_stop_loss_pct_and_clear(self, tmp_path):
+        from polyedge import controls
+        controls.set_default_stop_loss_pct(25, str(tmp_path))
+        assert controls.load(str(tmp_path))["default_stop_loss_pct"] == 25.0
+        controls.set_default_stop_loss_pct(None, str(tmp_path))
+        assert controls.load(str(tmp_path))["default_stop_loss_pct"] is None
+
+    def test_set_default_stop_loss_pct_clamped_to_5_90(self, tmp_path):
+        from polyedge import controls
+        controls.set_default_stop_loss_pct(500, str(tmp_path))
+        assert controls.load(str(tmp_path))["default_stop_loss_pct"] == 90.0
+        controls.set_default_stop_loss_pct(0, str(tmp_path))
+        assert controls.load(str(tmp_path))["default_stop_loss_pct"] == 5.0
+
+    def test_set_default_stop_loss_pct_does_not_touch_per_position_dict(self, tmp_path):
+        """Changing the default must never retroactively rewrite an
+        already-open position's own snapshotted stop_loss_pct entry."""
+        from polyedge import controls
+        controls.set_stop_loss("CV-OLD", 20, str(tmp_path))
+        controls.set_default_stop_loss_pct(60, str(tmp_path))
+        st = controls.load(str(tmp_path))
+        assert st["stop_loss_pct"] == {"CV-OLD": 20.0}
+        assert st["default_stop_loss_pct"] == 60.0
 
 
 # ------------------------------------------------------------------ apply_controls orchestration
@@ -2515,6 +2575,69 @@ class TestApplyControls:
         assert len(e.state["positions"]) == 1
 
 
+# ------------------------------------------------------------------ report (dashboard rendering)
+class TestReport:
+    """"Latest scan" on the dashboard always rendered empty. Root cause:
+    opportunities were computed fresh in main.run_cycle()'s local scope
+    and handed to write_dashboard() as a plain function argument -- never
+    written into `state` itself. That's fine for the SAME process's own
+    call (main.py's public GitHub Pages dashboard), but control_server.py's
+    /dashboard route runs as a SEPARATE process (run_forever.py's live/
+    dry-run engine writes state.json; the Flask app reads a fresh copy of
+    it later) that had no way to see them -- a state-persistence gap, not
+    a rendering bug. These test render_dashboard_html() directly, in
+    isolation; TestControlServer below covers the same fix through the
+    real Flask route."""
+
+    def test_falls_back_to_state_last_scan_opportunities_when_none_given(self):
+        from polyedge.report import render_dashboard_html
+        state = {"cash": 100.0, "starting_bankroll": 100.0, "positions": [],
+                 "closed": [], "history": [], "trades": [],
+                 "last_scan_opportunities": [
+                     {"strategy": "CONVERGE", "title": "Converge: real one",
+                      "edge": 0.04, "guaranteed": False, "note": ""}]}
+        html = render_dashboard_html(state)   # opportunities= not passed at all
+        assert "Converge: real one" in html
+
+    def test_missing_key_defaults_to_empty_not_a_crash(self):
+        """Pre-fix state.json (or state from any caller that never sets
+        this key) must not raise a KeyError."""
+        from polyedge.report import render_dashboard_html
+        state = {"cash": 100.0, "starting_bankroll": 100.0, "positions": [],
+                 "closed": [], "history": [], "trades": []}   # no key at all
+        html = render_dashboard_html(state)
+        assert "const OPPS  = []" in html
+
+    def test_explicit_empty_list_overrides_state_data(self):
+        """Maintenance scripts (cleanup_phantom_arbs.py, cancel_stale_locks.py)
+        deliberately pass opportunities=[] since no scan ran -- the OPPS
+        table must stay empty even though stale data sits in state from a
+        much earlier real scan (state itself is still shown verbatim
+        elsewhere on the page -- that's unrelated to what's being checked
+        here, so this asserts on the OPPS embed specifically, not a blanket
+        full-page text search)."""
+        from polyedge.report import render_dashboard_html
+        state = {"cash": 100.0, "starting_bankroll": 100.0, "positions": [],
+                 "closed": [], "history": [], "trades": [],
+                 "last_scan_opportunities": [
+                     {"strategy": "CONVERGE", "title": "Converge: stale one",
+                      "edge": 0.04, "guaranteed": False, "note": ""}]}
+        html = render_dashboard_html(state, opportunities=[])
+        assert "const OPPS  = []" in html
+        assert "const OPPS  = []" in html
+
+    def test_explicit_opportunities_still_used_when_given(self):
+        """The original direct-pass-through path (main.py used to call it
+        this way) must keep working."""
+        from polyedge.report import render_dashboard_html
+        state = {"cash": 100.0, "starting_bankroll": 100.0, "positions": [],
+                 "closed": [], "history": [], "trades": []}
+        opps = [{"strategy": "LONGSHOT", "title": "Fade: explicit one",
+                "edge": 0.10, "guaranteed": False, "note": ""}]
+        html = render_dashboard_html(state, opportunities=opps)
+        assert "Fade: explicit one" in html
+
+
 # ------------------------------------------------------------------ control_server (Flask)
 class TestControlServer:
     def _make_client(self, tmp_path, monkeypatch, token="secret-token"):
@@ -2626,6 +2749,50 @@ class TestControlServer:
         assert r.status_code == 200 and r.get_json()["stop_loss_pct"] == {"CV-A": 20.0}
         r2 = c.post("/api/stop_loss", json={"key": "CV-A", "pct": 0}, headers=h)
         assert r2.get_json()["stop_loss_pct"] == {}
+
+    def test_default_stop_loss_route(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        r = c.post("/api/default_stop_loss", json={"pct": 45}, headers=h)
+        assert r.status_code == 200 and r.get_json()["default_stop_loss_pct"] == 45.0
+        r2 = c.get("/api/state", headers=h)
+        assert r2.get_json()["controls"]["default_stop_loss_pct"] == 45.0
+        assert r2.get_json()["effective_default_stop_loss_pct"] == 45.0
+
+    def test_effective_default_stop_loss_falls_back_to_config_when_unset(self, tmp_path, monkeypatch):
+        c = self._make_client(tmp_path, monkeypatch)
+        h = {"X-Control-Token": "secret-token"}
+        r = c.get("/api/state", headers=h)
+        assert r.get_json()["controls"]["default_stop_loss_pct"] is None
+        assert r.get_json()["effective_default_stop_loss_pct"] == config.LIVE_DEFAULT_STOP_LOSS_PCT
+
+    # ---- "Latest scan" always rendering empty: opportunities were computed
+    # fresh in main.run_cycle()'s local scope and handed straight to
+    # write_dashboard() as a function argument -- never persisted to
+    # state.json -- so this route (a SEPARATE process from run_forever.py)
+    # had no way to ever see them, structurally, regardless of whether a
+    # real scan had actually found candidates. Confirms the actual fix:
+    # state.json is now the single source of truth this route reads.
+    def test_dashboard_shows_latest_scan_opportunities_regression(self, tmp_path, monkeypatch):
+        e = PaperEngine(state_dir=str(tmp_path / "state"))
+        e.state["last_scan_opportunities"] = [{
+            "strategy": "CONVERGE", "title": "Converge: a real candidate",
+            "edge": 0.04, "guaranteed": False, "note": "96c, 4d to resolution",
+        }]
+        e.save()
+        c = self._make_client(tmp_path, monkeypatch)
+        r = c.get("/dashboard?token=secret-token")
+        assert r.status_code == 200
+        assert "Converge: a real candidate" in r.get_data(as_text=True)
+
+    def test_dashboard_latest_scan_empty_when_state_has_no_key_yet(self, tmp_path, monkeypatch):
+        """Pre-fix state.json (or a freshly-initialized one) has no
+        last_scan_opportunities key at all -- must default to empty, not
+        raise a KeyError."""
+        self._seed_position(tmp_path)
+        c = self._make_client(tmp_path, monkeypatch)
+        r = c.get("/dashboard?token=secret-token")
+        assert r.status_code == 200
 
 
 # ------------------------------------------------------------------ reconcile
