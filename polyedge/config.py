@@ -138,17 +138,15 @@ LS_MAX_OPEN = _i("POLYEDGE_LS_MAX_OPEN", 3)          # reduced from 10 — fewer
 # which strategy is trading it. Reuses convergence.is_weather_market()
 # rather than duplicating the detection logic.
 LS_EXCLUDE_WEATHER = os.environ.get("POLYEDGE_LS_EXCLUDE_WEATHER", "1") not in ("0", "false", "no")
-# REVERSAL, based on real trading results, not a theoretical reassessment:
-# LONGSHOT previously did NOT exclude sports by design -- the original
-# reasoning was that fading cheap sports outcomes was core to the
-# strategy's edge, a deliberate strategy-specific judgment call (see the
-# weather-exclusion comment above, and LIVE.md's design-rationale note,
-# for how that reasoning used to read). Actual production results
-# overrode that theory: sports-category positions account for the large
-# majority of LONGSHOT's real losses so far. Excluded now, same as
-# CONVERGE, reusing convergence.is_sports_match() rather than duplicating
-# the detection logic.
-LS_EXCLUDE_SPORTS = os.environ.get("POLYEDGE_LS_EXCLUDE_SPORTS", "1") not in ("0", "false", "no")
+# Sports exclusion for LONGSHOT was tried and then reverted -- see
+# longshot.py's module docstring for the full sports-excluded ->
+# sports-reincluded history and reasoning (the short version: the
+# original losses attributed to sports picks may have had more to do
+# with the fixed, non-adjustable stop-loss in place at the time than
+# with sports being bad candidates; now that the default stop-loss is
+# adjustable via the control panel, sports is back in scope). There is
+# deliberately no LS_EXCLUDE_SPORTS flag anymore -- CONVERGE's separate
+# CV_EXCLUDE_SPORTS below is unrelated and unaffected.
 
 # ---------------------------------------------------------------- strategy: CONVERGE (near-resolution yield)
 CV_MIN_YES_PRICE = _f("POLYEDGE_CV_MIN_YES", 0.94)
