@@ -33,22 +33,27 @@ bracket on a continuously-moving quantity, the same risk shape as the
 tweet-count bracket that caused CONVERGE's original documented loss.
 This is a real risk regardless of which strategy is trading it.
 
-LS_EXCLUDE_SPORTS (default on) excludes sports markets, reusing
-convergence.is_sports_match() -- a REVERSAL, based on real trading
-results, not a theoretical reassessment. This project originally left
-LONGSHOT deliberately NOT excluding sports: the theory was that fading
-cheap sports outcomes was core to the strategy's edge, a strategy-
-specific judgment call (unlike weather, which was never a judgment call
-either way). Actual production results overrode that theory: sports-
-category positions account for the large majority of LONGSHOT's real
-losses so far. Excluded now, same as CONVERGE.
+Sports exclusion history: this project originally left LONGSHOT
+deliberately NOT excluding sports (fading cheap sports outcomes was
+judged core to the strategy's edge). It was then EXCLUDED after
+production results showed sports-category positions accounting for
+the large majority of LONGSHOT's real losses. It has since been
+RE-INCLUDED (reverted) by the operator: after the default stop-loss
+became adjustable via the control panel (see controls.py's
+default_stop_loss_pct), the operating theory is that those losses may
+have had more to do with stop-loss timing than with sports picks
+being bad candidates -- exiting a fading position too late (or not at
+all) hurts regardless of category, and the fixed 30% stop-loss in
+place when the original losses happened wasn't tunable. Sports is back
+in scope; watch the settled-trade record now that stop-loss is
+adjustable to see whether the original theory holds.
 """
 import logging
 from typing import Dict, List
 
 from .. import config, fees
 from ..models import Leg, Market, Opportunity, OrderBook, days_to_resolution
-from .convergence import is_sports_match, is_weather_market
+from .convergence import is_weather_market
 
 log = logging.getLogger("polyedge.longshot")
 
@@ -56,7 +61,7 @@ log = logging.getLogger("polyedge.longshot")
 def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportunity]:
     out: List[Opportunity] = []
     seen_events = set()
-    skipped = {"weather": 0, "sports": 0}
+    skipped = {"weather": 0}
     for m in all_markets:
         q = m.yes_price
         if not (config.LS_MIN_YES_PRICE <= q <= config.LS_MAX_YES_PRICE):
@@ -79,17 +84,6 @@ def scan(all_markets: List[Market], books: Dict[str, OrderBook]) -> List[Opportu
         # rather than duplicating the detection logic.
         if config.LS_EXCLUDE_WEATHER and is_weather_market(m):
             skipped["weather"] += 1
-            continue
-        # REVERSAL, based on real trading results, not a theoretical
-        # reassessment: this exclusion did NOT exist originally -- LONGSHOT
-        # deliberately left sports UN-excluded, on the theory that fading
-        # cheap sports outcomes was core to the strategy's edge. Real
-        # trading results overrode that theory: sports-category positions
-        # account for the large majority of LONGSHOT's real losses so far.
-        # Excluded now, same as CONVERGE, reusing convergence.is_sports_match()
-        # rather than duplicating the detection logic.
-        if config.LS_EXCLUDE_SPORTS and is_sports_match(m):
-            skipped["sports"] += 1
             continue
 
         book = books.get(m.no_token)

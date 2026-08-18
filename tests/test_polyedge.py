@@ -600,32 +600,34 @@ class TestLongshot:
         books = {m.no_token: book(m.no_token, 0.965)}
         assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
 
-    # ---- sports exclusion -- a REVERSAL, based on real trading results,
-    # not a theoretical reassessment. LONGSHOT originally left sports
-    # deliberately UN-excluded (fading cheap sports outcomes was thought
-    # core to its edge); real production results showed sports-category
-    # positions account for the large majority of LONGSHOT's real losses,
-    # overriding that theory. Titles below are real LONGSHOT candidates
-    # that actually appeared in production logs.
-    def test_ls_exact_score_regression_real_title_now_excluded(self):
+    # ---- sports exclusion history: LONGSHOT originally left sports
+    # deliberately UN-excluded, then excluded it after real production
+    # results showed sports-category positions accounting for the large
+    # majority of LONGSHOT's real losses, then RE-INCLUDED it (reverted)
+    # once the default stop-loss became adjustable via the control panel
+    # -- see longshot.py's module docstring for the full reasoning.
+    # Sports is back in scope now; these tests confirm real LONGSHOT
+    # candidates that actually appeared in production logs are valid
+    # candidates again, so a future re-add of a sports filter can't
+    # silently reintroduce the exclusion without a test noticing.
+    def test_ls_exact_score_regression_real_title_is_valid_candidate(self):
         m = market("L1", 0.04, end=_future(5),
                    question="Exact Score: Ilves Tampere 0 - 0 UMF Stjarnan?")
         m.category = "sports soccer"   # realistic Gamma tag for a match market
         assert convergence.is_sports_match(m)   # reused from convergence.py, not duplicated
         books = {m.no_token: book(m.no_token, 0.965)}
-        assert longshot.scan([m], books) == []
+        assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
 
-    def test_ls_spread_regression_real_title_now_excluded(self):
+    def test_ls_spread_regression_real_title_is_valid_candidate(self):
         m = market("L1", 0.04, end=_future(5),
                    question="Spread: ACF Fiorentina (-2.5)")
         assert convergence.is_sports_match(m)
         books = {m.no_token: book(m.no_token, 0.965)}
-        assert longshot.scan([m], books) == []
+        assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
 
     def test_ls_non_sports_candidate_not_over_excluded(self):
         """A genuine, realistic non-sports LONGSHOT candidate -- a crypto
-        price-threshold fade -- must NOT be touched by the sports
-        exclusion, proving it doesn't over-trigger."""
+        price-threshold fade -- must still be a valid candidate too."""
         m = market("L1", 0.04, end=_future(5),
                    question="Will Bitcoin fall below $40,000 by August 1?")
         m.category = "crypto"
@@ -633,14 +635,7 @@ class TestLongshot:
         books = {m.no_token: book(m.no_token, 0.965)}
         assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
 
-    def test_ls_sports_exclusion_toggle_off(self, monkeypatch):
-        monkeypatch.setattr(config, "LS_EXCLUDE_SPORTS", False)
-        m = market("L1", 0.04, end=_future(5),
-                   question="Spread: ACF Fiorentina (-2.5)")
-        books = {m.no_token: book(m.no_token, 0.965)}
-        assert [o.key for o in longshot.scan([m], books)] == ["LS-L1"]
-
-    def test_ls_sports_and_weather_excluded_alongside_a_real_fade(self):
+    def test_ls_sports_included_weather_still_excluded_alongside_a_real_fade(self):
         sport = market("L1", 0.04, end=_future(5),
                        question="Spread: ACF Fiorentina (-2.5)")
         wx = market("L2", 0.04, end=_future(5), event="OTHER",
@@ -650,7 +645,7 @@ class TestLongshot:
                       question="Will Bitcoin fall below $40,000 by August 1?")
         books = {m.no_token: book(m.no_token, 0.965) for m in (sport, wx, real)}
         out = longshot.scan([sport, wx, real], books)
-        assert [o.key for o in out] == ["LS-L3"]
+        assert {o.key for o in out} == {"LS-L1", "LS-L3"}
 
 
 # ------------------------------------------------------------------ CONVERGE
