@@ -1,5 +1,5 @@
 {
- "cash": 649.792445,
+ "cash": 669.835272,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.95
+    "86813278383312080258752862980717165244665748824533384385163023082435842942465": 0.915
    },
-   "current_value": 9.3474,
-   "unrealized_pl": -0.023369,
-   "unrealized_pl_pct": -0.249
+   "current_value": 9.003022,
+   "unrealized_pl": -0.367747,
+   "unrealized_pl_pct": -3.924
   },
   {
    "key": "CV-3651204",
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "7083817659320132372406380617472156307813868746008982590587905019735470346617": 0.987
+    "7083817659320132372406380617472156307813868746008982590587905019735470346617": 0.979
    },
-   "current_value": 24.951239,
-   "unrealized_pl": 0.165858,
-   "unrealized_pl_pct": 0.669
+   "current_value": 24.749,
+   "unrealized_pl": -0.036381,
+   "unrealized_pl_pct": -0.147
   },
   {
    "key": "CV-3121262",
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.9275
+    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.9225
    },
-   "current_value": 24.151215,
-   "unrealized_pl": -0.690035,
-   "unrealized_pl_pct": -2.778
+   "current_value": 24.02102,
+   "unrealized_pl": -0.82023,
+   "unrealized_pl_pct": -3.302
   },
   {
    "key": "CV-3145216",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.95
+    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.86
    },
-   "current_value": 9.9337,
-   "unrealized_pl": -0.024834,
-   "unrealized_pl_pct": -0.249
+   "current_value": 8.992612,
+   "unrealized_pl": -0.965922,
+   "unrealized_pl_pct": -9.699
   },
   {
    "key": "CV-2955043",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.9845
+    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.984
    },
-   "current_value": 24.81035,
-   "unrealized_pl": -0.003271,
-   "unrealized_pl_pct": -0.013
+   "current_value": 24.79775,
+   "unrealized_pl": -0.015871,
+   "unrealized_pl_pct": -0.064
   },
   {
    "key": "LS-2674155",
@@ -177,35 +177,6 @@
    "unrealized_pl_pct": -0.104
   },
   {
-   "key": "CV-3670201",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 24?",
-   "opened": 1787036415.2735116,
-   "cost": 19.891741,
-   "edge": 0.038867,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9632,
-   "resolve_by": "2026-08-24T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 6.4d to resolution, 223% annualized net if YES, assumed true P 0.963",
-   "legs": [
-    {
-     "token_id": "108982296453488003809631225295759120962990610498897198192022450789927397193654",
-     "market_id": "3670201",
-     "label": "YES Will the price of Bitcoin be above $60,000 on August 24?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 20.662708
-    }
-   ],
-   "current_prices": {
-    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.972
-   },
-   "current_value": 20.084152,
-   "unrealized_pl": 0.192411,
-   "unrealized_pl_pct": 0.967
-  },
-  {
    "key": "CV-3145214",
    "strategy": "CONVERGE",
    "title": "Converge: Will Donald Trump publicly insult someone on August 27, 2026",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "15995879212061634690117401102406740344182259907577722804398192920069534852349": 0.95
+    "15995879212061634690117401102406740344182259907577722804398192920069534852349": 0.895
    },
-   "current_value": 24.79525,
-   "unrealized_pl": -0.061988,
-   "unrealized_pl_pct": -0.249
+   "current_value": 23.359735,
+   "unrealized_pl": -1.497503,
+   "unrealized_pl_pct": -6.024
   },
   {
    "key": "CV-2952493",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "111017679684773848521311621463277974290793976473608615820943248650946665098124": 0.984
+    "111017679684773848521311621463277974290793976473608615820943248650946665098124": 0.9835
    },
-   "current_value": 25.553019,
-   "unrealized_pl": 0.733472,
-   "unrealized_pl_pct": 2.955
+   "current_value": 25.540035,
+   "unrealized_pl": 0.720488,
+   "unrealized_pl_pct": 2.903
   },
   {
    "key": "CV-3651205",
@@ -315,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.9445
+    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.95
    },
-   "current_value": 9.86744,
-   "unrealized_pl": -0.092197,
-   "unrealized_pl_pct": -0.926
+   "current_value": 9.9249,
+   "unrealized_pl": -0.034737,
+   "unrealized_pl_pct": -0.349
   },
   {
    "key": "CV-2954946",
@@ -344,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.966
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9645
    },
-   "current_value": 24.792669,
-   "unrealized_pl": -0.083131,
-   "unrealized_pl_pct": -0.334
+   "current_value": 24.754171,
+   "unrealized_pl": -0.121629,
+   "unrealized_pl_pct": -0.489
   },
   {
    "key": "CV-3635505",
@@ -402,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.963
+    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.9635
    },
-   "current_value": 24.743473,
-   "unrealized_pl": -0.160172,
-   "unrealized_pl_pct": -0.643
+   "current_value": 24.75632,
+   "unrealized_pl": -0.147325,
+   "unrealized_pl_pct": -0.592
   },
   {
    "key": "CV-3565415",
@@ -431,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.977
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9765
    },
-   "current_value": 24.876538,
-   "unrealized_pl": -0.063811,
-   "unrealized_pl_pct": -0.256
+   "current_value": 24.863807,
+   "unrealized_pl": -0.076542,
+   "unrealized_pl_pct": -0.307
   },
   {
    "key": "CV-3700192",
@@ -18531,6 +18502,39 @@
    "payout": 25.042467,
    "pl": 0.230217,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3670201",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 24?",
+   "opened": 1787036415.2735116,
+   "cost": 19.891741,
+   "edge": 0.038867,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9632,
+   "resolve_by": "2026-08-24T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0027, 6.4d to resolution, 223% annualized net if YES, assumed true P 0.963",
+   "legs": [
+    {
+     "token_id": "108982296453488003809631225295759120962990610498897198192022450789927397193654",
+     "market_id": "3670201",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 24?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 20.662708
+    }
+   ],
+   "current_prices": {
+    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.972
+   },
+   "current_value": 20.084152,
+   "unrealized_pl": 0.192411,
+   "unrealized_pl_pct": 0.967,
+   "closed_ts": 1787088973.926554,
+   "payout": 20.042827,
+   "pl": 0.151086,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -23077,6 +23081,14 @@
    "equity": 996.9067,
    "realized_total": -2.7393,
    "open_positions": 16
+  },
+  {
+   "ts": 1787088973.9280975,
+   "cash": 669.8353,
+   "open_value": 323.9702,
+   "equity": 993.8054,
+   "realized_total": -2.5882,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -32619,31 +32631,41 @@
    "amount": 25.04,
    "pl": 0.23,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1787088973.926554,
+   "type": "CLOSE",
+   "key": "CV-3670201",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 24?",
+   "amount": 20.04,
+   "pl": 0.15,
+   "reason": "take_profit"
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3069674",
-   "title": "Fade: Will Kevin Christensen be the WY-AL Republican nominee?",
-   "edge": 0.00806866811372745,
+   "key": "LS-3380378",
+   "title": "Fade: S\u00e3o Paulo FC vs. Club Bol\u00edvar: Club Bol\u00edvar 1st Half O/U 1.5",
+   "edge": 0.004678549186529489,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "115738945513043706606736689065180664585457995185482991561168102391398601802507",
-     "market_id": "3069674",
-     "label": "NO Will Kevin Christensen be the WY-AL Republican nominee?",
+     "token_id": "52527547147587589255483780539978408965509756716786160766580637970305739231177",
+     "market_id": "3380378",
+     "label": "NO S\u00e3o Paulo FC vs. Club Bol\u00edvar: Club Bol\u00edvar 1st Half O/U 1.5",
      "side": "NO",
      "entry_price": 0.97,
      "shares": 0.0,
-     "fee_per_share": 0.001164000000000001,
+     "fee_per_share": 0.0014550000000000014,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.979,
-   "resolve_by": "2026-08-18T23:59:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.970, fee 0.0012"
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-19T00:30:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015"
   },
   {
    "strategy": "LONGSHOT",
@@ -32670,72 +32692,26 @@
   },
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3380378",
-   "title": "Fade: S\u00e3o Paulo FC vs. Club Bol\u00edvar: Club Bol\u00edvar 1st Half O/U 1.5",
-   "edge": 0.004678549186529489,
+   "key": "LS-3261010",
+   "title": "Fade: Spread: Independiente del Valle (-2.5)",
+   "edge": 0.011518629407850976,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "52527547147587589255483780539978408965509756716786160766580637970305739231177",
-     "market_id": "3380378",
-     "label": "NO S\u00e3o Paulo FC vs. Club Bol\u00edvar: Club Bol\u00edvar 1st Half O/U 1.5",
+     "token_id": "92292210914776835960816239367171813178605991777176899721309136037959132362537",
+     "market_id": "3261010",
+     "label": "NO Spread: Independiente del Valle (-2.5)",
      "side": "NO",
-     "entry_price": 0.97,
+     "entry_price": 0.96,
      "shares": 0.0,
-     "fee_per_share": 0.0014550000000000014,
+     "fee_per_share": 0.0019200000000000018,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.976,
+   "est_p_win": 0.973,
    "resolve_by": "2026-08-19T00:30:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3651205",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 22?",
-   "edge": 0.050170779768177076,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "87321875486612648798817848277485030968204771493908798299395265118234547625410",
-     "market_id": "3651205",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 22?",
-     "side": "YES",
-     "entry_price": 0.949,
-     "shares": 0.0,
-     "fee_per_share": 0.003387930000000003,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9556,
-   "resolve_by": "2026-08-22T16:00:00Z",
-   "note": "YES ask 0.949, fee 0.0034, 3.8d to resolution, 484% annualized net if YES, assumed true P 0.956"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3651161",
-   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 21?",
-   "edge": 0.0338194300518135,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "16188223819583169406282546872434601345903830321148843887288469026233387978038",
-     "market_id": "3651161",
-     "label": "YES Will the price of Bitcoin be above $62,000 on August 21?",
-     "side": "YES",
-     "entry_price": 0.965,
-     "shares": 0.0,
-     "fee_per_share": 0.002364250000000002,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9703999999999999,
-   "resolve_by": "2026-08-21T16:00:00Z",
-   "note": "YES ask 0.965, fee 0.0024, 2.8d to resolution, 443% annualized net if YES, assumed true P 0.970"
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
   },
   {
    "strategy": "CONVERGE",
@@ -32756,9 +32732,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9816,
+   "est_p_win": 0.9812000000000001,
    "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0015, 1.8d to resolution, 428% annualized net if YES, assumed true P 0.982"
+   "note": "YES ask 0.978, fee 0.0015, 1.8d to resolution, 433% annualized net if YES, assumed true P 0.981"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3651161",
+   "title": "Converge: Will the price of Bitcoin be above $62,000 on August 21?",
+   "edge": 0.03081785123966945,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "16188223819583169406282546872434601345903830321148843887288469026233387978038",
+     "market_id": "3651161",
+     "label": "YES Will the price of Bitcoin be above $62,000 on August 21?",
+     "side": "YES",
+     "entry_price": 0.968,
+     "shares": 0.0,
+     "fee_per_share": 0.002168320000000002,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9708,
+   "resolve_by": "2026-08-21T16:00:00Z",
+   "note": "YES ask 0.968, fee 0.0022, 2.8d to resolution, 407% annualized net if YES, assumed true P 0.971"
   },
   {
    "strategy": "CONVERGE",
@@ -32781,7 +32780,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.956,
    "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 4.8d to resolution, 375% annualized net if YES, assumed true P 0.956"
+   "note": "YES ask 0.950, fee 0.0033, 4.8d to resolution, 376% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
@@ -32804,7 +32803,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.964,
    "resolve_by": "2026-08-22T23:59:00Z",
-   "note": "YES ask 0.960, fee 0.0000, 4.1d to resolution, 369% annualized net if YES, assumed true P 0.964"
+   "note": "YES ask 0.960, fee 0.0000, 4.1d to resolution, 371% annualized net if YES, assumed true P 0.964"
   },
   {
    "strategy": "CONVERGE",
@@ -32827,7 +32826,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.956,
    "resolve_by": "2026-08-31T23:59:00Z",
-   "note": "YES ask 0.950, fee 0.0000, 13.1d to resolution, 146% annualized net if YES, assumed true P 0.956"
+   "note": "YES ask 0.950, fee 0.0000, 13.1d to resolution, 147% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
@@ -32848,9 +32847,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9776,
+   "est_p_win": 0.9792,
    "resolve_by": "2026-08-24T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 5.8d to resolution, 126% annualized net if YES, assumed true P 0.978"
+   "note": "YES ask 0.979, fee 0.0014, 5.8d to resolution, 126% annualized net if YES, assumed true P 0.979"
   },
   {
    "strategy": "CONVERGE",
@@ -32871,15 +32870,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.986,
+   "est_p_win": 0.9836,
    "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.986, fee 0.0010, 4.8d to resolution, 101% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.986, fee 0.0010, 4.8d to resolution, 101% annualized net if YES, assumed true P 0.984"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-2954946",
    "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.0307517440660475,
+   "edge": 0.032806163391933846,
    "guaranteed": false,
    "legs": [
     {
@@ -32887,16 +32886,16 @@
      "market_id": "2954946",
      "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
      "side": "YES",
-     "entry_price": 0.969,
+     "entry_price": 0.967,
      "shares": 0.0,
-     "fee_per_share": 0.0012015600000000013,
+     "fee_per_share": 0.001276440000000001,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9728,
+   "est_p_win": 0.9716,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.969, fee 0.0012, 12.1d to resolution, 93% annualized net if YES, assumed true P 0.973"
+   "note": "YES ask 0.967, fee 0.0013, 12.1d to resolution, 99% annualized net if YES, assumed true P 0.972"
   },
   {
    "strategy": "CONVERGE",
@@ -32946,32 +32945,9 @@
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-2955043",
-   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
-   "edge": 0.013638782961460458,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "112835487580149024170516422015943749261671957810997115126758688640706835176306",
-     "market_id": "2955043",
-     "label": "YES Will Anthropic have the best AI model at the end of August 2026?",
-     "side": "YES",
-     "entry_price": 0.986,
-     "shares": 0.0,
-     "fee_per_share": 0.0005521600000000005,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.986, fee 0.0006, 12.1d to resolution, 41% annualized net if YES, assumed true P 0.988"
-  },
-  {
-   "strategy": "CONVERGE",
    "key": "CV-2853652",
    "title": "Converge: Will Russia capture Kostyantynivka by August 31?",
-   "edge": 0.012145748987854262,
+   "edge": 0.01729399796541202,
    "guaranteed": false,
    "legs": [
     {
@@ -32979,16 +32955,39 @@
      "market_id": "2853652",
      "label": "YES Will Russia capture Kostyantynivka by August 31?",
      "side": "YES",
-     "entry_price": 0.988,
+     "entry_price": 0.983,
      "shares": 0.0,
      "fee_per_share": 0.0,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9876,
+   "est_p_win": 0.982,
    "resolve_by": "2026-08-31T12:00:00Z",
-   "note": "YES ask 0.988, fee 0.0000, 12.6d to resolution, 35% annualized net if YES, assumed true P 0.988"
+   "note": "YES ask 0.983, fee 0.0000, 12.6d to resolution, 50% annualized net if YES, assumed true P 0.982"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-2955043",
+   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
+   "edge": 0.01562016260162603,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "112835487580149024170516422015943749261671957810997115126758688640706835176306",
+     "market_id": "2955043",
+     "label": "YES Will Anthropic have the best AI model at the end of August 2026?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 0.0,
+     "fee_per_share": 0.0006297600000000006,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9872,
+   "resolve_by": "2026-08-31T00:00:00Z",
+   "note": "YES ask 0.984, fee 0.0006, 12.1d to resolution, 47% annualized net if YES, assumed true P 0.987"
   }
  ]
 }
