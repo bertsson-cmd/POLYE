@@ -1,5 +1,5 @@
 {
- "cash": 730.048166,
+ "cash": 705.234545,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "15768454938835109453170507320061782116509677127457387299988068900261245833755": 0.935
+    "15768454938835109453170507320061782116509677127457387299988068900261245833755": 0.93
    },
-   "current_value": 24.531316,
-   "unrealized_pl": -0.190374,
-   "unrealized_pl_pct": -0.77
+   "current_value": 24.400133,
+   "unrealized_pl": -0.321557,
+   "unrealized_pl_pct": -1.301
   },
   {
    "key": "CV-3651171",
@@ -199,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.9585
+    "9717398019196916934923876739128103026157843167026761485717303310799311452906": 0.9555
    },
-   "current_value": 24.67838,
-   "unrealized_pl": -0.107828,
-   "unrealized_pl_pct": -0.435
+   "current_value": 24.601139,
+   "unrealized_pl": -0.185069,
+   "unrealized_pl_pct": -0.747
   },
   {
    "key": "CV-3651160",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "83294480382608992359502145878085659369856484639513532410154459148838228153500": 0.9805
+    "83294480382608992359502145878085659369856484639513532410154459148838228153500": 0.984
    },
-   "current_value": 24.76863,
-   "unrealized_pl": -0.022028,
-   "unrealized_pl_pct": -0.089
+   "current_value": 24.857044,
+   "unrealized_pl": 0.066386,
+   "unrealized_pl_pct": 0.268
   },
   {
    "key": "CV-3651204",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9425
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9455
    },
-   "current_value": 21.131624,
-   "unrealized_pl": -0.766932,
-   "unrealized_pl_pct": -3.502
+   "current_value": 21.198886,
+   "unrealized_pl": -0.69967,
+   "unrealized_pl_pct": -3.195
   },
   {
    "key": "CV-3651161",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.96
+    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.9615
    },
-   "current_value": 24.997484,
-   "unrealized_pl": 0.156234,
-   "unrealized_pl_pct": 0.629
+   "current_value": 25.036543,
+   "unrealized_pl": 0.195293,
+   "unrealized_pl_pct": 0.786
   },
   {
    "key": "CV-3541752",
@@ -373,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "33147262383755281169613796284524792937651620672807387828588855382539033471898": 0.9685
+    "33147262383755281169613796284524792937651620672807387828588855382539033471898": 0.9695
    },
-   "current_value": 24.418245,
-   "unrealized_pl": -0.442081,
-   "unrealized_pl_pct": -1.778
+   "current_value": 24.443458,
+   "unrealized_pl": -0.416868,
+   "unrealized_pl_pct": -1.677
   },
   {
    "key": "CV-3145216",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.935
+    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.925
    },
-   "current_value": 9.776852,
-   "unrealized_pl": -0.181682,
-   "unrealized_pl_pct": -1.824
+   "current_value": 9.672287,
+   "unrealized_pl": -0.286247,
+   "unrealized_pl_pct": -2.874
   },
   {
    "key": "CV-3541712",
@@ -431,11 +431,40 @@
     }
    ],
    "current_prices": {
-    "65679891071670910257908887073080190190488648468960152613547701480538225145664": 0.982
+    "65679891071670910257908887073080190190488648468960152613547701480538225145664": 0.984
    },
-   "current_value": 24.712254,
-   "unrealized_pl": -0.101523,
-   "unrealized_pl_pct": -0.409
+   "current_value": 24.762584,
+   "unrealized_pl": -0.051193,
+   "unrealized_pl_pct": -0.206
+  },
+  {
+   "key": "CV-2955043",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
+   "opened": 1787027773.654024,
+   "cost": 24.813621,
+   "edge": 0.01562,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.986,
+   "resolve_by": "2026-08-31T00:00:00Z",
+   "note": "YES ask 0.984, fee 0.0006, 12.8d to resolution, 45% annualized net if YES, assumed true P 0.986",
+   "legs": [
+    {
+     "token_id": "112835487580149024170516422015943749261671957810997115126758688640706835176306",
+     "market_id": "2955043",
+     "label": "YES Will Anthropic have the best AI model at the end of August 2026?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 25.200965
+    }
+   ],
+   "current_prices": {
+    "112835487580149024170516422015943749261671957810997115126758688640706835176306": 0.9825
+   },
+   "current_value": 24.759948,
+   "unrealized_pl": -0.053673,
+   "unrealized_pl_pct": -0.216
   }
  ],
  "closed": [
@@ -22313,6 +22342,14 @@
    "equity": 991.9106,
    "realized_total": -5.4384,
    "open_positions": 15
+  },
+  {
+   "ts": 1787027773.953864,
+   "cash": 705.2345,
+   "open_value": 286.5796,
+   "equity": 991.8142,
+   "realized_total": -5.4384,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -31561,6 +31598,15 @@
    "amount": 24.9,
    "pl": 0.25,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1787027773.654024,
+   "type": "OPEN",
+   "key": "CV-2955043",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
+   "amount": 24.81,
+   "pl": null
   }
  ]
 }
