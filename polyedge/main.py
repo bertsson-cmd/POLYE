@@ -207,8 +207,15 @@ def run_cycle(client: PolymarketClient = None, engine: PaperEngine = None) -> di
     settled = engine.resolve(outcomes) if outcomes else []
 
     # 8) persist + report
+    # Stashed on state itself (not just handed to write_dashboard() as a
+    # local function argument) so any OTHER process reading state.json --
+    # control_server.py's /dashboard route, running separately from
+    # run_forever.py -- can see the latest scan's candidates too. See
+    # report.render_dashboard_html()'s docstring for the full "Latest
+    # scan always empty" root-cause writeup.
+    engine.state["last_scan_opportunities"] = [o.to_dict() for o in opps]
     engine.save()
-    write_dashboard(engine.state, opportunities=[o.to_dict() for o in opps])
+    write_dashboard(engine.state)
     return {"markets": len(markets), "opportunities": len(opps),
             "opened": len(opened), "take_profit_closed": len(tp_closed),
             "settled": len(settled), "stats": engine.stats()}
