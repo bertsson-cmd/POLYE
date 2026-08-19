@@ -23231,6 +23231,14 @@
    "equity": 995.505,
    "realized_total": -2.4529,
    "open_positions": 16
+  },
+  {
+   "ts": 1787115428.2892346,
+   "cash": 672.964,
+   "open_value": 322.541,
+   "equity": 995.505,
+   "realized_total": -2.4529,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -32818,7 +32826,7 @@
    "strategy": "LONGSHOT",
    "key": "LS-3592396",
    "title": "Fade: Will AL Ahly SC (EGY) win on 2026-08-19?",
-   "edge": 0.008573702408605964,
+   "edge": 0.0016752349256028893,
    "guaranteed": false,
    "legs": [
     {
@@ -32826,22 +32834,22 @@
      "market_id": "3592396",
      "label": "NO Will AL Ahly SC (EGY) win on 2026-08-19?",
      "side": "NO",
-     "entry_price": 0.967,
+     "entry_price": 0.974,
      "shares": 0.0,
-     "fee_per_share": 0.0015955500000000016,
+     "fee_per_share": 0.0012662000000000012,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.9769,
    "resolve_by": "2026-08-19T18:00:00Z",
-   "note": "YES at 0.038, assumed true 0.023, NO ask 0.967, fee 0.0016"
+   "note": "YES at 0.038, assumed true 0.023, NO ask 0.974, fee 0.0013"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3651161",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 21?",
-   "edge": 0.0388666666666667,
+   "edge": 0.03988286757038585,
    "guaranteed": false,
    "legs": [
     {
@@ -32849,16 +32857,16 @@
      "market_id": "3651161",
      "label": "YES Will the price of Bitcoin be above $62,000 on August 21?",
      "side": "YES",
-     "entry_price": 0.96,
+     "entry_price": 0.959,
      "shares": 0.0,
-     "fee_per_share": 0.002688000000000003,
+     "fee_per_share": 0.002752330000000003,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.9656,
    "resolve_by": "2026-08-21T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 2.5d to resolution, 570% annualized net if YES, assumed true P 0.966"
+   "note": "YES ask 0.959, fee 0.0028, 2.5d to resolution, 592% annualized net if YES, assumed true P 0.966"
   },
   {
    "strategy": "CONVERGE",
@@ -32881,7 +32889,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.982,
    "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0015, 1.5d to resolution, 514% annualized net if YES, assumed true P 0.982"
+   "note": "YES ask 0.978, fee 0.0015, 1.5d to resolution, 524% annualized net if YES, assumed true P 0.982"
   },
   {
    "strategy": "CONVERGE",
@@ -32904,13 +32912,13 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9692000000000001,
    "resolve_by": "2026-08-22T23:59:00Z",
-   "note": "YES ask 0.962, fee 0.0000, 3.8d to resolution, 377% annualized net if YES, assumed true P 0.969"
+   "note": "YES ask 0.962, fee 0.0000, 3.8d to resolution, 380% annualized net if YES, assumed true P 0.969"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3635505",
    "title": "Converge: Will the price of Ethereum be above $1,800 on August 23?",
-   "edge": 0.0388666666666667,
+   "edge": 0.02882783505154642,
    "guaranteed": false,
    "legs": [
     {
@@ -32918,16 +32926,16 @@
      "market_id": "3635505",
      "label": "YES Will the price of Ethereum be above $1,800 on August 23?",
      "side": "YES",
-     "entry_price": 0.96,
+     "entry_price": 0.97,
      "shares": 0.0,
-     "fee_per_share": 0.002688000000000003,
+     "fee_per_share": 0.002037000000000002,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.956,
    "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 4.5d to resolution, 316% annualized net if YES, assumed true P 0.956"
+   "note": "YES ask 0.970, fee 0.0020, 4.5d to resolution, 236% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
@@ -32996,7 +33004,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9783999999999999,
    "resolve_by": "2026-08-24T16:00:00Z",
-   "note": "YES ask 0.983, fee 0.0012, 5.5d to resolution, 107% annualized net if YES, assumed true P 0.978"
+   "note": "YES ask 0.983, fee 0.0012, 5.5d to resolution, 108% annualized net if YES, assumed true P 0.978"
   },
   {
    "strategy": "CONVERGE",
@@ -33019,13 +33027,13 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9844,
    "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 4.5d to resolution, 76% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.990, fee 0.0007, 4.5d to resolution, 77% annualized net if YES, assumed true P 0.984"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-2954946",
    "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.021614887525562395,
+   "edge": 0.02363016393442625,
    "guaranteed": false,
    "legs": [
     {
@@ -33033,16 +33041,16 @@
      "market_id": "2954946",
      "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
      "side": "YES",
-     "entry_price": 0.978,
+     "entry_price": 0.976,
      "shares": 0.0,
-     "fee_per_share": 0.0008606400000000008,
+     "fee_per_share": 0.0009369600000000008,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.9743999999999999,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.978, fee 0.0009, 11.8d to resolution, 67% annualized net if YES, assumed true P 0.974"
+   "note": "YES ask 0.976, fee 0.0009, 11.8d to resolution, 73% annualized net if YES, assumed true P 0.974"
   },
   {
    "strategy": "CONVERGE",
@@ -33065,7 +33073,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.986,
    "resolve_by": "2026-08-24T16:00:00Z",
-   "note": "YES ask 0.994, fee 0.0004, 5.5d to resolution, 37% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.994, fee 0.0004, 5.5d to resolution, 38% annualized net if YES, assumed true P 0.986"
   }
  ]
 }
