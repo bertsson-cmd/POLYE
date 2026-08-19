@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.917
+    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.9175
    },
-   "current_value": 23.877805,
-   "unrealized_pl": -0.963445,
-   "unrealized_pl_pct": -3.878
+   "current_value": 23.890825,
+   "unrealized_pl": -0.950425,
+   "unrealized_pl_pct": -3.826
   },
   {
    "key": "CV-3145216",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.9415
+    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.942
    },
-   "current_value": 9.836098,
-   "unrealized_pl": -0.123539,
-   "unrealized_pl_pct": -1.24
+   "current_value": 9.841322,
+   "unrealized_pl": -0.118315,
+   "unrealized_pl_pct": -1.188
   },
   {
    "key": "CV-2954946",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.975
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9795
    },
-   "current_value": 24.825614,
-   "unrealized_pl": -0.114735,
-   "unrealized_pl_pct": -0.46
+   "current_value": 24.940194,
+   "unrealized_pl": -0.000155,
+   "unrealized_pl_pct": -0.001
   },
   {
    "key": "CV-3670201",
@@ -373,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.9815
+    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.971
    },
-   "current_value": 11.861283,
-   "unrealized_pl": 0.01282,
-   "unrealized_pl_pct": 0.108
+   "current_value": 11.734392,
+   "unrealized_pl": -0.114071,
+   "unrealized_pl_pct": -0.963
   },
   {
    "key": "CV-3635544",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "14062381427778100742221038298718893539689084181095067260094353538894000997848": 0.945
+    "14062381427778100742221038298718893539689084181095067260094353538894000997848": 0.95
    },
-   "current_value": 9.8847,
-   "unrealized_pl": -0.08708,
-   "unrealized_pl_pct": -0.873
+   "current_value": 9.937,
+   "unrealized_pl": -0.03478,
+   "unrealized_pl_pct": -0.349
   },
   {
    "key": "CV-3700192",
@@ -23377,6 +23377,14 @@
    "equity": 997.578,
    "realized_total": -1.92,
    "open_positions": 16
+  },
+  {
+   "ts": 1787137880.4489653,
+   "cash": 688.982,
+   "open_value": 308.6543,
+   "equity": 997.6363,
+   "realized_total": -1.92,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -32999,6 +33007,190 @@
  ],
  "last_scan_opportunities": [
   {
+   "strategy": "LONGSHOT",
+   "key": "LS-3694304",
+   "title": "Fade: Exact Score: PFK Mash AL Mubarek 0 - 3 FC Andijon?",
+   "edge": 0.004678549186529489,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "37103112965525013426494035033233820284668667589129304960532066515331374095228",
+     "market_id": "3694304",
+     "label": "NO Exact Score: PFK Mash AL Mubarek 0 - 3 FC Andijon?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 0.0,
+     "fee_per_share": 0.0014550000000000014,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-19T15:00:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3592396",
+   "title": "Fade: Will AL Ahly SC (EGY) win on 2026-08-19?",
+   "edge": 0.015573020625415861,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "56897098197763244318317886667134972288231104170555555834653192690309093373182",
+     "market_id": "3592396",
+     "label": "NO Will AL Ahly SC (EGY) win on 2026-08-19?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 0.0,
+     "fee_per_share": 0.0019200000000000018,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9769,
+   "resolve_by": "2026-08-19T18:00:00Z",
+   "note": "YES at 0.038, assumed true 0.023, NO ask 0.960, fee 0.0019"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3386393",
+   "title": "Fade: Exact Score: Celtic FC 0 - 0 LASK Linz?",
+   "edge": 0.01850636566478542,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "35397947101793425224613629375022479597678898590625636947120754111048421361254",
+     "market_id": "3386393",
+     "label": "NO Exact Score: Celtic FC 0 - 0 LASK Linz?",
+     "side": "NO",
+     "entry_price": 0.95,
+     "shares": 0.0,
+     "fee_per_share": 0.002375000000000002,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.97,
+   "resolve_by": "2026-08-19T19:00:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.950, fee 0.0024"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3547061",
+   "title": "Fade: Spread: Sabah FK (-2.5)",
+   "edge": 0.009451310506507944,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "20278930397246944977346031199325201044788854283309902417197442854581405424762",
+     "market_id": "3547061",
+     "label": "NO Spread: Sabah FK (-2.5)",
+     "side": "NO",
+     "entry_price": 0.963,
+     "shares": 0.0,
+     "fee_per_share": 0.0017815500000000015,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9739,
+   "resolve_by": "2026-08-19T19:00:00Z",
+   "note": "YES at 0.043, assumed true 0.026, NO ask 0.963, fee 0.0018"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3376058",
+   "title": "Fade: Exact Score: Club Atl\u00e9tico de Madrid 0 - 1 M\u00e1laga CF?",
+   "edge": 0.010237221487356672,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "67771359105998838887916475280144603034502424806033068834879976419731351461907",
+     "market_id": "3376058",
+     "label": "NO Exact Score: Club Atl\u00e9tico de Madrid 0 - 1 M\u00e1laga CF?",
+     "side": "NO",
+     "entry_price": 0.97,
+     "shares": 0.0,
+     "fee_per_share": 0.0014550000000000014,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9814,
+   "resolve_by": "2026-08-19T19:00:00Z",
+   "note": "YES at 0.031, assumed true 0.019, NO ask 0.970, fee 0.0015"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3376535",
+   "title": "Fade: Club Atl\u00e9tico de Madrid vs. M\u00e1laga CF: M\u00e1laga CF O/U 2.5",
+   "edge": 0.0032501716262245245,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "27666105680511002534446215574371133537604982750949244379113306365652667200938",
+     "market_id": "3376535",
+     "label": "NO Club Atl\u00e9tico de Madrid vs. M\u00e1laga CF: M\u00e1laga CF O/U 2.5",
+     "side": "NO",
+     "entry_price": 0.968,
+     "shares": 0.0,
+     "fee_per_share": 0.0015488000000000014,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9727,
+   "resolve_by": "2026-08-19T19:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.968, fee 0.0015"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3385741",
+   "title": "Fade: Spread: New York City FC (-2.5)",
+   "edge": 0.015861339363024873,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "6006987473257767967643503385360549207601585537269200897285365307016860218444",
+     "market_id": "3385741",
+     "label": "NO Spread: New York City FC (-2.5)",
+     "side": "NO",
+     "entry_price": 0.956,
+     "shares": 0.0,
+     "fee_per_share": 0.002103200000000002,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9733,
+   "resolve_by": "2026-08-19T23:30:00Z",
+   "note": "YES at 0.044, assumed true 0.027, NO ask 0.956, fee 0.0021"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3382565",
+   "title": "Fade: Exact Score: Minnesota United FC 0 - 0 Atlanta United FC?",
+   "edge": 0.012348007687338495,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "87341796016674092637984276276347206202889160929736853221557015167805710813582",
+     "market_id": "3382565",
+     "label": "NO Exact Score: Minnesota United FC 0 - 0 Atlanta United FC?",
+     "side": "NO",
+     "entry_price": 0.957,
+     "shares": 0.0,
+     "fee_per_share": 0.002057550000000002,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9709,
+   "resolve_by": "2026-08-20T00:30:00Z",
+   "note": "YES at 0.049, assumed true 0.029, NO ask 0.957, fee 0.0021"
+  },
+  {
    "strategy": "CONVERGE",
    "key": "CV-3700192",
    "title": "Converge: US ceasefire against Iran continues through August 22?",
@@ -33019,7 +33211,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9724,
    "resolve_by": "2026-08-22T23:59:00Z",
-   "note": "YES ask 0.966, fee 0.0000, 3.5d to resolution, 362% annualized net if YES, assumed true P 0.972"
+   "note": "YES ask 0.966, fee 0.0000, 3.5d to resolution, 364% annualized net if YES, assumed true P 0.972"
   },
   {
    "strategy": "CONVERGE",
@@ -33048,7 +33240,7 @@
    "strategy": "CONVERGE",
    "key": "CV-2954946",
    "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.021614887525562395,
+   "edge": 0.024641025641025664,
    "guaranteed": false,
    "legs": [
     {
@@ -33056,16 +33248,39 @@
      "market_id": "2954946",
      "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
      "side": "YES",
-     "entry_price": 0.978,
+     "entry_price": 0.975,
      "shares": 0.0,
-     "fee_per_share": 0.0008606400000000008,
+     "fee_per_share": 0.0009750000000000008,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.9768,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.978, fee 0.0009, 11.6d to resolution, 68% annualized net if YES, assumed true P 0.977"
+   "note": "YES ask 0.975, fee 0.0010, 11.5d to resolution, 78% annualized net if YES, assumed true P 0.977"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3701196",
+   "title": "Converge: Will the price of Ethereum be above $1,700 on August 25?",
+   "edge": 0.00940101010101011,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "81585568227843203978782486953223432030137376398761582168487844003374618037473",
+     "market_id": "3701196",
+     "label": "YES Will the price of Ethereum be above $1,700 on August 25?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 0.0,
+     "fee_per_share": 0.0006930000000000006,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9823999999999999,
+   "resolve_by": "2026-08-25T16:00:00Z",
+   "note": "YES ask 0.990, fee 0.0007, 6.2d to resolution, 55% annualized net if YES, assumed true P 0.982"
   }
  ]
 }
