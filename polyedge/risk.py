@@ -41,13 +41,20 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     strategy_exposure / total_exposure = current open cost basis.
     Mutates nothing; returns new sized list (skips zero-size results).
 
-    rejected_cooldown: optional {token_id: time.time() of its most recent
-    BUY-leg rejection}, as tracked by LiveEngine.rejected_cooldown (see
-    live.py for why that's in-memory only, not persisted). Any candidate
-    with a leg whose token was rejected within POLYEDGE_REJECTED_COOLDOWN_MIN
-    minutes is skipped entirely -- BEFORE the cap/Kelly sizing below, so a
-    dead candidate never consumes cash/exposure/LONGSHOT-slot budget that a
-    real candidate further down the sorted list could have used instead.
+    rejected_cooldown: optional {token_id: <timestamp the cooldown
+    EXPIRES>}, as tracked by LiveEngine.rejected_cooldown (see live.py for
+    why that's in-memory only, not persisted, and why it stores an expiry
+    rather than a rejection time -- the short version: a single dict/value
+    per token needs to support two different blacklist DURATIONS -- an
+    ordinary rejection's POLYEDGE_REJECTED_COOLDOWN_MIN, or the much
+    longer POLYEDGE_DEAD_MARKET_COOLDOWN_MIN for a rejection confirmed to
+    mean "no orderbook exists" -- and storing the already-computed expiry
+    is what lets one dict do that without a parallel structure or this
+    function needing to know which duration applies to which entry). Any
+    candidate with a leg whose expiry is still in the future is skipped
+    entirely -- BEFORE the cap/Kelly sizing below, so a dead candidate
+    never consumes cash/exposure/LONGSHOT-slot budget that a real
+    candidate further down the sorted list could have used instead.
     Confirmed in production: without this, a single token whose FOK order
     kept getting rejected scored as the best candidate cycle after cycle
     for over an hour, since nothing about a rejection changes its edge/
@@ -79,7 +86,6 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     open_keys = open_keys or set()
     rejected_cooldown = rejected_cooldown or {}
     books = books or {}
-    cooldown_cutoff = time.time() - config.LIVE_REJECTED_COOLDOWN_MIN * 60.0
     sized: List[Opportunity] = []
     reasons = {"sized": 0, "in_cooldown": 0, "already_held": 0, "ls_slots_full": 0,
                "caps_exhausted": 0, "kelly_zero": 0, "below_min_ticket": 0,
@@ -98,7 +104,7 @@ def size_opportunities(opps: List[Opportunity], bankroll: float, cash: float,
     for opp in sorted(opps, key=lambda o: (not o.guaranteed,
                                            days_to_resolution(o.resolve_by),
                                            -o.edge)):
-        if any(rejected_cooldown.get(leg.token_id, 0.0) > cooldown_cutoff
+        if any(rejected_cooldown.get(leg.token_id, 0.0) > time.time()
               for leg in opp.legs):
             reasons["in_cooldown"] += 1
             continue                      # recently rejected -- give a real candidate the slot
