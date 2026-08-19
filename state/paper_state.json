@@ -1,5 +1,5 @@
 {
- "cash": 698.232961,
+ "cash": 673.283461,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.932
+    "41048648785539586541944394584390493025778662263709403417581187578616777468679": 0.9275
    },
-   "current_value": 24.268391,
-   "unrealized_pl": -0.572859,
-   "unrealized_pl_pct": -2.306
+   "current_value": 24.151215,
+   "unrealized_pl": -0.690035,
+   "unrealized_pl_pct": -2.778
   },
   {
    "key": "CV-3145216",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.9385
+    "87321875486612648798817848277485030968204771493908798299395265118234547625410": 0.9295
    },
-   "current_value": 9.804756,
-   "unrealized_pl": -0.154881,
-   "unrealized_pl_pct": -1.555
+   "current_value": 9.710731,
+   "unrealized_pl": -0.248906,
+   "unrealized_pl_pct": -2.499
   },
   {
    "key": "CV-2954946",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.968
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9705
    },
-   "current_value": 24.844,
-   "unrealized_pl": -0.0318,
-   "unrealized_pl_pct": -0.128
+   "current_value": 24.908163,
+   "unrealized_pl": 0.032363,
+   "unrealized_pl_pct": 0.13
   },
   {
    "key": "CV-3635505",
@@ -315,11 +315,11 @@
     }
    ],
    "current_prices": {
-    "54310543226558004232195707041568071558876038809213985464251397986148353659511": 0.955
+    "54310543226558004232195707041568071558876038809213985464251397986148353659511": 0.945
    },
-   "current_value": 24.982298,
-   "unrealized_pl": 0.043818,
-   "unrealized_pl_pct": 0.176
+   "current_value": 24.720703,
+   "unrealized_pl": -0.217777,
+   "unrealized_pl_pct": -0.873
   },
   {
    "key": "CV-3651161",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.9585
+    "16188223819583169406282546872434601345903830321148843887288469026233387978038": 0.958
    },
-   "current_value": 24.627849,
-   "unrealized_pl": -0.275796,
-   "unrealized_pl_pct": -1.107
+   "current_value": 24.615002,
+   "unrealized_pl": -0.288643,
+   "unrealized_pl_pct": -1.159
   },
   {
    "key": "CV-3565415",
@@ -373,11 +373,11 @@
     }
    ],
    "current_prices": {
-    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9785
+    "94614398813432851798269018361285084876491475849461170982859277819931464993110": 0.9765
    },
-   "current_value": 24.914731,
-   "unrealized_pl": -0.025618,
-   "unrealized_pl_pct": -0.103
+   "current_value": 24.863807,
+   "unrealized_pl": -0.076542,
+   "unrealized_pl_pct": -0.307
   },
   {
    "key": "CV-3670201",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.9735
+    "108982296453488003809631225295759120962990610498897198192022450789927397193654": 0.9745
    },
-   "current_value": 11.764604,
-   "unrealized_pl": -0.083859,
-   "unrealized_pl_pct": -0.708
+   "current_value": 11.776689,
+   "unrealized_pl": -0.071774,
+   "unrealized_pl_pct": -0.606
   },
   {
    "key": "CV-3635544",
@@ -431,11 +431,40 @@
     }
    ],
    "current_prices": {
-    "14062381427778100742221038298718893539689084181095067260094353538894000997848": 0.925
+    "14062381427778100742221038298718893539689084181095067260094353538894000997848": 0.915
    },
-   "current_value": 9.6755,
-   "unrealized_pl": -0.29628,
-   "unrealized_pl_pct": -2.971
+   "current_value": 9.5709,
+   "unrealized_pl": -0.40088,
+   "unrealized_pl_pct": -4.02
+  },
+  {
+   "key": "CV-3700192",
+   "strategy": "CONVERGE",
+   "title": "Converge: US ceasefire against Iran continues through August 22?",
+   "opened": 1787127523.839863,
+   "cost": 24.9495,
+   "edge": 0.036269,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9716,
+   "resolve_by": "2026-08-22T23:59:00Z",
+   "note": "YES ask 0.965, fee 0.0000, 3.7d to resolution, 362% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "61878077034939631499810076559734026691334391752953602121591808349124991762735",
+     "market_id": "3700192",
+     "label": "YES US ceasefire against Iran continues through August 22?",
+     "side": "YES",
+     "entry_price": 0.965,
+     "shares": 25.854404
+    }
+   ],
+   "current_prices": {
+    "61878077034939631499810076559734026691334391752953602121591808349124991762735": 0.9645
+   },
+   "current_value": 24.936573,
+   "unrealized_pl": -0.012927,
+   "unrealized_pl_pct": -0.052
   }
  ],
  "closed": [
@@ -23275,6 +23304,14 @@
    "equity": 997.9831,
    "realized_total": -2.0859,
    "open_positions": 15
+  },
+  {
+   "ts": 1787127523.9792204,
+   "cash": 673.2835,
+   "open_value": 324.1218,
+   "equity": 997.4053,
+   "realized_total": -2.0859,
+   "open_positions": 16
   }
  ],
  "trades": [
@@ -32865,20 +32902,52 @@
    "amount": 25.27,
    "pl": 0.37,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1787127523.839863,
+   "type": "OPEN",
+   "key": "CV-3700192",
+   "strategy": "CONVERGE",
+   "title": "Converge: US ceasefire against Iran continues through August 22?",
+   "amount": 24.95,
+   "pl": null
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3694309",
-   "title": "Fade: Exact Score: PFK Mash AL Mubarek 2 - 2 FC Andijon?",
-   "edge": 0.008399866932801071,
+   "key": "LS-3650521",
+   "title": "Fade: Spread: Malaysia (-1.5)",
+   "edge": 0.004385543711386468,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "1870464354112670632913295089641173619086284574840787729342675175420518662681",
-     "market_id": "3694309",
-     "label": "NO Exact Score: PFK Mash AL Mubarek 2 - 2 FC Andijon?",
+     "token_id": "81803362357152851532824156404836366443622136718978679789136513462464499311824",
+     "market_id": "3650521",
+     "label": "NO Spread: Malaysia (-1.5)",
+     "side": "NO",
+     "entry_price": 0.975,
+     "shares": 0.0,
+     "fee_per_share": 0.001218750000000001,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9805,
+   "resolve_by": "2026-08-19T13:00:00Z",
+   "note": "YES at 0.033, assumed true 0.019, NO ask 0.975, fee 0.0012"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3592396",
+   "title": "Fade: Will AL Ahly SC (EGY) win on 2026-08-19?",
+   "edge": 0.013701763140385896,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "56897098197763244318317886667134972288231104170555555834653192690309093373182",
+     "market_id": "3592396",
+     "label": "NO Will AL Ahly SC (EGY) win on 2026-08-19?",
      "side": "NO",
      "entry_price": 0.96,
      "shares": 0.0,
@@ -32887,61 +32956,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.97,
-   "resolve_by": "2026-08-19T15:00:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3592396",
-   "title": "Fade: Will AL Ahly SC (EGY) win on 2026-08-19?",
-   "edge": 0.014395983541352362,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "56897098197763244318317886667134972288231104170555555834653192690309093373182",
-     "market_id": "3592396",
-     "label": "NO Will AL Ahly SC (EGY) win on 2026-08-19?",
-     "side": "NO",
-     "entry_price": 0.959,
-     "shares": 0.0,
-     "fee_per_share": 0.001965950000000002,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9748,
+   "est_p_win": 0.9751,
    "resolve_by": "2026-08-19T18:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.959, fee 0.0020"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3547061",
-   "title": "Fade: Spread: Sabah FK (-2.5)",
-   "edge": 0.012006501576319004,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "20278930397246944977346031199325201044788854283309902417197442854581405424762",
-     "market_id": "3547061",
-     "label": "NO Spread: Sabah FK (-2.5)",
-     "side": "NO",
-     "entry_price": 0.962,
-     "shares": 0.0,
-     "fee_per_share": 0.0018278000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9754,
-   "resolve_by": "2026-08-19T19:00:00Z",
-   "note": "YES at 0.041, assumed true 0.025, NO ask 0.962, fee 0.0018"
+   "note": "YES at 0.042, assumed true 0.025, NO ask 0.960, fee 0.0019"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3651161",
    "title": "Converge: Will the price of Bitcoin be above $62,000 on August 21?",
-   "edge": 0.0388666666666667,
+   "edge": 0.03988286757038585,
    "guaranteed": false,
    "legs": [
     {
@@ -32949,16 +32972,16 @@
      "market_id": "3651161",
      "label": "YES Will the price of Bitcoin be above $62,000 on August 21?",
      "side": "YES",
-     "entry_price": 0.96,
+     "entry_price": 0.959,
      "shares": 0.0,
-     "fee_per_share": 0.002688000000000003,
+     "fee_per_share": 0.002752330000000003,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9668,
+   "est_p_win": 0.9663999999999999,
    "resolve_by": "2026-08-21T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 2.3d to resolution, 606% annualized net if YES, assumed true P 0.967"
+   "note": "YES ask 0.959, fee 0.0028, 2.3d to resolution, 627% annualized net if YES, assumed true P 0.966"
   },
   {
    "strategy": "CONVERGE",
@@ -32979,9 +33002,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9828,
+   "est_p_win": 0.9812000000000001,
    "resolve_by": "2026-08-20T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0015, 1.3d to resolution, 570% annualized net if YES, assumed true P 0.983"
+   "note": "YES ask 0.978, fee 0.0015, 1.3d to resolution, 579% annualized net if YES, assumed true P 0.981"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3635505",
+   "title": "Converge: Will the price of Ethereum be above $1,800 on August 23?",
+   "edge": 0.04913157894736847,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "54310543226558004232195707041568071558876038809213985464251397986148353659511",
+     "market_id": "3635505",
+     "label": "YES Will the price of Ethereum be above $1,800 on August 23?",
+     "side": "YES",
+     "entry_price": 0.95,
+     "shares": 0.0,
+     "fee_per_share": 0.0033250000000000033,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.956,
+   "resolve_by": "2026-08-23T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 4.3d to resolution, 415% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
@@ -32996,38 +33042,15 @@
      "label": "YES US ceasefire against Iran continues through August 22?",
      "side": "YES",
      "entry_price": 0.965,
-     "shares": 0.0,
+     "shares": 25.854404145077723,
      "fee_per_share": 0.0,
-     "min_order_size": null
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9712,
+   "est_p_win": 0.9716,
    "resolve_by": "2026-08-22T23:59:00Z",
-   "note": "YES ask 0.965, fee 0.0000, 3.7d to resolution, 360% annualized net if YES, assumed true P 0.971"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3635505",
-   "title": "Converge: Will the price of Ethereum be above $1,800 on August 23?",
-   "edge": 0.0388666666666667,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "54310543226558004232195707041568071558876038809213985464251397986148353659511",
-     "market_id": "3635505",
-     "label": "YES Will the price of Ethereum be above $1,800 on August 23?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.002688000000000003,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-23T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 4.3d to resolution, 327% annualized net if YES, assumed true P 0.964"
+   "note": "YES ask 0.965, fee 0.0000, 3.7d to resolution, 362% annualized net if YES, assumed true P 0.972"
   },
   {
    "strategy": "CONVERGE",
@@ -33071,15 +33094,38 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9788,
+   "est_p_win": 0.9796,
    "resolve_by": "2026-08-24T16:00:00Z",
-   "note": "YES ask 0.981, fee 0.0013, 5.3d to resolution, 123% annualized net if YES, assumed true P 0.979"
+   "note": "YES ask 0.981, fee 0.0013, 5.3d to resolution, 124% annualized net if YES, assumed true P 0.980"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3635540",
+   "title": "Converge: Will the price of Bitcoin be above $60,000 on August 23?",
+   "edge": 0.008451735620585274,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "40480842643683527841750766150093997189710786647213518832108336694389314530032",
+     "market_id": "3635540",
+     "label": "YES Will the price of Bitcoin be above $60,000 on August 23?",
+     "side": "YES",
+     "entry_price": 0.991,
+     "shares": 0.0,
+     "fee_per_share": 0.0006243300000000005,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.986,
+   "resolve_by": "2026-08-23T16:00:00Z",
+   "note": "YES ask 0.991, fee 0.0006, 4.3d to resolution, 71% annualized net if YES, assumed true P 0.986"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-2954946",
    "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.027686584362139943,
+   "edge": 0.02262145342886389,
    "guaranteed": false,
    "legs": [
     {
@@ -33087,16 +33133,16 @@
      "market_id": "2954946",
      "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
      "side": "YES",
-     "entry_price": 0.972,
+     "entry_price": 0.977,
      "shares": 0.0,
-     "fee_per_share": 0.001088640000000001,
+     "fee_per_share": 0.0008988400000000007,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9743999999999999,
+   "est_p_win": 0.9764,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.972, fee 0.0011, 11.7d to resolution, 87% annualized net if YES, assumed true P 0.974"
+   "note": "YES ask 0.977, fee 0.0009, 11.7d to resolution, 71% annualized net if YES, assumed true P 0.976"
   }
  ]
 }
