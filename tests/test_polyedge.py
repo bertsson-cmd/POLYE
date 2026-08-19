@@ -1169,7 +1169,10 @@ class TestRisk:
     def test_rejected_cooldown_excludes_recently_rejected_real_token(self):
         import time
         opp = self._real_ls_opp()
-        cooldown = {self._REAL_REJECTED_TOKEN_ID: time.time()}   # just rejected
+        # rejected_cooldown stores the EXPIRY timestamp, not the rejection
+        # time -- see live.py's open_position()/risk.py's docstring
+        cooldown = {self._REAL_REJECTED_TOKEN_ID:
+                   time.time() + config.LIVE_REJECTED_COOLDOWN_MIN * 60}
         sized = size_opportunities([opp], bankroll=1000, cash=1000,
                                    strategy_exposure={}, total_exposure=0,
                                    rejected_cooldown=cooldown)
@@ -1178,8 +1181,8 @@ class TestRisk:
     def test_rejected_cooldown_expires_after_the_configured_window(self):
         import time
         opp = self._real_ls_opp()
-        stale_ts = time.time() - (config.LIVE_REJECTED_COOLDOWN_MIN + 1) * 60
-        cooldown = {self._REAL_REJECTED_TOKEN_ID: stale_ts}
+        expired_ts = time.time() - 60   # expiry already in the past
+        cooldown = {self._REAL_REJECTED_TOKEN_ID: expired_ts}
         sized = size_opportunities([opp], bankroll=1000, cash=1000,
                                    strategy_exposure={}, total_exposure=0,
                                    rejected_cooldown=cooldown)
@@ -1197,7 +1200,8 @@ class TestRisk:
         import logging as _logging
         import time
         opp = self._real_ls_opp()
-        cooldown = {self._REAL_REJECTED_TOKEN_ID: time.time()}
+        cooldown = {self._REAL_REJECTED_TOKEN_ID:
+                   time.time() + config.LIVE_REJECTED_COOLDOWN_MIN * 60}
         with caplog.at_level(_logging.INFO, logger="polyedge.risk"):
             size_opportunities([opp], bankroll=1000, cash=1000,
                                strategy_exposure={}, total_exposure=0,
@@ -1878,6 +1882,93 @@ class TestLiveEngine:
         assert e.open_position(opp) is not None
         assert e.rejected_cooldown == {}
 
+    # ---- dead-market cooldown: confirmed production root cause -- two real
+    # tokens whose markets had genuinely resolved kept getting re-selected
+    # as candidates and re-attempted over a 10+ hour stretch, each attempt
+    # failing with "No orderbook exists for the requested token id"
+    # (confirmed directly, twice, via the CLOB /book endpoint) -- and the
+    # normal 30-minute rejected_cooldown was nowhere near long enough for
+    # a market that is never coming back. Literal regression cases using
+    # the exact real token ids from that incident. `_last_rejection_no_
+    # orderbook` is set directly (rather than driving this through the
+    # real SDK) since _place_order is overridden wholesale here, same as
+    # every other test in this class -- see live.py's _is_no_orderbook_
+    # error for the message-matching logic that would set this in
+    # production, covered separately in TestLiveEnginePolymarketClientWiring.
+    _REAL_DEAD_TOKEN_IDS = (
+        "94614398813432851798269018361285084876491745849461170982859277819931464993110",
+        "61878077034939631499810076559734026691334391752935602121591808349124991762735",
+    )
+
+    @pytest.mark.parametrize("dead_token", _REAL_DEAD_TOKEN_IDS)
+    def test_no_orderbook_rejection_triggers_long_dead_market_cooldown(
+            self, tmp_path, monkeypatch, dead_token):
+        import time as _t
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+        e._last_rejection_no_orderbook = True
+        opp = self._opp("LS-DEAD", "LONGSHOT",
+                        legs=[Leg(dead_token, "m1", "NO x", "NO", 0.95, 10.0)])
+        before = _t.time()
+        assert e.open_position(opp) is None
+        assert dead_token in e.rejected_cooldown
+        expiry = e.rejected_cooldown[dead_token]
+        assert expiry == pytest.approx(
+            before + config.LIVE_DEAD_MARKET_COOLDOWN_MIN * 60, abs=5)
+
+    def test_no_orderbook_cooldown_is_longer_than_ordinary_rejection_cooldown(
+            self, tmp_path, monkeypatch):
+        """The core requirement: a confirmed dead market must be
+        blacklisted for much longer than a merely-rejected one."""
+        dead_token, ordinary_token = self._REAL_DEAD_TOKEN_IDS[0], "tok-ordinary"
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+
+        e._last_rejection_no_orderbook = True
+        e.open_position(self._opp("LS-DEAD", "LONGSHOT",
+                                  legs=[Leg(dead_token, "m1", "NO x", "NO",
+                                           0.95, 10.0)]))
+
+        e._last_rejection_no_orderbook = False
+        e.open_position(self._opp("LS-ORDINARY", "LONGSHOT",
+                                  legs=[Leg(ordinary_token, "m2", "NO y", "NO",
+                                           0.95, 10.0)]))
+
+        assert config.LIVE_DEAD_MARKET_COOLDOWN_MIN > config.LIVE_REJECTED_COOLDOWN_MIN
+        assert e.rejected_cooldown[dead_token] > e.rejected_cooldown[ordinary_token]
+
+    def test_no_orderbook_cooldown_respects_a_later_shortened_config_value(
+            self, tmp_path, monkeypatch):
+        """Task requirement: a token blacklisted under the dead-market
+        cooldown must not get permanently stuck if the config value is
+        later shortened -- the expiry is computed once, at write time,
+        from whatever the config said then, not re-derived at read time
+        from whatever the config says NOW."""
+        import time as _t
+        dead_token = self._REAL_DEAD_TOKEN_IDS[0]
+        e = self._engine(tmp_path, monkeypatch, fill=False)
+        e._last_rejection_no_orderbook = True
+        old = config.LIVE_DEAD_MARKET_COOLDOWN_MIN
+        config.LIVE_DEAD_MARKET_COOLDOWN_MIN = 1.0   # 1 minute, way shorter
+        try:
+            opp = self._opp("LS-DEAD", "LONGSHOT",
+                            legs=[Leg(dead_token, "m1", "NO x", "NO", 0.95, 10.0)])
+            assert e.open_position(opp) is None
+            expiry = e.rejected_cooldown[dead_token]
+        finally:
+            config.LIVE_DEAD_MARKET_COOLDOWN_MIN = old
+        # respects the shortened 1-minute window -- nowhere near the old 6h default
+        assert expiry <= _t.time() + 90
+
+        # and risk.py's reader correctly treats a since-expired dead-market
+        # entry as no longer in cooldown, same as any other expired entry
+        opp2 = Opportunity(strategy="LONGSHOT", key="LS-DEAD-2", title="t",
+                           edge=0.1, guaranteed=False, est_p_win=0.97,
+                           legs=[Leg(dead_token, "m1", "NO x", "NO", 0.95, 0.0)])
+        expired_cooldown = {dead_token: _t.time() - 1}
+        sized = size_opportunities([opp2], bankroll=1000, cash=1000,
+                                   strategy_exposure={}, total_exposure=0,
+                                   rejected_cooldown=expired_cooldown)
+        assert sized and sized[0].key == "LS-DEAD-2"
+
     # ---- pre-order logging: a real rejection (CV-3290748) happened at a
     # razor-thin margin risk.py's own check judged as fine, and diagnosing
     # it required a manual book-fetch-and-reason-through-it session. The
@@ -2144,6 +2235,53 @@ class TestLiveEnginePolymarketClientWiring:
         assert e._place_order("tok-1", 0.965, 10.0, "BUY") is False
         # graceful failure, not a crash -- the client is still closed
         assert calls["closed"] is True
+
+    # ---- "no orderbook exists": a DIFFERENT confirmed production failure
+    # mode from ordinary FOK rejections above -- two real tokens whose
+    # markets had genuinely resolved kept getting re-selected as
+    # candidates and re-attempted over a 10+ hour stretch, real order
+    # rejected every time with this exact message. It does not surface as
+    # its own exception type (confirmed from polymarket-client's source --
+    # see live.py's _is_no_orderbook_error), just a RequestRejectedError
+    # whose message happens to say this. Exercises the REAL _aplace_order
+    # detection path end-to-end (not a directly-set flag, unlike
+    # TestLiveEngine's cooldown-duration tests), through open_position()
+    # so the resulting cooldown is genuinely long.
+    _REAL_DEAD_TOKEN_ID = ("946143988134328517982690183612850848764917458"
+                          "49461170982859277819931464993110")
+
+    def test_no_orderbook_message_detected_and_returns_false(self, tmp_path, monkeypatch):
+        self._install_fake_sdk(
+            monkeypatch,
+            order_response=_FakeRequestRejectedError(
+                "No orderbook exists for the requested token id", status=404))
+        e = self._engine(tmp_path, monkeypatch)
+        assert e._place_order(self._REAL_DEAD_TOKEN_ID, 0.95, 10.0, "BUY") is False
+        assert e._last_rejection_no_orderbook is True
+
+    def test_no_orderbook_end_to_end_records_the_long_cooldown(self, tmp_path, monkeypatch):
+        import time as _t
+        from polyedge import live as lv
+        monkeypatch.setenv("POLYEDGE_LIVE", "1")
+        monkeypatch.setenv("POLYEDGE_DRY_RUN", "0")
+        self._install_fake_sdk(
+            monkeypatch,
+            order_response=_FakeRequestRejectedError(
+                "No orderbook exists for the requested token id", status=404))
+        e = self._engine(tmp_path, monkeypatch)
+        open(lv.ARMED_FILE, "w").write("armed")
+        e._check_pusd_balance = lambda: True
+        opp = Opportunity("LONGSHOT", "LS-DEAD", "LS-DEAD", 0.10, False,
+                          est_p_win=0.97,
+                          legs=[Leg(self._REAL_DEAD_TOKEN_ID, "m1", "NO x", "NO",
+                                   0.95, 10.0)],
+                          resolve_by="2026-07-21T00:00:00Z")
+        before = _t.time()
+        assert e.open_position(opp) is None
+        expiry = e.rejected_cooldown[self._REAL_DEAD_TOKEN_ID]
+        assert expiry == pytest.approx(
+            before + config.LIVE_DEAD_MARKET_COOLDOWN_MIN * 60, abs=5)
+        assert expiry > before + config.LIVE_REJECTED_COOLDOWN_MIN * 60
 
     def test_other_polymarket_error_subclasses_also_caught_not_just_request_rejected(
             self, tmp_path, monkeypatch):

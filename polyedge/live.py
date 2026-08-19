@@ -121,12 +121,41 @@ Things worth knowing about the polymarket-client switch specifically:
     it as the best candidate cycle after cycle -- confirmed in production:
     one token was retried for over an hour straight, starving every other
     real candidate that cycle of a sizing slot. `open_position()` now
-    records `token_id: time.time()` in `self.rejected_cooldown` on a
-    not-filled BUY leg; `risk.size_opportunities()` skips any candidate
-    with a leg still inside `POLYEDGE_REJECTED_COOLDOWN_MIN` minutes of
-    that timestamp, before it can consume a sizing slot. See
-    `rejected_cooldown`'s own comment in `__init__` for why this is
-    in-memory only, not persisted across restarts.
+    records `token_id: <cooldown expiry timestamp>` in
+    `self.rejected_cooldown` on a not-filled BUY leg;
+    `risk.size_opportunities()` skips any candidate with a leg whose
+    recorded expiry is still in the future, before it can consume a
+    sizing slot. See `rejected_cooldown`'s own comment in `__init__` for
+    why this is in-memory only, not persisted across restarts.
+  * A SEPARATE, much longer-lived case of the same problem: confirmed in
+    production against two real tokens whose markets had genuinely
+    resolved, `place_market_order()` kept getting rejected specifically
+    with "No orderbook exists for the requested token id" -- and the
+    normal 30-minute rejected_cooldown window was nowhere near long
+    enough, since a resolved market is not coming back the way a
+    temporarily-illiquid one might. Root cause, confirmed by reading
+    api.py, main.py's run_cycle(), and polymarket-client's own source:
+    Gamma's `active`/`closed` market flags (what api.py's parse_event()
+    filters candidates on) can lag actual CLOB resolution by hours, and
+    even the scan-time GET /book response -- already the freshest signal
+    available to us, and already gating candidate creation via
+    OrderBook.best_ask() being None -- can itself still be served from a
+    stale upstream cache for a while after a market's real orderbook was
+    torn down. Only the order-SUBMISSION endpoint's own live response is
+    fully authoritative, and that endpoint is a completely separate
+    request path from the GET /book scan-time fetch (confirmed from
+    polymarket-client's source: `_internal/actions/orders/place.py`
+    POSTs directly to the CLOB's order endpoint; nothing there shares a
+    request, a cache, or any other coupling with `api.py`'s `fetch_book`).
+    This means a fully reliable BEFORE-the-order-attempt fix isn't
+    achievable from our side alone -- there's no local staleness bug to
+    fix, just an upstream cache we don't control that can occasionally
+    still say "yes" when the true answer is "no". `_is_no_orderbook_error`
+    below recognizes this specific rejection (by message content -- see
+    its own docstring for why) and `open_position()` records a much
+    longer `LIVE_DEAD_MARKET_COOLDOWN_MIN` expiry for it instead of the
+    normal `LIVE_REJECTED_COOLDOWN_MIN` one, reusing the exact same
+    `rejected_cooldown` dict/mechanism rather than a parallel structure.
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
@@ -201,15 +230,47 @@ def clear_halt() -> None:
         log.warning("halt cleared manually")
 
 
+def _is_no_orderbook_error(e: BaseException) -> bool:
+    """True if `e` (a caught polymarket.errors.PolymarketError) represents
+    the CLOB's order-submission endpoint refusing an order because no
+    orderbook exists for the token at all -- confirmed real production
+    example: a BUY for a resolved market's token raised with the message
+    "No orderbook exists for the requested token id".
+
+    This does NOT surface as its own distinct exception type -- confirmed
+    from polymarket-client's actual source (`clients/_transport.py`):
+    every non-2xx response is raised as the one generic
+    `RequestRejectedError`, carrying the server's raw JSON "error" field
+    verbatim as the exception's message, with no dedicated subclass per
+    server-side reason. So this has to be recognized by message content,
+    not `isinstance`/type -- a plain, case-insensitive substring match,
+    robust to minor wording changes on Polymarket's side (a stricter exact
+    match would silently stop matching the moment their message wording
+    shifts even slightly, quietly reverting to the much-too-short default
+    cooldown for a class of failure that specifically needs the long one)."""
+    return "no orderbook exists" in str(e).lower()
+
+
 class LiveEngine(PaperEngine):
     def __init__(self, state_dir: str = None):
         super().__init__(state_dir=state_dir)
-        # token_id -> time.time() of its most recent BUY-leg rejection.
-        # Read by risk.size_opportunities() (via main.run_cycle()'s
+        # token_id -> the timestamp its cooldown EXPIRES (not the
+        # timestamp of the rejection itself). Read by
+        # risk.size_opportunities() (via main.run_cycle()'s
         # getattr(engine, "rejected_cooldown", None)) to skip re-selecting
         # a recently-dead token as the "best" candidate -- see
         # open_position()'s not-filled branch below for where this gets
-        # written, and config.LIVE_REJECTED_COOLDOWN_MIN for the window.
+        # written. Storing the expiry directly (rather than the rejection
+        # time plus a single global window read at check-time) is what
+        # lets this one dict/mechanism support two different blacklist
+        # durations: config.LIVE_REJECTED_COOLDOWN_MIN for an ordinary
+        # rejection, or the much longer config.LIVE_DEAD_MARKET_COOLDOWN_MIN
+        # when the rejection was specifically "no orderbook exists" (see
+        # _is_no_orderbook_error) -- without a parallel structure, and
+        # without shortening a later config change ever getting "stuck"
+        # applying an old duration to an already-recorded entry (the
+        # expiry was computed once, at write time, from whatever the
+        # config said then).
         #
         # Deliberately in-memory only, NOT persisted to state.json:
         # the failure this fixes (the same token re-selected and
@@ -228,6 +289,20 @@ class LiveEngine(PaperEngine):
         # purely advisory, self-expiring 30-minute-default signal --
         # disproportionate for what it buys here.
         self.rejected_cooldown: Dict[str, float] = {}
+        # Set by _aplace_order's PolymarketError handler when a rejection
+        # was specifically "no orderbook exists" for the token (see
+        # _is_no_orderbook_error) -- read right after _place_order()
+        # returns by open_position()'s not-filled branch, to pick the long
+        # LIVE_DEAD_MARKET_COOLDOWN_MIN expiry instead of the normal
+        # LIVE_REJECTED_COOLDOWN_MIN one. Reset to False at the top of
+        # every _aplace_order call so a stale True from an earlier,
+        # unrelated rejection can never leak into blacklisting a later,
+        # different failure for too long. A test that overrides
+        # _place_order wholesale (most of them do -- see that method's
+        # docstring) simply never touches this, so it stays at its default
+        # of False unless a test sets it directly to exercise the
+        # dead-market cooldown path without needing the real SDK.
+        self._last_rejection_no_orderbook = False
 
     # ------------------------------------------------------------ polymarket-client
     def _builder_api_key(self):
@@ -324,6 +399,7 @@ class LiveEngine(PaperEngine):
         rejection shows exact numbers instead of requiring another manual
         book-fetch-and-reason-through-it session like this one.
         """
+        self._last_rejection_no_orderbook = False
         from polymarket import PRODUCTION, AsyncSecureClient
         from polymarket.errors import PolymarketError
         private_key = os.environ["POLYEDGE_PRIVATE_KEY"]
@@ -348,6 +424,8 @@ class LiveEngine(PaperEngine):
                         token_id=token_id, side="SELL",
                         shares=shares, min_price=price, order_type="FOK")
             except PolymarketError as e:
+                if _is_no_orderbook_error(e):
+                    self._last_rejection_no_orderbook = True
                 log.warning("order not filled: token=%s side=%s price=%.6f "
                            "shares=%.6f amount=$%.4f rejected by SDK (%s): %s",
                            token_id, side, price, shares, amount,
@@ -585,7 +663,17 @@ class LiveEngine(PaperEngine):
                            "(price=%.6f shares=%.6f cost=$%.4f min_order_size=%s)",
                            leg.token_id, opp.key, leg.entry_price, leg.shares,
                            leg.cost, leg.min_order_size)
-                self.rejected_cooldown[leg.token_id] = time.time()
+                if self._last_rejection_no_orderbook:
+                    cooldown_min = config.LIVE_DEAD_MARKET_COOLDOWN_MIN
+                    log.warning("no orderbook exists for %s -- market is very "
+                               "likely already resolved/closed; blacklisting for "
+                               "%.0f min instead of the normal %.0f-min rejection "
+                               "cooldown (see live.py's _is_no_orderbook_error)",
+                               leg.token_id, cooldown_min,
+                               config.LIVE_REJECTED_COOLDOWN_MIN)
+                else:
+                    cooldown_min = config.LIVE_REJECTED_COOLDOWN_MIN
+                self.rejected_cooldown[leg.token_id] = time.time() + cooldown_min * 60.0
                 return None
         result = super().open_position(opp, ts=ts)
         if result:

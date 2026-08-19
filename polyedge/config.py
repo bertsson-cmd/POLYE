@@ -229,6 +229,24 @@ LIVE_DEFAULT_STOP_LOSS_PCT = _f("POLYEDGE_DEFAULT_STOP_LOSS_PCT", 30.0)
 # entirely, before it can consume a slot. Paper mode has no order-book-depth
 # concept to fail against, so this never applies there.
 LIVE_REJECTED_COOLDOWN_MIN = _f("POLYEDGE_REJECTED_COOLDOWN_MIN", 30.0)
+# A much longer blacklist window, for one SPECIFIC rejection reason: the
+# CLOB's order-submission endpoint refusing a BUY because no orderbook
+# exists for the token at all (confirmed in production against two real
+# tokens -- see live.py's _is_no_orderbook_error). That is strong evidence
+# the market has already resolved/closed -- unlike an ordinary rejection
+# (thin liquidity, a transient allowance/timing issue), which can
+# plausibly recover within LIVE_REJECTED_COOLDOWN_MIN, a resolved market
+# is not coming back in 30 minutes. Confirmed root cause: Gamma's own
+# active/closed market flags (what api.py's parse_event() filters on) can
+# lag actual CLOB resolution by hours, and the scan-time GET /book
+# response -- already the freshest signal available and already gating
+# candidate selection via OrderBook.best_ask() -- can itself still be
+# served from a stale cache for a while after the market's real orderbook
+# was torn down; only the order-submission endpoint's own live response is
+# fully authoritative. Reuses LiveEngine.rejected_cooldown (see live.py's
+# open_position()) rather than a parallel structure -- just with a longer
+# expiry recorded for this one failure type.
+LIVE_DEAD_MARKET_COOLDOWN_MIN = _f("POLYEDGE_DEAD_MARKET_COOLDOWN_MIN", 360.0)
 
 # URL for the "Control Panel" button on the generated dashboard. Defaults
 # to localhost -- the control panel is meant to be reached through an SSH
