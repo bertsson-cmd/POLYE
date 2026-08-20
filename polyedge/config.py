@@ -247,6 +247,25 @@ LIVE_REJECTED_COOLDOWN_MIN = _f("POLYEDGE_REJECTED_COOLDOWN_MIN", 30.0)
 # open_position()) rather than a parallel structure -- just with a longer
 # expiry recorded for this one failure type.
 LIVE_DEAD_MARKET_COOLDOWN_MIN = _f("POLYEDGE_DEAD_MARKET_COOLDOWN_MIN", 360.0)
+# A market ACTIVELY TRENDING toward $1 -- CONVERGE's entire target
+# profile -- can see its real ask move measurably between scan time and
+# order submission. Confirmed in production: CV-3565421 (a genuinely
+# deep, actively-trading market, NOT a dead one) failed to fill 4 times
+# in one day at increasingly stale max_price ceilings (0.942, 0.960,
+# 0.980, 0.978) while the real ask kept climbing. The primary fix is
+# live.py's LiveEngine._fetch_fresh_ask() -- a live re-fetch immediately
+# before order submission, replacing the possibly-stale scan-time price
+# -- this cushion is a SMALL, CONVERGE-only addition on top of that
+# fresh price, for the residual gap between the fresh fetch and the
+# exchange actually processing the order (network round-trip, approval
+# check, signing), not a substitute for the fresh fetch itself. Tradeoff,
+# stated plainly: a wider cushion means CONVERGE can occasionally pay a
+# bit more per share than the tightest possible price, in exchange for
+# the order actually filling instead of cleanly failing on a fast-moving
+# market. LONGSHOT is unaffected -- fading cheap longshots has no
+# comparable persistent directional drift, so no cushion applies there
+# (it still gets the fresh re-fetch, just no added cushion on top).
+CV_MAX_PRICE_CUSHION_PCT = _f("POLYEDGE_CV_MAX_PRICE_CUSHION_PCT", 0.5)
 
 # URL for the "Control Panel" button on the generated dashboard. Defaults
 # to localhost -- the control panel is meant to be reached through an SSH

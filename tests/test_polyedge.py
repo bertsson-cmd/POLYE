@@ -1769,6 +1769,10 @@ class TestLiveEngine:
             return fill and not lv.dry_run()
         e._place_order = fake_place
         e._check_pusd_balance = lambda: True   # exercised separately below
+        # no live network in tests -- None means "refresh unavailable, fall
+        # back to leg.entry_price", exactly like a real failed fetch would;
+        # see TestLivePriceRefresh below for the refresh behavior itself
+        e._fetch_fresh_ask = lambda token_id: None
         return e
 
     def test_all_gates_required(self, tmp_path, monkeypatch):
@@ -2178,7 +2182,13 @@ class TestLiveEnginePolymarketClientWiring:
             monkeypatch.delenv("POLYEDGE_BUILDER_API_KEY", raising=False)
             monkeypatch.delenv("POLYEDGE_BUILDER_SECRET", raising=False)
             monkeypatch.delenv("POLYEDGE_BUILDER_PASSPHRASE", raising=False)
-        return lv.LiveEngine(state_dir=str(tmp_path))
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        # no live network in tests -- see TestLiveEngine._engine's identical
+        # comment; only the two open_position()-driving tests below reach
+        # this at all, everything else in this class calls _place_order/
+        # _aplace_order directly against the fake SDK
+        e._fetch_fresh_ask = lambda token_id: None
+        return e
 
     def test_client_created_with_private_key_environment_and_builder_api_key(self, tmp_path, monkeypatch):
         calls = self._install_fake_sdk(monkeypatch)
@@ -2500,6 +2510,134 @@ class TestLiveEnginePolymarketClientWiring:
         assert not lv.live_gates_open()   # the halt closes the gates entirely, same as the daily-loss breaker
 
 
+# ------------------------------------------------------------------ live price refresh (CV-3565421)
+class TestLivePriceRefresh:
+    """Confirmed production root cause: CV-3565421 (asset_id
+    67630859659224760080054121446583082801681970585283198673478937279213434161100)
+    failed to fill 4 times in one day (05:54, 07:19, 08:19, 08:59 UTC) at
+    increasingly stale max_price ceilings (0.942, 0.960, 0.980, 0.978) --
+    confirmed via direct book fetch that the market was genuinely deep and
+    actively trading (64,593 shares resting at 0.999, last_trade_price
+    0.986), not a dead market. leg.entry_price becomes the order's
+    max_price ceiling verbatim (confirmed from polymarket-client's
+    source), with zero cushion and zero re-fetch before this fix -- on a
+    market trending toward $1 (CONVERGE's whole profile), the real ask
+    can climb past a stale scan-time price before the order is actually
+    submitted."""
+
+    _CV_3565421_TOKEN = ("67630859659224760080054121446583082801681970585"
+                        "283198673478937279213434161100")
+
+    def _engine(self, tmp_path, monkeypatch, fill=True):
+        from polyedge import live as lv
+        monkeypatch.setenv("POLYEDGE_LIVE", "1")
+        monkeypatch.setenv("POLYEDGE_DRY_RUN", "0")
+        monkeypatch.chdir(tmp_path)
+        open(lv.ARMED_FILE, "w").write("armed")
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        e._orders = []
+
+        def fake_place(token_id, price, shares, side):
+            e._orders.append((side, token_id, round(shares, 2), round(price, 3)))
+            return fill and not lv.dry_run()
+        e._place_order = fake_place
+        e._check_pusd_balance = lambda: True
+        return e
+
+    def _opp(self, key, strategy, token, entry_price, shares=10.0):
+        return Opportunity(strategy, key, key, 0.04, False, est_p_win=0.98,
+                           legs=[Leg(token, "m1", "YES q", "YES", entry_price, shares)],
+                           resolve_by="2026-07-21T00:00:00Z")
+
+    def test_cv_3565421_regression_uses_fresh_price_not_stale_scan_price(
+            self, tmp_path, monkeypatch):
+        """The literal regression case: the 4th real attempt's stale
+        max_price (0.978) would still fail against the real market, which
+        had climbed further by the time of submission (consistent with
+        the confirmed last_trade_price of 0.986). The fresh re-fetch must
+        replace the stale price before the order is built, or this
+        continues failing exactly like production did."""
+        e = self._engine(tmp_path, monkeypatch)
+        e._fetch_fresh_ask = lambda token_id: 0.987
+        opp = self._opp("CV-3565421", "CONVERGE", self._CV_3565421_TOKEN, 0.978)
+        pos = e.open_position(opp)
+        assert pos is not None
+        _, token_id, _, submitted_price = e._orders[0]
+        assert token_id == self._CV_3565421_TOKEN
+        # submitted price must be the FRESH one (plus CONVERGE's cushion),
+        # never the stale 0.978 that kept failing in production
+        expected = round(min(0.999, 0.987 * (1 + config.CV_MAX_PRICE_CUSHION_PCT / 100)), 3)
+        assert submitted_price == pytest.approx(expected)
+        assert submitted_price != pytest.approx(0.978)
+
+    def test_recorded_cost_basis_reflects_fresh_price(self, tmp_path, monkeypatch):
+        """The position's recorded entry_price/cost must match what was
+        actually risked, not the stale scan-time number -- otherwise
+        paper accounting would silently understate real cash spent."""
+        e = self._engine(tmp_path, monkeypatch)
+        e._fetch_fresh_ask = lambda token_id: 0.987
+        opp = self._opp("CV-3565421", "CONVERGE", self._CV_3565421_TOKEN, 0.978)
+        pos = e.open_position(opp)
+        expected = min(0.999, 0.987 * (1 + config.CV_MAX_PRICE_CUSHION_PCT / 100))
+        assert pos["legs"][0]["entry_price"] == pytest.approx(expected, abs=1e-6)
+
+    def test_cushion_only_applied_to_converge_not_longshot(self, tmp_path, monkeypatch):
+        """LONGSHOT has no comparable persistent directional drift toward
+        $1, so it gets the freshness fix but not the extra cushion."""
+        e = self._engine(tmp_path, monkeypatch)
+        e._fetch_fresh_ask = lambda token_id: 0.04
+        opp = self._opp("LS-X", "LONGSHOT", "tok-ls", 0.038)
+        e.open_position(opp)
+        _, _, _, submitted_price = e._orders[0]
+        assert submitted_price == pytest.approx(0.04)   # no cushion added
+
+    def test_fetch_failure_falls_back_to_scan_time_price(self, tmp_path, monkeypatch):
+        """A refresh failure must never block the order -- it just means
+        falling back to the original scan-time price, exactly the
+        behavior before this fix existed."""
+        e = self._engine(tmp_path, monkeypatch)
+        e._fetch_fresh_ask = lambda token_id: None
+        opp = self._opp("CV-Y", "CONVERGE", "tok-cv-y", 0.96)
+        pos = e.open_position(opp)
+        assert pos is not None
+        _, _, _, submitted_price = e._orders[0]
+        assert submitted_price == pytest.approx(0.96)
+
+    def test_favorable_price_move_downward_is_still_used(self, tmp_path, monkeypatch):
+        """The refresh isn't a one-directional safety valve -- a price
+        that moved DOWN since scan time is used too, not just up-moves."""
+        e = self._engine(tmp_path, monkeypatch)
+        e._fetch_fresh_ask = lambda token_id: 0.95   # cheaper than scan time
+        opp = self._opp("CV-Z", "CONVERGE", "tok-cv-z", 0.96)
+        e.open_position(opp)
+        _, _, _, submitted_price = e._orders[0]
+        expected = round(min(0.999, 0.95 * (1 + config.CV_MAX_PRICE_CUSHION_PCT / 100)), 3)
+        assert submitted_price == pytest.approx(expected)
+        assert submitted_price < 0.96
+
+    def test_fetch_fresh_ask_returns_none_on_failure(self, tmp_path, monkeypatch):
+        """Exercises the REAL _fetch_fresh_ask (not a test double) against
+        a PolymarketClient.fetch_book that raises, confirming the
+        None-on-failure contract without an actual network call."""
+        from polyedge import live as lv
+        from polyedge.api import PolymarketClient
+
+        def raise_boom(self, token_id):
+            raise RuntimeError("boom")
+        monkeypatch.setattr(PolymarketClient, "fetch_book", raise_boom)
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        assert e._fetch_fresh_ask("tok-1") is None
+
+    def test_fetch_fresh_ask_returns_best_ask_when_book_available(self, tmp_path, monkeypatch):
+        from polyedge import live as lv
+        from polyedge.api import PolymarketClient
+        fake_book = OrderBook("tok-1", asks=[BookLevel(0.987, 100)], bids=[])
+        monkeypatch.setattr(PolymarketClient, "fetch_book",
+                            lambda self, token_id: fake_book)
+        e = lv.LiveEngine(state_dir=str(tmp_path))
+        assert e._fetch_fresh_ask("tok-1") == pytest.approx(0.987)
+
+
 # ------------------------------------------------------------------ controls (control panel)
 class TestControls:
     def test_load_defaults_when_missing(self, tmp_path):
@@ -2607,6 +2745,7 @@ class TestApplyControls:
             return fill and not lv.dry_run()
         e._place_order = fake_place
         e._check_pusd_balance = lambda: True   # exercised separately in TestLiveEngine
+        e._fetch_fresh_ask = lambda token_id: None   # no live network in tests
         return e
 
     def _cv_opp(self, key, entry=0.96, shares=10.0, token=None):
