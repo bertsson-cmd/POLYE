@@ -156,6 +156,37 @@ Things worth knowing about the polymarket-client switch specifically:
     longer `LIVE_DEAD_MARKET_COOLDOWN_MIN` expiry for it instead of the
     normal `LIVE_REJECTED_COOLDOWN_MIN` one, reusing the exact same
     `rejected_cooldown` dict/mechanism rather than a parallel structure.
+  * A THIRD, distinct failure mode from either of the above: a
+    genuinely deep, actively-trading market (confirmed real evidence,
+    CV-3565421 -- 64,593 shares resting at 0.999, last_trade_price
+    0.986, not remotely a dead market) whose BUY still keeps getting
+    rejected, repeatedly, over hours, at increasingly stale prices.
+    Confirmed from polymarket-client's own source
+    (`_internal/actions/orders/market.py`'s `_resolve_market_order_price`):
+    when we pass `max_price`, it's used VERBATIM as the order's limit
+    price -- the SDK does no re-fetch of its own. `leg.entry_price`
+    (what becomes `max_price`) is set once, at scan time, from
+    `book.best_ask()`, with zero cushion and zero re-fetch before
+    submission (confirmed by reading strategies/convergence.py and
+    risk.py -- neither touches it after scan time). On a market
+    actively climbing toward $1, the real ask can move past that stale
+    ceiling in the gap between scan and submission, and a FOK order
+    can't clear once the real market has moved beyond the price we
+    told it we'd pay -- a clean, legitimate-looking rejection with
+    nothing to do with min_order_size or a dead orderbook.
+    `_fetch_fresh_ask()` below re-fetches a live top-of-book price
+    immediately before every BUY is submitted, and `open_position()`
+    updates `leg.entry_price` to that fresh value (so the position's
+    recorded cost basis matches what was actually risked) before
+    calling `_place_order`. For CONVERGE specifically -- the strategy
+    whose whole profile is "market trending toward $1" -- a further
+    small `config.CV_MAX_PRICE_CUSHION_PCT` cushion is added on top of
+    the fresh price, covering the residual gap between that fetch and
+    the exchange actually processing the order. See
+    `CV_MAX_PRICE_CUSHION_PCT`'s config comment for the explicit
+    tradeoff (occasionally paying a bit more per share) and
+    `_fetch_fresh_ask`'s own docstring for the other one (one extra API
+    call per attempted BUY).
   * pUSD (Polymarket's V2 collateral token, replacing USDC.e) does NOT
     get wrapped automatically when placing an order through the API --
     only Polymarket's own UI does that for you. `open_position()` checks
@@ -580,12 +611,48 @@ class LiveEngine(PaperEngine):
             return False
         return True
 
+    def _fetch_fresh_ask(self, token_id: str) -> Optional[float]:
+        """Live top-of-book ask for `token_id`, fetched RIGHT NOW -- not
+        the possibly-stale scan-time price main.run_cycle() computed
+        opportunities from, potentially minutes earlier. See the module
+        docstring's third bullet for the full CV-3565421 writeup; the
+        short version: `leg.entry_price` becomes the order's `max_price`
+        ceiling verbatim (confirmed from polymarket-client's source), and
+        on a market trending toward $1 the real ask can climb past that
+        stale ceiling before the order is actually submitted, causing a
+        clean FOK rejection that has nothing to do with min_order_size or
+        a dead market.
+
+        Called by `open_position()` right before every BUY, for both
+        strategies -- reuses `api.PolymarketClient.fetch_book()`, the
+        exact same book-fetching code `main.run_cycle()` already uses for
+        scanning, rather than a second HTTP implementation to keep in
+        sync.
+
+        Returns None (never a fallback price of its own) on any failure
+        -- this is a best-effort freshness improvement, not something
+        that should block an order attempt if it fails; `open_position()`
+        falls back to the original scan-time `leg.entry_price` in that
+        case, exactly the behavior before this existed. Tradeoff worth
+        stating plainly: this is one additional network round-trip per
+        attempted BUY."""
+        from .api import PolymarketClient
+        try:
+            book = PolymarketClient().fetch_book(token_id)
+        except Exception as e:  # noqa: BLE001 - a refresh failure must never block the order attempt
+            log.warning("live price refresh failed for %s, falling back to "
+                       "the scan-time price: %s", token_id, e)
+            return None
+        return book.best_ask() if book else None
+
     def _place_order(self, token_id: str, price: float, shares: float,
                      side: str) -> bool:
         """Submit a real fill-or-kill order. Returns True iff fully filled.
 
-        The only method in this module that ever talks to the network --
-        overridden wholesale in tests. Runs `_aplace_order` (the actual
+        Along with `_fetch_fresh_ask` above, the only methods in this
+        module that ever talk to the network -- both overridden/mocked in
+        tests (this one wholesale, that one via monkeypatch). Runs
+        `_aplace_order` (the actual
         polymarket-client/AsyncSecureClient call) inside its own
         `asyncio.run()` -- see the module docstring for why a fresh event
         loop and client are used per call instead of caching one.
@@ -648,6 +715,33 @@ class LiveEngine(PaperEngine):
                       f"{opp.key} -- see log for details")
             return None
         for leg in opp.legs:
+            # Refresh to a live price immediately before submitting --
+            # see _fetch_fresh_ask's docstring and the module docstring's
+            # CV-3565421 writeup for why leg.entry_price (the scan-time
+            # book.best_ask(), possibly minutes stale by now) is not
+            # trusted as the order's max_price ceiling as-is. Updating
+            # leg.entry_price itself (not just what gets submitted) means
+            # super().open_position() below records the position's cost
+            # basis at what was actually risked, not the stale scan-time
+            # number -- fee_per_share is NOT recomputed here (it was set
+            # at scan time from the old price), a known, deliberately
+            # unaddressed imprecision too small to matter across the few
+            # cents of drift this is meant to cover.
+            fresh_ask = self._fetch_fresh_ask(leg.token_id)
+            if fresh_ask is not None and 0.0 < fresh_ask < 1.0:
+                submit_price = fresh_ask
+                if opp.strategy == "CONVERGE":
+                    # small additional cushion, CONVERGE only -- see
+                    # config.CV_MAX_PRICE_CUSHION_PCT's comment for why
+                    submit_price = min(
+                        0.999,
+                        fresh_ask * (1.0 + config.CV_MAX_PRICE_CUSHION_PCT / 100.0))
+                if abs(submit_price - leg.entry_price) > 1e-9:
+                    log.info("refreshed live price for %s before submitting %s: "
+                            "scan-time=%.6f live=%.6f%s", leg.token_id, opp.key,
+                            leg.entry_price, submit_price,
+                            " (CONVERGE cushion applied)" if opp.strategy == "CONVERGE" else "")
+                leg.entry_price = submit_price
             # exact numbers going into this specific order, including the
             # book's min_order_size AS SEEN AT SIZING TIME (leg.min_order_size,
             # stashed by risk.py -- see its comment) -- a real rejection
