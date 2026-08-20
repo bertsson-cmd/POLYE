@@ -51,6 +51,56 @@ def _make_engine():
     return PaperEngine()
 
 
+def _geoblock_startup_check_passes() -> bool:
+    """Refuse to start live trading if Polymarket reports this machine's
+    outbound connection as geoblocked -- real incident, see LIVE.md
+    section 3: a VPS's outbound HTTPS was resolving polymarket.com over
+    IPv6 by default, and that specific IPv6 address geolocated to a
+    blocked region even though the server's real (IPv4) location was
+    fine, silently rejecting every live order with "Trading restricted
+    in your region" until diagnosed by hand. This check exists so that
+    failure mode is loud, at startup, instead of silent and per-order.
+
+    Checks BOTH default resolution and forced-IPv4 so the log message
+    can distinguish "this looks like the known IPv6 routing issue" from
+    "this may be a genuine account/region restriction" -- see
+    polyedge.api.check_geoblock's docstring. Returns True (proceed) if
+    the check itself couldn't be completed at all (a network failure at
+    startup is not, by itself, proof of geoblocking) or if neither
+    result reports blocked=True."""
+    from polyedge.api import check_geoblock
+    default_result = check_geoblock()
+    ipv4_result = check_geoblock(force_ipv4=True)
+    if default_result is None and ipv4_result is None:
+        log.warning("geoblock check could not be completed (network failure on "
+                   "both attempts) -- proceeding, but this could not confirm "
+                   "outbound trading isn't region-blocked; see LIVE.md section 3")
+        return True
+    default_blocked = bool(default_result and default_result.get("blocked"))
+    ipv4_blocked = bool(ipv4_result and ipv4_result.get("blocked"))
+    country = (default_result or ipv4_result or {}).get("country")
+    if not default_blocked and not ipv4_blocked:
+        log.info("geoblock check passed (country=%s, not blocked)", country)
+        return True
+    if default_blocked and ipv4_result is not None and not ipv4_blocked:
+        log.error(
+            "REFUSING TO START LIVE TRADING: default outbound resolution is "
+            "geoblocked (country=%s) but forcing IPv4 is NOT blocked "
+            "(country=%s) -- this is the exact IPv6 routing/geolocation "
+            "mismatch documented in LIVE.md section 3. Fix the server's "
+            "IPv4 resolution precedence (see LIVE.md) and restart.",
+            country, ipv4_result.get("country"))
+    else:
+        log.error(
+            "REFUSING TO START LIVE TRADING: outbound connection is "
+            "geoblocked (country=%s) -- this does NOT clearly look like the "
+            "IPv6 routing issue documented in LIVE.md section 3 (forcing "
+            "IPv4 did not confirm the connection is unblocked); this may be "
+            "a genuine account/region restriction. Investigate before "
+            "restarting.", country)
+    return False
+
+
 def _apply_controls(engine, client):
     """No-op until the control panel (controls.py / control_server.py) is
     wired up. Kept as a separate call so that landing does not require
@@ -98,6 +148,9 @@ def main():
     engine = _make_engine()
     log.info("run_forever starting: engine=%s interval=%.0fs",
             type(engine).__name__, interval)
+
+    if os.environ.get("POLYEDGE_LIVE") == "1" and not _geoblock_startup_check_passes():
+        return 1
 
     global _cycle_count
     while not _stop:

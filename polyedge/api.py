@@ -7,8 +7,10 @@ Two public endpoints, no API key needed:
 Everything is parsed defensively: Polymarket occasionally changes field
 shapes, so any market we cannot parse is skipped and counted, never fatal.
 """
+import contextlib
 import json
 import logging
+import socket
 import time
 from typing import Optional
 
@@ -18,6 +20,65 @@ from . import config
 from .models import BookLevel, Market, OrderBook
 
 log = logging.getLogger("polyedge.api")
+
+GEOBLOCK_URL = "https://polymarket.com/api/geoblock"
+
+
+@contextlib.contextmanager
+def _force_ipv4():
+    """Temporarily restrict socket.getaddrinfo() to IPv4 (AF_INET) results
+    only, for the duration of the `with` block -- used ONLY by
+    check_geoblock(force_ipv4=True) below, to diagnostically compare
+    default DNS resolution against IPv4-only resolution. Restored in a
+    finally block, so a crash mid-request can never leave the process's
+    DNS resolution permanently narrowed.
+
+    Real incident this exists to diagnose: a VPS's outbound HTTPS to
+    polymarket.com was resolving over IPv6 by default, and that specific
+    IPv6 address geolocated to a Polymarket-blocked region even though
+    the server's real (IPv4) location was fine -- confirmed directly via
+    `curl` (default) vs `curl -4` returning different blocked/country
+    values. See LIVE.md section 3 for the full writeup and the actual
+    OS-level fix (this function only diagnoses the problem, it does not
+    fix outbound trading traffic -- nothing in the rest of this module or
+    live.py uses it)."""
+    orig = socket.getaddrinfo
+
+    def _ipv4_only(host, *args, **kwargs):
+        return [r for r in orig(host, *args, **kwargs) if r[0] == socket.AF_INET]
+    socket.getaddrinfo = _ipv4_only
+    try:
+        yield
+    finally:
+        socket.getaddrinfo = orig
+
+
+def check_geoblock(session: Optional[requests.Session] = None,
+                   force_ipv4: bool = False) -> Optional[dict]:
+    """Hit Polymarket's own geoblock endpoint directly -- NOT the Gamma/CLOB
+    bases used elsewhere in this module -- to detect whether outbound
+    connections from this machine are being geolocated into a
+    trading-restricted region. See LIVE.md section 3 for the real
+    incident this exists to catch (an IPv6 routing/geolocation mismatch
+    that silently rejected every live order with "Trading restricted in
+    your region").
+
+    Returns the parsed JSON response (expected shape: {"blocked": bool,
+    "country": str, ...}), or None if the check itself couldn't complete
+    (network failure) -- callers must treat None as "couldn't verify",
+    never as "confirmed fine" or "confirmed blocked"."""
+    http = session or requests.Session()
+    try:
+        if force_ipv4:
+            with _force_ipv4():
+                r = http.get(GEOBLOCK_URL, timeout=config.HTTP_TIMEOUT)
+        else:
+            r = http.get(GEOBLOCK_URL, timeout=config.HTTP_TIMEOUT)
+        r.raise_for_status()
+        return r.json()
+    except (requests.RequestException, ValueError, OSError) as e:
+        log.warning("geoblock check (force_ipv4=%s) failed: %s", force_ipv4, e)
+        return None
 
 
 class PolymarketClient:

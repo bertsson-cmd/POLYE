@@ -1503,6 +1503,182 @@ class TestResolutionDetection:
         settled = engine.resolve(outcomes)
         assert len(settled) == 1 and settled[0]["payout"] == pytest.approx(20.0)
         assert engine.state["positions"] == []
+
+
+# ------------------------------------------------------------------ geoblock check (IPv6 routing incident)
+class _FakeGeoblockSession:
+    """Routes GET to a canned geoblock response, or raises, so
+    check_geoblock's real HTTP call never actually happens in tests."""
+    def __init__(self, response=None, raise_error=None):
+        self.response = response
+        self.raise_error = raise_error
+        self.calls = []
+
+    def get(self, url, timeout=None):
+        self.calls.append(url)
+        if self.raise_error:
+            raise self.raise_error
+        return self.response
+
+
+class TestGeoblockCheck:
+    """Real production incident: a VPS's outbound HTTPS to polymarket.com
+    resolved over IPv6 by default, and that specific IPv6 address
+    geolocated to a Polymarket-blocked region even though the server's
+    real (IPv4) location was fine -- confirmed directly: default `curl`
+    returned blocked:true/country:DE, `curl -4` returned
+    blocked:false/country:FI. Every live order was silently rejected with
+    "Trading restricted in your region" until diagnosed by hand. See
+    LIVE.md section 3."""
+
+    def test_returns_parsed_json_when_not_blocked(self):
+        from polyedge.api import check_geoblock
+        session = _FakeGeoblockSession(
+            response=_FakeResponse({"blocked": False, "country": "FI"}))
+        result = check_geoblock(session=session)
+        assert result == {"blocked": False, "country": "FI"}
+        assert session.calls == ["https://polymarket.com/api/geoblock"]
+
+    def test_regression_default_resolution_reports_blocked_de(self):
+        """Literal regression case: the real reported values from the
+        incident."""
+        from polyedge.api import check_geoblock
+        session = _FakeGeoblockSession(
+            response=_FakeResponse({"blocked": True, "country": "DE"}))
+        assert check_geoblock(session=session) == {"blocked": True, "country": "DE"}
+
+    def test_returns_none_on_network_failure(self):
+        from polyedge.api import check_geoblock
+        session = _FakeGeoblockSession(raise_error=requests.ConnectionError("boom"))
+        assert check_geoblock(session=session) is None
+
+    def test_returns_none_on_http_error_status(self):
+        from polyedge.api import check_geoblock
+        session = _FakeGeoblockSession(response=_FakeResponse({}, status=503))
+        assert check_geoblock(session=session) is None
+
+    def test_force_ipv4_still_completes_the_request(self):
+        """force_ipv4=True must not itself break a request that doesn't
+        actually touch DNS (a fake session, here) -- the _force_ipv4()
+        wrapper must be transparent to anything other than
+        socket.getaddrinfo."""
+        from polyedge.api import check_geoblock
+        session = _FakeGeoblockSession(
+            response=_FakeResponse({"blocked": False, "country": "FI"}))
+        assert check_geoblock(session=session, force_ipv4=True) == \
+            {"blocked": False, "country": "FI"}
+
+    def test_force_ipv4_context_manager_filters_to_af_inet_only(self):
+        import socket as _socket
+        from polyedge.api import _force_ipv4
+        fake_results = [
+            (_socket.AF_INET, None, None, "", ("1.2.3.4", 443)),
+            (_socket.AF_INET6, None, None, "", ("::1", 443, 0, 0)),
+        ]
+        orig = _socket.getaddrinfo
+        _socket.getaddrinfo = lambda *a, **k: fake_results
+        try:
+            with _force_ipv4():
+                filtered = _socket.getaddrinfo("polymarket.com", 443)
+            assert filtered == [fake_results[0]]      # AF_INET6 entry dropped
+            # restored to the (test-patched) original after the block
+            assert _socket.getaddrinfo("polymarket.com", 443) == fake_results
+        finally:
+            _socket.getaddrinfo = orig
+
+    def test_force_ipv4_context_manager_restores_even_on_exception(self):
+        import socket as _socket
+        from polyedge.api import _force_ipv4
+        orig = _socket.getaddrinfo
+        try:
+            with pytest.raises(RuntimeError):
+                with _force_ipv4():
+                    assert _socket.getaddrinfo is not orig
+                    raise RuntimeError("boom mid-request")
+            assert _socket.getaddrinfo is orig
+        finally:
+            _socket.getaddrinfo = orig
+
+
+class TestGeoblockStartupCheck:
+    """run_forever.py's startup gate -- refuses to start live trading
+    when the geoblock check confirms this machine is region-blocked,
+    instead of silently failing every live order the way the real
+    incident did. See LIVE.md section 3."""
+
+    def _run_forever(self):
+        import run_forever
+        return run_forever
+
+    def test_passes_when_not_blocked(self, monkeypatch):
+        rf = self._run_forever()
+        import polyedge.api as api_mod
+        monkeypatch.setattr(api_mod, "check_geoblock",
+                            lambda force_ipv4=False: {"blocked": False, "country": "FI"})
+        assert rf._geoblock_startup_check_passes() is True
+
+    def test_passes_when_check_cannot_complete_at_all(self, monkeypatch):
+        """A startup network hiccup is not, by itself, proof of
+        geoblocking -- must not block startup on its own."""
+        rf = self._run_forever()
+        import polyedge.api as api_mod
+        monkeypatch.setattr(api_mod, "check_geoblock", lambda force_ipv4=False: None)
+        assert rf._geoblock_startup_check_passes() is True
+
+    def test_regression_ipv6_routing_mismatch_refuses_to_start(self, monkeypatch):
+        """The literal real incident: default resolution blocked (DE),
+        forced IPv4 not blocked (FI) -- must refuse to start."""
+        rf = self._run_forever()
+        import polyedge.api as api_mod
+
+        def fake_check(force_ipv4=False):
+            if force_ipv4:
+                return {"blocked": False, "country": "FI"}
+            return {"blocked": True, "country": "DE"}
+        monkeypatch.setattr(api_mod, "check_geoblock", fake_check)
+        assert rf._geoblock_startup_check_passes() is False
+
+    def test_blocked_even_over_ipv4_also_refuses_to_start(self, monkeypatch):
+        """A genuine account/region restriction (not the IPv6 routing
+        issue, since IPv4 is blocked too) must still refuse to start --
+        just with a different diagnostic message."""
+        rf = self._run_forever()
+        import polyedge.api as api_mod
+        monkeypatch.setattr(api_mod, "check_geoblock",
+                            lambda force_ipv4=False: {"blocked": True, "country": "DE"})
+        assert rf._geoblock_startup_check_passes() is False
+
+    def test_default_check_fails_but_forced_ipv4_reports_blocked_still_refuses(
+            self, monkeypatch):
+        """Edge case: the default-resolution check itself couldn't
+        complete (e.g. a connection-level failure over the misrouted
+        IPv6 path), but the forced-IPv4 check DID complete and reports
+        blocked=True -- must still refuse to start rather than treating
+        an unrelated None result as "not blocked"."""
+        rf = self._run_forever()
+        import polyedge.api as api_mod
+
+        def fake_check(force_ipv4=False):
+            return {"blocked": True, "country": "DE"} if force_ipv4 else None
+        monkeypatch.setattr(api_mod, "check_geoblock", fake_check)
+        assert rf._geoblock_startup_check_passes() is False
+
+    def test_only_runs_when_live_engine_selected(self, tmp_path, monkeypatch):
+        """Paper trading never places a real order, so it must not be
+        gated by (or even call) the geoblock check at all."""
+        import run_forever
+        import polyedge.api as api_mod
+        calls = []
+        monkeypatch.setattr(api_mod, "check_geoblock",
+                            lambda force_ipv4=False: calls.append(force_ipv4) or
+                            {"blocked": True, "country": "DE"})
+        monkeypatch.delenv("POLYEDGE_LIVE", raising=False)
+        monkeypatch.chdir(tmp_path)
+        monkeypatch.setattr(run_forever, "_stop", True)   # exit the loop immediately
+        run_forever.main()
+        assert calls == []
+
+
 class TestPaperEngine:
     def _engine(self, tmp_path):
         return PaperEngine(state_dir=str(tmp_path))

@@ -135,7 +135,169 @@ section.
 
 ---
 
-## 3. Install the systemd service
+## 3. Outbound network check — IPv6 geoblocking
+
+**Read this before going live, even if trading works fine in dry-run.**
+A real incident on this exact deployment: every live order was rejected
+with "Trading restricted in your region", even though the VPS's true
+location was never restricted. Root cause, confirmed directly:
+
+```bash
+curl https://polymarket.com/api/geoblock        # default resolution
+curl -4 https://polymarket.com/api/geoblock     # forced IPv4
+```
+
+The default (IPv6) call returned `blocked:true, country:"DE"` (Germany —
+a geoblocked region for Polymarket); the forced-IPv4 call returned
+`blocked:false, country:"FI"` — the server's genuine, correct location.
+The server never moved. Some VPS providers assign an IPv6 address whose
+geolocation database entry is wrong or stale, and Linux's default
+resolver (`getaddrinfo`) prefers IPv6 when both families are available
+(RFC 3484/6724) — so every outbound HTTPS connection silently went out
+over the misgeolocated IPv6 address instead of the correct IPv4 one.
+This is a network/OS-level problem, not anything in this codebase's
+trading logic.
+
+**Run the two `curl` commands above against your own VPS before going
+live.** If both report `blocked:false`, you're fine — skip to the next
+section. If the default call reports `blocked:true` while `-4` reports
+`blocked:false`, you have the same issue, and the fix below applies.
+
+### Is there a code-level fix?
+
+No — checked directly. `polymarket-client`'s `AsyncSecureClient.create()`
+(what `live.py`'s `_aplace_order` calls) takes exactly `private_key`,
+`wallet`, `environment`, `credentials`, `api_key`, `nonce`, `logger` —
+confirmed from the SDK's own source (`clients/async_secure.py`). There is
+no parameter to inject a custom `httpx` client, transport, or address
+family. Internally it builds its own `httpx.AsyncClient` per sub-service
+(gamma/data/clob/relayer/...) with no way to reach in from the public
+API and force IPv4. Monkeypatching those internals would be fragile,
+unsupported, and liable to silently break on the next `polymarket-client`
+version bump — not the "clean" fix this needs. **The reliable fix is at
+the OS level**, on the VPS itself.
+
+### First, look at what you actually have
+
+```bash
+ip -6 addr                 # what IPv6 addresses/routes exist on this box
+cat /etc/gai.conf | grep -v '^#'   # any existing getaddrinfo overrides (usually empty)
+```
+
+If `ip -6 addr` shows nothing but `::1` (loopback), IPv6 isn't really in
+play here and the geoblock is coming from somewhere else — don't apply
+either fix below without re-confirming the `curl -4` evidence first.
+
+### Recommended fix: prefer IPv4 in DNS resolution (`/etc/gai.conf`)
+
+This is the standard, minimally-invasive glibc mechanism for exactly this
+situation — it changes the *order* `getaddrinfo()` returns addresses in,
+so IPv4 is tried first when both are available. It does **not** disable
+IPv6, remove any address, or touch routing — anything on the box that
+explicitly dials an IPv6 address (not through this default-resolution
+path) is completely unaffected. This is why it's the recommended option:
+smallest blast radius, fully reversible, no service restart of anything
+but the affected process's next connection.
+
+```bash
+# as root, back up first
+sudo cp /etc/gai.conf /etc/gai.conf.bak
+
+# append the one line that changes the precedence table
+echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
+```
+
+(`/etc/gai.conf`'s own shipped comments literally document this exact
+line for "sites which prefer IPv4 connections" — this isn't a novel
+trick, it's the mechanism's intended use.)
+
+No reboot or service restart is required for *new* connections to pick
+this up, but restart `polybert` anyway so you can watch the next scan
+cycle's outbound calls succeed cleanly:
+
+```bash
+sudo systemctl restart polybert
+curl https://polymarket.com/api/geoblock    # re-check -- should now match curl -4
+```
+
+**Rollback** (if anything unexpected breaks):
+
+```bash
+sudo cp /etc/gai.conf.bak /etc/gai.conf
+# or, if you only ever appended the one line:
+sudo sed -i '/precedence ::ffff:0:0\/96  100/d' /etc/gai.conf
+```
+
+### Alternative, more invasive fix: disable IPv6 entirely
+
+Only reach for this if the `gai.conf` fix above doesn't resolve it, or
+you have a specific reason to want IPv6 fully off this box. This has a
+**much bigger blast radius** — it affects every process and every
+connection, not just DNS-resolution order. Before running this, check
+whether anything else on the VPS actually depends on IPv6: your provider
+console's IPv6-only management access (if any), monitoring agents,
+package mirrors that only publish AAAA records, or Docker's IPv6 mode if
+you run other containers on this box. If in doubt, prefer the `gai.conf`
+fix above instead.
+
+```bash
+# as root -- disable at the kernel level, all interfaces
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
+# persist across reboots
+echo 'net.ipv6.conf.all.disable_ipv6 = 1'     | sudo tee -a /etc/sysctl.d/99-disable-ipv6.conf
+echo 'net.ipv6.conf.default.disable_ipv6 = 1' | sudo tee -a /etc/sysctl.d/99-disable-ipv6.conf
+sudo sysctl --system
+```
+
+**Rollback:**
+
+```bash
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=0
+sudo rm /etc/sysctl.d/99-disable-ipv6.conf
+sudo sysctl --system
+```
+
+Re-enabling after a full disable can be flaky on some kernels until a
+full reboot — if you roll this back, plan for a reboot to confirm IPv6
+is genuinely back, not just partially.
+
+**Do not** run a blanket "disable IPv6" command you found elsewhere
+without reading what it actually does first — the `sysctl` keys above
+are per-interface kernel flags, scoped and reversible as shown; some
+other instructions circulating online instead remove interface
+configuration or modify bootloader/GRUB flags, which are harder to
+undo cleanly and not necessary for this specific problem.
+
+### Belt-and-suspenders: startup check, independent of either fix
+
+Neither fix above is verified automatically by this codebase — a
+misconfigured VPS, a provider re-assigning a new (also-misgeolocated)
+IPv6 address, or this fix never having been applied at all would
+otherwise fail every single live order silently, the same way it did in
+the original incident. `run_forever.py` now calls
+`polyedge.api.check_geoblock()` once at startup whenever
+`POLYEDGE_LIVE=1`, hitting `polymarket.com/api/geoblock` both with
+default resolution and forced IPv4. If the default call reports
+`blocked:true`:
+
+- and the forced-IPv4 call reports `blocked:false` — logs the exact
+  mismatch (this is the IPv6 routing issue above) and refuses to start
+  the trading loop at all;
+- and the forced-IPv4 call is *also* `blocked:true` — logs that this
+  does **not** look like the IPv6 routing issue, since IPv4 is blocked
+  too, and refuses to start, so it can be investigated as a possible
+  genuine account/region restriction instead.
+
+This is a safety net, not a substitute for actually running the fix
+above — it turns a silent, hours-long failure mode into a loud one at
+process start instead.
+
+---
+
+## 4. Install the systemd service
 
 ```bash
 sudo cp polybert.service /etc/systemd/system/polybert.service
@@ -154,7 +316,7 @@ anything the risk engine would have funded.
 
 ---
 
-## 4. Dry-run stage — minimum 24-48 hours
+## 5. Dry-run stage — minimum 24-48 hours
 
 With the service running as above:
 
@@ -176,7 +338,7 @@ With the service running as above:
 
 ---
 
-## 5. Going live — the actual sequence
+## 6. Going live — the actual sequence
 
 Only after step 4 looks clean, and only with your own explicit go-ahead
 (not something to do because a checklist said so):
@@ -228,7 +390,7 @@ $100 profile already caps you at:
 
 ---
 
-## 6. The manual control panel
+## 7. The manual control panel
 
 A small Flask app (`control_server.py`) and dark-themed web panel let you
 pause new trades, force-liquidate everything, liquidate one position, cap
@@ -267,7 +429,7 @@ Tailscale, not an open port.
 
 ---
 
-## 7. Honest limitations, carried over from MANUAL.md
+## 8. Honest limitations, carried over from MANUAL.md
 
 - `LiveEngine._place_order`'s own wiring (the `asyncio.run()` bridge, and
   the `place_market_order(..., max_price=..., order_type="FOK")` /
