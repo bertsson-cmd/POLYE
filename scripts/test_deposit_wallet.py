@@ -66,7 +66,16 @@ DIFFERENT address from the old POLY_PROXY funder, derived fresh by the SDK):
 
 Usage (source your env file first so the above are all set):
     set -a; source polybert.env; set +a
-    python scripts/test_deposit_wallet.py
+    python scripts/test_deposit_wallet.py [market-slug]
+
+Optional [market-slug]: the part after /event/ in a Polymarket market's
+URL (e.g. for https://polymarket.com/event/some-market, pass
+'some-market'). STRONGLY RECOMMENDED -- pick a market you can visually
+see is actively trading right now (deep order book, both sides quoted).
+Without this, the script falls back to Gamma's "highest 24hr volume"
+sort, which already once returned a stale/dead market with no resting
+liquidity on one side despite being ranked #1 -- volume sort is not the
+same as "has liquidity right now."
 """
 import asyncio
 import dataclasses
@@ -157,18 +166,41 @@ async def main() -> None:
     print(f"    setup_trading_approvals() returned: {handle!r}")
 
     # ---------------------------------------------------------------- 4/6
-    _status("4/6", "Fetching the highest-volume active market from the public "
-                   "Gamma API (not hardcoding a token_id that could be stale)...")
-    try:
-        r = requests.get(GAMMA_EVENTS_URL, params={
-            "closed": "false", "active": "true", "archived": "false",
-            "limit": 5, "order": "volume24hr", "ascending": "false",
-        }, timeout=15)
-        r.raise_for_status()
-        events = r.json()
-    except Exception as e:
-        await client.close()
-        _fail("4/6", f"Gamma API request failed: {e!r}")
+    slug = sys.argv[1] if len(sys.argv) > 1 else None
+    if slug:
+        _status("4/6", f"Fetching market by slug override: {slug!r} "
+                       "(from command-line argument -- skipping auto-selection)...")
+        try:
+            r = requests.get(GAMMA_EVENTS_URL, params={"slug": slug}, timeout=15)
+            r.raise_for_status()
+            events = r.json()
+        except Exception as e:
+            await client.close()
+            _fail("4/6", f"Gamma API request for slug {slug!r} failed: {e!r}")
+        if not events:
+            await client.close()
+            _fail("4/6", f"No event found for slug {slug!r} -- double-check the "
+                 "slug from the market's URL (the part after /event/).")
+    else:
+        _status("4/6", "No market slug given -- auto-selecting the highest-volume "
+                       "active market from the public Gamma API. NOTE: this "
+                       "already once returned a stale/illiquid market (best bid "
+                       "0.001, no ask at all) despite being '#1 by volume24hr' -- "
+                       "prefer passing a slug you can see is actively trading:\n"
+                       "    python scripts/test_deposit_wallet.py <slug-from-url>\n"
+                       "e.g. for https://polymarket.com/event/some-market, pass "
+                       "'some-market'. Proceeding with auto-selection since none "
+                       "was given...")
+        try:
+            r = requests.get(GAMMA_EVENTS_URL, params={
+                "closed": "false", "active": "true", "archived": "false",
+                "limit": 5, "order": "volume24hr", "ascending": "false",
+            }, timeout=15)
+            r.raise_for_status()
+            events = r.json()
+        except Exception as e:
+            await client.close()
+            _fail("4/6", f"Gamma API request failed: {e!r}")
 
     market = None
     for ev in events if isinstance(events, list) else []:
@@ -181,7 +213,7 @@ async def main() -> None:
             break
     if market is None:
         await client.close()
-        _fail("4/6", "No open, active market found in the top Gamma results.")
+        _fail("4/6", "No open, active market found in the Gamma results.")
 
     raw_tokens = market.get("clobTokenIds")
     if isinstance(raw_tokens, str):
@@ -200,11 +232,18 @@ async def main() -> None:
         br = requests.get(CLOB_BOOK_URL, params={"token_id": yes_token}, timeout=15)
         br.raise_for_status()
         book = br.json()
-        best_bid = (book.get("bids") or [{}])[0].get("price", "?")
-        best_ask = (book.get("asks") or [{}])[0].get("price", "?")
+        bids, asks = book.get("bids") or [], book.get("asks") or []
+        best_bid = bids[0].get("price", "?") if bids else "NONE"
+        best_ask = asks[0].get("price", "?") if asks else "NONE"
         print(f"    Current best bid/ask: {best_bid} / {best_ask} "
              "(informational only -- the market order below sweeps the book "
              "near this price, it does not use these values directly)")
+        if not bids or not asks:
+            print("    !! WARNING: one side of the book is completely empty -- "
+                 "this looks like a dead/illiquid market. A market order here "
+                 "will very likely fail with InsufficientLiquidityError, same as "
+                 "the auto-selected one did. Consider Ctrl+C now and re-running "
+                 "with a slug from a market you can see is actively trading.")
     except Exception as e:
         print(f"    (could not fetch order book for display -- {e!r} -- "
              "continuing anyway, this is not fatal)")
