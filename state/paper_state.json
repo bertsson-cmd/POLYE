@@ -1,5 +1,5 @@
 {
- "cash": 624.536613,
+ "cash": 677.909764,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.895
+    "106590338344677470833649219387336257478478133255241388469274548182801693554453": 0.91
    },
-   "current_value": 9.358591,
-   "unrealized_pl": -0.599943,
-   "unrealized_pl_pct": -6.024
+   "current_value": 9.515439,
+   "unrealized_pl": -0.443095,
+   "unrealized_pl_pct": -4.449
   },
   {
    "key": "CV-3145214",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9425
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.945
    },
-   "current_value": 24.189535,
-   "unrealized_pl": -0.686265,
-   "unrealized_pl_pct": -2.759
+   "current_value": 24.253698,
+   "unrealized_pl": -0.622102,
+   "unrealized_pl_pct": -2.501
   },
   {
    "key": "CV-3746424",
@@ -228,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "69028969686564251119973392548458320420074631185682710991463545730126045823229": 0.9805
+    "69028969686564251119973392548458320420074631185682710991463545730126045823229": 0.981
    },
-   "current_value": 8.141188,
-   "unrealized_pl": 0.008253,
-   "unrealized_pl_pct": 0.101
+   "current_value": 8.145339,
+   "unrealized_pl": 0.012404,
+   "unrealized_pl_pct": 0.153
   },
   {
    "key": "CV-3207796",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "44700481377887518182379056532443842842156809667561229702048083636234879654854": 0.961
+    "44700481377887518182379056532443842842156809667561229702048083636234879654854": 0.96
    },
-   "current_value": 8.881438,
-   "unrealized_pl": 0.070932,
-   "unrealized_pl_pct": 0.805
+   "current_value": 8.872196,
+   "unrealized_pl": 0.06169,
+   "unrealized_pl_pct": 0.7
   },
   {
    "key": "CV-3779846",
@@ -373,40 +373,11 @@
     }
    ],
    "current_prices": {
-    "8674514916706688197785955709737006068721343480720330917509355012248691834879": 0.9745
+    "8674514916706688197785955709737006068721343480720330917509355012248691834879": 0.975
    },
-   "current_value": 10.484309,
-   "unrealized_pl": 0.026499,
-   "unrealized_pl_pct": 0.253
-  },
-  {
-   "key": "LS-3502283",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Bologna FC 1909 0 - 2 SS Lazio?",
-   "opened": 1787570045.7668111,
-   "cost": 25.834352,
-   "edge": 0.013772,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9742,
-   "resolve_by": "2026-08-24T16:30:00Z",
-   "note": "YES at 0.043, assumed true 0.026, NO ask 0.959, fee 0.0020",
-   "legs": [
-    {
-     "token_id": "22340250045392855555458074603461974778013830156011742752829454269212574031191",
-     "market_id": "3502283",
-     "label": "NO Exact Score: Bologna FC 1909 0 - 2 SS Lazio?",
-     "side": "NO",
-     "entry_price": 0.959,
-     "shares": 26.883733
-    }
-   ],
-   "current_prices": {
-    "22340250045392855555458074603461974778013830156011742752829454269212574031191": 0.864
-   },
-   "current_value": 23.227545,
-   "unrealized_pl": -2.606807,
-   "unrealized_pl_pct": -10.09
+   "current_value": 10.489689,
+   "unrealized_pl": 0.031879,
+   "unrealized_pl_pct": 0.305
   },
   {
    "key": "CV-3724027",
@@ -460,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "112426392967039291426203596426511130010310596252158333550622207737953661206078": 0.9345
+    "112426392967039291426203596426511130010310596252158333550622207737953661206078": 0.9425
    },
-   "current_value": 10.170213,
-   "unrealized_pl": -0.204873,
-   "unrealized_pl_pct": -1.975
+   "current_value": 10.257277,
+   "unrealized_pl": -0.117809,
+   "unrealized_pl_pct": -1.135
   },
   {
    "key": "CV-3809001",
@@ -489,40 +460,11 @@
     }
    ],
    "current_prices": {
-    "23904588395998989392953266966183693458809716391653270241452423895166076270601": 0.95
+    "23904588395998989392953266966183693458809716391653270241452423895166076270601": 0.955
    },
-   "current_value": 25.578008,
-   "unrealized_pl": -0.341614,
-   "unrealized_pl_pct": -1.318
-  },
-  {
-   "key": "CV-3760458",
-   "strategy": "CONVERGE",
-   "title": "Converge: S&P 500 (SPY) closes above $760 on August 24?",
-   "opened": 1787588603.6108007,
-   "cost": 25.882402,
-   "edge": 0.033837,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9724,
-   "resolve_by": "2026-08-24T20:00:00Z",
-   "note": "YES ask 0.966, fee 0.0013, 0.2d to resolution, 8211% annualized net if YES, assumed true P 0.972",
-   "legs": [
-    {
-     "token_id": "73755941784873113408353383725309099478112137629871197393777916444201889445452",
-     "market_id": "3760458",
-     "label": "YES S&P 500 (SPY) closes above $760 on August 24?",
-     "side": "YES",
-     "entry_price": 0.966,
-     "shares": 26.756988
-    }
-   ],
-   "current_prices": {
-    "73755941784873113408353383725309099478112137629871197393777916444201889445452": 0.933
-   },
-   "current_value": 24.96427,
-   "unrealized_pl": -0.918132,
-   "unrealized_pl_pct": -3.547
+   "current_value": 25.712629,
+   "unrealized_pl": -0.206993,
+   "unrealized_pl_pct": -0.799
   },
   {
    "key": "CV-3724000",
@@ -547,11 +489,11 @@
     }
    ],
    "current_prices": {
-    "45510240715020106620005931497466635797931224403156698252027716412453416559374": 0.9515
+    "45510240715020106620005931497466635797931224403156698252027716412453416559374": 0.955
    },
-   "current_value": 6.761143,
-   "unrealized_pl": -0.145931,
-   "unrealized_pl_pct": -2.113
+   "current_value": 6.786013,
+   "unrealized_pl": -0.121061,
+   "unrealized_pl_pct": -1.753
   },
   {
    "key": "CV-3746431",
@@ -605,11 +547,11 @@
     }
    ],
    "current_prices": {
-    "38265778035061365989474304548675772513205626882322892648854826490001324867222": 0.9845
+    "38265778035061365989474304548675772513205626882322892648854826490001324867222": 0.985
    },
-   "current_value": 11.899283,
-   "unrealized_pl": -0.041073,
-   "unrealized_pl_pct": -0.344
+   "current_value": 11.905327,
+   "unrealized_pl": -0.035029,
+   "unrealized_pl_pct": -0.293
   },
   {
    "key": "CV-3763315",
@@ -634,11 +576,11 @@
     }
    ],
    "current_prices": {
-    "76742473434059723178933218517600826520374210410328515157857215408727204396848": 0.905
+    "76742473434059723178933218517600826520374210410328515157857215408727204396848": 0.915
    },
-   "current_value": 9.849163,
-   "unrealized_pl": -0.525923,
-   "unrealized_pl_pct": -5.069
+   "current_value": 9.957993,
+   "unrealized_pl": -0.417093,
+   "unrealized_pl_pct": -4.02
   },
   {
    "key": "CV-3746429",
@@ -663,11 +605,11 @@
     }
    ],
    "current_prices": {
-    "92200364831218074128278054810476485634492202577291482166690110180206733786917": 0.9765
+    "92200364831218074128278054810476485634492202577291482166690110180206733786917": 0.9705
    },
-   "current_value": 25.774263,
-   "unrealized_pl": -0.103972,
-   "unrealized_pl_pct": -0.402
+   "current_value": 25.615896,
+   "unrealized_pl": -0.262339,
+   "unrealized_pl_pct": -1.014
   },
   {
    "key": "CV-3763312",
@@ -692,11 +634,11 @@
     }
    ],
    "current_prices": {
-    "68192989920943148443045874022298442741391351872101785386864545014820036265788": 0.9715
+    "68192989920943148443045874022298442741391351872101785386864545014820036265788": 0.971
    },
-   "current_value": 25.668511,
-   "unrealized_pl": -0.211533,
-   "unrealized_pl_pct": -0.817
+   "current_value": 25.6553,
+   "unrealized_pl": -0.224744,
+   "unrealized_pl_pct": -0.868
   },
   {
    "key": "CV-3779849",
@@ -721,11 +663,11 @@
     }
    ],
    "current_prices": {
-    "46754569287893376605212739104469682129385146310506088612799247945827022105440": 0.9705
+    "46754569287893376605212739104469682129385146310506088612799247945827022105440": 0.9715
    },
-   "current_value": 12.96117,
-   "unrealized_pl": -0.057948,
-   "unrealized_pl_pct": -0.445
+   "current_value": 12.974525,
+   "unrealized_pl": -0.044593,
+   "unrealized_pl_pct": -0.343
   }
  ],
  "closed": [
@@ -24367,6 +24309,71 @@
    "payout": 25.881471,
    "pl": 0.191843,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-3760458",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $760 on August 24?",
+   "opened": 1787588603.6108007,
+   "cost": 25.882402,
+   "edge": 0.033837,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9724,
+   "resolve_by": "2026-08-24T20:00:00Z",
+   "note": "YES ask 0.966, fee 0.0013, 0.2d to resolution, 8211% annualized net if YES, assumed true P 0.972",
+   "legs": [
+    {
+     "token_id": "73755941784873113408353383725309099478112137629871197393777916444201889445452",
+     "market_id": "3760458",
+     "label": "YES S&P 500 (SPY) closes above $760 on August 24?",
+     "side": "YES",
+     "entry_price": 0.966,
+     "shares": 26.756988
+    }
+   ],
+   "current_prices": {
+    "73755941784873113408353383725309099478112137629871197393777916444201889445452": 0.933
+   },
+   "current_value": 24.96427,
+   "unrealized_pl": -0.918132,
+   "unrealized_pl_pct": -3.547,
+   "closed_ts": 1787598170.9919305,
+   "payout": 26.489418,
+   "pl": 0.607016,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3502283",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Bologna FC 1909 0 - 2 SS Lazio?",
+   "opened": 1787570045.7668111,
+   "cost": 25.834352,
+   "edge": 0.013772,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9742,
+   "resolve_by": "2026-08-24T16:30:00Z",
+   "note": "YES at 0.043, assumed true 0.026, NO ask 0.959, fee 0.0020",
+   "legs": [
+    {
+     "token_id": "22340250045392855555458074603461974778013830156011742752829454269212574031191",
+     "market_id": "3502283",
+     "label": "NO Exact Score: Bologna FC 1909 0 - 2 SS Lazio?",
+     "side": "NO",
+     "entry_price": 0.959,
+     "shares": 26.883733
+    }
+   ],
+   "current_prices": {
+    "22340250045392855555458074603461974778013830156011742752829454269212574031191": 0.959
+   },
+   "current_value": 25.7815,
+   "unrealized_pl": -0.052852,
+   "unrealized_pl_pct": -0.205,
+   "closed_ts": 1787598171.8900871,
+   "payout": 26.883733,
+   "pl": 1.049381
   }
  ],
  "history": [
@@ -30809,6 +30816,14 @@
    "equity": 1028.9254,
    "realized_total": 37.0563,
    "open_positions": 25
+  },
+  {
+   "ts": 1787598170.9937956,
+   "cash": 651.026,
+   "open_value": 382.403,
+   "equity": 1033.429,
+   "realized_total": 37.6634,
+   "open_positions": 24
   }
  ],
  "trades": [
@@ -43641,101 +43656,28 @@
    "title": "Converge: Will the price of Bitcoin be above $72,000 on August 29?",
    "amount": 13.02,
    "pl": null
+  },
+  {
+   "ts": 1787598170.9919305,
+   "type": "CLOSE",
+   "key": "CV-3760458",
+   "strategy": "CONVERGE",
+   "title": "Converge: S&P 500 (SPY) closes above $760 on August 24?",
+   "amount": 26.49,
+   "pl": 0.61,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1787598171.8900871,
+   "type": "CLOSE",
+   "key": "LS-3502283",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Bologna FC 1909 0 - 2 SS Lazio?",
+   "amount": 26.88,
+   "pl": 1.05
   }
  ],
  "last_scan_opportunities": [
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3508229",
-   "title": "Fade: Exact Score: M\u00e1laga CF 0 - 2 RC Deportivo A Coru\u00f1a?",
-   "edge": 0.011518629407850976,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "35941139824136828747988567068219632658836642446005887201078206553211022397222",
-     "market_id": "3508229",
-     "label": "NO Exact Score: M\u00e1laga CF 0 - 2 RC Deportivo A Coru\u00f1a?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-08-24T19:30:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3508963",
-   "title": "Fade: M\u00e1laga CF vs. RC Deportivo A Coru\u00f1a: O/U 5.5",
-   "edge": 0.010546036615180367,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "20995453697101603273355583408372745707875966900181387544511943411363824913662",
-     "market_id": "3508963",
-     "label": "NO M\u00e1laga CF vs. RC Deportivo A Coru\u00f1a: O/U 5.5",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 0.0,
-     "fee_per_share": 0.0014550000000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9817,
-   "resolve_by": "2026-08-24T19:30:00Z",
-   "note": "YES at 0.030, assumed true 0.018, NO ask 0.970, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3760435",
-   "title": "Fade: SPY (SPY) Up or Down on August 24?",
-   "edge": 0.03591751568133289,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "89140380354204902240274674525266739301706830269266696166952550404850372826627",
-     "market_id": "3760435",
-     "label": "NO SPY (SPY) Up or Down on August 24?",
-     "side": "NO",
-     "entry_price": 0.939,
-     "shares": 0.0,
-     "fee_per_share": 0.0022911600000000017,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9751,
-   "resolve_by": "2026-08-24T20:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.939, fee 0.0023"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3760428",
-   "title": "Fade: S&P 500 (SPX) Up or Down on August 24?",
-   "edge": 0.03868454270052696,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "52614474767862684940350003233478154465131094799798631302286801710113077329821",
-     "market_id": "3760428",
-     "label": "NO S&P 500 (SPX) Up or Down on August 24?",
-     "side": "NO",
-     "entry_price": 0.937,
-     "shares": 0.0,
-     "fee_per_share": 0.0023612399999999984,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9757,
-   "resolve_by": "2026-08-24T20:00:00Z",
-   "note": "YES at 0.041, assumed true 0.024, NO ask 0.937, fee 0.0024"
-  },
   {
    "strategy": "LONGSHOT",
    "key": "LS-3521716",
@@ -43761,9 +43703,78 @@
   },
   {
    "strategy": "CONVERGE",
+   "key": "CV-3760478",
+   "title": "Converge: Gold (XAUUSD) Up or Down on August 24?",
+   "edge": 0.02262145342886389,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "104628745793186400135254090913715307382757990532189161425463961314634595264780",
+     "market_id": "3760478",
+     "label": "YES Gold (XAUUSD) Up or Down on August 24?",
+     "side": "YES",
+     "entry_price": 0.977,
+     "shares": 0.0,
+     "fee_per_share": 0.0008988400000000007,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9588,
+   "resolve_by": "2026-08-24T21:00:00Z",
+   "note": "YES ask 0.977, fee 0.0009, 0.1d to resolution, 10149% annualized net if YES, assumed true P 0.959"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3760474",
+   "title": "Converge: WTI Crude Oil (WTI) closes above $84 on August 24?",
+   "edge": 0.00970101010101011,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "44466410410808800861918977955100239604318397444708657127240324744505157508889",
+     "market_id": "3760474",
+     "label": "YES WTI Crude Oil (WTI) closes above $84 on August 24?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 0.0,
+     "fee_per_share": 0.0003960000000000004,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9768,
+   "resolve_by": "2026-08-24T21:00:00Z",
+   "note": "YES ask 0.990, fee 0.0004, 0.1d to resolution, 4352% annualized net if YES, assumed true P 0.977"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3829621",
+   "title": "Converge: Will the price of Bitcoin be above $76,000 on August 25?",
+   "edge": 0.055402033898305135,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "112426392967039291426203596426511130010310596252158333550622207737953661206078",
+     "market_id": "3829621",
+     "label": "YES Will the price of Bitcoin be above $76,000 on August 25?",
+     "side": "YES",
+     "entry_price": 0.944,
+     "shares": 0.0,
+     "fee_per_share": 0.0037004800000000034,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.954,
+   "resolve_by": "2026-08-25T16:00:00Z",
+   "note": "YES ask 0.944, fee 0.0037, 0.9d to resolution, 2316% annualized net if YES, assumed true P 0.954"
+  },
+  {
+   "strategy": "CONVERGE",
    "key": "CV-3767035",
    "title": "Converge: US imposes new sanctions on Iran by Monday?",
-   "edge": 0.02040816326530614,
+   "edge": 0.01010101010101011,
    "guaranteed": false,
    "legs": [
     {
@@ -43771,22 +43782,22 @@
      "market_id": "3767035",
      "label": "YES US imposes new sanctions on Iran by Monday?",
      "side": "YES",
-     "entry_price": 0.98,
+     "entry_price": 0.99,
      "shares": 0.0,
      "fee_per_share": 0.0,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9792,
+   "est_p_win": 0.9848,
    "resolve_by": "2026-08-24T23:59:00Z",
-   "note": "YES ask 0.980, fee 0.0000, 0.2d to resolution, 3106% annualized net if YES, assumed true P 0.979"
+   "note": "YES ask 0.990, fee 0.0000, 0.2d to resolution, 1793% annualized net if YES, assumed true P 0.985"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3724000",
    "title": "Converge: Will the price of Ethereum be above $2,300 on August 26?",
-   "edge": 0.044998029350104864,
+   "edge": 0.037852726326743004,
    "guaranteed": false,
    "legs": [
     {
@@ -43794,16 +43805,16 @@
      "market_id": "3724000",
      "label": "YES Will the price of Ethereum be above $2,300 on August 26?",
      "side": "YES",
-     "entry_price": 0.954,
+     "entry_price": 0.961,
      "shares": 0.0,
-     "fee_per_share": 0.003071880000000003,
+     "fee_per_share": 0.002623530000000003,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9612,
+   "est_p_win": 0.964,
    "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES ask 0.954, fee 0.0031, 1.9d to resolution, 861% annualized net if YES, assumed true P 0.961"
+   "note": "YES ask 0.961, fee 0.0026, 1.9d to resolution, 738% annualized net if YES, assumed true P 0.964"
   },
   {
    "strategy": "CONVERGE",
@@ -43826,13 +43837,13 @@
    "guaranteed_payout": null,
    "est_p_win": 0.956,
    "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 2.9d to resolution, 617% annualized net if YES, assumed true P 0.956"
+   "note": "YES ask 0.950, fee 0.0033, 2.9d to resolution, 624% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3724027",
    "title": "Converge: Will the price of Bitcoin be above $74,000 on August 26?",
-   "edge": 0.02783611740473741,
+   "edge": 0.02487404517453801,
    "guaranteed": false,
    "legs": [
     {
@@ -43840,22 +43851,22 @@
      "market_id": "3724027",
      "label": "YES Will the price of Bitcoin be above $74,000 on August 26?",
      "side": "YES",
-     "entry_price": 0.971,
+     "entry_price": 0.974,
      "shares": 0.0,
-     "fee_per_share": 0.001971130000000002,
+     "fee_per_share": 0.0017726800000000017,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.974,
    "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES ask 0.971, fee 0.0020, 1.9d to resolution, 533% annualized net if YES, assumed true P 0.974"
+   "note": "YES ask 0.974, fee 0.0018, 1.9d to resolution, 485% annualized net if YES, assumed true P 0.974"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-2954946",
    "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.05170077976817708,
+   "edge": 0.048500168067226936,
    "guaranteed": false,
    "legs": [
     {
@@ -43863,74 +43874,51 @@
      "market_id": "2954946",
      "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
      "side": "YES",
-     "entry_price": 0.949,
+     "entry_price": 0.952,
      "shares": 0.0,
-     "fee_per_share": 0.0019359600000000018,
+     "fee_per_share": 0.0018278400000000014,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.954,
+   "est_p_win": 0.956,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.949, fee 0.0019, 6.2d to resolution, 302% annualized net if YES, assumed true P 0.954"
+   "note": "YES ask 0.952, fee 0.0018, 6.2d to resolution, 285% annualized net if YES, assumed true P 0.956"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3724025",
-   "title": "Converge: Will the price of Bitcoin be above $72,000 on August 26?",
-   "edge": 0.011305748987854261,
+   "key": "CV-3746429",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on August 27?",
+   "edge": 0.019980459652706863,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "112495817441804502316955354952037206521400813141158108810933840271123616642616",
-     "market_id": "3724025",
-     "label": "YES Will the price of Bitcoin be above $72,000 on August 26?",
+     "token_id": "92200364831218074128278054810476485634492202577291482166690110180206733786917",
+     "market_id": "3746429",
+     "label": "YES Will the price of Bitcoin be above $72,000 on August 27?",
      "side": "YES",
-     "entry_price": 0.988,
+     "entry_price": 0.979,
      "shares": 0.0,
-     "fee_per_share": 0.0008299200000000007,
+     "fee_per_share": 0.0014391300000000014,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9848,
-   "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES ask 0.988, fee 0.0008, 1.9d to resolution, 216% annualized net if YES, assumed true P 0.985"
+   "est_p_win": 0.9764,
+   "resolve_by": "2026-08-27T16:00:00Z",
+   "note": "YES ask 0.979, fee 0.0014, 2.9d to resolution, 254% annualized net if YES, assumed true P 0.976"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3779801",
-   "title": "Converge: Will the price of Ethereum be above $2,200 on August 29?",
-   "edge": 0.02783611740473741,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "70589991416728735082313340732663615897680687372623564585845261373005214711286",
-     "market_id": "3779801",
-     "label": "YES Will the price of Ethereum be above $2,200 on August 29?",
-     "side": "YES",
-     "entry_price": 0.971,
-     "shares": 0.0,
-     "fee_per_share": 0.001971130000000002,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.971, fee 0.0020, 4.9d to resolution, 207% annualized net if YES, assumed true P 0.964"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3763291",
-   "title": "Converge: Will the price of Ethereum be above $2,200 on August 28?",
+   "key": "CV-3763312",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on August 28?",
    "edge": 0.02193145342886389,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "44700481377887518182379056532443842842156809667561229702048083636234879654854",
-     "market_id": "3763291",
-     "label": "YES Will the price of Ethereum be above $2,200 on August 28?",
+     "token_id": "68192989920943148443045874022298442741391351872101785386864545014820036265788",
+     "market_id": "3763312",
+     "label": "YES Will the price of Bitcoin be above $72,000 on August 28?",
      "side": "YES",
      "entry_price": 0.977,
      "shares": 0.0,
@@ -43939,32 +43927,55 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9688,
+   "est_p_win": 0.9768,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.977, fee 0.0016, 3.9d to resolution, 205% annualized net if YES, assumed true P 0.969"
+   "note": "YES ask 0.977, fee 0.0016, 3.9d to resolution, 207% annualized net if YES, assumed true P 0.977"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3763312",
-   "title": "Converge: Will the price of Bitcoin be above $72,000 on August 28?",
-   "edge": 0.020954887525562394,
+   "key": "CV-3779801",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on August 29?",
+   "edge": 0.02684658436213994,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "68192989920943148443045874022298442741391351872101785386864545014820036265788",
-     "market_id": "3763312",
-     "label": "YES Will the price of Bitcoin be above $72,000 on August 28?",
+     "token_id": "70589991416728735082313340732663615897680687372623564585845261373005214711286",
+     "market_id": "3779801",
+     "label": "YES Will the price of Ethereum be above $2,200 on August 29?",
      "side": "YES",
-     "entry_price": 0.978,
+     "entry_price": 0.972,
      "shares": 0.0,
-     "fee_per_share": 0.0015061200000000014,
+     "fee_per_share": 0.0019051200000000017,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9772000000000001,
-   "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0015, 3.9d to resolution, 196% annualized net if YES, assumed true P 0.977"
+   "est_p_win": 0.9656,
+   "resolve_by": "2026-08-29T16:00:00Z",
+   "note": "YES ask 0.972, fee 0.0019, 4.9d to resolution, 201% annualized net if YES, assumed true P 0.966"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3809001",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on August 30?",
+   "edge": 0.02882783505154642,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "23904588395998989392953266966183693458809716391653270241452423895166076270601",
+     "market_id": "3809001",
+     "label": "YES Will the price of Bitcoin be above $72,000 on August 30?",
+     "side": "YES",
+     "entry_price": 0.97,
+     "shares": 0.0,
+     "fee_per_share": 0.002037000000000002,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-08-30T16:00:00Z",
+   "note": "YES ask 0.970, fee 0.0020, 5.9d to resolution, 179% annualized net if YES, assumed true P 0.964"
   },
   {
    "strategy": "CONVERGE",
@@ -43985,32 +43996,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9764,
+   "est_p_win": 0.9772000000000001,
    "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 4.9d to resolution, 149% annualized net if YES, assumed true P 0.976"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3746429",
-   "title": "Converge: Will the price of Bitcoin be above $72,000 on August 27?",
-   "edge": 0.011305748987854261,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "92200364831218074128278054810476485634492202577291482166690110180206733786917",
-     "market_id": "3746429",
-     "label": "YES Will the price of Bitcoin be above $72,000 on August 27?",
-     "side": "YES",
-     "entry_price": 0.988,
-     "shares": 0.0,
-     "fee_per_share": 0.0008299200000000007,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9812000000000001,
-   "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.988, fee 0.0008, 2.9d to resolution, 142% annualized net if YES, assumed true P 0.981"
+   "note": "YES ask 0.979, fee 0.0014, 4.9d to resolution, 150% annualized net if YES, assumed true P 0.977"
   },
   {
    "strategy": "CONVERGE",
@@ -44054,9 +44042,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9844,
+   "est_p_win": 0.9848,
    "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 2.9d to resolution, 118% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.990, fee 0.0007, 2.9d to resolution, 119% annualized net if YES, assumed true P 0.985"
   },
   {
    "strategy": "CONVERGE",
@@ -44079,59 +44067,13 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9876,
    "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 2.9d to resolution, 118% annualized net if YES, assumed true P 0.988"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3763311",
-   "title": "Converge: Will the price of Bitcoin be above $70,000 on August 28?",
-   "edge": 0.012261225937183396,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "38265778035061365989474304548675772513205626882322892648854826490001324867222",
-     "market_id": "3763311",
-     "label": "YES Will the price of Bitcoin be above $70,000 on August 28?",
-     "side": "YES",
-     "entry_price": 0.987,
-     "shares": 0.0,
-     "fee_per_share": 0.000898170000000001,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.987, fee 0.0009, 3.9d to resolution, 115% annualized net if YES, assumed true P 0.988"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-2955043",
-   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
-   "edge": 0.01562016260162603,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "112835487580149024170516422015943749261671957810997115126758688640706835176306",
-     "market_id": "2955043",
-     "label": "YES Will Anthropic have the best AI model at the end of August 2026?",
-     "side": "YES",
-     "entry_price": 0.984,
-     "shares": 0.0,
-     "fee_per_share": 0.0006297600000000006,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9863999999999999,
-   "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.984, fee 0.0006, 6.2d to resolution, 91% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.990, fee 0.0007, 2.9d to resolution, 119% annualized net if YES, assumed true P 0.988"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3763362",
    "title": "Converge: Will the price of XRP be above $1.20 on August 28?",
-   "edge": 0.00940101010101011,
+   "edge": 0.010352345803842275,
    "guaranteed": false,
    "legs": [
     {
@@ -44139,154 +44081,39 @@
      "market_id": "3763362",
      "label": "YES Will the price of XRP be above $1.20 on August 28?",
      "side": "YES",
-     "entry_price": 0.99,
+     "entry_price": 0.989,
      "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
+     "fee_per_share": 0.0007615300000000007,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9572,
+   "est_p_win": 0.9543999999999999,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 3.9d to resolution, 88% annualized net if YES, assumed true P 0.957"
+   "note": "YES ask 0.989, fee 0.0008, 3.9d to resolution, 98% annualized net if YES, assumed true P 0.954"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3763289",
-   "title": "Converge: Will the price of Ethereum be above $2,100 on August 28?",
-   "edge": 0.00940101010101011,
+   "key": "CV-2955043",
+   "title": "Converge: Will Anthropic have the best AI model at the end of August 2",
+   "edge": 0.0146284263959391,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "22636566504771026760574778616694499768967961650294506451926846344148021429465",
-     "market_id": "3763289",
-     "label": "YES Will the price of Ethereum be above $2,100 on August 28?",
+     "token_id": "112835487580149024170516422015943749261671957810997115126758688640706835176306",
+     "market_id": "2955043",
+     "label": "YES Will Anthropic have the best AI model at the end of August 2026?",
      "side": "YES",
-     "entry_price": 0.99,
+     "entry_price": 0.985,
      "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
+     "fee_per_share": 0.0005910000000000005,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9832,
-   "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 3.9d to resolution, 88% annualized net if YES, assumed true P 0.983"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3763287",
-   "title": "Converge: Will the price of Ethereum be above $2,000 on August 28?",
-   "edge": 0.00940101010101011,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "94119649219534470725039353379578998577478015527324497687084235812253108030366",
-     "market_id": "3763287",
-     "label": "YES Will the price of Ethereum be above $2,000 on August 28?",
-     "side": "YES",
-     "entry_price": 0.99,
-     "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9856,
-   "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 3.9d to resolution, 88% annualized net if YES, assumed true P 0.986"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3779798",
-   "title": "Converge: Will the price of Ethereum be above $2,100 on August 29?",
-   "edge": 0.00940101010101011,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "47260604226309932372578778333842878422490626320477099741817728816441860456833",
-     "market_id": "3779798",
-     "label": "YES Will the price of Ethereum be above $2,100 on August 29?",
-     "side": "YES",
-     "entry_price": 0.99,
-     "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9812000000000001,
-   "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 4.9d to resolution, 70% annualized net if YES, assumed true P 0.981"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3779795",
-   "title": "Converge: Will the price of Ethereum be above $2,000 on August 29?",
-   "edge": 0.00940101010101011,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "82505461505901375630781730963386948228655226246217673777103858433429865423626",
-     "market_id": "3779795",
-     "label": "YES Will the price of Ethereum be above $2,000 on August 29?",
-     "side": "YES",
-     "entry_price": 0.99,
-     "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9848,
-   "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 4.9d to resolution, 70% annualized net if YES, assumed true P 0.985"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3779792",
-   "title": "Converge: Will the price of Ethereum be above $1,900 on August 29?",
-   "edge": 0.00940101010101011,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "103525897953480971521701569441956703887533478014255085740832125692831595560134",
-     "market_id": "3779792",
-     "label": "YES Will the price of Ethereum be above $1,900 on August 29?",
-     "side": "YES",
-     "entry_price": 0.99,
-     "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9868,
-   "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 4.9d to resolution, 70% annualized net if YES, assumed true P 0.987"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3779843",
-   "title": "Converge: Will the price of Bitcoin be above $68,000 on August 29?",
-   "edge": 0.00940101010101011,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "96319286870391620613180090453327041399431835602526633821103121135687073208494",
-     "market_id": "3779843",
-     "label": "YES Will the price of Bitcoin be above $68,000 on August 29?",
-     "side": "YES",
-     "entry_price": 0.99,
-     "shares": 0.0,
-     "fee_per_share": 0.0006930000000000006,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.984,
-   "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 4.9d to resolution, 70% annualized net if YES, assumed true P 0.984"
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-08-31T00:00:00Z",
+   "note": "YES ask 0.985, fee 0.0006, 6.2d to resolution, 86% annualized net if YES, assumed true P 0.986"
   },
   {
    "strategy": "CONVERGE",
@@ -44330,9 +44157,78 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.984,
+   "est_p_win": 0.9844,
    "resolve_by": "2026-08-30T16:00:00Z",
-   "note": "YES ask 0.991, fee 0.0006, 5.9d to resolution, 52% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.991, fee 0.0006, 5.9d to resolution, 53% annualized net if YES, assumed true P 0.984"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3779798",
+   "title": "Converge: Will the price of Ethereum be above $2,100 on August 29?",
+   "edge": 0.006559345417925484,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "47260604226309932372578778333842878422490626320477099741817728816441860456833",
+     "market_id": "3779798",
+     "label": "YES Will the price of Ethereum be above $2,100 on August 29?",
+     "side": "YES",
+     "entry_price": 0.993,
+     "shares": 0.0,
+     "fee_per_share": 0.00048657000000000046,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.982,
+   "resolve_by": "2026-08-29T16:00:00Z",
+   "note": "YES ask 0.993, fee 0.0005, 4.9d to resolution, 49% annualized net if YES, assumed true P 0.982"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3779795",
+   "title": "Converge: Will the price of Ethereum be above $2,000 on August 29?",
+   "edge": 0.0046751256281407074,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "82505461505901375630781730963386948228655226246217673777103858433429865423626",
+     "market_id": "3779795",
+     "label": "YES Will the price of Ethereum be above $2,000 on August 29?",
+     "side": "YES",
+     "entry_price": 0.995,
+     "shares": 0.0,
+     "fee_per_share": 0.0003482500000000003,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-08-29T16:00:00Z",
+   "note": "YES ask 0.995, fee 0.0003, 4.9d to resolution, 35% annualized net if YES, assumed true P 0.986"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3779840",
+   "title": "Converge: Will the price of Bitcoin be above $66,000 on August 29?",
+   "edge": 0.0046751256281407074,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "84613011629557124273766465106713710033157191919517571782866644215323607550524",
+     "market_id": "3779840",
+     "label": "YES Will the price of Bitcoin be above $66,000 on August 29?",
+     "side": "YES",
+     "entry_price": 0.995,
+     "shares": 0.0,
+     "fee_per_share": 0.0003482500000000003,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9863999999999999,
+   "resolve_by": "2026-08-29T16:00:00Z",
+   "note": "YES ask 0.995, fee 0.0003, 4.9d to resolution, 35% annualized net if YES, assumed true P 0.986"
   }
  ]
 }
