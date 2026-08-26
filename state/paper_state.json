@@ -32276,6 +32276,14 @@
    "equity": 1043.1014,
    "realized_total": 46.1393,
    "open_positions": 24
+  },
+  {
+   "ts": 1787723243.267729,
+   "cash": 689.7343,
+   "open_value": 354.5629,
+   "equity": 1044.2972,
+   "realized_total": 47.278,
+   "open_positions": 23
   }
  ],
  "trades": [
@@ -45735,29 +45743,6 @@
  ],
  "last_scan_opportunities": [
   {
-   "strategy": "LONGSHOT",
-   "key": "LS-3567640",
-   "title": "Fade: Bradford City AFC vs. Burnley FC: O/U 5.5",
-   "edge": 0.009270216522110738,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "94689794053670970697992620284742979294413677441603456857410740059819434841952",
-     "market_id": "3567640",
-     "label": "NO Bradford City AFC vs. Burnley FC: O/U 5.5",
-     "side": "NO",
-     "entry_price": 0.961,
-     "shares": 0.0,
-     "fee_per_share": 0.0018739500000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9718,
-   "resolve_by": "2026-08-26T18:45:00Z",
-   "note": "YES at 0.047, assumed true 0.028, NO ask 0.961, fee 0.0019"
-  },
-  {
    "strategy": "CONVERGE",
    "key": "CV-3724029",
    "title": "Converge: Will the price of Bitcoin be above $76,000 on August 26?",
@@ -45778,7 +45763,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.982,
    "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES ask 0.978, fee 0.0015, 0.5d to resolution, 1682% annualized net if YES, assumed true P 0.982"
+   "note": "YES ask 0.978, fee 0.0015, 0.4d to resolution, 1798% annualized net if YES, assumed true P 0.982"
   },
   {
    "strategy": "CONVERGE",
@@ -45801,7 +45786,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9856,
    "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES ask 0.986, fee 0.0010, 0.5d to resolution, 1061% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.986, fee 0.0010, 0.4d to resolution, 1134% annualized net if YES, assumed true P 0.986"
   },
   {
    "strategy": "CONVERGE",
@@ -45824,7 +45809,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.968,
    "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.970, fee 0.0020, 1.5d to resolution, 723% annualized net if YES, assumed true P 0.968"
+   "note": "YES ask 0.970, fee 0.0020, 1.4d to resolution, 738% annualized net if YES, assumed true P 0.968"
   },
   {
    "strategy": "CONVERGE",
@@ -45847,7 +45832,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9648,
    "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.973, fee 0.0018, 1.5d to resolution, 649% annualized net if YES, assumed true P 0.965"
+   "note": "YES ask 0.973, fee 0.0018, 1.4d to resolution, 662% annualized net if YES, assumed true P 0.965"
   },
   {
    "strategy": "CONVERGE",
@@ -45870,7 +45855,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9652000000000001,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.958, fee 0.0028, 2.5d to resolution, 608% annualized net if YES, assumed true P 0.965"
+   "note": "YES ask 0.958, fee 0.0028, 2.4d to resolution, 616% annualized net if YES, assumed true P 0.965"
   },
   {
    "strategy": "CONVERGE",
@@ -45893,7 +45878,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9623999999999999,
    "resolve_by": "2026-08-28T21:00:00Z",
-   "note": "YES ask 0.966, fee 0.0013, 2.7d to resolution, 464% annualized net if YES, assumed true P 0.962"
+   "note": "YES ask 0.966, fee 0.0013, 2.6d to resolution, 469% annualized net if YES, assumed true P 0.962"
   },
   {
    "strategy": "CONVERGE",
@@ -45916,7 +45901,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9612,
    "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES ask 0.953, fee 0.0018, 4.8d to resolution, 362% annualized net if YES, assumed true P 0.961"
+   "note": "YES ask 0.953, fee 0.0018, 4.8d to resolution, 364% annualized net if YES, assumed true P 0.961"
   },
   {
    "strategy": "CONVERGE",
@@ -45939,7 +45924,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.964,
    "resolve_by": "2026-08-31T23:59:00Z",
-   "note": "YES ask 0.960, fee 0.0000, 5.8d to resolution, 263% annualized net if YES, assumed true P 0.964"
+   "note": "YES ask 0.960, fee 0.0000, 5.8d to resolution, 264% annualized net if YES, assumed true P 0.964"
   },
   {
    "strategy": "CONVERGE",
@@ -45962,7 +45947,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.984,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.983, fee 0.0012, 2.5d to resolution, 239% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.983, fee 0.0012, 2.4d to resolution, 242% annualized net if YES, assumed true P 0.984"
   },
   {
    "strategy": "CONVERGE",
@@ -45985,7 +45970,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9692000000000001,
    "resolve_by": "2026-08-31T16:00:00Z",
-   "note": "YES ask 0.974, fee 0.0018, 5.5d to resolution, 166% annualized net if YES, assumed true P 0.969"
+   "note": "YES ask 0.974, fee 0.0018, 5.4d to resolution, 167% annualized net if YES, assumed true P 0.969"
   },
   {
    "strategy": "CONVERGE",
@@ -46008,7 +45993,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9743999999999999,
    "resolve_by": "2026-08-30T16:00:00Z",
-   "note": "YES ask 0.983, fee 0.0012, 4.5d to resolution, 132% annualized net if YES, assumed true P 0.974"
+   "note": "YES ask 0.983, fee 0.0012, 4.4d to resolution, 133% annualized net if YES, assumed true P 0.974"
   },
   {
    "strategy": "CONVERGE",
@@ -46054,7 +46039,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9828,
    "resolve_by": "2026-08-29T16:00:00Z",
-   "note": "YES ask 0.988, fee 0.0008, 3.5d to resolution, 119% annualized net if YES, assumed true P 0.983"
+   "note": "YES ask 0.988, fee 0.0008, 3.4d to resolution, 120% annualized net if YES, assumed true P 0.983"
   },
   {
    "strategy": "CONVERGE",
@@ -46100,7 +46085,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9832,
    "resolve_by": "2026-08-30T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 4.5d to resolution, 77% annualized net if YES, assumed true P 0.983"
+   "note": "YES ask 0.990, fee 0.0007, 4.4d to resolution, 78% annualized net if YES, assumed true P 0.983"
   },
   {
    "strategy": "CONVERGE",
@@ -46123,7 +46108,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.984,
    "resolve_by": "2026-08-31T16:00:00Z",
-   "note": "YES ask 0.991, fee 0.0006, 5.5d to resolution, 57% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.991, fee 0.0006, 5.4d to resolution, 57% annualized net if YES, assumed true P 0.984"
   },
   {
    "strategy": "CONVERGE",
@@ -46146,7 +46131,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.982,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.998, fee 0.0001, 2.5d to resolution, 28% annualized net if YES, assumed true P 0.982"
+   "note": "YES ask 0.998, fee 0.0001, 2.4d to resolution, 28% annualized net if YES, assumed true P 0.982"
   },
   {
    "strategy": "CONVERGE",
@@ -46169,7 +46154,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9712,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.998, fee 0.0001, 2.5d to resolution, 28% annualized net if YES, assumed true P 0.971"
+   "note": "YES ask 0.998, fee 0.0001, 2.4d to resolution, 28% annualized net if YES, assumed true P 0.971"
   },
   {
    "strategy": "CONVERGE",
@@ -46192,7 +46177,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9772000000000001,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.998, fee 0.0001, 2.5d to resolution, 28% annualized net if YES, assumed true P 0.977"
+   "note": "YES ask 0.998, fee 0.0001, 2.4d to resolution, 28% annualized net if YES, assumed true P 0.977"
   }
  ]
 }
