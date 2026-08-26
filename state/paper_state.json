@@ -1,5 +1,5 @@
 {
- "cash": 693.285508,
+ "cash": 720.566072,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -54,11 +54,11 @@
     }
    ],
    "current_prices": {
-    "15995879212061634690117401102406740344182259907577722804398192920069534852349": 0.895
+    "15995879212061634690117401102406740344182259907577722804398192920069534852349": 0.89
    },
-   "current_value": 23.359735,
-   "unrealized_pl": -1.497503,
-   "unrealized_pl_pct": -6.024
+   "current_value": 23.229234,
+   "unrealized_pl": -1.628004,
+   "unrealized_pl_pct": -6.549
   },
   {
    "key": "LS-2761140",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9375
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9385
    },
-   "current_value": 24.061208,
-   "unrealized_pl": -0.814592,
-   "unrealized_pl_pct": -3.275
+   "current_value": 24.086874,
+   "unrealized_pl": -0.788926,
+   "unrealized_pl_pct": -3.171
   },
   {
    "key": "CV-3207796",
@@ -257,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "67110720435595699330793806592080902759343945109380146214355023076388473568125": 0.977
+    "67110720435595699330793806592080902759343945109380146214355023076388473568125": 0.9765
    },
-   "current_value": 17.15288,
-   "unrealized_pl": -0.140453,
-   "unrealized_pl_pct": -0.812
+   "current_value": 17.144102,
+   "unrealized_pl": -0.149231,
+   "unrealized_pl_pct": -0.863
   },
   {
    "key": "CV-3809005",
@@ -286,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "68440856082601520498635129581063834333148370664756483346536256661728716459139": 0.925
+    "68440856082601520498635129581063834333148370664756483346536256661728716459139": 0.9
    },
-   "current_value": 10.114535,
-   "unrealized_pl": -0.309723,
-   "unrealized_pl_pct": -2.971
+   "current_value": 9.841169,
+   "unrealized_pl": -0.583089,
+   "unrealized_pl_pct": -5.594
   },
   {
    "key": "CV-3779853",
@@ -344,11 +344,11 @@
     }
    ],
    "current_prices": {
-    "25512674623998375853572022601203148972230905443566742280140173285476081449904": 0.935
+    "25512674623998375853572022601203148972230905443566742280140173285476081449904": 0.875
    },
-   "current_value": 11.749441,
-   "unrealized_pl": -0.230277,
-   "unrealized_pl_pct": -1.922
+   "current_value": 10.995466,
+   "unrealized_pl": -0.984252,
+   "unrealized_pl_pct": -8.216
   },
   {
    "key": "CV-3779801",
@@ -402,11 +402,11 @@
     }
    ],
    "current_prices": {
-    "23904588395998989392953266966183693458809716391653270241452423895166076270601": 0.969
+    "23904588395998989392953266966183693458809716391653270241452423895166076270601": 0.9655
    },
-   "current_value": 7.701235,
-   "unrealized_pl": 0.020431,
-   "unrealized_pl_pct": 0.266
+   "current_value": 7.673418,
+   "unrealized_pl": -0.007386,
+   "unrealized_pl_pct": -0.096
   },
   {
    "key": "CV-3763315",
@@ -431,11 +431,11 @@
     }
    ],
    "current_prices": {
-    "76742473434059723178933218517600826520374210410328515157857215408727204396848": 0.9545
+    "76742473434059723178933218517600826520374210410328515157857215408727204396848": 0.9395
    },
-   "current_value": 7.954675,
-   "unrealized_pl": -0.005823,
-   "unrealized_pl_pct": -0.073
+   "current_value": 7.829667,
+   "unrealized_pl": -0.130831,
+   "unrealized_pl_pct": -1.644
   },
   {
    "key": "CV-3846632",
@@ -547,40 +547,11 @@
     }
    ],
    "current_prices": {
-    "10451124928493844849355057703558222404087423201197729105477623039880661055484": 0.9825
+    "10451124928493844849355057703558222404087423201197729105477623039880661055484": 0.983
    },
-   "current_value": 26.099726,
-   "unrealized_pl": 0.092976,
-   "unrealized_pl_pct": 0.358
-  },
-  {
-   "key": "LS-3552573",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Daejeon Hana Citizen FC 0 - 2 Ulsan HD FC?",
-   "opened": 1787729014.4582732,
-   "cost": 26.163631,
-   "edge": 0.013599,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9721,
-   "resolve_by": "2026-08-26T10:30:00Z",
-   "note": "YES at 0.046, assumed true 0.028, NO ask 0.957, fee 0.0021",
-   "legs": [
-    {
-     "token_id": "94194000728614261966510129840112900279478645293661041309879449140805776654260",
-     "market_id": "3552573",
-     "label": "NO Exact Score: Daejeon Hana Citizen FC 0 - 2 Ulsan HD FC?",
-     "side": "NO",
-     "entry_price": 0.957,
-     "shares": 27.280564
-    }
-   ],
-   "current_prices": {
-    "94194000728614261966510129840112900279478645293661041309879449140805776654260": 0.9995
-   },
-   "current_value": 27.266924,
-   "unrealized_pl": 1.103293,
-   "unrealized_pl_pct": 4.217
+   "current_value": 26.113009,
+   "unrealized_pl": 0.106259,
+   "unrealized_pl_pct": 0.409
   },
   {
    "key": "CV-3746431",
@@ -605,11 +576,11 @@
     }
    ],
    "current_prices": {
-    "53769803257810748681121166310408252947935347418038548176977746239279623242536": 0.9865
+    "53769803257810748681121166310408252947935347418038548176977746239279623242536": 0.978
    },
-   "current_value": 17.972542,
-   "unrealized_pl": 0.025468,
-   "unrealized_pl_pct": 0.142
+   "current_value": 17.817685,
+   "unrealized_pl": -0.129389,
+   "unrealized_pl_pct": -0.721
   },
   {
    "key": "CV-3746406",
@@ -663,11 +634,11 @@
     }
    ],
    "current_prices": {
-    "36883966188402112469990905672991660623877201475532264419725150949897779581736": 0.9685
+    "36883966188402112469990905672991660623877201475532264419725150949897779581736": 0.9705
    },
-   "current_value": 7.986186,
-   "unrealized_pl": -0.045352,
-   "unrealized_pl_pct": -0.565
+   "current_value": 8.002678,
+   "unrealized_pl": -0.02886,
+   "unrealized_pl_pct": -0.359
   },
   {
    "key": "CV-3362541",
@@ -25686,6 +25657,38 @@
    "payout": 22.602891,
    "pl": 0.411438,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3552573",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Daejeon Hana Citizen FC 0 - 2 Ulsan HD FC?",
+   "opened": 1787729014.4582732,
+   "cost": 26.163631,
+   "edge": 0.013599,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9721,
+   "resolve_by": "2026-08-26T10:30:00Z",
+   "note": "YES at 0.046, assumed true 0.028, NO ask 0.957, fee 0.0021",
+   "legs": [
+    {
+     "token_id": "94194000728614261966510129840112900279478645293661041309879449140805776654260",
+     "market_id": "3552573",
+     "label": "NO Exact Score: Daejeon Hana Citizen FC 0 - 2 Ulsan HD FC?",
+     "side": "NO",
+     "entry_price": 0.957,
+     "shares": 27.280564
+    }
+   ],
+   "current_prices": {
+    "94194000728614261966510129840112900279478645293661041309879449140805776654260": 0.957
+   },
+   "current_value": 26.1075,
+   "unrealized_pl": -0.056131,
+   "unrealized_pl_pct": -0.215,
+   "closed_ts": 1787756406.0881338,
+   "payout": 27.280564,
+   "pl": 1.116933
   }
  ],
  "history": [
@@ -32630,6 +32633,14 @@
    "cash": 693.2855,
    "open_value": 353.247,
    "equity": 1046.5325,
+   "realized_total": 49.3026,
+   "open_positions": 24
+  },
+  {
+   "ts": 1787756402.5758457,
+   "cash": 693.2855,
+   "open_value": 350.6687,
+   "equity": 1043.9542,
    "realized_total": 49.3026,
    "open_positions": 24
   }
@@ -46229,60 +46240,46 @@
    "amount": 22.6,
    "pl": 0.41,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1787756406.0881338,
+   "type": "CLOSE",
+   "key": "LS-3552573",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Daejeon Hana Citizen FC 0 - 2 Ulsan HD FC?",
+   "amount": 27.28,
+   "pl": 1.12
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3551134",
-   "title": "Fade: Exact Score: Al Faisaly Saudi Club 1 - 3 Al Fateh Saudi Club",
-   "edge": 0.010629000579040725,
+   "key": "LS-3597953",
+   "title": "Fade: Spread: Heart of Midlothian FC (-1.5)",
+   "edge": 0.008399866932801071,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "102411028330541076831538363786770998592447922241004495851521239363202918176159",
-     "market_id": "3551134",
-     "label": "NO Exact Score: Al Faisaly Saudi Club 1 - 3 Al Fateh Saudi Club?",
-     "side": "NO",
-     "entry_price": 0.964,
-     "shares": 0.0,
-     "fee_per_share": 0.0017352000000000016,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.964, fee 0.0017"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3724032",
-   "title": "Fade: Will the price of Ethereum be greater than $2,500 on August ",
-   "edge": 0.008841909320569058,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "87501749796846223059259194637375082407698202566737041831544794584352553706307",
-     "market_id": "3724032",
-     "label": "NO Will the price of Ethereum be greater than $2,500 on August 26?",
+     "token_id": "53477814153680460368299294880303358290295170377670259570809119945171954399943",
+     "market_id": "3597953",
+     "label": "NO Spread: Heart of Midlothian FC (-1.5)",
      "side": "NO",
      "entry_price": 0.96,
      "shares": 0.0,
-     "fee_per_share": 0.002688000000000003,
+     "fee_per_share": 0.0019200000000000018,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9712,
-   "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES at 0.048, assumed true 0.029, NO ask 0.960, fee 0.0027"
+   "est_p_win": 0.97,
+   "resolve_by": "2026-08-26T16:45:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.960, fee 0.0019"
   },
   {
    "strategy": "LONGSHOT",
    "key": "LS-3786618",
    "title": "Fade: Exact Score: CA Chaco For Ever 0 - 2 CA San Miguel?",
-   "edge": 0.009386423938984548,
+   "edge": 0.0118715772190969,
    "guaranteed": false,
    "legs": [
     {
@@ -46297,9 +46294,78 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9748,
+   "est_p_win": 0.9772,
    "resolve_by": "2026-08-26T18:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.964, fee 0.0017"
+   "note": "YES at 0.038, assumed true 0.023, NO ask 0.964, fee 0.0017"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3557252",
+   "title": "Fade: Exact Score: Bradford City AFC 2 - 0 Burnley FC?",
+   "edge": 0.01283505414525883,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "62601017327791443875782689230502496530068037102641607462328959049835213497045",
+     "market_id": "3557252",
+     "label": "NO Exact Score: Bradford City AFC 2 - 0 Burnley FC?",
+     "side": "NO",
+     "entry_price": 0.959,
+     "shares": 0.0,
+     "fee_per_share": 0.001965950000000002,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9733,
+   "resolve_by": "2026-08-26T18:45:00Z",
+   "note": "YES at 0.044, assumed true 0.027, NO ask 0.959, fee 0.0020"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3586044",
+   "title": "Fade: Spread: West Bromwich Albion FC (-1.5)",
+   "edge": 0.010122336407595592,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "69046119088987333382260141252173997573888491175767869306108980739099278714670",
+     "market_id": "3586044",
+     "label": "NO Spread: West Bromwich Albion FC (-1.5)",
+     "side": "NO",
+     "entry_price": 0.967,
+     "shares": 0.0,
+     "fee_per_share": 0.0015955500000000016,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9784,
+   "resolve_by": "2026-08-26T18:45:00Z",
+   "note": "YES at 0.036, assumed true 0.022, NO ask 0.967, fee 0.0016"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3557275",
+   "title": "Fade: Exact Score: Preston North End FC 1 - 0 Everton FC?",
+   "edge": 0.010629000579040725,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "93593117003258406305984436394145680872442863836762835165989188140735208203571",
+     "market_id": "3557275",
+     "label": "NO Exact Score: Preston North End FC 1 - 0 Everton FC?",
+     "side": "NO",
+     "entry_price": 0.964,
+     "shares": 0.0,
+     "fee_per_share": 0.0017352000000000016,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.976,
+   "resolve_by": "2026-08-26T19:00:00Z",
+   "note": "YES at 0.040, assumed true 0.024, NO ask 0.964, fee 0.0017"
   },
   {
    "strategy": "LONGSHOT",
@@ -46323,29 +46389,6 @@
    "est_p_win": 0.973,
    "resolve_by": "2026-08-26T19:00:00Z",
    "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3557275",
-   "title": "Fade: Exact Score: Preston North End FC 1 - 0 Everton FC?",
-   "edge": 0.010695115386483083,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "93593117003258406305984436394145680872442863836762835165989188140735208203571",
-     "market_id": "3557275",
-     "label": "NO Exact Score: Preston North End FC 1 - 0 Everton FC?",
-     "side": "NO",
-     "entry_price": 0.963,
-     "shares": 0.0,
-     "fee_per_share": 0.0017815500000000015,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9751,
-   "resolve_by": "2026-08-26T19:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.963, fee 0.0018"
   },
   {
    "strategy": "LONGSHOT",
@@ -46374,7 +46417,7 @@
    "strategy": "LONGSHOT",
    "key": "LS-3566774",
    "title": "Fade: Exact Score: Viking FK 0 - 0 GNK Dinamo Zagreb?",
-   "edge": 0.015620612783540702,
+   "edge": 0.016320743213041906,
    "guaranteed": false,
    "legs": [
     {
@@ -46382,22 +46425,22 @@
      "market_id": "3566774",
      "label": "NO Exact Score: Viking FK 0 - 0 GNK Dinamo Zagreb?",
      "side": "NO",
-     "entry_price": 0.955,
+     "entry_price": 0.954,
      "shares": 0.0,
-     "fee_per_share": 0.002148750000000002,
+     "fee_per_share": 0.002194200000000002,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9721,
+   "est_p_win": 0.9718,
    "resolve_by": "2026-08-26T19:00:00Z",
-   "note": "YES at 0.046, assumed true 0.028, NO ask 0.955, fee 0.0021"
+   "note": "YES at 0.047, assumed true 0.028, NO ask 0.954, fee 0.0022"
   },
   {
    "strategy": "LONGSHOT",
    "key": "LS-3566745",
    "title": "Fade: Exact Score: Olympique Lyonnais 0 - 2 Fenerbah\u00e7e SK?",
-   "edge": 0.011361243606787225,
+   "edge": 0.01105151680698923,
    "guaranteed": false,
    "legs": [
     {
@@ -46412,15 +46455,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9796,
+   "est_p_win": 0.9793,
    "resolve_by": "2026-08-26T19:00:00Z",
-   "note": "YES at 0.034, assumed true 0.020, NO ask 0.967, fee 0.0016"
+   "note": "YES at 0.035, assumed true 0.021, NO ask 0.967, fee 0.0016"
   },
   {
    "strategy": "LONGSHOT",
    "key": "LS-3558841",
    "title": "Fade: Exact Score: Real Madrid CF 2 - 2 Real Sociedad de F\u00fatbol?",
-   "edge": 0.01256082270644585,
+   "edge": 0.012871773926439605,
    "guaranteed": false,
    "legs": [
     {
@@ -46435,32 +46478,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9769,
+   "est_p_win": 0.9772,
    "resolve_by": "2026-08-26T19:00:00Z",
    "note": "YES at 0.038, assumed true 0.023, NO ask 0.963, fee 0.0018"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3724002",
-   "title": "Converge: Will the price of Ethereum be above $2,400 on August 26?",
-   "edge": 0.019980459652706863,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "102662085705264996752823004804017707478791993796805620691652848434482155585309",
-     "market_id": "3724002",
-     "label": "YES Will the price of Ethereum be above $2,400 on August 26?",
-     "side": "YES",
-     "entry_price": 0.979,
-     "shares": 0.0,
-     "fee_per_share": 0.0014391300000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9796,
-   "resolve_by": "2026-08-26T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 0.1d to resolution, 9192% annualized net if YES, assumed true P 0.980"
   },
   {
    "strategy": "CONVERGE",
@@ -46481,9 +46501,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.988,
+   "est_p_win": 0.9804,
    "resolve_by": "2026-08-26T21:00:00Z",
-   "note": "YES ask 0.990, fee 0.0004, 0.3d to resolution, 1231% annualized net if YES, assumed true P 0.988"
+   "note": "YES ask 0.990, fee 0.0004, 0.2d to resolution, 1416% annualized net if YES, assumed true P 0.980"
   },
   {
    "strategy": "CONVERGE",
@@ -46504,38 +46524,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9823999999999999,
+   "est_p_win": 0.9812000000000001,
    "resolve_by": "2026-08-26T21:00:00Z",
-   "note": "YES ask 0.990, fee 0.0004, 0.3d to resolution, 1231% annualized net if YES, assumed true P 0.982"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3763315",
-   "title": "Converge: Will the price of Bitcoin be above $74,000 on August 28?",
-   "edge": 0.0388666666666667,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "76742473434059723178933218517600826520374210410328515157857215408727204396848",
-     "market_id": "3763315",
-     "label": "YES Will the price of Bitcoin be above $74,000 on August 28?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.002688000000000003,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9636,
-   "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 2.1d to resolution, 682% annualized net if YES, assumed true P 0.964"
+   "note": "YES ask 0.990, fee 0.0004, 0.2d to resolution, 1416% annualized net if YES, assumed true P 0.981"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3746406",
    "title": "Converge: Will the price of Ethereum be above $2,300 on August 27?",
-   "edge": 0.01900816326530614,
+   "edge": 0.02193145342886389,
    "guaranteed": false,
    "legs": [
     {
@@ -46543,16 +46540,39 @@
      "market_id": "3746406",
      "label": "YES Will the price of Ethereum be above $2,300 on August 27?",
      "side": "YES",
-     "entry_price": 0.98,
+     "entry_price": 0.977,
      "shares": 0.0,
-     "fee_per_share": 0.0013720000000000015,
+     "fee_per_share": 0.0015729700000000014,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.98,
    "resolve_by": "2026-08-27T16:00:00Z",
-   "note": "YES ask 0.980, fee 0.0014, 1.1d to resolution, 643% annualized net if YES, assumed true P 0.980"
+   "note": "YES ask 0.977, fee 0.0016, 1.0d to resolution, 768% annualized net if YES, assumed true P 0.980"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3746431",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on August 27?",
+   "edge": 0.019980459652706863,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "53769803257810748681121166310408252947935347418038548176977746239279623242536",
+     "market_id": "3746431",
+     "label": "YES Will the price of Bitcoin be above $74,000 on August 27?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 0.0,
+     "fee_per_share": 0.0014391300000000014,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9823999999999999,
+   "resolve_by": "2026-08-27T16:00:00Z",
+   "note": "YES ask 0.979, fee 0.0014, 1.0d to resolution, 700% annualized net if YES, assumed true P 0.982"
   },
   {
    "strategy": "CONVERGE",
@@ -46567,21 +46587,21 @@
      "label": "YES Will the total domestic gross for Spider-Man: Brand New Day be less than 900m by August 31?",
      "side": "YES",
      "entry_price": 0.95,
-     "shares": 10.990526315789488,
+     "shares": 0.0,
      "fee_per_share": 0.002375000000000002,
-     "min_order_size": 5.0
+     "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.952,
    "resolve_by": "2026-08-31T23:59:00Z",
-   "note": "YES ask 0.950, fee 0.0024, 5.4d to resolution, 338% annualized net if YES, assumed true P 0.952"
+   "note": "YES ask 0.950, fee 0.0024, 5.4d to resolution, 340% annualized net if YES, assumed true P 0.952"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3763312",
    "title": "Converge: Will the price of Bitcoin be above $72,000 on August 28?",
-   "edge": 0.015140162601626029,
+   "edge": 0.01610399796541202,
    "guaranteed": false,
    "legs": [
     {
@@ -46589,16 +46609,16 @@
      "market_id": "3763312",
      "label": "YES Will the price of Bitcoin be above $72,000 on August 28?",
      "side": "YES",
-     "entry_price": 0.984,
+     "entry_price": 0.983,
      "shares": 0.0,
-     "fee_per_share": 0.0011020800000000012,
+     "fee_per_share": 0.0011697700000000012,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.9856,
    "resolve_by": "2026-08-28T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 2.1d to resolution, 266% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.983, fee 0.0012, 2.0d to resolution, 288% annualized net if YES, assumed true P 0.986"
   },
   {
    "strategy": "CONVERGE",
@@ -46619,15 +46639,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9752,
+   "est_p_win": 0.9724,
    "resolve_by": "2026-08-30T16:00:00Z",
-   "note": "YES ask 0.971, fee 0.0020, 4.1d to resolution, 249% annualized net if YES, assumed true P 0.975"
+   "note": "YES ask 0.971, fee 0.0020, 4.0d to resolution, 251% annualized net if YES, assumed true P 0.972"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3700194",
    "title": "Converge: US ceasefire against Iran continues through August 31?",
-   "edge": 0.026694045174538012,
+   "edge": 0.02986611740473741,
    "guaranteed": false,
    "legs": [
     {
@@ -46635,16 +46655,62 @@
      "market_id": "3700194",
      "label": "YES US ceasefire against Iran continues through August 31?",
      "side": "YES",
-     "entry_price": 0.974,
-     "shares": 8.24593271205202,
+     "entry_price": 0.971,
+     "shares": 0.0,
      "fee_per_share": 0.0,
-     "min_order_size": 5.0
+     "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9748,
+   "est_p_win": 0.9764,
    "resolve_by": "2026-08-31T23:59:00Z",
-   "note": "YES ask 0.974, fee 0.0000, 5.4d to resolution, 180% annualized net if YES, assumed true P 0.975"
+   "note": "YES ask 0.971, fee 0.0000, 5.4d to resolution, 203% annualized net if YES, assumed true P 0.976"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3875045",
+   "title": "Converge: Will the price of Bitcoin be above $70,000 on September 1?",
+   "edge": 0.022910163934426252,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "14463859355674170851318512299394230211066741294148984185159087181335219389149",
+     "market_id": "3875045",
+     "label": "YES Will the price of Bitcoin be above $70,000 on September 1?",
+     "side": "YES",
+     "entry_price": 0.976,
+     "shares": 0.0,
+     "fee_per_share": 0.0016396800000000016,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9756,
+   "resolve_by": "2026-09-01T16:00:00Z",
+   "note": "YES ask 0.976, fee 0.0016, 6.0d to resolution, 138% annualized net if YES, assumed true P 0.976"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3249814",
+   "title": "Converge: Will there be between 0 and 20 average daily transits of the",
+   "edge": 0.016260162601626032,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "67110720435595699330793806592080902759343945109380146214355023076388473568125",
+     "market_id": "3249814",
+     "label": "YES Will there be between 0 and 20 average daily transits of the Strait of Hormuz on August 31?",
+     "side": "YES",
+     "entry_price": 0.984,
+     "shares": 0.0,
+     "fee_per_share": 0.0,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-08-31T23:59:00Z",
+   "note": "YES ask 0.984, fee 0.0000, 5.4d to resolution, 110% annualized net if YES, assumed true P 0.981"
   },
   {
    "strategy": "CONVERGE",
@@ -46665,38 +46731,15 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.986,
+   "est_p_win": 0.9863999999999999,
    "resolve_by": "2026-08-31T23:59:00Z",
    "note": "YES ask 0.984, fee 0.0000, 5.4d to resolution, 110% annualized net if YES, assumed true P 0.986"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3249814",
-   "title": "Converge: Will there be between 0 and 20 average daily transits of the",
-   "edge": 0.0152284263959391,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "67110720435595699330793806592080902759343945109380146214355023076388473568125",
-     "market_id": "3249814",
-     "label": "YES Will there be between 0 and 20 average daily transits of the Strait of Hormuz on August 31?",
-     "side": "YES",
-     "entry_price": 0.985,
-     "shares": 0.0,
-     "fee_per_share": 0.0,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9816,
-   "resolve_by": "2026-08-31T23:59:00Z",
-   "note": "YES ask 0.985, fee 0.0000, 5.4d to resolution, 103% annualized net if YES, assumed true P 0.982"
-  },
-  {
-   "strategy": "CONVERGE",
    "key": "CV-3808998",
    "title": "Converge: Will the price of Bitcoin be above $70,000 on August 30?",
-   "edge": 0.007504516129032265,
+   "edge": 0.008451735620585274,
    "guaranteed": false,
    "legs": [
     {
@@ -46704,16 +46747,16 @@
      "market_id": "3808998",
      "label": "YES Will the price of Bitcoin be above $70,000 on August 30?",
      "side": "YES",
-     "entry_price": 0.992,
+     "entry_price": 0.991,
      "shares": 0.0,
-     "fee_per_share": 0.0005555200000000005,
+     "fee_per_share": 0.0006243300000000005,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.988,
    "resolve_by": "2026-08-30T16:00:00Z",
-   "note": "YES ask 0.992, fee 0.0006, 4.1d to resolution, 67% annualized net if YES, assumed true P 0.988"
+   "note": "YES ask 0.991, fee 0.0006, 4.0d to resolution, 76% annualized net if YES, assumed true P 0.988"
   }
  ]
 }
