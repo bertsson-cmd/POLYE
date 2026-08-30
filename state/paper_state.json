@@ -1,5 +1,5 @@
 {
- "cash": 782.167808,
+ "cash": 743.6758,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -25,11 +25,11 @@
     }
    ],
    "current_prices": {
-    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.981
+    "33257313448889142117338202598803323983660140128346778402748443216212913313148": 0.9815
    },
-   "current_value": 25.177649,
-   "unrealized_pl": 0.301849,
-   "unrealized_pl_pct": 1.213
+   "current_value": 25.190481,
+   "unrealized_pl": 0.314681,
+   "unrealized_pl_pct": 1.265
   },
   {
    "key": "CV-3249814",
@@ -112,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "85654491255284232945799571971757400369607728922353401693044083334304106373664": 0.983
+    "85654491255284232945799571971757400369607728922353401693044083334304106373664": 0.981
    },
-   "current_value": 26.451818,
-   "unrealized_pl": 0.02874,
-   "unrealized_pl_pct": 0.109
+   "current_value": 26.398,
+   "unrealized_pl": -0.025078,
+   "unrealized_pl_pct": -0.095
   },
   {
    "key": "LS-3779817",
@@ -141,11 +141,11 @@
     }
    ],
    "current_prices": {
-    "15970171062470844384346925614832374192093650793104418295959662425940353161966": 0.9945
+    "15970171062470844384346925614832374192093650793104418295959662425940353161966": 0.995
    },
-   "current_value": 26.980011,
-   "unrealized_pl": 0.44428,
-   "unrealized_pl_pct": 1.674
+   "current_value": 26.993576,
+   "unrealized_pl": 0.457845,
+   "unrealized_pl_pct": 1.725
   },
   {
    "key": "CV-3953588",
@@ -170,40 +170,11 @@
     }
    ],
    "current_prices": {
-    "80159793659920880680943869134703662991423803849224020082051792048857951049306": 0.9865
+    "80159793659920880680943869134703662991423803849224020082051792048857951049306": 0.986
    },
-   "current_value": 26.708304,
-   "unrealized_pl": 0.164091,
-   "unrealized_pl_pct": 0.618
-  },
-  {
-   "key": "LS-3659639",
-   "strategy": "LONGSHOT",
-   "title": "Fade: CD Nacional vs. CF Estrela da Amadora: O/U 5.5",
-   "opened": 1788094854.468662,
-   "cost": 26.807343,
-   "edge": 0.012835,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9733,
-   "resolve_by": "2026-08-30T14:30:00Z",
-   "note": "YES at 0.044, assumed true 0.027, NO ask 0.959, fee 0.0020",
-   "legs": [
-    {
-     "token_id": "85937230752299336887650330882473925568608001589239745761294856845387270904779",
-     "market_id": "3659639",
-     "label": "NO CD Nacional vs. CF Estrela da Amadora: O/U 5.5",
-     "side": "NO",
-     "entry_price": 0.959,
-     "shares": 27.896246
-    }
-   ],
-   "current_prices": {
-    "85937230752299336887650330882473925568608001589239745761294856845387270904779": 0.9995
-   },
-   "current_value": 27.882298,
-   "unrealized_pl": 1.074955,
-   "unrealized_pl_pct": 4.01
+   "current_value": 26.694767,
+   "unrealized_pl": 0.150554,
+   "unrealized_pl_pct": 0.567
   },
   {
    "key": "CV-3846613",
@@ -228,11 +199,11 @@
     }
    ],
    "current_prices": {
-    "42531687992917645607384184442958848433226163701172029257838503793830966421606": 0.976
+    "42531687992917645607384184442958848433226163701172029257838503793830966421606": 0.9705
    },
-   "current_value": 22.309497,
-   "unrealized_pl": -0.10147,
-   "unrealized_pl_pct": -0.453
+   "current_value": 22.183777,
+   "unrealized_pl": -0.22719,
+   "unrealized_pl_pct": -1.014
   },
   {
    "key": "CV-3875052",
@@ -257,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "100670661855508947019812201048078439832742780366255285445170331717220937012260": 0.955
+    "100670661855508947019812201048078439832742780366255285445170331717220937012260": 0.935
    },
-   "current_value": 25.971772,
-   "unrealized_pl": -0.20908,
-   "unrealized_pl_pct": -0.799
+   "current_value": 25.427861,
+   "unrealized_pl": -0.752991,
+   "unrealized_pl_pct": -2.876
   },
   {
    "key": "CV-3953592",
@@ -286,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "80080842604952316477530966857132825547371659187012428107556487211959780193091": 0.955
+    "80080842604952316477530966857132825547371659187012428107556487211959780193091": 0.948
    },
-   "current_value": 25.971772,
-   "unrealized_pl": -0.20908,
-   "unrealized_pl_pct": -0.799
+   "current_value": 25.781403,
+   "unrealized_pl": -0.399449,
+   "unrealized_pl_pct": -1.526
   },
   {
    "key": "CV-3975520",
@@ -315,11 +286,127 @@
     }
    ],
    "current_prices": {
-    "55093377165033735779295824170897946738680386053061859875633600480038749925980": 0.9465
+    "55093377165033735779295824170897946738680386053061859875633600480038749925980": 0.9435
    },
-   "current_value": 26.149191,
-   "unrealized_pl": -0.059074,
-   "unrealized_pl_pct": -0.225
+   "current_value": 26.066309,
+   "unrealized_pl": -0.141956,
+   "unrealized_pl_pct": -0.542
+  },
+  {
+   "key": "CV-3846636",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $76,000 on August 31?",
+   "opened": 1788119732.3109348,
+   "cost": 26.199327,
+   "edge": 0.027836,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9764,
+   "resolve_by": "2026-08-31T16:00:00Z",
+   "note": "YES ask 0.971, fee 0.0020, 0.8d to resolution, 1215% annualized net if YES, assumed true P 0.976",
+   "legs": [
+    {
+     "token_id": "55868002590367561119722085624428102635671919945232274902249142235209463809050",
+     "market_id": "3846636",
+     "label": "YES Will the price of Bitcoin be above $76,000 on August 31?",
+     "side": "YES",
+     "entry_price": 0.971,
+     "shares": 26.927137
+    }
+   ],
+   "current_prices": {
+    "55868002590367561119722085624428102635671919945232274902249142235209463809050": 0.9705
+   },
+   "current_value": 26.132786,
+   "unrealized_pl": -0.066541,
+   "unrealized_pl_pct": -0.254
+  },
+  {
+   "key": "CV-3903736",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 2?",
+   "opened": 1788119732.3109567,
+   "cost": 14.283554,
+   "edge": 0.020955,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9792,
+   "resolve_by": "2026-09-02T16:00:00Z",
+   "note": "YES ask 0.978, fee 0.0015, 2.8d to resolution, 270% annualized net if YES, assumed true P 0.979",
+   "legs": [
+    {
+     "token_id": "10704405034250471221886537425106116527746259464073144528648084840101708087964",
+     "market_id": "3903736",
+     "label": "YES Will the price of Bitcoin be above $74,000 on September 2?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 14.582404
+    }
+   ],
+   "current_prices": {
+    "10704405034250471221886537425106116527746259464073144528648084840101708087964": 0.974
+   },
+   "current_value": 14.203261,
+   "unrealized_pl": -0.080293,
+   "unrealized_pl_pct": -0.562
+  },
+  {
+   "key": "CV-3932596",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 3?",
+   "opened": 1788119732.310971,
+   "cost": 8.452577,
+   "edge": 0.029822,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.97,
+   "resolve_by": "2026-09-03T16:00:00Z",
+   "note": "YES ask 0.969, fee 0.0021, 3.8d to resolution, 284% annualized net if YES, assumed true P 0.970",
+   "legs": [
+    {
+     "token_id": "19964178066747798244660663122401226416634711743313184325469579708716060762706",
+     "market_id": "3932596",
+     "label": "YES Will the price of Bitcoin be above $74,000 on September 3?",
+     "side": "YES",
+     "entry_price": 0.969,
+     "shares": 8.704101
+    }
+   ],
+   "current_prices": {
+    "19964178066747798244660663122401226416634711743313184325469579708716060762706": 0.9625
+   },
+   "current_value": 8.377697,
+   "unrealized_pl": -0.07488,
+   "unrealized_pl_pct": -0.886
+  },
+  {
+   "key": "CV-3953590",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on September 4?",
+   "opened": 1788119732.310983,
+   "cost": 17.452796,
+   "edge": 0.01707,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9832,
+   "resolve_by": "2026-09-04T16:00:00Z",
+   "note": "YES ask 0.982, fee 0.0012, 4.8d to resolution, 129% annualized net if YES, assumed true P 0.983",
+   "legs": [
+    {
+     "token_id": "31928040232327148428170763916034834358321138291709498191359807895028785930774",
+     "market_id": "3953590",
+     "label": "YES Will the price of Bitcoin be above $72,000 on September 4?",
+     "side": "YES",
+     "entry_price": 0.982,
+     "shares": 17.750339
+    }
+   ],
+   "current_prices": {
+    "31928040232327148428170763916034834358321138291709498191359807895028785930774": 0.979
+   },
+   "current_value": 17.377582,
+   "unrealized_pl": -0.075214,
+   "unrealized_pl_pct": -0.431
   }
  ],
  "closed": [
@@ -27340,6 +27427,38 @@
    "closed_ts": 1788110523.1132991,
    "payout": 28.160526,
    "pl": 1.314392
+  },
+  {
+   "key": "LS-3659639",
+   "strategy": "LONGSHOT",
+   "title": "Fade: CD Nacional vs. CF Estrela da Amadora: O/U 5.5",
+   "opened": 1788094854.468662,
+   "cost": 26.807343,
+   "edge": 0.012835,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9733,
+   "resolve_by": "2026-08-30T14:30:00Z",
+   "note": "YES at 0.044, assumed true 0.027, NO ask 0.959, fee 0.0020",
+   "legs": [
+    {
+     "token_id": "85937230752299336887650330882473925568608001589239745761294856845387270904779",
+     "market_id": "3659639",
+     "label": "NO CD Nacional vs. CF Estrela da Amadora: O/U 5.5",
+     "side": "NO",
+     "entry_price": 0.959,
+     "shares": 27.896246
+    }
+   ],
+   "current_prices": {
+    "85937230752299336887650330882473925568608001589239745761294856845387270904779": 0.959
+   },
+   "current_value": 26.7525,
+   "unrealized_pl": -0.054843,
+   "unrealized_pl_pct": -0.205,
+   "closed_ts": 1788119734.1600778,
+   "payout": 27.896246,
+   "pl": 1.088903
   }
  ],
  "history": [
@@ -34446,6 +34565,14 @@
    "equity": 1045.8462,
    "realized_total": 44.609,
    "open_positions": 13
+  },
+  {
+   "ts": 1788119732.434967,
+   "cash": 715.7796,
+   "open_value": 330.1788,
+   "equity": 1045.9584,
+   "realized_total": 46.9631,
+   "open_positions": 15
   }
  ],
  "trades": [
@@ -49089,20 +49216,65 @@
    "title": "Converge: Will the price of Bitcoin be above $78,000 on August 30?",
    "amount": 28.16,
    "pl": 1.31
+  },
+  {
+   "ts": 1788119732.3109348,
+   "type": "OPEN",
+   "key": "CV-3846636",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $76,000 on August 31?",
+   "amount": 26.2,
+   "pl": null
+  },
+  {
+   "ts": 1788119732.3109567,
+   "type": "OPEN",
+   "key": "CV-3903736",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 2?",
+   "amount": 14.28,
+   "pl": null
+  },
+  {
+   "ts": 1788119732.310971,
+   "type": "OPEN",
+   "key": "CV-3932596",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 3?",
+   "amount": 8.45,
+   "pl": null
+  },
+  {
+   "ts": 1788119732.310983,
+   "type": "OPEN",
+   "key": "CV-3953590",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on September 4?",
+   "amount": 17.45,
+   "pl": null
+  },
+  {
+   "ts": 1788119734.1600778,
+   "type": "CLOSE",
+   "key": "LS-3659639",
+   "strategy": "LONGSHOT",
+   "title": "Fade: CD Nacional vs. CF Estrela da Amadora: O/U 5.5",
+   "amount": 27.9,
+   "pl": 1.09
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3649866",
-   "title": "Fade: Exact Score: Cagliari Calcio 1 - 0 FC Internazionale Milano?",
-   "edge": 0.011804471708189424,
+   "key": "LS-3702275",
+   "title": "Fade: Spread: FC Dallas (-2.5)",
+   "edge": 0.011183796232241314,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "111475860566201707452012649096411396693185771162824131536670489437860559361754",
-     "market_id": "3649866",
-     "label": "NO Exact Score: Cagliari Calcio 1 - 0 FC Internazionale Milano?",
+     "token_id": "57317570140512233564171964401631569241108366715605391489133713111267586539601",
+     "market_id": "3702275",
+     "label": "NO Spread: FC Dallas (-2.5)",
      "side": "NO",
      "entry_price": 0.965,
      "shares": 0.0,
@@ -49111,176 +49283,38 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9781,
-   "resolve_by": "2026-08-30T18:45:00Z",
-   "note": "YES at 0.036, assumed true 0.022, NO ask 0.965, fee 0.0017"
+   "est_p_win": 0.9775,
+   "resolve_by": "2026-08-30T23:00:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.965, fee 0.0017"
   },
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3655600",
-   "title": "Fade: Spread: Olympique de Marseille (-2.5)",
-   "edge": 0.011518629407850976,
+   "key": "LS-3934116",
+   "title": "Fade: Will Ethereum dip to $2,400 August 24-30?",
+   "edge": 0.00839782847772254,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "71775402791075449404904436561843208366394618934555670806534535883392145987144",
-     "market_id": "3655600",
-     "label": "NO Spread: Olympique de Marseille (-2.5)",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-08-30T18:45:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3654318",
-   "title": "Fade: Exact Score: AS Monaco FC 0 - 2 Olympique de Marseille?",
-   "edge": 0.004678549186529489,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "68457429015334928301675501769127137917086989336580483707559754514966011250571",
-     "market_id": "3654318",
-     "label": "NO Exact Score: AS Monaco FC 0 - 2 Olympique de Marseille?",
+     "token_id": "28684325018952516792367544483234756302400500248249891685187562927213608131628",
+     "market_id": "3934116",
+     "label": "NO Will Ethereum dip to $2,400 August 24-30?",
      "side": "NO",
      "entry_price": 0.97,
      "shares": 0.0,
-     "fee_per_share": 0.0014550000000000014,
+     "fee_per_share": 0.002037000000000002,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-08-30T18:45:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.970, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3655816",
-   "title": "Fade: Cagliari Calcio vs. FC Internazionale Milano: Cagliari Calci",
-   "edge": 0.007766700464766774,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "77464917143989252652361919509918477208779743255517656673284009699960025811453",
-     "market_id": "3655816",
-     "label": "NO Cagliari Calcio vs. FC Internazionale Milano: Cagliari Calcio O/U 2.5",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 0.0,
-     "fee_per_share": 0.0014550000000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.979,
-   "resolve_by": "2026-08-30T18:45:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.970, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3656990",
-   "title": "Fade: Exact Score: RC Celta de Vigo 1 - 3 Athletic Club?",
-   "edge": 0.009555711674302993,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "103927909568428763429193838528151649722663268359905318354955406469675172663623",
-     "market_id": "3656990",
-     "label": "NO Exact Score: RC Celta de Vigo 1 - 3 Athletic Club?",
-     "side": "NO",
-     "entry_price": 0.971,
-     "shares": 0.0,
-     "fee_per_share": 0.0014079500000000013,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9817,
-   "resolve_by": "2026-08-30T19:30:00Z",
-   "note": "YES at 0.030, assumed true 0.018, NO ask 0.971, fee 0.0014"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-1973910",
-   "title": "Fade: Will Adam Scott win the 2026 TOUR Championship?",
-   "edge": 0.0073376177777814845,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "57187615616728562908601495546309149297858064955537036517368283264189812627448",
-     "market_id": "1973910",
-     "label": "NO Will Adam Scott win the 2026 TOUR Championship?",
-     "side": "NO",
-     "entry_price": 0.962,
-     "shares": 0.0,
-     "fee_per_share": 0.0018278000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9709,
-   "resolve_by": "2026-08-31T00:00:00Z",
-   "note": "YES at 0.049, assumed true 0.029, NO ask 0.962, fee 0.0018"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3846619",
-   "title": "Fade: Will the price of Bitcoin be between $82,000 and $84,000 on ",
-   "edge": 0.002888931215829586,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "113162553923271979554693700147702986429195682130587215793873498866508776167339",
-     "market_id": "3846619",
-     "label": "NO Will the price of Bitcoin be between $82,000 and $84,000 on August 31?",
-     "side": "NO",
-     "entry_price": 0.977,
-     "shares": 0.0,
-     "fee_per_share": 0.0015729700000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9814,
-   "resolve_by": "2026-08-31T16:00:00Z",
-   "note": "YES at 0.031, assumed true 0.019, NO ask 0.977, fee 0.0016"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3933072",
-   "title": "Fade: Will Elon Musk post <40 tweets from August 29 to August 31, ",
-   "edge": 0.01576614996730411,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "105871955210664326166276363957628094537406839932985800901721237586090275791821",
-     "market_id": "3933072",
-     "label": "NO Will Elon Musk post <40 tweets from August 29 to August 31, 2026?",
-     "side": "NO",
-     "entry_price": 0.953,
-     "shares": 0.0,
-     "fee_per_share": 0.002239550000000002,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9703,
-   "resolve_by": "2026-08-31T16:00:00Z",
-   "note": "YES at 0.050, assumed true 0.030, NO ask 0.953, fee 0.0022"
+   "est_p_win": 0.9802,
+   "resolve_by": "2026-08-31T04:00:00Z",
+   "note": "YES at 0.033, assumed true 0.020, NO ask 0.970, fee 0.0020"
   },
   {
    "strategy": "LONGSHOT",
    "key": "LS-3691287",
    "title": "Fade: Will Rayo Vallecano de Madrid win on 2026-08-31?",
-   "edge": 0.011518629407850976,
+   "edge": 0.012871773926439605,
    "guaranteed": false,
    "legs": [
     {
@@ -49288,68 +49322,22 @@
      "market_id": "3691287",
      "label": "NO Will Rayo Vallecano de Madrid win on 2026-08-31?",
      "side": "NO",
-     "entry_price": 0.96,
+     "entry_price": 0.963,
      "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
+     "fee_per_share": 0.0017815500000000015,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.973,
+   "est_p_win": 0.9772,
    "resolve_by": "2026-08-31T19:30:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3846613",
-   "title": "Converge: Will the price of Ethereum be above $2,400 on August 31?",
-   "edge": 0.019980459652706863,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "42531687992917645607384184442958848433226163701172029257838503793830966421606",
-     "market_id": "3846613",
-     "label": "YES Will the price of Ethereum be above $2,400 on August 31?",
-     "side": "YES",
-     "entry_price": 0.979,
-     "shares": 22.858091346855655,
-     "fee_per_share": 0.0014391300000000014,
-     "min_order_size": 5.0
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9808,
-   "resolve_by": "2026-08-31T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 0.9d to resolution, 773% annualized net if YES, assumed true P 0.981"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3875052",
-   "title": "Converge: Will the price of Bitcoin be above $76,000 on September 1?",
-   "edge": 0.0388666666666667,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "100670661855508947019812201048078439832742780366255285445170331717220937012260",
-     "market_id": "3875052",
-     "label": "YES Will the price of Bitcoin be above $76,000 on September 1?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 27.195572916666666,
-     "fee_per_share": 0.002688000000000003,
-     "min_order_size": 5.0
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-09-01T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 1.9d to resolution, 730% annualized net if YES, assumed true P 0.964"
+   "note": "YES at 0.038, assumed true 0.023, NO ask 0.963, fee 0.0018"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3846636",
    "title": "Converge: Will the price of Bitcoin be above $76,000 on August 31?",
-   "edge": 0.017069938900203682,
+   "edge": 0.02783611740473741,
    "guaranteed": false,
    "legs": [
     {
@@ -49357,68 +49345,45 @@
      "market_id": "3846636",
      "label": "YES Will the price of Bitcoin be above $76,000 on August 31?",
      "side": "YES",
-     "entry_price": 0.982,
-     "shares": 0.0,
-     "fee_per_share": 0.0012373200000000012,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9848,
-   "resolve_by": "2026-08-31T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 0.9d to resolution, 661% annualized net if YES, assumed true P 0.985"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3975520",
-   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 5?",
-   "edge": 0.054351058201058254,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "55093377165033735779295824170897946738680386053061859875633600480038749925980",
-     "market_id": "3975520",
-     "label": "YES Will the price of Bitcoin be above $74,000 on September 5?",
-     "side": "YES",
-     "entry_price": 0.945,
-     "shares": 27.627248677248677,
-     "fee_per_share": 0.0036382500000000035,
+     "entry_price": 0.971,
+     "shares": 26.927136972193615,
+     "fee_per_share": 0.001971130000000002,
      "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9572,
-   "resolve_by": "2026-09-05T16:00:00Z",
-   "note": "YES ask 0.945, fee 0.0036, 5.9d to resolution, 334% annualized net if YES, assumed true P 0.957"
+   "est_p_win": 0.9764,
+   "resolve_by": "2026-08-31T16:00:00Z",
+   "note": "YES ask 0.971, fee 0.0020, 0.8d to resolution, 1215% annualized net if YES, assumed true P 0.976"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-2954946",
-   "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
-   "edge": 0.012651225937183395,
+   "key": "CV-3846613",
+   "title": "Converge: Will the price of Ethereum be above $2,400 on August 31?",
+   "edge": 0.02585922918807813,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "33257313448889142117338202598803323983660140128346778402748443216212913313148",
-     "market_id": "2954946",
-     "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
+     "token_id": "42531687992917645607384184442958848433226163701172029257838503793830966421606",
+     "market_id": "3846613",
+     "label": "YES Will the price of Ethereum be above $2,400 on August 31?",
      "side": "YES",
-     "entry_price": 0.987,
+     "entry_price": 0.973,
      "shares": 0.0,
-     "fee_per_share": 0.0005132400000000004,
+     "fee_per_share": 0.0018389700000000018,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9848,
-   "resolve_by": "2026-09-01T03:59:00Z",
-   "note": "YES ask 0.987, fee 0.0005, 1.4d to resolution, 320% annualized net if YES, assumed true P 0.985"
+   "est_p_win": 0.9764,
+   "resolve_by": "2026-08-31T16:00:00Z",
+   "note": "YES ask 0.973, fee 0.0018, 0.8d to resolution, 1128% annualized net if YES, assumed true P 0.976"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3953592",
    "title": "Converge: Will the price of Bitcoin be above $74,000 on September 4?",
-   "edge": 0.0388666666666667,
+   "edge": 0.04913157894736847,
    "guaranteed": false,
    "legs": [
     {
@@ -49426,45 +49391,68 @@
      "market_id": "3953592",
      "label": "YES Will the price of Bitcoin be above $74,000 on September 4?",
      "side": "YES",
-     "entry_price": 0.96,
-     "shares": 27.195572916666666,
-     "fee_per_share": 0.002688000000000003,
-     "min_order_size": 5.0
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-09-04T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 4.9d to resolution, 287% annualized net if YES, assumed true P 0.964"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-3903736",
-   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 2?",
-   "edge": 0.019980459652706863,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "10704405034250471221886537425106116527746259464073144528648084840101708087964",
-     "market_id": "3903736",
-     "label": "YES Will the price of Bitcoin be above $74,000 on September 2?",
-     "side": "YES",
-     "entry_price": 0.979,
+     "entry_price": 0.95,
      "shares": 0.0,
-     "fee_per_share": 0.0014391300000000014,
+     "fee_per_share": 0.0033250000000000033,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.982,
-   "resolve_by": "2026-09-02T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 2.9d to resolution, 248% annualized net if YES, assumed true P 0.982"
+   "est_p_win": 0.9583999999999999,
+   "resolve_by": "2026-09-04T16:00:00Z",
+   "note": "YES ask 0.950, fee 0.0033, 4.8d to resolution, 371% annualized net if YES, assumed true P 0.958"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3975520",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 5?",
+   "edge": 0.05225620908130945,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "55093377165033735779295824170897946738680386053061859875633600480038749925980",
+     "market_id": "3975520",
+     "label": "YES Will the price of Bitcoin be above $74,000 on September 5?",
+     "side": "YES",
+     "entry_price": 0.947,
+     "shares": 0.0,
+     "fee_per_share": 0.003513370000000003,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9548,
+   "resolve_by": "2026-09-05T16:00:00Z",
+   "note": "YES ask 0.947, fee 0.0035, 5.8d to resolution, 327% annualized net if YES, assumed true P 0.955"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-2954946",
+   "title": "Converge: Will Alibaba have the best Chinese AI model at the end of Au",
+   "edge": 0.01166574898785426,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "33257313448889142117338202598803323983660140128346778402748443216212913313148",
+     "market_id": "2954946",
+     "label": "YES Will Alibaba have the best Chinese AI model at the end of August 2026?",
+     "side": "YES",
+     "entry_price": 0.988,
+     "shares": 0.0,
+     "fee_per_share": 0.0004742400000000004,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9852000000000001,
+   "resolve_by": "2026-09-01T03:59:00Z",
+   "note": "YES ask 0.988, fee 0.0005, 1.3d to resolution, 319% annualized net if YES, assumed true P 0.985"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3932596",
    "title": "Converge: Will the price of Bitcoin be above $74,000 on September 3?",
-   "edge": 0.02193145342886389,
+   "edge": 0.0298217440660475,
    "guaranteed": false,
    "legs": [
     {
@@ -49472,45 +49460,45 @@
      "market_id": "3932596",
      "label": "YES Will the price of Bitcoin be above $74,000 on September 3?",
      "side": "YES",
-     "entry_price": 0.977,
-     "shares": 0.0,
-     "fee_per_share": 0.0015729700000000014,
-     "min_order_size": null
+     "entry_price": 0.969,
+     "shares": 8.704101334931279,
+     "fee_per_share": 0.002102730000000002,
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9748,
+   "est_p_win": 0.97,
    "resolve_by": "2026-09-03T16:00:00Z",
-   "note": "YES ask 0.977, fee 0.0016, 3.9d to resolution, 203% annualized net if YES, assumed true P 0.975"
+   "note": "YES ask 0.969, fee 0.0021, 3.8d to resolution, 284% annualized net if YES, assumed true P 0.970"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3975518",
-   "title": "Converge: Will the price of Bitcoin be above $72,000 on September 5?",
-   "edge": 0.017069938900203682,
+   "key": "CV-3903736",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 2?",
+   "edge": 0.020954887525562394,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "48325539029836624803829997118952631108757479751428170106831077752556994271575",
-     "market_id": "3975518",
-     "label": "YES Will the price of Bitcoin be above $72,000 on September 5?",
+     "token_id": "10704405034250471221886537425106116527746259464073144528648084840101708087964",
+     "market_id": "3903736",
+     "label": "YES Will the price of Bitcoin be above $74,000 on September 2?",
      "side": "YES",
-     "entry_price": 0.982,
-     "shares": 0.0,
-     "fee_per_share": 0.0012373200000000012,
-     "min_order_size": null
+     "entry_price": 0.978,
+     "shares": 14.582403792526229,
+     "fee_per_share": 0.0015061200000000014,
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9804,
-   "resolve_by": "2026-09-05T16:00:00Z",
-   "note": "YES ask 0.982, fee 0.0012, 5.9d to resolution, 105% annualized net if YES, assumed true P 0.980"
+   "est_p_win": 0.9792,
+   "resolve_by": "2026-09-02T16:00:00Z",
+   "note": "YES ask 0.978, fee 0.0015, 2.8d to resolution, 270% annualized net if YES, assumed true P 0.979"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-3953590",
    "title": "Converge: Will the price of Bitcoin be above $72,000 on September 4?",
-   "edge": 0.010352345803842275,
+   "edge": 0.017069938900203682,
    "guaranteed": false,
    "legs": [
     {
@@ -49518,28 +49506,51 @@
      "market_id": "3953590",
      "label": "YES Will the price of Bitcoin be above $72,000 on September 4?",
      "side": "YES",
-     "entry_price": 0.989,
-     "shares": 0.0,
-     "fee_per_share": 0.0007615300000000007,
-     "min_order_size": null
+     "entry_price": 0.982,
+     "shares": 17.750339443312626,
+     "fee_per_share": 0.0012373200000000012,
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9876,
+   "est_p_win": 0.9832,
    "resolve_by": "2026-09-04T16:00:00Z",
-   "note": "YES ask 0.989, fee 0.0008, 4.9d to resolution, 76% annualized net if YES, assumed true P 0.988"
+   "note": "YES ask 0.982, fee 0.0012, 4.8d to resolution, 129% annualized net if YES, assumed true P 0.983"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-3975516",
-   "title": "Converge: Will the price of Bitcoin be above $70,000 on September 5?",
+   "key": "CV-3903714",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 2?",
    "edge": 0.00940101010101011,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "74185924330508446019285443405854613090250139262034316809300019377452370801201",
-     "market_id": "3975516",
-     "label": "YES Will the price of Bitcoin be above $70,000 on September 5?",
+     "token_id": "70201578483969901889735602740898460406147449867298394733470067451081406412474",
+     "market_id": "3903714",
+     "label": "YES Will the price of Ethereum be above $2,300 on September 2?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 0.0,
+     "fee_per_share": 0.0006930000000000006,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9764,
+   "resolve_by": "2026-09-02T16:00:00Z",
+   "note": "YES ask 0.990, fee 0.0007, 2.8d to resolution, 121% annualized net if YES, assumed true P 0.976"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-3903712",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on September 2?",
+   "edge": 0.00940101010101011,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "474290885979729489334207687456013419057275042237034974106401726703450084185",
+     "market_id": "3903712",
+     "label": "YES Will the price of Ethereum be above $2,200 on September 2?",
      "side": "YES",
      "entry_price": 0.99,
      "shares": 0.0,
@@ -49549,31 +49560,31 @@
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.988,
-   "resolve_by": "2026-09-05T16:00:00Z",
-   "note": "YES ask 0.990, fee 0.0007, 5.9d to resolution, 58% annualized net if YES, assumed true P 0.988"
+   "resolve_by": "2026-09-02T16:00:00Z",
+   "note": "YES ask 0.990, fee 0.0007, 2.8d to resolution, 121% annualized net if YES, assumed true P 0.988"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-2587797",
-   "title": "Converge: Will the ECB announce a 25 bps increase at the September 202",
-   "edge": 0.015460162601626031,
+   "key": "CV-3975518",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on September 5?",
+   "edge": 0.01900816326530614,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "85654491255284232945799571971757400369607728922353401693044083334304106373664",
-     "market_id": "2587797",
-     "label": "YES Will the ECB announce a 25 bps increase at the September 2026 meeting?",
+     "token_id": "48325539029836624803829997118952631108757479751428170106831077752556994271575",
+     "market_id": "3975518",
+     "label": "YES Will the price of Bitcoin be above $72,000 on September 5?",
      "side": "YES",
-     "entry_price": 0.984,
+     "entry_price": 0.98,
      "shares": 0.0,
-     "fee_per_share": 0.0007872000000000007,
+     "fee_per_share": 0.0013720000000000015,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9863999999999999,
-   "resolve_by": "2026-09-10T11:59:00Z",
-   "note": "YES ask 0.984, fee 0.0008, 10.8d to resolution, 52% annualized net if YES, assumed true P 0.986"
+   "est_p_win": 0.9788,
+   "resolve_by": "2026-09-05T16:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 5.8d to resolution, 119% annualized net if YES, assumed true P 0.979"
   }
  ]
 }
