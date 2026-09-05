@@ -1,5 +1,5 @@
 {
- "cash": 788.406606,
+ "cash": 852.16607,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -32,35 +32,6 @@
    "unrealized_pl_pct": -0.192
   },
   {
-   "key": "CV-4034631",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Ethereum be above $2,100 on September 7?",
-   "opened": 1788356258.529835,
-   "cost": 13.880937,
-   "edge": 0.018038,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.982,
-   "resolve_by": "2026-09-07T16:00:00Z",
-   "note": "YES ask 0.981, fee 0.0013, 5.1d to resolution, 129% annualized net if YES, assumed true P 0.982",
-   "legs": [
-    {
-     "token_id": "43919018931929448893565283058642119615262864515505823152733976589819515494248",
-     "market_id": "4034631",
-     "label": "YES Will the price of Ethereum be above $2,100 on September 7?",
-     "side": "YES",
-     "entry_price": 0.981,
-     "shares": 14.130989
-    }
-   ],
-   "current_prices": {
-    "43919018931929448893565283058642119615262864515505823152733976589819515494248": 0.99
-   },
-   "current_value": 13.989679,
-   "unrealized_pl": 0.108742,
-   "unrealized_pl_pct": 0.783
-  },
-  {
    "key": "CV-3764763",
    "strategy": "CONVERGE",
    "title": "Converge: Will any other model be the best AI model on September 7, 20",
@@ -90,35 +61,6 @@
    "unrealized_pl_pct": -0.16
   },
   {
-   "key": "CV-4176911",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will \"Spider-Man: Brand New Day\" 6th Weekend Box Office be a",
-   "opened": 1788497127.733873,
-   "cost": 14.319133,
-   "edge": 0.032476,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9688,
-   "resolve_by": "2026-09-06T23:59:00Z",
-   "note": "YES ask 0.967, fee 0.0016, 2.8d to resolution, 423% annualized net if YES, assumed true P 0.969",
-   "legs": [
-    {
-     "token_id": "4312401309541502127744618953542975901034621162274354704407225013048517477951",
-     "market_id": "4176911",
-     "label": "YES Will \"Spider-Man: Brand New Day\" 6th Weekend Box Office be at least 15m?",
-     "side": "YES",
-     "entry_price": 0.967,
-     "shares": 14.783398
-    }
-   ],
-   "current_prices": {
-    "4312401309541502127744618953542975901034621162274354704407225013048517477951": 0.967
-   },
-   "current_value": 14.295546,
-   "unrealized_pl": -0.023587,
-   "unrealized_pl_pct": -0.165
-  },
-  {
    "key": "CV-4061223",
    "strategy": "CONVERGE",
    "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
@@ -141,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "29168194449985489061102768985150261970157033363223603940114876845994992250146": 0.9655
+    "29168194449985489061102768985150261970157033363223603940114876845994992250146": 0.96
    },
-   "current_value": 26.355887,
-   "unrealized_pl": 0.076761,
-   "unrealized_pl_pct": 0.292
+   "current_value": 26.20575,
+   "unrealized_pl": -0.073376,
+   "unrealized_pl_pct": -0.279
   },
   {
    "key": "CV-2589856",
@@ -170,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "34224127560083720453608705144696778706696450679056926524338211964623002524966": 0.981
+    "34224127560083720453608705144696778706696450679056926524338211964623002524966": 0.9785
    },
-   "current_value": 22.619599,
-   "unrealized_pl": -0.0,
-   "unrealized_pl_pct": -0.0
+   "current_value": 22.561955,
+   "unrealized_pl": -0.057644,
+   "unrealized_pl_pct": -0.255
   },
   {
    "key": "CV-4144719",
@@ -204,35 +146,6 @@
    "current_value": 23.208951,
    "unrealized_pl": 0.101584,
    "unrealized_pl_pct": 0.44
-  },
-  {
-   "key": "LS-3801867",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Preston North End FC vs. Blackburn Rovers FC: O/U 5.5",
-   "opened": 1788570800.622067,
-   "cost": 26.4027,
-   "edge": 0.011519,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-09-05T11:30:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
-   "legs": [
-    {
-     "token_id": "112079228154184854103918042388503322490086003976566323720993203407138837366885",
-     "market_id": "3801867",
-     "label": "NO Preston North End FC vs. Blackburn Rovers FC: O/U 5.5",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 27.447917
-    }
-   ],
-   "current_prices": {
-    "112079228154184854103918042388503322490086003976566323720993203407138837366885": 0.945
-   },
-   "current_value": 25.938282,
-   "unrealized_pl": -0.464418,
-   "unrealized_pl_pct": -1.759
   },
   {
    "key": "CV-4144697",
@@ -286,40 +199,11 @@
     }
    ],
    "current_prices": {
-    "96005648982862320552914276428741923404100126278017316317574668853626467581873": 0.95
+    "96005648982862320552914276428741923404100126278017316317574668853626467581873": 0.9555
    },
-   "current_value": 26.3955,
-   "unrealized_pl": -0.092384,
-   "unrealized_pl_pct": -0.349
-  },
-  {
-   "key": "LS-3787016",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Wuhan San Zhen FC 0 - 2 Qingdao Xihaian FC?",
-   "opened": 1788600556.164785,
-   "cost": 26.358725,
-   "edge": 0.014396,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9748,
-   "resolve_by": "2026-09-05T11:00:00Z",
-   "note": "YES at 0.042, assumed true 0.025, NO ask 0.959, fee 0.0020",
-   "legs": [
-    {
-     "token_id": "28484783798730498385056207216779505704454607108673476248173258126086133975041",
-     "market_id": "3787016",
-     "label": "NO Exact Score: Wuhan San Zhen FC 0 - 2 Qingdao Xihaian FC?",
-     "side": "NO",
-     "entry_price": 0.959,
-     "shares": 27.429406
-    }
-   ],
-   "current_prices": {
-    "28484783798730498385056207216779505704454607108673476248173258126086133975041": 0.996
-   },
-   "current_value": 27.319688,
-   "unrealized_pl": 0.960963,
-   "unrealized_pl_pct": 3.646
+   "current_value": 26.548316,
+   "unrealized_pl": 0.060432,
+   "unrealized_pl_pct": 0.228
   },
   {
    "key": "CV-4003949",
@@ -344,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "71587425432844780130828469298468128196346291942779617221123381487156160232247": 0.974
+    "71587425432844780130828469298468128196346291942779617221123381487156160232247": 0.9765
    },
-   "current_value": 26.399895,
-   "unrealized_pl": -0.073352,
-   "unrealized_pl_pct": -0.277
+   "current_value": 26.467657,
+   "unrealized_pl": -0.00559,
+   "unrealized_pl_pct": -0.021
   },
   {
    "key": "CV-4144721",
@@ -378,6 +262,64 @@
    "current_value": 10.459529,
    "unrealized_pl": -0.148269,
    "unrealized_pl_pct": -1.398
+  },
+  {
+   "key": "CV-4003913",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,400 on September 6?",
+   "opened": 1788623878.9103906,
+   "cost": 9.057029,
+   "edge": 0.039883,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9604,
+   "resolve_by": "2026-09-06T16:00:00Z",
+   "note": "YES ask 0.959, fee 0.0028, 1.0d to resolution, 1454% annualized net if YES, assumed true P 0.960",
+   "legs": [
+    {
+     "token_id": "110155687288539620106933633636684232286660118319879295945478158186846692058027",
+     "market_id": "4003913",
+     "label": "YES Will the price of Ethereum be above $2,400 on September 6?",
+     "side": "YES",
+     "entry_price": 0.959,
+     "shares": 9.417216
+    }
+   ],
+   "current_prices": {
+    "110155687288539620106933633636684232286660118319879295945478158186846692058027": 0.9505
+   },
+   "current_value": 8.951064,
+   "unrealized_pl": -0.105965,
+   "unrealized_pl_pct": -1.17
+  },
+  {
+   "key": "CV-4061198",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 8?",
+   "opened": 1788623878.910405,
+   "cost": 10.594111,
+   "edge": 0.019008,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9808,
+   "resolve_by": "2026-09-08T16:00:00Z",
+   "note": "YES ask 0.980, fee 0.0014, 3.0d to resolution, 231% annualized net if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "43458762730068493268506672406324660334597853743979764999846492169236845054635",
+     "market_id": "4061198",
+     "label": "YES Will the price of Ethereum be above $2,300 on September 8?",
+     "side": "YES",
+     "entry_price": 0.98,
+     "shares": 10.795204
+    }
+   ],
+   "current_prices": {
+    "43458762730068493268506672406324660334597853743979764999846492169236845054635": 0.976
+   },
+   "current_value": 10.536119,
+   "unrealized_pl": -0.057992,
+   "unrealized_pl_pct": -0.547
   }
  ],
  "closed": [
@@ -30247,6 +30189,136 @@
    "payout": 9.081276,
    "pl": 0.104978,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-4034631",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,100 on September 7?",
+   "opened": 1788356258.529835,
+   "cost": 13.880937,
+   "edge": 0.018038,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.982,
+   "resolve_by": "2026-09-07T16:00:00Z",
+   "note": "YES ask 0.981, fee 0.0013, 5.1d to resolution, 129% annualized net if YES, assumed true P 0.982",
+   "legs": [
+    {
+     "token_id": "43919018931929448893565283058642119615262864515505823152733976589819515494248",
+     "market_id": "4034631",
+     "label": "YES Will the price of Ethereum be above $2,100 on September 7?",
+     "side": "YES",
+     "entry_price": 0.981,
+     "shares": 14.130989
+    }
+   ],
+   "current_prices": {
+    "43919018931929448893565283058642119615262864515505823152733976589819515494248": 0.99
+   },
+   "current_value": 13.989679,
+   "unrealized_pl": 0.108742,
+   "unrealized_pl_pct": 0.783,
+   "closed_ts": 1788623879.0296018,
+   "payout": 14.060334,
+   "pl": 0.179397,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-4176911",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" 6th Weekend Box Office be a",
+   "opened": 1788497127.733873,
+   "cost": 14.319133,
+   "edge": 0.032476,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9688,
+   "resolve_by": "2026-09-06T23:59:00Z",
+   "note": "YES ask 0.967, fee 0.0016, 2.8d to resolution, 423% annualized net if YES, assumed true P 0.969",
+   "legs": [
+    {
+     "token_id": "4312401309541502127744618953542975901034621162274354704407225013048517477951",
+     "market_id": "4176911",
+     "label": "YES Will \"Spider-Man: Brand New Day\" 6th Weekend Box Office be at least 15m?",
+     "side": "YES",
+     "entry_price": 0.967,
+     "shares": 14.783398
+    }
+   ],
+   "current_prices": {
+    "4312401309541502127744618953542975901034621162274354704407225013048517477951": 0.967
+   },
+   "current_value": 14.295546,
+   "unrealized_pl": -0.023587,
+   "unrealized_pl_pct": -0.165,
+   "closed_ts": 1788623879.0296018,
+   "payout": 14.472947,
+   "pl": 0.153814,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3801867",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Preston North End FC vs. Blackburn Rovers FC: O/U 5.5",
+   "opened": 1788570800.622067,
+   "cost": 26.4027,
+   "edge": 0.011519,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-09-05T11:30:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019",
+   "legs": [
+    {
+     "token_id": "112079228154184854103918042388503322490086003976566323720993203407138837366885",
+     "market_id": "3801867",
+     "label": "NO Preston North End FC vs. Blackburn Rovers FC: O/U 5.5",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 27.447917
+    }
+   ],
+   "current_prices": {
+    "112079228154184854103918042388503322490086003976566323720993203407138837366885": 0.96
+   },
+   "current_value": 26.35,
+   "unrealized_pl": -0.0527,
+   "unrealized_pl_pct": -0.2,
+   "closed_ts": 1788623879.9352608,
+   "payout": 27.447917,
+   "pl": 1.045217
+  },
+  {
+   "key": "LS-3787016",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Wuhan San Zhen FC 0 - 2 Qingdao Xihaian FC?",
+   "opened": 1788600556.164785,
+   "cost": 26.358725,
+   "edge": 0.014396,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9748,
+   "resolve_by": "2026-09-05T11:00:00Z",
+   "note": "YES at 0.042, assumed true 0.025, NO ask 0.959, fee 0.0020",
+   "legs": [
+    {
+     "token_id": "28484783798730498385056207216779505704454607108673476248173258126086133975041",
+     "market_id": "3787016",
+     "label": "NO Exact Score: Wuhan San Zhen FC 0 - 2 Qingdao Xihaian FC?",
+     "side": "NO",
+     "entry_price": 0.959,
+     "shares": 27.429406
+    }
+   ],
+   "current_prices": {
+    "28484783798730498385056207216779505704454607108673476248173258126086133975041": 0.959
+   },
+   "current_value": 26.3048,
+   "unrealized_pl": -0.053925,
+   "unrealized_pl_pct": -0.205,
+   "closed_ts": 1788623879.9352608,
+   "payout": 27.429406,
+   "pl": 1.070681
   }
  ],
  "history": [
@@ -37664,6 +37736,14 @@
    "open_value": 269.52,
    "equity": 1057.9266,
    "realized_total": 57.5896,
+   "open_positions": 13
+  },
+  {
+   "ts": 1788623879.0325978,
+   "cash": 797.2887,
+   "open_value": 260.1316,
+   "equity": 1057.4203,
+   "realized_total": 57.9228,
    "open_positions": 13
   }
  ],
@@ -53957,43 +54037,99 @@
    "amount": 9.08,
    "pl": 0.1,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1788623878.9103906,
+   "type": "OPEN",
+   "key": "CV-4003913",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,400 on September 6?",
+   "amount": 9.06,
+   "pl": null
+  },
+  {
+   "ts": 1788623878.910405,
+   "type": "OPEN",
+   "key": "CV-4061198",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 8?",
+   "amount": 10.59,
+   "pl": null
+  },
+  {
+   "ts": 1788623879.0296018,
+   "type": "CLOSE",
+   "key": "CV-4034631",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,100 on September 7?",
+   "amount": 14.06,
+   "pl": 0.18,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1788623879.0296018,
+   "type": "CLOSE",
+   "key": "CV-4176911",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will \"Spider-Man: Brand New Day\" 6th Weekend Box Office be a",
+   "amount": 14.47,
+   "pl": 0.15,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1788623879.9352608,
+   "type": "CLOSE",
+   "key": "LS-3801867",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Preston North End FC vs. Blackburn Rovers FC: O/U 5.5",
+   "amount": 27.45,
+   "pl": 1.05
+  },
+  {
+   "ts": 1788623879.9352608,
+   "type": "CLOSE",
+   "key": "LS-3787016",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Wuhan San Zhen FC 0 - 2 Qingdao Xihaian FC?",
+   "amount": 27.43,
+   "pl": 1.07
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3789682",
-   "title": "Fade: Exact Score: FC Internazionale Milano 1 - 2 SSC Napoli?",
-   "edge": 0.011518629407850976,
+   "key": "LS-3981122",
+   "title": "Fade: Exact Score: PFC Levski Sofia 0 - 1 FC CSKA 1948?",
+   "edge": 0.013740027346846652,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "100676646807139172988868192917744483855333417136630020978791498222747199535519",
-     "market_id": "3789682",
-     "label": "NO Exact Score: FC Internazionale Milano 1 - 2 SSC Napoli?",
+     "token_id": "20699393800183301954618167081233371221744459851813072379872878235052877290929",
+     "market_id": "3981122",
+     "label": "NO Exact Score: PFC Levski Sofia 0 - 1 FC CSKA 1948?",
      "side": "NO",
-     "entry_price": 0.96,
+     "entry_price": 0.955,
      "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
+     "fee_per_share": 0.002148750000000002,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-09-05T16:00:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
+   "est_p_win": 0.9703,
+   "resolve_by": "2026-09-05T18:15:00Z",
+   "note": "YES at 0.050, assumed true 0.030, NO ask 0.955, fee 0.0021"
   },
   {
    "strategy": "LONGSHOT",
-   "key": "LS-4035098",
-   "title": "Fade: Will Elon Musk post 90-114 tweets from September 3 to Septem",
-   "edge": 0.010057461780159984,
+   "key": "LS-3792274",
+   "title": "Fade: Exact Score: OGC Nice 3 - 2 Le Mans FC?",
+   "edge": 0.010676306339608713,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "12115658072986327390055391028121113654976880585338225788131709638211917395240",
-     "market_id": "4035098",
-     "label": "NO Will Elon Musk post 90-114 tweets from September 3 to September 5, 2026?",
+     "token_id": "68225944765875285052654296654640386008994405859807371489544701814135238913223",
+     "market_id": "3792274",
+     "label": "NO Exact Score: OGC Nice 3 - 2 Le Mans FC?",
      "side": "NO",
      "entry_price": 0.968,
      "shares": 0.0,
@@ -54002,101 +54138,55 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9793,
-   "resolve_by": "2026-09-05T16:00:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.968, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3792535",
-   "title": "Fade: Exact Score: FC Schalke 04 0 - 1 FC Bayern M\u00fcnchen?",
-   "edge": 0.011518629407850976,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "19155880129555643244624692403171075142230078370802188185043166182112296224027",
-     "market_id": "3792535",
-     "label": "NO Exact Score: FC Schalke 04 0 - 1 FC Bayern M\u00fcnchen?",
-     "side": "NO",
-     "entry_price": 0.96,
-     "shares": 0.0,
-     "fee_per_share": 0.0019200000000000018,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-09-05T16:30:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3792667",
-   "title": "Fade: Exact Score: Hull City AFC 2 - 0 Aston Villa FC?",
-   "edge": 0.011295150899057443,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "76057337640633769881911901397639163534912548173200765111609293970710774538234",
-     "market_id": "3792667",
-     "label": "NO Exact Score: Hull City AFC 2 - 0 Aston Villa FC?",
-     "side": "NO",
-     "entry_price": 0.968,
-     "shares": 0.0,
-     "fee_per_share": 0.0015488000000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9805,
-   "resolve_by": "2026-09-05T16:30:00Z",
-   "note": "YES at 0.033, assumed true 0.019, NO ask 0.968, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3796828",
-   "title": "Fade: Exact Score: Rayo Vallecano de Madrid 0 - 2 Real Racing Club",
-   "edge": 0.01111753910691377,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "23415773071291108108324135641818636461406731319422846800282478310073015090497",
-     "market_id": "3796828",
-     "label": "NO Exact Score: Rayo Vallecano de Madrid 0 - 2 Real Racing Club?",
-     "side": "NO",
-     "entry_price": 0.966,
-     "shares": 0.0,
-     "fee_per_share": 0.0016422000000000016,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9784,
-   "resolve_by": "2026-09-05T16:30:00Z",
-   "note": "YES at 0.036, assumed true 0.022, NO ask 0.966, fee 0.0016"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-3789738",
-   "title": "Fade: Exact Score: AS Roma 3 - 2 Atalanta BC?",
-   "edge": 0.011361243606787225,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "45688762638876840095170326956493629875505912653516325049513639742424496401897",
-     "market_id": "3789738",
-     "label": "NO Exact Score: AS Roma 3 - 2 Atalanta BC?",
-     "side": "NO",
-     "entry_price": 0.967,
-     "shares": 0.0,
-     "fee_per_share": 0.0015955500000000016,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9796,
+   "est_p_win": 0.9799,
    "resolve_by": "2026-09-05T18:45:00Z",
-   "note": "YES at 0.034, assumed true 0.020, NO ask 0.967, fee 0.0016"
+   "note": "YES at 0.034, assumed true 0.020, NO ask 0.968, fee 0.0015"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3789721",
+   "title": "Fade: Exact Score: AS Roma 0 - 1 Atalanta BC?",
+   "edge": 0.011518629407850976,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "13095084247174473180420388917304953426193263807235651184523056108505831858351",
+     "market_id": "3789721",
+     "label": "NO Exact Score: AS Roma 0 - 1 Atalanta BC?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 0.0,
+     "fee_per_share": 0.0019200000000000018,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-09-05T18:45:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
+  },
+  {
+   "strategy": "LONGSHOT",
+   "key": "LS-3796878",
+   "title": "Fade: Exact Score: Villarreal CF 0 - 1 RC Deportivo A Coru\u00f1a?",
+   "edge": 0.011518629407850976,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "27657532672536919065597955503825924466610498903805411636316164456181273559334",
+     "market_id": "3796878",
+     "label": "NO Exact Score: Villarreal CF 0 - 1 RC Deportivo A Coru\u00f1a?",
+     "side": "NO",
+     "entry_price": 0.96,
+     "shares": 0.0,
+     "fee_per_share": 0.0019200000000000018,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.973,
+   "resolve_by": "2026-09-05T19:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
   },
   {
    "strategy": "LONGSHOT",
@@ -54122,56 +54212,10 @@
    "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
   },
   {
-   "strategy": "LONGSHOT",
-   "key": "LS-4235963",
-   "title": "Fade: 1st Half Exact Score: Austin FC 2 - 1 San Jose Earthquakes?",
-   "edge": 0.0015903979082922022,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "12743074512590048514627396549902627890904319940545884286608323417823610634911",
-     "market_id": "4235963",
-     "label": "NO 1st Half Exact Score: Austin FC 2 - 1 San Jose Earthquakes?",
-     "side": "NO",
-     "entry_price": 0.97,
-     "shares": 0.0,
-     "fee_per_share": 0.0014550000000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.973,
-   "resolve_by": "2026-09-06T00:30:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.970, fee 0.0015"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-706183",
-   "title": "Fade: Will Karishma Manzur be the Democratic nominee for Senate in",
-   "edge": 0.014338547578576567,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "37806007110699379574196083156782938311392224981899208050840783070359178406119",
-     "market_id": "706183",
-     "label": "NO Will Karishma Manzur be the Democratic nominee for Senate in New Hampshire?",
-     "side": "NO",
-     "entry_price": 0.961,
-     "shares": 0.0,
-     "fee_per_share": 0.0014991600000000013,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9763,
-   "resolve_by": "2026-09-08T00:00:00Z",
-   "note": "YES at 0.040, assumed true 0.024, NO ask 0.961, fee 0.0015"
-  },
-  {
    "strategy": "CONVERGE",
    "key": "CV-4003913",
    "title": "Converge: Will the price of Ethereum be above $2,400 on September 6?",
-   "edge": 0.03181616339193384,
+   "edge": 0.03988286757038585,
    "guaranteed": false,
    "legs": [
     {
@@ -54179,22 +54223,22 @@
      "market_id": "4003913",
      "label": "YES Will the price of Ethereum be above $2,400 on September 6?",
      "side": "YES",
-     "entry_price": 0.967,
-     "shares": 0.0,
-     "fee_per_share": 0.002233770000000002,
-     "min_order_size": null
+     "entry_price": 0.959,
+     "shares": 9.417215595514067,
+     "fee_per_share": 0.002752330000000003,
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.966,
+   "est_p_win": 0.9604,
    "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.967, fee 0.0022, 1.1d to resolution, 1032% annualized net if YES, assumed true P 0.966"
+   "note": "YES ask 0.959, fee 0.0028, 1.0d to resolution, 1454% annualized net if YES, assumed true P 0.960"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-4003949",
    "title": "Converge: Will the price of Bitcoin be above $78,000 on September 6?",
-   "edge": 0.023891025641025663,
+   "edge": 0.02193145342886389,
    "guaranteed": false,
    "legs": [
     {
@@ -54202,16 +54246,16 @@
      "market_id": "4003949",
      "label": "YES Will the price of Bitcoin be above $78,000 on September 6?",
      "side": "YES",
-     "entry_price": 0.975,
-     "shares": 27.104615384615386,
-     "fee_per_share": 0.0017062500000000016,
-     "min_order_size": 5.0
+     "entry_price": 0.977,
+     "shares": 0.0,
+     "fee_per_share": 0.0015729700000000014,
+     "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9792,
+   "est_p_win": 0.9812000000000001,
    "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.975, fee 0.0017, 1.1d to resolution, 775% annualized net if YES, assumed true P 0.979"
+   "note": "YES ask 0.977, fee 0.0016, 1.0d to resolution, 799% annualized net if YES, assumed true P 0.981"
   },
   {
    "strategy": "CONVERGE",
@@ -54226,38 +54270,15 @@
      "label": "YES Will the price of Bitcoin be above $76,000 on September 9?",
      "side": "YES",
      "entry_price": 0.95,
-     "shares": 11.127157894736857,
+     "shares": 0.0,
      "fee_per_share": 0.0033250000000000033,
-     "min_order_size": 5.0
+     "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
    "est_p_win": 0.952,
    "resolve_by": "2026-09-09T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 4.1d to resolution, 435% annualized net if YES, assumed true P 0.952"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-4061223",
-   "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
-   "edge": 0.02882783505154642,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "29168194449985489061102768985150261970157033363223603940114876845994992250146",
-     "market_id": "4061223",
-     "label": "YES Will the price of Bitcoin be above $76,000 on September 8?",
-     "side": "YES",
-     "entry_price": 0.97,
-     "shares": 0.0,
-     "fee_per_share": 0.002037000000000002,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9724,
-   "resolve_by": "2026-09-08T16:00:00Z",
-   "note": "YES ask 0.970, fee 0.0020, 3.1d to resolution, 337% annualized net if YES, assumed true P 0.972"
+   "note": "YES ask 0.950, fee 0.0033, 4.0d to resolution, 448% annualized net if YES, assumed true P 0.952"
   },
   {
    "strategy": "CONVERGE",
@@ -54278,9 +54299,9 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.96,
+   "est_p_win": 0.9644,
    "resolve_by": "2026-09-11T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 6.1d to resolution, 232% annualized net if YES, assumed true P 0.960"
+   "note": "YES ask 0.960, fee 0.0027, 6.0d to resolution, 236% annualized net if YES, assumed true P 0.964"
   },
   {
    "strategy": "CONVERGE",
@@ -54295,15 +54316,15 @@
      "label": "YES Will the price of Ethereum be above $2,300 on September 8?",
      "side": "YES",
      "entry_price": 0.98,
-     "shares": 0.0,
+     "shares": 10.795204081632958,
      "fee_per_share": 0.0013720000000000015,
-     "min_order_size": null
+     "min_order_size": 5.0
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9812000000000001,
+   "est_p_win": 0.9808,
    "resolve_by": "2026-09-08T16:00:00Z",
-   "note": "YES ask 0.980, fee 0.0014, 3.1d to resolution, 222% annualized net if YES, assumed true P 0.981"
+   "note": "YES ask 0.980, fee 0.0014, 3.0d to resolution, 231% annualized net if YES, assumed true P 0.981"
   },
   {
    "strategy": "CONVERGE",
@@ -54326,7 +54347,7 @@
    "guaranteed_payout": null,
    "est_p_win": 0.9848,
    "resolve_by": "2026-09-09T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 4.1d to resolution, 134% annualized net if YES, assumed true P 0.985"
+   "note": "YES ask 0.984, fee 0.0011, 4.0d to resolution, 138% annualized net if YES, assumed true P 0.985"
   },
   {
    "strategy": "CONVERGE",
@@ -54347,9 +54368,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.984,
+   "est_p_win": 0.9836,
    "resolve_by": "2026-09-11T16:00:00Z",
-   "note": "YES ask 0.986, fee 0.0010, 6.1d to resolution, 79% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.986, fee 0.0010, 6.0d to resolution, 80% annualized net if YES, assumed true P 0.984"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-2589856",
+   "title": "Converge: Will the Bank of Japan announce a 25 bps increase at the Sep",
+   "edge": 0.021450459652706862,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "34224127560083720453608705144696778706696450679056926524338211964623002524966",
+     "market_id": "2589856",
+     "label": "YES Will the Bank of Japan announce a 25 bps increase at the September 2026 meeting?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 0.0,
+     "fee_per_share": 0.0,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9828,
+   "resolve_by": "2026-09-18T15:59:00Z",
+   "note": "YES ask 0.979, fee 0.0000, 13.0d to resolution, 60% annualized net if YES, assumed true P 0.983"
   }
  ]
 }
