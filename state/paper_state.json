@@ -1,5 +1,5 @@
 {
- "cash": 824.749634,
+ "cash": 878.027071,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -61,35 +61,6 @@
    "unrealized_pl_pct": -0.16
   },
   {
-   "key": "CV-4061223",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
-   "opened": 1788512807.2694123,
-   "cost": 26.279126,
-   "edge": 0.038867,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.964,
-   "resolve_by": "2026-09-08T16:00:00Z",
-   "note": "YES ask 0.960, fee 0.0027, 4.3d to resolution, 331% annualized net if YES, assumed true P 0.964",
-   "legs": [
-    {
-     "token_id": "29168194449985489061102768985150261970157033363223603940114876845994992250146",
-     "market_id": "4061223",
-     "label": "YES Will the price of Bitcoin be above $76,000 on September 8?",
-     "side": "YES",
-     "entry_price": 0.96,
-     "shares": 27.297656
-    }
-   ],
-   "current_prices": {
-    "29168194449985489061102768985150261970157033363223603940114876845994992250146": 0.9665
-   },
-   "current_value": 26.383185,
-   "unrealized_pl": 0.104059,
-   "unrealized_pl_pct": 0.396
-  },
-  {
    "key": "CV-2589856",
    "strategy": "CONVERGE",
    "title": "Converge: Will the Bank of Japan announce a 25 bps increase at the Sep",
@@ -141,11 +112,11 @@
     }
    ],
    "current_prices": {
-    "8754990900938542951228665027131920143391671090390743394942166729681611774854": 0.9795
+    "8754990900938542951228665027131920143391671090390743394942166729681611774854": 0.975
    },
-   "current_value": 23.173464,
-   "unrealized_pl": 0.066097,
-   "unrealized_pl_pct": 0.286
+   "current_value": 23.067,
+   "unrealized_pl": -0.040367,
+   "unrealized_pl_pct": -0.175
   },
   {
    "key": "CV-4144697",
@@ -199,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "96005648982862320552914276428741923404100126278017316317574668853626467581873": 0.96
+    "96005648982862320552914276428741923404100126278017316317574668853626467581873": 0.958
    },
-   "current_value": 26.673348,
-   "unrealized_pl": 0.185464,
-   "unrealized_pl_pct": 0.7
+   "current_value": 26.617778,
+   "unrealized_pl": 0.129894,
+   "unrealized_pl_pct": 0.49
   },
   {
    "key": "CV-4144721",
@@ -257,40 +228,11 @@
     }
    ],
    "current_prices": {
-    "43458762730068493268506672406324660334597853743979764999846492169236845054635": 0.9875
+    "43458762730068493268506672406324660334597853743979764999846492169236845054635": 0.985
    },
-   "current_value": 10.660264,
-   "unrealized_pl": 0.066153,
-   "unrealized_pl_pct": 0.624
-  },
-  {
-   "key": "CV-4003949",
-   "strategy": "CONVERGE",
-   "title": "Converge: Will the price of Bitcoin be above $78,000 on September 6?",
-   "opened": 1788639496.0124104,
-   "cost": 26.542665,
-   "edge": 0.021931,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9812000000000001,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.977, fee 0.0016, 0.8d to resolution, 975% annualized net if YES, assumed true P 0.981",
-   "legs": [
-    {
-     "token_id": "71587425432844780130828469298468128196346291942779617221123381487156160232247",
-     "market_id": "4003949",
-     "label": "YES Will the price of Bitcoin be above $78,000 on September 6?",
-     "side": "YES",
-     "entry_price": 0.977,
-     "shares": 27.123849
-    }
-   ],
-   "current_prices": {
-    "71587425432844780130828469298468128196346291942779617221123381487156160232247": 0.97
-   },
-   "current_value": 26.310134,
-   "unrealized_pl": -0.232531,
-   "unrealized_pl_pct": -0.876
+   "current_value": 10.633276,
+   "unrealized_pl": 0.039165,
+   "unrealized_pl_pct": 0.37
   },
   {
    "key": "CV-4034637",
@@ -315,11 +257,11 @@
     }
    ],
    "current_prices": {
-    "74358931132749131108447261019212475237805239511620388860113807945739663005298": 0.925
+    "74358931132749131108447261019212475237805239511620388860113807945739663005298": 0.968
    },
-   "current_value": 25.779507,
-   "unrealized_pl": -0.78941,
-   "unrealized_pl_pct": -2.971
+   "current_value": 26.977905,
+   "unrealized_pl": 0.408988,
+   "unrealized_pl_pct": 1.539
   },
   {
    "key": "CV-4003913",
@@ -344,11 +286,11 @@
     }
    ],
    "current_prices": {
-    "110155687288539620106933633636684232286660118319879295945478158186846692058027": 0.9845
+    "110155687288539620106933633636684232286660118319879295945478158186846692058027": 0.993
    },
-   "current_value": 12.205545,
-   "unrealized_pl": -0.042129,
-   "unrealized_pl_pct": -0.344
+   "current_value": 12.310925,
+   "unrealized_pl": 0.063251,
+   "unrealized_pl_pct": 0.516
   }
  ],
  "closed": [
@@ -30478,6 +30420,72 @@
    "closed_ts": 1788652328.355676,
    "payout": 27.536979,
    "pl": 1.048608
+  },
+  {
+   "key": "CV-4061223",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
+   "opened": 1788512807.2694123,
+   "cost": 26.279126,
+   "edge": 0.038867,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.964,
+   "resolve_by": "2026-09-08T16:00:00Z",
+   "note": "YES ask 0.960, fee 0.0027, 4.3d to resolution, 331% annualized net if YES, assumed true P 0.964",
+   "legs": [
+    {
+     "token_id": "29168194449985489061102768985150261970157033363223603940114876845994992250146",
+     "market_id": "4061223",
+     "label": "YES Will the price of Bitcoin be above $76,000 on September 8?",
+     "side": "YES",
+     "entry_price": 0.96,
+     "shares": 27.297656
+    }
+   ],
+   "current_prices": {
+    "29168194449985489061102768985150261970157033363223603940114876845994992250146": 0.9665
+   },
+   "current_value": 26.383185,
+   "unrealized_pl": 0.104059,
+   "unrealized_pl_pct": 0.396,
+   "closed_ts": 1788661008.9595184,
+   "payout": 26.533322,
+   "pl": 0.254196,
+   "close_reason": "take_profit"
+  },
+  {
+   "key": "CV-4003949",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $78,000 on September 6?",
+   "opened": 1788639496.0124104,
+   "cost": 26.542665,
+   "edge": 0.021931,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9812000000000001,
+   "resolve_by": "2026-09-06T16:00:00Z",
+   "note": "YES ask 0.977, fee 0.0016, 0.8d to resolution, 975% annualized net if YES, assumed true P 0.981",
+   "legs": [
+    {
+     "token_id": "71587425432844780130828469298468128196346291942779617221123381487156160232247",
+     "market_id": "4003949",
+     "label": "YES Will the price of Bitcoin be above $78,000 on September 6?",
+     "side": "YES",
+     "entry_price": 0.977,
+     "shares": 27.123849
+    }
+   ],
+   "current_prices": {
+    "71587425432844780130828469298468128196346291942779617221123381487156160232247": 0.97
+   },
+   "current_value": 26.310134,
+   "unrealized_pl": -0.232531,
+   "unrealized_pl_pct": -0.876,
+   "closed_ts": 1788661008.9595184,
+   "payout": 26.744115,
+   "pl": 0.20145,
+   "close_reason": "take_profit"
   }
  ],
  "history": [
@@ -37936,6 +37944,14 @@
    "equity": 1059.268,
    "realized_total": 60.354,
    "open_positions": 14
+  },
+  {
+   "ts": 1788661008.9617817,
+   "cash": 878.0271,
+   "open_value": 185.1428,
+   "equity": 1063.1698,
+   "realized_total": 62.9069,
+   "open_positions": 10
   }
  ],
  "trades": [
@@ -54367,78 +54383,29 @@
    "title": "Fade: Boise State vs. Oregon",
    "amount": 27.54,
    "pl": 1.05
+  },
+  {
+   "ts": 1788661008.9595184,
+   "type": "CLOSE",
+   "key": "CV-4061223",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
+   "amount": 26.53,
+   "pl": 0.25,
+   "reason": "take_profit"
+  },
+  {
+   "ts": 1788661008.9595184,
+   "type": "CLOSE",
+   "key": "CV-4003949",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Bitcoin be above $78,000 on September 6?",
+   "amount": 26.74,
+   "pl": 0.2,
+   "reason": "take_profit"
   }
  ],
  "last_scan_opportunities": [
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-706183",
-   "title": "Fade: Will Karishma Manzur be the Democratic nominee for Senate in",
-   "edge": 0.011379586042356251,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "37806007110699379574196083156782938311392224981899208050840783070359178406119",
-     "market_id": "706183",
-     "label": "NO Will Karishma Manzur be the Democratic nominee for Senate in New Hampshire?",
-     "side": "NO",
-     "entry_price": 0.963,
-     "shares": 0.0,
-     "fee_per_share": 0.0014252400000000012,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9754,
-   "resolve_by": "2026-09-08T00:00:00Z",
-   "note": "YES at 0.041, assumed true 0.025, NO ask 0.963, fee 0.0014"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-4003949",
-   "title": "Converge: Will the price of Bitcoin be above $78,000 on September 6?",
-   "edge": 0.019980459652706863,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "71587425432844780130828469298468128196346291942779617221123381487156160232247",
-     "market_id": "4003949",
-     "label": "YES Will the price of Bitcoin be above $78,000 on September 6?",
-     "side": "YES",
-     "entry_price": 0.979,
-     "shares": 0.0,
-     "fee_per_share": 0.0014391300000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.976,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.979, fee 0.0014, 0.7d to resolution, 1085% annualized net if YES, assumed true P 0.976"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-4003913",
-   "title": "Converge: Will the price of Ethereum be above $2,400 on September 6?",
-   "edge": 0.012261225937183396,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "110155687288539620106933633636684232286660118319879295945478158186846692058027",
-     "market_id": "4003913",
-     "label": "YES Will the price of Ethereum be above $2,400 on September 6?",
-     "side": "YES",
-     "entry_price": 0.987,
-     "shares": 12.397708674305315,
-     "fee_per_share": 0.000898170000000001,
-     "min_order_size": 5.0
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9876,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.987, fee 0.0009, 0.7d to resolution, 666% annualized net if YES, assumed true P 0.988"
-  },
   {
    "strategy": "CONVERGE",
    "key": "CV-4144721",
@@ -54460,13 +54427,36 @@
    "guaranteed_payout": null,
    "est_p_win": 0.952,
    "resolve_by": "2026-09-09T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 3.7d to resolution, 488% annualized net if YES, assumed true P 0.952"
+   "note": "YES ask 0.950, fee 0.0033, 3.6d to resolution, 502% annualized net if YES, assumed true P 0.952"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4034637",
+   "title": "Converge: Will the price of Ethereum be above $2,400 on September 7?",
+   "edge": 0.020954887525562394,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "74358931132749131108447261019212475237805239511620388860113807945739663005298",
+     "market_id": "4034637",
+     "label": "YES Will the price of Ethereum be above $2,400 on September 7?",
+     "side": "YES",
+     "entry_price": 0.978,
+     "shares": 0.0,
+     "fee_per_share": 0.0015061200000000014,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9743999999999999,
+   "resolve_by": "2026-09-07T16:00:00Z",
+   "note": "YES ask 0.978, fee 0.0015, 1.6d to resolution, 487% annualized net if YES, assumed true P 0.974"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-4061223",
    "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
-   "edge": 0.03081785123966945,
+   "edge": 0.019980459652706863,
    "guaranteed": false,
    "legs": [
     {
@@ -54474,28 +54464,28 @@
      "market_id": "4061223",
      "label": "YES Will the price of Bitcoin be above $76,000 on September 8?",
      "side": "YES",
-     "entry_price": 0.968,
+     "entry_price": 0.979,
      "shares": 0.0,
-     "fee_per_share": 0.002168320000000002,
+     "fee_per_share": 0.0014391300000000014,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9732000000000001,
+   "est_p_win": 0.98,
    "resolve_by": "2026-09-08T16:00:00Z",
-   "note": "YES ask 0.968, fee 0.0022, 2.7d to resolution, 421% annualized net if YES, assumed true P 0.973"
+   "note": "YES ask 0.979, fee 0.0014, 2.6d to resolution, 284% annualized net if YES, assumed true P 0.980"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-4216778",
-   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 11?",
+   "key": "CV-4216756",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 11?",
    "edge": 0.02882783505154642,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "96005648982862320552914276428741923404100126278017316317574668853626467581873",
-     "market_id": "4216778",
-     "label": "YES Will the price of Bitcoin be above $74,000 on September 11?",
+     "token_id": "101489616283984645786046338008290829308634079041275987746018552578128587666614",
+     "market_id": "4216756",
+     "label": "YES Will the price of Ethereum be above $2,300 on September 11?",
      "side": "YES",
      "entry_price": 0.97,
      "shares": 0.0,
@@ -54504,9 +54494,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.968,
+   "est_p_win": 0.96,
    "resolve_by": "2026-09-11T16:00:00Z",
-   "note": "YES ask 0.970, fee 0.0020, 5.7d to resolution, 186% annualized net if YES, assumed true P 0.968"
+   "note": "YES ask 0.970, fee 0.0020, 5.6d to resolution, 189% annualized net if YES, assumed true P 0.960"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4216778",
+   "title": "Converge: Will the price of Bitcoin be above $74,000 on September 11?",
+   "edge": 0.023891025641025663,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "96005648982862320552914276428741923404100126278017316317574668853626467581873",
+     "market_id": "4216778",
+     "label": "YES Will the price of Bitcoin be above $74,000 on September 11?",
+     "side": "YES",
+     "entry_price": 0.975,
+     "shares": 0.0,
+     "fee_per_share": 0.0017062500000000016,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9663999999999999,
+   "resolve_by": "2026-09-11T16:00:00Z",
+   "note": "YES ask 0.975, fee 0.0017, 5.6d to resolution, 157% annualized net if YES, assumed true P 0.966"
   },
   {
    "strategy": "CONVERGE",
@@ -54527,32 +54540,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9836,
+   "est_p_win": 0.98,
    "resolve_by": "2026-09-09T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 3.7d to resolution, 150% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.984, fee 0.0011, 3.6d to resolution, 155% annualized net if YES, assumed true P 0.980"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-4216754",
-   "title": "Converge: Will the price of Ethereum be above $2,200 on September 11?",
-   "edge": 0.012261225937183396,
+   "key": "CV-4061196",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on September 8?",
+   "edge": 0.00940101010101011,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "18927983141331285814154375777043304757409717305281971473934753908730915167213",
-     "market_id": "4216754",
-     "label": "YES Will the price of Ethereum be above $2,200 on September 11?",
+     "token_id": "14036892806615924880210840692047012766748464198476928346220457104644028083486",
+     "market_id": "4061196",
+     "label": "YES Will the price of Ethereum be above $2,200 on September 8?",
      "side": "YES",
-     "entry_price": 0.987,
+     "entry_price": 0.99,
      "shares": 0.0,
-     "fee_per_share": 0.000898170000000001,
+     "fee_per_share": 0.0006930000000000006,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9868,
-   "resolve_by": "2026-09-11T16:00:00Z",
-   "note": "YES ask 0.987, fee 0.0009, 5.7d to resolution, 79% annualized net if YES, assumed true P 0.987"
+   "est_p_win": 0.988,
+   "resolve_by": "2026-09-08T16:00:00Z",
+   "note": "YES ask 0.990, fee 0.0007, 2.6d to resolution, 133% annualized net if YES, assumed true P 0.988"
   },
   {
    "strategy": "CONVERGE",
@@ -54575,7 +54588,30 @@
    "guaranteed_payout": null,
    "est_p_win": 0.982,
    "resolve_by": "2026-09-18T15:59:00Z",
-   "note": "YES ask 0.978, fee 0.0000, 12.7d to resolution, 65% annualized net if YES, assumed true P 0.982"
+   "note": "YES ask 0.978, fee 0.0000, 12.6d to resolution, 65% annualized net if YES, assumed true P 0.982"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4144717",
+   "title": "Converge: Will the price of Bitcoin be above $72,000 on September 9?",
+   "edge": 0.0046751256281407074,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "53338843749127265333847043860169895306001159210920262317699640489812463561336",
+     "market_id": "4144717",
+     "label": "YES Will the price of Bitcoin be above $72,000 on September 9?",
+     "side": "YES",
+     "entry_price": 0.995,
+     "shares": 0.0,
+     "fee_per_share": 0.0003482500000000003,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-09-09T16:00:00Z",
+   "note": "YES ask 0.995, fee 0.0003, 3.6d to resolution, 48% annualized net if YES, assumed true P 0.988"
   },
   {
    "strategy": "CONVERGE",
@@ -54596,9 +54632,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9863999999999999,
+   "est_p_win": 0.9823999999999999,
    "resolve_by": "2026-09-11T16:00:00Z",
-   "note": "YES ask 0.993, fee 0.0005, 5.7d to resolution, 42% annualized net if YES, assumed true P 0.986"
+   "note": "YES ask 0.993, fee 0.0005, 5.6d to resolution, 43% annualized net if YES, assumed true P 0.982"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4061198",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 8?",
+   "edge": 0.0018640080160320658,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "43458762730068493268506672406324660334597853743979764999846492169236845054635",
+     "market_id": "4061198",
+     "label": "YES Will the price of Ethereum be above $2,300 on September 8?",
+     "side": "YES",
+     "entry_price": 0.998,
+     "shares": 0.0,
+     "fee_per_share": 0.00013972000000000013,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-09-08T16:00:00Z",
+   "note": "YES ask 0.998, fee 0.0001, 2.6d to resolution, 26% annualized net if YES, assumed true P 0.988"
   }
  ]
 }
