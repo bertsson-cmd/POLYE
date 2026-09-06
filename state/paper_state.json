@@ -1,5 +1,5 @@
 {
- "cash": 823.246195,
+ "cash": 839.77017,
  "starting_bankroll": 1000.0,
  "positions": [
   {
@@ -83,11 +83,11 @@
     }
    ],
    "current_prices": {
-    "8754990900938542951228665027131920143391671090390743394942166729681611774854": 0.9795
+    "8754990900938542951228665027131920143391671090390743394942166729681611774854": 0.9815
    },
-   "current_value": 23.173464,
-   "unrealized_pl": 0.066097,
-   "unrealized_pl_pct": 0.286
+   "current_value": 23.22078,
+   "unrealized_pl": 0.113413,
+   "unrealized_pl_pct": 0.491
   },
   {
    "key": "CV-4144697",
@@ -170,11 +170,11 @@
     }
    ],
    "current_prices": {
-    "76759767911613638417581594568202544006965223490892093989021915162280291954315": 0.93
+    "76759767911613638417581594568202544006965223490892093989021915162280291954315": 0.935
    },
-   "current_value": 10.348257,
-   "unrealized_pl": -0.259541,
-   "unrealized_pl_pct": -2.447
+   "current_value": 10.403893,
+   "unrealized_pl": -0.203905,
+   "unrealized_pl_pct": -1.922
   },
   {
    "key": "CV-4034637",
@@ -199,69 +199,11 @@
     }
    ],
    "current_prices": {
-    "74358931132749131108447261019212475237805239511620388860113807945739663005298": 0.9595
+    "74358931132749131108447261019212475237805239511620388860113807945739663005298": 0.954
    },
-   "current_value": 26.741013,
-   "unrealized_pl": 0.172096,
-   "unrealized_pl_pct": 0.648
-  },
-  {
-   "key": "LS-3830289",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Birmingham City FC 1 - 3 Wolverhampton Wanderer",
-   "opened": 1788678662.5158577,
-   "cost": 26.627093,
-   "edge": 0.012182,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9775,
-   "resolve_by": "2026-09-06T11:00:00Z",
-   "note": "YES at 0.037, assumed true 0.022, NO ask 0.964, fee 0.0017",
-   "legs": [
-    {
-     "token_id": "26575504403191611355047792917905476990713946947905806748580033863462223559208",
-     "market_id": "3830289",
-     "label": "NO Exact Score: Birmingham City FC 1 - 3 Wolverhampton Wanderers FC?",
-     "side": "NO",
-     "entry_price": 0.964,
-     "shares": 27.571836
-    }
-   ],
-   "current_prices": {
-    "26575504403191611355047792917905476990713946947905806748580033863462223559208": 0.9995
-   },
-   "current_value": 27.55805,
-   "unrealized_pl": 0.930957,
-   "unrealized_pl_pct": 3.496
-  },
-  {
-   "key": "CV-4216882",
-   "strategy": "CONVERGE",
-   "title": "Converge: Ethereum Up or Down on September 6?",
-   "opened": 1788678662.515882,
-   "cost": 14.302969,
-   "edge": 0.039883,
-   "guaranteed": false,
-   "guaranteed_payout_sets": null,
-   "est_p_win": 0.9612,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.959, fee 0.0028, 0.4d to resolution, 3963% annualized net if YES, assumed true P 0.961",
-   "legs": [
-    {
-     "token_id": "47456796188406405210281391736637872644781347747219033346523640033690511179893",
-     "market_id": "4216882",
-     "label": "YES Ethereum Up or Down on September 6?",
-     "side": "YES",
-     "entry_price": 0.959,
-     "shares": 14.87178
-    }
-   ],
-   "current_prices": {
-    "47456796188406405210281391736637872644781347747219033346523640033690511179893": 0.9665
-   },
-   "current_value": 14.373575,
-   "unrealized_pl": 0.070606,
-   "unrealized_pl_pct": 0.494
+   "current_value": 26.587729,
+   "unrealized_pl": 0.018812,
+   "unrealized_pl_pct": 0.071
   },
   {
    "key": "CV-4061223",
@@ -286,11 +228,11 @@
     }
    ],
    "current_prices": {
-    "29168194449985489061102768985150261970157033363223603940114876845994992250146": 0.9695
+    "29168194449985489061102768985150261970157033363223603940114876845994992250146": 0.9635
    },
-   "current_value": 26.56555,
-   "unrealized_pl": -0.069516,
-   "unrealized_pl_pct": -0.261
+   "current_value": 26.401142,
+   "unrealized_pl": -0.233924,
+   "unrealized_pl_pct": -0.878
   },
   {
    "key": "CV-4250801",
@@ -315,40 +257,69 @@
     }
    ],
    "current_prices": {
-    "6804528518123455574700485971835302827412658502631410807443889110117091948635": 0.94
+    "6804528518123455574700485971835302827412658502631410807443889110117091948635": 0.945
    },
-   "current_value": 10.519787,
-   "unrealized_pl": -0.149124,
-   "unrealized_pl_pct": -1.398
+   "current_value": 10.575744,
+   "unrealized_pl": -0.093167,
+   "unrealized_pl_pct": -0.873
   },
   {
-   "key": "LS-3830094",
-   "strategy": "LONGSHOT",
-   "title": "Fade: Exact Score: Everton FC 2 - 0 Manchester United FC?",
-   "opened": 1788694789.546469,
-   "cost": 26.536798,
-   "edge": 0.010676,
+   "key": "CV-4061198",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 8?",
+   "opened": 1788714907.1744502,
+   "cost": 26.644948,
+   "edge": 0.014178,
    "guaranteed": false,
    "guaranteed_payout_sets": null,
-   "est_p_win": 0.9799,
-   "resolve_by": "2026-09-06T13:00:00Z",
-   "note": "YES at 0.034, assumed true 0.020, NO ask 0.968, fee 0.0015",
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-09-08T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 1.9d to resolution, 266% annualized net if YES, assumed true P 0.988",
    "legs": [
     {
-     "token_id": "60231372890302402266534768631770999215915075710689858799002697221078305920997",
-     "market_id": "3830094",
-     "label": "NO Exact Score: Everton FC 2 - 0 Manchester United FC?",
-     "side": "NO",
-     "entry_price": 0.968,
-     "shares": 27.370255
+     "token_id": "43458762730068493268506672406324660334597853743979764999846492169236845054635",
+     "market_id": "4061198",
+     "label": "YES Will the price of Ethereum be above $2,300 on September 8?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 27.022335
     }
    ],
    "current_prices": {
-    "60231372890302402266534768631770999215915075710689858799002697221078305920997": 0.9995
+    "43458762730068493268506672406324660334597853743979764999846492169236845054635": 0.9845
    },
-   "current_value": 27.35657,
-   "unrealized_pl": 0.819772,
-   "unrealized_pl_pct": 3.089
+   "current_value": 26.603489,
+   "unrealized_pl": -0.041459,
+   "unrealized_pl_pct": -0.156
+  },
+  {
+   "key": "CV-4216754",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on September 11?",
+   "opened": 1788714907.1744685,
+   "cost": 26.644948,
+   "edge": 0.014178,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-09-11T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 4.9d to resolution, 105% annualized net if YES, assumed true P 0.987",
+   "legs": [
+    {
+     "token_id": "18927983141331285814154375777043304757409717305281971473934753908730915167213",
+     "market_id": "4216754",
+     "label": "YES Will the price of Ethereum be above $2,200 on September 11?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 27.022335
+    }
+   ],
+   "current_prices": {
+    "18927983141331285814154375777043304757409717305281971473934753908730915167213": 0.9835
+   },
+   "current_value": 26.576466,
+   "unrealized_pl": -0.068482,
+   "unrealized_pl_pct": -0.257
   }
  ],
  "closed": [
@@ -30643,6 +30614,102 @@
    "payout": 26.979386,
    "pl": 0.262958,
    "close_reason": "take_profit"
+  },
+  {
+   "key": "LS-3830289",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Birmingham City FC 1 - 3 Wolverhampton Wanderer",
+   "opened": 1788678662.5158577,
+   "cost": 26.627093,
+   "edge": 0.012182,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9775,
+   "resolve_by": "2026-09-06T11:00:00Z",
+   "note": "YES at 0.037, assumed true 0.022, NO ask 0.964, fee 0.0017",
+   "legs": [
+    {
+     "token_id": "26575504403191611355047792917905476990713946947905806748580033863462223559208",
+     "market_id": "3830289",
+     "label": "NO Exact Score: Birmingham City FC 1 - 3 Wolverhampton Wanderers FC?",
+     "side": "NO",
+     "entry_price": 0.964,
+     "shares": 27.571836
+    }
+   ],
+   "current_prices": {
+    "26575504403191611355047792917905476990713946947905806748580033863462223559208": 0.964
+   },
+   "current_value": 26.57925,
+   "unrealized_pl": -0.047843,
+   "unrealized_pl_pct": -0.18,
+   "closed_ts": 1788714915.8815708,
+   "payout": 27.571836,
+   "pl": 0.944743
+  },
+  {
+   "key": "CV-4216882",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ethereum Up or Down on September 6?",
+   "opened": 1788678662.515882,
+   "cost": 14.302969,
+   "edge": 0.039883,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9612,
+   "resolve_by": "2026-09-06T16:00:00Z",
+   "note": "YES ask 0.959, fee 0.0028, 0.4d to resolution, 3963% annualized net if YES, assumed true P 0.961",
+   "legs": [
+    {
+     "token_id": "47456796188406405210281391736637872644781347747219033346523640033690511179893",
+     "market_id": "4216882",
+     "label": "YES Ethereum Up or Down on September 6?",
+     "side": "YES",
+     "entry_price": 0.959,
+     "shares": 14.87178
+    }
+   ],
+   "current_prices": {
+    "47456796188406405210281391736637872644781347747219033346523640033690511179893": 0.959
+   },
+   "current_value": 14.262037,
+   "unrealized_pl": -0.040932,
+   "unrealized_pl_pct": -0.286,
+   "closed_ts": 1788714915.8815708,
+   "payout": 14.87178,
+   "pl": 0.568811
+  },
+  {
+   "key": "LS-3830094",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Everton FC 2 - 0 Manchester United FC?",
+   "opened": 1788694789.546469,
+   "cost": 26.536798,
+   "edge": 0.010676,
+   "guaranteed": false,
+   "guaranteed_payout_sets": null,
+   "est_p_win": 0.9799,
+   "resolve_by": "2026-09-06T13:00:00Z",
+   "note": "YES at 0.034, assumed true 0.020, NO ask 0.968, fee 0.0015",
+   "legs": [
+    {
+     "token_id": "60231372890302402266534768631770999215915075710689858799002697221078305920997",
+     "market_id": "3830094",
+     "label": "NO Exact Score: Everton FC 2 - 0 Manchester United FC?",
+     "side": "NO",
+     "entry_price": 0.968,
+     "shares": 27.370255
+    }
+   ],
+   "current_prices": {
+    "60231372890302402266534768631770999215915075710689858799002697221078305920997": 0.968
+   },
+   "current_value": 26.494407,
+   "unrealized_pl": -0.042391,
+   "unrealized_pl_pct": -0.16,
+   "closed_ts": 1788714915.8815708,
+   "payout": 27.370255,
+   "pl": 0.833457
   }
  ],
  "history": [
@@ -38133,6 +38200,14 @@
    "equity": 1064.6806,
    "realized_total": 63.3386,
    "open_positions": 12
+  },
+  {
+   "ts": 1788714913.6215525,
+   "cash": 769.9563,
+   "open_value": 292.503,
+   "equity": 1062.4593,
+   "realized_total": 63.3386,
+   "open_positions": 14
   }
  ],
  "trades": [
@@ -54659,54 +54734,76 @@
    "amount": 26.98,
    "pl": 0.26,
    "reason": "take_profit"
+  },
+  {
+   "ts": 1788714907.1744502,
+   "type": "OPEN",
+   "key": "CV-4061198",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 8?",
+   "amount": 26.64,
+   "pl": null
+  },
+  {
+   "ts": 1788714907.1744685,
+   "type": "OPEN",
+   "key": "CV-4216754",
+   "strategy": "CONVERGE",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on September 11?",
+   "amount": 26.64,
+   "pl": null
+  },
+  {
+   "ts": 1788714915.8815708,
+   "type": "CLOSE",
+   "key": "LS-3830289",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Birmingham City FC 1 - 3 Wolverhampton Wanderer",
+   "amount": 27.57,
+   "pl": 0.94
+  },
+  {
+   "ts": 1788714915.8815708,
+   "type": "CLOSE",
+   "key": "CV-4216882",
+   "strategy": "CONVERGE",
+   "title": "Converge: Ethereum Up or Down on September 6?",
+   "amount": 14.87,
+   "pl": 0.57
+  },
+  {
+   "ts": 1788714915.8815708,
+   "type": "CLOSE",
+   "key": "LS-3830094",
+   "strategy": "LONGSHOT",
+   "title": "Fade: Exact Score: Everton FC 2 - 0 Manchester United FC?",
+   "amount": 27.37,
+   "pl": 0.83
   }
  ],
  "last_scan_opportunities": [
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3825519",
-   "title": "Fade: Exact Score: Bologna FC 1909 0 - 2 US Sassuolo Calcio?",
-   "edge": 0.01242514718413765,
+   "key": "LS-3830308",
+   "title": "Fade: Exact Score: Olympique de Marseille 0 - 2 Paris FC?",
+   "edge": 0.01098572861933302,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "7893941353719745464706164572875538796943748540850100870990270359115067073725",
-     "market_id": "3825519",
-     "label": "NO Exact Score: Bologna FC 1909 0 - 2 US Sassuolo Calcio?",
+     "token_id": "115213408978614033310846558376754107554634528690631727616608933695323447899626",
+     "market_id": "3830308",
+     "label": "NO Exact Score: Olympique de Marseille 0 - 2 Paris FC?",
      "side": "NO",
-     "entry_price": 0.965,
+     "entry_price": 0.968,
      "shares": 0.0,
-     "fee_per_share": 0.0016887500000000014,
+     "fee_per_share": 0.0015488000000000014,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9787,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.965, fee 0.0017"
-  },
-  {
-   "strategy": "LONGSHOT",
-   "key": "LS-4003948",
-   "title": "Fade: Will the price of Ethereum be between $2,500 and $2,600 on S",
-   "edge": 0.0081322704138624,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "106944147582617310639668764245034077436161065189537824428264109799819150980179",
-     "market_id": "4003948",
-     "label": "NO Will the price of Ethereum be between $2,500 and $2,600 on September 6?",
-     "side": "NO",
-     "entry_price": 0.969,
-     "shares": 0.0,
-     "fee_per_share": 0.002102730000000002,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.979,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES at 0.035, assumed true 0.021, NO ask 0.969, fee 0.0021"
+   "est_p_win": 0.9802,
+   "resolve_by": "2026-09-06T18:45:00Z",
+   "note": "YES at 0.033, assumed true 0.020, NO ask 0.968, fee 0.0015"
   },
   {
    "strategy": "LONGSHOT",
@@ -54733,55 +54830,32 @@
   },
   {
    "strategy": "LONGSHOT",
-   "key": "LS-3748423",
-   "title": "Fade: Will Linke win less than 9% of all valid second votes?",
-   "edge": 0.013229166666666714,
+   "key": "LS-3833325",
+   "title": "Fade: Exact Score: RCD Espanyol de Barcelona 0 - 2 Sevilla FC?",
+   "edge": 0.011518629407850976,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "22258012915122992296949231340561071468223155583074440215248320992681050658431",
-     "market_id": "3748423",
-     "label": "NO Will Linke win less than 9% of all valid second votes?",
+     "token_id": "91870344982418510134336518580835884487397129462870078251364729631411714364583",
+     "market_id": "3833325",
+     "label": "NO Exact Score: RCD Espanyol de Barcelona 0 - 2 Sevilla FC?",
      "side": "NO",
      "entry_price": 0.96,
      "shares": 0.0,
-     "fee_per_share": 0.0,
+     "fee_per_share": 0.0019200000000000018,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9727,
-   "resolve_by": "2026-09-06T23:59:00Z",
-   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0000"
-  },
-  {
-   "strategy": "CONVERGE",
-   "key": "CV-4216882",
-   "title": "Converge: Ethereum Up or Down on September 6?",
-   "edge": 0.02193145342886389,
-   "guaranteed": false,
-   "legs": [
-    {
-     "token_id": "47456796188406405210281391736637872644781347747219033346523640033690511179893",
-     "market_id": "4216882",
-     "label": "YES Ethereum Up or Down on September 6?",
-     "side": "YES",
-     "entry_price": 0.977,
-     "shares": 0.0,
-     "fee_per_share": 0.0015729700000000014,
-     "min_order_size": null
-    }
-   ],
-   "guaranteed_payout": null,
-   "est_p_win": 0.9732000000000001,
-   "resolve_by": "2026-09-06T16:00:00Z",
-   "note": "YES ask 0.977, fee 0.0016, 0.1d to resolution, 12092% annualized net if YES, assumed true P 0.973"
+   "est_p_win": 0.973,
+   "resolve_by": "2026-09-06T19:00:00Z",
+   "note": "YES at 0.045, assumed true 0.027, NO ask 0.960, fee 0.0019"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-4034637",
    "title": "Converge: Will the price of Ethereum be above $2,400 on September 7?",
-   "edge": 0.04192207941483807,
+   "edge": 0.04090133611691027,
    "guaranteed": false,
    "legs": [
     {
@@ -54789,45 +54863,45 @@
      "market_id": "4034637",
      "label": "YES Will the price of Ethereum be above $2,400 on September 7?",
      "side": "YES",
-     "entry_price": 0.957,
+     "entry_price": 0.958,
      "shares": 0.0,
-     "fee_per_share": 0.002880570000000003,
+     "fee_per_share": 0.002816520000000003,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9676,
+   "est_p_win": 0.9632,
    "resolve_by": "2026-09-07T16:00:00Z",
-   "note": "YES ask 0.957, fee 0.0029, 1.1d to resolution, 1435% annualized net if YES, assumed true P 0.968"
+   "note": "YES ask 0.958, fee 0.0028, 0.9d to resolution, 1575% annualized net if YES, assumed true P 0.963"
   },
   {
    "strategy": "CONVERGE",
-   "key": "CV-4178248",
-   "title": "Converge: Israel military action against Lebanon on September 6?",
-   "edge": 0.01010101010101011,
+   "key": "CV-3748554",
+   "title": "Converge: Will Gr\u00fcne win at least 7% of all valid second votes?",
+   "edge": 0.008064516129032265,
    "guaranteed": false,
    "legs": [
     {
-     "token_id": "92216208738972071508621584096770845708584142464517479366634093311836455036007",
-     "market_id": "4178248",
-     "label": "YES Israel military action against Lebanon on September 6?",
+     "token_id": "30801583224256128661650861305945620164513980837047368729204599498683807136475",
+     "market_id": "3748554",
+     "label": "YES Will Gr\u00fcne win at least 7% of all valid second votes?",
      "side": "YES",
-     "entry_price": 0.99,
+     "entry_price": 0.992,
      "shares": 0.0,
      "fee_per_share": 0.0,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9804,
+   "est_p_win": 0.9812000000000001,
    "resolve_by": "2026-09-06T23:59:00Z",
-   "note": "YES ask 0.990, fee 0.0000, 0.4d to resolution, 924% annualized net if YES, assumed true P 0.980"
+   "note": "YES ask 0.992, fee 0.0000, 0.3d to resolution, 1049% annualized net if YES, assumed true P 0.981"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-4061223",
    "title": "Converge: Will the price of Bitcoin be above $76,000 on September 8?",
-   "edge": 0.02487404517453801,
+   "edge": 0.034824398340248995,
    "guaranteed": false,
    "legs": [
     {
@@ -54835,16 +54909,16 @@
      "market_id": "4061223",
      "label": "YES Will the price of Bitcoin be above $76,000 on September 8?",
      "side": "YES",
-     "entry_price": 0.974,
+     "entry_price": 0.964,
      "shares": 0.0,
-     "fee_per_share": 0.0017726800000000017,
+     "fee_per_share": 0.002429280000000002,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9756,
+   "est_p_win": 0.9708,
    "resolve_by": "2026-09-08T16:00:00Z",
-   "note": "YES ask 0.974, fee 0.0018, 2.1d to resolution, 439% annualized net if YES, assumed true P 0.976"
+   "note": "YES ask 0.964, fee 0.0024, 1.9d to resolution, 653% annualized net if YES, assumed true P 0.971"
   },
   {
    "strategy": "CONVERGE",
@@ -54865,9 +54939,32 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.952,
+   "est_p_win": 0.956,
    "resolve_by": "2026-09-12T16:00:00Z",
-   "note": "YES ask 0.950, fee 0.0033, 6.1d to resolution, 296% annualized net if YES, assumed true P 0.952"
+   "note": "YES ask 0.950, fee 0.0033, 5.9d to resolution, 302% annualized net if YES, assumed true P 0.956"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4061198",
+   "title": "Converge: Will the price of Ethereum be above $2,300 on September 8?",
+   "edge": 0.0141784263959391,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "43458762730068493268506672406324660334597853743979764999846492169236845054635",
+     "market_id": "4061198",
+     "label": "YES Will the price of Ethereum be above $2,300 on September 8?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 27.022335025380716,
+     "fee_per_share": 0.001034250000000001,
+     "min_order_size": 5.0
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9876,
+   "resolve_by": "2026-09-08T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 1.9d to resolution, 266% annualized net if YES, assumed true P 0.988"
   },
   {
    "strategy": "CONVERGE",
@@ -54888,9 +54985,55 @@
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9836,
+   "est_p_win": 0.9852000000000001,
    "resolve_by": "2026-09-09T16:00:00Z",
-   "note": "YES ask 0.984, fee 0.0011, 3.1d to resolution, 180% annualized net if YES, assumed true P 0.984"
+   "note": "YES ask 0.984, fee 0.0011, 2.9d to resolution, 187% annualized net if YES, assumed true P 0.985"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4250775",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on September 12?",
+   "edge": 0.019980459652706863,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "106593943482518735691528757028873117492045519062172471920906901192677859256114",
+     "market_id": "4250775",
+     "label": "YES Will the price of Ethereum be above $2,200 on September 12?",
+     "side": "YES",
+     "entry_price": 0.979,
+     "shares": 0.0,
+     "fee_per_share": 0.0014391300000000014,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9756,
+   "resolve_by": "2026-09-12T16:00:00Z",
+   "note": "YES ask 0.979, fee 0.0014, 5.9d to resolution, 123% annualized net if YES, assumed true P 0.976"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4216754",
+   "title": "Converge: Will the price of Ethereum be above $2,200 on September 11?",
+   "edge": 0.0141784263959391,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "18927983141331285814154375777043304757409717305281971473934753908730915167213",
+     "market_id": "4216754",
+     "label": "YES Will the price of Ethereum be above $2,200 on September 11?",
+     "side": "YES",
+     "entry_price": 0.985,
+     "shares": 27.022335025380716,
+     "fee_per_share": 0.001034250000000001,
+     "min_order_size": 5.0
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.9868,
+   "resolve_by": "2026-09-11T16:00:00Z",
+   "note": "YES ask 0.985, fee 0.0010, 4.9d to resolution, 105% annualized net if YES, assumed true P 0.987"
   },
   {
    "strategy": "CONVERGE",
@@ -54913,13 +55056,13 @@
    "guaranteed_payout": null,
    "est_p_win": 0.982,
    "resolve_by": "2026-09-18T15:59:00Z",
-   "note": "YES ask 0.978, fee 0.0000, 12.1d to resolution, 68% annualized net if YES, assumed true P 0.982"
+   "note": "YES ask 0.978, fee 0.0000, 11.9d to resolution, 69% annualized net if YES, assumed true P 0.982"
   },
   {
    "strategy": "CONVERGE",
    "key": "CV-4250799",
    "title": "Converge: Will the price of Bitcoin be above $72,000 on September 12?",
-   "edge": 0.011305748987854261,
+   "edge": 0.010352345803842275,
    "guaranteed": false,
    "legs": [
     {
@@ -54927,16 +55070,39 @@
      "market_id": "4250799",
      "label": "YES Will the price of Bitcoin be above $72,000 on September 12?",
      "side": "YES",
-     "entry_price": 0.988,
+     "entry_price": 0.989,
      "shares": 0.0,
-     "fee_per_share": 0.0008299200000000007,
+     "fee_per_share": 0.0007615300000000007,
      "min_order_size": null
     }
    ],
    "guaranteed_payout": null,
-   "est_p_win": 0.9868,
+   "est_p_win": 0.9872,
    "resolve_by": "2026-09-12T16:00:00Z",
-   "note": "YES ask 0.988, fee 0.0008, 6.1d to resolution, 68% annualized net if YES, assumed true P 0.987"
+   "note": "YES ask 0.989, fee 0.0008, 5.9d to resolution, 64% annualized net if YES, assumed true P 0.987"
+  },
+  {
+   "strategy": "CONVERGE",
+   "key": "CV-4250798",
+   "title": "Converge: Will the price of Bitcoin be above $70,000 on September 12?",
+   "edge": 0.00940101010101011,
+   "guaranteed": false,
+   "legs": [
+    {
+     "token_id": "58785866777070272456100852068348840857966826199001458795903629902980376456090",
+     "market_id": "4250798",
+     "label": "YES Will the price of Bitcoin be above $70,000 on September 12?",
+     "side": "YES",
+     "entry_price": 0.99,
+     "shares": 0.0,
+     "fee_per_share": 0.0006930000000000006,
+     "min_order_size": null
+    }
+   ],
+   "guaranteed_payout": null,
+   "est_p_win": 0.988,
+   "resolve_by": "2026-09-12T16:00:00Z",
+   "note": "YES ask 0.990, fee 0.0007, 5.9d to resolution, 58% annualized net if YES, assumed true P 0.988"
   }
  ]
 }
